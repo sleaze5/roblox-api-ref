@@ -1,0 +1,192 @@
+@utility class-tree {
+	font-family: var(--font-mono);
+
+	& ul {
+		margin-left: 11px;
+		border-left: 1px solid var(--color-line-subtle);
+		padding-left: calc(var(--spacing) * 1.5);
+	}
+
+	& summary,
+	& li > a {
+		display: flex;
+		align-items: center;
+		gap: var(--spacing);
+		height: calc(var(--spacing) * 7);
+		padding-inline: var(--spacing) calc(var(--spacing) * 2);
+		border-radius: var(--radius-sm);
+		white-space: nowrap;
+		transition: background-color var(--duration-fast) var(--ease-standard);
+	}
+
+	& li > a {
+		padding-left: 22px;
+	}
+
+	@media (pointer: coarse) {
+		& summary,
+		& li > a {
+			height: calc(var(--spacing) * 9);
+		}
+	}
+
+	& summary:hover,
+	& li > a:hover {
+		background-color: var(--color-hover);
+	}
+
+	& summary::before {
+		content: "";
+		width: 14px;
+		height: 14px;
+		flex-shrink: 0;
+		background-color: var(--color-fg-muted);
+		mask: url("../generated/icons/caret-right.svg") center / contain no-repeat;
+		transition: rotate var(--duration-fast) var(--ease-out);
+	}
+
+	& details[open] > summary::before {
+		rotate: 90deg;
+	}
+
+	& a {
+		display: flex;
+		min-width: 0;
+		align-items: center;
+		gap: calc(var(--spacing) * 1.5);
+		color: var(--color-fg);
+	}
+
+	& a > span {
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	& a::before {
+		content: "";
+		width: 14px;
+		height: 14px;
+		flex-shrink: 0;
+		background-color: var(--color-fg-muted);
+		mask-position: center;
+		mask-repeat: no-repeat;
+		mask-size: contain;
+	}
+
+	& a:hover {
+		color: var(--color-fg-bright);
+	}
+
+	& summary > a:hover {
+		text-decoration: underline;
+	}
+
+	& [data-deprecated] {
+		color: var(--color-fg-faint);
+	}
+
+	& summary:has(> [aria-current="page"]),
+	& li > a[aria-current="page"] {
+		background-color: var(--color-active);
+	}
+
+	& [aria-current="page"] {
+		color: var(--color-fg-bright);
+	}
+
+	& small {
+		color: var(--color-fg-faint);
+		font-family: var(--font-sans);
+		font-size: var(--text-xs);
+	}
+}
+
+@utility tree-class-icons {
+	& a::before {
+		mask-image: url("../generated/icons/cube.svg");
+	}
+}
+
+@utility tree-enum-icons {
+	& a::before {
+		mask-image: url("../generated/icons/list-bullets.svg");
+	}
+}
+
+@utility tree-type-icons {
+	& a::before {
+		mask-image: url("../generated/icons/brackets-curly.svg");
+	}
+}
+
+@utility tree-index-icons {
+	& summary > span,
+	& summary > a {
+		color: var(--color-fg-muted);
+		font-family: var(--font-sans);
+		font-weight: var(--font-weight-medium);
+	}
+
+	& [data-group="type"] a::before {
+		mask-image: url("../generated/icons/brackets-curly.svg");
+	}
+
+	& [data-group="tag"] a::before {
+		mask-image: url("../generated/icons/tag.svg");
+	}
+
+	& [data-group="propertyCategory"] a::before {
+		mask-image: url("../generated/icons/folders.svg");
+	}
+
+	& [data-group="security"] a::before {
+		mask-image: url("../generated/icons/shield.svg");
+	}
+
+	& [data-group="capability"] a::before {
+		mask-image: url("../generated/icons/puzzle-piece.svg");
+	}
+
+	& [data-group="threadSafety"] a::before {
+		mask-image: url("../generated/icons/git-fork.svg");
+	}
+
+	& [data-group="memoryCategory"] a::before {
+		mask-image: url("../generated/icons/memory.svg");
+	}
+}
+
+@utility tree-sticky {
+	--tree-row: calc(var(--spacing) * 7);
+	--filter-field: calc(var(--spacing) * 8);
+
+	@media (pointer: coarse) {
+		--tree-row: calc(var(--spacing) * 9);
+		--filter-field: calc(var(--spacing) * 10);
+	}
+
+	& details > summary {
+		position: sticky;
+		top: calc(
+			var(--spacing) * 3 + var(--filter-field) + var(--depth, 0) * var(--tree-row)
+		);
+		z-index: calc(10 - var(--depth, 0));
+		background-color: var(--color-surface);
+	}
+
+	& details > summary:hover {
+		background-color: color-mix(
+			in srgb,
+			var(--color-fg-bright) 6%,
+			var(--color-surface)
+		);
+	}
+
+	& details > summary:has(> [aria-current="page"]) {
+		background-color: color-mix(
+			in srgb,
+			var(--color-fg-bright) 9%,
+			var(--color-surface)
+		);
+	}
+}

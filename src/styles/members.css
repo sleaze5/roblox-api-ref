@@ -1,0 +1,218 @@
+@utility member-card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: calc(var(--spacing) * 1.5);
+	padding-block: calc(var(--spacing) * 1.5);
+	padding-left: calc(var(--spacing) * 3);
+
+	&::before {
+		content: "";
+		position: absolute;
+		inset-block: calc(var(--spacing) * 1.5);
+		left: 0;
+		width: 2px;
+		border-radius: var(--radius-xs);
+		background-color: var(--color-fg-muted);
+		opacity: 0;
+	}
+
+	&:target::before {
+		opacity: 1;
+	}
+}
+
+@utility member-head {
+	display: flex;
+	min-width: 0;
+	align-items: flex-start;
+	gap: calc(var(--spacing) * 2);
+}
+
+@utility member-code {
+	display: block;
+	flex: 1;
+	min-width: 0;
+	color: var(--color-fg);
+	line-height: calc(var(--spacing) * 6);
+	white-space: pre-wrap;
+	overflow-wrap: anywhere;
+}
+
+@utility member-description {
+	max-width: var(--container-prose);
+	padding-left: calc(var(--spacing) * 3);
+	border-left: 1px solid var(--color-line-strong);
+	color: var(--color-fg);
+	font-size: var(--text-base);
+	line-height: var(--text-base--line-height);
+}
+
+@utility detail-table {
+	font-size: var(--text-sm);
+	line-height: var(--text-sm--line-height);
+
+	& table {
+		width: 100%;
+		table-layout: fixed;
+		border-collapse: separate;
+		border-spacing: 0;
+		border: 1px solid var(--color-line);
+		border-radius: var(--radius-md);
+	}
+
+	& caption {
+		padding-bottom: calc(var(--spacing) * 1.5);
+		color: var(--color-fg-muted);
+		font-weight: var(--font-weight-medium);
+		text-align: left;
+	}
+
+	& col[data-code] {
+		width: 35%;
+	}
+
+	& th,
+	& td {
+		padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 3);
+		text-align: left;
+		vertical-align: top;
+		overflow-wrap: anywhere;
+	}
+
+	& th {
+		color: var(--color-fg-faint);
+		font-weight: var(--font-weight-medium);
+	}
+
+	& td {
+		border-top: 1px solid var(--color-line);
+		color: var(--color-fg-muted);
+	}
+
+	& td[data-code] {
+		color: var(--color-fg);
+	}
+
+	@media (width < 640px) {
+		& col[data-code] {
+			width: 45%;
+		}
+	}
+}
+
+@utility member-actions {
+	display: flex;
+	flex-shrink: 0;
+	gap: var(--spacing);
+	opacity: 0;
+	transition: opacity var(--duration-fast) var(--ease-standard);
+
+	.member-card:hover &,
+	&:focus-within {
+		opacity: 1;
+	}
+
+	@media (hover: none) {
+		opacity: 1;
+	}
+}
+
+@utility member-action {
+	position: relative;
+	display: block;
+	width: calc(var(--spacing) * 6);
+	height: calc(var(--spacing) * 6);
+	border-radius: var(--radius-sm);
+	color: var(--color-fg-muted);
+	transition:
+		color var(--duration-fast) var(--ease-standard),
+		background-color var(--duration-fast) var(--ease-standard);
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		inset: 5px;
+		background-color: currentColor;
+		mask-position: center;
+		mask-repeat: no-repeat;
+		mask-size: contain;
+		transition: opacity var(--duration-fast) var(--ease-standard);
+	}
+
+	&::after {
+		opacity: 0;
+	}
+
+	&:hover {
+		background-color: var(--color-hover);
+		color: var(--color-fg-bright);
+	}
+
+	@media (pointer: coarse) {
+		width: calc(var(--spacing) * 9);
+		height: calc(var(--spacing) * 9);
+
+		&::before,
+		&::after {
+			inset: 10px;
+		}
+	}
+}
+
+@utility copy-link {
+	@apply member-action;
+
+	&::before {
+		mask-image: url("../generated/icons/link-simple.svg");
+	}
+
+	&::after {
+		background-color: var(--color-success);
+		mask-image: url("../generated/icons/check.svg");
+	}
+
+	&[data-copied]::before {
+		opacity: 0;
+	}
+
+	&[data-copied]::after {
+		opacity: 1;
+	}
+}
+
+@utility docs-link {
+	@apply member-action;
+
+	&::before {
+		mask-image: url("../generated/icons/arrow-square-out.svg");
+	}
+}
+
+@utility group-head {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: calc(var(--spacing) * 2);
+	height: calc(var(--spacing) * 8);
+	padding-inline: calc(var(--spacing) * 2);
+	border-radius: var(--radius-sm);
+	color: var(--color-fg-muted);
+
+	@media (pointer: coarse) {
+		height: calc(var(--spacing) * 10);
+	}
+	transition:
+		color var(--duration-fast) var(--ease-standard),
+		background-color var(--duration-fast) var(--ease-standard);
+
+	& > :not(button, a) {
+		pointer-events: none;
+	}
+
+	&:hover {
+		background-color: var(--color-hover);
+		color: var(--color-fg);
+	}
+}

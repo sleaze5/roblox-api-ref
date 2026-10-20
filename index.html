@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="color-scheme" content="dark" />
+		<meta name="theme-color" content="#0e0e0e" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="referrer" content="strict-origin-when-cross-origin" />
+		<title><!--app-title--></title>
+		<meta name="description" content="<!--app-description-->" />
+		<!--app-head-->
+		<link rel="icon" type="image/svg+xml" href="/src/generated/favicon.svg" />
+		<link
+			rel="preload"
+			href="/src/generated/fonts/Geist.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin />
+		<link
+			rel="preload"
+			href="/src/generated/fonts/GeistMono.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin />
+		<link rel="stylesheet" href="/src/styles/app.css" />
+		<script>
+			try {
+				const params = new URLSearchParams(location.search)
+				const root = document.documentElement
+				root.dataset.js = ""
+				root.dataset.hide = (params.get("hide") ?? "").replaceAll(",", " ")
+				const keys = (name) =>
+					(params.get(name) ?? "")
+						.split(",")
+						.filter((key) => /^[a-z0-9-]+$/.test(key))
+						.map((key) => `[data-tags~="${key}"]`)
+				const required = keys("tags")
+				const excluded = keys("not")
+				const join = params.get("match") === "all" ? "" : ","
+				const rules = []
+				if (required.length > 0) {
+					rules.push(`[data-member]:not(${required.join(join)})`)
+				}
+				if (excluded.length > 0) {
+					rules.push(`[data-member]:is(${excluded.join(",")})`)
+				}
+				if (rules.length > 0) {
+					const style = document.createElement("style")
+					style.id = "tag-filter"
+					style.textContent = `${rules.join(",")}{display:none}`
+					document.head.append(style)
+				}
+			} catch {}
+		</script>
+		<script type="speculationrules">
+			{
+				"prerender": [
+					{ "where": { "href_matches": "/*" }, "eagerness": "moderate" }
+				]
+			}
+		</script>
+	</head>
+	<body>
+		<!--app-body-->
+		<script type="module" src="/src/client/main.ts"></script>
+	</body>
+</html>

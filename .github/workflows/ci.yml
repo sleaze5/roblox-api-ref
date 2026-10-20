@@ -1,0 +1,34 @@
+name: CI
+
+on:
+    push:
+        paths-ignore: ["**.md", "LICENSE"]
+    pull_request:
+        paths-ignore: ["**.md", "LICENSE"]
+
+permissions:
+    contents: read
+
+concurrency:
+    group: ci-${{ github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    build:
+        if: github.event_name == 'push' || github.event.pull_request.head.repo.fork
+        runs-on: ubuntu-24.04-arm
+        timeout-minutes: 15
+        steps:
+            - uses: actions/checkout@v7.0.1
+            - uses: ./.github/actions/setup
+            - uses: ./.github/actions/build
+              with:
+                  pages: ${{ github.event_name == 'push' && github.ref_name == github.event.repository.default_branch }}
+
+    deploy:
+        needs: build
+        if: github.event_name == 'push' && github.ref_name == github.event.repository.default_branch
+        permissions:
+            pages: write
+            id-token: write
+        uses: ./.github/workflows/deploy.yml

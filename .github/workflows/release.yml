@@ -1,0 +1,63 @@
+name: Get latest version and build
+
+on:
+    schedule:
+        - cron: 0 0 * * *
+    workflow_dispatch:
+        inputs:
+            force:
+                description: Build and deploy even if Roblox has not released a new version
+                type: boolean
+                default: true
+
+permissions:
+    contents: read
+
+concurrency:
+    group: release
+    cancel-in-progress: false
+
+jobs:
+    build:
+        if: github.event_name == 'schedule' || github.ref_name == github.event.repository.default_branch
+        runs-on: ubuntu-24.04-arm
+        timeout-minutes: 15
+        permissions:
+            contents: write
+        outputs:
+            release: ${{ steps.version.outputs.release }}
+        steps:
+            - uses: actions/checkout@v7.0.1
+            - uses: ./.github/actions/setup
+
+            - id: version
+              run: |
+                  vp run dump:update
+                  if git diff --quiet -- roblox-version.json; then changed=false; else changed=true; fi
+                  echo "changed=$changed" >> "$GITHUB_OUTPUT"
+                  if [ "$changed" = true ] || [ "$FORCE" = true ]; then release=true; else release=false; fi
+                  echo "release=$release" >> "$GITHUB_OUTPUT"
+              env:
+                  FORCE: ${{ inputs.force }}
+
+            - if: steps.version.outputs.release == 'true'
+              uses: ./.github/actions/build
+              with:
+                  pages: true
+
+            - if: steps.version.outputs.changed == 'true'
+              run: |
+                  version=$(sed -n 's/.*"version": "\(.*\)".*/\1/p' roblox-version.json)
+                  git config user.name "github-actions[bot]"
+                  git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+                  git commit -m "Update Roblox to LIVE $version" -- roblox-version.json
+                  git pull --rebase
+                  git push
+
+    deploy:
+        needs: build
+        if: needs.build.outputs.release == 'true'
+        permissions:
+            pages: write
+            id-token: write
+        uses: ./.github/workflows/deploy.yml

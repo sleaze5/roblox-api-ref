@@ -1,0 +1,21 @@
+name: Deploy
+
+on:
+    workflow_call:
+
+jobs:
+    deploy:
+        runs-on: ubuntu-slim
+        timeout-minutes: 5
+        permissions:
+            pages: write
+            id-token: write
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        concurrency:
+            group: pages
+            cancel-in-progress: false
+        steps:
+            - id: deployment
+              uses: actions/deploy-pages@v5.0.1

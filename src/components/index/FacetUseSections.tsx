@@ -1,0 +1,57 @@
+import {
+	useKinds,
+	useKindTitles,
+	useSectionId,
+	type UseKind,
+} from "../../api/facets/facet-use.ts"
+import type { FacetUse } from "../../api/types.ts"
+import { Icon } from "../Icon.tsx"
+import { useKindIcons } from "./facet-icons.ts"
+import { FacetUseRow } from "./FacetUseRow.tsx"
+
+export type UseSection = {
+	kind: UseKind
+	uses: FacetUse[]
+}
+
+export function useSections(uses: FacetUse[]): UseSection[] {
+	return useKinds
+		.map((kind) => ({ kind, uses: uses.filter((use) => use.kind === kind) }))
+		.filter((section) => section.uses.length > 0)
+}
+
+export function FacetUseSections(props: { id: string; sections: UseSection[] }) {
+	return (
+		<div id={props.id} class="flex flex-col gap-8">
+			{props.sections.map((section) => {
+				const id = useSectionId(section.kind)
+				return (
+					<section
+						id={id}
+						data-list-section=""
+						aria-labelledby={`${id}-title`}
+						class="flex flex-col gap-3">
+						<h2
+							id={`${id}-title`}
+							class="flex items-center gap-2 text-lg font-semibold">
+							<Icon
+								name={useKindIcons[section.kind]}
+								size={20}
+								class="text-fg-muted"
+							/>
+							{useKindTitles[section.kind]}
+							<span class="text-sm font-normal text-fg-faint">
+								{section.uses.length}
+							</span>
+						</h2>
+						<ul class="grid grid-cols-1 gap-x-4 auto-visibility md:grid-cols-2">
+							{section.uses.map((use) => (
+								<FacetUseRow use={use} />
+							))}
+						</ul>
+					</section>
+				)
+			})}
+		</div>
+	)
+}

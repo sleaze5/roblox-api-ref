@@ -1,0 +1,97 @@
+@utility motion-dialog {
+	opacity: 0;
+	scale: var(--motion-scale);
+	transition:
+		opacity var(--duration-exit) var(--ease-standard),
+		scale var(--duration-exit) var(--ease-standard),
+		display var(--duration-exit) allow-discrete,
+		overlay var(--duration-exit) allow-discrete;
+
+	&[open] {
+		opacity: 1;
+		scale: 1;
+		transition-duration: var(--duration-ui);
+		transition-timing-function: var(--ease-out);
+	}
+
+	@starting-style {
+		&[open] {
+			opacity: 0;
+			scale: var(--motion-scale);
+		}
+	}
+
+	&::backdrop {
+		background-color: var(--color-scrim);
+		opacity: 0;
+		transition:
+			opacity var(--duration-exit) var(--ease-standard),
+			display var(--duration-exit) allow-discrete,
+			overlay var(--duration-exit) allow-discrete;
+	}
+
+	&[open]::backdrop {
+		opacity: 1;
+		transition-duration: var(--duration-ui);
+	}
+
+	@starting-style {
+		&[open]::backdrop {
+			opacity: 0;
+		}
+	}
+}
+
+@utility motion-drawer {
+	@media (width < 1024px) {
+		translate: -100% 0;
+		transition:
+			translate var(--duration-exit) var(--ease-standard),
+			display var(--duration-exit) allow-discrete,
+			overlay var(--duration-exit) allow-discrete;
+
+		&:popover-open {
+			translate: 0 0;
+			transition-duration: var(--duration-ui);
+			transition-timing-function: var(--ease-out);
+		}
+
+		@starting-style {
+			&:popover-open {
+				translate: -100% 0;
+			}
+		}
+
+		&::backdrop {
+			background-color: var(--color-scrim);
+		}
+	}
+
+	@media (width >= 1024px) {
+		&:not(:popover-open, [data-drawer-only]) {
+			display: block;
+		}
+	}
+}
+
+@utility motion-fade {
+	transition: opacity var(--duration-fast) var(--ease-standard);
+}
+
+@utility motion-colors {
+	transition-property: color, background-color, border-color;
+	transition-duration: var(--duration-fast);
+	transition-timing-function: var(--ease-standard);
+}
+
+@utility motion-press {
+	transition: scale var(--duration-instant) var(--ease-standard);
+
+	&:active {
+		scale: var(--motion-scale);
+	}
+}
+
+@utility motion-caret {
+	transition: rotate var(--duration-fast) var(--ease-out);
+}

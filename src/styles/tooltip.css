@@ -1,0 +1,31 @@
+@utility tooltip {
+	position: fixed;
+	inset: auto;
+	max-width: calc(var(--spacing) * 64);
+	margin: 0;
+	padding: var(--spacing) calc(var(--spacing) * 2);
+	border: 1px solid var(--color-line-strong);
+	border-radius: var(--radius-sm);
+	background-color: var(--color-overlay);
+	color: var(--color-fg);
+	font-size: var(--text-xs);
+	line-height: var(--text-xs--line-height);
+	box-shadow: var(--shadow-float);
+	pointer-events: none;
+	opacity: 0;
+	transition:
+		opacity var(--duration-exit) var(--ease-standard),
+		display var(--duration-exit) allow-discrete,
+		overlay var(--duration-exit) allow-discrete;
+
+	&:popover-open {
+		opacity: 1;
+		transition-duration: var(--duration-fast);
+	}
+
+	@starting-style {
+		&:popover-open {
+			opacity: 0;
+		}
+	}
+}

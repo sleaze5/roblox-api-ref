@@ -1,0 +1,29 @@
+name: Build
+description: Check, test, and build the site. With pages, build it for GitHub Pages and upload it.
+
+inputs:
+    pages:
+        description: Build for the GitHub Pages URL and upload the site as a Pages artifact.
+        default: "false"
+
+runs:
+    using: composite
+    steps:
+        - id: pages
+          if: inputs.pages == 'true'
+          uses: actions/configure-pages@v6.0.0
+
+        - run: vp run ci
+          shell: bash
+          env:
+              VITE_SITE_ORIGIN: ${{ steps.pages.outputs.origin }}
+              VITE_SITE_BASE: ${{ steps.pages.outputs.base_path }}/
+
+        - if: inputs.pages == 'true'
+          run: find dist -type f \( -name '*.br' -o -name '*.gz' -o -name '*.zst' \) -delete
+          shell: bash
+
+        - if: inputs.pages == 'true'
+          uses: actions/upload-pages-artifact@v5.0.0
+          with:
+              path: dist
