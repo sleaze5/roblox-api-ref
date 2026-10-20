@@ -10,10 +10,14 @@ import { TypeIndexPage } from "../pages/index/TypeIndexPage.tsx"
 import { FacetIndexPage } from "../pages/index/FacetIndexPage.tsx"
 import { NotFoundPage } from "../pages/NotFoundPage.tsx"
 import { TypePage } from "../pages/type/TypePage.tsx"
+import { breadcrumbs } from "./breadcrumbs.ts"
 import { describeRoute } from "./describe-route.ts"
 import { loadApi } from "./load-api.ts"
+import { llmsTxt as indexText } from "./markdown/llms-txt.ts"
+import { pageMarkdown } from "./markdown/page-markdown.ts"
 import { matchRoute, routePaths, type Route } from "./match-route.ts"
 import type { RenderedPage } from "./page-module.ts"
+import { schemaType } from "./schema-type.ts"
 
 function Page(props: { route: Route }) {
 	const api = loadApi()
@@ -54,5 +58,17 @@ export function renderPage(path: string): RenderedPage {
 		status: route.page === "not-found" ? 404 : 200,
 		...describeRoute(route, api.version),
 		body: renderToString(() => <Page route={route} />),
+		schemaType: schemaType(route),
+		breadcrumbs: breadcrumbs(route),
+		markdown: pageMarkdown(api, route),
+		modified: api.published,
 	}
+}
+
+export function lastModified(): string {
+	return loadApi().published
+}
+
+export function llmsTxt(): string {
+	return indexText(loadApi())
 }

@@ -1,5 +1,5 @@
 import { readVersion, writeVersion, type RobloxVersion } from "../roblox-version.ts"
-import { isPublished } from "./is-published.ts"
+import { publishedDate } from "./published-date.ts"
 
 const channel = "LIVE"
 
@@ -24,19 +24,27 @@ if (hash === undefined) {
 	throw new Error(`Unexpected version upload id: ${clientVersionUpload}`)
 }
 
-const latest: RobloxVersion = { channel, version, hash }
 const current = await readVersion()
+const previous = current?.version ?? "(none)"
 
-if (current?.hash === latest.hash && current.channel === latest.channel) {
-	console.log(`Already on ${channel} ${version} (${hash}).`)
-} else if (!(await isPublished(latest))) {
+async function update(release: Omit<RobloxVersion, "published">): Promise<void> {
+	const label = `${release.channel} ${release.version} (${release.hash})`
+	const published = await publishedDate(release)
+	if (published === undefined) {
+		console.log(
+			`${label} is out, but its API files are not on the CDN yet. Keeping ${previous}.`,
+		)
+		return
+	}
+	await writeVersion({ ...release, published })
 	console.log(
-		`${channel} ${version} (${hash}) is out, but its API files are not on the CDN yet. Keeping ${current?.version ?? "(none)"}.`,
-	)
-} else {
-	await writeVersion(latest)
-	console.log(
-		`Updated ${channel} ${current?.version ?? "(none)"} -> ${version} (${hash}).`,
+		`Updated ${release.channel} ${previous} -> ${release.version} (${release.hash}).`,
 	)
 	console.log("Run `vp run dump` to download the API dump.")
+}
+
+if (current?.hash === hash && current.channel === channel) {
+	console.log(`Already on ${channel} ${version} (${hash}).`)
+} else {
+	await update({ channel, version, hash })
 }

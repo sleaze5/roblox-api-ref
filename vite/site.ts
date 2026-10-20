@@ -5,9 +5,10 @@ export type Site = {
 	base: string
 }
 
+export function originUrl(site: Site, href: string): string | undefined {
+	return site.origin === undefined ? undefined : new URL(href, site.origin).href
+}
+
 export function absoluteUrl(site: Site, path: string): string | undefined {
-	if (site.origin === undefined) {
-		return undefined
-	}
-	return new URL(`${site.base}${path.replace(/^\//, "")}`, site.origin).href
+	return originUrl(site, `${site.base}${path.replace(/^\//, "")}`)
 }

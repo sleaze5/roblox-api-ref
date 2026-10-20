@@ -22,15 +22,21 @@ function outputFile(outDir: string, route: string): string {
 	return join(outDir, decodeURIComponent(route), "index.html")
 }
 
+function markdownFile(outDir: string, site: Site, href: string): string {
+	return join(outDir, decodeURIComponent(href.slice(site.base.length)))
+}
+
 async function writeSiteFiles(
 	outDir: string,
 	site: Site,
 	routes: string[],
+	module: PageModule,
 ): Promise<void> {
 	const files: [string, string | undefined][] = [
 		["robots.txt", robotsTxt(site, routes)],
-		["sitemap.xml", sitemapXml(site, routes)],
+		["sitemap.xml", sitemapXml(site, routes, module.lastModified())],
 		["opensearch.xml", openSearchXml(site)],
+		["llms.txt", module.llmsTxt()],
 	]
 	await Promise.all(
 		files.map(async ([name, content]) => {
@@ -49,7 +55,7 @@ export async function prerender(paths: PrerenderPaths, site: Site): Promise<void
 	)
 	const routes = module.routes()
 	await rm(join(paths.outDir, "index.html"))
-	await writeSiteFiles(paths.outDir, site, routes)
+	await writeSiteFiles(paths.outDir, site, routes, module)
 	const assets = await compressibleFiles(paths.outDir)
 	const pool = new OutputPool(paths.workerFile)
 	try {
@@ -57,13 +63,17 @@ export async function prerender(paths: PrerenderPaths, site: Site): Promise<void
 			...routes.map(async (route) => {
 				const file = outputFile(paths.outDir, route)
 				await mkdir(dirname(file), { recursive: true })
-				const html = fillTemplate(
-					template,
-					module.renderPage(route),
-					route,
-					site,
-				)
-				await pool.run({ file, html })
+				const page = module.renderPage(route)
+				if (page.markdown !== undefined) {
+					await writeFile(
+						markdownFile(paths.outDir, site, page.markdown.href),
+						page.markdown.content,
+					)
+				}
+				await pool.run({
+					file,
+					html: fillTemplate(template, page, route, site),
+				})
 			}),
 			...assets.map((file) => pool.run({ file })),
 		])

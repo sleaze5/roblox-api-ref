@@ -97,6 +97,7 @@ export function normalizeApi(dump: Dump, docs: ApiDocs, version: RobloxVersion):
 		version: version.version,
 		hash: version.hash,
 		channel: version.channel,
+		published: version.published,
 		classes,
 		enums,
 		dataTypes,

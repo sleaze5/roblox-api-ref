@@ -14,10 +14,14 @@ async function run(job: OutputJob): Promise<void> {
 	await writeCompressed(job.file, data)
 }
 
+let queue = Promise.resolve()
+
 parentPort?.on("message", (job: OutputJob) => {
-	run(job).then(
-		() => parentPort?.postMessage({ id: job.id }),
-		(error: unknown) =>
-			parentPort?.postMessage({ id: job.id, error: String(error) }),
+	queue = queue.then(() =>
+		run(job).then(
+			() => parentPort?.postMessage({ id: job.id }),
+			(error: unknown) =>
+				parentPort?.postMessage({ id: job.id, error: String(error) }),
+		),
 	)
 })

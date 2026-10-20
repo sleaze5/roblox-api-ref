@@ -4,6 +4,7 @@ export type RobloxVersion = {
 	channel: string
 	version: string
 	hash: string
+	published: string
 }
 
 export async function readVersion(): Promise<RobloxVersion | undefined> {

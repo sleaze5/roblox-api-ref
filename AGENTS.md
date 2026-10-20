@@ -16,7 +16,7 @@ Interact with the project only through `vp run <task>`. Do not run Bun, Vite, Ox
 
 Tasks are defined in `run.tasks` in `vite.config.ts`. Vite+ runs the tasks in `dependsOn` first and caches task results.
 
-- `dump:update` saves the latest LIVE Roblox Studio version to `roblox-version.json`. It does not download anything.
+- `dump:update` saves the latest LIVE Roblox Studio version and its publish date to `roblox-version.json`. It skips a new version until its API dump and API docs are on the CDN. It does not download anything.
 - `dump` downloads the API dump and the English API docs for the version in `roblox-version.json` into `data/`, unless they are already downloaded. It reads `en-us.json` out of `content-api-docs.zip` with HTTP range requests instead of downloading the whole archive. It deletes every other dump and API docs file in `data/`.
 - `gen` runs `dump`, then generates data into `src/generated/`. It is never cached.
 - `dev`, `test`, `test:watch`, `typecheck`, and `check` run `gen` first.

@@ -152,6 +152,7 @@ export type Api = {
 	version: string
 	hash: string
 	channel: string
+	published: string
 	classes: Record<string, Class>
 	enums: Record<string, Enum>
 	dataTypes: Record<string, DataType>
