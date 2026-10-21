@@ -8,6 +8,7 @@ export type FlatTreeItem = {
 const iconClasses = {
 	enum: "tree-enum-icons",
 	type: "tree-type-icons",
+	update: "tree-update-icons",
 } as const
 
 export function FlatTree(props: {

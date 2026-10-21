@@ -6,13 +6,13 @@ export function Fact(props: { label: string; hint?: string; children: JSX.Elemen
 			<dt
 				data-tooltip={props.hint}
 				class={[
-					"text-fg-faint",
+					"shrink-0 whitespace-nowrap text-fg-faint",
 					props.hint !== undefined &&
 						"cursor-help underline decoration-line-strong decoration-dotted underline-offset-4",
 				]}>
 				{props.label}
 			</dt>
-			<dd class="text-fg-muted">{props.children}</dd>
+			<dd class="min-w-0 text-fg-muted">{props.children}</dd>
 		</div>
 	)
 }

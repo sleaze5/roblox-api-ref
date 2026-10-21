@@ -20,6 +20,14 @@ export function indexHref(): string {
 	return `${base}index/`
 }
 
+export function updatesHref(): string {
+	return `${base}updates/`
+}
+
+export function updateHref(version: string): string {
+	return `${updatesHref()}${encodeURIComponent(version)}/`
+}
+
 export function facetHref(kind: FacetKind, name: string): string {
 	return `${facetIndexHref(kind)}${encodeURIComponent(facetSlug(kind, name))}/`
 }

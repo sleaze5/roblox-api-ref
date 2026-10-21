@@ -16,15 +16,23 @@ Interact with the project only through `vp run <task>`. Do not run Bun, Vite, Ox
 
 Tasks are defined in `run.tasks` in `vite.config.ts`. Vite+ runs the tasks in `dependsOn` first and caches task results.
 
-- `dump:update` saves the latest LIVE Roblox Studio version and its publish date to `roblox-version.json`. It skips a new version until its API dump and API docs are on the CDN. It does not download anything.
-- `dump` downloads the API dump and the English API docs for the version in `roblox-version.json` into `data/`, unless they are already downloaded. It reads `en-us.json` out of `content-api-docs.zip` with HTTP range requests instead of downloading the whole archive. It deletes every other dump and API docs file in `data/`.
-- `gen` runs `dump`, then generates data into `src/generated/`. It is never cached.
+- `dump:update` reads the LIVE `WindowsStudio64` version from `clientsettings.roblox.com`. Only Studio uploads include the API dump and the API docs. When that build is newer than the last version in `roblox-versions.json`, the task downloads both API dumps into `data/`, writes the changes between them to `diffs/<version>.json`, and appends the build and its publish date to `roblox-versions.json`. When `roblox-versions.json` is empty, the task starts from the Studio build before the live one in [`version-history.json`](https://github.com/MaximumADHD/Roblox-Client-Tracker/blob/roblox/version-history.json). It skips a new version until its API dump and API docs are on the CDN.
+- `deps:update` updates each package in `package.json`, and the Bun version in `devEngines`, to the newest stable release that keeps the same major version, or the same minor version below 1.0.0. It skips deprecated releases. A prerelease version moves along its own line, such as `2.0.0-rc.15` to `2.0.0-rc.16`, or to the stable release of the same version, such as `2.0.0`. Then it runs `vp install` to update `bun.lock`. The `Update dependencies` workflow runs it every Monday, runs `ci`, and opens or updates a pull request from the `deps/update` branch. Dependabot updates the GitHub Actions versions the same way.
+- `dump` downloads the API dump and the English API docs for the last version in `roblox-versions.json` into `data/`, unless they are already downloaded. It reads `en-us.json` out of `content-api-docs.zip` with HTTP range requests instead of downloading the whole archive. It deletes every other dump and API docs file in `data/`.
+- `gen` runs `dump`, then generates data into `src/generated/`, including the Updates pages from `diffs/`. It is never cached.
 - `dev`, `test`, `test:watch`, `typecheck`, and `check` run `gen` first.
 - `fix` runs `lint:fix`, `format:fix`, and `check`, in that order.
 - `build` runs `fix`, then builds into `dist/`. `preview` runs `build` first.
 - `ci` runs `check`, `test`, and a build. It never changes files.
 
 Do not add or remove tasks unless the request requires it. When you add a task, set `cache: false` if the task uses the network, writes source files, or runs a server.
+
+## Versions and diffs
+
+- `roblox-versions.json` lists every version that the site has published, oldest first. The last entry is the current version. Each entry names a Studio build by its `version` and `hash`.
+- `diffs/<version>.json` holds the changes from the previous entry in `roblox-versions.json` to `<version>`. Commit the diffs and `roblox-versions.json`. Do not commit API dumps.
+- `dump:update` writes both files. Do not edit them by hand.
+- A diff lists changes in the shape of the API dump: `element` is `Class`, `Member`, `Enum`, or `EnumItem`, and `type` is `Add`, `Remove`, or `Change`. `value` holds the dump entry after the change, or before it for `Remove`. A `Change` also lists each changed dump field with its `before` and `after` values. An added class or enum also gets an `Add` for each of its members or items. A removed class or enum does not list its members or items.
 
 ## Design
 

@@ -1,4 +1,4 @@
-import { versionFile } from "./paths.ts"
+import { versionsFile } from "./paths.ts"
 
 export type RobloxVersion = {
 	channel: string
@@ -7,16 +7,26 @@ export type RobloxVersion = {
 	published: string
 }
 
-export async function readVersion(): Promise<RobloxVersion | undefined> {
-	const file = Bun.file(versionFile)
+export async function readVersions(): Promise<RobloxVersion[]> {
+	const file = Bun.file(versionsFile)
 	if (!(await file.exists())) {
-		return undefined
+		return []
 	}
-	return (await file.json()) as RobloxVersion
+	return (await file.json()) as RobloxVersion[]
 }
 
-export async function writeVersion(version: RobloxVersion): Promise<void> {
-	await Bun.write(versionFile, `${JSON.stringify(version, null, "\t")}\n`)
+export async function writeVersions(versions: RobloxVersion[]): Promise<void> {
+	await Bun.write(versionsFile, `${JSON.stringify(versions, null, "\t")}\n`)
+}
+
+export async function readCurrentVersion(): Promise<RobloxVersion> {
+	const current = (await readVersions()).at(-1)
+	if (current === undefined) {
+		throw new Error(
+			"roblox-versions.json has no versions. Run `vp run dump:update` first.",
+		)
+	}
+	return current
 }
 
 export function dumpFileName({ hash, channel }: RobloxVersion): string {

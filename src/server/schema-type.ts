@@ -8,6 +8,7 @@ export function schemaType(route: Route): SchemaType | undefined {
 		case "class":
 		case "enum":
 		case "type":
+		case "update":
 			return "TechArticle"
 		case "not-found":
 			return undefined

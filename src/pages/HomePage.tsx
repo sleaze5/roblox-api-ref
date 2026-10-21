@@ -1,5 +1,6 @@
 import { compareNames } from "../api/compare-names.ts"
 import { classesHref, classHref, enumsHref, indexHref } from "../api/routes.ts"
+import { uploadName } from "../api/release.ts"
 import type { Api } from "../api/types.ts"
 import type { IconName } from "../components/icon-names.ts"
 import { Icon } from "../components/Icon.tsx"
@@ -52,8 +53,12 @@ export function HomePage(props: { api: Api }) {
 						{classCount} classes and {enumCount} enums from Roblox Studio{" "}
 						<span class="font-mono text-sm text-fg">
 							{props.api.version}
+						</span>{" "}
+						(
+						<span class="font-mono text-sm text-fg">
+							{uploadName(props.api.hash)}
 						</span>
-						, including every default value in the API dump.
+						), including every default value in the API dump.
 					</p>
 					<button
 						type="button"

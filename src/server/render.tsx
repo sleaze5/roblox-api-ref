@@ -10,9 +10,12 @@ import { TypeIndexPage } from "../pages/index/TypeIndexPage.tsx"
 import { FacetIndexPage } from "../pages/index/FacetIndexPage.tsx"
 import { NotFoundPage } from "../pages/NotFoundPage.tsx"
 import { TypePage } from "../pages/type/TypePage.tsx"
+import { UpdatePage } from "../pages/updates/UpdatePage.tsx"
+import { UpdatesPage } from "../pages/updates/UpdatesPage.tsx"
 import { breadcrumbs } from "./breadcrumbs.ts"
 import { describeRoute } from "./describe-route.ts"
 import { loadApi } from "./load-api.ts"
+import { loadUpdates } from "./load-updates.ts"
 import { llmsTxt as indexText } from "./markdown/llms-txt.ts"
 import { pageMarkdown } from "./markdown/page-markdown.ts"
 import { matchRoute, routePaths, type Route } from "./match-route.ts"
@@ -21,6 +24,7 @@ import { schemaType } from "./schema-type.ts"
 
 function Page(props: { route: Route }) {
 	const api = loadApi()
+	const updates = loadUpdates()
 	switch (props.route.page) {
 		case "home":
 			return <HomePage api={api} />
@@ -42,25 +46,30 @@ function Page(props: { route: Route }) {
 			return <TypePage api={api} item={props.route.item} />
 		case "facet":
 			return <FacetPage api={api} facet={props.route.facet} />
+		case "updates":
+			return <UpdatesPage api={api} updates={updates} />
+		case "update":
+			return <UpdatePage api={api} updates={updates} item={props.route.item} />
 		case "not-found":
 			return <NotFoundPage api={api} />
 	}
 }
 
 export function routes(): string[] {
-	return routePaths(loadApi())
+	return routePaths(loadApi(), loadUpdates())
 }
 
 export function renderPage(path: string): RenderedPage {
 	const api = loadApi()
-	const route = matchRoute(api, path)
+	const updates = loadUpdates()
+	const route = matchRoute(api, updates, path)
 	return {
 		status: route.page === "not-found" ? 404 : 200,
-		...describeRoute(route, api.version),
+		...describeRoute(route, api),
 		body: renderToString(() => <Page route={route} />),
 		schemaType: schemaType(route),
 		breadcrumbs: breadcrumbs(route),
-		markdown: pageMarkdown(api, route),
+		markdown: pageMarkdown(api, updates, route),
 		modified: api.published,
 	}
 }

@@ -24,7 +24,7 @@ export function preferredName(tags: DumpTag[] | undefined): string | undefined {
 	return undefined
 }
 
-function normalizeCapabilities(
+export function normalizeCapabilities(
 	capabilities: DumpCapabilities | undefined,
 ): Capabilities {
 	if (capabilities === undefined) {

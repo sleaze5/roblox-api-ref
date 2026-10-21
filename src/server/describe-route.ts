@@ -4,6 +4,8 @@ import {
 	facetLabels,
 	facetTitles,
 } from "../api/facets/facet-info.ts"
+import { releaseText, type Release } from "../api/release.ts"
+import { updateSummary, updatesLead } from "../api/update-text.ts"
 import type { Route } from "./match-route.ts"
 
 export type PageMeta = {
@@ -17,12 +19,12 @@ function titled(title: string, description: string): PageMeta {
 	return { title: `${title} | ${siteName}`, description }
 }
 
-export function describeRoute(route: Route, version: string): PageMeta {
+export function describeRoute(route: Route, release: Release): PageMeta {
 	switch (route.page) {
 		case "home":
 			return {
 				title: siteName,
-				description: `Search and browse the Roblox Engine API from Studio ${version}.`,
+				description: `Search and browse the Roblox Engine API from ${releaseText(release)}.`,
 			}
 		case "classes":
 			return titled("Classes", "Every Roblox class, arranged by inheritance.")
@@ -60,6 +62,10 @@ export function describeRoute(route: Route, version: string): PageMeta {
 				`${facetLabels[route.facet.kind]}: ${route.facet.name}`,
 				facetDescription(route.facet),
 			)
+		case "updates":
+			return titled("Updates", updatesLead)
+		case "update":
+			return titled(`Update ${route.item.version}`, updateSummary(route.item))
 		case "not-found":
 			return titled("Page not found", "This page does not exist.")
 	}

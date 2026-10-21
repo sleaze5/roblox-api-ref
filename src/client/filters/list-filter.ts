@@ -1,3 +1,4 @@
+import { createChangeFilter } from "./change-filter.ts"
 import { trackFilterHeight } from "./sticky-offset.ts"
 import { readParam, writeParams } from "../url-state.ts"
 import { matchesName } from "./name-match.ts"
@@ -24,6 +25,15 @@ function createRowFilter(list: HTMLElement): TreeFilter {
 	}
 }
 
+function createFilter(list: HTMLElement): TreeFilter {
+	if (list.hasAttribute("data-tree")) {
+		return createTreeFilter(list)
+	}
+	return list.hasAttribute("data-changes")
+		? createChangeFilter(list)
+		: createRowFilter(list)
+}
+
 export function initListFilter(form: HTMLFormElement): void {
 	const list = document.getElementById(form.dataset["listFilter"] ?? "")
 	const input = form.elements.namedItem("text")
@@ -32,9 +42,7 @@ export function initListFilter(form: HTMLFormElement): void {
 	if (list === null || !(input instanceof HTMLInputElement)) {
 		return
 	}
-	const filter = list.hasAttribute("data-tree")
-		? createTreeFilter(list)
-		: createRowFilter(list)
+	const filter = createFilter(list)
 
 	const refresh = () => {
 		const value = input.value.trim()

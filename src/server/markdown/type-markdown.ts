@@ -1,3 +1,4 @@
+import { releaseText } from "../../api/release.ts"
 import { dataTypeDocsHref } from "../../api/docs-links.ts"
 import { luauName } from "../../api/luau-type.ts"
 import { typeHref } from "../../api/routes.ts"
@@ -11,7 +12,7 @@ export function typeMarkdown(api: Api, item: DataType): string {
 	const luau = luauName(item.name)
 	return joinBlocks([
 		`# ${escapeText(item.name)}`,
-		`Roblox Engine API data type from Roblox Studio ${api.version}.`,
+		`Roblox Engine API data type from ${releaseText(api)}.`,
 		factList([
 			["Category", item.category],
 			["Luau type", luau === item.name ? undefined : inlineCode(luau)],

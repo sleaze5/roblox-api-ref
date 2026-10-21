@@ -7,6 +7,7 @@ import {
 	homeHref,
 	indexHref,
 	typesHref,
+	updatesHref,
 } from "../../api/routes.ts"
 import type { IndexGroup } from "../../api/types.ts"
 import type { Crumb } from "./Breadcrumbs.tsx"
@@ -28,6 +29,8 @@ export function classCrumbs(ancestors: string[]): Crumb[] {
 }
 
 export const enumCrumbs: Crumb[] = [home, { label: "Enums", href: enumsHref() }]
+
+export const updatesCrumbs: Crumb[] = [home, { label: "Updates", href: updatesHref() }]
 
 export const indexCrumbs: Crumb[] = [home, { label: "Index", href: indexHref() }]
 

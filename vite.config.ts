@@ -7,6 +7,7 @@ const ignorePatterns = [
 	"dist/**",
 	"node_modules/**",
 	"data/**",
+	"diffs/**",
 	"src/generated/**",
 	"AGENTS_EXPLORE/**",
 ]
@@ -126,6 +127,10 @@ export default defineConfig({
 		tasks: {
 			"dump:update": {
 				command: "bun scripts/dump/update.ts",
+				cache: false,
+			},
+			"deps:update": {
+				command: ["bun scripts/deps/update.ts", "vp install"],
 				cache: false,
 			},
 			"dump": {

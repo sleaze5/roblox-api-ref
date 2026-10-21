@@ -9,6 +9,8 @@ import {
 	indexHref,
 	typeHref,
 	typesHref,
+	updateHref,
+	updatesHref,
 } from "../api/routes.ts"
 import { facetTitles } from "../api/facets/facet-info.ts"
 import type { Route } from "./match-route.ts"
@@ -23,6 +25,7 @@ const classes: Breadcrumb = { name: "Classes", href: classesHref() }
 const enums: Breadcrumb = { name: "Enums", href: enumsHref() }
 const index: Breadcrumb = { name: "Index", href: indexHref() }
 const types: Breadcrumb = { name: "Data types", href: typesHref() }
+const updates: Breadcrumb = { name: "Updates", href: updatesHref() }
 
 export function breadcrumbs(route: Route): Breadcrumb[] {
 	switch (route.page) {
@@ -37,6 +40,17 @@ export function breadcrumbs(route: Route): Breadcrumb[] {
 			return [home, index]
 		case "types":
 			return [home, index, types]
+		case "updates":
+			return [home, updates]
+		case "update":
+			return [
+				home,
+				updates,
+				{
+					name: route.item.version,
+					href: updateHref(route.item.version),
+				},
+			]
 		case "facet-index":
 			return [
 				home,
