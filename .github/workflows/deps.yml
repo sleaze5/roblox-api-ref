@@ -1,0 +1,53 @@
+name: Update dependencies
+
+on:
+    schedule:
+        - cron: 17 6 * * 1
+    workflow_dispatch:
+
+permissions:
+    contents: read
+
+concurrency:
+    group: deps
+    cancel-in-progress: false
+
+jobs:
+    update:
+        runs-on: ubuntu-24.04-arm
+        timeout-minutes: 20
+        permissions:
+            contents: write
+            pull-requests: write
+        steps:
+            - uses: actions/checkout@v7.0.1
+            - uses: ./.github/actions/setup
+
+            - id: update
+              run: |
+                  vp run deps:update
+                  if git diff --quiet -- package.json bun.lock; then changed=false; else changed=true; fi
+                  echo "changed=$changed" >> "$GITHUB_OUTPUT"
+              env:
+                  DEPS_SUMMARY_FILE: ${{ runner.temp }}/deps.md
+
+            - if: steps.update.outputs.changed == 'true'
+              run: vp run ci
+
+            - if: steps.update.outputs.changed == 'true'
+              run: |
+                  branch=deps/update
+                  git config user.name "github-actions[bot]"
+                  git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+                  git switch -C "$branch"
+                  git add package.json bun.lock
+                  git commit -m "Update dependencies" -m "$(cat "$RUNNER_TEMP/deps.md")"
+                  git push --force origin "$branch"
+                  if [ -z "$(gh pr list --head "$branch" --state open --json number --jq '.[].number')" ]; then
+                      gh pr create --base "$BASE" --head "$branch" --title "Update dependencies" --body-file "$RUNNER_TEMP/deps.md"
+                  else
+                      gh pr edit "$branch" --body-file "$RUNNER_TEMP/deps.md"
+                  fi
+              env:
+                  GH_TOKEN: ${{ github.token }}
+                  BASE: ${{ github.event.repository.default_branch }}

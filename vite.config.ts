@@ -129,6 +129,10 @@ export default defineConfig({
 				command: "bun scripts/dump/update.ts",
 				cache: false,
 			},
+			"deps:update": {
+				command: ["bun scripts/deps/update.ts", "vp install"],
+				cache: false,
+			},
 			"dump": {
 				command: "bun scripts/dump/download.ts",
 				cache: false,
