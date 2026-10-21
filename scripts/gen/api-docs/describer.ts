@@ -8,17 +8,25 @@ import { parseHtml } from "./html/parse-html.ts"
 
 export type Describe = (key: string | undefined) => Doc | undefined
 
+export function htmlDescriber(
+	names: ApiNames,
+	context: CodeContext,
+): (html: string) => Doc | undefined {
+	const links: LinkResolver = {
+		href: (href) => resolveHref(names, href),
+		code: (text) => resolveCode(names, text, context),
+	}
+	return (html) => toDoc(parseHtml(html), links)
+}
+
 export function describer(
 	names: ApiNames,
 	docs: ApiDocs,
 	context: CodeContext,
 ): Describe {
-	const links: LinkResolver = {
-		href: (href) => resolveHref(names, href),
-		code: (text) => resolveCode(names, text, context),
-	}
+	const describeHtml = htmlDescriber(names, context)
 	return (key) => {
 		const html = key === undefined ? undefined : docs[key]?.documentation
-		return html === undefined ? undefined : toDoc(parseHtml(html), links)
+		return html === undefined ? undefined : describeHtml(html)
 	}
 }

@@ -1,3 +1,4 @@
+import type { DescriptionPart } from "../../src/api/update-types.ts"
 import type {
 	DumpClass,
 	DumpEnum,
@@ -43,8 +44,22 @@ export type DiffVersion = {
 	hash: string
 }
 
+export type DescriptionTarget =
+	| { element: "Class"; class: string }
+	| { element: "Member"; class: string; member: string; value: DumpMember }
+	| { element: "Enum"; enum: string }
+	| { element: "EnumItem"; enum: string; item: string; value: DumpEnumItem }
+
+export type DescriptionChange = DescriptionTarget & {
+	part: DescriptionPart
+	parameter?: string
+	before: string | null
+	after: string | null
+}
+
 export type DumpDiff = {
 	from: DiffVersion
 	to: DiffVersion
 	changes: DumpChange[]
+	descriptions: DescriptionChange[]
 }

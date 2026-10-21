@@ -4,6 +4,7 @@ import type { ChangeStatus, OwnerChanges } from "../../api/update-types.ts"
 import { ChangeDetails } from "./ChangeDetails.tsx"
 import { ChangeEntryRow } from "./ChangeEntryRow.tsx"
 import { ChangeMark } from "./ChangeMark.tsx"
+import { DescriptionChanges } from "./DescriptionChanges.tsx"
 import { OwnerName } from "./OwnerName.tsx"
 
 const kindNames = { Class: "class", Enum: "enum" } as const
@@ -23,6 +24,9 @@ export function OwnerGroup(props: {
 }) {
 	const id = `${props.idPrefix ?? ""}${ownerAnchor(props.owner)}`
 	const label = statusLabel(props.owner)
+	const status =
+		props.owner.status ??
+		(props.owner.descriptions.length > 0 ? "Changed" : undefined)
 	return (
 		<section
 			id={id}
@@ -32,9 +36,9 @@ export function OwnerGroup(props: {
 			class="flex flex-col gap-2">
 			<h3
 				id={`${id}-title`}
-				data-change={props.owner.status === undefined ? undefined : ""}
+				data-change={status === undefined ? undefined : ""}
 				class="change-line">
-				<ChangeMark status={props.owner.status} />
+				<ChangeMark status={status} />
 				<span class="flex min-w-0 items-center gap-2">
 					<span
 						aria-hidden="true"
@@ -51,6 +55,7 @@ export function OwnerGroup(props: {
 				</span>
 			</h3>
 			<ChangeDetails api={props.api} details={props.owner.details} />
+			<DescriptionChanges details={props.owner.descriptions} />
 			{props.owner.entries.length === 0 ? null : (
 				<ul class="flex flex-col gap-2">
 					{props.owner.entries.map((entry) => (
