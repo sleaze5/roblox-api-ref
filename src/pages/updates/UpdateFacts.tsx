@@ -1,4 +1,4 @@
-import { shownVersion, uploadName } from "../../api/release.ts"
+import { uploadName } from "../../api/release.ts"
 import { updateHref } from "../../api/routes.ts"
 import { formatDate } from "../../api/update-text.ts"
 import {
@@ -30,26 +30,11 @@ function PreviousVersion(props: { update: Update; updates: Update[] }) {
 	)
 }
 
-function BuildFacts(props: { update: Update }) {
-	const shown = shownVersion(props.update)
+function HashFact(props: { update: Update }) {
 	return (
-		<>
-			<Fact label="Hash" hint="The upload that Roblox serves for this version.">
-				<span class="font-mono">{uploadName(shown.hash)}</span>
-			</Fact>
-			{props.update.player === undefined ? null : (
-				<Fact
-					label="API build"
-					hint="The Roblox build whose API dump this update reads. Roblox Player uploads do not include the API dump.">
-					<VersionText
-						release={{
-							version: props.update.version,
-							hash: props.update.hash,
-						}}
-					/>
-				</Fact>
-			)}
-		</>
+		<Fact label="Hash" hint="The Studio upload that this version comes from.">
+			<span class="font-mono">{uploadName(props.update.hash)}</span>
+		</Fact>
 	)
 }
 
@@ -67,7 +52,7 @@ export function UpdateFacts(props: {
 					{formatDate(props.update.published)}
 				</Fact>
 			) : null}
-			<BuildFacts update={props.update} />
+			<HashFact update={props.update} />
 			<Fact
 				label="Compared with"
 				hint="The previous version that this update compares against.">

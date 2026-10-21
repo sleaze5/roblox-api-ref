@@ -1,4 +1,3 @@
-import { shownVersion } from "../../api/release.ts"
 import { updateHref } from "../../api/routes.ts"
 import { changeTotal, updateAnchor, updatesLead } from "../../api/update-text.ts"
 import type { Api } from "../../api/types.ts"
@@ -19,7 +18,7 @@ const recentCount = 10
 function railLinks(recent: Update[], earlier: Update[]): RailLink[] {
 	const links: RailLink[] = recent.map((update) => ({
 		id: updateAnchor(update.version),
-		label: shownVersion(update).version,
+		label: update.version,
 		count: changeTotal(update),
 		countHint: "Changes in this update.",
 	}))
@@ -64,7 +63,7 @@ function UpdateList(props: { api: Api; updates: Update[] }) {
 					<ul class={indexGridClass}>
 						{earlier.map((update) => (
 							<IndexRow
-								name={shownVersion(update).version}
+								name={update.version}
 								href={updateHref(update.version)}
 								count={changeTotal(update)}
 							/>
@@ -92,7 +91,7 @@ export function UpdatesPage(props: { api: Api; updates: Update[] }) {
 				{props.updates.length === 0 ? (
 					<p class="text-fg-muted">
 						There are no updates yet. An update appears here when the site
-						moves to a new Roblox Player version.
+						moves to a new Roblox Studio version.
 					</p>
 				) : (
 					<UpdateList api={props.api} updates={props.updates} />

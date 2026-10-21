@@ -13,7 +13,6 @@ import {
 	updatesHref,
 } from "../api/routes.ts"
 import { facetTitles } from "../api/facets/facet-info.ts"
-import { shownVersion } from "../api/release.ts"
 import type { Route } from "./match-route.ts"
 
 export type Breadcrumb = {
@@ -48,7 +47,7 @@ export function breadcrumbs(route: Route): Breadcrumb[] {
 				home,
 				updates,
 				{
-					name: shownVersion(route.item).version,
+					name: route.item.version,
 					href: updateHref(route.item.version),
 				},
 			]

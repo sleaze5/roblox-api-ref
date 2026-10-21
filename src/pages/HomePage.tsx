@@ -1,6 +1,6 @@
 import { compareNames } from "../api/compare-names.ts"
 import { classesHref, classHref, enumsHref, indexHref } from "../api/routes.ts"
-import { productName, shownVersion, uploadName } from "../api/release.ts"
+import { uploadName } from "../api/release.ts"
 import type { Api } from "../api/types.ts"
 import type { IconName } from "../components/icon-names.ts"
 import { Icon } from "../components/Icon.tsx"
@@ -34,7 +34,6 @@ function BrowseLink(props: {
 }
 
 export function HomePage(props: { api: Api }) {
-	const shown = shownVersion(props.api)
 	const classCount = Object.keys(props.api.classes).length
 	const enumCount = Object.keys(props.api.enums).length
 	const services = Object.values(props.api.classes)
@@ -51,11 +50,13 @@ export function HomePage(props: { api: Api }) {
 						Roblox Engine API
 					</h1>
 					<p class="max-w-prose text-base text-fg-muted">
-						{classCount} classes and {enumCount} enums from{" "}
-						{productName(props.api)}{" "}
-						<span class="font-mono text-sm text-fg">{shown.version}</span> (
+						{classCount} classes and {enumCount} enums from Roblox Studio{" "}
 						<span class="font-mono text-sm text-fg">
-							{uploadName(shown.hash)}
+							{props.api.version}
+						</span>{" "}
+						(
+						<span class="font-mono text-sm text-fg">
+							{uploadName(props.api.hash)}
 						</span>
 						), including every default value in the API dump.
 					</p>

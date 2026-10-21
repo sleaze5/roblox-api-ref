@@ -1,5 +1,4 @@
 import type { Doc } from "./doc-types.ts"
-import type { ClientVersion } from "./release.ts"
 
 export const securityLevels = [
 	"None",
@@ -152,7 +151,6 @@ export type Facet = {
 export type Api = {
 	version: string
 	hash: string
-	player?: ClientVersion
 	channel: string
 	published: string
 	classes: Record<string, Class>

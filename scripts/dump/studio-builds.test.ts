@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vite-plus/test"
-import { buildBefore, latestBuildFor, parseStudioBuilds } from "./studio-builds.ts"
+import { buildBefore, parseStudioBuilds } from "./studio-builds.ts"
 
 const builds = parseStudioBuilds({
 	"0.743.0.7431133": "version-4f087c32742644ab",
@@ -17,17 +17,6 @@ describe("Studio builds", () => {
 			"0.743.0.7431133",
 			"0.744.0.7441077",
 		])
-	})
-
-	test("picks the newest Studio build that is not newer than the player", () => {
-		expect(latestBuildFor(builds, "0.744.0.7441080")).toEqual({
-			version: "0.744.0.7441077",
-			hash: "7aaa6838d36c4448",
-		})
-		expect(latestBuildFor(builds, "0.743.5.7431200")?.version).toBe(
-			"0.743.0.7431133",
-		)
-		expect(latestBuildFor(builds, "0.700.0.7000000")).toBeUndefined()
 	})
 
 	test("finds the build before another build", () => {

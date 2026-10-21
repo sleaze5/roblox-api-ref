@@ -1,4 +1,4 @@
-import type { ClientVersion } from "../../src/api/release.ts"
+import type { Release } from "../../src/api/release.ts"
 
 type ClientVersionResponse = {
 	version: string
@@ -8,7 +8,7 @@ type ClientVersionResponse = {
 export async function fetchLiveVersion(
 	binaryType: string,
 	channel: string,
-): Promise<ClientVersion> {
+): Promise<Release> {
 	const response = await fetch(
 		`https://clientsettings.roblox.com/v2/client-version/${binaryType}/channel/${channel}`,
 	)

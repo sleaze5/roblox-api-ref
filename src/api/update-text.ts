@@ -9,7 +9,7 @@ const dateFormat = new Intl.DateTimeFormat("en-US", {
 })
 
 export const updatesLead =
-	"Every change to the Roblox Engine API between the Roblox Player versions that this site has published, newest first."
+	"Every change to the Roblox Engine API between the Roblox Studio versions that this site has published, newest first."
 
 export function formatDate(iso: string): string {
 	return dateFormat.format(new Date(iso))

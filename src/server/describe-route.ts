@@ -4,7 +4,7 @@ import {
 	facetLabels,
 	facetTitles,
 } from "../api/facets/facet-info.ts"
-import { releaseText, shownVersion, type Release } from "../api/release.ts"
+import { releaseText, type Release } from "../api/release.ts"
 import { updateSummary, updatesLead } from "../api/update-text.ts"
 import type { Route } from "./match-route.ts"
 
@@ -65,10 +65,7 @@ export function describeRoute(route: Route, release: Release): PageMeta {
 		case "updates":
 			return titled("Updates", updatesLead)
 		case "update":
-			return titled(
-				`Update ${shownVersion(route.item).version}`,
-				updateSummary(route.item),
-			)
+			return titled(`Update ${route.item.version}`, updateSummary(route.item))
 		case "not-found":
 			return titled("Page not found", "This page does not exist.")
 	}

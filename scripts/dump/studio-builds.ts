@@ -25,13 +25,6 @@ export async function fetchStudioBuilds(): Promise<StudioBuild[]> {
 	return parseStudioBuilds((await response.json()) as Record<string, string>)
 }
 
-export function latestBuildFor(
-	builds: StudioBuild[],
-	version: string,
-): StudioBuild | undefined {
-	return builds.findLast((build) => compareVersions(build.version, version) <= 0)
-}
-
 export function buildBefore(
 	builds: StudioBuild[],
 	build: StudioBuild,

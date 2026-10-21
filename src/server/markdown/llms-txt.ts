@@ -30,7 +30,7 @@ export function llmsTxt(api: Api): string {
 			"- Check the items and numeric values of a Roblox enum.",
 			"- Check the security level, thread safety, capabilities, and tags of a member, such as Deprecated or Yields.",
 			"- Find the class members that use a data type or an enum.",
-			"- Check what changed in the API from one Roblox Player version to the next.",
+			"- Check what changed in the API from one Roblox Studio version to the next.",
 		].join("\n"),
 		"Do not use this reference for tutorials, guides, or the Luau language. For those, use the Roblox Creator Hub at https://create.roblox.com/docs.",
 		"## URL patterns",

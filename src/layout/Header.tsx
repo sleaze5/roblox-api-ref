@@ -1,5 +1,5 @@
 import { homeHref } from "../api/routes.ts"
-import { shownVersion, uploadName, type Release } from "../api/release.ts"
+import { uploadName, type Release } from "../api/release.ts"
 import { Icon } from "../components/Icon.tsx"
 import { sectionLinks, type Section } from "./section-links.ts"
 
@@ -37,8 +37,7 @@ function SearchButton() {
 }
 
 export function Header(props: { section: Section | undefined; release: Release }) {
-	const shown = shownVersion(props.release)
-	const label = `${uploadName(shown.hash)} (${shown.version})`
+	const label = `${uploadName(props.release.hash)} (${props.release.version})`
 	return (
 		<header class="sticky top-0 z-20 flex h-12 items-center gap-2 border-b border-line bg-surface px-2 md:gap-3 md:px-4">
 			<div class="flex min-w-0 flex-1 items-center gap-2 md:gap-3">

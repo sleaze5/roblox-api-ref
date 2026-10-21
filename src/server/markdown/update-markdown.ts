@@ -1,4 +1,4 @@
-import { releaseText, shownVersion, uploadName } from "../../api/release.ts"
+import { releaseText } from "../../api/release.ts"
 import { addedTags } from "../../api/added-tags.ts"
 import { inlineTokens, signatureParts } from "../../api/signature.ts"
 import { plainTags } from "../../api/tags.ts"
@@ -90,16 +90,10 @@ export function updateMarkdown(update: Update): string {
 			: [`## ${ownerTitles[kind]}`].concat(owners.map(ownerBlock))
 	})
 	return joinBlocks([
-		`# Update ${shownVersion(update).version}`,
+		`# Update ${update.version}`,
 		`${updateSummary(update)} Roblox published this version on ${formatDate(update.published)}. It has ${changeTotal(update)} changes: ${countLine(update)}. The HTML version of this page is at ${siteUrl(updateHref(update.version))}.`,
 		factList([
 			["Version", releaseText(update)],
-			[
-				"API build",
-				update.player === undefined
-					? undefined
-					: `${update.version} (${uploadName(update.hash)})`,
-			],
 			["Compared with", releaseText(update.previous)],
 		]),
 		...sections,
