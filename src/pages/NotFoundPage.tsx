@@ -1,4 +1,5 @@
 import { classesHref } from "../api/routes.ts"
+import { releaseText } from "../api/release.ts"
 import type { Api } from "../api/types.ts"
 import { Icon } from "../components/Icon.tsx"
 import { rootCrumbs } from "../components/page/crumbs.ts"
@@ -11,8 +12,8 @@ export function NotFoundPage(props: { api: Api }) {
 		<Shell release={props.api}>
 			<PageHeader crumbs={rootCrumbs} icon="warning" title="Page not found">
 				<PageLead>
-					This page does not exist in Studio {props.api.version}. Search for
-					the class or enum, or browse the{" "}
+					This page does not exist in {releaseText(props.api)}. Search for the
+					class or enum, or browse the{" "}
 					<a
 						href={classesHref()}
 						class="text-fg underline decoration-line-strong hover:decoration-fg">

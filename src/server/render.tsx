@@ -65,7 +65,7 @@ export function renderPage(path: string): RenderedPage {
 	const route = matchRoute(api, updates, path)
 	return {
 		status: route.page === "not-found" ? 404 : 200,
-		...describeRoute(route, api.version),
+		...describeRoute(route, api),
 		body: renderToString(() => <Page route={route} />),
 		schemaType: schemaType(route),
 		breadcrumbs: breadcrumbs(route),

@@ -1,3 +1,4 @@
+import { releaseName } from "./release.ts"
 import { changeStatuses, type OwnerChanges, type Update } from "./update-types.ts"
 
 const dateFormat = new Intl.DateTimeFormat("en-US", {
@@ -8,14 +9,14 @@ const dateFormat = new Intl.DateTimeFormat("en-US", {
 })
 
 export const updatesLead =
-	"Every change to the Roblox Engine API between the Studio versions that this site has published, newest first."
+	"Every change to the Roblox Engine API between the Roblox Player versions that this site has published, newest first."
 
 export function formatDate(iso: string): string {
 	return dateFormat.format(new Date(iso))
 }
 
 export function updateSummary(update: Update): string {
-	return `Changes to the Roblox Engine API from Studio ${update.previous.version} to ${update.version}.`
+	return `Changes to the Roblox Engine API from ${releaseName(update.previous)} to ${releaseName(update)}.`
 }
 
 export function changeTotal(update: Update): number {

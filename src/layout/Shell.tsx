@@ -1,6 +1,7 @@
 import type { JSX } from "@solidjs/web"
 import { DrawerSections } from "./DrawerSections.tsx"
-import { Header, type Release } from "./Header.tsx"
+import type { Release } from "../api/release.ts"
+import { Header } from "./Header.tsx"
 import { SidebarScroll } from "./SectionSidebar.tsx"
 import type { Section } from "./section-links.ts"
 

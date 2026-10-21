@@ -3,6 +3,10 @@ import { readDiff } from "../../diff/diff-file.ts"
 import type { RobloxVersion } from "../../roblox-version.ts"
 import { buildUpdate } from "./build-update.ts"
 
+function playerOf(version: RobloxVersion): Pick<Update, "player"> {
+	return version.player === undefined ? {} : { player: version.player }
+}
+
 async function readUpdate(from: RobloxVersion, to: RobloxVersion): Promise<Update> {
 	const diff = await readDiff(to)
 	if (diff.from.hash !== from.hash || diff.to.hash !== to.hash) {
@@ -10,7 +14,12 @@ async function readUpdate(from: RobloxVersion, to: RobloxVersion): Promise<Updat
 			`diffs/${to.version}.json compares ${diff.from.version} to ${diff.to.version}, but roblox-versions.json lists ${from.version} before ${to.version}.`,
 		)
 	}
-	return buildUpdate(diff, to.published)
+	const update = buildUpdate(diff, to.published)
+	return {
+		...update,
+		...playerOf(to),
+		previous: { ...update.previous, ...playerOf(from) },
+	}
 }
 
 export async function readUpdates(versions: RobloxVersion[]): Promise<Update[]> {

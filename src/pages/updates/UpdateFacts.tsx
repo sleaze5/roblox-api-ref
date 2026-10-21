@@ -1,3 +1,4 @@
+import { shownVersion, uploadName } from "../../api/release.ts"
 import { updateHref } from "../../api/routes.ts"
 import { formatDate } from "../../api/update-text.ts"
 import {
@@ -7,6 +8,7 @@ import {
 } from "../../api/update-types.ts"
 import { Fact } from "../../components/facts/Fact.tsx"
 import { FactList } from "../../components/facts/FactList.tsx"
+import { VersionText } from "./VersionText.tsx"
 
 const countHints: Record<ChangeStatus, string> = {
 	Added: "Classes, members, enums, and enum items that this version adds.",
@@ -20,13 +22,34 @@ function PreviousVersion(props: { update: Update; updates: Update[] }) {
 		(update) => update.version === props.update.previous.version,
 	)
 	return known ? (
-		<a
-			href={updateHref(props.update.previous.version)}
-			class="font-mono hover:underline">
-			{props.update.previous.version}
+		<a href={updateHref(props.update.previous.version)} class="hover:underline">
+			<VersionText release={props.update.previous} />
 		</a>
 	) : (
-		<span class="font-mono">{props.update.previous.version}</span>
+		<VersionText release={props.update.previous} />
+	)
+}
+
+function BuildFacts(props: { update: Update }) {
+	const shown = shownVersion(props.update)
+	return (
+		<>
+			<Fact label="Hash" hint="The upload that Roblox serves for this version.">
+				<span class="font-mono">{uploadName(shown.hash)}</span>
+			</Fact>
+			{props.update.player === undefined ? null : (
+				<Fact
+					label="API build"
+					hint="The Roblox build whose API dump this update reads. Roblox Player uploads do not include the API dump.">
+					<VersionText
+						release={{
+							version: props.update.version,
+							hash: props.update.hash,
+						}}
+					/>
+				</Fact>
+			)}
+		</>
 	)
 }
 
@@ -44,6 +67,7 @@ export function UpdateFacts(props: {
 					{formatDate(props.update.published)}
 				</Fact>
 			) : null}
+			<BuildFacts update={props.update} />
 			<Fact
 				label="Compared with"
 				hint="The previous version that this update compares against.">

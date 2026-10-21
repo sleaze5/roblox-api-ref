@@ -1,3 +1,4 @@
+import { shownVersion } from "../../api/release.ts"
 import { updateHref } from "../../api/routes.ts"
 import { formatDate, updateAnchor } from "../../api/update-text.ts"
 import type { Api } from "../../api/types.ts"
@@ -22,7 +23,7 @@ export function UpdateSection(props: { api: Api; updates: Update[]; update: Upda
 					<a
 						href={updateHref(props.update.version)}
 						class="font-mono hover:text-fg-bright hover:underline">
-						{props.update.version}
+						{shownVersion(props.update).version}
 					</a>
 					<span class="text-sm font-normal text-fg-faint">
 						{formatDate(props.update.published)}

@@ -1,3 +1,4 @@
+import { shownVersion } from "../../api/release.ts"
 import { ownerAnchor, updateSummary } from "../../api/update-text.ts"
 import type { Api } from "../../api/types.ts"
 import type { Update } from "../../api/update-types.ts"
@@ -39,7 +40,7 @@ export function UpdatePage(props: { api: Api; updates: Update[]; item: Update })
 				<PageHeader
 					crumbs={updatesCrumbs}
 					icon="git-diff"
-					title={props.item.version}
+					title={shownVersion(props.item).version}
 					code>
 					<PageLead>{updateSummary(props.item)}</PageLead>
 					<UpdateFacts

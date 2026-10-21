@@ -1,3 +1,4 @@
+import { releaseText } from "../../api/release.ts"
 import { compareNames } from "../../api/compare-names.ts"
 import { classesHref, enumsHref, typesHref } from "../../api/routes.ts"
 import { plainTags } from "../../api/tags.ts"
@@ -20,7 +21,7 @@ function tagSuffix(tags: string[]): string {
 }
 
 function intro(kind: string, api: Api, href: string): string {
-	return `Every ${kind} in the Roblox Engine API from Roblox Studio ${api.version}. The links are relative to this file. The HTML version of this list is at ${siteUrl(href)}.`
+	return `Every ${kind} in the Roblox Engine API from ${releaseText(api)}. The links are relative to this file. The HTML version of this list is at ${siteUrl(href)}.`
 }
 
 export function classListMarkdown(api: Api): string {

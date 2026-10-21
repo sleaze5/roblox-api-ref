@@ -1,9 +1,7 @@
 import { homeHref } from "../api/routes.ts"
-import type { Api } from "../api/types.ts"
+import { shownVersion, uploadName, type Release } from "../api/release.ts"
 import { Icon } from "../components/Icon.tsx"
 import { sectionLinks, type Section } from "./section-links.ts"
-
-export type Release = Pick<Api, "version" | "hash">
 
 function SectionNav(props: { section: Section | undefined }) {
 	return (
@@ -39,6 +37,8 @@ function SearchButton() {
 }
 
 export function Header(props: { section: Section | undefined; release: Release }) {
+	const shown = shownVersion(props.release)
+	const label = `${uploadName(shown.hash)} (${shown.version})`
 	return (
 		<header class="sticky top-0 z-20 flex h-12 items-center gap-2 border-b border-line bg-surface px-2 md:gap-3 md:px-4">
 			<div class="flex min-w-0 flex-1 items-center gap-2 md:gap-3">
@@ -59,9 +59,9 @@ export function Header(props: { section: Section | undefined; release: Release }
 			<SearchButton />
 			<div class="hidden min-w-0 flex-1 items-center justify-end gap-3 lg:flex">
 				<span
-					data-tooltip={`version-${props.release.hash} (${props.release.version})`}
+					data-tooltip={label}
 					class="min-w-0 truncate font-mono text-xs text-fg-faint">
-					version-{props.release.hash} ({props.release.version})
+					{label}
 				</span>
 			</div>
 		</header>

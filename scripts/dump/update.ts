@@ -1,5 +1,6 @@
 import { diffDump } from "../diff/diff-dump.ts"
 import { writeDiff } from "../diff/diff-file.ts"
+import type { ClientVersion } from "../../src/api/release.ts"
 import type { Dump } from "../gen/dump-types.ts"
 import { compareVersions } from "../compare-versions.ts"
 import { readVersions, writeVersions, type RobloxVersion } from "../roblox-version.ts"
@@ -15,9 +16,17 @@ import {
 
 const channel = "LIVE"
 
-async function release(build: StudioBuild): Promise<RobloxVersion | undefined> {
+async function release(
+	build: StudioBuild,
+	player?: ClientVersion,
+): Promise<RobloxVersion | undefined> {
 	const published = await publishedDate(build)
-	return published === undefined ? undefined : { channel, ...build, published }
+	if (published === undefined) {
+		return undefined
+	}
+	return player === undefined
+		? { channel, ...build, published }
+		: { channel, ...build, player, published }
 }
 
 async function readDump(version: RobloxVersion): Promise<Dump> {
@@ -46,18 +55,18 @@ async function startingVersions(
 	return start === undefined ? [] : [start]
 }
 
-const playerVersion = await fetchLiveVersion("WindowsPlayer", channel)
+const player = await fetchLiveVersion("WindowsPlayer", channel)
 const builds = await fetchStudioBuilds()
-const build = latestBuildFor(builds, playerVersion)
+const build = latestBuildFor(builds, player.version)
 if (build === undefined) {
-	throw new Error(`No Studio build in the version history matches ${playerVersion}.`)
+	throw new Error(`No Studio build in the version history matches ${player.version}.`)
 }
 console.log(
-	`WindowsPlayer ${channel} is ${playerVersion}. The matching Studio build is ${build.version} (${build.hash}).`,
+	`WindowsPlayer ${channel} is ${player.version} (${player.hash}). The matching Studio build is ${build.version} (${build.hash}).`,
 )
 
 async function update(versions: RobloxVersion[], target: StudioBuild): Promise<void> {
-	const next = await release(target)
+	const next = await release(target, player)
 	if (next === undefined) {
 		console.log(
 			`${target.version} is out, but its API files are not on the CDN yet. Keeping ${versions.at(-1)?.version ?? "(none)"}.`,
@@ -77,10 +86,24 @@ async function update(versions: RobloxVersion[], target: StudioBuild): Promise<v
 	console.log("Run `vp run dump` to download the API docs.")
 }
 
+async function updatePlayer(
+	versions: RobloxVersion[],
+	current: RobloxVersion,
+): Promise<void> {
+	if (current.player?.hash === player.hash) {
+		console.log(`Already on ${channel} ${current.version} (${current.hash}).`)
+		return
+	}
+	await writeVersions([...versions.slice(0, -1), { ...current, player }])
+	console.log(
+		`Already on ${channel} ${current.version} (${current.hash}). Updated its WindowsPlayer version to ${player.version} (${player.hash}).`,
+	)
+}
+
 const versions = await readVersions()
 const current = versions.at(-1)
 if (current?.hash === build.hash) {
-	console.log(`Already on ${channel} ${current.version} (${current.hash}).`)
+	await updatePlayer(versions, current)
 } else if (
 	current !== undefined &&
 	compareVersions(build.version, current.version) <= 0

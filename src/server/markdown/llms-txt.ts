@@ -1,3 +1,4 @@
+import { releaseText } from "../../api/release.ts"
 import {
 	classesHref,
 	classHref,
@@ -17,7 +18,7 @@ export function llmsTxt(api: Api): string {
 	const counts = `${Object.keys(api.classes).length} classes, ${Object.keys(api.enums).length} enums, and ${Object.keys(api.dataTypes).length} data types`
 	return joinBlocks([
 		"# Roblox API Reference",
-		`> A reference for the Roblox Engine API. It is generated from the API dump and the English API docs of Roblox Studio ${api.version} (${api.channel} channel), which Roblox published on ${api.published.slice(0, 10)}. It lists ${counts}.`,
+		`> A reference for the Roblox Engine API. It is generated from the API dump and the English API docs for ${releaseText(api)} on the ${api.channel} channel, which Roblox published on ${api.published.slice(0, 10)}. It lists ${counts}.`,
 		`This reference is not an official Roblox product. Each class, enum, and data type page has a Markdown version. To get the Markdown version of a page, remove the trailing slash from the page URL and add ${inlineCode(".md")}. For example, the Markdown version of ${siteUrl(classHref("Part"))} is ${classMarkdownUrl("Part")}.`,
 		"## When to use this reference",
 		[
@@ -29,7 +30,7 @@ export function llmsTxt(api: Api): string {
 			"- Check the items and numeric values of a Roblox enum.",
 			"- Check the security level, thread safety, capabilities, and tags of a member, such as Deprecated or Yields.",
 			"- Find the class members that use a data type or an enum.",
-			"- Check what changed in the API from one Studio version to the next.",
+			"- Check what changed in the API from one Roblox Player version to the next.",
 		].join("\n"),
 		"Do not use this reference for tutorials, guides, or the Luau language. For those, use the Roblox Creator Hub at https://create.roblox.com/docs.",
 		"## URL patterns",

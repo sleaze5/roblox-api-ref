@@ -1,9 +1,11 @@
+import type { ClientVersion } from "../src/api/release.ts"
 import { versionsFile } from "./paths.ts"
 
 export type RobloxVersion = {
 	channel: string
 	version: string
 	hash: string
+	player?: ClientVersion
 	published: string
 }
 

@@ -1,3 +1,4 @@
+import { releaseText, shownVersion, uploadName } from "../../api/release.ts"
 import { addedTags } from "../../api/added-tags.ts"
 import { inlineTokens, signatureParts } from "../../api/signature.ts"
 import { plainTags } from "../../api/tags.ts"
@@ -16,7 +17,7 @@ import type {
 	Update,
 } from "../../api/update-types.ts"
 import { updateHref, updatesHref } from "../../api/routes.ts"
-import { joinBlocks } from "./document.ts"
+import { factList, joinBlocks } from "./document.ts"
 import { escapeText, inlineCode, link } from "./escape.ts"
 import { siteUrl } from "./site-url.ts"
 
@@ -89,8 +90,18 @@ export function updateMarkdown(update: Update): string {
 			: [`## ${ownerTitles[kind]}`].concat(owners.map(ownerBlock))
 	})
 	return joinBlocks([
-		`# Update ${update.version}`,
+		`# Update ${shownVersion(update).version}`,
 		`${updateSummary(update)} Roblox published this version on ${formatDate(update.published)}. It has ${changeTotal(update)} changes: ${countLine(update)}. The HTML version of this page is at ${siteUrl(updateHref(update.version))}.`,
+		factList([
+			["Version", releaseText(update)],
+			[
+				"API build",
+				update.player === undefined
+					? undefined
+					: `${update.version} (${uploadName(update.hash)})`,
+			],
+			["Compared with", releaseText(update.previous)],
+		]),
 		...sections,
 	])
 }
@@ -98,7 +109,7 @@ export function updateMarkdown(update: Update): string {
 export function updateListMarkdown(updates: Update[]): string {
 	const lines = updates.map(
 		(update) =>
-			`- ${link(update.version, `updates/${encodeURIComponent(update.version)}.md`)}: ${formatDate(update.published)}, compared with ${update.previous.version}. ${countLine(update)}.`,
+			`- ${link(releaseText(update), `updates/${encodeURIComponent(update.version)}.md`)}: ${formatDate(update.published)}, compared with ${releaseText(update.previous)}. ${countLine(update)}.`,
 	)
 	return joinBlocks([
 		"# Updates",

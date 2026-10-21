@@ -94,6 +94,7 @@ export function normalizeApi(dump: Dump, docs: ApiDocs, version: RobloxVersion):
 	return {
 		version: version.version,
 		hash: version.hash,
+		...(version.player === undefined ? {} : { player: version.player }),
 		channel: version.channel,
 		published: version.published,
 		classes,

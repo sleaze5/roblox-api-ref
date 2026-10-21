@@ -1,3 +1,4 @@
+import { releaseText } from "../../api/release.ts"
 import { classDocsHref } from "../../api/docs-links.ts"
 import {
 	ancestorsOf,
@@ -48,7 +49,7 @@ export function classMarkdown(api: Api, item: Class): string {
 	const ancestors = ancestorsOf(api, item)
 	return joinBlocks([
 		`# ${escapeText(item.name)}`,
-		`Roblox Engine API class from Roblox Studio ${api.version}.`,
+		`Roblox Engine API class from ${releaseText(api)}.`,
 		factList([
 			[
 				"Inherits from, nearest first",

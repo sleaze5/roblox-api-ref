@@ -1,3 +1,4 @@
+import type { Release } from "./release.ts"
 import type { EnumItem, Member } from "./types.ts"
 
 export const changeStatuses = ["Added", "Removed", "Changed"] as const
@@ -48,14 +49,9 @@ export type OwnerChanges = {
 
 export type ChangeCounts = Record<ChangeStatus, number>
 
-export type UpdateVersion = {
-	version: string
-	hash: string
-}
-
-export type Update = UpdateVersion & {
+export type Update = Release & {
 	published: string
-	previous: UpdateVersion
+	previous: Release
 	counts: ChangeCounts
 	owners: OwnerChanges[]
 }

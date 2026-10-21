@@ -1,3 +1,4 @@
+import { releaseText } from "../../api/release.ts"
 import { enumDocsHref } from "../../api/docs-links.ts"
 import { enumHref } from "../../api/routes.ts"
 import { plainTags } from "../../api/tags.ts"
@@ -30,7 +31,7 @@ function itemTable(items: EnumItem[]): string {
 export function enumMarkdown(api: Api, item: Enum): string {
 	return joinBlocks([
 		`# Enum.${escapeText(item.name)}`,
-		`Roblox Engine API enum from Roblox Studio ${api.version}.`,
+		`Roblox Engine API enum from ${releaseText(api)}.`,
 		factList([
 			[
 				"Tags",
