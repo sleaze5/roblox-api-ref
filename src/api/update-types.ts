@@ -1,3 +1,4 @@
+import type { Doc } from "./doc-types.ts"
 import type { Release } from "./release.ts"
 import type { EnumItem, Member } from "./types.ts"
 
@@ -16,11 +17,22 @@ export type ChangeDetail =
 	| { kind: "value"; label: string; before?: DetailValue; after?: DetailValue }
 	| { kind: "tags"; label: string; tags: string[] }
 
+export type DescriptionPart = "description" | "parameter" | "return"
+
+export type DescriptionDetail = {
+	part: DescriptionPart
+	parameter?: string
+	status: ChangeStatus
+	before?: Doc
+	after?: Doc
+}
+
 type EntryBase = {
 	status: ChangeStatus
 	owner: string
 	name: string
 	details: ChangeDetail[]
+	descriptions: DescriptionDetail[]
 }
 
 export type MemberEntry = EntryBase & {
@@ -44,6 +56,7 @@ export type OwnerChanges = {
 	name: string
 	status?: ChangeStatus
 	details: ChangeDetail[]
+	descriptions: DescriptionDetail[]
 	entries: ChangeEntry[]
 }
 
@@ -53,5 +66,6 @@ export type Update = Release & {
 	published: string
 	previous: Release
 	counts: ChangeCounts
+	descriptionCount: number
 	owners: OwnerChanges[]
 }

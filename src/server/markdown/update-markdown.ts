@@ -17,6 +17,7 @@ import type {
 	Update,
 } from "../../api/update-types.ts"
 import { updateHref, updatesHref } from "../../api/routes.ts"
+import { descriptionLines } from "./description-markdown.ts"
 import { factList, joinBlocks } from "./document.ts"
 import { escapeText, inlineCode, link } from "./escape.ts"
 import { siteUrl } from "./site-url.ts"
@@ -64,7 +65,10 @@ function entryLine(entry: ChangeEntry): string {
 	}
 	const tags = addedTags(entry).map((tag) => tag.label)
 	const tagText = tags.length === 0 ? text : `${text}. Tags: ${tags.join(", ")}`
-	return `- ${withDetails(tagText, entry.details)}`
+	return [
+		`- ${withDetails(tagText, entry.details)}`,
+		...descriptionLines(entry.descriptions, "  "),
+	].join("\n")
 }
 
 function ownerBlock(owner: OwnerChanges): string {
@@ -73,6 +77,7 @@ function ownerBlock(owner: OwnerChanges): string {
 		...(owner.status === undefined
 			? []
 			: [`- ${withDetails(`${owner.status} ${kind}`, owner.details)}`]),
+		...descriptionLines(owner.descriptions, ""),
 		...owner.entries.map(entryLine),
 	]
 	return `### ${escapeText(owner.name)}\n\n${lines.join("\n")}`
@@ -95,6 +100,7 @@ export function updateMarkdown(update: Update): string {
 		factList([
 			["Version", releaseText(update)],
 			["Compared with", releaseText(update.previous)],
+			["Description changes", String(update.descriptionCount)],
 		]),
 		...sections,
 	])

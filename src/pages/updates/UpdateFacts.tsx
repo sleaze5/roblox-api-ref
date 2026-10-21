@@ -63,6 +63,11 @@ export function UpdateFacts(props: {
 					{props.update.counts[status]}
 				</Fact>
 			))}
+			<Fact
+				label="Descriptions"
+				hint="Descriptions that this version adds, changes, or removes.">
+				{props.update.descriptionCount}
+			</Fact>
 		</FactList>
 	)
 }

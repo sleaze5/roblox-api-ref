@@ -1,9 +1,11 @@
 import { compareVersions } from "../compare-versions.ts"
+import { diffDescriptions, type DocumentedDump } from "../diff/diff-descriptions.ts"
 import { diffDump } from "../diff/diff-dump.ts"
 import { writeDiff } from "../diff/diff-file.ts"
+import type { ApiDocs } from "../gen/api-docs/api-docs-types.ts"
 import type { Dump } from "../gen/dump-types.ts"
 import { readVersions, writeVersions, type RobloxVersion } from "../roblox-version.ts"
-import { apiDumpFile, ensureFile } from "./data-files.ts"
+import { apiDocsFile, apiDumpFile, ensureFile } from "./data-files.ts"
 import { fetchLiveVersion } from "./live-version.ts"
 import { publishedDate } from "./published-date.ts"
 import { buildBefore, fetchStudioBuilds, type StudioBuild } from "./studio-builds.ts"
@@ -15,20 +17,29 @@ async function release(build: StudioBuild): Promise<RobloxVersion | undefined> {
 	return published === undefined ? undefined : { channel, ...build, published }
 }
 
-async function readDump(version: RobloxVersion): Promise<Dump> {
-	return (await Bun.file(await ensureFile(apiDumpFile, version)).json()) as Dump
+async function readDump(version: RobloxVersion): Promise<DocumentedDump> {
+	const [dumpPath, docsPath] = await Promise.all([
+		ensureFile(apiDumpFile, version),
+		ensureFile(apiDocsFile, version),
+	])
+	return {
+		dump: (await Bun.file(dumpPath).json()) as Dump,
+		docs: (await Bun.file(docsPath).json()) as ApiDocs,
+	}
 }
 
 async function saveDiff(from: RobloxVersion, to: RobloxVersion): Promise<void> {
 	const [before, after] = await Promise.all([readDump(from), readDump(to)])
-	const changes = diffDump(before, after)
+	const changes = diffDump(before.dump, after.dump)
+	const descriptions = diffDescriptions(before, after)
 	await writeDiff({
 		from: { version: from.version, hash: from.hash },
 		to: { version: to.version, hash: to.hash },
 		changes,
+		descriptions,
 	})
 	console.log(
-		`Saved ${changes.length} changes from ${from.version} to ${to.version}.`,
+		`Saved ${changes.length} API changes and ${descriptions.length} description changes from ${from.version} to ${to.version}.`,
 	)
 }
 

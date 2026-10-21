@@ -6,6 +6,7 @@ import { Signature } from "../../components/members/Signature.tsx"
 import { TagList } from "../../components/TagList.tsx"
 import { ChangeDetails } from "./ChangeDetails.tsx"
 import { ChangeMark } from "./ChangeMark.tsx"
+import { DescriptionChanges } from "./DescriptionChanges.tsx"
 import { changeParts, partsText } from "./change-signature.ts"
 
 type Line = {
@@ -50,6 +51,7 @@ export function ChangeEntryRow(props: { api: Api; entry: ChangeEntry }) {
 			))}
 			{tags.length === 0 ? null : <TagList tags={tags} class="change-indent" />}
 			<ChangeDetails api={props.api} details={props.entry.details} />
+			<DescriptionChanges details={props.entry.descriptions} />
 		</li>
 	)
 }

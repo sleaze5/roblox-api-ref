@@ -36,11 +36,13 @@ const update: Update = {
 	published: "2026-10-19T23:04:06.000Z",
 	previous: { version: "0.1.0.1", hash: "aaaaaaaaaaaaaaaa" },
 	counts: { Added: 3, Removed: 0, Changed: 0 },
+	descriptionCount: 1,
 	owners: [
 		{
 			kind: "Class",
 			name: "ScriptDocument",
 			details: [],
+			descriptions: [],
 			entries: [
 				{
 					kind: "Member",
@@ -48,6 +50,7 @@ const update: Update = {
 					owner: "ScriptDocument",
 					name: yielding.name,
 					details: [],
+					descriptions: [],
 					after: yielding,
 				},
 				{
@@ -56,6 +59,18 @@ const update: Update = {
 					owner: "ScriptDocument",
 					name: restricted.name,
 					details: [],
+					descriptions: [
+						{
+							part: "description",
+							status: "Changed",
+							before: ["Old."],
+							after: [
+								"Whether a call is ",
+								{ tag: "strong", children: ["incoming"] },
+								".",
+							],
+						},
+					],
 					after: restricted,
 				},
 			],
@@ -64,6 +79,7 @@ const update: Update = {
 			kind: "Enum",
 			name: "Material",
 			details: [],
+			descriptions: [],
 			entries: [
 				{
 					kind: "EnumItem",
@@ -71,6 +87,7 @@ const update: Update = {
 					owner: "Material",
 					name: "Old",
 					details: [],
+					descriptions: [],
 					after: {
 						name: "Old",
 						value: 4,
@@ -93,5 +110,13 @@ describe("update Markdown", () => {
 			"- Added `ScriptDocument.IncomingCall: boolean`. Tags: Roblox script security",
 		)
 		expect(lines).toContain("- Added `Enum.Material.Old = 4`. Tags: Deprecated")
+	})
+
+	test("lists description changes under their item", () => {
+		const markdown = updateMarkdown(update)
+		expect(markdown).toContain(
+			"- Added `ScriptDocument.IncomingCall: boolean`. Tags: Roblox script security\n  - Description changed: Whether a call is **incoming**.",
+		)
+		expect(markdown).toContain("- Description changes: 1")
 	})
 })

@@ -25,3 +25,36 @@
 		color: var(--color-danger);
 	}
 }
+
+@utility change-previous {
+	display: flex;
+	flex-direction: column;
+	gap: calc(var(--spacing) * 1.5);
+
+	& > summary {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--spacing);
+		width: fit-content;
+		border-radius: var(--radius-sm);
+		color: var(--color-fg-muted);
+		transition: color var(--duration-fast) var(--ease-standard);
+	}
+
+	& > summary::before {
+		content: "";
+		width: 14px;
+		height: 14px;
+		background-color: currentColor;
+		mask: url("../generated/icons/caret-right.svg") center / contain no-repeat;
+		transition: rotate var(--duration-fast) var(--ease-out);
+	}
+
+	& > summary:hover {
+		color: var(--color-fg);
+	}
+
+	&[open] > summary::before {
+		rotate: 90deg;
+	}
+}
