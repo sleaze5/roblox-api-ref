@@ -27,7 +27,7 @@ function Page(props: { route: Route }) {
 	const updates = loadUpdates()
 	switch (props.route.page) {
 		case "home":
-			return <HomePage api={api} />
+			return <HomePage api={api} updates={updates} />
 		case "classes":
 			return <ClassIndexPage api={api} />
 		case "enums":

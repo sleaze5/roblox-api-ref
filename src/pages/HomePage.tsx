@@ -1,7 +1,14 @@
 import { compareNames } from "../api/compare-names.ts"
-import { classesHref, classHref, enumsHref, indexHref } from "../api/routes.ts"
+import {
+	classesHref,
+	classHref,
+	enumsHref,
+	indexHref,
+	updatesHref,
+} from "../api/routes.ts"
 import { uploadName } from "../api/release.ts"
 import type { Api } from "../api/types.ts"
+import type { Update } from "../api/update-types.ts"
 import type { IconName } from "../components/icon-names.ts"
 import { Icon } from "../components/Icon.tsx"
 import { Shell } from "../layout/Shell.tsx"
@@ -33,7 +40,7 @@ function BrowseLink(props: {
 	)
 }
 
-export function HomePage(props: { api: Api }) {
+export function HomePage(props: { api: Api; updates: Update[] }) {
 	const classCount = Object.keys(props.api.classes).length
 	const enumCount = Object.keys(props.api.enums).length
 	const services = Object.values(props.api.classes)
@@ -88,7 +95,7 @@ export function HomePage(props: { api: Api }) {
 					<h2 id="browse-title" class="text-lg font-semibold">
 						Browse
 					</h2>
-					<div class="grid grid-cols-1 gap-3 md:grid-cols-3">
+					<div class="grid grid-cols-1 gap-3 md:grid-cols-2">
 						<BrowseLink
 							href={classesHref()}
 							label="Class tree"
@@ -102,6 +109,12 @@ export function HomePage(props: { api: Api }) {
 							icon="list-bullets"
 						/>
 						<BrowseLink href={indexHref()} label="Index" icon="books" />
+						<BrowseLink
+							href={updatesHref()}
+							label="Updates"
+							count={props.updates.length}
+							icon="git-diff"
+						/>
 					</div>
 				</section>
 				<section class="flex flex-col gap-3" aria-labelledby="services-title">
