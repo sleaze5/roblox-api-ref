@@ -1,5 +1,5 @@
 import type { SignatureParts } from "../../api/signature.ts"
-import { memberTags, plainTags } from "../../api/tags.ts"
+import { addedTags } from "../../api/added-tags.ts"
 import type { Api, EnumItem, Member } from "../../api/types.ts"
 import type { ChangeEntry, ChangeStatus } from "../../api/update-types.ts"
 import { Signature } from "../../components/members/Signature.tsx"
@@ -33,15 +33,6 @@ function changeLines(api: Api, entry: ChangeEntry): Line[] {
 	return before === undefined
 		? []
 		: [{ status: "Removed", label: "Removed:", parts: before }]
-}
-
-function addedTags(entry: ChangeEntry) {
-	if (entry.status !== "Added" || entry.after === undefined) {
-		return []
-	}
-	return entry.kind === "Member"
-		? memberTags(entry.after)
-		: plainTags(entry.after.tags)
 }
 
 export function ChangeEntryRow(props: { api: Api; entry: ChangeEntry }) {

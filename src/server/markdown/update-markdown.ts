@@ -1,3 +1,4 @@
+import { addedTags } from "../../api/added-tags.ts"
 import { inlineTokens, signatureParts } from "../../api/signature.ts"
 import { plainTags } from "../../api/tags.ts"
 import type { EnumItem, Member } from "../../api/types.ts"
@@ -60,7 +61,9 @@ function entryLine(entry: ChangeEntry): string {
 	if (before !== undefined && after !== undefined && before !== after) {
 		text = `Changed ${inlineCode(before)} to ${inlineCode(after)}`
 	}
-	return `- ${withDetails(text, entry.details)}`
+	const tags = addedTags(entry).map((tag) => tag.label)
+	const tagText = tags.length === 0 ? text : `${text}. Tags: ${tags.join(", ")}`
+	return `- ${withDetails(tagText, entry.details)}`
 }
 
 function ownerBlock(owner: OwnerChanges): string {

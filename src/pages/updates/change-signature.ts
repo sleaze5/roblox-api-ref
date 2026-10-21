@@ -1,4 +1,4 @@
-import { token, unlinked } from "../../api/code-token.ts"
+import { token, unlinked, type CodeToken } from "../../api/code-token.ts"
 import { enumHref, enumItemHref, memberHref } from "../../api/routes.ts"
 import {
 	inlineTokens,
@@ -6,46 +6,31 @@ import {
 	type SignatureParts,
 } from "../../api/signature.ts"
 import type { Api, EnumItem, Member } from "../../api/types.ts"
+import { liveTokens, siteLinks } from "./site-links.ts"
 
-function unlinkedParts(parts: SignatureParts): SignatureParts {
+function mapParts(
+	parts: SignatureParts,
+	map: (tokens: CodeToken[]) => CodeToken[],
+): SignatureParts {
 	const copy: SignatureParts = {
-		owner: unlinked(parts.owner),
-		head: unlinked(parts.head),
-		tail: unlinked(parts.tail),
+		owner: map(parts.owner),
+		head: map(parts.head),
+		tail: map(parts.tail),
 	}
 	if (parts.parameters !== undefined) {
-		copy.parameters = parts.parameters.map(unlinked)
+		copy.parameters = parts.parameters.map(map)
 	}
 	return copy
 }
 
-function memberParts(api: Api, owner: string, member: Member): SignatureParts {
-	const exists = api.classes[owner]?.members.some(
-		(current) => current.name === member.name && current.kind === member.kind,
-	)
-	return signatureParts(
-		member,
-		owner,
-		exists ? memberHref(owner, member.kind, member.name) : undefined,
-	)
-}
-
-function enumItemParts(api: Api, owner: string, item: EnumItem): SignatureParts {
-	const current = api.enums[owner]
-	const exists = current?.items.some((entry) => entry.name === item.name)
+function enumItemParts(owner: string, item: EnumItem): SignatureParts {
 	return {
 		owner: [
 			token("Enum.", "punctuation"),
-			token(owner, "type", current === undefined ? undefined : enumHref(owner)),
+			token(owner, "type", enumHref(owner)),
 			token(".", "punctuation"),
 		],
-		head: [
-			token(
-				item.name,
-				"constant",
-				exists ? enumItemHref(owner, item.name) : undefined,
-			),
-		],
+		head: [token(item.name, "constant", enumItemHref(owner, item.name))],
 		tail: [token(" = ", "punctuation"), token(String(item.value), "constant")],
 	}
 }
@@ -58,9 +43,13 @@ export function changeParts(
 ): SignatureParts {
 	const parts =
 		"kind" in value
-			? memberParts(api, owner, value)
-			: enumItemParts(api, owner, value)
-	return linked ? parts : unlinkedParts(parts)
+			? signatureParts(value, owner, memberHref(owner, value.kind, value.name))
+			: enumItemParts(owner, value)
+	if (!linked) {
+		return mapParts(parts, unlinked)
+	}
+	const links = siteLinks(api)
+	return mapParts(parts, (tokens) => liveTokens(tokens, links))
 }
 
 export function partsText(parts: SignatureParts): string {
