@@ -19,9 +19,32 @@ describe("safe upgrades", () => {
 		expect(safeUpgrade("0.18.1", ["0.18.3", "0.19.0", "1.0.0"])).toBe("0.18.3")
 	})
 
-	test("leaves prerelease versions and up-to-date versions alone", () => {
-		expect(safeUpgrade("2.0.0-rc.15", ["2.0.0-rc.16", "2.0.0"])).toBeUndefined()
+	test("leaves up-to-date versions alone", () => {
 		expect(safeUpgrade("1.3.0", ["1.2.9", "1.3.0", "2.0.0"])).toBeUndefined()
+	})
+
+	test("moves a prerelease along its own line", () => {
+		expect(
+			safeUpgrade("2.0.0-rc.15", [
+				"2.0.0-rc.9",
+				"2.0.0-rc.16",
+				"2.0.0-beta.20",
+				"2.1.0-rc.1",
+				"3.0.0",
+			]),
+		).toBe("2.0.0-rc.16")
+		expect(safeUpgrade("3.0.0-next.50", ["3.0.0-next.51", "3.0.0-next.49"])).toBe(
+			"3.0.0-next.51",
+		)
+		expect(
+			safeUpgrade("2.0.0-rc.16", ["2.0.0-rc.16", "2.0.0-rc.2"]),
+		).toBeUndefined()
+	})
+
+	test("moves a prerelease to the stable release of the same version", () => {
+		expect(safeUpgrade("2.0.0-rc.15", ["2.0.0-rc.16", "2.0.0", "2.0.1"])).toBe(
+			"2.0.0",
+		)
 	})
 
 	test("reads npm aliases and writes the new version back into them", () => {

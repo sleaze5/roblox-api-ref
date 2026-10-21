@@ -2,7 +2,7 @@ import { join } from "node:path"
 import { rootDir } from "../paths.ts"
 import { fetchVersions } from "./npm-versions.ts"
 import { parseSpec } from "./package-spec.ts"
-import { parseVersion, safeUpgrade } from "./semver.ts"
+import { safeUpgrade } from "./semver.ts"
 
 type PackageJson = {
 	dependencies?: Record<string, string>
@@ -21,7 +21,6 @@ const packagePath = join(rootDir, "package.json")
 const manifest = (await Bun.file(packagePath).json()) as PackageJson
 const versionCache = new Map<string, Promise<string[]>>()
 const changes: Change[] = []
-const held: string[] = []
 
 function versionsOf(name: string): Promise<string[]> {
 	let versions = versionCache.get(name)
@@ -37,10 +36,6 @@ async function upgrade(
 	name: string,
 	current: string,
 ): Promise<Change | undefined> {
-	if (parseVersion(current)?.prerelease !== undefined) {
-		held.push(`${label} ${current}`)
-		return undefined
-	}
 	const next = safeUpgrade(current, await versionsOf(name))
 	return next === undefined ? undefined : { label, from: current, to: next }
 }
@@ -96,16 +91,9 @@ if (changes.length > 0) {
 	await Bun.write(packagePath, `${JSON.stringify(manifest, null, "\t")}\n`)
 }
 
-const lines = [
-	...changes.map((change) => `- \`${change.label}\` ${change.from} → ${change.to}`),
-	...(held.length === 0
-		? []
-		: [
-				"",
-				"Prerelease versions are left as they are:",
-				...held.map((entry) => `- \`${entry}\``),
-			]),
-]
+const lines = changes.map(
+	(change) => `- \`${change.label}\` ${change.from} → ${change.to}`,
+)
 console.log(
 	changes.length === 0
 		? "Every dependency is up to date."
