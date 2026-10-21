@@ -9,6 +9,7 @@ import {
 	type Facet,
 	type FacetKind,
 } from "../api/types.ts"
+import type { Update } from "../api/update-types.ts"
 
 export type Route =
 	| { page: "home" }
@@ -21,15 +22,18 @@ export type Route =
 	| { page: "enum"; item: Enum }
 	| { page: "type"; item: DataType }
 	| { page: "facet"; facet: Facet }
+	| { page: "updates" }
+	| { page: "update"; item: Update }
 	| { page: "not-found" }
 
 const indexPages = {
 	classes: { page: "classes" },
 	enums: { page: "enums" },
 	index: { page: "index" },
+	updates: { page: "updates" },
 } as const satisfies Record<string, Route>
 
-export function routePaths(api: Api): string[] {
+export function routePaths(api: Api, updates: Update[]): string[] {
 	return [
 		"/",
 		...Object.keys(indexPages).map((name) => `/${name}/`),
@@ -38,6 +42,7 @@ export function routePaths(api: Api): string[] {
 			(name) => `/classes/${encodeURIComponent(name)}/`,
 		),
 		...Object.keys(api.enums).map((name) => `/enums/${encodeURIComponent(name)}/`),
+		...updates.map((update) => `/updates/${encodeURIComponent(update.version)}/`),
 		"/index/types/",
 		...Object.keys(api.dataTypes).map(
 			(name) => `/index/types/${encodeURIComponent(name)}/`,
@@ -53,7 +58,7 @@ export function routePaths(api: Api): string[] {
 	]
 }
 
-function itemRoute(api: Api, section: string, name: string): Route {
+function itemRoute(api: Api, updates: Update[], section: string, name: string): Route {
 	if (section === "classes") {
 		const item = api.classes[name]
 		return item === undefined ? { page: "not-found" } : { page: "class", item }
@@ -61,6 +66,10 @@ function itemRoute(api: Api, section: string, name: string): Route {
 	if (section === "enums") {
 		const item = api.enums[name]
 		return item === undefined ? { page: "not-found" } : { page: "enum", item }
+	}
+	if (section === "updates") {
+		const item = updates.find((update) => update.version === name)
+		return item === undefined ? { page: "not-found" } : { page: "update", item }
 	}
 	return { page: "not-found" }
 }
@@ -84,7 +93,7 @@ function indexRoute(api: Api, section: string, name?: string): Route {
 	return facet === undefined ? { page: "not-found" } : { page: "facet", facet }
 }
 
-export function matchRoute(api: Api, path: string): Route {
+export function matchRoute(api: Api, updates: Update[], path: string): Route {
 	const base = import.meta.env.BASE_URL
 	const relative = path.startsWith(base)
 		? path.slice(base.length)
@@ -104,7 +113,7 @@ export function matchRoute(api: Api, path: string): Route {
 		return indexRoute(api, name, value)
 	}
 	if (segments.length === 2 && name !== undefined) {
-		return itemRoute(api, section, name)
+		return itemRoute(api, updates, section, name)
 	}
 	return { page: "not-found" }
 }

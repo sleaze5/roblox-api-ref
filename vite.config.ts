@@ -7,6 +7,7 @@ const ignorePatterns = [
 	"dist/**",
 	"node_modules/**",
 	"data/**",
+	"diffs/**",
 	"src/generated/**",
 	"AGENTS_EXPLORE/**",
 ]

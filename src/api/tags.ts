@@ -35,6 +35,10 @@ const securityLabels: Record<Security, string> = {
 	NotAccessibleSecurity: "Not accessible",
 }
 
+export function securityLabel(security: Security): string {
+	return securityLabels[security]
+}
+
 export function securityRank(security: Security): number {
 	return securityLevels.indexOf(security)
 }

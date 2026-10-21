@@ -57,10 +57,10 @@ export function Header(props: { section: Section | undefined; release: Release }
 				<SectionNav section={props.section} />
 			</div>
 			<SearchButton />
-			<div class="hidden min-w-0 flex-1 items-center justify-end gap-3 md:flex">
+			<div class="hidden min-w-0 flex-1 items-center justify-end gap-3 lg:flex">
 				<span
 					data-tooltip={`version-${props.release.hash} (${props.release.version})`}
-					class="hidden min-w-0 truncate font-mono text-xs text-fg-faint lg:block">
+					class="min-w-0 truncate font-mono text-xs text-fg-faint">
 					version-{props.release.hash} ({props.release.version})
 				</span>
 			</div>

@@ -97,11 +97,11 @@ Property, event, and callback names use `--color-fg-bright` at weight 500. Param
 
 Semantic:
 
-| Token             | Value     | Use                                                |
-| ----------------- | --------- | -------------------------------------------------- |
-| `--color-warning` | `#d2a15a` | The Deprecated tag                                 |
-| `--color-danger`  | `#d9675e` | Security tags for members that only Roblox can use |
-| `--color-success` | `#66a978` | Confirmation, such as a copied link                |
+| Token | Value | Use |
+| --- | --- | --- |
+| `--color-warning` | `#d2a15a` | The Deprecated tag |
+| `--color-danger` | `#d9675e` | Security tags for members that only Roblox can use, and the `−` mark of a removed line on Updates pages |
+| `--color-success` | `#66a978` | Confirmation, such as a copied link, and the `+` mark of an added line on Updates pages |
 
 Use semantic colors only for text, icons, and 1px borders. Do not fill large areas with them.
 
@@ -146,6 +146,7 @@ Use this scale. Do not use other sizes.
 | Event               | `lightning`          |
 | Callback            | `arrow-u-up-left`    |
 | Index               | `books`              |
+| Update              | `git-diff`           |
 | Tag                 | `tag`                |
 | Security level      | `shield`             |
 | Capability          | `puzzle-piece`       |
@@ -202,7 +203,7 @@ Keep nested curves concentric: the inner radius equals the outer radius minus th
    sidebar          content                              right rail
 ```
 
-- The header is 48px tall on `--color-surface`. The site name and the section links sit on the left, the search trigger in the middle, and the build version on the right. Member filters stay in the content column. Write the build version as `version-<hash> (<version>)`, such as `version-4f087c32742644ab (0.743.0.7431133)`, in Geist Mono `--text-xs` and `--color-fg-faint`.
+- The header is 48px tall on `--color-surface`. The site name and the section links (Classes, Enums, Index, and Updates) sit on the left, the search trigger in the middle, and the build version on the right. From 1024px to 1279px, where the build version is hidden, the search trigger moves to the right edge so the section links have room. Member filters stay in the content column. Write the build version as `version-<hash> (<version>)`, such as `version-4f087c32742644ab (0.743.0.7431133)`, in Geist Mono `--text-xs` and `--color-fg-faint`.
 - The sidebar is 264px wide on `--color-surface`. It holds a filter field and the full index of its section: the whole class tree on the Classes listing and class pages, every enum on the Enums listing and enum pages, and the whole index on every Index page. Listings and detail pages of a section share the same sidebar, so moving between them never shifts the content column. The current page is selected, its ancestors are open, and the sidebar starts scrolled to it. Only the home page and the not found page have no sidebar.
 - In the class tree of the sidebar, the row of each open class sticks below the filter field while its subclasses scroll, so the stuck rows show the inheritance path of the rows below them, like the sticky scroll of a code editor's file tree. A row sticks one row lower for each level of depth. Clicking a stuck row scrolls the tree to that class instead of opening its page or collapsing it.
 - The content column is on `--color-canvas`. Its maximum width is 760px. The page always reserves the scrollbar gutter, so short and long pages put the column in the same place.
@@ -321,6 +322,25 @@ The Index section collects everything that the `gen` task derives from the dump 
 - Property categories index only properties defined by each class, without duplicating inherited properties.
 - Preserve category names exactly, including case. When names differ only in case, generation adds a numeric suffix to the colliding URL so both pages work on case-insensitive filesystems.
 - Only data type names use `--color-code-type`. Other facet names are identifiers, not types, and use `--color-fg`.
+
+### Updates
+
+The Updates section shows how the API changed from each version in `roblox-versions.json` to the next. The `dump:update` task writes one diff per version to `diffs/`, and the `gen` task builds the pages from those diffs.
+
+- The header link is "Updates", at `/updates/`. Each update has a page at `/updates/<version>/`, such as `/updates/0.744.0.7441077/`. The sidebar lists every update, newest first.
+- The Updates listing shows the 10 newest updates in full, newest first, and lists older updates under "Earlier updates". Each update is a section whose `h2` holds the `git-diff` icon, the version in Geist Mono as a link to its page, and the publish date in `--color-fg-faint`. Its facts follow: the version it is compared with, and the number of added, removed, and changed items.
+- An update page names the version in Geist Mono as its `h1`, says in one sentence which two versions it compares, and shows its facts with the publish date first. It groups changes into a Classes section and an Enums section. The rail lists each changed class and enum.
+- Changes read like a unified diff. Each changed class or enum is an `h3` group: the kind icon, then the name in `--color-code-type`, linked when the class or enum still exists.
+- Below the group heading, each changed member or enum item is one line of Luau, written as in [Signatures](#signatures), after a 16px gutter mark in Geist Mono:
+    - `+` in `--color-success` for an added item.
+    - `−` in `--color-danger` for a removed item.
+    - `~` in `--color-fg-faint` for a changed item whose signature did not change.
+    - A changed signature shows the old line with `−`, then the new line with `+`.
+- Screen readers hear "Added", "Removed", "Changed", "Before", or "After" instead of a mark. Marks are the only color on a change line outside code. Do not fill change lines with color.
+- Under its line, a changed class, enum, member, or enum item lists its other changed details, indented to the signature: the label in `--color-fg-faint`, the old value struck through in `--color-fg-faint`, an arrow, and the new value in `--color-fg`. Changed tags show as tag chips under "Added tags" and "Removed tags". An added member shows its tags as on its class page.
+- The heading of an added class or enum ends with "Added class" or "Added enum" in `--text-xs` `--color-fg-faint`, and lists its superclass and tags. A removed class or enum ends with "Removed class" or "Removed enum" and does not list its members or items.
+- Removed members, removed enum items, and old signatures are not links.
+- The filter uses `q`. It matches change names, such as `Part.Size`. A class or enum name shows its whole group. The count inside the filter field counts changes.
 
 ### Tags
 

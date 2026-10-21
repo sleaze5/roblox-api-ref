@@ -1,0 +1,27 @@
+@utility change-line {
+	display: grid;
+	grid-template-columns: calc(var(--spacing) * 4) minmax(0, 1fr);
+	column-gap: calc(var(--spacing) * 2);
+	align-items: start;
+	min-width: 0;
+}
+
+@utility change-indent {
+	padding-left: calc(var(--spacing) * 6);
+}
+
+@utility change-mark {
+	color: var(--color-fg-faint);
+	font-family: var(--font-mono);
+	font-weight: var(--font-weight-medium);
+	line-height: calc(var(--spacing) * 6);
+	text-align: center;
+
+	&[data-status="Added"] {
+		color: var(--color-success);
+	}
+
+	&[data-status="Removed"] {
+		color: var(--color-danger);
+	}
+}

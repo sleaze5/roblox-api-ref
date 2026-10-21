@@ -1,50 +1,93 @@
-import { readVersion, writeVersion, type RobloxVersion } from "../roblox-version.ts"
+import { diffDump } from "../diff/diff-dump.ts"
+import { writeDiff } from "../diff/diff-file.ts"
+import type { Dump } from "../gen/dump-types.ts"
+import { compareVersions } from "../compare-versions.ts"
+import { readVersions, writeVersions, type RobloxVersion } from "../roblox-version.ts"
+import { apiDumpFile, ensureFile } from "./data-files.ts"
+import { fetchLiveVersion } from "./live-version.ts"
 import { publishedDate } from "./published-date.ts"
+import {
+	buildBefore,
+	fetchStudioBuilds,
+	latestBuildFor,
+	type StudioBuild,
+} from "./studio-builds.ts"
 
 const channel = "LIVE"
 
-type ClientVersionResponse = {
-	version: string
-	clientVersionUpload: string
+async function release(build: StudioBuild): Promise<RobloxVersion | undefined> {
+	const published = await publishedDate(build)
+	return published === undefined ? undefined : { channel, ...build, published }
 }
 
-const response = await fetch(
-	`https://clientsettings.roblox.com/v2/client-version/WindowsStudio64/channel/${channel}`,
-)
-if (!response.ok) {
-	throw new Error(
-		`Failed to fetch the latest ${channel} version: HTTP ${response.status}`,
+async function readDump(version: RobloxVersion): Promise<Dump> {
+	return (await Bun.file(await ensureFile(apiDumpFile, version)).json()) as Dump
+}
+
+async function saveDiff(from: RobloxVersion, to: RobloxVersion): Promise<void> {
+	const [before, after] = await Promise.all([readDump(from), readDump(to)])
+	const changes = diffDump(before, after)
+	await writeDiff({
+		from: { version: from.version, hash: from.hash },
+		to: { version: to.version, hash: to.hash },
+		changes,
+	})
+	console.log(
+		`Saved ${changes.length} changes from ${from.version} to ${to.version}.`,
 	)
 }
 
-const { version, clientVersionUpload } =
-	(await response.json()) as ClientVersionResponse
-const hash = /^version-([0-9a-f]{16})$/.exec(clientVersionUpload)?.[1]
-if (hash === undefined) {
-	throw new Error(`Unexpected version upload id: ${clientVersionUpload}`)
+async function startingVersions(
+	builds: StudioBuild[],
+	build: StudioBuild,
+): Promise<RobloxVersion[]> {
+	const previous = buildBefore(builds, build)
+	const start = previous === undefined ? undefined : await release(previous)
+	return start === undefined ? [] : [start]
 }
 
-const current = await readVersion()
-const previous = current?.version ?? "(none)"
+const playerVersion = await fetchLiveVersion("WindowsPlayer", channel)
+const builds = await fetchStudioBuilds()
+const build = latestBuildFor(builds, playerVersion)
+if (build === undefined) {
+	throw new Error(`No Studio build in the version history matches ${playerVersion}.`)
+}
+console.log(
+	`WindowsPlayer ${channel} is ${playerVersion}. The matching Studio build is ${build.version} (${build.hash}).`,
+)
 
-async function update(release: Omit<RobloxVersion, "published">): Promise<void> {
-	const label = `${release.channel} ${release.version} (${release.hash})`
-	const published = await publishedDate(release)
-	if (published === undefined) {
+async function update(versions: RobloxVersion[], target: StudioBuild): Promise<void> {
+	const next = await release(target)
+	if (next === undefined) {
 		console.log(
-			`${label} is out, but its API files are not on the CDN yet. Keeping ${previous}.`,
+			`${target.version} is out, but its API files are not on the CDN yet. Keeping ${versions.at(-1)?.version ?? "(none)"}.`,
 		)
 		return
 	}
-	await writeVersion({ ...release, published })
+	const known =
+		versions.length > 0 ? versions : await startingVersions(builds, target)
+	const previous = known.at(-1)
+	if (previous !== undefined) {
+		await saveDiff(previous, next)
+	}
+	await writeVersions([...known, next])
 	console.log(
-		`Updated ${release.channel} ${previous} -> ${release.version} (${release.hash}).`,
+		`Updated ${channel} ${previous?.version ?? "(none)"} -> ${next.version} (${next.hash}).`,
 	)
-	console.log("Run `vp run dump` to download the API dump.")
+	console.log("Run `vp run dump` to download the API docs.")
 }
 
-if (current?.hash === hash && current.channel === channel) {
-	console.log(`Already on ${channel} ${version} (${hash}).`)
+const versions = await readVersions()
+const current = versions.at(-1)
+if (current?.hash === build.hash) {
+	console.log(`Already on ${channel} ${current.version} (${current.hash}).`)
+} else if (
+	current !== undefined &&
+	compareVersions(build.version, current.version) <= 0
+) {
+	console.log(
+		`${build.version} is not newer than ${current.version}. Keeping ${current.version}.`,
+	)
 } else {
-	await update({ channel, version, hash })
+	await update(versions, build)
 }

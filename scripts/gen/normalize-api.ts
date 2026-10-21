@@ -11,6 +11,7 @@ import { applyApiDocs } from "./api-docs/apply-api-docs.ts"
 import type { ApiDocs } from "./api-docs/api-docs-types.ts"
 import type { Dump } from "./dump-types.ts"
 import { collectFacets } from "./facets/collect-facets.ts"
+import { normalizeEnumItem } from "./normalize-enum-item.ts"
 import { normalizeMember, normalizeTags } from "./normalize-member.ts"
 import { resolvePreferredMembers } from "./resolve-preferred.ts"
 import {
@@ -59,12 +60,9 @@ function normalizeEnums(dump: Dump, usage: TypeUsageIndex): Record<string, Enum>
 		enums[dumpEnum.Name] = {
 			name: dumpEnum.Name,
 			tags: normalizeTags(dumpEnum.Tags),
-			items: dumpEnum.Items.map((item) => ({
-				name: item.Name,
-				value: item.Value,
-				tags: normalizeTags(item.Tags),
-				legacyNames: item.LegacyNames ?? [],
-			})).sort((a, b) => a.value - b.value),
+			items: dumpEnum.Items.map(normalizeEnumItem).sort(
+				(a, b) => a.value - b.value,
+			),
 			usedBy: usageOf(usage, "Enum", dumpEnum.Name),
 		}
 	}

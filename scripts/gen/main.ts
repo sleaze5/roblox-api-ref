@@ -1,7 +1,7 @@
 import { join } from "node:path"
 import { iconNames, maskIconNames } from "../../src/components/icon-names.ts"
 import { dataDir, generatedDir } from "../paths.ts"
-import { apiDocsFileName, dumpFileName, readVersion } from "../roblox-version.ts"
+import { apiDocsFileName, dumpFileName, readVersions } from "../roblox-version.ts"
 import type { ApiDocs } from "./api-docs/api-docs-types.ts"
 import type { Dump } from "./dump-types.ts"
 import { buildFavicon } from "./favicon.ts"
@@ -10,19 +10,25 @@ import { buildIconSprite, readIcon } from "./icon-sprite.ts"
 import { normalizeApi } from "./normalize-api.ts"
 import { buildSearchIndex } from "./search-index.ts"
 import { subsetFonts } from "./subset-fonts.ts"
+import { readUpdates } from "./updates/read-updates.ts"
 
-const version = await readVersion()
+const versions = await readVersions()
+const version = versions.at(-1)
 if (version === undefined) {
-	throw new Error("roblox-version.json is missing. Run `vp run dump:update` first.")
+	throw new Error(
+		"roblox-versions.json has no versions. Run `vp run dump:update` first.",
+	)
 }
 
 const dump = (await Bun.file(join(dataDir, dumpFileName(version))).json()) as Dump
 const docs = (await Bun.file(join(dataDir, apiDocsFileName(version))).json()) as ApiDocs
 const api = normalizeApi(dump, docs, version)
 const searchIndex = buildSearchIndex(api)
+const updates = await readUpdates(versions)
 
 await Promise.all([
 	Bun.write(join(generatedDir, "api.json"), JSON.stringify(api)),
+	Bun.write(join(generatedDir, "updates.json"), JSON.stringify(updates)),
 	Bun.write(
 		join(generatedDir, "facet-slugs.json"),
 		JSON.stringify(buildFacetSlugs(api.facets)),
@@ -37,5 +43,5 @@ await Promise.all([
 ])
 
 console.log(
-	`Generated ${Object.keys(api.classes).length} classes, ${Object.keys(api.enums).length} enums, ${Object.keys(api.dataTypes).length} data types, and ${searchIndex.names.length} search entries for ${version.channel} ${version.version}.`,
+	`Generated ${Object.keys(api.classes).length} classes, ${Object.keys(api.enums).length} enums, ${Object.keys(api.dataTypes).length} data types, ${searchIndex.names.length} search entries, and ${updates.length} updates for ${version.channel} ${version.version}.`,
 )

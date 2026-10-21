@@ -33,7 +33,7 @@ jobs:
             - id: version
               run: |
                   vp run dump:update
-                  if git diff --quiet -- roblox-version.json; then changed=false; else changed=true; fi
+                  if git diff --quiet -- roblox-versions.json; then changed=false; else changed=true; fi
                   echo "changed=$changed" >> "$GITHUB_OUTPUT"
                   if [ "$changed" = true ] || [ "$FORCE" = true ]; then release=true; else release=false; fi
                   echo "release=$release" >> "$GITHUB_OUTPUT"
@@ -47,10 +47,11 @@ jobs:
 
             - if: steps.version.outputs.changed == 'true'
               run: |
-                  version=$(sed -n 's/.*"version": "\(.*\)".*/\1/p' roblox-version.json)
+                  version=$(jq -r '.[-1].version' roblox-versions.json)
                   git config user.name "github-actions[bot]"
                   git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-                  git commit -m "Update Roblox to LIVE $version" -- roblox-version.json
+                  git add roblox-versions.json diffs
+                  git commit -m "Update Roblox to LIVE $version"
                   git pull --rebase
                   git push
 

@@ -4,6 +4,7 @@ import {
 	enumsHref,
 	homeHref,
 	typesHref,
+	updatesHref,
 } from "../../api/routes.ts"
 import type { Api } from "../../api/types.ts"
 import { joinBlocks } from "./document.ts"
@@ -28,6 +29,7 @@ export function llmsTxt(api: Api): string {
 			"- Check the items and numeric values of a Roblox enum.",
 			"- Check the security level, thread safety, capabilities, and tags of a member, such as Deprecated or Yields.",
 			"- Find the class members that use a data type or an enum.",
+			"- Check what changed in the API from one Studio version to the next.",
 		].join("\n"),
 		"Do not use this reference for tutorials, guides, or the Luau language. For those, use the Roblox Creator Hub at https://create.roblox.com/docs.",
 		"## URL patterns",
@@ -35,13 +37,15 @@ export function llmsTxt(api: Api): string {
 			`- Class: ${home}classes/{ClassName}.md`,
 			`- Enum: ${home}enums/{EnumName}.md`,
 			`- Data type: ${home}index/types/{TypeName}.md`,
+			`- Update: ${home}updates/{Version}.md`,
 		].join("\n"),
-		`Replace the placeholder with the exact name, such as ${inlineCode("Part")}, ${inlineCode("KeyCode")}, or ${inlineCode("CFrame")}. Names are case-sensitive. Enum URLs do not include the ${inlineCode("Enum.")} prefix.`,
+		`Replace the placeholder with the exact name, such as ${inlineCode("Part")}, ${inlineCode("KeyCode")}, or ${inlineCode("CFrame")}, or with a version, such as ${inlineCode(api.version)}. Names are case-sensitive. Enum URLs do not include the ${inlineCode("Enum.")} prefix.`,
 		"## Indexes",
 		[
 			`- ${link("Classes", siteUrl(markdownHref(classesHref())))}: Every class, with its superclass and tags, such as Service and Deprecated`,
 			`- ${link("Enums", siteUrl(markdownHref(enumsHref())))}: Every enum, with its tags`,
 			`- ${link("Data types", siteUrl(markdownHref(typesHref())))}: Every data type, with its category`,
+			`- ${link("Updates", siteUrl(markdownHref(updatesHref())))}: Every update, with the number of added, removed, and changed API items`,
 		].join("\n"),
 		"## Optional",
 		`- ${link("Sitemap", `${home}sitemap.xml`)}: Every HTML page`,
