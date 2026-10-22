@@ -51,33 +51,33 @@ The palette is a neutral near-black, based on RobloxAccountManager and shifted o
 
 Surfaces, from lowest to highest:
 
-| Token | Value | Use |
-| --- | --- | --- |
-| `--color-canvas` | `#0e0e0e` | The page and the main content column |
-| `--color-surface` | `#121212` | Persistent chrome: the header and the sidebar |
-| `--color-raised` | `#181818` | Inputs |
-| `--color-overlay` | `#151515` | Menus, popovers, tooltips, and the search dialog |
-| `--color-hover` | `rgb(255 255 255 / 6%)` | Hover fill on rows and controls |
-| `--color-active` | `rgb(255 255 255 / 9%)` | Selected row fill |
-| `--color-scrim` | `rgb(0 0 0 / 72%)` | Backdrop behind the search dialog and the mobile sidebar |
+| Token             | Value                   | Use                                                      |
+| ----------------- | ----------------------- | -------------------------------------------------------- |
+| `--color-canvas`  | `#0e0e0e`               | The page and the main content column                     |
+| `--color-surface` | `#121212`               | Persistent chrome: the header and the sidebar            |
+| `--color-raised`  | `#181818`               | Inputs                                                   |
+| `--color-overlay` | `#151515`               | Menus, popovers, tooltips, and the search dialog         |
+| `--color-hover`   | `rgb(255 255 255 / 6%)` | Hover fill on rows and controls                          |
+| `--color-active`  | `rgb(255 255 255 / 9%)` | Selected row fill                                        |
+| `--color-scrim`   | `rgb(0 0 0 / 72%)`      | Backdrop behind the search dialog and the mobile sidebar |
 
 Lines:
 
-| Token | Value | Use |
-| --- | --- | --- |
-| `--color-line-subtle` | `rgb(255 255 255 / 6%)` | Tree guides and separators |
-| `--color-line` | `#262626` | Region borders, control borders, and tags |
-| `--color-line-strong` | `#363636` | Floating surfaces, focused inputs, and selected controls |
-| `--color-focus` | `rgb(255 255 255 / 40%)` | The focus ring |
+| Token                 | Value                    | Use                                                      |
+| --------------------- | ------------------------ | -------------------------------------------------------- |
+| `--color-line-subtle` | `rgb(255 255 255 / 6%)`  | Tree guides and separators                               |
+| `--color-line`        | `#262626`                | Region borders, control borders, and tags                |
+| `--color-line-strong` | `#363636`                | Floating surfaces, focused inputs, and selected controls |
+| `--color-focus`       | `rgb(255 255 255 / 40%)` | The focus ring                                           |
 
 Text:
 
-| Token | Value | Use |
-| --- | --- | --- |
-| `--color-fg` | `#cccccc` | Body text, punctuation in code, and headings |
-| `--color-fg-muted` | `#a3a3a3` | Metadata, secondary labels, and icons |
-| `--color-fg-faint` | `#8a8a8a` | Placeholders, counts, and deprecated names in trees |
-| `--color-fg-bright` | `#ffffff` | Page names, member names, and selected text |
+| Token               | Value     | Use                                                 |
+| ------------------- | --------- | --------------------------------------------------- |
+| `--color-fg`        | `#cccccc` | Body text, punctuation in code, and headings        |
+| `--color-fg-muted`  | `#a3a3a3` | Metadata, secondary labels, and icons               |
+| `--color-fg-faint`  | `#8a8a8a` | Placeholders, counts, and deprecated names in trees |
+| `--color-fg-bright` | `#ffffff` | Page names, member names, and selected text         |
 
 `--color-fg-faint` meets 4.5:1 on every surface and on `--color-hover` fills. On `--color-active` fills, use `--color-fg-muted` or a stronger color.
 
@@ -97,11 +97,11 @@ Property, event, and callback names use `--color-fg-bright` at weight 500. Param
 
 Semantic:
 
-| Token | Value | Use |
-| --- | --- | --- |
-| `--color-warning` | `#d2a15a` | The Deprecated tag |
-| `--color-danger` | `#d9675e` | Security tags for members that only Roblox can use, and the `−` mark of a removed line on Updates pages |
-| `--color-success` | `#66a978` | Confirmation, such as a copied link, and the `+` mark of an added line on Updates pages |
+| Token             | Value     | Use                                                                                                     |
+| ----------------- | --------- | ------------------------------------------------------------------------------------------------------- |
+| `--color-warning` | `#d2a15a` | The Deprecated tag                                                                                      |
+| `--color-danger`  | `#d9675e` | Security tags for members that only Roblox can use, and the `−` mark of a removed line on Updates pages |
+| `--color-success` | `#66a978` | Confirmation, such as a copied link, and the `+` mark of an added line on Updates pages                 |
 
 Use semantic colors only for text, icons, and 1px borders. Do not fill large areas with them.
 
@@ -112,14 +112,14 @@ Use semantic colors only for text, icons, and 1px borders. Do not fill large are
 
 Use this scale. Do not use other sizes.
 
-| Token | Size / line height | Use |
-| --- | --- | --- |
-| `--text-xs` | 12px / 16px | Tags, keyboard hints, and property category headings |
-| `--text-sm` | 13px / 20px | Interface text, navigation, all code, and parameter and return descriptions |
-| `--text-base` | 15px / 24px | Prose: class and member descriptions |
-| `--text-lg` | 18px / 24px | Section headings: Properties, Methods, Events, Callbacks |
-| `--text-xl` | 22px / 28px | Page titles on index and search pages |
-| `--text-2xl` | 28px / 32px | The class, data type, or enum name at the top of its page |
+| Token         | Size / line height | Use                                                                         |
+| ------------- | ------------------ | --------------------------------------------------------------------------- |
+| `--text-xs`   | 12px / 16px        | Tags, keyboard hints, and property category headings                        |
+| `--text-sm`   | 13px / 20px        | Interface text, navigation, all code, and parameter and return descriptions |
+| `--text-base` | 15px / 24px        | Prose: class and member descriptions                                        |
+| `--text-lg`   | 18px / 24px        | Section headings: Properties, Methods, Events, Callbacks                    |
+| `--text-xl`   | 22px / 28px        | Page titles on index and search pages                                       |
+| `--text-2xl`  | 28px / 32px        | The class, data type, or enum name at the top of its page                   |
 
 - Use weight 400 for prose, 500 for controls, navigation, and member names, and 600 for headings and the page name. Do not use other weights.
 - Set `--text-xl` and `--text-2xl` with `-0.015em` tracking. Use the default tracking for every other size.
@@ -385,16 +385,16 @@ The Updates section shows how the API changed from each version in `roblox-versi
 
 Motion must feel immediate. If the reader can notice that they are waiting for an animation, the animation is too slow. Follow the animation performance rules in `AGENTS.md`.
 
-| Token | Value | Use |
-| --- | --- | --- |
-| `--duration-instant` | 60ms | Press feedback |
-| `--duration-fast` | 100ms | Hover color, tooltips, and icon swaps |
-| `--duration-exit` | 90ms | Every exit |
-| `--duration-ui` | 140ms | Entrances of menus, popovers, the search dialog, and the mobile sidebar |
-| `--ease-out` | `cubic-bezier(0.16, 1, 0.3, 1)` | Entrances |
-| `--ease-standard` | `cubic-bezier(0.4, 0, 0.2, 1)` | Exits and color changes |
-| `--motion-distance` | 4px | Entrance offset |
-| `--motion-scale` | 0.98 | Entrance and press scale |
+| Token                | Value                           | Use                                                                     |
+| -------------------- | ------------------------------- | ----------------------------------------------------------------------- |
+| `--duration-instant` | 60ms                            | Press feedback                                                          |
+| `--duration-fast`    | 100ms                           | Hover color, tooltips, and icon swaps                                   |
+| `--duration-exit`    | 90ms                            | Every exit                                                              |
+| `--duration-ui`      | 140ms                           | Entrances of menus, popovers, the search dialog, and the mobile sidebar |
+| `--ease-out`         | `cubic-bezier(0.16, 1, 0.3, 1)` | Entrances                                                               |
+| `--ease-standard`    | `cubic-bezier(0.4, 0, 0.2, 1)`  | Exits and color changes                                                 |
+| `--motion-distance`  | 4px                             | Entrance offset                                                         |
+| `--motion-scale`     | 0.98                            | Entrance and press scale                                                |
 
 What moves:
 
