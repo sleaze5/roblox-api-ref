@@ -16,8 +16,8 @@ runs:
         - run: vp run ci
           shell: bash
           env:
-              VITE_SITE_ORIGIN: https://rapi.sleaze.dev
-              VITE_SITE_BASE: /
+              VITE_SITE_ORIGIN: ${{ steps.pages.outputs.origin }}
+              VITE_SITE_BASE: ${{ steps.pages.outputs.base_path }}/
 
         - if: inputs.pages == 'true'
           run: find dist -type f \( -name '*.br' -o -name '*.gz' -o -name '*.zst' \) -delete
