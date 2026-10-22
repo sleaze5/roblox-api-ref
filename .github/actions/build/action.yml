@@ -16,7 +16,7 @@ runs:
         - run: vp run ci
           shell: bash
           env:
-              VITE_SITE_ORIGIN: ${{ steps.pages.outputs.origin }}
+              VITE_SITE_ORIGIN: ${{ inputs.pages == 'true' && 'https://rapi.sleaze.dev' || '' }}
               VITE_SITE_BASE: ${{ steps.pages.outputs.base_path }}/
 
         - if: inputs.pages == 'true'
