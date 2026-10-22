@@ -5,7 +5,7 @@ import { typeHref } from "../../api/routes.ts"
 import type { Api, DataType } from "../../api/types.ts"
 import { factList, joinBlocks } from "./document.ts"
 import { escapeText, inlineCode } from "./escape.ts"
-import { siteUrl } from "./site-url.ts"
+import { absoluteUrl } from "../../site/origin.ts"
 import { usageMarkdown } from "./usage-markdown.ts"
 
 export function typeMarkdown(api: Api, item: DataType): string {
@@ -16,7 +16,7 @@ export function typeMarkdown(api: Api, item: DataType): string {
 		factList([
 			["Category", item.category],
 			["Luau type", luau === item.name ? undefined : inlineCode(luau)],
-			["HTML page", siteUrl(typeHref(item.name))],
+			["HTML page", absoluteUrl(typeHref(item.name))],
 			["Roblox documentation", dataTypeDocsHref(item.name)],
 		]),
 		usageMarkdown(item.usedBy) ?? "No class member uses this type.",

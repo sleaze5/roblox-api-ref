@@ -1,4 +1,5 @@
 import {
+	llmsTxtHref,
 	classesHref,
 	classHref,
 	enumHref,
@@ -10,6 +11,7 @@ import {
 } from "../../api/routes.ts"
 import type { Api } from "../../api/types.ts"
 import type { Update } from "../../api/update-types.ts"
+import { sitePages } from "../../site/site-pages.ts"
 import type { Route } from "../match-route.ts"
 import { classMarkdown } from "./class-markdown.ts"
 import { enumMarkdown } from "./enum-markdown.ts"
@@ -18,7 +20,9 @@ import {
 	enumListMarkdown,
 	typeListMarkdown,
 } from "./list-markdown.ts"
+import { llmsTxt } from "./llms-txt.ts"
 import { markdownHref } from "./markdown-href.ts"
+import { sitePageMarkdown } from "./site-page-markdown.ts"
 import { typeMarkdown } from "./type-markdown.ts"
 import { updateListMarkdown, updateMarkdown } from "./update-markdown.ts"
 
@@ -37,6 +41,12 @@ export function pageMarkdown(
 	route: Route,
 ): MarkdownPage | undefined {
 	switch (route.page) {
+		case "home":
+			return { href: llmsTxtHref(), content: llmsTxt(api) }
+		case "site": {
+			const site = sitePages[route.name]
+			return page(site.href, sitePageMarkdown(site.title, site.content(api)))
+		}
 		case "classes":
 			return page(classesHref(), classListMarkdown(api))
 		case "enums":

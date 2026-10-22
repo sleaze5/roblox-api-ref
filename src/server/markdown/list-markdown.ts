@@ -5,14 +5,11 @@ import { plainTags } from "../../api/tags.ts"
 import type { Api } from "../../api/types.ts"
 import { joinBlocks } from "./document.ts"
 import { link } from "./escape.ts"
-import { siteUrl } from "./site-url.ts"
+import { classMarkdownUrl, enumMarkdownUrl, typeMarkdownUrl } from "./markdown-href.ts"
+import { absoluteUrl } from "../../site/origin.ts"
 
 function sortedNames(items: Record<string, unknown>): string[] {
 	return Object.keys(items).sort(compareNames)
-}
-
-function relativeLink(text: string, folder: string, name: string): string {
-	return link(text, `${folder}/${encodeURIComponent(name)}.md`)
 }
 
 function tagSuffix(tags: string[]): string {
@@ -21,7 +18,7 @@ function tagSuffix(tags: string[]): string {
 }
 
 function intro(kind: string, api: Api, href: string): string {
-	return `Every ${kind} in the Roblox Engine API from ${releaseText(api)}. The links are relative to this file. The HTML version of this list is at ${siteUrl(href)}.`
+	return `Every ${kind} in the Roblox Engine API from ${releaseText(api)}. The HTML version of this list is at ${absoluteUrl(href)}.`
 }
 
 export function classListMarkdown(api: Api): string {
@@ -29,7 +26,7 @@ export function classListMarkdown(api: Api): string {
 		const item = api.classes[name]
 		const parent =
 			item?.superclass === undefined ? "" : `: inherits from ${item.superclass}`
-		return `- ${relativeLink(name, "classes", name)}${parent}${tagSuffix(item?.tags ?? [])}`
+		return `- ${link(name, classMarkdownUrl(name))}${parent}${tagSuffix(item?.tags ?? [])}`
 	})
 	return joinBlocks([
 		"# Classes",
@@ -41,7 +38,7 @@ export function classListMarkdown(api: Api): string {
 export function enumListMarkdown(api: Api): string {
 	const lines = sortedNames(api.enums).map(
 		(name) =>
-			`- ${relativeLink(`Enum.${name}`, "enums", name)}${tagSuffix(api.enums[name]?.tags ?? [])}`,
+			`- ${link(`Enum.${name}`, enumMarkdownUrl(name))}${tagSuffix(api.enums[name]?.tags ?? [])}`,
 	)
 	return joinBlocks(["# Enums", intro("enum", api, enumsHref()), lines.join("\n")])
 }
@@ -49,7 +46,7 @@ export function enumListMarkdown(api: Api): string {
 export function typeListMarkdown(api: Api): string {
 	const lines = sortedNames(api.dataTypes).map(
 		(name) =>
-			`- ${relativeLink(name, "types", name)}: ${api.dataTypes[name]?.category ?? ""}`,
+			`- ${link(name, typeMarkdownUrl(name))}: ${api.dataTypes[name]?.category ?? ""}`,
 	)
 	return joinBlocks([
 		"# Data types",

@@ -9,17 +9,18 @@ import { IndexPage } from "../pages/index/IndexPage.tsx"
 import { TypeIndexPage } from "../pages/index/TypeIndexPage.tsx"
 import { FacetIndexPage } from "../pages/index/FacetIndexPage.tsx"
 import { NotFoundPage } from "../pages/NotFoundPage.tsx"
+import { SitePage } from "../pages/site/SitePage.tsx"
 import { TypePage } from "../pages/type/TypePage.tsx"
 import { UpdatePage } from "../pages/updates/UpdatePage.tsx"
 import { UpdatesPage } from "../pages/updates/UpdatesPage.tsx"
+import { sitePages } from "../site/site-pages.ts"
 import { breadcrumbs } from "./breadcrumbs.ts"
-import { describeRoute } from "./describe-route.ts"
 import { loadApi } from "./load-api.ts"
 import { loadUpdates } from "./load-updates.ts"
-import { llmsTxt as indexText } from "./markdown/llms-txt.ts"
 import { pageMarkdown } from "./markdown/page-markdown.ts"
 import { matchRoute, routePaths, type Route } from "./match-route.ts"
 import type { RenderedPage } from "./page-module.ts"
+import { pageTitle } from "./page-title.ts"
 import { schemaType } from "./schema-type.ts"
 
 function Page(props: { route: Route }) {
@@ -50,6 +51,8 @@ function Page(props: { route: Route }) {
 			return <UpdatesPage api={api} updates={updates} />
 		case "update":
 			return <UpdatePage api={api} updates={updates} item={props.route.item} />
+		case "site":
+			return <SitePage release={api} page={sitePages[props.route.name]} />
 		case "not-found":
 			return <NotFoundPage api={api} />
 	}
@@ -65,7 +68,7 @@ export function renderPage(path: string): RenderedPage {
 	const route = matchRoute(api, updates, path)
 	return {
 		status: route.page === "not-found" ? 404 : 200,
-		...describeRoute(route, api),
+		title: pageTitle(route),
 		body: renderToString(() => <Page route={route} />),
 		schemaType: schemaType(route),
 		breadcrumbs: breadcrumbs(route),
@@ -76,8 +79,4 @@ export function renderPage(path: string): RenderedPage {
 
 export function lastModified(): string {
 	return loadApi().published
-}
-
-export function llmsTxt(): string {
-	return indexText(loadApi())
 }

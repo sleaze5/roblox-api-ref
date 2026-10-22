@@ -24,6 +24,22 @@ export function updatesHref(): string {
 	return `${base}updates/`
 }
 
+export function aboutHref(): string {
+	return `${base}about/`
+}
+
+export function contactHref(): string {
+	return `${base}contact/`
+}
+
+export function privacyHref(): string {
+	return `${base}privacy/`
+}
+
+export function llmsTxtHref(): string {
+	return `${base}llms.txt`
+}
+
 export function updateHref(version: string): string {
 	return `${updatesHref()}${encodeURIComponent(version)}/`
 }

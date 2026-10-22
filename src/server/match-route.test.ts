@@ -1,5 +1,8 @@
 import { describe, expect, test } from "vite-plus/test"
 import {
+	aboutHref,
+	contactHref,
+	privacyHref,
 	classHref,
 	enumHref,
 	facetHref,
@@ -78,6 +81,19 @@ describe("static routes", () => {
 		expect(matchRoute(api, updates, updateHref("0.0.0.0"))).toEqual({
 			page: "not-found",
 		})
+	})
+
+	test("gives About, Contact, and Privacy policy their own pages", () => {
+		const paths = new Set(routePaths(api, updates))
+		for (const [href, name] of [
+			[aboutHref(), "about"],
+			[contactHref(), "contact"],
+			[privacyHref(), "privacy"],
+		] as const) {
+			expect(paths.has(href)).toBe(true)
+			expect(matchRoute(api, updates, href)).toEqual({ page: "site", name })
+		}
+		expect(matchRoute(api, updates, "/about/extra/")).toEqual({ page: "not-found" })
 	})
 
 	test("rejects unknown values, extra path segments, and retired URL shapes", () => {

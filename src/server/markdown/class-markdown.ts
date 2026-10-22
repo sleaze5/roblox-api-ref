@@ -14,7 +14,7 @@ import { factList, joinBlocks } from "./document.ts"
 import { escapeText, inlineCode, link } from "./escape.ts"
 import { classMarkdownUrl } from "./markdown-href.ts"
 import { memberMarkdown } from "./member-markdown.ts"
-import { siteUrl } from "./site-url.ts"
+import { absoluteUrl } from "../../site/origin.ts"
 
 function classLinks(names: string[]): string {
 	return names.map((name) => link(name, classMarkdownUrl(name))).join(", ")
@@ -63,7 +63,7 @@ export function classMarkdown(api: Api, item: Class): string {
 					.join(", "),
 			],
 			["Memory category", item.memoryCategory],
-			["HTML page", siteUrl(classHref(item.name))],
+			["HTML page", absoluteUrl(classHref(item.name))],
 			["Roblox documentation", classDocsHref(item.name)],
 		]),
 		docMarkdown(item.description),

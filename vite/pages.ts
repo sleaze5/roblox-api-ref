@@ -4,7 +4,6 @@ import { isRunnableDevEnvironment, type Plugin, type ViteDevServer } from "vite-
 import type { PageModule } from "../src/server/page-module.ts"
 import { prerender } from "./prerender.ts"
 import { servePages } from "./preview.ts"
-import type { Site } from "./site.ts"
 import { fillTemplate } from "./template.ts"
 
 const serverEntry = "src/server/render.tsx"
@@ -25,7 +24,6 @@ function isPageRequest(url: string, accept: string | undefined): boolean {
 
 export function pages(): Plugin {
 	let root = process.cwd()
-	let site: Site = { origin: undefined, base: "/" }
 	return {
 		name: "pages",
 		config() {
@@ -52,22 +50,17 @@ export function pages(): Plugin {
 						}
 						await builder.build(client)
 						await builder.build(ssr)
-						await prerender(
-							{
-								outDir: resolve(root, client.config.build.outDir),
-								serverEntry: resolve(root, serverOutDir, "render.js"),
-								workerFile: resolve(root, "vite", "output-worker.ts"),
-							},
-							site,
-						)
+						await prerender({
+							outDir: resolve(root, client.config.build.outDir),
+							serverEntry: resolve(root, serverOutDir, "render.js"),
+							workerFile: resolve(root, "vite", "output-worker.ts"),
+						})
 					},
 				},
 			}
 		},
 		configResolved(config) {
 			root = config.root
-			const origin = config.env["VITE_SITE_ORIGIN"] as string | undefined
-			site = { origin: origin === "" ? undefined : origin, base: config.base }
 		},
 		configurePreviewServer(server) {
 			servePages(server, resolve(root, server.config.build.outDir))
@@ -105,6 +98,6 @@ export function pages(): Plugin {
 			url,
 			await readFile(resolve(root, "index.html"), "utf8"),
 		)
-		return { status: page.status, html: fillTemplate(template, page, path, site) }
+		return { status: page.status, html: fillTemplate(template, page, path) }
 	}
 }

@@ -12,10 +12,8 @@ const ignorePatterns = [
 	"AGENTS_EXPLORE/**",
 ]
 const stylesheet = "src/styles/app.css"
-const siteEnv = { env: ["VITE_SITE_*"] }
 
 export default defineConfig({
-	base: process.env["VITE_SITE_BASE"] ?? "/",
 	plugins: [
 		solid({ compiler: "native", ssr: true, solid: { hydratable: false } }),
 		tailwindcss(),
@@ -32,7 +30,11 @@ export default defineConfig({
 	server: { host: "127.0.0.1", port: 5173, strictPort: true },
 
 	test: {
-		include: ["src/**/*.test.{ts,tsx}", "scripts/**/*.test.ts"],
+		include: [
+			"src/**/*.test.{ts,tsx}",
+			"scripts/**/*.test.ts",
+			"vite/**/*.test.ts",
+		],
 		environment: "node",
 		passWithNoTests: true,
 	},
@@ -149,7 +151,6 @@ export default defineConfig({
 			},
 			"build": {
 				command: ["vp run fix", "bun --bun vp build"],
-				cache: siteEnv,
 			},
 			"preview": {
 				command: "bun --bun vp preview",
@@ -189,7 +190,6 @@ export default defineConfig({
 			},
 			"ci": {
 				command: ["vp run check", "vp run test", "bun --bun vp build"],
-				cache: siteEnv,
 			},
 		},
 	},

@@ -20,7 +20,8 @@ import { updateHref, updatesHref } from "../../api/routes.ts"
 import { descriptionLines } from "./description-markdown.ts"
 import { factList, joinBlocks } from "./document.ts"
 import { escapeText, inlineCode, link } from "./escape.ts"
-import { siteUrl } from "./site-url.ts"
+import { markdownHref } from "./markdown-href.ts"
+import { absoluteUrl } from "../../site/origin.ts"
 
 const ownerTitles = { Class: "Classes", Enum: "Enums" } as const
 
@@ -96,7 +97,7 @@ export function updateMarkdown(update: Update): string {
 	})
 	return joinBlocks([
 		`# Update ${update.version}`,
-		`${updateSummary(update)} Roblox published this version on ${formatDate(update.published)}. It has ${changeTotal(update)} changes: ${countLine(update)}. The HTML version of this page is at ${siteUrl(updateHref(update.version))}.`,
+		`${updateSummary(update)} Roblox published this version on ${formatDate(update.published)}. It has ${changeTotal(update)} changes: ${countLine(update)}. The HTML version of this page is at ${absoluteUrl(updateHref(update.version))}.`,
 		factList([
 			["Version", releaseText(update)],
 			["Compared with", releaseText(update.previous)],
@@ -109,11 +110,11 @@ export function updateMarkdown(update: Update): string {
 export function updateListMarkdown(updates: Update[]): string {
 	const lines = updates.map(
 		(update) =>
-			`- ${link(releaseText(update), `updates/${encodeURIComponent(update.version)}.md`)}: ${formatDate(update.published)}, compared with ${releaseText(update.previous)}. ${countLine(update)}.`,
+			`- ${link(releaseText(update), absoluteUrl(markdownHref(updateHref(update.version))))}: ${formatDate(update.published)}, compared with ${releaseText(update.previous)}. ${countLine(update)}.`,
 	)
 	return joinBlocks([
 		"# Updates",
-		`${updatesLead} The links are relative to this file. The HTML version of this list is at ${siteUrl(updatesHref())}.`,
+		`${updatesLead} The HTML version of this list is at ${absoluteUrl(updatesHref())}.`,
 		lines.length === 0 ? "There are no updates yet." : lines.join("\n"),
 	])
 }

@@ -13,6 +13,7 @@ import {
 	updatesHref,
 } from "../api/routes.ts"
 import { facetTitles } from "../api/facets/facet-info.ts"
+import { sitePages } from "../site/site-pages.ts"
 import type { Route } from "./match-route.ts"
 
 export type Breadcrumb = {
@@ -42,6 +43,11 @@ export function breadcrumbs(route: Route): Breadcrumb[] {
 			return [home, index, types]
 		case "updates":
 			return [home, updates]
+		case "site":
+			return [
+				home,
+				{ name: sitePages[route.name].title, href: sitePages[route.name].href },
+			]
 		case "update":
 			return [
 				home,

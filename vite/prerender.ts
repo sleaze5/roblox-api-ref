@@ -5,7 +5,6 @@ import type { PageModule } from "../src/server/page-module.ts"
 import { compressibleFiles } from "./compress.ts"
 import { minifyTemplateScripts } from "./minify-html.ts"
 import { OutputPool } from "./output-pool.ts"
-import type { Site } from "./site.ts"
 import { openSearchXml, robotsTxt, sitemapXml } from "./site-files.ts"
 import { fillTemplate } from "./template.ts"
 
@@ -22,32 +21,26 @@ function outputFile(outDir: string, route: string): string {
 	return join(outDir, decodeURIComponent(route), "index.html")
 }
 
-function markdownFile(outDir: string, site: Site, href: string): string {
-	return join(outDir, decodeURIComponent(href.slice(site.base.length)))
+function markdownFile(outDir: string, href: string): string {
+	return join(outDir, decodeURIComponent(href))
 }
 
 async function writeSiteFiles(
 	outDir: string,
-	site: Site,
 	routes: string[],
 	module: PageModule,
 ): Promise<void> {
-	const files: [string, string | undefined][] = [
-		["robots.txt", robotsTxt(site, routes)],
-		["sitemap.xml", sitemapXml(site, routes, module.lastModified())],
-		["opensearch.xml", openSearchXml(site)],
-		["llms.txt", module.llmsTxt()],
+	const files: [string, string][] = [
+		["robots.txt", robotsTxt()],
+		["sitemap.xml", sitemapXml(routes, module.lastModified())],
+		["opensearch.xml", openSearchXml()],
 	]
 	await Promise.all(
-		files.map(async ([name, content]) => {
-			if (content !== undefined) {
-				await writeFile(join(outDir, name), content)
-			}
-		}),
+		files.map(([name, content]) => writeFile(join(outDir, name), content)),
 	)
 }
 
-export async function prerender(paths: PrerenderPaths, site: Site): Promise<void> {
+export async function prerender(paths: PrerenderPaths): Promise<void> {
 	const start = performance.now()
 	const module = (await import(pathToFileURL(paths.serverEntry).href)) as PageModule
 	const template = await minifyTemplateScripts(
@@ -55,7 +48,7 @@ export async function prerender(paths: PrerenderPaths, site: Site): Promise<void
 	)
 	const routes = module.routes()
 	await rm(join(paths.outDir, "index.html"))
-	await writeSiteFiles(paths.outDir, site, routes, module)
+	await writeSiteFiles(paths.outDir, routes, module)
 	const assets = await compressibleFiles(paths.outDir)
 	const pool = new OutputPool(paths.workerFile)
 	try {
@@ -66,13 +59,13 @@ export async function prerender(paths: PrerenderPaths, site: Site): Promise<void
 				const page = module.renderPage(route)
 				if (page.markdown !== undefined) {
 					await writeFile(
-						markdownFile(paths.outDir, site, page.markdown.href),
+						markdownFile(paths.outDir, page.markdown.href),
 						page.markdown.content,
 					)
 				}
 				await pool.run({
 					file,
-					html: fillTemplate(template, page, route, site),
+					html: fillTemplate(template, page, route),
 				})
 			}),
 			...assets.map((file) => pool.run({ file })),

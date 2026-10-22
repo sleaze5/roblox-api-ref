@@ -8,12 +8,12 @@ When this file does not cover a case, copy the closest existing pattern on the s
 
 ## Principles
 
-1. **Code is the only color.** The interface is grayscale. Hue appears only in code (identifiers, types, values) and in the few semantic tags. A reader finds code by its color without reading.
-2. **Identifiers are monospace, prose is sans.** Every API name, type, signature, and value uses Geist Mono, at every size. Every sentence, label, and control uses Geist. Do not use monospace for anything that is not code.
-3. **Write members as Luau.** Every member reads like a line of a Luau type definition, such as `Terrain.Decoration: boolean = false`. Use Roblox's own terms: class, data type, enum, property, method, event, callback.
-4. **Instant.** Pages are prerendered static HTML. Nothing waits for JavaScript, a fade, or a spinner before the reader can read. Motion only answers an action.
-5. **Readable without JavaScript.** Every page renders, links, and expands without JavaScript. JavaScript adds search, filters, and conveniences such as copying links.
-6. **The address is the state.** Every filter and search query is written to the URL. A copied address opens the same view.
+1. Code is the only color. The interface is grayscale. Hue appears only in code (identifiers, types, values) and in the few semantic tags. A reader finds code by its color without reading.
+2. Identifiers are monospace, prose is sans. Every API name, type, signature, and value uses Geist Mono, at every size. Every sentence, label, and control uses Geist. Do not use monospace for anything that is not code.
+3. Write members as Luau. Every member reads like a line of a Luau type definition, such as `Terrain.Decoration: boolean = false`. Use Roblox's own terms: class, data type, enum, property, method, event, callback.
+4. Instant. Pages are prerendered static HTML. Nothing waits for JavaScript, a fade, or a spinner before the reader can read. Motion only answers an action.
+5. Readable without JavaScript. Every page renders, links, and expands without JavaScript. JavaScript adds search, filters, and conveniences such as copying links.
+6. The address is the state. Every filter and search query is written to the URL. A copied address opens the same view.
 
 ## Sources of truth
 
@@ -51,45 +51,37 @@ The palette is a neutral near-black, based on RobloxAccountManager and shifted o
 
 Surfaces, from lowest to highest:
 
-| Token             | Value                   | Use                                                      |
-| ----------------- | ----------------------- | -------------------------------------------------------- |
-| `--color-canvas`  | `#0e0e0e`               | The page and the main content column                     |
-| `--color-surface` | `#121212`               | Persistent chrome: the header and the sidebar            |
-| `--color-raised`  | `#181818`               | Inputs                                                   |
-| `--color-overlay` | `#151515`               | Menus, popovers, tooltips, and the search dialog         |
-| `--color-hover`   | `rgb(255 255 255 / 6%)` | Hover fill on rows and controls                          |
-| `--color-active`  | `rgb(255 255 255 / 9%)` | Selected row fill                                        |
-| `--color-scrim`   | `rgb(0 0 0 / 72%)`      | Backdrop behind the search dialog and the mobile sidebar |
+- `--color-canvas` (`#0e0e0e`): the page and the main content column
+- `--color-surface` (`#121212`): the header and the sidebar
+- `--color-raised` (`#181818`): inputs
+- `--color-overlay` (`#151515`): menus, popovers, tooltips, and the search dialog
+- `--color-hover` (`rgb(255 255 255 / 6%)`): hover fill on rows and controls
+- `--color-active` (`rgb(255 255 255 / 9%)`): selected row fill
+- `--color-scrim` (`rgb(0 0 0 / 72%)`): backdrop behind the search dialog and the mobile sidebar
 
 Lines:
 
-| Token                 | Value                    | Use                                                      |
-| --------------------- | ------------------------ | -------------------------------------------------------- |
-| `--color-line-subtle` | `rgb(255 255 255 / 6%)`  | Tree guides and separators                               |
-| `--color-line`        | `#262626`                | Region borders, control borders, and tags                |
-| `--color-line-strong` | `#363636`                | Floating surfaces, focused inputs, and selected controls |
-| `--color-focus`       | `rgb(255 255 255 / 40%)` | The focus ring                                           |
+- `--color-line-subtle` (`rgb(255 255 255 / 6%)`): tree guides and separators
+- `--color-line` (`#262626`): region borders, control borders, and tags
+- `--color-line-strong` (`#363636`): floating surfaces, focused inputs, and selected controls
+- `--color-focus` (`rgb(255 255 255 / 40%)`): the focus ring
 
 Text:
 
-| Token               | Value     | Use                                                 |
-| ------------------- | --------- | --------------------------------------------------- |
-| `--color-fg`        | `#cccccc` | Body text, punctuation in code, and headings        |
-| `--color-fg-muted`  | `#a3a3a3` | Metadata, secondary labels, and icons               |
-| `--color-fg-faint`  | `#8a8a8a` | Placeholders, counts, and deprecated names in trees |
-| `--color-fg-bright` | `#ffffff` | Page names, member names, and selected text         |
+- `--color-fg` (`#cccccc`): body text, punctuation in code, and headings
+- `--color-fg-muted` (`#a3a3a3`): metadata, secondary labels, and icons
+- `--color-fg-faint` (`#8a8a8a`): placeholders, counts, and deprecated names in trees
+- `--color-fg-bright` (`#ffffff`): page names, member names, and selected text
 
 `--color-fg-faint` meets 4.5:1 on every surface and on `--color-hover` fills. On `--color-active` fills, use `--color-fg-muted` or a stronger color.
 
 Code uses the GitHub Dark syntax colors:
 
-| Token | Value | Use |
-| --- | --- | --- |
-| `--color-code-type` | `#ffa657` | Class, data type, and enum names, and Luau primitive types such as `string`, `number`, `boolean`, and `any` |
-| `--color-code-type-muted` | Type color mixed with black at 67.647% | Deprecated enum names in the enum listing; preserves their hue with the same proportional dimming as `--color-fg` to `--color-fg-faint`. Restore the type color on hover and keyboard focus. |
-| `--color-code-constant` | `#79c0ff` | Numbers, booleans, `nil`, and enum items |
-| `--color-code-string` | `#a5d6ff` | String values |
-| `--color-code-function` | `#d2a8ff` | Method names and constructors such as `new` |
+- `--color-code-type` (`#ffa657`): class, data type, and enum names, and Luau primitive types such as `string`, `number`, `boolean`, and `any`
+- `--color-code-type-muted` (the type color mixed with black at 67.647%): deprecated enum names in the enum listing. It keeps their hue and dims them by the same proportion as `--color-fg` to `--color-fg-faint`. Restore the type color on hover and keyboard focus.
+- `--color-code-constant` (`#79c0ff`): numbers, booleans, `nil`, and enum items
+- `--color-code-string` (`#a5d6ff`): string values
+- `--color-code-function` (`#d2a8ff`): method names and constructors such as `new`
 
 The class prefix of a member signature, such as `Part.` in `Part.Anchored`, names `self`. It uses `--color-fg-muted`, not `--color-code-type`. An enum item is written like an enum value in a signature, such as `Enum.ActuatorRelativeTo.Attachment0 = 0`: `Enum.` in `--color-fg`, the enum name in `--color-code-type`, and the item name and value in `--color-code-constant`.
 
@@ -97,11 +89,9 @@ Property, event, and callback names use `--color-fg-bright` at weight 500. Param
 
 Semantic:
 
-| Token             | Value     | Use                                                                                                     |
-| ----------------- | --------- | ------------------------------------------------------------------------------------------------------- |
-| `--color-warning` | `#d2a15a` | The Deprecated tag                                                                                      |
-| `--color-danger`  | `#d9675e` | Security tags for members that only Roblox can use, and the `−` mark of a removed line on Updates pages |
-| `--color-success` | `#66a978` | Confirmation, such as a copied link, and the `+` mark of an added line on Updates pages                 |
+- `--color-warning` (`#d2a15a`): the Deprecated tag
+- `--color-danger` (`#d9675e`): security tags for members that only Roblox can use, and the `−` mark of a removed line on Updates pages
+- `--color-success` (`#66a978`): confirmation, such as a copied link, and the `+` mark of an added line on Updates pages
 
 Use semantic colors only for text, icons, and 1px borders. Do not fill large areas with them.
 
@@ -112,14 +102,12 @@ Use semantic colors only for text, icons, and 1px borders. Do not fill large are
 
 Use this scale. Do not use other sizes.
 
-| Token         | Size / line height | Use                                                                         |
-| ------------- | ------------------ | --------------------------------------------------------------------------- |
-| `--text-xs`   | 12px / 16px        | Tags, keyboard hints, and property category headings                        |
-| `--text-sm`   | 13px / 20px        | Interface text, navigation, all code, and parameter and return descriptions |
-| `--text-base` | 15px / 24px        | Prose: class and member descriptions                                        |
-| `--text-lg`   | 18px / 24px        | Section headings: Properties, Methods, Events, Callbacks                    |
-| `--text-xl`   | 22px / 28px        | Page titles on index and search pages                                       |
-| `--text-2xl`  | 28px / 32px        | The class, data type, or enum name at the top of its page                   |
+- `--text-xs`: 12px text with a 16px line height, for tags, keyboard hints, and property category headings
+- `--text-sm`: 13px text with a 20px line height, for interface text, navigation, all code, and parameter and return descriptions
+- `--text-base`: 15px text with a 24px line height, for prose, such as class and member descriptions
+- `--text-lg`: 18px text with a 24px line height, for section headings, such as Properties, Methods, Events, and Callbacks
+- `--text-xl`: 22px text with a 28px line height, for page titles on index and search pages
+- `--text-2xl`: 28px text with a 32px line height, for the class, data type, or enum name at the top of its page
 
 - Use weight 400 for prose, 500 for controls, navigation, and member names, and 600 for headings and the page name. Do not use other weights.
 - Set `--text-xl` and `--text-2xl` with `-0.015em` tracking. Use the default tracking for every other size.
@@ -135,31 +123,32 @@ Use this scale. Do not use other sizes.
 - Use 16px icons by default, 14px icons next to 12px and 13px text, and 20px icons in section headings.
 - Use one icon for one meaning, in every place:
 
-| Meaning             | Icon                 |
-| ------------------- | -------------------- |
-| Class               | `cube`               |
-| Data type           | `brackets-curly`     |
-| Enum                | `list-bullets`       |
-| Enum item           | `hash`               |
-| Property            | `sliders-horizontal` |
-| Method              | `function`           |
-| Event               | `lightning`          |
-| Callback            | `arrow-u-up-left`    |
-| Index               | `books`              |
-| Update              | `git-diff`           |
-| Tag                 | `tag`                |
-| Security level      | `shield`             |
-| Capability          | `puzzle-piece`       |
-| Thread safety       | `git-fork`           |
-| Memory category     | `memory`             |
-| Property category   | `folders`            |
-| Search              | `magnifying-glass`   |
-| Filter menu         | `funnel-simple`      |
-| Copy a link         | `link-simple`        |
-| Copied              | `check`              |
-| Open on Creator Hub | `arrow-square-out`   |
-| Disclosure          | `caret-right`        |
-| Close               | `x`                  |
+- Class: `cube`
+- Data type: `brackets-curly`
+- Enum: `list-bullets`
+- Enum item: `hash`
+- Property: `sliders-horizontal`
+- Method: `function`
+- Event: `lightning`
+- Callback: `arrow-u-up-left`
+- Index: `books`
+- Update: `git-diff`
+- About: `info`
+- Contact: `envelope-simple`
+- Privacy policy: `lock-simple`
+- Tag: `tag`
+- Security level: `shield`
+- Capability: `puzzle-piece`
+- Thread safety: `git-fork`
+- Memory category: `memory`
+- Property category: `folders`
+- Search: `magnifying-glass`
+- Filter menu: `funnel-simple`
+- Copy a link: `link-simple`
+- Copied: `check`
+- Open on Creator Hub: `arrow-square-out`
+- Disclosure: `caret-right`
+- Close: `x`
 
 - Give decorative icons and separators such as `›` `aria-hidden="true"`. Give every icon-only control an accessible name.
 
@@ -171,12 +160,10 @@ Use this scale. Do not use other sizes.
 
 Use the radius scale:
 
-| Token         | Value | Use                                                     |
-| ------------- | ----- | ------------------------------------------------------- |
-| `--radius-xs` | 4px   | Tags and keyboard hints                                 |
-| `--radius-sm` | 6px   | Buttons, inputs, tree rows, tooltips, and group headers |
-| `--radius-md` | 8px   | The home search field and browse links                  |
-| `--radius-lg` | 10px  | Menus, popovers, and the search dialog                  |
+- `--radius-xs` (4px): tags and keyboard hints
+- `--radius-sm` (6px): buttons, inputs, tree rows, tooltips, and group headers
+- `--radius-md` (8px): the home search field and browse links
+- `--radius-lg` (10px): menus, popovers, and the search dialog
 
 Keep nested curves concentric: the inner radius equals the outer radius minus the inset. Do not use pills.
 
@@ -184,27 +171,8 @@ Keep nested curves concentric: the inner radius equals the outer radius minus th
 
 ## Layout
 
-```
-┌───────────────────────────────────────────────────────────────────┐
-│ Site name  Classes …   [ Search the API  Ctrl K ]        version… │ header
-├──────────────┬──────────────────────────────────────┬─────────────┤
-│ Filter       │ Home › Classes › Object › …          │ On this page│
-│ ▾ Object     │ ▣ Part                            ↗  │ Properties  │
-│   ▾ Instance │ Description, tags, and facts         │ Methods     │
-│     ▸ Camera │ [Filter members    205 total][Sec ▾] │ Events      │
-│     ▾ PVIns… │ [Properties][Inherited] [Collapse]   │             │
-│       ▾ Base…│ Properties                           │             │
-│         Part │ ▾ Inherited from Object              │             │
-│         Seat │ ┌──────────────────────────────────┐ │             │
-│              │ │ Object.ClassName: string         │ │             │
-│              │ └──────────────────────────────────┘ │             │
-│              │ ▾ Defined by Part                    │             │
-└──────────────┴──────────────────────────────────────┴─────────────┘
-   sidebar          content                              right rail
-```
-
 - The header is 48px tall on `--color-surface`. The site name and the section links (Classes, Enums, Index, and Updates) sit on the left, the search trigger in the middle, and the build version on the right. From 1024px to 1279px, where the build version is hidden, the search trigger moves to the right edge so the section links have room. Member filters stay in the content column. Write the build version as `version-<hash> (<version>)`, such as `version-7aaa6838d36c4448 (0.744.0.7441077)`, in Geist Mono `--text-xs` and `--color-fg-faint`.
-- The sidebar is 264px wide on `--color-surface`. It holds a filter field and the full index of its section: the whole class tree on the Classes listing and class pages, every enum on the Enums listing and enum pages, and the whole index on every Index page. Listings and detail pages of a section share the same sidebar, so moving between them never shifts the content column. The current page is selected, its ancestors are open, and the sidebar starts scrolled to it. Only the home page and the not found page have no sidebar.
+- The sidebar is 264px wide on `--color-surface`. It holds a filter field and the full index of its section: the whole class tree on the Classes listing and class pages, every enum on the Enums listing and enum pages, and the whole index on every Index page. Listings and detail pages of a section share the same sidebar, so moving between them never shifts the content column. The current page is selected, its ancestors are open, and the sidebar starts scrolled to it. Only the home page, the site pages, and the not found page have no sidebar.
 - In the class tree of the sidebar, the row of each open class sticks below the filter field while its subclasses scroll, so the stuck rows show the inheritance path of the rows below them, like the sticky scroll of a code editor's file tree. A row sticks one row lower for each level of depth. Clicking a stuck row scrolls the tree to that class instead of opening its page or collapsing it.
 - The content column is on `--color-canvas`. Its maximum width is 760px. The page always reserves the scrollbar gutter, so short and long pages put the column in the same place.
 - The right rail is 208px wide. It lists the sections of the current page. On a class page, each section shows the number of members that the class defines, not the total that its section heading shows, and lists those members in Geist Mono and in the same order as the page, linking to their anchors. It does not list inherited members. The rail follows the reader: the section in view is active and shows its member list, the other sections collapse their lists, and the member at the top of the view is highlighted with a `--color-active` fill and `--color-fg-bright` text. Without JavaScript, every list is shown. Anchor jumps land below the sticky header and the sticky filter bar.
@@ -323,6 +291,19 @@ The Index section collects everything that the `gen` task derives from the dump 
 - Preserve category names exactly, including case. When names differ only in case, generation adds a numeric suffix to the colliding URL so both pages work on case-insensitive filesystems.
 - Only data type names use `--color-code-type`. Other facet names are identifiers, not types, and use `--color-fg`.
 
+### Footer
+
+- Every page ends with a footer under the content column, above a 1px `--color-line` border. The footer holds the About, Contact, Privacy policy, and GitHub links in `--text-sm` `--color-fg-muted`, and the note "This site is not affiliated with Roblox Corporation." in `--color-fg-faint`.
+- On a short page, the footer sits at the bottom of the window.
+
+### Site pages
+
+About, Contact, and Privacy policy are site pages at `/about/`, `/contact/`, and `/privacy/`. The footer links to them.
+
+- A site page has breadcrumbs, the page icon, the page name in Geist, and a one-sentence lead. Each section has an `h2` in `--text-lg` with no icon or count, followed by `--text-base` prose in `--color-fg` with the `doc-text` link, code, and list styles.
+- A site page has no sidebar, right rail, or filter.
+- Write the text once in `src/site/content/`. The page and its Markdown version both render from that text.
+
 ### Updates
 
 The Updates section shows how the API changed from each version in `roblox-versions.json` to the next. The `dump:update` task writes one diff per version to `diffs/`, and the `gen` task builds the pages from those diffs.
@@ -385,16 +366,14 @@ The Updates section shows how the API changed from each version in `roblox-versi
 
 Motion must feel immediate. If the reader can notice that they are waiting for an animation, the animation is too slow. Follow the animation performance rules in `AGENTS.md`.
 
-| Token                | Value                           | Use                                                                     |
-| -------------------- | ------------------------------- | ----------------------------------------------------------------------- |
-| `--duration-instant` | 60ms                            | Press feedback                                                          |
-| `--duration-fast`    | 100ms                           | Hover color, tooltips, and icon swaps                                   |
-| `--duration-exit`    | 90ms                            | Every exit                                                              |
-| `--duration-ui`      | 140ms                           | Entrances of menus, popovers, the search dialog, and the mobile sidebar |
-| `--ease-out`         | `cubic-bezier(0.16, 1, 0.3, 1)` | Entrances                                                               |
-| `--ease-standard`    | `cubic-bezier(0.4, 0, 0.2, 1)`  | Exits and color changes                                                 |
-| `--motion-distance`  | 4px                             | Entrance offset                                                         |
-| `--motion-scale`     | 0.98                            | Entrance and press scale                                                |
+- `--duration-instant` (60ms): press feedback
+- `--duration-fast` (100ms): hover color, tooltips, and icon swaps
+- `--duration-exit` (90ms): every exit
+- `--duration-ui` (140ms): entrances of menus, popovers, the search dialog, and the mobile sidebar
+- `--ease-out` (`cubic-bezier(0.16, 1, 0.3, 1)`): entrances
+- `--ease-standard` (`cubic-bezier(0.4, 0, 0.2, 1)`): exits and color changes
+- `--motion-distance` (4px): entrance offset
+- `--motion-scale` (0.98): entrance and press scale
 
 What moves:
 
@@ -421,7 +400,7 @@ Under `prefers-reduced-motion: reduce`, nothing moves or scales. Fades may remai
 - Give all text a contrast ratio of at least 4.5:1 against its background. The text and code tokens meet this on the surfaces listed in [Color](#color).
 - Give focus rings, meaningful icons, and control boundaries a contrast ratio of at least 3:1.
 - Do not rely on color alone. A deprecated member also has the Deprecated tag, and a code color always comes with a text name.
-- Use landmarks: `header`, `nav` for the sidebar, `main` for the content, and `aside` for the right rail. Add a "Skip to content" link as the first focusable element.
+- Use landmarks: `header`, `nav` for the sidebar, `main` for the content, `aside` for the right rail, and `footer` for the footer. Add a "Skip to content" link as the first focusable element.
 - Use one `h1` per page, for the page name, `h2` for member sections, and `h3` for property category headings. Do not skip levels.
 - Give each landmark a unique name. Do not use `<footer>` or `<header>` inside a dialog, because browsers expose them as page landmarks.
 - Give `role="listbox"` only to an element that holds options. When a combobox has no options to show, set `aria-expanded="false"`.

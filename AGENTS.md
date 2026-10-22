@@ -1,6 +1,8 @@
 # roblox-api-ref
 
-A statically generated, interactive Roblox Engine API reference site. The build generates it from `https://setup.rbxcdn.com/${version}-Full-API-Dump.json` and from `en-us.json` inside `https://setup.rbxcdn.com/${version}-content-api-docs.zip`.
+Unofficial Roblox Engine API reference. Search and browse every class, member, enum, and data type, and see what changed in each Roblox Studio build.
+
+The site is static. The build generates it from `https://setup.rbxcdn.com/${version}-Full-API-Dump.json` and from `en-us.json` inside `https://setup.rbxcdn.com/${version}-content-api-docs.zip`.
 
 ## Technology stack
 
@@ -16,8 +18,8 @@ Interact with the project only through `vp run <task>`. Do not run Bun, Vite, Ox
 
 Tasks are defined in `run.tasks` in `vite.config.ts`. Vite+ runs the tasks in `dependsOn` first and caches task results.
 
-- `dump:update` reads the LIVE `WindowsStudio64` version from `clientsettings.roblox.com`. Only Studio uploads include the API dump and the API docs. When that build is newer than the last version in `roblox-versions.json`, the task downloads both API dumps and both English API docs into `data/`, writes the changes between them to `diffs/<version>.json`, and appends the build and its publish date to `roblox-versions.json`. When `roblox-versions.json` is empty, the task starts from the Studio build before the live one in [`version-history.json`](https://github.com/MaximumADHD/Roblox-Client-Tracker/blob/roblox/version-history.json). It skips a new version until its API dump and API docs are on the CDN.
-- `deps:update` updates each package in `package.json`, and the Bun version in `devEngines`, to the newest stable release that keeps the same major version, or the same minor version below 1.0.0. It skips deprecated releases. A prerelease version moves along its own line, such as `2.0.0-rc.15` to `2.0.0-rc.16`, or to the stable release of the same version, such as `2.0.0`. Then it runs `vp install` to update `bun.lock`. The `Update dependencies` workflow runs it every Monday, runs `ci`, and opens or updates a pull request from the `deps/update` branch. Dependabot updates the GitHub Actions versions the same way.
+- `dump:update` reads the LIVE `WindowsStudio64` version from `clientsettings.roblox.com`. Only Studio uploads include the API dump and the API docs. When that build is newer than the last version in `roblox-versions.json`, the task downloads both API dumps and both English API docs into `data/`, writes the changes between them to `diffs/<version>.json`, and appends the build and its publish date to `roblox-versions.json`. When `roblox-versions.json` is empty, the task starts from the Studio build before the live one in [version-history.json](https://github.com/MaximumADHD/Roblox-Client-Tracker/blob/roblox/version-history.json). It skips a new version until its API dump and API docs are on the CDN.
+- `deps:update` updates each package in `package.json`, and the Bun version in `devEngines`, to the newest stable release that keeps the same major version, or the same minor version below 1.0.0. It skips deprecated releases. A prerelease version moves along its own line, such as `2.0.0-rc.15` to `2.0.0-rc.16`, or to the stable release of the same version, such as `2.0.0`. Then it runs `vp install` to update `bun.lock`. The `Update dependencies` workflow runs it every Monday, runs `ci`, and opens or updates a pull request from the `deps/update` branch, and starts CI on that branch. Dependabot updates the GitHub Actions versions the same way.
 - `dump` downloads the API dump and the English API docs for the last version in `roblox-versions.json` into `data/`, unless they are already downloaded. It reads `en-us.json` out of `content-api-docs.zip` with HTTP range requests instead of downloading the whole archive. It deletes every other dump and API docs file in `data/`.
 - `gen` runs `dump`, then generates data into `src/generated/`, including the Updates pages from `diffs/`. It is never cached.
 - `dev`, `test`, `test:watch`, `typecheck`, and `check` run `gen` first.
@@ -34,6 +36,13 @@ Do not add or remove tasks unless the request requires it. When you add a task, 
 - `dump:update` writes both files. Do not edit them by hand.
 - A diff lists changes in the shape of the API dump: `element` is `Class`, `Member`, `Enum`, or `EnumItem`, and `type` is `Add`, `Remove`, or `Change`. `value` holds the dump entry after the change, or before it for `Remove`. A `Change` also lists each changed dump field with its `before` and `after` values. An added class or enum also gets an `Add` for each of its members or items. A removed class or enum does not list its members or items.
 - A diff also lists `descriptions`: each description in `en-us.json` that was added, changed, or removed for a class, member, parameter, return value, enum, or enum item that exists in the new version. `part` is `description`, `parameter`, or `return`, and `before` and `after` hold the HTML, or `null` when there is none. A member or enum item change also holds its dump entry in `value`. Roblox publishes new API docs once per release, so builds of the same release usually have no description changes.
+
+## Hosting and agents
+
+- The site is a static build deployed to GitHub Pages at `https://rapi.sleaze.dev/`. `src/site/origin.ts` holds the origin. Every absolute URL in pages, Markdown, the sitemap, and JSON-LD uses this origin.
+- Each class, enum, data type, update, and site page has a Markdown version. Its URL is the page URL without the trailing slash, followed by `.md`. The Markdown version of the home page is `llms.txt`.
+- Write absolute links in Markdown, so that the same Markdown works from any URL.
+- Only the CI workflow deploys. It deploys every push to the default branch and every run started on that branch. The hourly release workflow commits a new Roblox version and then starts CI, because pushes made with `GITHUB_TOKEN` do not start workflows. CI on the default branch never cancels a running build, so the last deploy is always the newest commit.
 
 ## Design
 

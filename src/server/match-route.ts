@@ -10,6 +10,7 @@ import {
 	type FacetKind,
 } from "../api/types.ts"
 import type { Update } from "../api/update-types.ts"
+import type { SitePageName } from "../site/site-pages.ts"
 
 export type Route =
 	| { page: "home" }
@@ -24,19 +25,23 @@ export type Route =
 	| { page: "facet"; facet: Facet }
 	| { page: "updates" }
 	| { page: "update"; item: Update }
+	| { page: "site"; name: SitePageName }
 	| { page: "not-found" }
 
-const indexPages = {
+const topPages = {
 	classes: { page: "classes" },
 	enums: { page: "enums" },
 	index: { page: "index" },
 	updates: { page: "updates" },
+	about: { page: "site", name: "about" },
+	contact: { page: "site", name: "contact" },
+	privacy: { page: "site", name: "privacy" },
 } as const satisfies Record<string, Route>
 
 export function routePaths(api: Api, updates: Update[]): string[] {
 	return [
 		"/",
-		...Object.keys(indexPages).map((name) => `/${name}/`),
+		...Object.keys(topPages).map((name) => `/${name}/`),
 		"/404",
 		...Object.keys(api.classes).map(
 			(name) => `/classes/${encodeURIComponent(name)}/`,
@@ -106,8 +111,8 @@ export function matchRoute(api: Api, updates: Update[], path: string): Route {
 	if (segments.length === 0) {
 		return { page: "home" }
 	}
-	if (segments.length === 1 && Object.hasOwn(indexPages, section)) {
-		return indexPages[section as keyof typeof indexPages]
+	if (segments.length === 1 && Object.hasOwn(topPages, section)) {
+		return topPages[section as keyof typeof topPages]
 	}
 	if (section === "index" && name !== undefined && segments.length <= 3) {
 		return indexRoute(api, name, value)

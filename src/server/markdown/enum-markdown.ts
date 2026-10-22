@@ -6,7 +6,7 @@ import type { Api, Enum, EnumItem } from "../../api/types.ts"
 import { docMarkdown } from "./doc-markdown.ts"
 import { factList, joinBlocks } from "./document.ts"
 import { escapeText, inlineCode, tableCell } from "./escape.ts"
-import { siteUrl } from "./site-url.ts"
+import { absoluteUrl } from "../../site/origin.ts"
 import { usageMarkdown } from "./usage-markdown.ts"
 
 function itemRow(item: EnumItem): string {
@@ -39,7 +39,7 @@ export function enumMarkdown(api: Api, item: Enum): string {
 					.map((tag) => tag.label)
 					.join(", "),
 			],
-			["HTML page", siteUrl(enumHref(item.name))],
+			["HTML page", absoluteUrl(enumHref(item.name))],
 			["Roblox documentation", enumDocsHref(item.name)],
 		]),
 		docMarkdown(item.description),

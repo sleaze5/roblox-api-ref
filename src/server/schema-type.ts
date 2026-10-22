@@ -1,3 +1,4 @@
+import { sitePages } from "../site/site-pages.ts"
 import type { Route } from "./match-route.ts"
 import type { SchemaType } from "./page-module.ts"
 
@@ -10,6 +11,8 @@ export function schemaType(route: Route): SchemaType | undefined {
 		case "type":
 		case "update":
 			return "TechArticle"
+		case "site":
+			return sitePages[route.name].schemaType
 		case "not-found":
 			return undefined
 		default:

@@ -12,6 +12,7 @@ import type { Update } from "../api/update-types.ts"
 import type { IconName } from "../components/icon-names.ts"
 import { Icon } from "../components/Icon.tsx"
 import { Shell } from "../layout/Shell.tsx"
+import { siteSummary } from "../site/brand.ts"
 
 const examples = [
 	"Part.Touched",
@@ -53,11 +54,15 @@ export function HomePage(props: { api: Api; updates: Update[] }) {
 		<Shell release={props.api}>
 			<div class="flex flex-col gap-12">
 				<section class="flex flex-col gap-4 pt-8">
-					<h1 class="text-xl font-semibold text-fg-bright">
-						Roblox Engine API
-					</h1>
+					<div class="flex items-center gap-3">
+						<h1 class="text-xl font-semibold text-fg-bright">
+							Roblox API Reference
+						</h1>
+						<span class="tag-chip">Unofficial</span>
+					</div>
 					<p class="max-w-prose text-base text-fg-muted">
-						{classCount} classes and {enumCount} enums from Roblox Studio{" "}
+						{siteSummary} This build covers {classCount} classes and{" "}
+						{enumCount} enums from Roblox Studio{" "}
 						<span class="font-mono text-sm text-fg">
 							{props.api.version}
 						</span>{" "}
@@ -65,7 +70,7 @@ export function HomePage(props: { api: Api; updates: Update[] }) {
 						<span class="font-mono text-sm text-fg">
 							{uploadName(props.api.hash)}
 						</span>
-						), including every default value in the API dump.
+						), with every default value in the API dump.
 					</p>
 					<button
 						type="button"
