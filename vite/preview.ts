@@ -2,6 +2,7 @@ import { readFile, stat } from "node:fs/promises"
 import type { IncomingMessage, ServerResponse } from "node:http"
 import { extname, join, normalize } from "node:path"
 import type { PreviewServer } from "vite-plus"
+import { negotiate, type Assets } from "../src/edge/negotiate.ts"
 
 const contentTypes: Record<string, string> = {
 	".html": "text/html; charset=utf-8",
@@ -65,31 +66,60 @@ async function encodedVariant(
 		: { path: `${path}${match.extension}`, encoding: match.name }
 }
 
+async function staticResponse(outDir: string, request: Request): Promise<Response> {
+	const file = await resolveFile(
+		outDir,
+		decodeURIComponent(new URL(request.url).pathname),
+	)
+	if (file === undefined) {
+		return new Response("Not Found\n", { status: 404 })
+	}
+	const variant = await encodedVariant(
+		file.path,
+		request.headers.get("Accept-Encoding") ?? "",
+	)
+	const headers = new Headers({
+		"Content-Type": contentTypes[extname(file.path)] ?? "application/octet-stream",
+		"Vary": "Accept-Encoding",
+	})
+	if (variant.encoding !== undefined) {
+		headers.set("Content-Encoding", variant.encoding)
+	}
+	const body = request.method === "HEAD" ? null : await readFile(variant.path)
+	return new Response(body, { status: file.status, headers })
+}
+
+function webRequest(request: IncomingMessage): Request {
+	const headers = new Headers()
+	for (const [name, value] of Object.entries(request.headers)) {
+		if (typeof value === "string") {
+			headers.set(name, value)
+		}
+	}
+	const host = request.headers.host ?? "localhost"
+	return new Request(new URL(request.url ?? "/", `http://${host}`), {
+		method: request.method ?? "GET",
+		headers,
+	})
+}
+
 async function respond(
 	outDir: string,
 	request: IncomingMessage,
 	response: ServerResponse,
-): Promise<boolean> {
-	const urlPath = decodeURIComponent((request.url ?? "/").split("?")[0] ?? "/")
-	const file = await resolveFile(outDir, urlPath)
-	if (file === undefined) {
-		return false
-	}
-	const variant = await encodedVariant(
-		file.path,
-		request.headers["accept-encoding"] ?? "",
-	)
-	response.statusCode = file.status
-	response.setHeader(
-		"Content-Type",
-		contentTypes[extname(file.path)] ?? "application/octet-stream",
-	)
-	response.setHeader("Vary", "Accept-Encoding")
-	if (variant.encoding !== undefined) {
-		response.setHeader("Content-Encoding", variant.encoding)
-	}
-	response.end(request.method === "HEAD" ? undefined : await readFile(variant.path))
-	return true
+): Promise<void> {
+	const assets: Assets = { fetch: (asset) => staticResponse(outDir, asset) }
+	const page = webRequest(request)
+	const result = await negotiate({
+		request: page,
+		next: () => assets.fetch(page),
+		assets,
+	})
+	response.statusCode = result.status
+	result.headers.forEach((value, name) => {
+		response.setHeader(name, value)
+	})
+	response.end(Buffer.from(await result.arrayBuffer()))
 }
 
 async function handle(
@@ -103,9 +133,7 @@ async function handle(
 		return
 	}
 	try {
-		if (!(await respond(outDir, request, response))) {
-			next()
-		}
+		await respond(outDir, request, response)
 	} catch (error) {
 		next(error)
 	}

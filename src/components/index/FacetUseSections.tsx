@@ -1,24 +1,11 @@
 import {
-	useKinds,
 	useKindTitles,
 	useSectionId,
-	type UseKind,
+	type UseSection,
 } from "../../api/facets/facet-use.ts"
-import type { FacetUse } from "../../api/types.ts"
 import { Icon } from "../Icon.tsx"
 import { useKindIcons } from "./facet-icons.ts"
 import { FacetUseRow } from "./FacetUseRow.tsx"
-
-export type UseSection = {
-	kind: UseKind
-	uses: FacetUse[]
-}
-
-export function useSections(uses: FacetUse[]): UseSection[] {
-	return useKinds
-		.map((kind) => ({ kind, uses: uses.filter((use) => use.kind === kind) }))
-		.filter((section) => section.uses.length > 0)
-}
 
 export function FacetUseSections(props: { id: string; sections: UseSection[] }) {
 	return (

@@ -1,4 +1,9 @@
-import { facetPaths, facetTitles, sortedFacets } from "../../api/facets/facet-info.ts"
+import {
+	facetPaths,
+	facetTitles,
+	indexDescription,
+	sortedFacets,
+} from "../../api/facets/facet-info.ts"
 import { facetHref, facetIndexHref, typesHref } from "../../api/routes.ts"
 import { facetKinds, type Api } from "../../api/types.ts"
 import { ListFilter } from "../../components/filters/ListFilter.tsx"
@@ -51,12 +56,7 @@ export function IndexPage(props: { api: Api }) {
 			}>
 			<article class="flex flex-col gap-6">
 				<PageHeader crumbs={rootCrumbs} icon="books" title="Index">
-					<PageLead>
-						Every data type, tag, property category, security level,
-						capability, thread safety level, and memory category found in
-						the API dump. The dump does not describe them, so each page
-						lists what uses it.
-					</PageLead>
+					<PageLead>{indexDescription}</PageLead>
 				</PageHeader>
 				<ListFilter
 					label="Filter the index"

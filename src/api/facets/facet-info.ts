@@ -36,6 +36,9 @@ export const facetPaths: Record<FacetKind, string> = {
 	memoryCategory: "memory-categories",
 }
 
+export const indexDescription =
+	"Every data type, tag, property category, security level, capability, thread safety level, and memory category found in the API dump. The dump does not describe them, so each page lists what uses it."
+
 export const facetIndexDescriptions: Record<FacetKind, string> = {
 	tag: "Every tag applied to classes, members, enums, and enum items.",
 	propertyCategory:

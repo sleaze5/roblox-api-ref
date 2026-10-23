@@ -1,5 +1,5 @@
 import { facetDescription } from "../../api/facets/facet-info.ts"
-import { useKindTitles, useSectionId } from "../../api/facets/facet-use.ts"
+import { useKindTitles, useSectionId, useSections } from "../../api/facets/facet-use.ts"
 import type { Api, Facet } from "../../api/types.ts"
 import { ListFilter } from "../../components/filters/ListFilter.tsx"
 import { facetIcons } from "../../components/index/facet-icons.ts"
@@ -7,10 +7,7 @@ import { IndexSidebar } from "../../components/index/IndexSidebar.tsx"
 import { indexGroupCrumbs } from "../../components/page/crumbs.ts"
 import { PageHeader } from "../../components/page/PageHeader.tsx"
 import { PageLead } from "../../components/page/PageLead.tsx"
-import {
-	FacetUseSections,
-	useSections,
-} from "../../components/index/FacetUseSections.tsx"
+import { FacetUseSections } from "../../components/index/FacetUseSections.tsx"
 import { PageRail } from "../../layout/PageRail.tsx"
 import { Shell } from "../../layout/Shell.tsx"
 import { FacetFacts } from "./FacetFacts.tsx"

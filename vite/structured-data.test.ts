@@ -10,7 +10,7 @@ function page(schemaType: SchemaType, name = "Part"): RenderedPage {
 		body: "",
 		schemaType,
 		breadcrumbs: [{ name, href: "/" }],
-		markdown: undefined,
+		markdown: { href: "/classes/Part.md", content: "# Part\n" },
 		modified: "2026-10-19T00:00:00.000Z",
 	}
 }

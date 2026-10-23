@@ -64,11 +64,16 @@ describe("headTags", () => {
 
 	test("keeps the not found page out of search results", () => {
 		const missing = headTags(
-			page({ status: 404, schemaType: undefined, markdown: undefined }),
+			page({
+				status: 404,
+				schemaType: undefined,
+				markdown: { href: "/404.md", content: "# Page not found\n" },
+			}),
 			"/404",
 		)
 		expect(content(missing, "robots")).toBe("noindex")
 		expect(missing).not.toContain('rel="canonical"')
+		expect(missing).not.toContain('rel="alternate"')
 		expect(content(missing, "og:type")).toBe("website")
 	})
 })

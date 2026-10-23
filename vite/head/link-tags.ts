@@ -4,10 +4,10 @@ import { link } from "./html-tags.ts"
 
 export function linkTags(page: RenderedPage, url: string): string[] {
 	return [
-		...(page.status === 404 ? [] : [link({ rel: "canonical", href: url })]),
-		...(page.markdown === undefined
+		...(page.status === 404
 			? []
 			: [
+					link({ rel: "canonical", href: url }),
 					link({
 						rel: "alternate",
 						type: "text/markdown",

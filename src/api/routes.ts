@@ -40,6 +40,10 @@ export function llmsTxtHref(): string {
 	return `${base}llms.txt`
 }
 
+export function notFoundMarkdownHref(): string {
+	return `${base}404.md`
+}
+
 export function updateHref(version: string): string {
 	return `${updatesHref()}${encodeURIComponent(version)}/`
 }

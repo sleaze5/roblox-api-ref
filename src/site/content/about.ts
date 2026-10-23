@@ -59,8 +59,10 @@ export function aboutContent(release: Release): PageContent {
 				heading: "For AI agents and tools",
 				blocks: [
 					paragraph(
-						"Each class, enum, data type, update, and site page has a Markdown version. To get it, remove the trailing slash from the page URL and add ",
+						"Every page has a Markdown version. To get it, remove the trailing slash from the page URL and add ",
 						{ code: ".md" },
+						", or request the page URL with ",
+						{ code: "Accept: text/markdown" },
 						". The ",
 						{ text: "llms.txt", href: llmsTxtHref() },
 						" file lists the URL patterns and indexes.",

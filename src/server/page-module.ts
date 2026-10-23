@@ -15,7 +15,7 @@ export type RenderedPage = {
 	body: string
 	schemaType: SchemaType | undefined
 	breadcrumbs: Breadcrumb[]
-	markdown: MarkdownPage | undefined
+	markdown: MarkdownPage
 	modified: string
 }
 

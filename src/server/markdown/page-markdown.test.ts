@@ -17,16 +17,28 @@ function markdownOf(path: string) {
 
 describe("page Markdown", () => {
 	test("lives at the page URL without the trailing slash, plus .md", () => {
-		const pages = routePaths(api, updates).flatMap((path) => {
-			const href = markdownOf(path)?.href
-			return href === undefined ? [] : [{ path, href }]
-		})
-		expect(pages.length).toBeGreaterThan(1000)
-		expect(pages.map((page) => page.href)).toEqual(
-			pages.map((page) =>
-				page.path === "/" ? "/llms.txt" : page.path.slice(0, -1) + ".md",
-			),
+		const pages = routePaths(api, updates).filter(
+			(path) => path !== "/" && path !== "/404",
 		)
+		expect(pages.length).toBeGreaterThan(1000)
+		expect(pages.map((path) => markdownOf(path).href)).toEqual(
+			pages.map((path) => path.slice(0, -1) + ".md"),
+		)
+	})
+
+	test("covers every page, including the Index and the not found page", () => {
+		for (const path of ["/index/", "/index/tags/", "/index/tags/Deprecated/"]) {
+			expect(markdownOf(path).content).toMatch(/^# /)
+		}
+		expect(markdownOf("/no/such/page/")).toEqual(markdownOf("/404"))
+		expect(markdownOf("/404").href).toBe("/404.md")
+	})
+
+	test("explains a missing page and links to llms.txt and the sitemap", () => {
+		const content = markdownOf("/404").content
+		expect(content).toMatch(/^# Page not found\n\nThis page does not exist/)
+		expect(content).toContain(`(${absoluteUrl("/llms.txt")})`)
+		expect(content).toContain(`(${absoluteUrl("/sitemap.xml")})`)
 	})
 
 	test("gives the home page llms.txt as its Markdown version", () => {
@@ -34,8 +46,17 @@ describe("page Markdown", () => {
 	})
 
 	test("links to other pages with absolute URLs on the site origin", () => {
-		for (const path of ["/classes/", "/enums/", "/index/types/", "/updates/"]) {
-			const content = markdownOf(path)?.content ?? ""
+		for (const path of [
+			"/classes/",
+			"/enums/",
+			"/index/",
+			"/index/types/",
+			"/index/security-levels/",
+			"/index/tags/Deprecated/",
+			"/updates/",
+			"/404",
+		]) {
+			const content = markdownOf(path).content
 			const targets = [...content.matchAll(/\]\(([^)]+)\)/g)].map(
 				(match) => match[1],
 			)
@@ -44,6 +65,12 @@ describe("page Markdown", () => {
 				expect(new URL(target ?? "").origin).toBe(siteOrigin)
 			}
 		}
+	})
+
+	test("tells agents about content negotiation in llms.txt", () => {
+		const text = llmsTxt(api)
+		expect(text).toContain("`Accept: text/markdown`")
+		expect(text).toContain(`(${absoluteUrl("/index.md")})`)
 	})
 
 	test("lists the site pages in llms.txt", () => {
@@ -69,7 +96,7 @@ describe("site pages", () => {
 			href: "/about.md",
 			content: sitePageMarkdown("About", sitePages.about.content(api)),
 		})
-		expect(markdownOf("/privacy/")?.content).toMatch(/^# Privacy policy\n/)
+		expect(markdownOf("/privacy/").content).toMatch(/^# Privacy policy\n/)
 	})
 
 	test("do not send readers to Roblox", () => {

@@ -7,6 +7,7 @@ import {
 	classHref,
 	enumsHref,
 	homeHref,
+	indexHref,
 	typesHref,
 	updatesHref,
 } from "../../api/routes.ts"
@@ -24,7 +25,7 @@ export function llmsTxt(api: Api): string {
 		"# Roblox API Reference",
 		`> ${siteDescription}`,
 		`This build is generated from the API dump and the English API docs for ${releaseText(api)} on the ${api.channel} channel, which Roblox published on ${api.published.slice(0, 10)}. It lists ${counts}.`,
-		`Each class, enum, and data type page has a Markdown version. To get the Markdown version of a page, remove the trailing slash from the page URL and add ${inlineCode(".md")}. For example, the Markdown version of ${absoluteUrl(classHref("Part"))} is ${classMarkdownUrl("Part")}.`,
+		`Every page has a Markdown version. To get the Markdown version of a page, remove the trailing slash from the page URL and add ${inlineCode(".md")}. For example, the Markdown version of ${absoluteUrl(classHref("Part"))} is ${classMarkdownUrl("Part")}. You can also request any page URL with ${inlineCode("Accept: text/markdown")} to get its Markdown version from the same URL.`,
 		"## When to use this reference",
 		[
 			"Use this reference to:",
@@ -51,6 +52,7 @@ export function llmsTxt(api: Api): string {
 			`- ${link("Classes", absoluteUrl(markdownHref(classesHref())))}: Every class, with its superclass and tags, such as Service and Deprecated`,
 			`- ${link("Enums", absoluteUrl(markdownHref(enumsHref())))}: Every enum, with its tags`,
 			`- ${link("Data types", absoluteUrl(markdownHref(typesHref())))}: Every data type, with its category`,
+			`- ${link("Index", absoluteUrl(markdownHref(indexHref())))}: Every tag, property category, security level, capability, thread safety level, and memory category, with links to what uses each one`,
 			`- ${link("Updates", absoluteUrl(markdownHref(updatesHref())))}: Every update, with the number of added, removed, and changed API items`,
 		].join("\n"),
 		"## Optional",

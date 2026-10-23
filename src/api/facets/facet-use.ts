@@ -23,6 +23,17 @@ export const useKindTitles: Record<UseKind, string> = {
 	Callback: "Callbacks",
 }
 
+export type UseSection = {
+	kind: UseKind
+	uses: FacetUse[]
+}
+
+export function useSections(uses: FacetUse[]): UseSection[] {
+	return useKinds
+		.map((kind) => ({ kind, uses: uses.filter((use) => use.kind === kind) }))
+		.filter((section) => section.uses.length > 0)
+}
+
 export function useSectionId(kind: UseKind): string {
 	return useKindTitles[kind].toLowerCase().replaceAll(" ", "-")
 }

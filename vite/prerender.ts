@@ -57,12 +57,10 @@ export async function prerender(paths: PrerenderPaths): Promise<void> {
 				const file = outputFile(paths.outDir, route)
 				await mkdir(dirname(file), { recursive: true })
 				const page = module.renderPage(route)
-				if (page.markdown !== undefined) {
-					await writeFile(
-						markdownFile(paths.outDir, page.markdown.href),
-						page.markdown.content,
-					)
-				}
+				await writeFile(
+					markdownFile(paths.outDir, page.markdown.href),
+					page.markdown.content,
+				)
 				await pool.run({
 					file,
 					html: fillTemplate(template, page, route),
