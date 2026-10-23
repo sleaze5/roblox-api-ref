@@ -2,8 +2,7 @@ import { contactHref } from "../../api/routes.ts"
 import { commitsUrl } from "../repository.ts"
 import { list, paragraph, type PageContent } from "./page-content.ts"
 
-const pagesDataUrl =
-	"https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#data-collection"
+const cloudflarePrivacyUrl = "https://www.cloudflare.com/privacypolicy/"
 
 export function privacyContent(): PageContent {
 	return {
@@ -42,9 +41,12 @@ export function privacyContent(): PageContent {
 				heading: "Hosting",
 				blocks: [
 					paragraph(
-						"The site is hosted on GitHub Pages. GitHub logs and stores the IP address of each visitor for security purposes, as described in ",
-						{ text: "the GitHub Pages documentation", href: pagesDataUrl },
-						". This site does not receive these logs, and does not identify or profile visitors.",
+						"The site is hosted on Cloudflare Pages. Cloudflare delivers every page through its network and processes request data, such as your IP address, user agent, and the requested URL, to serve the site and protect it from abuse, as described in ",
+						{
+							text: "the Cloudflare privacy policy",
+							href: cloudflarePrivacyUrl,
+						},
+						". Cloudflare may show the site owner aggregate traffic statistics, such as request counts. The site does not identify or profile visitors.",
 					),
 				],
 			},

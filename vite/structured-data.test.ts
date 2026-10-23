@@ -1,8 +1,7 @@
 import { describe, expect, test } from "vite-plus/test"
 import type { RenderedPage, SchemaType } from "../src/server/page-module.ts"
+import { siteOrigin } from "../src/site/origin.ts"
 import { structuredData } from "./structured-data.ts"
-
-const origin = "https://rapi.sleaze.dev"
 
 function page(schemaType: SchemaType, name = "Part"): RenderedPage {
 	return {
@@ -35,44 +34,47 @@ function graphNode(
 
 describe("structuredData", () => {
 	test("publishes the Organization on the home page", () => {
-		const data = parse(structuredData(page("WebSite"), `${origin}/`))
+		const data = parse(structuredData(page("WebSite"), `${siteOrigin}/`))
 		expect(data["@context"]).toBe("https://schema.org")
 		expect(graphNode(data, "WebSite")).toMatchObject({
-			url: `${origin}/`,
-			publisher: { "@id": `${origin}/#organization` },
+			url: `${siteOrigin}/`,
+			publisher: { "@id": `${siteOrigin}/#organization` },
 		})
 		expect(graphNode(data, "Organization")).toMatchObject({
-			"@id": `${origin}/#organization`,
+			"@id": `${siteOrigin}/#organization`,
 			"name": "Roblox API Reference",
-			"url": `${origin}/`,
+			"url": `${siteOrigin}/`,
 			"sameAs": ["https://github.com/sleaze5/roblox-api-ref"],
 			"contactPoint": {
 				"@type": "ContactPoint",
 				"contactType": "customer support",
-				"url": `${origin}/contact/`,
+				"url": `${siteOrigin}/contact/`,
 			},
 		})
 	})
 
 	test("links About and Contact pages to the Organization", () => {
 		for (const type of ["AboutPage", "ContactPage"] as const) {
-			const data = parse(structuredData(page(type), `${origin}/about/`))
+			const data = parse(structuredData(page(type), `${siteOrigin}/about/`))
 			expect(graphNode(data, type)["mainEntity"]).toEqual({
-				"@id": `${origin}/#organization`,
+				"@id": `${siteOrigin}/#organization`,
 			})
 		}
 	})
 
 	test("keeps reference pages to a single node without the Organization", () => {
 		const data = parse(
-			structuredData(page("TechArticle"), `${origin}/classes/Part/`),
+			structuredData(page("TechArticle"), `${siteOrigin}/classes/Part/`),
 		)
 		expect(data["@type"]).toBe("TechArticle")
 		expect(data).not.toHaveProperty("@graph")
 	})
 
 	test("escapes < so a name cannot close the script element", () => {
-		const html = structuredData(page("TechArticle", "a </script> b"), `${origin}/`)
+		const html = structuredData(
+			page("TechArticle", "a </script> b"),
+			`${siteOrigin}/`,
+		)
 		expect(html).not.toContain("a </script>")
 		expect(parse(html)["headline"]).toBe("a </script> b")
 	})

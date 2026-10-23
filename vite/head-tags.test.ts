@@ -1,9 +1,8 @@
 import { describe, expect, test } from "vite-plus/test"
 import type { RenderedPage } from "../src/server/page-module.ts"
 import { siteDescription } from "../src/site/brand.ts"
+import { siteOrigin } from "../src/site/origin.ts"
 import { headTags } from "./head-tags.ts"
-
-const origin = "https://rapi.sleaze.dev"
 
 function page(overrides: Partial<RenderedPage>): RenderedPage {
 	return {
@@ -41,7 +40,7 @@ describe("headTags", () => {
 	test("shows the large preview image on Open Graph, Twitter, and Discord", () => {
 		expect(content(html, "twitter:card")).toBe("summary_large_image")
 		for (const key of ["og:image", "og:image:secure_url", "twitter:image"]) {
-			expect(content(html, key)).toBe(`${origin}/og-image.png`)
+			expect(content(html, key)).toBe(`${siteOrigin}/og-image.png`)
 		}
 		expect(content(html, "og:image:width")).toBe("1200")
 		expect(content(html, "og:image:height")).toBe("630")
@@ -51,8 +50,10 @@ describe("headTags", () => {
 	})
 
 	test("links the canonical URL, the Markdown version, and search", () => {
-		expect(html).toContain(`<link rel="canonical" href="${origin}/classes/Part/">`)
-		expect(content(html, "og:url")).toBe(`${origin}/classes/Part/`)
+		expect(html).toContain(
+			`<link rel="canonical" href="${siteOrigin}/classes/Part/">`,
+		)
+		expect(content(html, "og:url")).toBe(`${siteOrigin}/classes/Part/`)
 		expect(html).toContain(
 			'<link rel="alternate" type="text/markdown" href="/classes/Part.md">',
 		)

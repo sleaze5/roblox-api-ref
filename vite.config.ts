@@ -12,6 +12,7 @@ const ignorePatterns = [
 	"AGENTS_EXPLORE/**",
 ]
 const stylesheet = "src/styles/app.css"
+const originCache = { env: ["SITE_ORIGIN", "CF_PAGES_URL"] }
 
 export default defineConfig({
 	plugins: [
@@ -151,6 +152,7 @@ export default defineConfig({
 			},
 			"build": {
 				command: ["vp run fix", "bun --bun vp build"],
+				cache: originCache,
 			},
 			"preview": {
 				command: "bun --bun vp preview",
@@ -160,6 +162,7 @@ export default defineConfig({
 			"test": {
 				command: "bun --bun vp test run",
 				dependsOn: ["gen"],
+				cache: originCache,
 			},
 			"test:watch": {
 				command: "bun --bun vp test",
@@ -190,6 +193,7 @@ export default defineConfig({
 			},
 			"ci": {
 				command: ["vp run check", "vp run test", "bun --bun vp build"],
+				cache: originCache,
 			},
 		},
 	},

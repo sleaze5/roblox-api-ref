@@ -39,10 +39,12 @@ Do not add or remove tasks unless the request requires it. When you add a task, 
 
 ## Hosting and agents
 
-- The site is a static build deployed to GitHub Pages at `https://rapi.sleaze.dev/`. `src/site/origin.ts` holds the origin. Every absolute URL in pages, Markdown, the sitemap, and JSON-LD uses this origin.
+- The site is a static build hosted on Cloudflare Pages at `https://rapi.sleaze.dev/`. Cloudflare's Git integration builds `dist/` and deploys every push to the default branch as production, and every push to another branch as a preview. No GitHub workflow deploys.
+- Cloudflare runs `bash scripts/cloudflare-build.sh` with `SKIP_DEPENDENCY_INSTALL=1` and no `BUN_VERSION`, and serves `dist/`. The script installs the exact Bun version in `devEngines` in `package.json`, runs `bun install --frozen-lockfile` and `vp run ci`, and deletes the precompressed `.br`, `.gz`, and `.zst` files, because Cloudflare compresses responses itself. `package.json` is the only place that names the Bun version.
+- `src/site/origin.ts` resolves the origin at build time from `SITE_ORIGIN`, then `CF_PAGES_URL`, then `http://localhost:5173`. Production sets `SITE_ORIGIN` in Cloudflare. Previews use their own `CF_PAGES_URL`. The `build`, `test`, and `ci` tasks list both variables in `cache.env`, because `vp run` passes only listed variables to a cached task. Every absolute URL in pages, Markdown, the sitemap, and JSON-LD uses this origin. Do not hardcode the production domain. Tests compare against `siteOrigin`, not a literal origin.
 - Each class, enum, data type, update, and site page has a Markdown version. Its URL is the page URL without the trailing slash, followed by `.md`. The Markdown version of the home page is `llms.txt`.
 - Write absolute links in Markdown, so that the same Markdown works from any URL.
-- Only the CI workflow deploys. It deploys every push to the default branch and every run started on that branch. The hourly release workflow commits a new Roblox version and then starts CI, because pushes made with `GITHUB_TOKEN` do not start workflows. CI on the default branch never cancels a running build, so the last deploy is always the newest commit.
+- GitHub holds the source and runs the automation. The CI workflow checks, tests, and builds every push and fork pull request. The hourly release workflow commits each new Roblox version to the default branch, which starts a Cloudflare deploy, and then starts CI, because pushes made with `GITHUB_TOKEN` do not start workflows. The `Update dependencies` workflow and Dependabot keep dependencies current.
 
 ## Design
 

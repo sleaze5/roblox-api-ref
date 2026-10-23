@@ -6,7 +6,7 @@ import { matchRoute, routePaths } from "../match-route.ts"
 import { llmsTxt } from "./llms-txt.ts"
 import { pageMarkdown } from "./page-markdown.ts"
 import { sitePageMarkdown } from "./site-page-markdown.ts"
-import { absoluteUrl } from "../../site/origin.ts"
+import { absoluteUrl, siteOrigin } from "../../site/origin.ts"
 
 const api = loadApi()
 const updates = loadUpdates()
@@ -41,7 +41,7 @@ describe("page Markdown", () => {
 			)
 			expect(targets.length).toBeGreaterThan(0)
 			for (const target of targets) {
-				expect(target).toMatch(/^https:\/\/rapi\.sleaze\.dev\//)
+				expect(new URL(target ?? "").origin).toBe(siteOrigin)
 			}
 		}
 	})
