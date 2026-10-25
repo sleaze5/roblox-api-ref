@@ -31,12 +31,12 @@ jobs:
 
             - id: version
               run: |
-                  vp run dump:update
+                  bun vp run dump:update
                   if git diff --quiet -- roblox-versions.json; then changed=false; else changed=true; fi
                   echo "changed=$changed" >> "$GITHUB_OUTPUT"
 
             - if: steps.version.outputs.changed == 'true'
-              run: vp run ci
+              run: bun vp run ci
 
             - if: steps.version.outputs.changed == 'true'
               run: |

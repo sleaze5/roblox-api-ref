@@ -16,7 +16,7 @@ const versions = await readVersions()
 const version = versions.at(-1)
 if (version === undefined) {
 	throw new Error(
-		"roblox-versions.json has no versions. Run `vp run dump:update` first.",
+		"roblox-versions.json has no versions. Run `bun vp run dump:update` first.",
 	)
 }
 

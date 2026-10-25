@@ -23,7 +23,7 @@ export async function readCurrentVersion(): Promise<RobloxVersion> {
 	const current = (await readVersions()).at(-1)
 	if (current === undefined) {
 		throw new Error(
-			"roblox-versions.json has no versions. Run `vp run dump:update` first.",
+			"roblox-versions.json has no versions. Run `bun vp run dump:update` first.",
 		)
 	}
 	return current
