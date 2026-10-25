@@ -24,13 +24,6 @@ function compareStable(a: Version, b: Version): number {
 	return a.major - b.major || a.minor - b.minor || a.patch - b.patch
 }
 
-function isCompatible(current: Version, candidate: Version): boolean {
-	if (candidate.major !== current.major) {
-		return false
-	}
-	return current.major > 0 || candidate.minor === current.minor
-}
-
 type Prerelease = {
 	tag: string
 	number: number
@@ -77,7 +70,7 @@ function stableUpgrade(from: Version, candidates: string[]): string | undefined 
 		if (
 			version === undefined ||
 			version.prerelease !== undefined ||
-			!isCompatible(from, version) ||
+			version.major !== from.major ||
 			compareStable(version, from) <= 0
 		) {
 			continue

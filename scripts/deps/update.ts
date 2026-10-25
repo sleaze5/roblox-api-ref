@@ -1,5 +1,7 @@
 import { join } from "node:path"
+import { parseArgs } from "node:util"
 import { rootDir } from "../paths.ts"
+import { skippedPackages } from "./dependabot.ts"
 import { fetchVersions } from "./npm-versions.ts"
 import { parseSpec } from "./package-spec.ts"
 import { safeUpgrade } from "./semver.ts"
@@ -16,6 +18,19 @@ type Change = {
 	from: string
 	to: string
 }
+
+const { values } = parseArgs({
+	options: {
+		all: { type: "boolean", default: false },
+		uncovered: { type: "boolean", default: false },
+	},
+})
+if (values.all && values.uncovered) {
+	throw new Error("Pass either --all or --uncovered, not both.")
+}
+const skipped = values.uncovered
+	? skippedPackages(await Bun.file(join(rootDir, ".github/dependabot.yml")).text())
+	: undefined
 
 const packagePath = join(rootDir, "package.json")
 const manifest = (await Bun.file(packagePath).json()) as PackageJson
@@ -53,10 +68,9 @@ async function upgradeSection(
 	if (section === undefined) {
 		return
 	}
-	const specs = Object.entries(section).map(([key, spec]) => ({
-		key,
-		spec: parseSpec(key, spec),
-	}))
+	const specs = Object.entries(section)
+		.filter(([key]) => skipped?.has(key) ?? true)
+		.map(([key, spec]) => ({ key, spec: parseSpec(key, spec) }))
 	const results = await Promise.all(
 		specs.map(({ key, spec }) => upgrade(key, spec.name, spec.version)),
 	)

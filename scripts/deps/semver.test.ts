@@ -15,8 +15,8 @@ describe("safe upgrades", () => {
 		).toBe("4.10.0")
 	})
 
-	test("stays in the same minor version below 1.0.0", () => {
-		expect(safeUpgrade("0.18.1", ["0.18.3", "0.19.0", "1.0.0"])).toBe("0.18.3")
+	test("takes minor versions below 1.0.0, like Dependabot", () => {
+		expect(safeUpgrade("0.18.1", ["0.18.3", "0.19.0", "1.0.0"])).toBe("0.19.0")
 	})
 
 	test("leaves up-to-date versions alone", () => {

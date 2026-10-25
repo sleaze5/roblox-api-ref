@@ -4,6 +4,14 @@ on:
     schedule:
         - cron: 17 6 * * 1
     workflow_dispatch:
+        inputs:
+            scope:
+                description: Update every dependency, or only the ones that Dependabot skips
+                type: choice
+                options:
+                    - all
+                    - uncovered
+                default: all
 
 permissions:
     contents: read
@@ -24,13 +32,23 @@ jobs:
             - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
             - uses: ./.github/actions/setup
 
+            - id: bun
+              run: |
+                  bun scripts/deps/update.ts "--$SCOPE"
+                  echo "version=$(jq -r .devEngines.packageManager.version package.json)" >> "$GITHUB_OUTPUT"
+              env:
+                  SCOPE: ${{ inputs.scope || 'uncovered' }}
+                  DEPS_SUMMARY_FILE: ${{ runner.temp }}/deps.md
+
+            - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+              with:
+                  bun-version: ${{ steps.bun.outputs.version }}
+
             - id: update
               run: |
-                  bun vp run deps:update
+                  bun install
                   if git diff --quiet -- package.json bun.lock; then changed=false; else changed=true; fi
                   echo "changed=$changed" >> "$GITHUB_OUTPUT"
-              env:
-                  DEPS_SUMMARY_FILE: ${{ runner.temp }}/deps.md
 
             - if: steps.update.outputs.changed == 'true'
               run: bun vp run ci
@@ -49,6 +67,7 @@ jobs:
                   else
                       gh pr edit "$branch" --body-file "$RUNNER_TEMP/deps.md"
                   fi
+                  gh pr merge --auto --squash "$branch"
                   gh workflow run ci.yml --ref "$branch"
               env:
                   GH_TOKEN: ${{ github.token }}
