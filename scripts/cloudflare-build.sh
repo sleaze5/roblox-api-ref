@@ -3,7 +3,7 @@ set -euo pipefail
 
 cd "$(dirname "$0")/.."
 
-bun_version=$(node -p 'require("./package.json").devEngines.packageManager.version')
+bun_version=$(sed -n '/"packageManager"/,/}/s/.*"version": *"\([^"]*\)".*/\1/p' package.json)
 export BUN_INSTALL="${BUN_INSTALL:-$HOME/.bun}"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
@@ -12,5 +12,4 @@ if [ "$(bun --version 2>/dev/null)" != "$bun_version" ]; then
 fi
 
 bun install --frozen-lockfile
-bun x vp run ci
-find dist -type f \( -name '*.br' -o -name '*.gz' -o -name '*.zst' \) -delete
+bun vp run ci

@@ -1,12 +1,24 @@
 name: Setup
-description: Install Vite+, Bun, and dependencies, and restore the downloaded Roblox API files.
+description: Install Bun and dependencies, and restore the downloaded Roblox API files.
 
 runs:
     using: composite
     steps:
-        - uses: voidzero-dev/setup-vp@68f39c78aaf39be468cabd2afb09c162574c84af # v1.21.2
+        - id: bun
+          shell: bash
+          run: echo "version=$(jq -r .devEngines.packageManager.version package.json)" >> "$GITHUB_OUTPUT"
+
+        - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
           with:
-              cache: true
+              bun-version: ${{ steps.bun.outputs.version }}
+
+        - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+          with:
+              path: ~/.bun/install/cache
+              key: bun-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('bun.lock') }}
+
+        - shell: bash
+          run: bun install --frozen-lockfile
 
         - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
           with:

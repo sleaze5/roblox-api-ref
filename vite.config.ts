@@ -12,7 +12,15 @@ const ignorePatterns = [
 	"AGENTS_EXPLORE/**",
 ]
 const stylesheet = "src/styles/app.css"
-const originCache = { env: ["SITE_ORIGIN", "CF_PAGES_URL"] }
+const sourceInput = [
+	{ auto: true },
+	"**",
+	"!.git/**",
+	"!node_modules/**",
+	"!dist/**",
+	"!data/**",
+]
+const originCache = { env: ["SITE_ORIGIN", "CF_PAGES_URL"], input: sourceInput }
 
 export default defineConfig({
 	plugins: [
@@ -133,7 +141,7 @@ export default defineConfig({
 				cache: false,
 			},
 			"deps:update": {
-				command: ["bun scripts/deps/update.ts", "vp install"],
+				command: ["bun scripts/deps/update.ts", "bun install"],
 				cache: false,
 			},
 			"dump": {
@@ -146,37 +154,40 @@ export default defineConfig({
 				cache: false,
 			},
 			"dev": {
-				command: "bun --bun vp dev",
+				command: "bun vp dev",
 				dependsOn: ["gen"],
 				cache: false,
 			},
 			"build": {
-				command: ["vp run fix", "bun --bun vp build"],
+				command: ["vp run fix", "bun vp build"],
 				cache: originCache,
 			},
 			"preview": {
-				command: "bun --bun vp preview",
+				command: "bun vp preview",
 				dependsOn: ["build"],
 				cache: false,
 			},
 			"test": {
-				command: "bun --bun vp test run",
+				command: "bun vp test run",
 				dependsOn: ["gen"],
 				cache: originCache,
 			},
 			"test:watch": {
-				command: "bun --bun vp test",
+				command: "bun vp test",
 				dependsOn: ["gen"],
 				cache: false,
 			},
-			"format:check": "bun --bun vp fmt --check",
+			"format:check": {
+				command: "bun fmt --check",
+				cache: { input: sourceInput },
+			},
 			"format:fix": {
-				command: "bun --bun vp fmt",
+				command: "bun fmt",
 				cache: false,
 			},
-			"lint:check": "bun --bun vp lint --deny-warnings",
+			"lint:check": "bun vp lint --deny-warnings",
 			"lint:fix": {
-				command: "bun --bun vp lint --fix --deny-warnings",
+				command: "bun vp lint --fix --deny-warnings",
 				cache: false,
 			},
 			"fix": {
@@ -184,15 +195,15 @@ export default defineConfig({
 				cache: false,
 			},
 			"typecheck": {
-				command: "bun --bun vp check --no-fmt --no-lint",
+				command: "bun vp check --no-fmt --no-lint",
 				dependsOn: ["gen"],
 			},
 			"check": {
-				command: "bun --bun vp check",
+				command: ["vp run format:check", "bun vp check --no-fmt"],
 				dependsOn: ["gen"],
 			},
 			"ci": {
-				command: ["vp run check", "vp run test", "bun --bun vp build"],
+				command: ["vp run check", "vp run test", "bun vp build"],
 				cache: originCache,
 			},
 		},

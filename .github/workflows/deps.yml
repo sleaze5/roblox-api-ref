@@ -26,14 +26,14 @@ jobs:
 
             - id: update
               run: |
-                  vp run deps:update
+                  bun vp run deps:update
                   if git diff --quiet -- package.json bun.lock; then changed=false; else changed=true; fi
                   echo "changed=$changed" >> "$GITHUB_OUTPUT"
               env:
                   DEPS_SUMMARY_FILE: ${{ runner.temp }}/deps.md
 
             - if: steps.update.outputs.changed == 'true'
-              run: vp run ci
+              run: bun vp run ci
 
             - if: steps.update.outputs.changed == 'true'
               run: |

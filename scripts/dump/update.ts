@@ -66,7 +66,7 @@ async function update(versions: RobloxVersion[], target: StudioBuild): Promise<v
 	console.log(
 		`Updated ${channel} ${previous?.version ?? "(none)"} -> ${next.version} (${next.hash}).`,
 	)
-	console.log("Run `vp run dump` to download the API docs.")
+	console.log("Run `bun vp run dump` to download the API docs.")
 }
 
 const build = await fetchLiveVersion("WindowsStudio64", channel)
