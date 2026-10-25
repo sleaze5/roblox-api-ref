@@ -2,7 +2,6 @@ import { mkdir, readFile, rm, writeFile } from "node:fs/promises"
 import { dirname, join } from "node:path"
 import { pathToFileURL } from "node:url"
 import type { PageModule } from "../src/server/page-module.ts"
-import { compressibleFiles } from "./compress.ts"
 import { minifyTemplateScripts } from "./minify-html.ts"
 import { OutputPool } from "./output-pool.ts"
 import { openSearchXml, robotsTxt, sitemapXml } from "./site-files.ts"
@@ -49,11 +48,10 @@ export async function prerender(paths: PrerenderPaths): Promise<void> {
 	const routes = module.routes()
 	await rm(join(paths.outDir, "index.html"))
 	await writeSiteFiles(paths.outDir, routes, module)
-	const assets = await compressibleFiles(paths.outDir)
 	const pool = new OutputPool(paths.workerFile)
 	try {
-		await Promise.all([
-			...routes.map(async (route) => {
+		await Promise.all(
+			routes.map(async (route) => {
 				const file = outputFile(paths.outDir, route)
 				await mkdir(dirname(file), { recursive: true })
 				const page = module.renderPage(route)
@@ -66,13 +64,12 @@ export async function prerender(paths: PrerenderPaths): Promise<void> {
 					html: fillTemplate(template, page, route),
 				})
 			}),
-			...assets.map((file) => pool.run({ file })),
-		])
+		)
 	} finally {
 		await pool.close()
 	}
 	await rm(dirname(paths.serverEntry), { recursive: true, force: true })
 	console.log(
-		`Prerendered, minified, and compressed ${routes.length} pages and ${assets.length} assets in ${Math.round(performance.now() - start)}ms.`,
+		`Prerendered and minified ${routes.length} pages in ${Math.round(performance.now() - start)}ms.`,
 	)
 }

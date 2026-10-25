@@ -13,4 +13,3 @@ fi
 
 bun install --frozen-lockfile
 bun vp run ci
-find dist -type f \( -name '*.br' -o -name '*.gz' -o -name '*.zst' \) -delete

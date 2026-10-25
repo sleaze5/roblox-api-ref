@@ -17,12 +17,6 @@ const contentTypes: Record<string, string> = {
 	".woff2": "font/woff2",
 }
 
-const encodings = [
-	{ name: "br", extension: ".br" },
-	{ name: "zstd", extension: ".zst" },
-	{ name: "gzip", extension: ".gz" },
-]
-
 type StaticFile = {
 	status: number
 	path: string
@@ -52,20 +46,6 @@ async function resolveFile(
 	return undefined
 }
 
-async function encodedVariant(
-	path: string,
-	accepted: string,
-): Promise<{ path: string; encoding?: string }> {
-	const candidates = encodings.filter((encoding) => accepted.includes(encoding.name))
-	const available = await Promise.all(
-		candidates.map((encoding) => isFile(`${path}${encoding.extension}`)),
-	)
-	const match = candidates.find((_, index) => available[index])
-	return match === undefined
-		? { path }
-		: { path: `${path}${match.extension}`, encoding: match.name }
-}
-
 async function staticResponse(outDir: string, request: Request): Promise<Response> {
 	const file = await resolveFile(
 		outDir,
@@ -74,18 +54,10 @@ async function staticResponse(outDir: string, request: Request): Promise<Respons
 	if (file === undefined) {
 		return new Response("Not Found\n", { status: 404 })
 	}
-	const variant = await encodedVariant(
-		file.path,
-		request.headers.get("Accept-Encoding") ?? "",
-	)
 	const headers = new Headers({
 		"Content-Type": contentTypes[extname(file.path)] ?? "application/octet-stream",
-		"Vary": "Accept-Encoding",
 	})
-	if (variant.encoding !== undefined) {
-		headers.set("Content-Encoding", variant.encoding)
-	}
-	const body = request.method === "HEAD" ? null : await readFile(variant.path)
+	const body = request.method === "HEAD" ? null : await readFile(file.path)
 	return new Response(body, { status: file.status, headers })
 }
 
