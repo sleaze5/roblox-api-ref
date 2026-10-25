@@ -7,14 +7,14 @@ The site is static. The build generates it from `https://setup.rbxcdn.com/${vers
 ## Technology stack
 
 - Frontend: SolidJS `2`, TypeScript `7`
-- Tooling: Vite+ (Vite, Rolldown, Oxlint, Oxfmt, Vitest), Bun (runtime and package manager)
+- Tooling: Vite+ (Vite, Rolldown, Oxlint, Vitest), Bun (runtime, package manager, and `bun fmt`, its built-in Oxfmt)
 - Design: Tailwind CSS `4`, Geist, Geist Mono, Phosphor icons
 
 Solid 2 differs from Solid 1.x. Read `node_modules/solid-js/CHEATSHEET.md` before you write Solid code.
 
 ## Task orchestration
 
-Interact with the project only through `bun vp run <task>`. Do not run Vite, Oxlint, Oxfmt, or Vitest directly, and do not install Node.js or a global `vp`. Bun is the only tool to install. `bun install` installs `vp` from the `vite-plus` package. Run `bun vp run` to list the available tasks.
+Interact with the project only through `bun vp run <task>`. Do not run Vite, Oxlint, Vitest, or `bun fmt` directly, and do not install Node.js or a global `vp`. Bun is the only tool to install. `bun install` installs `vp` from the `vite-plus` package. Run `bun vp run` to list the available tasks.
 
 Tasks are defined in `run.tasks` in `vite.config.ts`. Vite+ runs the tasks in `dependsOn` first and caches task results.
 
@@ -25,11 +25,12 @@ Tasks are defined in `run.tasks` in `vite.config.ts`. Vite+ runs the tasks in `d
 - `dump` downloads the API dump and the English API docs for the last version in `roblox-versions.json` into `data/`, unless they are already downloaded. It reads `en-us.json` out of `content-api-docs.zip` with HTTP range requests instead of downloading the whole archive. It deletes every other dump and API docs file in `data/`.
 - `gen` runs `dump`, then generates data into `src/generated/`, including the Updates pages from `diffs/`. It is never cached.
 - `dev`, `test`, `test:watch`, `typecheck`, and `check` run `gen` first.
+- `format:check` and `format:fix` run `bun fmt` with the `fmt` options in `vite.config.ts`. `check` runs `format:check`, then `vp check --no-fmt`.
 - `fix` runs `lint:fix`, `format:fix`, and `check`, in that order.
 - `build` runs `fix`, then builds into `dist/`. `preview` runs `build` first.
 - `ci` runs `check`, `test`, and a build. It never changes files.
 
-Do not add or remove tasks unless the request requires it. When you add a task, set `cache: false` if the task uses the network, writes source files, or runs a server.
+Do not add or remove tasks unless the request requires it. When you add a task, set `cache: false` if the task uses the network, writes source files, or runs a server. Vite+ cannot see the files that a Bun process reads, so give every other new task that runs Bun `sourceInput` in `cache.input`.
 
 ## Versions and diffs
 

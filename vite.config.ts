@@ -12,7 +12,15 @@ const ignorePatterns = [
 	"AGENTS_EXPLORE/**",
 ]
 const stylesheet = "src/styles/app.css"
-const originCache = { env: ["SITE_ORIGIN", "CF_PAGES_URL"] }
+const sourceInput = [
+	{ auto: true },
+	"**",
+	"!.git/**",
+	"!node_modules/**",
+	"!dist/**",
+	"!data/**",
+]
+const originCache = { env: ["SITE_ORIGIN", "CF_PAGES_URL"], input: sourceInput }
 
 export default defineConfig({
 	plugins: [
@@ -169,9 +177,12 @@ export default defineConfig({
 				dependsOn: ["gen"],
 				cache: false,
 			},
-			"format:check": "bun vp fmt --check",
+			"format:check": {
+				command: "bun fmt --check",
+				cache: { input: sourceInput },
+			},
 			"format:fix": {
-				command: "bun vp fmt",
+				command: "bun fmt",
 				cache: false,
 			},
 			"lint:check": "bun vp lint --deny-warnings",
@@ -188,7 +199,7 @@ export default defineConfig({
 				dependsOn: ["gen"],
 			},
 			"check": {
-				command: "bun vp check",
+				command: ["vp run format:check", "bun vp check --no-fmt"],
 				dependsOn: ["gen"],
 			},
 			"ci": {
