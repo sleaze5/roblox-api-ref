@@ -6,6 +6,7 @@ import { openSearch, setSearchEngine, setSearchError } from "./search-state.ts"
 let mounted = false
 
 function startEngine(): void {
+	setSearchError(undefined)
 	loadEngine().then(
 		(engine) => setSearchEngine(engine),
 		(error: unknown) =>

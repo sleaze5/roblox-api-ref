@@ -1,6 +1,10 @@
+import { announce } from "../announce.ts"
 import { readParam } from "../url-state.ts"
 
 const loadSearch = () => import("./mount-search.tsx")
+
+const unavailable =
+	"Search could not load. Check your connection, then reload the page."
 
 function isTyping(target: EventTarget | null): boolean {
 	return (
@@ -10,9 +14,21 @@ function isTyping(target: EventTarget | null): boolean {
 	)
 }
 
-async function show(query?: string): Promise<void> {
-	const { showSearch } = await loadSearch()
-	showSearch(query)
+function reloadWithSearch(query: string | undefined): void {
+	const url = new URL(window.location.href)
+	url.searchParams.set("search", query ?? "")
+	window.location.assign(url)
+}
+
+async function show(query?: string, reloadOnFailure = true): Promise<void> {
+	const search = await loadSearch().catch(() => undefined)
+	if (search !== undefined) {
+		search.showSearch(query)
+	} else if (reloadOnFailure && navigator.onLine) {
+		reloadWithSearch(query)
+	} else {
+		announce(unavailable)
+	}
 }
 
 export function initSearchTrigger(): void {
@@ -38,6 +54,6 @@ export function initSearchTrigger(): void {
 
 	const initial = readParam("search")
 	if (initial !== undefined) {
-		void show(initial)
+		void show(initial, false)
 	}
 }

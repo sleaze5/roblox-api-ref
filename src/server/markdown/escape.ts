@@ -1,5 +1,5 @@
 export function escapeText(text: string): string {
-	return text.replaceAll(/[`*_[\]<]/g, "$&")
+	return text.replaceAll(/[`*_[\]<]/g, "\\$&")
 }
 
 export function inlineCode(text: string): string {
@@ -12,5 +12,5 @@ export function link(text: string, url: string): string {
 }
 
 export function tableCell(markdown: string): string {
-	return markdown.replaceAll(/\s*\n+\s*/g, " ").replaceAll("|", "|")
+	return markdown.replaceAll(/\s*\n+\s*/g, " ").replaceAll("|", "\\|")
 }
