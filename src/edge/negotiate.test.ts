@@ -29,15 +29,23 @@ function serve(asset: Request): Promise<Response> {
 	)
 }
 
-function request(path: string, accept?: string, method = "GET"): Promise<Response> {
+const lastModified = "Mon, 26 Oct 2026 12:00:00 GMT"
+
+function request(
+	path: string,
+	accept?: string,
+	method = "GET",
+	headers: Record<string, string> = {},
+): Promise<Response> {
 	const page = new Request(`https://example.com${path}`, {
 		method,
-		headers: accept === undefined ? {} : { Accept: accept },
+		headers: accept === undefined ? headers : { ...headers, Accept: accept },
 	})
 	return negotiate({
 		request: page,
 		next: () => serve(page),
 		assets: { fetch: serve },
+		lastModified,
 	})
 }
 
@@ -75,6 +83,48 @@ describe("negotiate", () => {
 			expect(await response.text()).toBe("<h1>Part</h1>")
 		},
 	)
+
+	test.each(["text/html", "text/markdown"])(
+		"stamps %s pages with the build time",
+		async (accept) => {
+			const response = await request("/classes/Part/", accept)
+			expect(response.headers.get("Last-Modified")).toBe(lastModified)
+		},
+	)
+
+	test.each(["text/html", "text/markdown"])(
+		"answers 304 to %s requests made since the build",
+		async (accept) => {
+			const response = await request("/classes/Part/", accept, "GET", {
+				"If-Modified-Since": lastModified,
+			})
+			expect(response.status).toBe(304)
+			expect(response.headers.get("Last-Modified")).toBe(lastModified)
+			expect(response.headers.get("Vary")).toBe("Accept")
+			expect(await response.text()).toBe("")
+		},
+	)
+
+	test("serves the page again to requests made before the build", async () => {
+		const response = await request("/classes/Part/", "text/html", "GET", {
+			"If-Modified-Since": "Mon, 19 Oct 2026 12:00:00 GMT",
+		})
+		expect(response.status).toBe(200)
+		expect(await response.text()).toBe("<h1>Part</h1>")
+	})
+
+	test("leaves requests with an ETag to the asset server", async () => {
+		const response = await request("/classes/Part/", "text/markdown", "GET", {
+			"If-Modified-Since": lastModified,
+			"If-None-Match": '"stale"',
+		})
+		expect(response.status).toBe(200)
+	})
+
+	test("does not stamp missing pages", async () => {
+		const response = await request("/classes/Nope/", "text/html")
+		expect(response.headers.get("Last-Modified")).toBeNull()
+	})
 
 	test("answers a missing page with a Markdown 404 for agents", async () => {
 		const response = await request("/classes/Nope/", "text/markdown")

@@ -1,5 +1,6 @@
 import { preferredType, type MediaType } from "./accept.ts"
-import { linkMarkdown, varyOnAccept } from "./headers.ts"
+import { isUnchanged, notModified } from "./conditional.ts"
+import { linkMarkdown, stampLastModified, varyOnAccept } from "./headers.ts"
 import { markdownPath, notFoundMarkdownPath } from "./markdown-path.ts"
 
 export type Assets = {
@@ -10,6 +11,7 @@ export type NegotiationContext = {
 	request: Request
 	next: () => Promise<Response>
 	assets: Assets
+	lastModified: string
 }
 
 const pageTypes: readonly MediaType[] = ["text/html", "text/markdown"]
@@ -72,9 +74,19 @@ export async function negotiate(context: NegotiationContext): Promise<Response> 
 	if (type === undefined) {
 		return varyOnAccept(notAcceptable())
 	}
+	if (isUnchanged(request, context.lastModified)) {
+		return varyOnAccept(notModified(context.lastModified))
+	}
 	if (type === "text/markdown") {
-		return varyOnAccept(await markdownResponse(context, path))
+		const markdown = await markdownResponse(context, path)
+		return varyOnAccept(
+			markdown.ok ? stampLastModified(markdown, context.lastModified) : markdown,
+		)
 	}
 	const page = mutable(await context.next())
-	return varyOnAccept(page.ok ? linkMarkdown(page, path) : page)
+	return varyOnAccept(
+		page.ok
+			? stampLastModified(linkMarkdown(page, path), context.lastModified)
+			: page,
+	)
 }

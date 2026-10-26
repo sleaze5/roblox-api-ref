@@ -34,6 +34,10 @@ await Promise.all([
 		JSON.stringify(buildFacetSlugs(api.facets)),
 	),
 	Bun.write(join(generatedDir, "search.json"), JSON.stringify(searchIndex)),
+	Bun.write(
+		join(generatedDir, "build.json"),
+		JSON.stringify({ lastModified: new Date().toUTCString() }),
+	),
 	Bun.write(join(generatedDir, "icons.svg"), await buildIconSprite(iconNames)),
 	subsetFonts(),
 	Bun.write(join(generatedDir, "favicon.svg"), await buildFavicon()),

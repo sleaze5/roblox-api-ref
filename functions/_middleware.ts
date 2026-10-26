@@ -1,4 +1,5 @@
 import { negotiate, type Assets } from "../src/edge/negotiate.ts"
+import build from "../src/generated/build.json"
 
 type PagesContext = {
 	request: Request
@@ -11,5 +12,6 @@ export function onRequest(context: PagesContext): Promise<Response> {
 		request: context.request,
 		next: () => context.next(),
 		assets: context.env.ASSETS,
+		lastModified: build.lastModified,
 	})
 }

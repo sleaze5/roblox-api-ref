@@ -77,6 +77,7 @@ function webRequest(request: IncomingMessage): Request {
 
 async function respond(
 	outDir: string,
+	lastModified: string,
 	request: IncomingMessage,
 	response: ServerResponse,
 ): Promise<void> {
@@ -86,6 +87,7 @@ async function respond(
 		request: page,
 		next: () => assets.fetch(page),
 		assets,
+		lastModified,
 	})
 	response.statusCode = result.status
 	result.headers.forEach((value, name) => {
@@ -96,6 +98,7 @@ async function respond(
 
 async function handle(
 	outDir: string,
+	lastModified: string,
 	request: IncomingMessage,
 	response: ServerResponse,
 	next: (error?: unknown) => void,
@@ -105,14 +108,15 @@ async function handle(
 		return
 	}
 	try {
-		await respond(outDir, request, response)
+		await respond(outDir, lastModified, request, response)
 	} catch (error) {
 		next(error)
 	}
 }
 
 export function servePages(server: PreviewServer, outDir: string): void {
+	const lastModified = new Date().toUTCString()
 	server.middlewares.use((request, response, next) => {
-		void handle(outDir, request, response, next)
+		void handle(outDir, lastModified, request, response, next)
 	})
 }

@@ -15,3 +15,8 @@ export function linkMarkdown(response: Response, path: string): Response {
 	response.headers.set("Link", existing === null ? link : `${existing}, ${link}`)
 	return response
 }
+
+export function stampLastModified(response: Response, lastModified: string): Response {
+	response.headers.set("Last-Modified", lastModified)
+	return response
+}
