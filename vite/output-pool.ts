@@ -20,6 +20,10 @@ export class OutputPool {
 		})
 	}
 
+	get size(): number {
+		return this.workers.length
+	}
+
 	private settle(result: OutputResult): void {
 		const pending = this.pending.get(result.id)
 		this.pending.delete(result.id)

@@ -49,22 +49,29 @@ export async function prerender(paths: PrerenderPaths): Promise<void> {
 	await rm(join(paths.outDir, "index.html"))
 	await writeSiteFiles(paths.outDir, routes, module)
 	const pool = new OutputPool(paths.workerFile)
-	try {
-		await Promise.all(
-			routes.map(async (route) => {
-				const file = outputFile(paths.outDir, route)
-				await mkdir(dirname(file), { recursive: true })
-				const page = module.renderPage(route)
-				await writeFile(
-					markdownFile(paths.outDir, page.markdown.href),
-					page.markdown.content,
-				)
-				await pool.run({
-					file,
-					html: fillTemplate(template, page, route),
-				})
-			}),
+	const renderRoute = async (route: string) => {
+		const file = outputFile(paths.outDir, route)
+		await mkdir(dirname(file), { recursive: true })
+		const page = module.renderPage(route)
+		await writeFile(
+			markdownFile(paths.outDir, page.markdown.href),
+			page.markdown.content,
 		)
+		await pool.run({
+			file,
+			html: fillTemplate(template, page, route),
+		})
+	}
+	let next = 0
+	const renderNext = async (): Promise<void> => {
+		const route = routes[next++]
+		if (route !== undefined) {
+			await renderRoute(route)
+			await renderNext()
+		}
+	}
+	try {
+		await Promise.all(Array.from({ length: pool.size * 2 }, renderNext))
 	} finally {
 		await pool.close()
 	}

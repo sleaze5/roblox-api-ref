@@ -8,6 +8,7 @@ import {
 } from "./index-format.ts"
 import { accessFilters, hasFilters, type ParsedQuery } from "./query.ts"
 import { scoreName } from "./score.ts"
+import { TopResults } from "./top-results.ts"
 import { hasAny, TypeLookup } from "./type-lookup.ts"
 
 export type SearchResult = {
@@ -248,45 +249,53 @@ export class SearchEngine {
 		)
 	}
 
-	private candidates(query: ParsedQuery): { entry: number; scope?: number }[] {
+	private forEachCandidate(
+		query: ParsedQuery,
+		visit: (entry: number, scope?: number) => void,
+	): void {
 		if (query.scope === undefined) {
-			return query.words.length > 0 || hasFilters(query)
-				? this.index.names.map((_, entry) => ({ entry }))
-				: []
+			if (query.words.length > 0 || hasFilters(query)) {
+				for (let entry = 0; entry < this.size; entry++) {
+					visit(entry)
+				}
+			}
+			return
 		}
 		if (query.scope === "") {
-			return this.index.names.flatMap((_, entry) =>
-				this.isPrimary(entry) ? [] : [{ entry }],
-			)
+			for (let entry = 0; entry < this.size; entry++) {
+				if (!this.isPrimary(entry)) {
+					visit(entry)
+				}
+			}
+			return
 		}
 		const scopeKind = query.enumScope === true ? "Enum" : undefined
-		return this.resolveScopes(query.scope, scopeKind).flatMap((scope) =>
-			this.membersOf(scope).map((entry) => ({ entry, scope })),
-		)
+		for (const scope of this.resolveScopes(query.scope, scopeKind)) {
+			for (const entry of this.membersOf(scope)) {
+				visit(entry, scope)
+			}
+		}
 	}
 
 	search(query: ParsedQuery, limit: number): SearchResult[] {
 		const prepared = this.prepare(query)
-		const results: SearchResult[] = []
-		for (const candidate of this.candidates(query)) {
-			if (!this.matchesFilters(candidate.entry, prepared)) {
-				continue
+		const top = new TopResults<SearchResult>(limit, (a, b) => this.compare(a, b))
+		this.forEachCandidate(query, (entry, scope) => {
+			if (!this.matchesFilters(entry, prepared)) {
+				return
 			}
-			const score = this.scoreEntry(candidate.entry, prepared)
-			if (score > 0) {
-				results.push(
-					prepared.usedTypes === undefined
-						? { ...candidate, score }
-						: {
-								...candidate,
-								score,
-								role: this.roleOf(candidate.entry, prepared.usedTypes),
-							},
-				)
+			const score = this.scoreEntry(entry, prepared)
+			if (score === 0) {
+				return
 			}
-		}
-		results.sort((a, b) => this.compare(a, b))
-		return results.slice(0, limit)
+			const result: SearchResult =
+				scope === undefined ? { entry, score } : { entry, scope, score }
+			if (prepared.usedTypes !== undefined) {
+				result.role = this.roleOf(entry, prepared.usedTypes)
+			}
+			top.add(result)
+		})
+		return top.toArray()
 	}
 
 	private namedTypes(query: ParsedQuery): number[] {
@@ -311,20 +320,22 @@ export class SearchEngine {
 			return []
 		}
 		const ids = new Set([id])
-		const results: SearchResult[] = []
-		this.index.kinds.forEach((_, candidate) => {
+		const top = new TopResults<SearchResult>(limit, (a, b) =>
+			this.compareUsers(a, b),
+		)
+		for (let candidate = 0; candidate < this.size; candidate++) {
 			if (
 				hasAny(this.index.valueTypes[candidate], ids) ||
 				hasAny(this.index.parameterTypes[candidate], ids)
 			) {
-				results.push({
+				top.add({
 					entry: candidate,
 					score: 0,
 					role: this.roleOf(candidate, ids),
 				})
 			}
-		})
-		return results.sort((a, b) => this.compareUsers(a, b)).slice(0, limit)
+		}
+		return top.toArray()
 	}
 
 	private compareUsers(a: SearchResult, b: SearchResult): number {

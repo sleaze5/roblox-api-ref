@@ -80,8 +80,20 @@ class IndexBuilder {
 	}
 
 	linkTypes(): void {
-		this.index.typeEntries = this.typeKeys.map(
-			(key) => this.primaryEntries.get(key) ?? -1,
+		const { typeNames } = this.index
+		const order = this.typeKeys
+			.map((_, id) => id)
+			.sort((a, b) => compareNames(typeNames[a] ?? "", typeNames[b] ?? ""))
+		const sortedIds: number[] = []
+		order.forEach((id, sorted) => {
+			sortedIds[id] = sorted
+		})
+		const remap = (ids: number[]) => ids.map((id) => sortedIds[id] ?? id)
+		this.index.valueTypes = this.index.valueTypes.map(remap)
+		this.index.parameterTypes = this.index.parameterTypes.map(remap)
+		this.index.typeNames = order.map((id) => typeNames[id] ?? "")
+		this.index.typeEntries = order.map(
+			(id) => this.primaryEntries.get(this.typeKeys[id] ?? "") ?? -1,
 		)
 	}
 }

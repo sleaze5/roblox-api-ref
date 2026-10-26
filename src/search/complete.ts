@@ -1,21 +1,24 @@
-import { compareNames } from "../api/compare-names.ts"
 import type { SearchEngine, SearchResult } from "./engine.ts"
 import { accessFilters, kindAliases, tagAliases } from "./query.ts"
 
-function filterOptions(engine: SearchEngine): Record<string, string[]> {
-	return {
-		"is:": Object.keys(kindAliases),
-		"tag:": Object.keys(tagAliases),
-		"access:": Object.keys(accessFilters),
-		"type:": [...engine.index.typeNames].sort((a, b) => compareNames(a, b)),
-		"uses:": [...engine.index.typeNames].sort((a, b) => compareNames(a, b)),
-	}
+const kindOptions = Object.keys(kindAliases)
+const tagOptions = Object.keys(tagAliases)
+const accessOptions = Object.keys(accessFilters)
+
+function filterOptions(engine: SearchEngine): [string, readonly string[]][] {
+	return [
+		["is:", kindOptions],
+		["tag:", tagOptions],
+		["access:", accessOptions],
+		["type:", engine.index.typeNames],
+		["uses:", engine.index.typeNames],
+	]
 }
 
 function completeFilter(word: string, engine: SearchEngine): string | undefined {
 	const negation = word.startsWith("!") || word.startsWith("-") ? word.charAt(0) : ""
 	const body = word.slice(negation.length).toLowerCase()
-	for (const [prefix, options] of Object.entries(filterOptions(engine))) {
+	for (const [prefix, options] of filterOptions(engine)) {
 		if (body.startsWith(prefix)) {
 			const value = body.slice(prefix.length)
 			const option = options.find((candidate) => {

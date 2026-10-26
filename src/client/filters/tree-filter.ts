@@ -1,24 +1,33 @@
 import { matchesName } from "./name-match.ts"
 
-function nodeName(node: HTMLElement): string {
-	const link = node.querySelector(":scope > a, :scope > details > summary > a")
-	return link?.textContent ?? ""
+type TreeNode = {
+	element: HTMLElement
+	name: string
+	details: HTMLDetailsElement | null
+	children: TreeNode[]
 }
 
-function childNodes(node: HTMLElement): HTMLElement[] {
-	return [...node.querySelectorAll<HTMLElement>(":scope > details > ul > li")]
+function readNode(element: HTMLElement): TreeNode {
+	const link = element.querySelector(":scope > a, :scope > details > summary > a")
+	return {
+		element,
+		name: link?.textContent ?? "",
+		details: element.querySelector<HTMLDetailsElement>(":scope > details"),
+		children: [
+			...element.querySelectorAll<HTMLElement>(":scope > details > ul > li"),
+		].map(readNode),
+	}
 }
 
-function filterNode(node: HTMLElement, text: string): number {
+function filterNode(node: TreeNode, text: string): number {
 	let matches = 0
-	for (const child of childNodes(node)) {
+	for (const child of node.children) {
 		matches += filterNode(child, text)
 	}
-	const selfMatch = matchesName(text, nodeName(node))
-	node.hidden = !selfMatch && matches === 0
-	const details = node.querySelector<HTMLDetailsElement>(":scope > details")
-	if (details !== null && text !== "") {
-		details.open = matches > 0
+	const selfMatch = matchesName(text, node.name)
+	node.element.hidden = !selfMatch && matches === 0
+	if (node.details !== null && text !== "") {
+		node.details.open = matches > 0
 	}
 	return matches + (selfMatch ? 1 : 0)
 }
@@ -29,7 +38,7 @@ export type TreeFilter = {
 }
 
 export function createTreeFilter(tree: HTMLElement): TreeFilter {
-	const roots = [...tree.querySelectorAll<HTMLElement>(":scope > li")]
+	const roots = [...tree.querySelectorAll<HTMLElement>(":scope > li")].map(readNode)
 	const initiallyOpen = new Map(
 		[...tree.querySelectorAll("details")].map((details) => [details, details.open]),
 	)
