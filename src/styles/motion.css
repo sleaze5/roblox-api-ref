@@ -95,3 +95,23 @@
 @utility motion-caret {
 	transition: rotate var(--duration-fast) var(--ease-out);
 }
+
+@utility motion-spin {
+	animation: spin var(--duration-spin) linear infinite;
+}
+
+@utility motion-loading {
+	animation: loading-in var(--duration-fast) var(--ease-out) var(--delay-loading) both;
+}
+
+@keyframes spin {
+	to {
+		transform: rotate(1turn);
+	}
+}
+
+@keyframes loading-in {
+	from {
+		opacity: 0;
+	}
+}

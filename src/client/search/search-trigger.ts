@@ -15,11 +15,6 @@ async function show(query?: string): Promise<void> {
 	showSearch(query)
 }
 
-async function warm(): Promise<void> {
-	const { warmSearch } = await loadSearch()
-	warmSearch()
-}
-
 export function initSearchTrigger(): void {
 	document.addEventListener("keydown", (event) => {
 		const shortcut =
@@ -44,9 +39,5 @@ export function initSearchTrigger(): void {
 	const initial = readParam("search")
 	if (initial !== undefined) {
 		void show(initial)
-	} else if ("requestIdleCallback" in window) {
-		requestIdleCallback(() => void warm(), { timeout: 3000 })
-	} else {
-		setTimeout(() => void warm(), 1500)
 	}
 }

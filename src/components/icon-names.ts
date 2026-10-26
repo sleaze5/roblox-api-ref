@@ -7,6 +7,7 @@ export const iconNames = [
 	"caret-right",
 	"check",
 	"check-circle",
+	"circle-notch",
 	"copy",
 	"cube",
 	"envelope-simple",

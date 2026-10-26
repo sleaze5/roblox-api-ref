@@ -5,7 +5,7 @@ import { openSearch, setSearchEngine, setSearchError } from "./search-state.ts"
 
 let mounted = false
 
-export function warmSearch(): void {
+function startEngine(): void {
 	loadEngine().then(
 		(engine) => setSearchEngine(engine),
 		(error: unknown) =>
@@ -23,6 +23,6 @@ export function showSearch(query?: string): void {
 		render(() => <SearchDialog />, root)
 		mounted = true
 	}
-	warmSearch()
+	startEngine()
 	openSearch(query)
 }

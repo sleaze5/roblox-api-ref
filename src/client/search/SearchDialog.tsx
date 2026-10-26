@@ -204,8 +204,11 @@ export function SearchDialog() {
 					<Show
 						when={searchEngine()}
 						fallback={
-							<p class="px-2 py-6 text-fg-muted">
-								Loading the search index…
+							<p
+								role="status"
+								class="flex motion-loading items-center gap-2 px-2 py-6 text-fg-muted">
+								<Icon name="circle-notch" class="motion-spin" />
+								Preparing the search index…
 							</p>
 						}>
 						{(engine) => (
