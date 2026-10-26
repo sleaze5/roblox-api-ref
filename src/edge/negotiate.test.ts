@@ -19,24 +19,42 @@ const files: Record<string, { type: string; body: string }> = {
 
 function serve(asset: Request): Promise<Response> {
 	const path = new URL(asset.url).pathname
-	const file = files[path.endsWith("/") ? `${path}index.html` : path]
+	const name = path.endsWith("/") ? `${path}index.html` : path
+	const file = files[name]
 	const found = file ?? files["/404.html"]
+	const etag = `"${name}"`
+	const headers = { "Content-Type": found?.type ?? "", "Vary": "Accept-Encoding" }
+	if (file !== undefined && asset.headers.get("If-None-Match") === etag) {
+		return Promise.resolve(new Response(null, { status: 304, headers }))
+	}
 	return Promise.resolve(
 		new Response(asset.method === "HEAD" ? null : (found?.body ?? ""), {
 			status: file === undefined ? 404 : 200,
-			headers: { "Content-Type": found?.type ?? "", "Vary": "Accept-Encoding" },
+			headers: file === undefined ? headers : { ...headers, ETag: etag },
 		}),
 	)
 }
 
-function request(path: string, accept?: string, method = "GET"): Promise<Response> {
+async function serveWithoutEtag(asset: Request): Promise<Response> {
+	const response = await serve(asset)
+	const copy = new Response(response.body, response)
+	copy.headers.delete("ETag")
+	return copy
+}
+
+function request(
+	path: string,
+	accept?: string,
+	method = "GET",
+	headers: Record<string, string> = {},
+): Promise<Response> {
 	const page = new Request(`https://example.com${path}`, {
 		method,
-		headers: accept === undefined ? {} : { Accept: accept },
+		headers: accept === undefined ? headers : { ...headers, Accept: accept },
 	})
 	return negotiate({
 		request: page,
-		next: () => serve(page),
+		next: () => serveWithoutEtag(page),
 		assets: { fetch: serve },
 	})
 }
@@ -75,6 +93,17 @@ describe("negotiate", () => {
 			expect(await response.text()).toBe("<h1>Part</h1>")
 		},
 	)
+
+	test("lets browsers revalidate HTML pages with their ETag", async () => {
+		const page = await request("/classes/Part/", "text/html")
+		const etag = page.headers.get("ETag")
+		expect(etag).not.toBeNull()
+		const revalidated = await request("/classes/Part/", "text/html", "GET", {
+			"If-None-Match": etag ?? "",
+		})
+		expect(revalidated.status).toBe(304)
+		expect(revalidated.headers.get("Vary")).toBe("Accept-Encoding, Accept")
+	})
 
 	test("answers a missing page with a Markdown 404 for agents", async () => {
 		const response = await request("/classes/Nope/", "text/markdown")
