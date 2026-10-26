@@ -75,6 +75,6 @@ export async function negotiate(context: NegotiationContext): Promise<Response> 
 	if (type === "text/markdown") {
 		return varyOnAccept(await markdownResponse(context, path))
 	}
-	const page = mutable(await context.assets.fetch(request))
+	const page = mutable(await context.next())
 	return varyOnAccept(page.ok ? linkMarkdown(page, path) : page)
 }
