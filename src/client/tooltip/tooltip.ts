@@ -39,8 +39,14 @@ export function showTooltip(target: HTMLElement): void {
 }
 
 export function refreshTooltip(target: HTMLElement): void {
-	if (target === anchor) {
-		show(hintTarget(target))
+	if (target !== anchor) {
+		return
+	}
+	const hint = hintTarget(target)
+	if (hint === undefined) {
+		hide()
+	} else {
+		show(hint)
 	}
 }
 
