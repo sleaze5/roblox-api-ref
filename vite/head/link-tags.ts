@@ -1,5 +1,5 @@
 import type { RenderedPage } from "../../src/server/page-module.ts"
-import { feedPath } from "../../src/server/feed.ts"
+import { feedPath } from "../../src/site/feed-path.ts"
 import { siteName } from "../../src/site/brand.ts"
 import { link } from "./html-tags.ts"
 

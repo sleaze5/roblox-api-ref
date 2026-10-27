@@ -3,9 +3,8 @@ import { updateHref, updatesHref } from "../api/routes.ts"
 import { updateSummary } from "../api/update-text.ts"
 import type { Update } from "../api/update-types.ts"
 import { siteName } from "../site/brand.ts"
+import { feedPath } from "../site/feed-path.ts"
 import { absoluteUrl } from "../site/origin.ts"
-
-export const feedPath = "/updates.xml"
 
 const feedLength = 20
 
