@@ -5,7 +5,7 @@ import { DocText } from "../../components/doc/DocText.tsx"
 import { Fact } from "../../components/facts/Fact.tsx"
 import { FactList } from "../../components/facts/FactList.tsx"
 import { HistoryFacts } from "../../components/history/HistoryFacts.tsx"
-import { HistoryButton, HistoryMenu } from "../../components/history/HistoryMenu.tsx"
+import { HistoryList } from "../../components/history/HistoryList.tsx"
 import { ownerAnchor } from "../../api/update-text.ts"
 import { ListFilter } from "../../components/filters/ListFilter.tsx"
 import { Icon } from "../../components/Icon.tsx"
@@ -57,13 +57,6 @@ export function EnumPage(props: { api: Api; item: Enum }) {
 						href: enumDocsHref(props.item.name),
 						name: `Enum.${props.item.name}`,
 					}}
-					actions={
-						<HistoryButton
-							history={props.item.history}
-							id="enum"
-							name={`Enum.${props.item.name}`}
-						/>
-					}
 					code>
 					<DocText
 						doc={props.item.description}
@@ -88,10 +81,8 @@ export function EnumPage(props: { api: Api; item: Enum }) {
 							start={props.api.historyStart}
 						/>
 					</FactList>
-					<HistoryMenu
+					<HistoryList
 						history={props.item.history}
-						id="enum"
-						name={`Enum.${props.item.name}`}
 						fragment={ownerAnchor({ kind: "Enum", name: props.item.name })}
 					/>
 				</PageHeader>

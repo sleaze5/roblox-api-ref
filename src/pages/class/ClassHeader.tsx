@@ -6,7 +6,7 @@ import { DocText } from "../../components/doc/DocText.tsx"
 import { Fact } from "../../components/facts/Fact.tsx"
 import { FactList } from "../../components/facts/FactList.tsx"
 import { HistoryFacts } from "../../components/history/HistoryFacts.tsx"
-import { HistoryButton, HistoryMenu } from "../../components/history/HistoryMenu.tsx"
+import { HistoryList } from "../../components/history/HistoryList.tsx"
 import { ownerAnchor } from "../../api/update-text.ts"
 import { classCrumbs } from "../../components/page/crumbs.ts"
 import { PageHeader } from "../../components/page/PageHeader.tsx"
@@ -27,13 +27,6 @@ export function ClassHeader(props: {
 			icon="cube"
 			title={props.item.name}
 			docs={{ href: classDocsHref(props.item.name), name: props.item.name }}
-			actions={
-				<HistoryButton
-					history={props.item.history}
-					id="class"
-					name={props.item.name}
-				/>
-			}
 			code>
 			<DocText
 				doc={props.item.description}
@@ -83,10 +76,8 @@ export function ClassHeader(props: {
 					start={props.historyStart}
 				/>
 			</FactList>
-			<HistoryMenu
+			<HistoryList
 				history={props.item.history}
-				id="class"
-				name={props.item.name}
 				fragment={ownerAnchor({ kind: "Class", name: props.item.name })}
 			/>
 		</PageHeader>

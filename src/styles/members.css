@@ -109,7 +109,6 @@
 	transition: opacity var(--duration-fast) var(--ease-standard);
 
 	.member-card:hover &,
-	.member-card:has(:popover-open) &,
 	&:focus-within {
 		opacity: 1;
 	}
@@ -191,15 +190,6 @@
 	}
 }
 
-@utility history-link {
-	@apply member-action;
-	cursor: pointer;
-
-	&::before {
-		mask-image: url("../generated/icons/clock-counter-clockwise.svg");
-	}
-}
-
 @utility group-head {
 	position: relative;
 	display: flex;
@@ -224,5 +214,53 @@
 	&:hover {
 		background-color: var(--color-hover);
 		color: var(--color-fg);
+	}
+}
+
+@utility history-disclosure {
+	display: flex;
+	flex-direction: column;
+	gap: calc(var(--spacing) * 1.5);
+
+	& > summary {
+		display: inline-flex;
+		align-items: center;
+		gap: calc(var(--spacing) * 1.5);
+		width: fit-content;
+		border-radius: var(--radius-sm);
+		color: var(--color-fg-muted);
+		transition: color var(--duration-fast) var(--ease-standard);
+	}
+
+	& > summary::before,
+	& > summary::after {
+		content: "";
+		width: 14px;
+		height: 14px;
+		background-color: currentColor;
+		mask-position: center;
+		mask-repeat: no-repeat;
+		mask-size: contain;
+	}
+
+	& > summary::before {
+		mask-image: url("../generated/icons/clock-counter-clockwise.svg");
+	}
+
+	& > summary::after {
+		mask-image: url("../generated/icons/caret-right.svg");
+		transition: rotate var(--duration-fast) var(--ease-out);
+	}
+
+	& > summary:hover {
+		color: var(--color-fg);
+	}
+
+	&[open] > summary::after {
+		rotate: 90deg;
+	}
+
+	& > ul {
+		padding-left: calc(var(--spacing) * 5);
 	}
 }

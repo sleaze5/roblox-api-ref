@@ -6,7 +6,7 @@ import { CodeTokens } from "../../components/code/CodeTokens.tsx"
 import { DocText } from "../../components/doc/DocText.tsx"
 import { CopyLink } from "../../components/members/MemberLink.tsx"
 import { TagList } from "../../components/TagList.tsx"
-import { HistoryButton, HistoryMenu } from "../../components/history/HistoryMenu.tsx"
+import { HistoryList } from "../../components/history/HistoryList.tsx"
 import { changeAnchor } from "../../api/update-text.ts"
 
 export function EnumItemRow(props: { owner: Enum; item: EnumItem }) {
@@ -27,11 +27,6 @@ export function EnumItemRow(props: { owner: Enum; item: EnumItem }) {
 					/>
 				</code>
 				<div class="member-actions">
-					<HistoryButton
-						history={props.item.history}
-						id={anchor}
-						name={props.item.name}
-					/>
 					<CopyLink name={props.item.name} href={`#${anchor}`} />
 				</div>
 			</div>
@@ -43,10 +38,8 @@ export function EnumItemRow(props: { owner: Enum; item: EnumItem }) {
 					<code class="text-fg">{props.item.legacyNames.join(", ")}</code>
 				</p>
 			)}
-			<HistoryMenu
+			<HistoryList
 				history={props.item.history}
-				id={anchor}
-				name={props.item.name}
 				fragment={changeAnchor("Enum", props.owner.name, props.item.name)}
 			/>
 		</li>

@@ -10,7 +10,6 @@ export function PageHeader(props: {
 	title: JSX.Element
 	code?: boolean
 	docs?: { href: string; name: string } | undefined
-	actions?: JSX.Element
 	children?: JSX.Element
 }) {
 	return (
@@ -26,7 +25,6 @@ export function PageHeader(props: {
 						]}>
 						{props.title}
 					</h1>
-					{props.actions}
 					{props.docs === undefined ? null : (
 						<CreatorHubLink href={props.docs.href} name={props.docs.name} />
 					)}

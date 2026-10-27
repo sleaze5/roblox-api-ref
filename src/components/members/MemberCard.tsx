@@ -4,7 +4,7 @@ import { signatureParts } from "../../api/signature.ts"
 import { memberTags } from "../../api/tags.ts"
 import type { Member } from "../../api/types.ts"
 import { DocText } from "../doc/DocText.tsx"
-import { HistoryButton, HistoryMenu } from "../history/HistoryMenu.tsx"
+import { HistoryList } from "../history/HistoryList.tsx"
 import { changeAnchor } from "../../api/update-text.ts"
 import { TagList } from "../TagList.tsx"
 import { MemberDetails } from "./details/MemberDetails.tsx"
@@ -32,13 +32,6 @@ export function MemberCard(props: { member: Member; owner: string; own: boolean 
 			<div class="member-head">
 				<Signature parts={parts} />
 				<div class="member-actions">
-					{props.own ? (
-						<HistoryButton
-							history={props.member.history}
-							id={anchor}
-							name={props.member.name}
-						/>
-					) : null}
 					<CopyLink name={props.member.name} href={href} />
 					<DocsLink name={props.member.name} owner={props.owner} />
 				</div>
@@ -48,10 +41,8 @@ export function MemberCard(props: { member: Member; owner: string; own: boolean 
 			<MemberDetails member={props.member} />
 			<Preferred member={props.member} />
 			{props.own ? (
-				<HistoryMenu
+				<HistoryList
 					history={props.member.history}
-					id={anchor}
-					name={props.member.name}
 					fragment={changeAnchor("Class", props.owner, props.member.name)}
 				/>
 			) : null}
