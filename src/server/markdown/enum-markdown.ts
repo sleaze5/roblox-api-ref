@@ -5,7 +5,7 @@ import { plainTags } from "../../api/tags.ts"
 import type { Api, Enum, EnumItem } from "../../api/types.ts"
 import { docMarkdown } from "./doc-markdown.ts"
 import { factList, joinBlocks } from "./document.ts"
-import { historyFacts } from "./history-markdown.ts"
+import { historyFacts, removedMarkdown } from "./history-markdown.ts"
 import { escapeText, inlineCode, tableCell } from "./escape.ts"
 import { absoluteUrl } from "../../site/origin.ts"
 import { usageMarkdown } from "./usage-markdown.ts"
@@ -47,5 +47,6 @@ export function enumMarkdown(api: Api, item: Enum): string {
 		docMarkdown(item.description),
 		itemTable(item.items),
 		usageMarkdown(item.usedBy),
+		removedMarkdown("Removed items", "Enum", item.name, item.removedItems),
 	])
 }

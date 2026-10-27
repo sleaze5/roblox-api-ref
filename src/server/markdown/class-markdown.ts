@@ -11,7 +11,7 @@ import { plainTags } from "../../api/tags.ts"
 import type { Api, Class, MemberKind } from "../../api/types.ts"
 import { docMarkdown } from "./doc-markdown.ts"
 import { factList, joinBlocks } from "./document.ts"
-import { historyFacts } from "./history-markdown.ts"
+import { historyFacts, removedMarkdown } from "./history-markdown.ts"
 import { escapeText, inlineCode, link } from "./escape.ts"
 import { classMarkdownUrl } from "./markdown-href.ts"
 import { memberMarkdown } from "./member-markdown.ts"
@@ -71,5 +71,6 @@ export function classMarkdown(api: Api, item: Class): string {
 		docMarkdown(item.description),
 		...memberKinds.map((kind) => memberSection(item, kind)),
 		inheritedSection(ancestors),
+		removedMarkdown("Removed members", "Class", item.name, item.removedMembers),
 	])
 }
