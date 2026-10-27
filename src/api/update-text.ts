@@ -8,19 +8,19 @@ import {
 
 const dateFormat = new Intl.DateTimeFormat("en-US", {
 	year: "numeric",
-	month: "long",
-	day: "numeric",
+	month: "short",
+	day: "2-digit",
 	timeZone: "UTC",
 })
 
 const shortDateFormat = new Intl.DateTimeFormat("en-US", {
 	month: "short",
-	day: "numeric",
+	day: "2-digit",
 	timeZone: "UTC",
 })
 
 const monthFormat = new Intl.DateTimeFormat("en-US", {
-	month: "long",
+	month: "short",
 	timeZone: "UTC",
 })
 
