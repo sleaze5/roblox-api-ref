@@ -3,9 +3,9 @@ import { formatDate } from "../../api/update-text.ts"
 import type { OwnerKind } from "../../api/update-types.ts"
 import { historyHref } from "./history-href.ts"
 
-export type HistoryVariant = "chip" | "hover" | "line"
+export type HistoryVariant = "chip" | "hover" | "line" | "icon"
 
-export const historyVariant: HistoryVariant = "line"
+export const historyVariant: HistoryVariant = "icon"
 
 const chipLabels = { added: "New", changed: "Changed" } as const
 
@@ -48,6 +48,34 @@ function Events(props: { history: ItemHistory; kind: OwnerKind; owner: string })
 				/>
 			)}
 		</>
+	)
+}
+
+function eventText(label: string, event: HistoryEvent | undefined): string[] {
+	return event === undefined
+		? []
+		: [`${label} in ${event.version} on ${formatDate(event.published)}.`]
+}
+
+export function HistoryAction(props: {
+	history: ItemHistory | undefined
+	name: string
+	kind: OwnerKind
+	owner: string
+}) {
+	const history = props.history
+	const latest = history?.changed ?? history?.added
+	return history === undefined || latest === undefined ? null : (
+		<a
+			href={historyHref(latest, props.kind, props.owner)}
+			data-tooltip={[
+				...eventText("Added", history.added),
+				...eventText("Last changed", history.changed),
+				...eventText("Description changed", history.described),
+			].join(" ")}
+			aria-label={`Open the last update that changed ${props.name}`}
+			class="history-link"
+		/>
 	)
 }
 

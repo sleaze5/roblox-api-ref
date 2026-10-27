@@ -5,6 +5,7 @@ import { memberTags } from "../../api/tags.ts"
 import type { Member } from "../../api/types.ts"
 import { DocText } from "../doc/DocText.tsx"
 import {
+	HistoryAction,
 	HistoryLine,
 	HoverHistory,
 	historyVariant,
@@ -43,6 +44,14 @@ export function MemberCard(props: { member: Member; owner: string; own: boolean 
 					/>
 				) : null}
 				<div class="member-actions">
+					{historyVariant === "icon" ? (
+						<HistoryAction
+							history={props.member.history}
+							name={props.member.name}
+							kind="Class"
+							owner={props.owner}
+						/>
+					) : null}
 					<CopyLink name={props.member.name} href={href} />
 					<DocsLink name={props.member.name} owner={props.owner} />
 				</div>

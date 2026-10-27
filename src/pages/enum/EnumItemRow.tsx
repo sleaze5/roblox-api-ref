@@ -7,6 +7,7 @@ import { DocText } from "../../components/doc/DocText.tsx"
 import { CopyLink } from "../../components/members/MemberLink.tsx"
 import { TagList } from "../../components/TagList.tsx"
 import {
+	HistoryAction,
 	HistoryLine,
 	HoverHistory,
 	historyVariant,
@@ -38,6 +39,14 @@ export function EnumItemRow(props: { owner: Enum; item: EnumItem }) {
 					/>
 				) : null}
 				<div class="member-actions">
+					{historyVariant === "icon" ? (
+						<HistoryAction
+							history={props.item.history}
+							name={props.item.name}
+							kind="Enum"
+							owner={props.owner.name}
+						/>
+					) : null}
 					<CopyLink name={props.item.name} href={`#${anchor}`} />
 				</div>
 			</div>
