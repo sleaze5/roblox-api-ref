@@ -12,12 +12,14 @@ import {
 import type { Update } from "../api/update-types.ts"
 import type { SitePageName } from "../site/site-pages.ts"
 
+export type IndexList = "types" | "removed"
+
 export type Route =
 	| { page: "home" }
 	| { page: "classes" }
 	| { page: "enums" }
 	| { page: "index" }
-	| { page: "types" }
+	| { page: "index-list"; list: IndexList }
 	| { page: "facet-index"; kind: FacetKind }
 	| { page: "class"; item: Class }
 	| { page: "enum"; item: Enum }
@@ -49,6 +51,7 @@ export function routePaths(api: Api, updates: Update[]): string[] {
 		...Object.keys(api.enums).map((name) => `/enums/${encodeURIComponent(name)}/`),
 		...updates.map((update) => `/updates/${encodeURIComponent(update.version)}/`),
 		"/index/types/",
+		"/index/removed/",
 		...Object.keys(api.dataTypes).map(
 			(name) => `/index/types/${encodeURIComponent(name)}/`,
 		),
@@ -80,9 +83,14 @@ function itemRoute(api: Api, updates: Update[], section: string, name: string): 
 }
 
 function indexRoute(api: Api, section: string, name?: string): Route {
+	if (section === "removed") {
+		return name === undefined
+			? { page: "index-list", list: "removed" }
+			: { page: "not-found" }
+	}
 	if (section === "types") {
 		if (name === undefined) {
-			return { page: "types" }
+			return { page: "index-list", list: "types" }
 		}
 		const item = api.dataTypes[name]
 		return item === undefined ? { page: "not-found" } : { page: "type", item }

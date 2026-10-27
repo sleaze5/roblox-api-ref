@@ -4,7 +4,7 @@ import {
 	indexDescription,
 	sortedFacets,
 } from "../../api/facets/facet-info.ts"
-import { facetHref, facetIndexHref, typesHref } from "../../api/routes.ts"
+import { facetHref, facetIndexHref, removedHref, typesHref } from "../../api/routes.ts"
 import { facetKinds, type Api } from "../../api/types.ts"
 import { ListFilter } from "../../components/filters/ListFilter.tsx"
 import { facetIcons } from "../../components/index/facet-icons.ts"
@@ -15,6 +15,7 @@ import { PageLead } from "../../components/page/PageLead.tsx"
 import { PageRail } from "../../layout/PageRail.tsx"
 import { Shell } from "../../layout/Shell.tsx"
 import { IndexRow } from "./IndexRow.tsx"
+import { RemovedRow } from "./RemovedIndexPage.tsx"
 import { indexGridClass, IndexSection } from "./IndexSection.tsx"
 import { DataTypeGroups } from "./DataTypeGroups.tsx"
 
@@ -37,6 +38,9 @@ export function IndexPage(props: { api: Api }) {
 		label: facetTitles[kind],
 		count: Object.keys(props.api.facets[kind]).length,
 	}))
+	const removedCount =
+		(props.api.removed?.classes.length ?? 0) +
+		(props.api.removed?.enums.length ?? 0)
 	return (
 		<Shell
 			section="index"
@@ -51,6 +55,7 @@ export function IndexPage(props: { api: Api }) {
 							count: Object.keys(props.api.dataTypes).length,
 						},
 						...facetLinks,
+						{ id: "removed", label: "Removed", count: removedCount },
 					]}
 				/>
 			}>
@@ -87,6 +92,21 @@ export function IndexPage(props: { api: Api }) {
 							</IndexSection>
 						)
 					})}
+					<IndexSection
+						id="removed"
+						title="Removed"
+						icon="clock-counter-clockwise"
+						count={removedCount}
+						href={removedHref()}>
+						<ul class="flex flex-col">
+							{(props.api.removed?.classes ?? []).map((owner) => (
+								<RemovedRow owner={owner} kind="Class" />
+							))}
+							{(props.api.removed?.enums ?? []).map((owner) => (
+								<RemovedRow owner={owner} kind="Enum" />
+							))}
+						</ul>
+					</IndexSection>
 				</div>
 			</article>
 		</Shell>

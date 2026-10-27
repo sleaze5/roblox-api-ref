@@ -23,4 +23,5 @@ export type PageModule = {
 	routes: () => string[]
 	renderPage: (path: string) => RenderedPage
 	lastModified: () => string
+	feed: () => string
 }

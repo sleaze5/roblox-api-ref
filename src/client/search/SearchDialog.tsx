@@ -4,6 +4,7 @@ import { complete } from "../../search/complete.ts"
 import { parseQuery } from "../../search/query.ts"
 import { groupResults, resultHref } from "../../search/result-info.ts"
 import { matchUpdates } from "../../search/update-lookup.ts"
+import { matchRemoved } from "../../search/removed-lookup.ts"
 import { updateHref } from "../../api/routes.ts"
 import { ResultGroups } from "./ResultGroups.tsx"
 import { optionId } from "./ResultOption.tsx"
@@ -19,6 +20,7 @@ import {
 } from "./search-state.ts"
 import { SearchHelp } from "./SearchHelp.tsx"
 import { UpdateGroup } from "./UpdateOption.tsx"
+import { RemovedGroup, removedHref } from "./RemovedOption.tsx"
 import { writeParams } from "../url-state.ts"
 
 const globalLimit = 80
@@ -26,6 +28,7 @@ const scopedLimit = 300
 const perGroupLimit = 8
 const usageLimit = 12
 const updateLimit = 8
+const removedLimit = 8
 
 export function SearchDialog() {
 	let dialog: HTMLDialogElement | undefined
@@ -58,7 +61,14 @@ export function SearchDialog() {
 		),
 	)
 	const flat = createMemo(() => groups().flatMap((group) => group.results))
-	const optionCount = createMemo(() => updates().length + flat().length)
+	const removed = createMemo(() => {
+		const engine = searchEngine()
+		return engine === undefined
+			? []
+			: matchRemoved(engine.index.removed, parsed(), removedLimit)
+	})
+	const removedStart = createMemo(() => updates().length + flat().length)
+	const optionCount = createMemo(() => removedStart() + removed().length)
 	const completion = createMemo(() => {
 		const engine = searchEngine()
 		return engine === undefined
@@ -117,6 +127,10 @@ export function SearchDialog() {
 		const update = updates()[index]
 		if (update !== undefined) {
 			return updateHref(update.version)
+		}
+		const gone = removed()[index - removedStart()]
+		if (gone !== undefined) {
+			return removedHref(gone)
 		}
 		const result = flat()[index - updates().length]
 		return engine === undefined || result === undefined
@@ -267,6 +281,10 @@ export function SearchDialog() {
 											engine={engine()}
 											groups={apiGroups()}
 											word={firstWord()}
+										/>
+										<RemovedGroup
+											entries={removed()}
+											start={removedStart()}
 										/>
 									</div>
 								</Show>

@@ -8,13 +8,14 @@ import {
 	homeHref,
 	indexHref,
 	typeHref,
+	removedHref,
 	typesHref,
 	updateHref,
 	updatesHref,
 } from "../api/routes.ts"
 import { facetTitles } from "../api/facets/facet-info.ts"
 import { sitePages } from "../site/site-pages.ts"
-import type { Route } from "./match-route.ts"
+import type { IndexList, Route } from "./match-route.ts"
 
 export type Breadcrumb = {
 	name: string
@@ -26,6 +27,11 @@ const classes: Breadcrumb = { name: "Classes", href: classesHref() }
 const enums: Breadcrumb = { name: "Enums", href: enumsHref() }
 const index: Breadcrumb = { name: "Index", href: indexHref() }
 const types: Breadcrumb = { name: "Data types", href: typesHref() }
+
+const indexLists: Record<IndexList, Breadcrumb> = {
+	types,
+	removed: { name: "Removed", href: removedHref() },
+}
 const updates: Breadcrumb = { name: "Updates", href: updatesHref() }
 
 export function breadcrumbs(route: Route): Breadcrumb[] {
@@ -39,8 +45,8 @@ export function breadcrumbs(route: Route): Breadcrumb[] {
 			return [home, enums]
 		case "index":
 			return [home, index]
-		case "types":
-			return [home, index, types]
+		case "index-list":
+			return [home, index, indexLists[route.list]]
 		case "updates":
 			return [home, updates]
 		case "site":

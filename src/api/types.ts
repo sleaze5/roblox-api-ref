@@ -1,5 +1,5 @@
 import type { Doc } from "./doc-types.ts"
-import type { ItemHistory, Removed } from "./item-history.ts"
+import type { ItemHistory, Removed, RemovedOwner } from "./item-history.ts"
 
 export const securityLevels = [
 	"None",
@@ -165,4 +165,5 @@ export type Api = {
 	dataTypes: Record<string, DataType>
 	facets: Record<FacetKind, Record<string, Facet>>
 	historyStart?: string
+	removed?: { classes: RemovedOwner[]; enums: RemovedOwner[] }
 }

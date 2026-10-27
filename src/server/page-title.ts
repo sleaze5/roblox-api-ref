@@ -1,7 +1,7 @@
 import { facetLabels, facetTitles } from "../api/facets/facet-info.ts"
 import { brandTitle } from "../site/brand.ts"
 import { sitePages } from "../site/site-pages.ts"
-import type { Route } from "./match-route.ts"
+import type { IndexList, Route } from "./match-route.ts"
 
 function pageName(route: Route): string | undefined {
 	switch (route.page) {
@@ -13,8 +13,8 @@ function pageName(route: Route): string | undefined {
 			return "Enums"
 		case "index":
 			return "Index"
-		case "types":
-			return "Data types"
+		case "index-list":
+			return indexListTitles[route.list]
 		case "facet-index":
 			return facetTitles[route.kind]
 		case "class":
@@ -33,6 +33,11 @@ function pageName(route: Route): string | undefined {
 		case "not-found":
 			return "Page not found"
 	}
+}
+
+const indexListTitles: Record<IndexList, string> = {
+	types: "Data types",
+	removed: "Removed",
 }
 
 export function pageTitle(route: Route): string {

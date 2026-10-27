@@ -4,12 +4,24 @@ import {
 	sortedDataTypes,
 } from "../../api/data-type-info.ts"
 import { facetTitles, sortedFacets } from "../../api/facets/facet-info.ts"
-import { facetHref, facetIndexHref, typeHref, typesHref } from "../../api/routes.ts"
+import {
+	facetHref,
+	facetIndexHref,
+	removedHref,
+	typeHref,
+	typesHref,
+	updateHref,
+} from "../../api/routes.ts"
+import type { RemovedOwner } from "../../api/item-history.ts"
+import { ownerAnchor } from "../../api/update-text.ts"
+import type { OwnerKind } from "../../api/update-types.ts"
 import { facetKinds, type Api, type IndexGroup } from "../../api/types.ts"
 import { SectionSidebar } from "../../layout/SectionSidebar.tsx"
 
+type SidebarGroup = IndexGroup | "removed"
+
 export type IndexCurrent = {
-	group: IndexGroup
+	group: SidebarGroup
 	name?: string
 }
 
@@ -26,7 +38,7 @@ type Branch = {
 }
 
 type Group = Branch & {
-	key: IndexGroup
+	key: SidebarGroup
 }
 
 function dataTypeGroup(api: Api): Group {
@@ -46,6 +58,32 @@ function dataTypeGroup(api: Api): Group {
 	}
 }
 
+function removedGroup(api: Api): Group {
+	const leaves = (kind: OwnerKind, owners: RemovedOwner[]) =>
+		owners.map((owner) => ({
+			name: owner.name,
+			href: `${updateHref(owner.removed.version)}#${ownerAnchor({ kind, name: owner.name })}`,
+		}))
+	return {
+		key: "removed",
+		title: "Removed",
+		href: removedHref(),
+		leaves: [],
+		branches: [
+			{
+				title: "Classes",
+				leaves: leaves("Class", api.removed?.classes ?? []),
+				branches: [],
+			},
+			{
+				title: "Enums",
+				leaves: leaves("Enum", api.removed?.enums ?? []),
+				branches: [],
+			},
+		],
+	}
+}
+
 function groupsOf(api: Api): Group[] {
 	return [
 		dataTypeGroup(api),
@@ -59,6 +97,7 @@ function groupsOf(api: Api): Group[] {
 			})),
 			branches: [],
 		})),
+		removedGroup(api),
 	]
 }
 

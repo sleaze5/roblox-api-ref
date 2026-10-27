@@ -31,6 +31,14 @@ export type SearchUpdate = {
 	published: string
 }
 
+export type RemovedEntry = {
+	kind: EntryKind
+	name: string
+	parent?: string
+	version: string
+	published: string
+}
+
 export type SearchIndex = {
 	names: string[]
 	kinds: number[]
@@ -42,4 +50,5 @@ export type SearchIndex = {
 	typeNames: string[]
 	typeEntries: number[]
 	updates: SearchUpdate[]
+	removed: RemovedEntry[]
 }

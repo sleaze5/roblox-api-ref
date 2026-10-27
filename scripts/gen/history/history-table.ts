@@ -6,6 +6,7 @@ import type {
 	ItemHistory,
 	MemberCounts,
 	Removed,
+	RemovedOwner,
 } from "../../../src/api/item-history.ts"
 import type { EnumItem, Member } from "../../../src/api/types.ts"
 import type {
@@ -95,6 +96,17 @@ export class HistoryTable {
 	readonly entries = new Map<string, HistoryEntry[]>()
 	readonly deprecations = new Map<string, HistoryEvent>()
 	readonly removed = new Map<string, Map<string, Removed<Member | EnumItem>>>()
+	readonly removedOwners = new Map<
+		string,
+		RemovedOwner & { kind: OwnerChanges["kind"] }
+	>()
+
+	removedOwnersOf(kind: OwnerChanges["kind"]): RemovedOwner[] {
+		return [...this.removedOwners.values()]
+			.filter((owner) => owner.kind === kind)
+			.map(({ name, removed }) => ({ name, removed }))
+			.sort((a, b) => b.removed.published.localeCompare(a.removed.published))
+	}
 
 	private deprecate(
 		key: string,
@@ -141,6 +153,13 @@ export class HistoryTable {
 			const key = ownerKey(owner.kind, owner.name)
 			if (owner.status === "Added") {
 				this.removed.delete(key)
+				this.removedOwners.delete(key)
+			} else if (owner.status === "Removed") {
+				this.removedOwners.set(key, {
+					kind: owner.kind,
+					name: owner.name,
+					removed: event,
+				})
 			}
 			this.deprecate(key, ownerDeprecation(owner), event)
 			this.push(key, {

@@ -4,6 +4,14 @@ import { itemKey, ownerKey, type HistoryTable } from "./history-table.ts"
 
 export function applyHistory(api: Api, table: HistoryTable, start: string): void {
 	api.historyStart = start
+	api.removed = {
+		classes: table
+			.removedOwnersOf("Class")
+			.filter((owner) => !Object.hasOwn(api.classes, owner.name)),
+		enums: table
+			.removedOwnersOf("Enum")
+			.filter((owner) => !Object.hasOwn(api.enums, owner.name)),
+	}
 	const attach = (item: { history?: ItemHistory }, key: string) => {
 		const history = table.history(key)
 		if (history === undefined) {

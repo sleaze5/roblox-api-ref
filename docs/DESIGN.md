@@ -291,6 +291,7 @@ The Index section collects everything that the `gen` task derives from the dump 
 - The sidebar groups the index by facet kind, with data types split into Primitive types, Group types, and Roblox types. Only the groups that hold the current page are open. On the data type listing, all three type groups are open. Open group headers stick while their rows scroll, like the class tree.
 - Property categories index only properties defined by each class, without duplicating inherited properties.
 - Preserve category names exactly, including case. When names differ only in case, generation adds a numeric suffix to the colliding URL so both pages work on case-insensitive filesystems.
+- The Index ends with a "Removed" section, with the `clock-counter-clockwise` icon, that lists the classes and enums removed since the oldest tracked version and not added back. Its listing is `/index/removed/`, with a Classes and an Enums section, and the sidebar has a Removed group. Removed classes and enums have no page. Each row shows the name in Geist Mono in `--color-fg-muted`, "Removed in" with the version linked to the removal, and the date.
 - Only data type names use `--color-code-type`. Other facet names are identifiers, not types, and use `--color-fg`.
 
 ### Footer
@@ -369,6 +370,7 @@ The `gen` task reads every update, oldest first, and records each update that to
 - When a query names an enum, data type, or class exactly, show a "Used by" group after the other results. The group lists the members that use the type, and labels each one as a property type, a parameter, or a return value. The reader can search `uses:Name` for more.
 - Search loads its index when the dialog opens, not before. Until the index is ready, the results area shows a turning `circle-notch` and "Preparing the search index…". The status appears after `--delay-loading`, so a fast load shows nothing. Typing still works, and the results appear when the index is ready.
 - A query that is an upload name with or without `version-`, at least its first 6 hex digits, or the start of a version number, such as `0.745`, shows an "Updates" group first. Each row shows the `git-diff` icon, the version, the upload name in `--color-fg-faint`, and the publish date, and opens the update page.
+- Removed classes, enums, members, and enum items appear in a "Removed" group after the other results when they match the query, with the same query syntax. Each row shows the kind icon, the name struck through in `--color-fg-muted`, its class or enum, and "Removed in" with the version, and opens the removal on its update page.
 - Search lives only in the dialog. There is no search page. `/?search=query` opens the dialog with the query, which is also the OpenSearch template.
 
 ## States

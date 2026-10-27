@@ -56,6 +56,10 @@ export function facetIndexHref(kind: FacetKind): string {
 	return `${indexHref()}${facetPaths[kind]}/`
 }
 
+export function removedHref(): string {
+	return `${indexHref()}removed/`
+}
+
 export function typesHref(): string {
 	return `${indexHref()}types/`
 }

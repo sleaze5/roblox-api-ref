@@ -9,14 +9,16 @@ import {
 	facetIndexHref,
 	indexHref,
 	typeHref,
+	removedHref,
 	typesHref,
 	updateHref,
 	updatesHref,
 } from "../../api/routes.ts"
+import { removedMarkdown } from "./removed-markdown.ts"
 import type { Api } from "../../api/types.ts"
 import type { Update } from "../../api/update-types.ts"
 import { sitePages } from "../../site/site-pages.ts"
-import type { Route } from "../match-route.ts"
+import type { IndexList, Route } from "../match-route.ts"
 import { classMarkdown } from "./class-markdown.ts"
 import { enumMarkdown } from "./enum-markdown.ts"
 import { facetMarkdown } from "./facets/facet-markdown.ts"
@@ -42,6 +44,11 @@ function page(href: string, content: string): MarkdownPage {
 	return { href: markdownHref(href), content }
 }
 
+const indexListMarkdown: Record<IndexList, (api: Api) => MarkdownPage> = {
+	types: (api) => page(typesHref(), typeListMarkdown(api)),
+	removed: (api) => page(removedHref(), removedMarkdown(api)),
+}
+
 export function pageMarkdown(api: Api, updates: Update[], route: Route): MarkdownPage {
 	switch (route.page) {
 		case "home":
@@ -54,8 +61,8 @@ export function pageMarkdown(api: Api, updates: Update[], route: Route): Markdow
 			return page(classesHref(), classListMarkdown(api))
 		case "enums":
 			return page(enumsHref(), enumListMarkdown(api))
-		case "types":
-			return page(typesHref(), typeListMarkdown(api))
+		case "index-list":
+			return indexListMarkdown[route.list](api)
 		case "class":
 			return page(classHref(route.item.name), classMarkdown(api, route.item))
 		case "enum":

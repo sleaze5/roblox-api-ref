@@ -33,6 +33,7 @@ async function writeSiteFiles(
 		["robots.txt", robotsTxt()],
 		["sitemap.xml", sitemapXml(routes, module.lastModified())],
 		["opensearch.xml", openSearchXml()],
+		["updates.xml", module.feed()],
 	]
 	await Promise.all(
 		files.map(([name, content]) => writeFile(join(outDir, name), content)),

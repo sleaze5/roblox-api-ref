@@ -6,8 +6,10 @@ import {
 	entryFlags,
 	entryKinds,
 	type EntryKind,
+	type RemovedEntry,
 	type SearchIndex,
 } from "../../src/search/index-format.ts"
+import type { HistoryEvent, RemovedOwner } from "../../src/api/item-history.ts"
 import { parameterTypeKeys, valueTypeKeys, type TypeKey } from "./search-types.ts"
 
 const tagFlags: Record<string, number> = {
@@ -46,6 +48,7 @@ class IndexBuilder {
 		typeNames: [],
 		typeEntries: [],
 		updates: [],
+		removed: [],
 	}
 	readonly primaryEntries = new Map<string, number>()
 	private readonly typeIdsByKey = new Map<string, number>()
@@ -100,9 +103,59 @@ class IndexBuilder {
 	}
 }
 
+function removedEntry(
+	kind: EntryKind,
+	name: string,
+	parent: string | undefined,
+	removed: HistoryEvent,
+): RemovedEntry {
+	const entry: RemovedEntry = {
+		kind,
+		name,
+		version: removed.version,
+		published: removed.published,
+	}
+	if (parent !== undefined) {
+		entry.parent = parent
+	}
+	return entry
+}
+
+function removedEntries(api: Api): RemovedEntry[] {
+	const owners = (kind: "Class" | "Enum", list: RemovedOwner[] | undefined) =>
+		(list ?? []).map((owner) =>
+			removedEntry(kind, owner.name, undefined, owner.removed),
+		)
+	return [
+		...owners("Class", api.removed?.classes),
+		...owners("Enum", api.removed?.enums),
+		...Object.values(api.classes).flatMap((item) =>
+			(item.removedMembers ?? []).map((member) =>
+				removedEntry(
+					member.value.kind,
+					member.value.name,
+					item.name,
+					member.removed,
+				),
+			),
+		),
+		...Object.values(api.enums).flatMap((item) =>
+			(item.removedItems ?? []).map((enumItem) =>
+				removedEntry(
+					"EnumItem",
+					enumItem.value.name,
+					item.name,
+					enumItem.removed,
+				),
+			),
+		),
+	]
+}
+
 export function buildSearchIndex(api: Api, updates: Update[]): SearchIndex {
 	const builder = new IndexBuilder()
 	const { index } = builder
+	index.removed = removedEntries(api)
 	index.updates = updates.map(({ version, hash, published }) => ({
 		version,
 		hash,

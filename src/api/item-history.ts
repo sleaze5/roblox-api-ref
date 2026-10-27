@@ -28,6 +28,11 @@ export type ItemHistory = {
 	deprecated?: HistoryEvent
 }
 
+export type RemovedOwner = {
+	name: string
+	removed: HistoryEvent
+}
+
 export type Removed<Value> = {
 	value: Value
 	removed: HistoryEvent

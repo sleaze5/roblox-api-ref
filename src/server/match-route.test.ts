@@ -34,7 +34,10 @@ describe("static routes", () => {
 		expect(classHref("Part")).toBe("/classes/Part/")
 		expect(enumHref("Material")).toBe("/enums/Material/")
 		expect(typeHref("Array")).toBe("/index/types/Array/")
-		expect(matchRoute(api, updates, typesHref())).toEqual({ page: "types" })
+		expect(matchRoute(api, updates, typesHref())).toEqual({
+			page: "index-list",
+			list: "types",
+		})
 		expect(matchRoute(api, updates, classHref("Part"))).toEqual({
 			page: "class",
 			item: api.classes["Part"],
