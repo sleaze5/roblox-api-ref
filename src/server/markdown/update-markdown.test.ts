@@ -119,4 +119,31 @@ describe("update Markdown", () => {
 		)
 		expect(markdown).toContain("- Description changes: 1")
 	})
+
+	test("groups classes and enums into additions, removals, and changes", () => {
+		const removed = {
+			kind: "Class" as const,
+			name: "OldService",
+			status: "Removed" as const,
+			details: [],
+			descriptions: [],
+			entries: [],
+		}
+		const headings = updateMarkdown({
+			...update,
+			owners: [removed, ...update.owners],
+		})
+			.split("\n")
+			.filter((line) => line.startsWith("#"))
+		expect(headings.slice(1)).toEqual([
+			"## Classes",
+			"### Removals",
+			"#### OldService",
+			"### Changes",
+			"#### ScriptDocument",
+			"## Enums",
+			"### Changes",
+			"#### Material",
+		])
+	})
 })

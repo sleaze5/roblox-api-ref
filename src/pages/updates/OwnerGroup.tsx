@@ -1,3 +1,4 @@
+import { Dynamic } from "@solidjs/web"
 import { ownerAnchor } from "../../api/update-text.ts"
 import type { Api } from "../../api/types.ts"
 import type { ChangeStatus, OwnerChanges } from "../../api/update-types.ts"
@@ -21,6 +22,7 @@ export function OwnerGroup(props: {
 	api: Api
 	owner: OwnerChanges
 	idPrefix?: string
+	heading?: "h3" | "h4"
 }) {
 	const id = `${props.idPrefix ?? ""}${ownerAnchor(props.owner)}`
 	const label = statusLabel(props.owner)
@@ -34,7 +36,8 @@ export function OwnerGroup(props: {
 			data-name={props.owner.name}
 			aria-labelledby={`${id}-title`}
 			class="flex flex-col gap-2">
-			<h3
+			<Dynamic
+				component={props.heading ?? "h3"}
 				id={`${id}-title`}
 				data-change={status === undefined ? undefined : ""}
 				class="change-line">
@@ -53,7 +56,7 @@ export function OwnerGroup(props: {
 						</span>
 					)}
 				</span>
-			</h3>
+			</Dynamic>
 			<ChangeDetails api={props.api} details={props.owner.details} />
 			<DescriptionChanges details={props.owner.descriptions} />
 			{props.owner.entries.length === 0 ? null : (

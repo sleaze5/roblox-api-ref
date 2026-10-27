@@ -14,6 +14,7 @@ import type {
 	ChangeEntry,
 	DetailValue,
 	OwnerChanges,
+	OwnerKind,
 	Update,
 } from "../../api/update-types.ts"
 import { updateHref, updatesHref } from "../../api/routes.ts"
@@ -22,6 +23,7 @@ import { factList, joinBlocks } from "./document.ts"
 import { escapeText, inlineCode, link } from "./escape.ts"
 import { markdownHref } from "./markdown-href.ts"
 import { absoluteUrl } from "../../site/origin.ts"
+import { groupOwners, ownerGroupTitles } from "../../api/owner-groups.ts"
 
 const ownerTitles = { Class: "Classes", Enum: "Enums" } as const
 
@@ -81,20 +83,30 @@ function ownerBlock(owner: OwnerChanges): string {
 		...descriptionLines(owner.descriptions, ""),
 		...owner.entries.map(entryLine),
 	]
-	return `### ${escapeText(owner.name)}\n\n${lines.join("\n")}`
+	return `#### ${escapeText(owner.name)}\n\n${lines.join("\n")}`
 }
 
 function countLine(update: Update): string {
 	return `${update.counts.Added} added, ${update.counts.Removed} removed, and ${update.counts.Changed} changed`
 }
 
+function kindBlocks(update: Update, kind: OwnerKind): string[] {
+	const groups = groupOwners(update.owners, kind)
+	if (groups.length === 0) {
+		return []
+	}
+	const blocks = [`## ${ownerTitles[kind]}`]
+	for (const list of groups) {
+		blocks.push(`### ${ownerGroupTitles[list.group]}`)
+		blocks.push(...list.owners.map(ownerBlock))
+	}
+	return blocks
+}
+
 export function updateMarkdown(update: Update): string {
-	const sections = (["Class", "Enum"] as const).flatMap((kind) => {
-		const owners = update.owners.filter((owner) => owner.kind === kind)
-		return owners.length === 0
-			? []
-			: [`## ${ownerTitles[kind]}`].concat(owners.map(ownerBlock))
-	})
+	const sections = (["Class", "Enum"] as const).flatMap((kind) =>
+		kindBlocks(update, kind),
+	)
 	return joinBlocks([
 		`# Update ${update.version}`,
 		`${updateSummary(update)} Roblox published this version on ${formatDate(update.published)}. It has ${changeTotal(update)} changes: ${countLine(update)}. The HTML version of this page is at ${absoluteUrl(updateHref(update.version))}.`,

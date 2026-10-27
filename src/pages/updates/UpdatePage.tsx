@@ -8,8 +8,8 @@ import { PageLead } from "../../components/page/PageLead.tsx"
 import { PageRail } from "../../layout/PageRail.tsx"
 import { Shell } from "../../layout/Shell.tsx"
 import { IndexSection } from "../index/IndexSection.tsx"
-import { OwnerGroup } from "./OwnerGroup.tsx"
 import { ownerSections } from "./owner-sections.ts"
+import { OwnerSubsectionBlock } from "./OwnerSubsectionBlock.tsx"
 import { UpdateFacts } from "./UpdateFacts.tsx"
 import { UpdateSidebar } from "./UpdateSidebar.tsx"
 
@@ -24,15 +24,17 @@ export function UpdatePage(props: { api: Api; updates: Update[]; item: Update })
 			}
 			rail={
 				<PageRail
-					links={sections.map((section) => ({
-						id: section.id,
-						label: section.title,
-						count: section.owners.length,
-						entries: section.owners.map((owner) => ({
-							id: ownerAnchor(owner),
-							label: owner.name,
+					links={sections.flatMap((section) =>
+						section.groups.map((group) => ({
+							id: group.id,
+							label: group.railLabel,
+							count: group.owners.length,
+							entries: group.owners.map((owner) => ({
+								id: ownerAnchor(owner),
+								label: owner.name,
+							})),
 						})),
-					}))}
+					)}
 				/>
 			}>
 			<article class="flex flex-col gap-6">
@@ -69,10 +71,13 @@ export function UpdatePage(props: { api: Api; updates: Update[]; item: Update })
 									id={section.id}
 									title={section.title}
 									icon={section.icon}
-									count={section.owners.length}>
-									<div class="flex flex-col gap-6">
-										{section.owners.map((owner) => (
-											<OwnerGroup api={props.api} owner={owner} />
+									count={section.count}>
+									<div class="flex flex-col gap-8">
+										{section.groups.map((group) => (
+											<OwnerSubsectionBlock
+												api={props.api}
+												group={group}
+											/>
 										))}
 									</div>
 								</IndexSection>
