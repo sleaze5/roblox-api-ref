@@ -62,7 +62,11 @@ export function OwnerGroup(props: {
 			{props.owner.entries.length === 0 ? null : (
 				<ul class="flex flex-col gap-2">
 					{props.owner.entries.map((entry) => (
-						<ChangeEntryRow api={props.api} entry={entry} />
+						<ChangeEntryRow
+							api={props.api}
+							entry={entry}
+							ownerAdded={props.owner.status === "Added"}
+						/>
 					))}
 				</ul>
 			)}

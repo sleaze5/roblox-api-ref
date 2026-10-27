@@ -10,8 +10,8 @@ import { DescriptionChanges } from "./DescriptionChanges.tsx"
 import { changeParts, partsText } from "./change-signature.ts"
 
 type Line = {
-	status: ChangeStatus
-	label: string
+	status: ChangeStatus | undefined
+	label: string | undefined
 	parts: SignatureParts
 }
 
@@ -36,14 +36,23 @@ function changeLines(api: Api, entry: ChangeEntry): Line[] {
 		: [{ status: "Removed", label: "Removed:", parts: before }]
 }
 
-export function ChangeEntryRow(props: { api: Api; entry: ChangeEntry }) {
+function unmarked(line: Line): Line {
+	return { status: undefined, label: undefined, parts: line.parts }
+}
+
+export function ChangeEntryRow(props: {
+	api: Api
+	entry: ChangeEntry
+	ownerAdded: boolean
+}) {
 	const tags = addedTags(props.entry)
+	const lines = changeLines(props.api, props.entry)
 	return (
 		<li
 			data-change=""
 			data-name={`${props.entry.owner}.${props.entry.name}`}
 			class="flex flex-col gap-1">
-			{changeLines(props.api, props.entry).map((line) => (
+			{(props.ownerAdded ? lines.map(unmarked) : lines).map((line) => (
 				<div class="change-line">
 					<ChangeMark status={line.status} label={line.label} />
 					<Signature parts={line.parts} />

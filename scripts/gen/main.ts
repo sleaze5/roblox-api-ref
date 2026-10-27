@@ -23,8 +23,8 @@ if (version === undefined) {
 const dump = (await Bun.file(join(dataDir, dumpFileName(version))).json()) as Dump
 const docs = (await Bun.file(join(dataDir, apiDocsFileName(version))).json()) as ApiDocs
 const api = normalizeApi(dump, docs, version)
-const searchIndex = buildSearchIndex(api)
 const updates = await readUpdates(versions, api)
+const searchIndex = buildSearchIndex(api, updates)
 
 await Promise.all([
 	Bun.write(join(generatedDir, "api.json"), JSON.stringify(api)),

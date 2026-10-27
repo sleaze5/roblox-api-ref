@@ -25,6 +25,12 @@ export const entryFlags = {
 
 export type EntryFlag = keyof typeof entryFlags
 
+export type SearchUpdate = {
+	version: string
+	hash: string
+	published: string
+}
+
 export type SearchIndex = {
 	names: string[]
 	kinds: number[]
@@ -35,4 +41,5 @@ export type SearchIndex = {
 	parameterTypes: number[][]
 	typeNames: string[]
 	typeEntries: number[]
+	updates: SearchUpdate[]
 }

@@ -8,7 +8,7 @@ const marks: Record<ChangeStatus, string> = {
 
 export function ChangeMark(props: {
 	status: ChangeStatus | undefined
-	label?: string
+	label?: string | undefined
 }) {
 	return (
 		<span class="change-mark" data-status={props.status}>

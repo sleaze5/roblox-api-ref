@@ -8,11 +8,30 @@ const dateFormat = new Intl.DateTimeFormat("en-US", {
 	timeZone: "UTC",
 })
 
+const shortDateFormat = new Intl.DateTimeFormat("en-US", {
+	month: "short",
+	day: "numeric",
+	timeZone: "UTC",
+})
+
+const monthFormat = new Intl.DateTimeFormat("en-US", {
+	month: "long",
+	timeZone: "UTC",
+})
+
 export const updatesLead =
 	"Every change to the Roblox Engine API between the Roblox Studio versions that this site has published, newest first."
 
 export function formatDate(iso: string): string {
 	return dateFormat.format(new Date(iso))
+}
+
+export function formatShortDate(iso: string): string {
+	return shortDateFormat.format(new Date(iso))
+}
+
+export function formatMonth(iso: string): string {
+	return monthFormat.format(new Date(iso))
 }
 
 export function updateSummary(update: Update): string {

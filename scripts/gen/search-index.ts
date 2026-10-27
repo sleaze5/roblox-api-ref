@@ -1,6 +1,7 @@
 import { compareNames } from "../../src/api/compare-names.ts"
 import { accessRank, isHidden, isInternal } from "../../src/api/members.ts"
 import type { Api } from "../../src/api/types.ts"
+import type { Update } from "../../src/api/update-types.ts"
 import {
 	entryFlags,
 	entryKinds,
@@ -44,6 +45,7 @@ class IndexBuilder {
 		parameterTypes: [],
 		typeNames: [],
 		typeEntries: [],
+		updates: [],
 	}
 	readonly primaryEntries = new Map<string, number>()
 	private readonly typeIdsByKey = new Map<string, number>()
@@ -98,9 +100,14 @@ class IndexBuilder {
 	}
 }
 
-export function buildSearchIndex(api: Api): SearchIndex {
+export function buildSearchIndex(api: Api, updates: Update[]): SearchIndex {
 	const builder = new IndexBuilder()
 	const { index } = builder
+	index.updates = updates.map(({ version, hash, published }) => ({
+		version,
+		hash,
+		published,
+	}))
 	const classes = Object.values(api.classes).sort(byName)
 	const classEntries = new Map<string, number>()
 	for (const item of classes) {

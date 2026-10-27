@@ -1,3 +1,6 @@
+import { uploadName } from "../../api/release.ts"
+import type { SearchUpdate } from "../../search/index-format.ts"
+
 const examples = [
 	{
 		query: "Part.",
@@ -35,11 +38,26 @@ const examples = [
 	{ query: '"Name"', description: "Exact names only" },
 ]
 
-export function SearchHelp(props: { onPick: (query: string) => void }) {
+function updateExample(update: SearchUpdate | undefined) {
+	return update === undefined
+		? []
+		: [
+				{
+					query: uploadName(update.hash),
+					description:
+						"The update for a Studio version, by its hash or version number",
+				},
+			]
+}
+
+export function SearchHelp(props: {
+	onPick: (query: string) => void
+	update?: SearchUpdate | undefined
+}) {
 	return (
 		<div class="flex flex-col gap-1 p-1">
 			<p class="px-1 pb-1 text-xs font-medium text-fg-muted">Search syntax</p>
-			{examples.map((example) => (
+			{[...examples, ...updateExample(props.update)].map((example) => (
 				<button
 					type="button"
 					onClick={() => props.onPick(example.query)}

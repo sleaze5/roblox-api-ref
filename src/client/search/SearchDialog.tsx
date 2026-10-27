@@ -3,6 +3,8 @@ import { Icon } from "../../components/Icon.tsx"
 import { complete } from "../../search/complete.ts"
 import { parseQuery } from "../../search/query.ts"
 import { groupResults, resultHref } from "../../search/result-info.ts"
+import { matchUpdates } from "../../search/update-lookup.ts"
+import { updateHref } from "../../api/routes.ts"
 import { ResultGroups } from "./ResultGroups.tsx"
 import { optionId } from "./ResultOption.tsx"
 import {
@@ -16,12 +18,14 @@ import {
 	setSearchQuery,
 } from "./search-state.ts"
 import { SearchHelp } from "./SearchHelp.tsx"
+import { UpdateGroup } from "./UpdateOption.tsx"
 import { writeParams } from "../url-state.ts"
 
 const globalLimit = 80
 const scopedLimit = 300
 const perGroupLimit = 8
 const usageLimit = 12
+const updateLimit = 8
 
 export function SearchDialog() {
 	let dialog: HTMLDialogElement | undefined
@@ -42,7 +46,19 @@ export function SearchDialog() {
 			engine.typeUsers(parsed(), usageLimit),
 		)
 	})
+	const updates = createMemo(() => {
+		const engine = searchEngine()
+		return engine === undefined
+			? []
+			: matchUpdates(engine.index.updates, searchQuery(), updateLimit)
+	})
+	const apiGroups = createMemo(() =>
+		groups().map((group) =>
+			Object.assign({}, group, { start: group.start + updates().length }),
+		),
+	)
 	const flat = createMemo(() => groups().flatMap((group) => group.results))
+	const optionCount = createMemo(() => updates().length + flat().length)
 	const completion = createMemo(() => {
 		const engine = searchEngine()
 		return engine === undefined
@@ -89,19 +105,30 @@ export function SearchDialog() {
 	)
 
 	const move = (step: number) => {
-		const count = flat().length
+		const count = optionCount()
 		if (count > 0) {
 			setActiveResult((index) => (index + step + count) % count)
 		}
 	}
 
-	const openActive = (newTab: boolean) => {
+	const activeHref = (): string | undefined => {
 		const engine = searchEngine()
-		const result = flat()[activeResult()]
-		if (engine === undefined || result === undefined) {
+		const index = activeResult()
+		const update = updates()[index]
+		if (update !== undefined) {
+			return updateHref(update.version)
+		}
+		const result = flat()[index - updates().length]
+		return engine === undefined || result === undefined
+			? undefined
+			: resultHref(engine, result)
+	}
+
+	const openActive = (newTab: boolean) => {
+		const href = activeHref()
+		if (href === undefined) {
 			return
 		}
-		const href = resultHref(engine, result)
 		if (newTab) {
 			window.open(href, "_blank", "noopener")
 		} else {
@@ -169,16 +196,16 @@ export function SearchDialog() {
 						type="text"
 						role="combobox"
 						aria-label="Search the API"
-						aria-expanded={flat().length > 0 ? "true" : "false"}
+						aria-expanded={optionCount() > 0 ? "true" : "false"}
 						aria-controls="search-results"
 						aria-activedescendant={
-							flat().length > 0 ? optionId(activeResult()) : undefined
+							optionCount() > 0 ? optionId(activeResult()) : undefined
 						}
 						aria-autocomplete="list"
 						autofocus
 						autocomplete="off"
 						spellcheck={false}
-						placeholder="Search classes, members, enums, and data types"
+						placeholder="Search the API, or paste a version hash"
 						value={searchQuery()}
 						onInput={(event) => {
 							setSearchQuery(event.currentTarget.value)
@@ -216,11 +243,12 @@ export function SearchDialog() {
 								when={searchQuery().trim() !== ""}
 								fallback={
 									<SearchHelp
+										update={engine().index.updates[0]}
 										onPick={(value) => setSearchQuery(value)}
 									/>
 								}>
 								<Show
-									when={flat().length > 0}
+									when={optionCount() > 0}
 									fallback={
 										<p class="px-2 py-6 text-fg-muted">
 											No results for{" "}
@@ -234,9 +262,10 @@ export function SearchDialog() {
 										id="search-results"
 										role="listbox"
 										aria-label="Results">
+										<UpdateGroup updates={updates()} />
 										<ResultGroups
 											engine={engine()}
-											groups={groups()}
+											groups={apiGroups()}
 											word={firstWord()}
 										/>
 									</div>

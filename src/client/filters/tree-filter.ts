@@ -2,7 +2,7 @@ import { matchesName } from "./name-match.ts"
 
 type TreeNode = {
 	element: HTMLElement
-	name: string
+	names: string[]
 	details: HTMLDetailsElement | null
 	children: TreeNode[]
 }
@@ -11,7 +11,10 @@ function readNode(element: HTMLElement): TreeNode {
 	const link = element.querySelector(":scope > a, :scope > details > summary > a")
 	return {
 		element,
-		name: link?.textContent ?? "",
+		names: [
+			element.dataset["name"] ?? link?.textContent ?? "",
+			...(element.dataset["aliases"]?.split(" ") ?? []),
+		],
 		details: element.querySelector<HTMLDetailsElement>(":scope > details"),
 		children: [
 			...element.querySelectorAll<HTMLElement>(":scope > details > ul > li"),
@@ -24,7 +27,7 @@ function filterNode(node: TreeNode, text: string): number {
 	for (const child of node.children) {
 		matches += filterNode(child, text)
 	}
-	const selfMatch = matchesName(text, node.name)
+	const selfMatch = node.names.some((name) => matchesName(text, name))
 	node.element.hidden = !selfMatch && matches === 0
 	if (node.details !== null && text !== "") {
 		node.details.open = matches > 0
