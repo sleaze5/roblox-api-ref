@@ -1,5 +1,10 @@
 import { releaseName } from "./release.ts"
-import { changeStatuses, type OwnerChanges, type Update } from "./update-types.ts"
+import {
+	changeStatuses,
+	type OwnerChanges,
+	type OwnerKind,
+	type Update,
+} from "./update-types.ts"
 
 const dateFormat = new Intl.DateTimeFormat("en-US", {
 	year: "numeric",
@@ -48,4 +53,8 @@ export function updateAnchor(version: string): string {
 
 export function ownerAnchor(owner: Pick<OwnerChanges, "kind" | "name">): string {
 	return `${owner.kind}-${owner.name}`
+}
+
+export function changeAnchor(kind: OwnerKind, owner: string, name: string): string {
+	return `${ownerAnchor({ kind, name: owner })}.${name}`
 }

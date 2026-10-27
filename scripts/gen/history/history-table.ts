@@ -1,110 +1,121 @@
-import type { HistoryEvent, ItemHistory } from "../../../src/api/item-history.ts"
-import type { DescriptionTarget, DumpChange, DumpDiff } from "../../diff/diff-types.ts"
+import { isApiChange } from "../../../src/api/change-kind.ts"
+import type {
+	HistoryEntry,
+	HistoryKind,
+	ItemHistory,
+	MemberCounts,
+} from "../../../src/api/item-history.ts"
+import type {
+	ChangeEntry,
+	ChangeStatus,
+	OwnerChanges,
+	Update,
+} from "../../../src/api/update-types.ts"
 
-export type DatedDiff = {
-	diff: DumpDiff
-	published: string
+const statusKinds: Record<ChangeStatus, HistoryKind> = {
+	Added: "added",
+	Removed: "removed",
+	Changed: "changed",
 }
 
-export function classKey(name: string): string {
-	return `Class:${name}`
+export function ownerKey(kind: OwnerChanges["kind"], name: string): string {
+	return `${kind}:${name}`
 }
 
-export function enumKey(name: string): string {
-	return `Enum:${name}`
+export function itemKey(
+	kind: ChangeEntry["kind"],
+	owner: string,
+	name: string,
+): string {
+	return `${kind}:${owner}.${name}`
 }
 
-export function memberKey(owner: string, name: string): string {
-	return `Member:${owner}.${name}`
+function entryKey(entry: ChangeEntry): string {
+	return itemKey(entry.kind, entry.owner, entry.name)
 }
 
-export function enumItemKey(owner: string, name: string): string {
-	return `EnumItem:${owner}.${name}`
+function entryKinds(entry: ChangeEntry): HistoryKind[] {
+	return [
+		...(isApiChange(entry) ? [statusKinds[entry.status]] : []),
+		...(entry.descriptions.length > 0 ? (["described"] as const) : []),
+	]
 }
 
-function changeKeys(change: DumpChange): { key: string; owner?: string } {
-	switch (change.element) {
-		case "Class":
-			return { key: classKey(change.class) }
-		case "Enum":
-			return { key: enumKey(change.enum) }
-		case "Member":
-			return {
-				key: memberKey(change.class, change.member),
-				owner: classKey(change.class),
-			}
-		case "EnumItem":
-			return {
-				key: enumItemKey(change.enum, change.item),
-				owner: enumKey(change.enum),
-			}
+function ownerKinds(owner: OwnerChanges): HistoryKind[] {
+	return [
+		...(owner.status === undefined ? [] : [statusKinds[owner.status]]),
+		...(owner.descriptions.length > 0 ? (["described"] as const) : []),
+	]
+}
+
+function memberCounts(owner: OwnerChanges): MemberCounts | undefined {
+	if (owner.status === "Added") {
+		return undefined
 	}
-}
-
-function targetKey(target: DescriptionTarget): string {
-	switch (target.element) {
-		case "Class":
-			return classKey(target.class)
-		case "Enum":
-			return enumKey(target.enum)
-		case "Member":
-			return memberKey(target.class, target.member)
-		case "EnumItem":
-			return enumItemKey(target.enum, target.item)
+	const counts: MemberCounts = { added: 0, removed: 0, changed: 0 }
+	for (const entry of owner.entries) {
+		if (isApiChange(entry)) {
+			counts[statusKinds[entry.status] as keyof MemberCounts]++
+		}
 	}
+	return counts.added + counts.removed + counts.changed === 0 ? undefined : counts
 }
 
 export class HistoryTable {
-	readonly items = new Map<string, ItemHistory>()
+	readonly entries = new Map<string, HistoryEntry[]>()
 
-	private entry(key: string): ItemHistory {
-		let history = this.items.get(key)
-		if (history === undefined) {
-			history = {}
-			this.items.set(key, history)
+	private push(key: string, entry: HistoryEntry): void {
+		if (entry.kinds.length === 0 && entry.members === undefined) {
+			return
+		}
+		const list = this.entries.get(key) ?? []
+		list.push(entry)
+		this.entries.set(key, list)
+	}
+
+	apply(update: Update): void {
+		const event = { version: update.version, published: update.published }
+		for (const owner of update.owners) {
+			const members = memberCounts(owner)
+			this.push(ownerKey(owner.kind, owner.name), {
+				...event,
+				kinds: ownerKinds(owner),
+				...(members === undefined ? {} : { members }),
+			})
+			for (const entry of owner.entries) {
+				this.push(entryKey(entry), { ...event, kinds: entryKinds(entry) })
+			}
+		}
+	}
+
+	history(key: string): ItemHistory | undefined {
+		const entries = this.entries.get(key)
+		if (entries === undefined) {
+			return undefined
+		}
+		const addedIndex = entries.findLastIndex((entry) =>
+			entry.kinds.includes("added"),
+		)
+		const changedIndex = entries.findLastIndex(
+			(entry) => entry.kinds.includes("changed") || entry.members !== undefined,
+		)
+		const history: ItemHistory = { entries: entries.toReversed() }
+		const added = entries[addedIndex]
+		const changed = changedIndex > addedIndex ? entries[changedIndex] : undefined
+		if (added !== undefined) {
+			history.added = { version: added.version, published: added.published }
+		}
+		if (changed !== undefined) {
+			history.changed = { version: changed.version, published: changed.published }
 		}
 		return history
 	}
-
-	private changeOwner(owner: string, event: HistoryEvent): void {
-		if (this.items.get(owner)?.added?.version !== event.version) {
-			this.entry(owner).changed = event
-		}
-	}
-
-	private applyChange(change: DumpChange, event: HistoryEvent): void {
-		const { key, owner } = changeKeys(change)
-		switch (change.type) {
-			case "Add":
-				this.items.set(key, { added: event })
-				break
-			case "Remove":
-				this.items.delete(key)
-				break
-			case "Change":
-				this.entry(key).changed = event
-				break
-		}
-		if (owner !== undefined) {
-			this.changeOwner(owner, event)
-		}
-	}
-
-	apply({ diff, published }: DatedDiff): void {
-		const event = { version: diff.to.version, published }
-		for (const change of diff.changes) {
-			this.applyChange(change, event)
-		}
-		for (const description of diff.descriptions) {
-			this.entry(targetKey(description)).described = event
-		}
-	}
 }
 
-export function buildHistory(diffs: DatedDiff[]): HistoryTable {
+export function buildHistory(updates: Update[]): HistoryTable {
 	const table = new HistoryTable()
-	for (const diff of diffs) {
-		table.apply(diff)
+	for (const update of updates.toReversed()) {
+		table.apply(update)
 	}
 	return table
 }

@@ -4,13 +4,8 @@ import { signatureParts } from "../../api/signature.ts"
 import { memberTags } from "../../api/tags.ts"
 import type { Member } from "../../api/types.ts"
 import { DocText } from "../doc/DocText.tsx"
-import {
-	HistoryAction,
-	HistoryLine,
-	HoverHistory,
-	historyVariant,
-	RecentChip,
-} from "../history/MemberHistory.tsx"
+import { HistoryButton, HistoryMenu } from "../history/HistoryMenu.tsx"
+import { changeAnchor } from "../../api/update-text.ts"
 import { TagList } from "../TagList.tsx"
 import { MemberDetails } from "./details/MemberDetails.tsx"
 import { memberAttributes } from "./member-attributes.ts"
@@ -36,20 +31,12 @@ export function MemberCard(props: { member: Member; owner: string; own: boolean 
 			class="member-card">
 			<div class="member-head">
 				<Signature parts={parts} />
-				{historyVariant === "hover" ? (
-					<HoverHistory
-						history={props.member.history}
-						kind="Class"
-						owner={props.owner}
-					/>
-				) : null}
 				<div class="member-actions">
-					{historyVariant === "icon" ? (
-						<HistoryAction
+					{props.own ? (
+						<HistoryButton
 							history={props.member.history}
+							id={anchor}
 							name={props.member.name}
-							kind="Class"
-							owner={props.owner}
 						/>
 					) : null}
 					<CopyLink name={props.member.name} href={href} />
@@ -57,23 +44,17 @@ export function MemberCard(props: { member: Member; owner: string; own: boolean 
 				</div>
 			</div>
 			<DocText doc={props.member.description} class="member-description" />
-			{historyVariant === "chip" ? (
-				<div class="flex flex-wrap items-center gap-1">
-					<RecentChip history={props.member.history} />
-					<TagList tags={memberTags(props.member)} />
-				</div>
-			) : (
-				<TagList tags={memberTags(props.member)} />
-			)}
-			{historyVariant === "line" ? (
-				<HistoryLine
-					history={props.member.history}
-					kind="Class"
-					owner={props.owner}
-				/>
-			) : null}
+			<TagList tags={memberTags(props.member)} />
 			<MemberDetails member={props.member} />
 			<Preferred member={props.member} />
+			{props.own ? (
+				<HistoryMenu
+					history={props.member.history}
+					id={anchor}
+					name={props.member.name}
+					fragment={changeAnchor("Class", props.owner, props.member.name)}
+				/>
+			) : null}
 		</li>
 	)
 }

@@ -27,7 +27,7 @@ const docs = (await Bun.file(join(dataDir, apiDocsFileName(version))).json()) as
 const api = normalizeApi(dump, docs, version)
 const diffs = await readDiffs(versions)
 const updates = buildUpdates(diffs, api)
-applyHistory(api, buildHistory(diffs), versions[0]?.version ?? version.version)
+applyHistory(api, buildHistory(updates), versions[0]?.version ?? version.version)
 const searchIndex = buildSearchIndex(api, updates)
 
 await Promise.all([

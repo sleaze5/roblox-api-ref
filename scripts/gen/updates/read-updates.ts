@@ -1,9 +1,14 @@
 import type { Update } from "../../../src/api/update-types.ts"
 import type { ApiNames } from "../api-docs/doc/api-names.ts"
 import { readDiff } from "../../diff/diff-file.ts"
+import type { DumpDiff } from "../../diff/diff-types.ts"
 import type { RobloxVersion } from "../../roblox-version.ts"
-import type { DatedDiff } from "../history/history-table.ts"
 import { buildUpdate } from "./build-update.ts"
+
+export type DatedDiff = {
+	diff: DumpDiff
+	published: string
+}
 
 async function readVersionDiff(
 	from: RobloxVersion,

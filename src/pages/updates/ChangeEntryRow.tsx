@@ -1,4 +1,5 @@
 import type { SignatureParts } from "../../api/signature.ts"
+import { changeAnchor } from "../../api/update-text.ts"
 import { addedTags } from "../../api/added-tags.ts"
 import type { Api, EnumItem, Member } from "../../api/types.ts"
 import type { ChangeEntry, ChangeStatus } from "../../api/update-types.ts"
@@ -44,11 +45,14 @@ export function ChangeEntryRow(props: {
 	api: Api
 	entry: ChangeEntry
 	ownerAdded: boolean
+	idPrefix: string
 }) {
 	const tags = addedTags(props.entry)
+	const ownerKind = props.entry.kind === "Member" ? "Class" : "Enum"
 	const lines = changeLines(props.api, props.entry)
 	return (
 		<li
+			id={`${props.idPrefix}${changeAnchor(ownerKind, props.entry.owner, props.entry.name)}`}
 			data-change=""
 			data-name={`${props.entry.owner}.${props.entry.name}`}
 			class="flex flex-col gap-1">

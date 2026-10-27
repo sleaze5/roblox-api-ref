@@ -66,6 +66,7 @@ export function OwnerGroup(props: {
 							api={props.api}
 							entry={entry}
 							ownerAdded={props.owner.status === "Added"}
+							idPrefix={props.idPrefix ?? ""}
 						/>
 					))}
 				</ul>

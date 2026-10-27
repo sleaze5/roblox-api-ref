@@ -6,13 +6,8 @@ import { CodeTokens } from "../../components/code/CodeTokens.tsx"
 import { DocText } from "../../components/doc/DocText.tsx"
 import { CopyLink } from "../../components/members/MemberLink.tsx"
 import { TagList } from "../../components/TagList.tsx"
-import {
-	HistoryAction,
-	HistoryLine,
-	HoverHistory,
-	historyVariant,
-	RecentChip,
-} from "../../components/history/MemberHistory.tsx"
+import { HistoryButton, HistoryMenu } from "../../components/history/HistoryMenu.tsx"
+import { changeAnchor } from "../../api/update-text.ts"
 
 export function EnumItemRow(props: { owner: Enum; item: EnumItem }) {
 	const anchor = enumItemAnchor(props.item.name)
@@ -31,47 +26,29 @@ export function EnumItemRow(props: { owner: Enum; item: EnumItem }) {
 						]}
 					/>
 				</code>
-				{historyVariant === "hover" ? (
-					<HoverHistory
-						history={props.item.history}
-						kind="Enum"
-						owner={props.owner.name}
-					/>
-				) : null}
 				<div class="member-actions">
-					{historyVariant === "icon" ? (
-						<HistoryAction
-							history={props.item.history}
-							name={props.item.name}
-							kind="Enum"
-							owner={props.owner.name}
-						/>
-					) : null}
+					<HistoryButton
+						history={props.item.history}
+						id={anchor}
+						name={props.item.name}
+					/>
 					<CopyLink name={props.item.name} href={`#${anchor}`} />
 				</div>
 			</div>
 			<DocText doc={props.item.description} class="member-description" />
-			{historyVariant === "chip" ? (
-				<div class="flex flex-wrap items-center gap-1">
-					<RecentChip history={props.item.history} />
-					<TagList tags={plainTags(props.item.tags)} />
-				</div>
-			) : (
-				<TagList tags={plainTags(props.item.tags)} />
-			)}
-			{historyVariant === "line" ? (
-				<HistoryLine
-					history={props.item.history}
-					kind="Enum"
-					owner={props.owner.name}
-				/>
-			) : null}
+			<TagList tags={plainTags(props.item.tags)} />
 			{props.item.legacyNames.length === 0 ? null : (
 				<p class="text-fg-muted">
 					Legacy names:{" "}
 					<code class="text-fg">{props.item.legacyNames.join(", ")}</code>
 				</p>
 			)}
+			<HistoryMenu
+				history={props.item.history}
+				id={anchor}
+				name={props.item.name}
+				fragment={changeAnchor("Enum", props.owner.name, props.item.name)}
+			/>
 		</li>
 	)
 }

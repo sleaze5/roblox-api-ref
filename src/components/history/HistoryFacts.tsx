@@ -28,7 +28,6 @@ export function HistoryFacts(props: {
 	const noun = nouns[props.kind]
 	const added = props.history?.added
 	const changed = props.history?.changed
-	const described = props.history?.described
 	return (
 		<>
 			<Fact
@@ -47,13 +46,6 @@ export function HistoryFacts(props: {
 					label="Last changed"
 					hint={`The last update that changed this ${noun} or its members, not counting descriptions.`}>
 					<EventValue event={changed} kind={props.kind} name={props.name} />
-				</Fact>
-			)}
-			{described === undefined ? null : (
-				<Fact
-					label="Description changed"
-					hint={`The last update that changed the description of this ${noun}.`}>
-					<EventValue event={described} kind={props.kind} name={props.name} />
 				</Fact>
 			)}
 		</>

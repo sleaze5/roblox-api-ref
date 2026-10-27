@@ -147,6 +147,7 @@ Use this scale. Do not use other sizes.
 - Filter menu: `funnel-simple`
 - Copy a link: `link-simple`
 - Copied: `check`
+- History: `clock-counter-clockwise`
 - Open on Creator Hub: `arrow-square-out`
 - Disclosure: `caret-right`
 - Close: `x`
@@ -239,7 +240,7 @@ The Classes listing shows the whole class tree, fully expanded.
 - Show each member as plain text on the page, not in a box: the Luau signature on the first line, then its description, then tags, then its parameters and return value, then notes such as the preferred replacement. Enum items follow the same order, without parameters. Separate members with 16px of whitespace only. Do not add a border, a background, or a radius to a member.
 - Methods, events, and callbacks show every parameter from the dump in a "Parameters" table, and methods and callbacks show their return type in a "Returns" table. Omit "Returns" when a method returns nothing. The first column holds code written as in the signature: the type-annotated parameter with its default, such as `priority: number? = 2000`, under a "Parameter" heading, or the return type under a "Type" heading. When any row has a description, add a Description column and split the table 35% code to 65% description (45% to 55% below 640px), so descriptions get the room; code wraps inside its column. When no row has a description, show the code column alone at full width. Descriptions are `--color-fg-muted` prose.
 - Set these tables in `--text-sm` with a caption in `--color-fg-muted` at weight 500, column headings in `--color-fg-faint` at weight 500, a 1px `--color-line` border with `--radius-md`, and a 1px `--color-line` rule between rows. Pad cells 6px by 12px. They are the only bordered element inside a member.
-- Each member has two actions, shown on hover and focus: copy a link to the member, and open the member on Creator Hub.
+- Each member has two actions, shown on hover and focus: copy a link to the member, and open the member on Creator Hub. A member of the current class, and an enum item, also has a History action first when the Updates history knows it. See [History](#history).
 - Give every member of the current class an anchor in the form `#Property-Name`, `#Method-Name`, `#Event-Name`, or `#Callback-Name`. An inherited member links to the anchor on its own class page.
 - Link only to other pages from a signature. The name and class prefix of a member of the current class, and the enum prefix and name of an enum item, are not links. The copy link action links to the member.
 
@@ -325,6 +326,16 @@ The Updates section shows how the API changed from each version in `roblox-versi
 - Description changes from the API docs sit under the line of their class, enum, member, or enum item, indented to the signature. A label in `--color-fg-faint` names what changed: "Description changed", "Description of `name` added", or "Return value description removed". The new description follows as member description prose. When there was a previous description, a "Previous description" disclosure with a `caret-right` icon shows it. A member or enum item whose only change is its description gets a `~` line. Description changes do not count as added, removed, or changed items. The update's "Descriptions" fact counts them.
 - Removed members, removed enum items, and old signatures are not links.
 - The filter uses `q`. It matches change names, such as `Part.Size`. A class or enum name shows its whole group. The count inside the filter field counts changes.
+
+### History
+
+The `gen` task reads every update, oldest first, and records each update that touched each class, enum, member, and enum item.
+
+- The History action is a 24px `clock-counter-clockwise` icon action with the tooltip "History". It sits before the copy link action on members and enum items, and before the "Open on Creator Hub" action in the title row of class and enum pages. Inherited members do not have one; their own class page does.
+- It opens a `menu` popover titled "History" that lists every update that touched the item, newest first. Each row shows the version in Geist Mono, the publish date in `--color-fg-faint`, and below them what happened in `--text-xs`: "Added", "Removed", "Changed", or "Description changed". A class or enum row also counts its changed members or items, such as "Members: 8 added, 9 changed". The row links to the exact change on the update page, so the history does not repeat what changed.
+- Every change line on an update page has an anchor: `Class-Part` for a class or enum heading, and `Class-Part.Size` or `Enum-Material.Grass` for a member or enum item. The line opened by its anchor shows the same 2px `--color-fg-muted` bar as a member.
+- A change counts as "Changed" only when its signature or another API detail changed. A description change alone is "Description changed".
+- Class and enum pages show two more facts in a second fact row: "Added", the update that last added the class or enum, and "Last changed", the last update after that which changed it or its members or items. Each links to the class or enum on that update page. A class or enum that existed in the oldest tracked version shows that version followed by "or earlier".
 
 ### Tags
 

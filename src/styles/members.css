@@ -109,6 +109,7 @@
 	transition: opacity var(--duration-fast) var(--ease-standard);
 
 	.member-card:hover &,
+	.member-card:has(:popover-open) &,
 	&:focus-within {
 		opacity: 1;
 	}
@@ -192,6 +193,7 @@
 
 @utility history-link {
 	@apply member-action;
+	cursor: pointer;
 
 	&::before {
 		mask-image: url("../generated/icons/clock-counter-clockwise.svg");

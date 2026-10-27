@@ -1,8 +1,6 @@
 import { releaseText } from "../../api/release.ts"
 import { addedTags } from "../../api/added-tags.ts"
-import { inlineTokens, signatureParts } from "../../api/signature.ts"
 import { plainTags } from "../../api/tags.ts"
-import type { EnumItem, Member } from "../../api/types.ts"
 import {
 	changeTotal,
 	formatDate,
@@ -23,6 +21,7 @@ import { factList, joinBlocks } from "./document.ts"
 import { escapeText, inlineCode, link } from "./escape.ts"
 import { markdownHref } from "./markdown-href.ts"
 import { absoluteUrl } from "../../site/origin.ts"
+import { signatureText } from "../../api/change-kind.ts"
 import { groupOwners, ownerGroupTitles } from "../../api/owner-groups.ts"
 
 const ownerTitles = { Class: "Classes", Enum: "Enums" } as const
@@ -42,15 +41,6 @@ function detailText(detail: ChangeDetail): string {
 	return detail.before === undefined
 		? `${detail.label}: ${after}`
 		: `${detail.label}: ${before} to ${after}`
-}
-
-function signatureText(owner: string, value: Member | EnumItem): string {
-	if (!("kind" in value)) {
-		return `Enum.${owner}.${value.name} = ${value.value}`
-	}
-	return inlineTokens(signatureParts(value, owner))
-		.map((part) => part.text)
-		.join("")
 }
 
 function withDetails(text: string, details: ChangeDetail[]): string {
