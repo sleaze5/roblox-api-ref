@@ -1,0 +1,3477 @@
+{
+	"from": {
+		"version": "0.703.0.7031352",
+		"hash": "95b9adff85194a04"
+	},
+	"to": {
+		"version": "0.704.0.7041059",
+		"hash": "2d89914793a549da"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Animator",
+			"member": "OnCombinedUpdate2",
+			"type": "Remove",
+			"value": {
+				"Capabilities": [
+					"Animation"
+				],
+				"MemberType": "Event",
+				"Name": "OnCombinedUpdate2",
+				"Parameters": [
+					{
+						"Name": "animation",
+						"Type": {
+							"Category": "DataType",
+							"Name": "ContentId"
+						}
+					},
+					{
+						"Name": "playState",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "fadeTime",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "weight",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "speed",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "timePosition",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "priority",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AnimationPriority"
+						}
+					},
+					{
+						"Name": "valuesUpdated",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "AutoSetupAvatarAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "player",
+							"Type": {
+								"Category": "Class",
+								"Name": "Player"
+							}
+						},
+						{
+							"Name": "model",
+							"Type": {
+								"Category": "Class",
+								"Name": "Model"
+							}
+						},
+						{
+							"Name": "progressCallback",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Function?"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "player",
+							"Type": {
+								"Category": "Class",
+								"Name": "Player"
+							}
+						},
+						{
+							"Name": "autoSetupParams",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						},
+						{
+							"Name": "progressCallback",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Function?"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "AutoSetupAvatarAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "autoSetupParams",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Name": "progressCallback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "AutoSetupAvatarNewAsync",
+			"type": "Remove",
+			"value": {
+				"Capabilities": [
+					"InternalTest"
+				],
+				"MemberType": "Function",
+				"Name": "AutoSetupAvatarNewAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "autoSetupParams",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Name": "progressCallback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "GetHeadShapesAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetHeadShapesAsync",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "TakeCapture",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "TakeCapture",
+				"Parameters": [
+					{
+						"Name": "onCaptureReady",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "captureParams",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "TakeScreenshotCaptureAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "TakeScreenshotCaptureAsync",
+				"Parameters": [
+					{
+						"Name": "onCaptureReady",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "captureParams",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerConnectionManager",
+			"member": "ConnectRemote",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ConnectRemote",
+				"Parameters": [
+					{
+						"Name": "host",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "port",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputAction",
+			"member": "GetState",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ThreadSafety",
+					"before": "Unsafe",
+					"after": "Safe"
+				}
+			],
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Function",
+				"Name": "GetState",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkClient",
+			"member": "ConnectionFailed",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "peer",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "code",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "reason",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "peer",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "code",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "ConnectionFailed",
+				"Parameters": [
+					{
+						"Name": "peer",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "code",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "CameraFrustumRequested",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Players"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "CameraFrustumRequested",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "SendCameraFrustum",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Players"
+				],
+				"MemberType": "Event",
+				"Name": "SendCameraFrustum",
+				"Parameters": [
+					{
+						"Name": "pv",
+						"Type": {
+							"Category": "DataType",
+							"Name": "ReplicationPV"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleQuery",
+			"member": "AspectRatioRange",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": false,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated",
+						"NotScriptable"
+					]
+				}
+			],
+			"value": {
+				"Category": "Behavior",
+				"Default": "0 inf ",
+				"MemberType": "Property",
+				"Name": "AspectRatioRange",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "NumberRange"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleQuery",
+			"member": "MinSize",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": false,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated",
+						"NotScriptable"
+					]
+				}
+			],
+			"value": {
+				"Category": "Behavior",
+				"Default": "0, 0",
+				"MemberType": "Property",
+				"Name": "MinSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ThirdPartyUserService",
+			"member": "IsAccountSwitchingSupported",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsAccountSwitchingSupported",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HttpError",
+			"item": "InactivityTimeout",
+			"type": "Add",
+			"value": {
+				"Name": "InactivityTimeout",
+				"Value": 16
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HttpError",
+			"item": "TooManyOutstandingRequests",
+			"type": "Add",
+			"value": {
+				"Name": "TooManyOutstandingRequests",
+				"Value": 17
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ScreenshotCaptureResult",
+			"type": "Add",
+			"value": {
+				"Name": "ScreenshotCaptureResult"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ScreenshotCaptureResult",
+			"item": "Success",
+			"type": "Add",
+			"value": {
+				"Name": "Success",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ScreenshotCaptureResult",
+			"item": "OtherError",
+			"type": "Add",
+			"value": {
+				"Name": "OtherError",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ScreenshotCaptureResult",
+			"item": "NoDeviceSupport",
+			"type": "Add",
+			"value": {
+				"Name": "NoDeviceSupport",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ScreenshotCaptureResult",
+			"item": "NoSpaceOnDevice",
+			"type": "Add",
+			"value": {
+				"Name": "NoSpaceOnDevice",
+				"Value": 3
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Class",
+			"class": "Capture",
+			"part": "description",
+			"before": "A class which defines a piece of content, such as a screnshot or video, taken in-experience.",
+			"after": "A class which defines a piece of content, such as a screenshot or video, taken in-experience."
+		},
+		{
+			"element": "Member",
+			"class": "AdService",
+			"member": "RegisterAdOpportunityAsync",
+			"part": "description",
+			"before": null,
+			"after": "Tracks how many times a user had the chance to watch a video ad and the rate at which they actually watched the ad.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterAdOpportunityAsync",
+				"Parameters": [
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "placementId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AdService",
+			"member": "RegisterAdOpportunityAsync",
+			"part": "parameter",
+			"parameter": "placementId",
+			"before": null,
+			"after": "The ID of the placement of the rewarded video ad inside the experience. Allows for reporting on the performance of individual ad placements.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterAdOpportunityAsync",
+				"Parameters": [
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "placementId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BadgeService",
+			"member": "UserHasBadge",
+			"part": "description",
+			"before": "<strong>Deprecated:</strong> This function has been superseded by <code>BadgeService:UserHasBadgeAsync()</code> which should be used for new instead.<br>Checks whether a user has the badge given the <code>Player.UserId</code> and the badge ID.",
+			"after": "<strong>Deprecated:</strong> This method has been superseded by <code>BadgeService:UserHasBadgeAsync()</code> which should be used for new instead.<br>Checks whether a user has the badge given the <code>Player.UserId</code> and the badge ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UserHasBadge",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "badgeId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields",
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialVariant",
+			"member": "AlphaMode",
+			"part": "description",
+			"before": null,
+			"after": "Determines how the alpha channel of the <code>MaterialVariant.ColorMap</code> is used.",
+			"value": {
+				"Category": "Appearance",
+				"Default": "Opaque",
+				"MemberType": "Property",
+				"Name": "AlphaMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotBrowsable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AlphaMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkClient",
+			"member": "ConnectionAccepted",
+			"part": "description",
+			"before": "Fired when the client successfully connects to a server. Returns a string showing the server's IP and Port, and the client's <code>ClientReplicator</code>.",
+			"after": "Fired when the client successfully connects to a server. Returns a string showing the server's IP and port, and the client's <code>ClientReplicator</code>.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ConnectionAccepted",
+				"Parameters": [
+					{
+						"Name": "peer",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "replicator",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "IsBestFriendsWith",
+			"part": "description",
+			"before": "<strong>Deprecated:</strong> This function is obsolete because the Best Friends feature was removed. Use <code>Player:IsFriendsWith()</code> instead.<br>Returns whether a player is connections with the specified user.",
+			"after": "<strong>Deprecated:</strong> This function is obsolete because the \"best friends\" feature was removed. Use <code>Player:IsFriendsWithAsync()</code> instead.<br>Returns whether a player is connections with the specified user.",
+			"value": {
+				"Capabilities": [
+					"Players"
+				],
+				"MemberType": "Function",
+				"Name": "IsBestFriendsWith",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields",
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "IsFriendsWith",
+			"part": "description",
+			"before": "<strong>Deprecated:</strong> <br>Checks whether a player is a connection of the user with the given <code>Player.UserId</code>.",
+			"after": "<strong>Deprecated:</strong> This method has been superseded by the <code>Player:IsFriendsWithAsync()</code> method which should be used for new work.<br>Checks whether a player is a connection of the user with the given <code>Player.UserId</code>.",
+			"value": {
+				"Capabilities": [
+					"Players"
+				],
+				"MemberType": "Function",
+				"Name": "IsFriendsWith",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields",
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "IsFriendsWithAsync",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "isFriendsWith",
+			"part": "description",
+			"before": "<strong>Deprecated:</strong> This deprecated function is a variant of <code>Player:IsFriendsWith()</code> which should be used instead.",
+			"after": "<strong>Deprecated:</strong> This method has been superseded by the <code>Player:IsFriendsWithAsync()</code> method which should be used for new work.",
+			"value": {
+				"Capabilities": [
+					"Players"
+				],
+				"MemberType": "Function",
+				"Name": "isFriendsWith",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields",
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "IsFriendsWith",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "CollisionEnabled",
+			"part": "description",
+			"before": "Returns whether the user enabled <code>Collisions</code> in Studio under the Model tab.",
+			"after": "Returns whether the user has enabled <strong>Collisions</strong> in Studio's toolbar.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "CollisionEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "Activate",
+			"part": "parameter",
+			"parameter": "exclusiveMouse",
+			"before": "A boolean specifying whether to activate the plugin with exclusive mouse. If true, a <code>PluginMouse</code> can be retrieved via <code>Plugin:GetMouse()</code>.",
+			"after": "A boolean specifying whether to activate the plugin with exclusive mouse. If <code>true</code>, a <code>PluginMouse</code> can be retrieved via <code>GetMouse()</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Activate",
+				"Parameters": [
+					{
+						"Name": "exclusiveMouse",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "CreatePluginAction",
+			"part": "description",
+			"before": "Creates a <code>PluginAction</code> which is an object that represents a generic performable action in Roblox Studio, with no directly associated <code>Toolbar</code> or <code>Button</code>.",
+			"after": "Creates a <code>PluginAction</code> which represents a generic performable action in Studio with no directly‑associated <code>PluginToolbarButton</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreatePluginAction",
+				"Parameters": [
+					{
+						"Name": "actionId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "text",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "statusTip",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "iconName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "true",
+						"Name": "allowBinding",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "PluginAction"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "CreatePluginMenu",
+			"part": "parameter",
+			"parameter": "title",
+			"before": "The text to be displayed when used as a sub menu.",
+			"after": "The text to be displayed when used as a submenu.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreatePluginMenu",
+				"Parameters": [
+					{
+						"Name": "id",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "title",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "icon",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "PluginMenu"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "CreatePluginMenu",
+			"part": "parameter",
+			"parameter": "icon",
+			"before": "The icon to be displayed when used as a sub menu.",
+			"after": "The icon to be displayed when used as a submenu.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreatePluginMenu",
+				"Parameters": [
+					{
+						"Name": "id",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "title",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "icon",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "PluginMenu"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "GetJoinMode",
+			"part": "description",
+			"before": "Returns the <code>JointCreationMode</code> the user has set in Studio under the Model tab.",
+			"after": "Returns the <code>JointCreationMode</code> the user has set in Studio's toolbar.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetJoinMode",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "JointCreationMode"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "Intersect",
+			"part": "description",
+			"before": null,
+			"after": "Intersects the given parts and returns the resulting <code>IntersectOperation</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Intersect",
+				"Parameters": [
+					{
+						"Name": "objects",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Instances"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "IsActivated",
+			"part": "description",
+			"before": "Returns true if this plugin is currently active, after having been activated via the <code>Plugin:Activate()</code> function.",
+			"after": "Returns <code>true</code> if this plugin is currently active, after having been activated via the <code>Activate()</code> function.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsActivated",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "IsActivatedWithExclusiveMouse",
+			"part": "description",
+			"before": "Returns true if this plugin is currently active with an exclusive mouse, after having been activated via the <code>Plugin:Activate()</code> function.",
+			"after": "Returns <code>true</code> if this plugin is currently active with an exclusive mouse.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsActivatedWithExclusiveMouse",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "Negate",
+			"part": "description",
+			"before": "Negates the given parts and returns the resulting NegateOperations.",
+			"after": "Negates the given parts and returns the resulting <code>NegateOperations</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Negate",
+				"Parameters": [
+					{
+						"Name": "objects",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Instances"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Instances"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "Separate",
+			"part": "description",
+			"before": "Separates the given UnionOperations and returns the resulting parts.",
+			"after": "Separates the given <code>UnionOperations</code> and returns the resulting parts.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Separate",
+				"Parameters": [
+					{
+						"Name": "objects",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Instances"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Instances"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "Union",
+			"part": "description",
+			"before": "Unions the given parts and returns the resulting UnionOperation.",
+			"after": "Unions the given parts and returns the resulting <code>UnionOperation</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Union",
+				"Parameters": [
+					{
+						"Name": "objects",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Instances"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "CreateDockWidgetPluginGui",
+			"part": "description",
+			"before": "<strong>Deprecated:</strong> <br>Creates a <code>DockWidgetPluginGui</code> given a <code>DockWidgetPluginGuiInfo</code>.",
+			"after": "<strong>Deprecated:</strong> This method has been superseded by <code>CreateDockWidgetPluginGuiAsync()</code>.<br>Creates a <code>DockWidgetPluginGui</code> given a <code>DockWidgetPluginGuiInfo</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateDockWidgetPluginGui",
+				"Parameters": [
+					{
+						"Name": "pluginGuiId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "dockWidgetPluginGuiInfo",
+						"Type": {
+							"Category": "DataType",
+							"Name": "DockWidgetPluginGuiInfo"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "DockWidgetPluginGui"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Yields",
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "CreateDockWidgetPluginGuiAsync",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "ImportFbxAnimation",
+			"part": "description",
+			"before": "<strong>Deprecated:</strong> <br>Prompts the user to open a .fbx animation file that can be loaded onto the <code>rigModel</code>, then proceeds to insert the animation as a <code>KeyframeSequence</code> in the <code>Workspace</code>.",
+			"after": "<strong>Deprecated:</strong> <br>Prompts the user to open a <code>.fbx</code> animation file that can be loaded onto the <code>rigModel</code>, then proceeds to insert the animation as a <code>KeyframeSequence</code> in the <code>Workspace</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ImportFbxAnimation",
+				"Parameters": [
+					{
+						"Name": "rigModel",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Default": "true",
+						"Name": "isR15",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Yields",
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "ImportFbxAnimationAsync",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "ImportFbxAnimationAsync",
+			"part": "description",
+			"before": "Prompts the user to open a .fbx animation file that can be loaded onto the <code>rigModel</code>, then proceeds to insert the animation as a <code>KeyframeSequence</code> in the <code>Workspace</code>.",
+			"after": "Prompts the user to open a <code>.fbx</code> animation file that can be loaded onto the <code>rigModel</code>, then proceeds to insert the animation as a <code>KeyframeSequence</code> in the <code>Workspace</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ImportFbxAnimationAsync",
+				"Parameters": [
+					{
+						"Name": "rigModel",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Default": "true",
+						"Name": "isR15",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "ImportFbxRig",
+			"part": "description",
+			"before": "<strong>Deprecated:</strong> <br>Prompts the user to open a .fbx file, uploads the individual components of the model as meshes, and generates a character rig for use in animation, which is loaded into the <code>Workspace</code>.",
+			"after": "<strong>Deprecated:</strong> <br>Prompts the user to open a <code>.fbx</code> file, uploads the individual components of the model as meshes, and generates a character rig for use in animation, which is loaded into the <code>Workspace</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ImportFbxRig",
+				"Parameters": [
+					{
+						"Default": "true",
+						"Name": "isR15",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Yields",
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "ImportFbxRigAsync",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "ImportFbxRigAsync",
+			"part": "description",
+			"before": "Prompts the user to open a .fbx file, uploads the individual components of the model as meshes, and generates a character rig for use in animation, which is loaded into the <code>Workspace</code>.",
+			"after": "Prompts the user to open a <code>.fbx</code> file, uploads the individual components of the model as meshes, and generates a character rig for use in animation, which is loaded into the <code>Workspace</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ImportFbxRigAsync",
+				"Parameters": [
+					{
+						"Default": "true",
+						"Name": "isR15",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "PromptForExistingAssetId",
+			"part": "description",
+			"before": "Opens a window in Roblox Studio, which prompts the user to select an asset based on the <code>assetType</code> specified. Returns what assetId was selected, or -1 if the window was closed.",
+			"after": "Opens a window in Roblox Studio which prompts the user to select an asset based on the <code>assetType</code> specified.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptForExistingAssetId",
+				"Parameters": [
+					{
+						"Name": "assetType",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "PromptForExistingAssetIdAsync",
+			"part": "description",
+			"before": "Opens a window in Roblox Studio, which prompts the user to select an asset based on the <code>assetType</code> specified. Returns what assetId was selected, or -1 if the window was closed.",
+			"after": "Opens a window in Roblox Studio which prompts the user to select an asset based on the <code>assetType</code> specified.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptForExistingAssetIdAsync",
+				"Parameters": [
+					{
+						"Name": "assetType",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "PromptSaveSelection",
+			"part": "description",
+			"before": "<strong>Deprecated:</strong> <br>Prompts the user to save their current selection with the specified file name. Returns true if the user did save the file.",
+			"after": "<strong>Deprecated:</strong> <br>Prompts the user to save their current selection with the specified file name.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptSaveSelection",
+				"Parameters": [
+					{
+						"Default": "",
+						"Name": "suggestedFileName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Yields",
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "PromptSaveSelectionAsync",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "PromptSaveSelectionAsync",
+			"part": "description",
+			"before": "Prompts the user to save their current selection with the specified file name. Returns true if the user did save the file.",
+			"after": "Prompts the user to save their current selection with the specified file name.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptSaveSelectionAsync",
+				"Parameters": [
+					{
+						"Default": "",
+						"Name": "suggestedFileName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginAction",
+			"member": "AllowBinding",
+			"part": "description",
+			"before": "Whether the <code>PluginAction</code> will be hidden from Studio's shortcuts view.",
+			"after": "Determines whether the action can be assigned a keyboard shortcut in Studio.",
+			"value": {
+				"Category": "Data",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "AllowBinding",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginAction",
+			"member": "StatusTip",
+			"part": "description",
+			"before": "The description of the action, when viewing it from the keyboard shortcuts window in Roblox Studio.",
+			"after": "The description of the action when viewing it from the keyboard shortcuts window in Roblox Studio.",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "StatusTip",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginAction",
+			"member": "Triggered",
+			"part": "description",
+			"before": "Fires when the action is triggered. This can be done by either activating the action from the Quick Access Toolbar, or by using the keyboard shortcut that was bound to it.",
+			"after": "Fires when the action is triggered.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Triggered",
+				"Parameters": [],
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginManager",
+			"member": "ExportPlace",
+			"part": "description",
+			"before": "Exports the place to an .OBJ file that is saved to the path chosen by the user in a file save dialogue (the <code>filePath</code> argument is ignored).",
+			"after": "Exports the place to an <code>.obj</code> file that is saved to the path chosen by the user in a file save dialogue.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ExportPlace",
+				"Parameters": [
+					{
+						"Default": "",
+						"Name": "filePath",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginManager",
+			"member": "ExportSelection",
+			"part": "description",
+			"before": "Exports the current <code>Selection</code> to an .OBJ file that is saved to the path chosen by the user in a file save dialogue (the <code>filePath</code> argument is ignored).",
+			"after": "Exports the current <code>Selection</code> to an <code>.obj</code> file that is saved to the path chosen by the user in a file save dialogue.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ExportSelection",
+				"Parameters": [
+					{
+						"Default": "",
+						"Name": "filePath",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginMenu",
+			"member": "Icon",
+			"part": "description",
+			"before": "The icon to be displayed when used as a sub menu.",
+			"after": "The icon to be displayed when used as a submenu.",
+			"value": {
+				"Category": "Appearance",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Icon",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginMenu",
+			"member": "Title",
+			"part": "description",
+			"before": "The text to be displayed when used as a sub menu.",
+			"after": "The text to be displayed when used as a submenu.",
+			"value": {
+				"Category": "Appearance",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Title",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginMenu",
+			"member": "AddMenu",
+			"part": "parameter",
+			"parameter": "menu",
+			"before": "The menu to add as a sub menu. Uses its <code>PluginMenu.Title</code> and <code>PluginMenu.Icon</code> to display.",
+			"after": "The menu to add as a submenu. Uses its <code>Title</code> and <code>Icon</code> to display.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddMenu",
+				"Parameters": [
+					{
+						"Name": "menu",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginMenu",
+			"member": "AddNewAction",
+			"part": "parameter",
+			"parameter": "actionId",
+			"before": "Must be a unique string that identifies this PluginAction from others.",
+			"after": "Must be a unique string that identifies this <code>PluginAction</code> from others.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddNewAction",
+				"Parameters": [
+					{
+						"Name": "actionId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "text",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "icon",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginToolbar",
+			"member": "CreateButton",
+			"part": "parameter",
+			"parameter": "iconname",
+			"before": "The asset ID (e.g. rbxassetid://1507949215) of the icon displayed in the button.",
+			"after": "The asset ID of the icon displayed in the button.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateButton",
+				"Parameters": [
+					{
+						"Name": "buttonId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "tooltip",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "iconname",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "text",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "PluginToolbarButton"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginToolbar",
+			"member": "CreateButton",
+			"part": "parameter",
+			"parameter": "text",
+			"before": "Text displayed under the button icon. Optional. If this field is not provided, the <strong>ID</strong> will be used instead.",
+			"after": "Optional text displayed under the button icon.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateButton",
+				"Parameters": [
+					{
+						"Name": "buttonId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "tooltip",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "iconname",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "text",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "PluginToolbarButton"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginToolbarButton",
+			"member": "ClickableWhenViewportHidden",
+			"part": "description",
+			"before": "Determines whether the button can be clicked when the game viewport is hidden, such as while editing a script in a different Studio tab.",
+			"after": "Determines whether the button can be clicked when the 3D viewport is hidden, such as when a <code>Script</code> is being edited in another tab.",
+			"value": {
+				"Category": "Appearance",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "ClickableWhenViewportHidden",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "AutoRuns",
+			"part": "description",
+			"before": "If set to true, the game will start running when the TestService's <code>TestService:Run()</code> method is called.",
+			"after": "If set to <code>true</code>, the game will start running when the service's <code>TestService:Run()</code> method is called.",
+			"value": {
+				"Category": "Physics",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "AutoRuns",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "ExecuteWithStudioRun",
+			"part": "description",
+			"before": "When set to true, the TestService will be executed when using the <em>Run</em> action in Roblox Studio.",
+			"after": "When set to <code>true</code>, <code>TestService</code> will be executed when using the <strong>Run</strong> action in Roblox Studio.",
+			"value": {
+				"Category": "Settings",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "ExecuteWithStudioRun",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "Check",
+			"part": "description",
+			"before": "Prints result of condition to output.",
+			"after": "Prints result of a condition to the output.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Check",
+				"Parameters": [
+					{
+						"Name": "condition",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "description",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "source",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "line",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "Checkpoint",
+			"part": "description",
+			"before": "Prints \"Test checkpoint: \", followed by text, to the output, in blue text.",
+			"after": "Prints <code>Test checkpoint:</code> followed by a string to the output in blue text.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Checkpoint",
+				"Parameters": [
+					{
+						"Name": "text",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "source",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "line",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "Done",
+			"part": "description",
+			"before": "Prints Testing Done to the output, in blue text.",
+			"after": "Prints <code>Testing Done</code> to the output in blue text.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Done",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "Error",
+			"part": "description",
+			"before": "Prints a red message to the output, prefixed by <code>TestService:</code>.",
+			"after": "Prints a red error message to the output, prefixed by <code>TestService:</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Error",
+				"Parameters": [
+					{
+						"Name": "description",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "source",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "line",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "Fail",
+			"part": "description",
+			"before": "Indicates a fatal error in a TestService run. If this is called inside of a script running inside of the TestService, this will initiate a breakpoint on the line that invoked the error.",
+			"after": "Indicates a fatal error in a <code>TestService</code> run.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Fail",
+				"Parameters": [
+					{
+						"Name": "description",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "source",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "line",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "Message",
+			"part": "description",
+			"before": "Prints Test message, followed by text to the output, in blue text.",
+			"after": "Prints <code>TestService:</code> followed by a string to the output in blue text.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Message",
+				"Parameters": [
+					{
+						"Name": "text",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "source",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "line",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "Require",
+			"part": "description",
+			"before": "Prints whether a condition is true along with description text.",
+			"after": "Prints whether a condition is true along with a description string.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Require",
+				"Parameters": [
+					{
+						"Name": "condition",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "description",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "source",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "line",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "Warn",
+			"part": "description",
+			"before": "Prints if a condition is true, otherwise prints a warning.",
+			"after": "Prints if a condition is <code>true</code>, otherwise prints a warning.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Warn",
+				"Parameters": [
+					{
+						"Name": "condition",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "description",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "source",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "line",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "Run",
+			"part": "description",
+			"before": "<strong>Deprecated:</strong> <br>Runs scripts which are parented to TestService.",
+			"after": "<strong>Deprecated:</strong> <br>Runs scripts which are parented to <code>TestService</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Run",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Yields",
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "RunAsync",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "RunAsync",
+			"part": "description",
+			"before": "Runs scripts which are parented to TestService.",
+			"after": "Runs scripts which are parented to <code>TestService</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RunAsync",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "ServerCollectConditionalResult",
+			"part": "description",
+			"before": "Fired when the server should collect a conditional test result.",
+			"after": "Fires when the server should collect a conditional test result.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ServerCollectConditionalResult",
+				"Parameters": [
+					{
+						"Name": "condition",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "text",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "script",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "line",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "ServerCollectResult",
+			"part": "description",
+			"before": "Fired when the server should collect a test result.",
+			"after": "Fires when the server should collect a test result.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ServerCollectResult",
+				"Parameters": [
+					{
+						"Name": "text",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "script",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "line",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Legacy",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Legacy.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/Legacy.png\" />",
+			"value": {
+				"Name": "Legacy",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Arial",
+			"part": "description",
+			"before": "Arial has been removed from Roblox. Using Arial will map to Arimo.",
+			"after": "<code>Arial</code> has been removed. Using it will map to the <code>Arimo</code> font family of the <code>Font</code> data type.",
+			"value": {
+				"Name": "Arial",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "ArialBold",
+			"part": "description",
+			"before": "Arial has been removed from Roblox. Using Arial will map to Arimo.",
+			"after": "<code>ArialBold</code> has been removed. Using it will map to the <code>Arimo</code> font family of the <code>Font</code> data type.",
+			"value": {
+				"Name": "ArialBold",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "SourceSans",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/SourceSans.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/SourceSans.png\" />",
+			"value": {
+				"Name": "SourceSans",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "SourceSansBold",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/SourceSansBold.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/SourceSansBold.png\" />",
+			"value": {
+				"Name": "SourceSansBold",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "SourceSansLight",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/SourceSansLight.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/SourceSansLight.png\" />",
+			"value": {
+				"Name": "SourceSansLight",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "SourceSansItalic",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/SourceSansItalic.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/SourceSansItalic.png\" />",
+			"value": {
+				"Name": "SourceSansItalic",
+				"Value": 6
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Bodoni",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Bodoni.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/Bodoni.png\" />",
+			"value": {
+				"Name": "Bodoni",
+				"Value": 7
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Garamond",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Garamond.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/Garamond.png\" />",
+			"value": {
+				"Name": "Garamond",
+				"Value": 8
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Cartoon",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Cartoon.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/Cartoon.png\" />",
+			"value": {
+				"Name": "Cartoon",
+				"Value": 9
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Code",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Code.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/Code.png\" />",
+			"value": {
+				"Name": "Code",
+				"Value": 10
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Highway",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Highway.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/Highway.png\" />",
+			"value": {
+				"Name": "Highway",
+				"Value": 11
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "SciFi",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/SciFi.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/SciFi.png\" />",
+			"value": {
+				"Name": "SciFi",
+				"Value": 12
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Arcade",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Arcade.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/Arcade.png\" />",
+			"value": {
+				"Name": "Arcade",
+				"Value": 13
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Fantasy",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Fantasy.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/Fantasy.png\" />",
+			"value": {
+				"Name": "Fantasy",
+				"Value": 14
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Antique",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Antique.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/Antique.png\" />",
+			"value": {
+				"Name": "Antique",
+				"Value": 15
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "SourceSansSemibold",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/SourceSansSemibold.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/SourceSansSemibold.png\" />",
+			"value": {
+				"Name": "SourceSansSemibold",
+				"Value": 16
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Gotham",
+			"part": "description",
+			"before": "Gotham has been removed from Roblox. Using Gotham will map to Montserrat.",
+			"after": "<code>Gotham</code> has been removed. Using it will map to the <code>Montserrat</code> font family of the <code>Font</code> data type.",
+			"value": {
+				"LegacyNames": [
+					"Montserrat"
+				],
+				"Name": "Gotham",
+				"Value": 17
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "GothamMedium",
+			"part": "description",
+			"before": "Gotham has been removed from Roblox. Using Gotham will map to Montserrat.",
+			"after": "<code>GothamMedium</code> has been removed. Using it will map to the <code>Montserrat</code> font family of the <code>Font</code> data type.",
+			"value": {
+				"LegacyNames": [
+					"GothamSemibold",
+					"MontserratMedium"
+				],
+				"Name": "GothamMedium",
+				"Value": 18
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "GothamBold",
+			"part": "description",
+			"before": "Gotham has been removed from Roblox. Using Gotham will map to Montserrat.",
+			"after": "<code>GothamBold</code> has been removed. Using it will map to the <code>Montserrat</code> font family of the <code>Font</code> data type.",
+			"value": {
+				"LegacyNames": [
+					"MontserratBold"
+				],
+				"Name": "GothamBold",
+				"Value": 19
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "GothamBlack",
+			"part": "description",
+			"before": "Gotham has been removed from Roblox. Using Gotham will map to Montserrat.",
+			"after": "<code>GothamBlack</code> has been removed. Using it will map to the <code>Montserrat</code> font family of the <code>Font</code> data type.",
+			"value": {
+				"LegacyNames": [
+					"MontserratBlack"
+				],
+				"Name": "GothamBlack",
+				"Value": 20
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "AmaticSC",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/AmaticSC.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/AmaticSC.png\" />",
+			"value": {
+				"Name": "AmaticSC",
+				"Value": 21
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Bangers",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Bangers.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/Bangers.png\" />",
+			"value": {
+				"Name": "Bangers",
+				"Value": 22
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Creepster",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Creepster.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/Creepster.png\" />",
+			"value": {
+				"Name": "Creepster",
+				"Value": 23
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "DenkOne",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/DenkOne.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/DenkOne.png\" />",
+			"value": {
+				"Name": "DenkOne",
+				"Value": 24
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Fondamento",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Fondamento.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/Fondamento.png\" />",
+			"value": {
+				"Name": "Fondamento",
+				"Value": 25
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "FredokaOne",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/FredokaOne.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/FredokaOne.png\" />",
+			"value": {
+				"Name": "FredokaOne",
+				"Value": 26
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "GrenzeGotisch",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/GrenzeGotisch.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/GrenzeGotisch.png\" />",
+			"value": {
+				"Name": "GrenzeGotisch",
+				"Value": 27
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "IndieFlower",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/IndieFlower.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/IndieFlower.png\" />",
+			"value": {
+				"Name": "IndieFlower",
+				"Value": 28
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "JosefinSans",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/JosefinSans.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/JosefinSans.png\" />",
+			"value": {
+				"Name": "JosefinSans",
+				"Value": 29
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Jura",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Jura.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/Jura.png\" />",
+			"value": {
+				"Name": "Jura",
+				"Value": 30
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Kalam",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Kalam.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/Kalam.png\" />",
+			"value": {
+				"Name": "Kalam",
+				"Value": 31
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "LuckiestGuy",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/LuckiestGuy.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/LuckiestGuy.png\" />",
+			"value": {
+				"Name": "LuckiestGuy",
+				"Value": 32
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Merriweather",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Merriweather.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/Merriweather.png\" />",
+			"value": {
+				"Name": "Merriweather",
+				"Value": 33
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Michroma",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Michroma.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/Michroma.png\" />",
+			"value": {
+				"Name": "Michroma",
+				"Value": 34
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Nunito",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Nunito.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/Nunito.png\" />",
+			"value": {
+				"Name": "Nunito",
+				"Value": 35
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Oswald",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Oswald.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/Oswald.png\" />",
+			"value": {
+				"Name": "Oswald",
+				"Value": 36
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "PatrickHand",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/PatrickHand.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/PatrickHand.png\" />",
+			"value": {
+				"Name": "PatrickHand",
+				"Value": 37
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "PermanentMarker",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/PermanentMarker.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/PermanentMarker.png\" />",
+			"value": {
+				"Name": "PermanentMarker",
+				"Value": 38
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Roboto",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Roboto.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/Roboto.png\" />",
+			"value": {
+				"Name": "Roboto",
+				"Value": 39
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "RobotoCondensed",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/RobotoCondensed.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/RobotoCondensed.png\" />",
+			"value": {
+				"Name": "RobotoCondensed",
+				"Value": 40
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "RobotoMono",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/RobotoMono.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/RobotoMono.png\" />",
+			"value": {
+				"Name": "RobotoMono",
+				"Value": 41
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Sarpanch",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Sarpanch.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/Sarpanch.png\" />",
+			"value": {
+				"Name": "Sarpanch",
+				"Value": 42
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "SpecialElite",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/SpecialElite.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/SpecialElite.png\" />",
+			"value": {
+				"Name": "SpecialElite",
+				"Value": 43
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "TitilliumWeb",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/TitilliumWeb.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/TitilliumWeb.png\" />",
+			"value": {
+				"Name": "TitilliumWeb",
+				"Value": 44
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Ubuntu",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Ubuntu.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/Ubuntu.png\" />",
+			"value": {
+				"Name": "Ubuntu",
+				"Value": 45
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "BuilderSans",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/BuilderSans.png\" /> See <a href=\"../../../resources/builder-font-license.md\">Builder Font License</a>.",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/BuilderSans.png\" /> See <a href=\"../../../resources/builder-font-license.md\">Builder Font License</a>.",
+			"value": {
+				"Name": "BuilderSans",
+				"Value": 46
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "BuilderSansMedium",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/BuilderSansMedium.png\" /> See <a href=\"../../../resources/builder-font-license.md\">Builder Font License</a>.",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/BuilderSansMedium.png\" /> See <a href=\"../../../resources/builder-font-license.md\">Builder Font License</a>.",
+			"value": {
+				"Name": "BuilderSansMedium",
+				"Value": 47
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "BuilderSansBold",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/BuilderSansBold.png\" /> See <a href=\"../../../resources/builder-font-license.md\">Builder Font License</a>.",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/BuilderSansBold.png\" /> See <a href=\"../../../resources/builder-font-license.md\">Builder Font License</a>.",
+			"value": {
+				"Name": "BuilderSansBold",
+				"Value": 48
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "BuilderSansExtraBold",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/BuilderSansExtraBold.png\" /> See <a href=\"../../../resources/builder-font-license.md\">Builder Font License</a>.",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/BuilderSansExtraBold.png\" /> See <a href=\"../../../resources/builder-font-license.md\">Builder Font License</a>.",
+			"value": {
+				"Name": "BuilderSansExtraBold",
+				"Value": 49
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Arimo",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Arimo.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/Arimo.png\" />",
+			"value": {
+				"Name": "Arimo",
+				"Value": 50
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "ArimoBold",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/ArimoBold.png\" />",
+			"after": "<img src=\"../../../assets/engine-api/enums/Font/ArimoBold.png\" />",
+			"value": {
+				"Name": "ArimoBold",
+				"Value": 51
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Unknown",
+			"part": "description",
+			"before": "Set when the <code>TextLabel.FontFace</code> property is set to a <code>Font</code> that has no corresponding enum value.",
+			"after": "Set when the GUI object's font face is set to a <code>Font</code> that has no corresponding enum value.",
+			"value": {
+				"Name": "Unknown",
+				"Value": 100
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FontSize",
+			"item": "Size8",
+			"part": "description",
+			"before": "Font size 8.",
+			"after": "Font size <code>8</code>.",
+			"value": {
+				"Name": "Size8",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FontSize",
+			"item": "Size9",
+			"part": "description",
+			"before": "Font size 9.",
+			"after": "Font size <code>9</code>.",
+			"value": {
+				"Name": "Size9",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FontSize",
+			"item": "Size10",
+			"part": "description",
+			"before": "Font size 10.",
+			"after": "Font size <code>10</code>.",
+			"value": {
+				"Name": "Size10",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FontSize",
+			"item": "Size11",
+			"part": "description",
+			"before": "Font size 11.",
+			"after": "Font size <code>11</code>.",
+			"value": {
+				"Name": "Size11",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FontSize",
+			"item": "Size12",
+			"part": "description",
+			"before": "Font size 12.",
+			"after": "Font size <code>12</code>.",
+			"value": {
+				"Name": "Size12",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FontSize",
+			"item": "Size14",
+			"part": "description",
+			"before": "Font size 14.",
+			"after": "Font size <code>14</code>.",
+			"value": {
+				"Name": "Size14",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FontSize",
+			"item": "Size18",
+			"part": "description",
+			"before": "Font size 18.",
+			"after": "Font size <code>18</code>.",
+			"value": {
+				"Name": "Size18",
+				"Value": 6
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FontSize",
+			"item": "Size24",
+			"part": "description",
+			"before": "Font size 24.",
+			"after": "Font size <code>24</code>.",
+			"value": {
+				"Name": "Size24",
+				"Value": 7
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FontSize",
+			"item": "Size36",
+			"part": "description",
+			"before": "Font size 36.",
+			"after": "Font size <code>36</code>.",
+			"value": {
+				"Name": "Size36",
+				"Value": 8
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FontSize",
+			"item": "Size48",
+			"part": "description",
+			"before": "Font size 48.",
+			"after": "Font size <code>48</code>.",
+			"value": {
+				"Name": "Size48",
+				"Value": 9
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FontSize",
+			"item": "Size28",
+			"part": "description",
+			"before": "Font size 28.",
+			"after": "Font size <code>28</code>.",
+			"value": {
+				"Name": "Size28",
+				"Value": 10
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FontSize",
+			"item": "Size32",
+			"part": "description",
+			"before": "Font size 32.",
+			"after": "Font size <code>32</code>.",
+			"value": {
+				"Name": "Size32",
+				"Value": 11
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FontSize",
+			"item": "Size42",
+			"part": "description",
+			"before": "Font size 42.",
+			"after": "Font size <code>42</code>.",
+			"value": {
+				"Name": "Size42",
+				"Value": 12
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FontSize",
+			"item": "Size60",
+			"part": "description",
+			"before": "Font size 60.",
+			"after": "Font size <code>60</code>.",
+			"value": {
+				"Name": "Size60",
+				"Value": 13
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FontSize",
+			"item": "Size96",
+			"part": "description",
+			"before": "Font size 96.",
+			"after": "Font size <code>96</code>.",
+			"value": {
+				"Name": "Size96",
+				"Value": 14
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "FontStyle",
+			"part": "description",
+			"before": "Describes whether a <code>Font</code> is italic or not.",
+			"after": "Describes whether a <code>Font</code> style is normal or italic."
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RecommendationActionType",
+			"item": "Play",
+			"part": "description",
+			"before": "The user joined an experience through the item.",
+			"after": "The user joined an experience through the item, or played a mini-game associated with the item.",
+			"value": {
+				"Name": "Play",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ScreenInsets",
+			"item": "TopbarSafeInsets",
+			"part": "description",
+			"before": "Top bar safe area insets are added to the <code>DeviceSafeInsets</code> area, resulting in an area guaranteed to be unobscured by both device screen cutouts and Roblox core UI elements like the experience controls. Unlike <code>CoreUISafeInsets</code>, this area's position and size is dynamic and is limited to the space available within the top bar area itself, outside of <code>CoreUISafeInsets</code>.",
+			"after": "Top bar safe area insets are added to the <code>DeviceSafeInsets</code> area, resulting in an area guaranteed to be unobscured by both device screen cutouts and Roblox core UI elements like the experience controls. Unlike <code>CoreUISafeInsets</code>, this area's position and size is dynamic and is limited to the space available within the top bar area itself, outside of <code>CoreUISafeInsets</code>. See the <code>GuiService.TopbarInset</code> property which represents the absolute size and position of the unobstructed area within the top bar space.",
+			"value": {
+				"Name": "TopbarSafeInsets",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "UICaptureMode",
+			"part": "description",
+			"before": null,
+			"after": "Used to determine what UI elements should be captured with <code>CaptureService</code>."
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UICaptureMode",
+			"item": "All",
+			"part": "description",
+			"before": null,
+			"after": "Capture all UI elements.",
+			"value": {
+				"Name": "All",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UICaptureMode",
+			"item": "None",
+			"part": "description",
+			"before": null,
+			"after": "Capture no UI elements.",
+			"value": {
+				"Name": "None",
+				"Value": 1
+			}
+		}
+	]
+}

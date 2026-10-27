@@ -1,0 +1,2646 @@
+{
+	"from": {
+		"version": "0.603.4.6030571",
+		"hash": "186c4dd1908c48ab"
+	},
+	"to": {
+		"version": "0.604.0.6040509",
+		"hash": "ba72355b215d4c56"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "OnSharePromptFinished",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "OnSharePromptFinished",
+				"Parameters": [
+					{
+						"Name": "promptId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "accepted",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "PromptShareCapture",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptShareCapture",
+				"Parameters": [
+					{
+						"Name": "contentId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					},
+					{
+						"Name": "launchData",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Name": "onAcceptedCallback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					},
+					{
+						"Name": "onDeniedCallback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "OpenShareCapturePrompt",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OpenShareCapturePrompt",
+				"Parameters": [
+					{
+						"Name": "promptId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "contentId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					},
+					{
+						"Name": "capturePath",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "launchData",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "UserCaptureSaved",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "UserCaptureSaved",
+				"Parameters": [
+					{
+						"Name": "captureContentId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Constraint",
+			"member": "GetDebugAppliedForce",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetDebugAppliedForce",
+				"Parameters": [
+					{
+						"Name": "bodyId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Constraint",
+			"member": "GetDebugAppliedTorque",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetDebugAppliedTorque",
+				"Parameters": [
+					{
+						"Name": "bodyId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "EditableMesh",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "EditableMesh",
+				"Superclass": "DataModelMesh",
+				"Tags": [
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "AddTriangle",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "vertexId0",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "vertexId1",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "vertexId2",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "vertexId0",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "vertexId1",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "vertexId2",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						}
+					]
+				},
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Primitive",
+						"Name": "int"
+					},
+					"after": {
+						"Category": "Primitive",
+						"Name": "int64"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddTriangle",
+				"Parameters": [
+					{
+						"Name": "vertexId0",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "vertexId1",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "vertexId2",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "AddVertex",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Primitive",
+						"Name": "int"
+					},
+					"after": {
+						"Category": "Primitive",
+						"Name": "int64"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddVertex",
+				"Parameters": [
+					{
+						"Name": "p",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "FindClosestVertex",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Primitive",
+						"Name": "int"
+					},
+					"after": {
+						"Category": "Primitive",
+						"Name": "int64"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindClosestVertex",
+				"Parameters": [
+					{
+						"Name": "toThisPoint",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetAdjacentTriangles",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "triangleId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "triangleId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAdjacentTriangles",
+				"Parameters": [
+					{
+						"Name": "triangleId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetAdjacentVertices",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "vertexId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "vertexId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAdjacentVertices",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetPosition",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "vertexId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "vertexId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPosition",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetTriangleVertices",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "triangleId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "triangleId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetTriangleVertices",
+				"Parameters": [
+					{
+						"Name": "triangleId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetUV",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "vertexId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "vertexId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetUV",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexColor",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "vertexId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "vertexId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexColor",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexColorAlpha",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "vertexId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "vertexId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexColorAlpha",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexNormal",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "vertexId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "vertexId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexNormal",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "Raycast",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Raycast",
+				"Parameters": [
+					{
+						"Name": "origin",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "direction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "RemoveTriangle",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "triangleId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "triangleId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "RemoveTriangle",
+				"Parameters": [
+					{
+						"Name": "triangleId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "RemoveVertex",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "vertexId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "vertexId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "RemoveVertex",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetPosition",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "vertexId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "p",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "vertexId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "p",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetPosition",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "p",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetUV",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "vertexId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "uv",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector2"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "vertexId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "uv",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector2"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetUV",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "uv",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetVertexColor",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "vertexId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "color",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Color3"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "vertexId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "color",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Color3"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetVertexColor",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "color",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Color3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetVertexColorAlpha",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "vertexId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "alpha",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "vertexId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "alpha",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetVertexColorAlpha",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "alpha",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetVertexNormal",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "vertexId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "vnormal",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "vertexId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "vnormal",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetVertexNormal",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "vnormal",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "RaycastLocal",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RaycastLocal",
+				"Parameters": [
+					{
+						"Name": "origin",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "direction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "EditableImage",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "EditableImage",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Path2D",
+			"member": "Transparency",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "Transparency",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "OperationTree",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "OperationTree",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "ReadVoxelChannels",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ReadVoxelChannels",
+				"Parameters": [
+					{
+						"Name": "region",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Region3"
+						}
+					},
+					{
+						"Name": "resolution",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "channelIds",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "WriteVoxelChannels",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "WriteVoxelChannels",
+				"Parameters": [
+					{
+						"Name": "region",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Region3"
+						}
+					},
+					{
+						"Name": "resolution",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "channels",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SessionService",
+			"member": "GenerateSessionInfoString",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GenerateSessionInfoString",
+				"Parameters": [
+					{
+						"Name": "includeArbitrarySessions",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "includeTag",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "includeTimestamps",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "includeMetadata",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioPublishService",
+			"member": "PublishLocked",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "PublishLocked",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioPublishService",
+			"member": "OnPublishAttempt",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnPublishAttempt",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VoiceChatService",
+			"member": "UseAudioApi",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"Default": "Automatic",
+				"MemberType": "Property",
+				"Name": "UseAudioApi",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotBrowsable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AudioApiRollout"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "OperationGraph",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "OperationGraph",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AudioApiRollout",
+			"type": "Add",
+			"value": {
+				"Name": "AudioApiRollout"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AudioApiRollout",
+			"item": "Disabled",
+			"type": "Add",
+			"value": {
+				"Name": "Disabled",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AudioApiRollout",
+			"item": "Automatic",
+			"type": "Add",
+			"value": {
+				"Name": "Automatic",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AudioApiRollout",
+			"item": "Enabled",
+			"type": "Add",
+			"value": {
+				"Name": "Enabled",
+				"Value": 2
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "ReducedMotionEnabled",
+			"part": "description",
+			"before": "Returns true if the user has enabled reduced motion. Defaults to false.",
+			"after": "Returns <code>true</code> if the user has enabled reduced motion. Defaults to <code>false</code>.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "ReducedMotionEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreSortedMap",
+			"member": "SetAsync",
+			"part": "return",
+			"before": "True if a new item was added, false -- if an existing item was updated.",
+			"after": null,
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "expiration",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "sortKey",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "MoveTo",
+			"part": "parameter",
+			"parameter": "position",
+			"before": "The <code>Position</code> the <code>Model</code> is to be moved to.",
+			"after": "The <code>Vector3</code> the <code>Model</code> is moved to.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "MoveTo",
+				"Parameters": [
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "TranslateBy",
+			"part": "parameter",
+			"parameter": "delta",
+			"before": "The <code>Vector3</code> to translate the <code>Model</code> by,.",
+			"after": "The <code>Vector3</code> to translate the <code>Model</code> by.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "TranslateBy",
+				"Parameters": [
+					{
+						"Name": "delta",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "IKMoveTo",
+			"part": "parameter",
+			"parameter": "rotateStiffness",
+			"before": "A number between 0 and 1 specifying how aggresively to match the part's rotation to to the rotation part of the target <code>CFrame</code>.",
+			"after": "A number between 0 and 1 specifying how aggresively to match the part's rotation to the rotation part of the target <code>CFrame</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IKMoveTo",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "BasePart"
+						}
+					},
+					{
+						"Name": "target",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					},
+					{
+						"Default": "0.5",
+						"Name": "translateStiffness",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Default": "0.5",
+						"Name": "rotateStiffness",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Default": "OtherMechanismsAnchored",
+						"Name": "collisionsMode",
+						"Type": {
+							"Category": "Enum",
+							"Name": "IKCollisionsMode"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "IKControlConstraintSupport",
+			"part": "description",
+			"before": null,
+			"after": "Enables support for constraints for IKControls. If disabled, IKControls ignore physics constraints.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "IKControlConstraintSupport",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "IKControlConstraintSupport"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PlayerViewService",
+			"part": "description",
+			"before": null,
+			"after": "Provides a way to get additional information about a player's view."
+		},
+		{
+			"element": "Member",
+			"class": "PlayerViewService",
+			"member": "GetDeviceCameraCFrame",
+			"part": "description",
+			"before": null,
+			"after": "Returns a world space <code>CFrame</code> looking at the player's character.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetDeviceCameraCFrame",
+				"Parameters": [
+					{
+						"Default": "nil",
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PlayerViewService",
+			"member": "GetDeviceCameraCFrame",
+			"part": "parameter",
+			"parameter": "player",
+			"before": null,
+			"after": "The player for which to get the device camera <code>CFrame</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetDeviceCameraCFrame",
+				"Parameters": [
+					{
+						"Default": "nil",
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PlayerViewService",
+			"member": "GetDeviceCameraCFrame",
+			"part": "return",
+			"before": null,
+			"after": "The world space <code>CFrame</code> looking at the player's character, or a <code>CFrame.identity</code> (see description).",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetDeviceCameraCFrame",
+				"Parameters": [
+					{
+						"Default": "nil",
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "HideSelfView",
+			"part": "description",
+			"before": null,
+			"after": "Hides the calling player's self view.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "HideSelfView",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "PromptPhoneBook",
+			"part": "description",
+			"before": null,
+			"after": "Prompts the given <code>Player</code> with the phone book.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptPhoneBook",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "tag",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "PromptPhoneBook",
+			"part": "parameter",
+			"parameter": "player",
+			"before": null,
+			"after": "The player to prompt with the phone book.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptPhoneBook",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "tag",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "PromptPhoneBook",
+			"part": "parameter",
+			"parameter": "tag",
+			"before": null,
+			"after": "String to help differentiate between various phone book \"entry points\" or similar. For example, you can pass a string defining what region of an experience the calling player's character is currently in.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptPhoneBook",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "tag",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "ShowSelfView",
+			"part": "description",
+			"before": null,
+			"after": "Shows the calling player's self view.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ShowSelfView",
+				"Parameters": [
+					{
+						"Default": "LastPosition",
+						"Name": "selfViewPosition",
+						"Type": {
+							"Category": "Enum",
+							"Name": "SelfViewPosition"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "ShowSelfView",
+			"part": "parameter",
+			"parameter": "selfViewPosition",
+			"before": null,
+			"after": "The position to place the self view .",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ShowSelfView",
+				"Parameters": [
+					{
+						"Default": "LastPosition",
+						"Name": "selfViewPosition",
+						"Type": {
+							"Category": "Enum",
+							"Name": "SelfViewPosition"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "CanSendCallInviteAsync",
+			"part": "description",
+			"before": null,
+			"after": "Indicates whether the given <code>Player</code> can invite other players to a call.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CanSendCallInviteAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "CanSendCallInviteAsync",
+			"part": "parameter",
+			"parameter": "player",
+			"before": null,
+			"after": "The <code>Player</code> instance of the player potentially sending a call invite.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CanSendCallInviteAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "CanSendCallInviteAsync",
+			"part": "return",
+			"before": null,
+			"after": "Whether the specified player can send a call invite.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CanSendCallInviteAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "CanSendGameInviteAsync",
+			"part": "parameter",
+			"parameter": "player",
+			"before": "The <code>Player</code> instance of the user potentially sending an invite.",
+			"after": "The <code>Player</code> instance of the player potentially sending an invite.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CanSendGameInviteAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "recipientId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "CallInviteStateChanged",
+			"part": "description",
+			"before": null,
+			"after": "Fires when a player's call invite state changes.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "CallInviteStateChanged",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "inviteState",
+						"Type": {
+							"Category": "Enum",
+							"Name": "InviteState"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "PhoneBookPromptClosed",
+			"part": "description",
+			"before": null,
+			"after": "Fires when a player closes the phone book prompt.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PhoneBookPromptClosed",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "OnCallInviteInvoked",
+			"part": "description",
+			"before": null,
+			"after": "Callback for when a call is placed from the phone book.",
+			"value": {
+				"MemberType": "Callback",
+				"Name": "OnCallInviteInvoked",
+				"Parameters": [
+					{
+						"Name": "tag",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "callParticipantIds",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "OnCallInviteInvoked",
+			"part": "parameter",
+			"parameter": "tag",
+			"before": null,
+			"after": "String to help differentiate between various phone book entry points.",
+			"value": {
+				"MemberType": "Callback",
+				"Name": "OnCallInviteInvoked",
+				"Parameters": [
+					{
+						"Name": "tag",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "callParticipantIds",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "OnCallInviteInvoked",
+			"part": "parameter",
+			"parameter": "callParticipantIds",
+			"before": null,
+			"after": "Array containing all of the players involved in the call. The caller will always be the first player in the array.",
+			"value": {
+				"MemberType": "Callback",
+				"Name": "OnCallInviteInvoked",
+				"Parameters": [
+					{
+						"Name": "tag",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "callParticipantIds",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "OnCallInviteInvoked",
+			"part": "return",
+			"before": null,
+			"after": "Table including the <code>PlaceId</code> and <code>ReservedServerAccessCode</code> keys whose values are the <code>DataModel.PlaceId</code> and the server access code returned by <code>TeleportService:ReserveServer()</code>, respectively.",
+			"value": {
+				"MemberType": "Callback",
+				"Name": "OnCallInviteInvoked",
+				"Parameters": [
+					{
+						"Name": "tag",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "callParticipantIds",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchPan",
+			"part": "description",
+			"before": "Fired when a user drags at least one finger on a <code>TouchEnabled</code> device - such as the screen of an mobile device.",
+			"after": "Fired when a user drags at least one finger on a <code>TouchEnabled</code> device - such as the screen of a mobile device.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "TouchPan",
+				"Parameters": [
+					{
+						"Name": "touchPositions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "totalTranslation",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "velocity",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "state",
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserInputState"
+						}
+					},
+					{
+						"Name": "gameProcessedEvent",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "IKControlConstraintSupport",
+			"item": "Default",
+			"part": "description",
+			"before": null,
+			"after": "The default option for <code>IKControls</code>. The default is currently set to <code>Enabled</code>.",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "IKControlConstraintSupport",
+			"item": "Disabled",
+			"part": "description",
+			"before": null,
+			"after": "Disables support for constraints for <code>IKControls</code>. When disabled, <code>IKControls</code> still work, but ignore physics constraints.",
+			"value": {
+				"Name": "Disabled",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "IKControlConstraintSupport",
+			"item": "Enabled",
+			"part": "description",
+			"before": null,
+			"after": "Enables support for constraints for <code>IKControls</code>.",
+			"value": {
+				"Name": "Enabled",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "InviteState",
+			"item": "Placed",
+			"part": "description",
+			"before": null,
+			"after": "Call invite was placed.",
+			"value": {
+				"Name": "Placed",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "InviteState",
+			"item": "Accepted",
+			"part": "description",
+			"before": null,
+			"after": "Call invite was accepted.",
+			"value": {
+				"Name": "Accepted",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "InviteState",
+			"item": "Declined",
+			"part": "description",
+			"before": null,
+			"after": "Call invite was declined.",
+			"value": {
+				"Name": "Declined",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "InviteState",
+			"item": "Missed",
+			"part": "description",
+			"before": null,
+			"after": "Call invite was missed.",
+			"value": {
+				"Name": "Missed",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ModelStreamingBehavior",
+			"item": "Default",
+			"part": "description",
+			"before": null,
+			"after": "Engine determines best behavior. Currently equivalent to <strong>Legacy</strong>.",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ModelStreamingBehavior",
+			"item": "Legacy",
+			"part": "description",
+			"before": null,
+			"after": "Models are sent when their parent is sent, typically during player join. Models are never streamed out unless an ancestor of the model is streamed out.",
+			"value": {
+				"Name": "Legacy",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ModelStreamingBehavior",
+			"item": "Improved",
+			"part": "description",
+			"before": null,
+			"after": "Models are never sent during player join. Models that are \"non-spatial\" (containing no <code>BasePart</code> descendants) are sent soon after join, but before the <code>Workspace.PersistentLoaded</code> event fires. Models that are \"spatial\" (containing <code>BasePart</code> descendants) are sent when any <code>BasePart</code> descendant needs to be streamed to a client, and may stream out when all <code>BasePart</code> descendants are eligible to stream out.",
+			"value": {
+				"Name": "Improved",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SelfViewPosition",
+			"item": "LastPosition",
+			"part": "description",
+			"before": null,
+			"after": "The position of the self view when it was last closed.",
+			"value": {
+				"Name": "LastPosition",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SelfViewPosition",
+			"item": "TopLeft",
+			"part": "description",
+			"before": null,
+			"after": "Top-left corner of the screen, with slight padding from the top and left edges.",
+			"value": {
+				"Name": "TopLeft",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SelfViewPosition",
+			"item": "TopRight",
+			"part": "description",
+			"before": null,
+			"after": "Top-right corner of the screen, with slight padding from the top and right edges.",
+			"value": {
+				"Name": "TopRight",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SelfViewPosition",
+			"item": "BottomLeft",
+			"part": "description",
+			"before": null,
+			"after": "Bottom-left corner of the screen, with slight padding from the bottom and left edges.",
+			"value": {
+				"Name": "BottomLeft",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SelfViewPosition",
+			"item": "BottomRight",
+			"part": "description",
+			"before": null,
+			"after": "Bottom-right corner of the screen, with slight padding from the bottom and right edges.",
+			"value": {
+				"Name": "BottomRight",
+				"Value": 4
+			}
+		}
+	]
+}

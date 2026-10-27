@@ -1,0 +1,2930 @@
+{
+	"from": {
+		"version": "0.577.0.5770506",
+		"hash": "486ee8d8bd9e4525"
+	},
+	"to": {
+		"version": "0.578.0.5780566",
+		"hash": "4bb571d67ea34215"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AssetImportService",
+			"member": "GetAllTemplates",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAllTemplates",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Map"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportService",
+			"member": "GetTemplate",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetTemplate",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Map"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportService",
+			"member": "RemoveTemplate",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RemoveTemplate",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportService",
+			"member": "SaveTemplate",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SaveTemplate",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "importTemplate",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "GetOutfitDetails",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetOutfitDetails",
+				"Parameters": [
+					{
+						"Name": "outfitId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AlignPosition",
+			"member": "ForceLimitMode",
+			"type": "Add",
+			"value": {
+				"Category": "Compliance",
+				"Default": "Magnitude",
+				"MemberType": "Property",
+				"Name": "ForceLimitMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotBrowsable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ForceLimitMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AlignPosition",
+			"member": "ForceRelativeTo",
+			"type": "Add",
+			"value": {
+				"Category": "Compliance",
+				"Default": "World",
+				"MemberType": "Property",
+				"Name": "ForceRelativeTo",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ActuatorRelativeTo"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AlignPosition",
+			"member": "MaxAxesForce",
+			"type": "Add",
+			"value": {
+				"Category": "Compliance",
+				"Default": "10000, 10000, 10000",
+				"MemberType": "Property",
+				"Name": "MaxAxesForce",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiButton",
+			"member": "Selected",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Data",
+					"after": "Selection"
+				}
+			],
+			"value": {
+				"Category": "Selection",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Selected",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "DevEnableMouseLock",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Deprecated"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Category": "Camera",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "DevEnableMouseLock",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "UseStrafingAnimations",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotReplicated",
+						"NotScriptable"
+					],
+					"after": [
+						"NotScriptable"
+					]
+				}
+			],
+			"value": {
+				"Category": "Behavior",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "UseStrafingAnimations",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Selection",
+			"member": "ShowBoundingBox",
+			"type": "Remove",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "ShowBoundingBox",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Selection",
+			"member": "DEPRECATED_ShowBoundingBox",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "DEPRECATED_ShowBoundingBox",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Selection",
+			"member": "RenderMode",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "RenderMode",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "SelectionRenderMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "EnableMouseLockOption",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Deprecated"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Category": "Controls",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "EnableMouseLockOption",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleBase",
+			"member": "GetStyleRules",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetStyleRules",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleBase",
+			"member": "InsertStyleRule",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "InsertStyleRule",
+				"Parameters": [
+					{
+						"Name": "rule",
+						"Type": {
+							"Category": "Class",
+							"Name": "StyleRule"
+						}
+					},
+					{
+						"Name": "index",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleBase",
+			"member": "SetStyleRules",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetStyleRules",
+				"Parameters": [
+					{
+						"Name": "rules",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleRule",
+			"member": "GetProperties",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetProperties",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleRule",
+			"member": "GetPropertiesResolved",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPropertiesResolved",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleRule",
+			"member": "GetProperty",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetProperty",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleRule",
+			"member": "GetPropertyResolved",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPropertyResolved",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleRule",
+			"member": "SetProperties",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetProperties",
+				"Parameters": [
+					{
+						"Name": "table",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleRule",
+			"member": "SetProperty",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetProperty",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleSheet",
+			"member": "GetDerives",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetDerives",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleSheet",
+			"member": "SetDerives",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetDerives",
+				"Parameters": [
+					{
+						"Name": "derives",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleDerive",
+			"member": "StyleSheet",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "StyleSheet",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "StyleSheet"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleLink",
+			"member": "StyleSheet",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "StyleSheet",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "StyleSheet"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StylingService",
+			"member": "GetAppliedStyles",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAppliedStyles",
+				"Parameters": [
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StylingService",
+			"member": "GetStyleInfo",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetStyleInfo",
+				"Parameters": [
+					{
+						"Name": "style",
+						"Type": {
+							"Category": "Class",
+							"Name": "StyleRule"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StylingService",
+			"member": "GetStyleSheetDerivesChain",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetStyleSheetDerivesChain",
+				"Parameters": [
+					{
+						"Name": "styleSheet",
+						"Type": {
+							"Category": "Class",
+							"Name": "StyleSheet"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StylingService",
+			"member": "GetStyleSheetInfo",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetStyleSheetInfo",
+				"Parameters": [
+					{
+						"Name": "styleSheet",
+						"Type": {
+							"Category": "Class",
+							"Name": "StyleSheet"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatMessage",
+			"member": "Status",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "Floodchecked",
+					"after": "Sending"
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "Sending",
+				"MemberType": "Property",
+				"Name": "Status",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "TextChatMessageStatus"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextFilterTranslatedResult",
+			"member": "GetTranslationForLocale",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetTranslationForLocale",
+				"Parameters": [
+					{
+						"Name": "locale",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "TextFilterResult"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserGameSettings",
+			"member": "ControlMode",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Deprecated"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Category": "Control",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "ControlMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ControlMode"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AvatarChatService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AvatarChatService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarChatService",
+			"member": "ClientFeatures",
+			"type": "Add",
+			"value": {
+				"Category": "State",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "ClientFeatures",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarChatService",
+			"member": "ClientFeaturesInitialized",
+			"type": "Add",
+			"value": {
+				"Category": "State",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "ClientFeaturesInitialized",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarChatService",
+			"member": "ServerFeatures",
+			"type": "Add",
+			"value": {
+				"Category": "State",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "ServerFeatures",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarChatService",
+			"member": "IsEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsEnabled",
+				"Parameters": [
+					{
+						"Name": "mask",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "feature",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AvatarChatServiceFeature"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarChatService",
+			"member": "IsPlaceEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsPlaceEnabled",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarChatService",
+			"member": "IsUniverseEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsUniverseEnabled",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarChatService",
+			"member": "PollClientFeatures",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PollClientFeatures",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarChatService",
+			"member": "PollServerFeatures",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PollServerFeatures",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarChatService",
+			"member": "GetClientFeaturesAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetClientFeaturesAsync",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarChatService",
+			"member": "GetServerFeaturesAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetServerFeaturesAsync",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarChatService",
+			"member": "OnClientFeatures",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnClientFeatures",
+				"Parameters": [
+					{
+						"Name": "features",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "FacialAnimationStreamingSubsessionStats",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "FacialAnimationStreamingSubsessionStats",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectPrivateServerKickout",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectPrivateServerKickout",
+				"Value": 286
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AvatarChatServiceFeature",
+			"type": "Add",
+			"value": {
+				"Name": "AvatarChatServiceFeature"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarChatServiceFeature",
+			"item": "None",
+			"type": "Add",
+			"value": {
+				"Name": "None",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarChatServiceFeature",
+			"item": "UniverseAudio",
+			"type": "Add",
+			"value": {
+				"Name": "UniverseAudio",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarChatServiceFeature",
+			"item": "UniverseVideo",
+			"type": "Add",
+			"value": {
+				"Name": "UniverseVideo",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarChatServiceFeature",
+			"item": "PlaceAudio",
+			"type": "Add",
+			"value": {
+				"Name": "PlaceAudio",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarChatServiceFeature",
+			"item": "PlaceVideo",
+			"type": "Add",
+			"value": {
+				"Name": "PlaceVideo",
+				"Value": 8
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarChatServiceFeature",
+			"item": "UserAudioEligible",
+			"type": "Add",
+			"value": {
+				"Name": "UserAudioEligible",
+				"Value": 16
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarChatServiceFeature",
+			"item": "UserAudio",
+			"type": "Add",
+			"value": {
+				"Name": "UserAudio",
+				"Value": 32
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarChatServiceFeature",
+			"item": "UserVideoEligible",
+			"type": "Add",
+			"value": {
+				"Name": "UserVideoEligible",
+				"Value": 64
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarChatServiceFeature",
+			"item": "UserVideo",
+			"type": "Add",
+			"value": {
+				"Name": "UserVideo",
+				"Value": 128
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ForceLimitMode",
+			"type": "Add",
+			"value": {
+				"Name": "ForceLimitMode"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ForceLimitMode",
+			"item": "Magnitude",
+			"type": "Add",
+			"value": {
+				"Name": "Magnitude",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ForceLimitMode",
+			"item": "PerAxis",
+			"type": "Add",
+			"value": {
+				"Name": "PerAxis",
+				"Value": 1
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "SelectionRenderMode",
+			"type": "Add",
+			"value": {
+				"Name": "SelectionRenderMode"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SelectionRenderMode",
+			"item": "Outlines",
+			"type": "Add",
+			"value": {
+				"Name": "Outlines",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SelectionRenderMode",
+			"item": "BoundingBoxes",
+			"type": "Add",
+			"value": {
+				"Name": "BoundingBoxes",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SelectionRenderMode",
+			"item": "Both",
+			"type": "Add",
+			"value": {
+				"Name": "Both",
+				"Value": 2
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Class",
+			"class": "ClickDetector",
+			"part": "description",
+			"before": "An object that provides user input on in-world <code>parts</code> and <code>models</code>.",
+			"after": "An object that provides user input on in-experience <code>BaseParts</code> and <code>Models</code>."
+		},
+		{
+			"element": "Member",
+			"class": "ClickDetector",
+			"member": "CursorIcon",
+			"part": "description",
+			"before": "Sets the mouse icon that will be displayed when the mouse is hovered over this ClickDetector.",
+			"after": "Sets the cursor icon to display when the mouse is hovered over the parent of this <code>ClickDetector</code> or <code>DragDetector</code>.",
+			"value": {
+				"Category": "Image",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "CursorIcon",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ClickDetector",
+			"member": "MaxActivationDistance",
+			"part": "description",
+			"before": "Maximum distance between a character and the ClickDetector for the character to be able to click it.",
+			"after": "Maximum distance between a character and the <code>ClickDetector</code> or <code>DragDetector</code> for the player to be able to interact with it.",
+			"value": {
+				"Category": "Data",
+				"Default": "32",
+				"MemberType": "Property",
+				"Name": "MaxActivationDistance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ClickDetector",
+			"member": "MouseClick",
+			"part": "description",
+			"before": "Fires when a player left clicks on the ClickDetector.",
+			"after": "Fires when a player interacts with the parent of a <code>ClickDetector</code> or <code>DragDetector</code>.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "MouseClick",
+				"Parameters": [
+					{
+						"Name": "playerWhoClicked",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ClickDetector",
+			"member": "MouseHoverEnter",
+			"part": "description",
+			"before": "Fires when the <code>ClickDetector</code>'s parent is hovered upon by a player.",
+			"after": "Fires when the parent of a <code>ClickDetector</code> or <code>DragDetector</code> is hovered over by a player.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "MouseHoverEnter",
+				"Parameters": [
+					{
+						"Name": "playerWhoHovered",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ClickDetector",
+			"member": "MouseHoverLeave",
+			"part": "description",
+			"before": "Fires when a player's mouse moves off of the <code>ClickDetector</code>'s parent.",
+			"after": "Fires when a player's cursor hovers off the parent of a <code>ClickDetector</code> or <code>DragDetector</code>.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "MouseHoverLeave",
+				"Parameters": [
+					{
+						"Name": "playerWhoHovered",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ClickDetector",
+			"member": "RightMouseClick",
+			"part": "description",
+			"before": "Fires when a player right clicks on the ClickDetector.",
+			"after": "Fires when a player right clicks their mouse cursor on a <code>ClickDetector</code> or <code>DragDetector</code>.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "RightMouseClick",
+				"Parameters": [
+					{
+						"Name": "playerWhoClicked",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DragDetector",
+			"part": "description",
+			"before": null,
+			"after": "<code>DragDetector</code> instances encourage physical interaction with objects in an experience."
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "ApplyAtCenterOfMass",
+			"part": "description",
+			"before": null,
+			"after": "Whether constraint force is applied to the object's center of mass.",
+			"value": {
+				"Category": "Physics Response",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "ApplyAtCenterOfMass",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "Axis",
+			"part": "description",
+			"before": null,
+			"after": "The primary axis of motion, expressed relative to the reference frame.",
+			"value": {
+				"Category": "Drag Directions",
+				"Default": "0, 1, 0",
+				"MemberType": "Property",
+				"Name": "Axis",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "DragFrame",
+			"part": "description",
+			"before": null,
+			"after": "The <code>CFrame</code> of the pivot, dependent on the drag detector's <code>ReferenceInstance</code>.",
+			"value": {
+				"Category": "Dragged Amount",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "DragFrame",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "DragStyle",
+			"part": "description",
+			"before": null,
+			"after": "The paradigm used to generate proposed motion.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "TranslatePlane",
+				"MemberType": "Property",
+				"Name": "DragStyle",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "DragDetectorDragStyle"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "Enabled",
+			"part": "description",
+			"before": null,
+			"after": "Whether the <code>DragDetector</code> responds to user input.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "Enabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "GamepadModeSwitchKeyCode",
+			"part": "description",
+			"before": null,
+			"after": "During gamepad input, the modifier <code>KeyCode</code> for the secondary mode of motion.",
+			"value": {
+				"Category": "Mode Switching",
+				"Default": "ButtonR1",
+				"MemberType": "Property",
+				"Name": "GamepadModeSwitchKeyCode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "KeyCode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "KeyboardModeSwitchKeyCode",
+			"part": "description",
+			"before": null,
+			"after": "During keyboard input, the modifier <code>KeyCode</code> for the secondary mode of motion.",
+			"value": {
+				"Category": "Mode Switching",
+				"Default": "LeftControl",
+				"MemberType": "Property",
+				"Name": "KeyboardModeSwitchKeyCode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "KeyCode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "MaxDragAngle",
+			"part": "description",
+			"before": null,
+			"after": "Along with <code>MinDragAngle</code>, impedes the drag detector's attempts to generate motion.",
+			"value": {
+				"Category": "Drag Limits",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "MaxDragAngle",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "MaxDragTranslation",
+			"part": "description",
+			"before": null,
+			"after": "Along with <code>MinDragTranslation</code>, impedes the drag detector's attempts to generate motion.",
+			"value": {
+				"Category": "Drag Limits",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "MaxDragTranslation",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "MaxForce",
+			"part": "description",
+			"before": null,
+			"after": "Maximum force applied for the object to reach its goal.",
+			"value": {
+				"Category": "Physics Response",
+				"Default": "10000000",
+				"MemberType": "Property",
+				"Name": "MaxForce",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "MaxTorque",
+			"part": "description",
+			"before": null,
+			"after": "Maximum torque applied for the object to reach its goal.",
+			"value": {
+				"Category": "Physics Response",
+				"Default": "10000",
+				"MemberType": "Property",
+				"Name": "MaxTorque",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "MinDragAngle",
+			"part": "description",
+			"before": null,
+			"after": "Along with <code>MaxDragAngle</code>, impedes the drag detector's attempts to generate motion.",
+			"value": {
+				"Category": "Drag Limits",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "MinDragAngle",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "MinDragTranslation",
+			"part": "description",
+			"before": null,
+			"after": "Along with <code>MaxDragTranslation</code>, impedes the drag detector's attempts to generate motion.",
+			"value": {
+				"Category": "Drag Limits",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "MinDragTranslation",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "Orientation",
+			"part": "description",
+			"before": null,
+			"after": "Specifies the <strong>YXZ</strong> rotation of axes of motion relative to the reference frame.",
+			"value": {
+				"Category": "Drag Directions",
+				"Default": "-0, 180, 90",
+				"MemberType": "Property",
+				"Name": "Orientation",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "ReferenceInstance",
+			"part": "description",
+			"before": null,
+			"after": "An instance whose <code>CFrame</code> is the reference frame for the drag detector.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "ReferenceInstance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "ResponseStyle",
+			"part": "description",
+			"before": null,
+			"after": "The paradigm used to move, or not move, the objects affected by the drag detector.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "Physical",
+				"MemberType": "Property",
+				"Name": "ResponseStyle",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "DragDetectorResponseStyle"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "Responsiveness",
+			"part": "description",
+			"before": null,
+			"after": "Higher values cause the object to reach its goal more rapidly.",
+			"value": {
+				"Category": "Physics Response",
+				"Default": "10",
+				"MemberType": "Property",
+				"Name": "Responsiveness",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "RunLocally",
+			"part": "description",
+			"before": null,
+			"after": "Whether user input on a <code>DragDetector</code> replicates to the server or remains local to the specific client.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "RunLocally",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "SecondaryAxis",
+			"part": "description",
+			"before": null,
+			"after": "The secondary axis of the motion.",
+			"value": {
+				"Category": "Drag Directions",
+				"Default": "1, 0, 0",
+				"MemberType": "Property",
+				"Name": "SecondaryAxis",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "TrackballRadialPullFactor",
+			"part": "description",
+			"before": null,
+			"after": "If <code>DragStyle</code> is <code>RotateTrackball</code>, multiplier for adding a radial pull rotation as a contribution to the total.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "TrackballRadialPullFactor",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "TrackballRollFactor",
+			"part": "description",
+			"before": null,
+			"after": "If <code>DragStyle</code> is <code>RotateTrackball</code>, multipler for adding roll rotation to the total.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "TrackballRollFactor",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "VRSwitchKeyCode",
+			"part": "description",
+			"before": null,
+			"after": "During VR input, the modifier <code>KeyCode</code> for the secondary mode of motion.",
+			"value": {
+				"Category": "Mode Switching",
+				"Default": "ButtonL2",
+				"MemberType": "Property",
+				"Name": "VRSwitchKeyCode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "KeyCode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "WorldAxis",
+			"part": "description",
+			"before": null,
+			"after": "The <code>Axis</code> expressed in world space.",
+			"value": {
+				"Category": "Drag Directions",
+				"Default": "0, 1, 0",
+				"MemberType": "Property",
+				"Name": "WorldAxis",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "WorldSecondaryAxis",
+			"part": "description",
+			"before": null,
+			"after": "The <code>SecondaryAxis</code> expressed in world space.",
+			"value": {
+				"Category": "Drag Directions",
+				"Default": "1, 0, 0",
+				"MemberType": "Property",
+				"Name": "WorldSecondaryAxis",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "AddConstraintFunction",
+			"part": "description",
+			"before": null,
+			"after": "Adds a function to modify or constrain proposed motion.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddConstraintFunction",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "priority",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "function",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "AddConstraintFunction",
+			"part": "parameter",
+			"parameter": "name",
+			"before": null,
+			"after": "Unique name of the function; can be used along with <code>RemoveConstraintFunction()</code> to remove this function from the processing chain.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddConstraintFunction",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "priority",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "function",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "AddConstraintFunction",
+			"part": "parameter",
+			"parameter": "priority",
+			"before": null,
+			"after": "The order of priority for functions added via this method. Higher values take precedence over lower values.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddConstraintFunction",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "priority",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "function",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "AddConstraintFunction",
+			"part": "parameter",
+			"parameter": "function",
+			"before": null,
+			"after": "Function for modifying or constraining proposed motion. This function takes an input <code>CFrame</code> of <strong>proposed</strong> motion and returns a <code>CFrame</code> of <strong>modified</strong> or unmodified motion, both relative to the reference frame.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddConstraintFunction",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "priority",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "function",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "GetReferenceFrame",
+			"part": "description",
+			"before": null,
+			"after": "Returns the reference <code>CFrame</code> in which motion is expressed.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetReferenceFrame",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "GetReferenceFrame",
+			"part": "return",
+			"before": null,
+			"after": "The reference <code>CFrame</code> in which motion is expressed.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetReferenceFrame",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "RemoveConstraintFunction",
+			"part": "description",
+			"before": null,
+			"after": "Removes a custom constraint function by name.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RemoveConstraintFunction",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "RemoveConstraintFunction",
+			"part": "parameter",
+			"parameter": "name",
+			"before": null,
+			"after": "Unique name of the function to remove; must match the <code>name</code> parameter of a function added through <code>AddConstraintFunction()</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RemoveConstraintFunction",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "RestartDrag",
+			"part": "description",
+			"before": null,
+			"after": "May be invoked from a script to restart the drag using new parameters.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RestartDrag",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "SetDragStyleFunction",
+			"part": "description",
+			"before": null,
+			"after": "Passes a function to be used if and only if <code>DragStyle</code> is set to <code>Scriptable</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetDragStyleFunction",
+				"Parameters": [
+					{
+						"Name": "function",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "SetDragStyleFunction",
+			"part": "parameter",
+			"parameter": "function",
+			"before": null,
+			"after": "Function for monitoring <code>DragContinue</code> signals. This function receives the signal's world space cursor ray and it returns a <code>CFrame</code> containing the desired location and orientation of the pivot in world space.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetDragStyleFunction",
+				"Parameters": [
+					{
+						"Name": "function",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "DragContinue",
+			"part": "description",
+			"before": null,
+			"after": "Fires when a user continues dragging the object after <code>DragStart</code> has been initiated.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "DragContinue",
+				"Parameters": [
+					{
+						"Name": "playerWhoDragged",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "cursorRay",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Ray"
+						}
+					},
+					{
+						"Name": "viewFrame",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					},
+					{
+						"Name": "vrInputFrame",
+						"Type": {
+							"Category": "DataType",
+							"Name": "OptionalCoordinateFrame"
+						}
+					},
+					{
+						"Name": "isModeSwitchKeyDown",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "DragEnd",
+			"part": "description",
+			"before": null,
+			"after": "Fires when a user stops dragging the object.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "DragEnd",
+				"Parameters": [
+					{
+						"Name": "playerWhoDragged",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "DragStart",
+			"part": "description",
+			"before": null,
+			"after": "Fires when a user starts dragging the object.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "DragStart",
+				"Parameters": [
+					{
+						"Name": "playerWhoDragged",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "cursorRay",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Ray"
+						}
+					},
+					{
+						"Name": "viewFrame",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					},
+					{
+						"Name": "hitFrame",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					},
+					{
+						"Name": "clickedPart",
+						"Type": {
+							"Category": "Class",
+							"Name": "BasePart"
+						}
+					},
+					{
+						"Name": "vrInputFrame",
+						"Type": {
+							"Category": "DataType",
+							"Name": "OptionalCoordinateFrame"
+						}
+					},
+					{
+						"Name": "isModeSwitchKeyDown",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "IsVerified",
+			"part": "description",
+			"before": null,
+			"after": "Returns whether the player is verified with concrete, real-world signals.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsVerified",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "IsVerified",
+			"part": "return",
+			"before": null,
+			"after": "A boolean indicating whether the player is verified.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsVerified",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatInputBarConfiguration",
+			"member": "IsFocused",
+			"part": "description",
+			"before": null,
+			"after": "Describes if the default chat input bar is focused or not.",
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "IsFocused",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "Unsafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatInputBarConfiguration",
+			"member": "KeyboardKeyCode",
+			"part": "description",
+			"before": null,
+			"after": "Determines an additional key users can press to trigger focusing on the default chat input bar.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "Slash",
+				"MemberType": "Property",
+				"Name": "KeyboardKeyCode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "KeyCode"
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DragDetectorDragStyle",
+			"item": "TranslateLine",
+			"part": "description",
+			"before": null,
+			"after": "1D motion along the detector's <code>Axis</code>, by default the world <strong>Y</strong> axis.",
+			"value": {
+				"Name": "TranslateLine",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DragDetectorDragStyle",
+			"item": "TranslatePlane",
+			"part": "description",
+			"before": null,
+			"after": "2D motion in the plane <strong>perpendicular</strong> to the detector's <code>Axis</code>, by default the world <strong>XZ</strong> plane.",
+			"value": {
+				"Name": "TranslatePlane",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DragDetectorDragStyle",
+			"item": "TranslatePlaneOrLine",
+			"part": "description",
+			"before": null,
+			"after": "2D motion in the plane <strong>perpendicular</strong> to the detector's <code>Axis</code> and, when the modifier is active, 1D motion along the detector's <code>Axis</code>.",
+			"value": {
+				"Name": "TranslatePlaneOrLine",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DragDetectorDragStyle",
+			"item": "TranslateLineOrPlane",
+			"part": "description",
+			"before": null,
+			"after": "1D motion along the detector's <code>Axis</code> and, when the modifier is active, 2D motion in the plane <strong>perpendicular</strong> to the detector's <code>Axis</code>.",
+			"value": {
+				"Name": "TranslateLineOrPlane",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DragDetectorDragStyle",
+			"item": "TranslateViewPlane",
+			"part": "description",
+			"before": null,
+			"after": "2D motion in the plane perpendicular to the camera's view. In this mode, the plane is constantly updated, even while dragging, and will always face the camera's current view.",
+			"value": {
+				"Name": "TranslateViewPlane",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DragDetectorDragStyle",
+			"item": "RotateAxis",
+			"part": "description",
+			"before": null,
+			"after": "Rotation about the detector's <code>Axis</code>, by default the world <strong>Y</strong> axis.",
+			"value": {
+				"Name": "RotateAxis",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DragDetectorDragStyle",
+			"item": "RotateTrackball",
+			"part": "description",
+			"before": null,
+			"after": "Trackball rotation, further customized through the <code>TrackballRadialPullFactor</code> and <code>TrackballRollFactor</code> properties.",
+			"value": {
+				"Name": "RotateTrackball",
+				"Value": 6
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DragDetectorDragStyle",
+			"item": "Scriptable",
+			"part": "description",
+			"before": null,
+			"after": "Calculates desired motion via a custom function provided through <code>SetDragStyleFunction()</code>.",
+			"value": {
+				"Name": "Scriptable",
+				"Value": 7
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DragDetectorDragStyle",
+			"item": "BestForDevice",
+			"part": "description",
+			"before": null,
+			"after": "<strong>TranslatePlaneOrLine</strong> for mouse and gamepad; <strong>TranslatePlane</strong> for touch; <strong>6DOF</strong> for VR.",
+			"value": {
+				"Name": "BestForDevice",
+				"Value": 8
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DragDetectorResponseStyle",
+			"item": "Geometric",
+			"part": "description",
+			"before": null,
+			"after": "For an <code>Anchored</code> object both inside the running experience and in Studio edit mode, the position/orientation of the object will be updated to exactly reflect the proposed motion. For an unanchored object, behavior is the same as for an anchored object; however, in a running experience, the object will be anchored at the start of the drag and restored to unanchored upon drag release.",
+			"value": {
+				"Name": "Geometric",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DragDetectorResponseStyle",
+			"item": "Physical",
+			"part": "description",
+			"before": null,
+			"after": "An <code>Anchored</code> object will default to <strong>Geometric</strong> behavior as it is not affected by forces. An unanchored object will be moved by constraint forces that attempt to bring it to the desired position and/or orientation given by the proposed motion.",
+			"value": {
+				"Name": "Physical",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DragDetectorResponseStyle",
+			"item": "Custom",
+			"part": "description",
+			"before": null,
+			"after": "The object will not move at all, but <code>DragFrame</code> will still be updated and you can respond to drag manipulation however you'd like.",
+			"value": {
+				"Name": "Custom",
+				"Value": 2
+			}
+		}
+	]
+}

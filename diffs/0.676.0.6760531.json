@@ -1,0 +1,1737 @@
+{
+	"from": {
+		"version": "0.675.1.6750723",
+		"hash": "9a1e7554d93c459d"
+	},
+	"to": {
+		"version": "0.676.0.6760531",
+		"hash": "1fd40173390f491a"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AdService",
+			"member": "rewardedVideoAdPlayServerToClientWithPlacement",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "rewardedVideoAdPlayServerToClientWithPlacement",
+				"Parameters": [
+					{
+						"Name": "rewardDetails",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "placementId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AuroraScriptObject",
+			"member": "MaxFrequency",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "MaxFrequency",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "StartVideoCaptureAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Enum",
+						"Name": "VideoCaptureResult"
+					},
+					"after": {
+						"Category": "Enum",
+						"Name": "VideoCaptureStartedResult"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "StartVideoCaptureAsync",
+				"Parameters": [
+					{
+						"Name": "onCaptureReady",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "captureParams",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "VideoCaptureStartedResult"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "StartVideoCaptureInternalAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Enum",
+						"Name": "VideoCaptureResult"
+					},
+					"after": {
+						"Category": "Enum",
+						"Name": "VideoCaptureStartedResult"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "StartVideoCaptureInternalAsync",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "VideoCaptureStartedResult"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "PreVideoCaptureShared",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PreVideoCaptureShared",
+				"Parameters": [
+					{
+						"Name": "videoCapture",
+						"Type": {
+							"Category": "Class",
+							"Name": "VideoCapture"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "UserVideoCaptureStartFailed",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "UserVideoCaptureStartFailed",
+				"Parameters": [
+					{
+						"Name": "result",
+						"Type": {
+							"Category": "Enum",
+							"Name": "VideoCaptureStartedResult"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "ComputeR15BodyBoundingBox",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Avatar"
+				],
+				"MemberType": "Function",
+				"Name": "ComputeR15BodyBoundingBox",
+				"Parameters": [],
+				"ReturnType": [
+					{
+						"Category": "DataType",
+						"Name": "CFrame"
+					},
+					{
+						"Category": "DataType",
+						"Name": "Vector3"
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputAction",
+			"member": "BoolState",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "BoolState",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputAction",
+			"member": "Direction1DState",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "Direction1DState",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputAction",
+			"member": "Direction2DState",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0, 0",
+				"MemberType": "Property",
+				"Name": "Direction2DState",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "ShorelinesUpgraded",
+			"type": "Remove",
+			"value": {
+				"Category": "Appearance",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "ShorelinesUpgraded",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatService",
+			"member": "isLegacyChatDisabled",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "isLegacyChatDisabled",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "MLService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "MLService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MLService",
+			"member": "CreateSessionAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateSessionAsync",
+				"Parameters": [
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "MLSession"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "MLSession",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "MLSession",
+				"Superclass": "Object",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MLSession",
+			"member": "ForwardAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ForwardAsync",
+				"Parameters": [
+					{
+						"Name": "data",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "VideoCaptureResult",
+			"item": "CapturingAlready",
+			"type": "Remove",
+			"value": {
+				"Name": "CapturingAlready",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "VideoCaptureResult",
+			"item": "NoDeviceSupport",
+			"type": "Remove",
+			"value": {
+				"Name": "NoDeviceSupport",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "VideoCaptureResult",
+			"item": "NoSpaceOnDevice",
+			"type": "Remove",
+			"value": {
+				"Name": "NoSpaceOnDevice",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "VideoCaptureResult",
+			"item": "ScreenSizeChanged",
+			"type": "Add",
+			"value": {
+				"Name": "ScreenSizeChanged",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "VideoCaptureResult",
+			"item": "TimeLimitReached",
+			"type": "Add",
+			"value": {
+				"Name": "TimeLimitReached",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "VideoCaptureStartedResult",
+			"type": "Add",
+			"value": {
+				"Name": "VideoCaptureStartedResult"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "VideoCaptureStartedResult",
+			"item": "Success",
+			"type": "Add",
+			"value": {
+				"Name": "Success",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "VideoCaptureStartedResult",
+			"item": "OtherError",
+			"type": "Add",
+			"value": {
+				"Name": "OtherError",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "VideoCaptureStartedResult",
+			"item": "CapturingAlready",
+			"type": "Add",
+			"value": {
+				"Name": "CapturingAlready",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "VideoCaptureStartedResult",
+			"item": "NoDeviceSupport",
+			"type": "Add",
+			"value": {
+				"Name": "NoDeviceSupport",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "VideoCaptureStartedResult",
+			"item": "NoSpaceOnDevice",
+			"type": "Add",
+			"value": {
+				"Name": "NoSpaceOnDevice",
+				"Value": 4
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "GetStyled",
+			"part": "description",
+			"before": null,
+			"after": "Returns the styled or explicitly modified value of the specified property, or else the default property value if it hasn't been styled/modified.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetStyled",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "GetStyled",
+			"part": "parameter",
+			"parameter": "name",
+			"before": null,
+			"after": "Name of the property to query.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetStyled",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "GetStyled",
+			"part": "return",
+			"before": null,
+			"after": "The styled or explicitly modified value of the specified property, or else the default property value if it hasn't been styled/modified.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetStyled",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "GetStyledPropertyChangedSignal",
+			"part": "parameter",
+			"parameter": "property",
+			"before": null,
+			"after": "Name of the style property for which to listen for changes.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetStyledPropertyChangedSignal",
+				"Parameters": [
+					{
+						"Name": "property",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RBXScriptSignal"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "GetStyledPropertyChangedSignal",
+			"part": "return",
+			"before": null,
+			"after": "Event that fires when the given style property changes.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetStyledPropertyChangedSignal",
+				"Parameters": [
+					{
+						"Name": "property",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RBXScriptSignal"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "IsPropertyModified",
+			"part": "description",
+			"before": "Returns <code>true</code> if the value stored in the specified property is non-default.",
+			"after": "Returns <code>true</code> if the value stored in the specified property is equal to the code-instantiated default.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsPropertyModified",
+				"Parameters": [
+					{
+						"Name": "property",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "IsPropertyModified",
+			"part": "parameter",
+			"parameter": "property",
+			"before": null,
+			"after": "Name of the property to query.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsPropertyModified",
+				"Parameters": [
+					{
+						"Name": "property",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "ResetPropertyToDefault",
+			"part": "description",
+			"before": null,
+			"after": "Resets a property to its default value.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ResetPropertyToDefault",
+				"Parameters": [
+					{
+						"Name": "property",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "ResetPropertyToDefault",
+			"part": "parameter",
+			"parameter": "property",
+			"before": null,
+			"after": "Name of the property to reset.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ResetPropertyToDefault",
+				"Parameters": [
+					{
+						"Name": "property",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "StyledPropertiesChanged",
+			"part": "description",
+			"before": null,
+			"after": "Fires whenever any style property is changed on the instance, including when a property is set to <code>nil</code>.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "StyledPropertiesChanged",
+				"Parameters": [],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "CaptureService",
+			"part": "description",
+			"before": "A service which provides control over screenshot and video capture features.",
+			"after": "A service which provides control over screenshot capture features."
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "PromptShareCapture",
+			"part": "description",
+			"before": "Prompts the user to share a specified capture.",
+			"after": "Prompts the user to share a specified screenshot capture.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptShareCapture",
+				"Parameters": [
+					{
+						"Name": "captureContent",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					},
+					{
+						"Name": "launchData",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "onAcceptedCallback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					},
+					{
+						"Name": "onDeniedCallback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "StopVideoCapture",
+			"part": "description",
+			"before": "Ends a video capture initiated by <code>StartVideoCaptureAsync()</code>.",
+			"after": null,
+			"value": {
+				"MemberType": "Function",
+				"Name": "StopVideoCapture",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "StartVideoCaptureAsync",
+			"part": "description",
+			"before": "Initiates a video capture recording.",
+			"after": null,
+			"value": {
+				"MemberType": "Function",
+				"Name": "StartVideoCaptureAsync",
+				"Parameters": [
+					{
+						"Name": "onCaptureReady",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "captureParams",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "VideoCaptureStartedResult"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "StartVideoCaptureAsync",
+			"part": "parameter",
+			"parameter": "onCaptureReady",
+			"before": "A callback function that is called with the <code>VideoCapture</code> object and the result of type <code>VideoCaptureResult</code> of the video capture once it is ready.",
+			"after": null,
+			"value": {
+				"MemberType": "Function",
+				"Name": "StartVideoCaptureAsync",
+				"Parameters": [
+					{
+						"Name": "onCaptureReady",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "captureParams",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "VideoCaptureStartedResult"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "StyleBase",
+			"part": "description",
+			"before": null,
+			"after": "The base class for <code>StyleSheet</code> and <code>StyleRule</code>."
+		},
+		{
+			"element": "Member",
+			"class": "StyleBase",
+			"member": "GetStyleRules",
+			"part": "description",
+			"before": null,
+			"after": "Returns an array of associated <code>StyleRules</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetStyleRules",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Instances"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleBase",
+			"member": "GetStyleRules",
+			"part": "return",
+			"before": null,
+			"after": "Array of <code>StyleRules</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetStyleRules",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Instances"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleBase",
+			"member": "InsertStyleRule",
+			"part": "description",
+			"before": null,
+			"after": "Inserts a new <code>StyleRule</code> into the array of rules.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "InsertStyleRule",
+				"Parameters": [
+					{
+						"Name": "rule",
+						"Type": {
+							"Category": "Class",
+							"Name": "StyleRule"
+						}
+					},
+					{
+						"Name": "priority",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleBase",
+			"member": "InsertStyleRule",
+			"part": "parameter",
+			"parameter": "rule",
+			"before": null,
+			"after": "The <code>StyleRule</code> to insert.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "InsertStyleRule",
+				"Parameters": [
+					{
+						"Name": "rule",
+						"Type": {
+							"Category": "Class",
+							"Name": "StyleRule"
+						}
+					},
+					{
+						"Name": "priority",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleBase",
+			"member": "InsertStyleRule",
+			"part": "parameter",
+			"parameter": "priority",
+			"before": null,
+			"after": "The number to set the rule's <code>Priority</code> to.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "InsertStyleRule",
+				"Parameters": [
+					{
+						"Name": "rule",
+						"Type": {
+							"Category": "Class",
+							"Name": "StyleRule"
+						}
+					},
+					{
+						"Name": "priority",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleBase",
+			"member": "SetStyleRules",
+			"part": "description",
+			"before": null,
+			"after": "Similar to <code>InsertStyleRule()</code> but lets you declare and set multiple <code>StyleRules</code> at once.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetStyleRules",
+				"Parameters": [
+					{
+						"Name": "rules",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Instances"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleBase",
+			"member": "SetStyleRules",
+			"part": "parameter",
+			"parameter": "rules",
+			"before": null,
+			"after": "Array of <code>StyleRules</code> to set.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetStyleRules",
+				"Parameters": [
+					{
+						"Name": "rules",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Instances"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleBase",
+			"member": "StyleRulesChanged",
+			"part": "description",
+			"before": null,
+			"after": "Fires when one or more <code>StyleRules</code> is explicitly changed on the connected <code>StyleSheet</code> or <code>StyleRule</code>.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "StyleRulesChanged",
+				"Parameters": [],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "StyleRule",
+			"part": "description",
+			"before": null,
+			"after": "Defines style properties which override properties on the instances affected by the <code>Selector</code> property."
+		},
+		{
+			"element": "Member",
+			"class": "StyleRule",
+			"member": "Priority",
+			"part": "description",
+			"before": null,
+			"after": "A number that determines how properties of the <code>StyleRule</code> apply relative to the same properties in other <code>StyleRules</code>. Higher priority values take precedence over lower.",
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "Priority",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleRule",
+			"member": "Selector",
+			"part": "description",
+			"before": null,
+			"after": "A string specifying which instances the <code>StyleRule</code> should affect.",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "Selector",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleRule",
+			"member": "SelectorError",
+			"part": "description",
+			"before": null,
+			"after": "A read-only string that displays errors from the <code>Selector</code> property.",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "SelectorError",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleRule",
+			"member": "GetProperties",
+			"part": "description",
+			"before": null,
+			"after": "Returns a dictionary of key-value pairs describing the properties of the <code>StyleRule</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetProperties",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleRule",
+			"member": "GetProperties",
+			"part": "return",
+			"before": null,
+			"after": "Dictionary of key-value pairs describing the properties of the <code>StyleRule</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetProperties",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleRule",
+			"member": "GetProperty",
+			"part": "description",
+			"before": null,
+			"after": "Returns the value of a specific property in the <code>StyleRule</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetProperty",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleRule",
+			"member": "GetProperty",
+			"part": "parameter",
+			"parameter": "name",
+			"before": null,
+			"after": "String name of the property, for example <code>\"AnchorPoint\"</code> or <code>\"BackgroundColor3\"</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetProperty",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleRule",
+			"member": "GetProperty",
+			"part": "return",
+			"before": null,
+			"after": "Value of the property.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetProperty",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleRule",
+			"member": "SetProperties",
+			"part": "description",
+			"before": null,
+			"after": "Lets you declare and set multiple properties of the <code>StyleRule</code> at once.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetProperties",
+				"Parameters": [
+					{
+						"Name": "styleProperties",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleRule",
+			"member": "SetProperties",
+			"part": "parameter",
+			"parameter": "styleProperties",
+			"before": null,
+			"after": "Dictionary of key-value pairs defining the properties to set.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetProperties",
+				"Parameters": [
+					{
+						"Name": "styleProperties",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleRule",
+			"member": "SetProperty",
+			"part": "parameter",
+			"parameter": "name",
+			"before": null,
+			"after": "Property name to set, for example <code>\"BackgroundColor3\"</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetProperty",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleRule",
+			"member": "SetProperty",
+			"part": "parameter",
+			"parameter": "value",
+			"before": null,
+			"after": "Property value to set, for example <code>Color3.new(1, 0, 0.25)</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetProperty",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "StyleSheet",
+			"part": "description",
+			"before": null,
+			"after": "Aggregates <code>StyleRules</code> and can be linked to <code>DataModel</code> trees to apply style properties to instances."
+		},
+		{
+			"element": "Member",
+			"class": "StyleSheet",
+			"member": "GetDerives",
+			"part": "description",
+			"before": null,
+			"after": "Returns an array of other <code>StyleSheets</code> from which the <code>StyleSheet</code> is deriving <code>StyleRules</code> and token definitions.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetDerives",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Instances"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleSheet",
+			"member": "GetDerives",
+			"part": "return",
+			"before": null,
+			"after": "Array of other <code>StyleSheets</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetDerives",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Instances"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleSheet",
+			"member": "SetDerives",
+			"part": "description",
+			"before": null,
+			"after": "Sets the <code>StyleSheet</code> to derive <code>StyleRules</code> and token definitions from one or more other <code>StyleSheets</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetDerives",
+				"Parameters": [
+					{
+						"Name": "derives",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Instances"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleSheet",
+			"member": "SetDerives",
+			"part": "parameter",
+			"parameter": "derives",
+			"before": null,
+			"after": "Array of other <code>StyleSheets</code> to derive <code>StyleRules</code> and token definitions from.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetDerives",
+				"Parameters": [
+					{
+						"Name": "derives",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Instances"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "StyleDerive",
+			"part": "description",
+			"before": null,
+			"after": "When parented to a <code>StyleSheet</code>, references another <code>StyleSheet</code> from which the parent inherits <code>StyleRules</code> and token definitions."
+		},
+		{
+			"element": "Member",
+			"class": "StyleDerive",
+			"member": "Priority",
+			"part": "description",
+			"before": null,
+			"after": "A number that determines how style properties inherited through this <code>StyleDerive</code> apply relative to the same properties inherited through other <code>StyleDerives</code>.",
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "Priority",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleDerive",
+			"member": "StyleSheet",
+			"part": "description",
+			"before": null,
+			"after": "The <code>StyleSheet</code> from which the parent <code>StyleSheet</code> inherits <code>StyleRules</code> and token definitions.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "StyleSheet",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "StyleSheet"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "StyleLink",
+			"part": "description",
+			"before": null,
+			"after": "Links a <code>StyleSheet</code> to the instance tree whose root is the parent of the <code>StyleLink</code>."
+		},
+		{
+			"element": "Member",
+			"class": "StyleLink",
+			"member": "StyleSheet",
+			"part": "description",
+			"before": null,
+			"after": "The <code>StyleSheet</code> to link to the parent such that the parent's descendants are styled accordingly.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "StyleSheet",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "StyleSheet"
+				}
+			}
+		}
+	]
+}

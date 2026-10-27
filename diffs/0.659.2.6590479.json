@@ -1,0 +1,2048 @@
+{
+	"from": {
+		"version": "0.658.1.6580464",
+		"hash": "16563d9619244148"
+	},
+	"to": {
+		"version": "0.659.2.6590479",
+		"hash": "0e04f568006340ec"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AnnotationsService",
+			"member": "EditAnnotation",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "EditAnnotation",
+				"Parameters": [
+					{
+						"Name": "uniqueId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "contents",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnnotationsService",
+			"member": "AnnotationEdited",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "AnnotationEdited",
+				"Parameters": [
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "uniqueId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "contents",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioAnalyzer",
+			"member": "WindowSize",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "State",
+				"Default": "Medium",
+				"MemberType": "Property",
+				"Name": "WindowSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AudioWindowSize"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioEcho",
+			"member": "Reset",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "Reset",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioListener",
+			"member": "Reset",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "Reset",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioPitchShifter",
+			"member": "WindowSize",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "State",
+				"Default": "Medium",
+				"MemberType": "Property",
+				"Name": "WindowSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AudioWindowSize"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioPlayer",
+			"member": "Asset",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": false
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": true
+					}
+				},
+				{
+					"field": "Tags",
+					"before": [
+						"Hidden",
+						"NotScriptable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "Asset",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "Asset",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "ContentId"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioPlayer",
+			"member": "AssetId",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden",
+						"NotReplicated",
+						"Deprecated",
+						{
+							"PreferredDescriptorName": "Asset",
+							"ThreadSafety": "Unknown"
+						}
+					]
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "Asset",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "AssetId",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated",
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "Asset",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioReverb",
+			"member": "Reset",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "Reset",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PartOperation",
+			"member": "SolidMeshData",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic",
+						"CSG"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "SolidMeshData",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "NetAssetRef"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GlobalSettings",
+			"member": "GetFFlagOverrides",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFFlagOverrides",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GlobalSettings",
+			"member": "GetFFlags",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFFlags",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GlobalSettings",
+			"member": "SetFFlagOverrides",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetFFlagOverrides",
+				"Parameters": [
+					{
+						"Name": "overrides",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SoundService",
+			"member": "CharacterSoundsUseNewApi",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "Default",
+				"MemberType": "Property",
+				"Name": "CharacterSoundsUseNewApi",
+				"Security": {
+					"Read": "None",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "RolloutState"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Stats",
+			"member": "ResetHarmonyMemoryTarget",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ResetHarmonyMemoryTarget",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Stats",
+			"member": "SetHarmonyMemoryTarget",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetHarmonyMemoryTarget",
+				"Parameters": [
+					{
+						"Name": "targetMB",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "AutoResumeSyncOnPlaceOpen",
+			"type": "Add",
+			"value": {
+				"Category": "Directories",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "AutoResumeSyncOnPlaceOpen",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatService",
+			"member": "HasSeenDeprecationDialog",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden",
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "HasSeenDeprecationDialog",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UGCValidationService",
+			"member": "CreateEditableImageFromBinaryStringRobloxOnly",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateEditableImageFromBinaryStringRobloxOnly",
+				"Parameters": [
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Class",
+							"Name": "BinaryStringValue"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Object"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UGCValidationService",
+			"member": "CreateEditableMeshFromBinaryStringRobloxOnly",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateEditableMeshFromBinaryStringRobloxOnly",
+				"Parameters": [
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Class",
+							"Name": "BinaryStringValue"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Object"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UGCValidationService",
+			"member": "GetEditableImageData",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetEditableImageData",
+				"Parameters": [
+					{
+						"Name": "editableImage",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Object"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "BinaryStringValue"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UGCValidationService",
+			"member": "RegisterAlternateMesh",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterAlternateMesh",
+				"Parameters": [
+					{
+						"Name": "alternateId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "binaryStringValue",
+						"Type": {
+							"Category": "Class",
+							"Name": "BinaryStringValue"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UGCValidationService",
+			"member": "GetMeshDataBinaryString",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetMeshDataBinaryString",
+				"Parameters": [
+					{
+						"Name": "meshId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "BinaryStringValue"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VoiceChatService",
+			"member": "leaveVoice",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "leaveVoice",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ProductPurchaseChannel",
+			"item": "AdReward",
+			"type": "Add",
+			"value": {
+				"Name": "AdReward",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ProductPurchaseChannel",
+			"item": "CommerceProduct",
+			"type": "Add",
+			"value": {
+				"Name": "CommerceProduct",
+				"Value": 4
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Class",
+			"class": "CollectionService",
+			"part": "description",
+			"before": "A service which manages object collections using assigned tags.",
+			"after": "A service which manages instance collections using assigned tags."
+		},
+		{
+			"element": "Member",
+			"class": "CollectionService",
+			"member": "GetAllTags",
+			"part": "description",
+			"before": null,
+			"after": "Returns an array of all tags in the experience.",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "GetAllTags",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CollectionService",
+			"member": "GetInstanceAddedSignal",
+			"part": "description",
+			"before": "Returns a signal that fires when a given tag is added to an object.",
+			"after": "Returns a signal that fires when a given tag is added to an instance.",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "GetInstanceAddedSignal",
+				"Parameters": [
+					{
+						"Name": "tag",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RBXScriptSignal"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CollectionService",
+			"member": "GetTagged",
+			"part": "description",
+			"before": "Returns an array of objects in the game with a given tag.",
+			"after": "Returns an array of instances in the game with a given tag.",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "GetTagged",
+				"Parameters": [
+					{
+						"Name": "tag",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Instances"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CollectionService",
+			"member": "GetTags",
+			"part": "description",
+			"before": "Gets an array of all tags applied to a given object.",
+			"after": "Gets an array of all tags applied to a given instance.",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "GetTags",
+				"Parameters": [
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CollectionService",
+			"member": "GetTags",
+			"part": "parameter",
+			"parameter": "instance",
+			"before": "The object whose tags should be returned.",
+			"after": "The instance whose tags should be returned.",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "GetTags",
+				"Parameters": [
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CollectionService",
+			"member": "GetTags",
+			"part": "return",
+			"before": "An array of strings which are the tags applied to the given object.",
+			"after": "An array of strings which are the tags applied to the given instance.",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "GetTags",
+				"Parameters": [
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CollectionService",
+			"member": "HasTag",
+			"part": "description",
+			"before": "Check whether an object has a given tag.",
+			"after": "Check whether an instance has a given tag.",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "HasTag",
+				"Parameters": [
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "tag",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CollectionService",
+			"member": "TagAdded",
+			"part": "description",
+			"before": "Fires when a tag is added to an object and the added tag is the only occurrence of that tag in the place.",
+			"after": "Fires when a tag is added to an instance and the added tag is the only occurrence of that tag in the place.",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Event",
+				"Name": "TagAdded",
+				"Parameters": [
+					{
+						"Name": "tag",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CollectionService",
+			"member": "TagRemoved",
+			"part": "description",
+			"before": "Fires when a tag is removed from an object and the removed tag is no longer used anywhere in the place.",
+			"after": "Fires when a tag is removed from an instance and the removed tag is no longer used anywhere in the place.",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Event",
+				"Name": "TagRemoved",
+				"Parameters": [
+					{
+						"Name": "tag",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "CalculateConstraintsToPreserve",
+			"part": "parameter",
+			"parameter": "options",
+			"before": "Options table for the method: <ul> <li><code>tolerance</code> – The distance tolerance, in regards to   <code>Attachment</code> preservation, between the attachment and the   closest point on the original part's surface versus the closest   point on the resulting part's surface. If the resulting distance   following the solid modeling operation is greater than this value,   the <code>Parent</code> of attachments and their   associated constraints will be <code>nil</code> in the returned recommendation   table.</li> <li><code>weldConstraintPreserve</code> – A <code>WeldConstraintPreserve</code> enum   value describing how <code>WeldConstraints</code> are   preserved in the resulting recommendation table.</li> </ul>",
+			"after": "Options dictionary for the method: <ul> <li><code>tolerance</code> — The distance tolerance, in regards to   <code>Attachment</code> preservation, between the attachment and the   closest point on the original part's surface versus the closest   point on the resulting part's surface. If the resulting distance   following the solid modeling operation is greater than this value,   the <code>Parent</code> of attachments and their   associated constraints will be <code>nil</code> in the returned recommendation   table.</li> <li><code>weldConstraintPreserve</code> — A <code>WeldConstraintPreserve</code> enum   value describing how <code>WeldConstraints</code> are   preserved in the resulting recommendation table.</li> <li><code>dropAttachmentsWithoutConstraints</code> — Boolean with default of   <code>true</code>. If set to <code>false</code>, <code>Attachments</code> that have   no <code>Constraints</code> will be preserved.</li> </ul>",
+			"value": {
+				"Capabilities": [
+					"CSG"
+				],
+				"MemberType": "Function",
+				"Name": "CalculateConstraintsToPreserve",
+				"Parameters": [
+					{
+						"Name": "source",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "destination",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "CalculateConstraintsToPreserve",
+			"part": "return",
+			"before": "Table containing information for general case <code>Constraints</code>, <code>NoCollisionConstraints</code>, and <code>WeldConstraints</code>. In cases where an <code>Attachment</code> or <code>Constraint</code> should be dropped, its respective parent will be <code>nil</code>. For general case <code>Constraints</code> such as <code>HingeConstraint</code>: <table size=\"small\"> <thead>   <tr>     <th>Key</th>     <th>Type</th>   </tr> </thead> <tbody>   <tr>     <td>Attachment</td>     <td><code>Class.Attachment</code></td>   </tr>   <tr>     <td>Constraint</td>     <td><code>Class.Constraint</code></td>   </tr>   <tr>     <td>AttachmentParent</td>     <td><code>Class.BasePart</code> or <code>nil</code></td>   </tr>   <tr>     <td>ConstraintParent</td>     <td><code>Class.BasePart</code> or <code>nil</code></td>   </tr> </tbody> </table>  For <code>WeldConstraints</code>: <table size=\"small\"> <thead>   <tr>     <th>Key</th>     <th>Type</th>   </tr> </thead> <tbody>   <tr>     <td>WeldConstraint</td>     <td><code>Class.WeldConstraint</code></td>   </tr>   <tr>     <td>WeldConstraintParent</td>     <td><code>Class.BasePart</code> or <code>nil</code></td>   </tr>   <tr>     <td>WeldConstraintPart0</td>     <td><code>Class.BasePart</code></td>   </tr>   <tr>     <td>WeldConstraintPart1</td>     <td><code>Class.BasePart</code></td>   </tr> </tbody> </table>  For <code>NoCollisionConstraints</code>: <table size=\"small\"> <thead>   <tr>     <th>Key</th>     <th>Type</th>   </tr> </thead> <tbody>   <tr>     <td>NoCollisionConstraint</td>     <td><code>Class.NoCollisionConstraint</code></td>   </tr>   <tr>     <td>NoCollisionConstraintParent</td>     <td><code>Class.BasePart</code> or <code>nil</code></td>   </tr>   <tr>     <td>NoCollisionConstraintPart0</td>     <td><code>Class.BasePart</code></td>   </tr>   <tr>     <td>NoCollisionConstraintPart1</td>     <td><code>Class.BasePart</code></td>   </tr> </tbody> </table>",
+			"after": "Table containing information for general case <code>Constraints</code>, <code>NoCollisionConstraints</code>, and <code>WeldConstraints</code>. In cases where an <code>Attachment</code> or <code>Constraint</code> should be dropped, its respective parent will be <code>nil</code>. For general case <code>Constraints</code> such as <code>HingeConstraint</code>: <table size=\"small\"> <thead>   <tr>     <th>Key</th>     <th>Type</th>   </tr> </thead> <tbody>   <tr>     <td><code>Attachment</code></td>     <td><code>Class.Attachment</code></td>   </tr>   <tr>     <td><code>Constraint</code></td>     <td><code>Class.Constraint</code> or <code>nil</code></td>   </tr>   <tr>     <td><code>AttachmentParent</code></td>     <td><code>Class.BasePart</code> or <code>nil</code></td>   </tr>   <tr>     <td><code>ConstraintParent</code></td>     <td><code>Class.BasePart</code> or <code>nil</code></td>   </tr> </tbody> </table>  For <code>WeldConstraints</code>: <table size=\"small\"> <thead>   <tr>     <th>Key</th>     <th>Type</th>   </tr> </thead> <tbody>   <tr>     <td><code>WeldConstraint</code></td>     <td><code>Class.WeldConstraint</code></td>   </tr>   <tr>     <td><code>WeldConstraintParent</code></td>     <td><code>Class.BasePart</code> or <code>nil</code></td>   </tr>   <tr>     <td><code>WeldConstraintPart0</code></td>     <td><code>Class.BasePart</code></td>   </tr>   <tr>     <td><code>WeldConstraintPart1</code></td>     <td><code>Class.BasePart</code></td>   </tr> </tbody> </table>  For <code>NoCollisionConstraints</code>: <table size=\"small\"> <thead>   <tr>     <th>Key</th>     <th>Type</th>   </tr> </thead> <tbody>   <tr>     <td><code>NoCollisionConstraint</code></td>     <td><code>Class.NoCollisionConstraint</code></td>   </tr>   <tr>     <td><code>NoCollisionConstraintParent</code></td>     <td><code>Class.BasePart</code> or <code>nil</code></td>   </tr>   <tr>     <td><code>NoCollisionConstraintPart0</code></td>     <td><code>Class.BasePart</code></td>   </tr>   <tr>     <td><code>NoCollisionConstraintPart1</code></td>     <td><code>Class.BasePart</code></td>   </tr> </tbody> </table>",
+			"value": {
+				"Capabilities": [
+					"CSG"
+				],
+				"MemberType": "Function",
+				"Name": "CalculateConstraintsToPreserve",
+				"Parameters": [
+					{
+						"Name": "source",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "destination",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "IntersectAsync",
+			"part": "parameter",
+			"parameter": "options",
+			"before": "Options table containing all the controls for the method: <ul> <li><code>CollisionFidelity</code> – The value of   <code>CollisionFidelity</code> in the   resulting parts.</li> <li><code>RenderFidelity</code> – The value of   <code>RenderFidelity</code> in the resulting   parts.</li> <li><code>FluidFidelity</code> – The value of   <code>FluidFidelity</code> in the resulting   parts.</li> <li><code>SplitApart</code> – Boolean controlling whether the objects should all be   kept together or properly split apart. Default is <code>true</code> (split).</li> </ul>",
+			"after": "Options table containing all the controls for the method: <ul> <li><code>CollisionFidelity</code> — The value of   <code>CollisionFidelity</code> in the   resulting parts.</li> <li><code>RenderFidelity</code> — The value of   <code>RenderFidelity</code> in the resulting   parts.</li> <li><code>FluidFidelity</code> — The value of   <code>FluidFidelity</code> in the resulting   parts.</li> <li><code>SplitApart</code> — Boolean controlling whether the objects should all be   kept together or properly split apart. Default is <code>true</code> (split).</li> </ul>",
+			"value": {
+				"Capabilities": [
+					"CSG"
+				],
+				"MemberType": "Function",
+				"Name": "IntersectAsync",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "SubtractAsync",
+			"part": "parameter",
+			"parameter": "options",
+			"before": "Options table containing all the controls for the method: <ul> <li><code>CollisionFidelity</code> – The value of   <code>CollisionFidelity</code> in the   resulting parts.</li> <li><code>RenderFidelity</code> – The value of   <code>RenderFidelity</code> in the resulting   parts.</li> <li><code>FluidFidelity</code> – The value of   <code>FluidFidelity</code> in the resulting   parts.</li> <li><code>SplitApart</code> – Boolean controlling whether the objects should all be   kept together or properly split apart. Default is <code>true</code> (split).</li> </ul>",
+			"after": "Options table containing all the controls for the method: <ul> <li><code>CollisionFidelity</code> — The value of   <code>CollisionFidelity</code> in the   resulting parts.</li> <li><code>RenderFidelity</code> — The value of   <code>RenderFidelity</code> in the resulting   parts.</li> <li><code>FluidFidelity</code> — The value of   <code>FluidFidelity</code> in the resulting   parts.</li> <li><code>SplitApart</code> — Boolean controlling whether the objects should all be   kept together or properly split apart. Default is <code>true</code> (split).</li> </ul>",
+			"value": {
+				"Capabilities": [
+					"CSG"
+				],
+				"MemberType": "Function",
+				"Name": "SubtractAsync",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "UnionAsync",
+			"part": "parameter",
+			"parameter": "options",
+			"before": "Options table containing all the controls for the method: <ul> <li><code>CollisionFidelity</code> – The value of   <code>CollisionFidelity</code> in the   resulting parts.</li> <li><code>RenderFidelity</code> – The value of   <code>RenderFidelity</code> in the resulting   parts.</li> <li><code>FluidFidelity</code> – The value of   <code>FluidFidelity</code> in the resulting   parts.</li> <li><code>SplitApart</code> – Boolean controlling whether the objects should all be   kept together or properly split apart. Default is <code>true</code> (split).</li> </ul>",
+			"after": "Options table containing all the controls for the method: <ul> <li><code>CollisionFidelity</code> — The value of   <code>CollisionFidelity</code> in the   resulting parts.</li> <li><code>RenderFidelity</code> — The value of   <code>RenderFidelity</code> in the resulting   parts.</li> <li><code>FluidFidelity</code> — The value of   <code>FluidFidelity</code> in the resulting   parts.</li> <li><code>SplitApart</code> — Boolean controlling whether the objects should all be   kept together or properly split apart. Default is <code>true</code> (split).</li> </ul>",
+			"value": {
+				"Capabilities": [
+					"CSG"
+				],
+				"MemberType": "Function",
+				"Name": "UnionAsync",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "HttpService",
+			"part": "description",
+			"before": "Allows sending HTTP requests and provides various web-related functions, including JSON functions.",
+			"after": "Allows sending HTTP requests and provides various web-related and JSON methods."
+		},
+		{
+			"element": "Member",
+			"class": "HttpService",
+			"member": "HttpEnabled",
+			"part": "description",
+			"before": "Indicates whether http request can be sent to external websites.",
+			"after": "Indicates whether HTTP requests can be sent to external websites.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Network"
+					]
+				},
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "HttpEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "LocalUserSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HttpService",
+			"member": "GenerateGUID",
+			"part": "parameter",
+			"parameter": "wrapInCurlyBraces",
+			"before": "Whether the returned string should be wrapped in <em>{curly braces}</em>.",
+			"after": "Whether the returned string should be wrapped in curly braces (<code>{}</code>).",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GenerateGUID",
+				"Parameters": [
+					{
+						"Default": "true",
+						"Name": "wrapInCurlyBraces",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HttpService",
+			"member": "GetAsync",
+			"part": "description",
+			"before": "Send an HTTP GET request.",
+			"after": "Sends an HTTP <code>GET</code> request.",
+			"value": {
+				"Capabilities": [
+					"Network"
+				],
+				"MemberType": "Function",
+				"Name": "GetAsync",
+				"Parameters": [
+					{
+						"Name": "url",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Default": "false",
+						"Name": "nocache",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "headers",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HttpService",
+			"member": "PostAsync",
+			"part": "description",
+			"before": "Performs a HTTP POST request.",
+			"after": "Sends an HTTP <code>POST</code> request.",
+			"value": {
+				"Capabilities": [
+					"Network"
+				],
+				"MemberType": "Function",
+				"Name": "PostAsync",
+				"Parameters": [
+					{
+						"Name": "url",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "data",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "ApplicationJson",
+						"Name": "content_type",
+						"Type": {
+							"Category": "Enum",
+							"Name": "HttpContentType"
+						}
+					},
+					{
+						"Default": "false",
+						"Name": "compress",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "headers",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HttpService",
+			"member": "PostAsync",
+			"part": "parameter",
+			"parameter": "content_type",
+			"before": "Modifies the value in the <em>Content-Type</em> header sent with the request.",
+			"after": "Modifies the value in the <code>Content-Type</code> header sent with the request.",
+			"value": {
+				"Capabilities": [
+					"Network"
+				],
+				"MemberType": "Function",
+				"Name": "PostAsync",
+				"Parameters": [
+					{
+						"Name": "url",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "data",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "ApplicationJson",
+						"Name": "content_type",
+						"Type": {
+							"Category": "Enum",
+							"Name": "HttpContentType"
+						}
+					},
+					{
+						"Default": "false",
+						"Name": "compress",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "headers",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HttpService",
+			"member": "PostAsync",
+			"part": "parameter",
+			"parameter": "compress",
+			"before": "Determines whether the data is compressed (gzipped) when sent.",
+			"after": "Determines whether the data is compressed (<strong>gzipped</strong>) when sent.",
+			"value": {
+				"Capabilities": [
+					"Network"
+				],
+				"MemberType": "Function",
+				"Name": "PostAsync",
+				"Parameters": [
+					{
+						"Name": "url",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "data",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "ApplicationJson",
+						"Name": "content_type",
+						"Type": {
+							"Category": "Enum",
+							"Name": "HttpContentType"
+						}
+					},
+					{
+						"Default": "false",
+						"Name": "compress",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "headers",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TweenService",
+			"member": "SmoothDamp",
+			"part": "parameter",
+			"parameter": "current",
+			"before": null,
+			"after": "The current position.",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "SmoothDamp",
+				"Parameters": [
+					{
+						"Name": "current",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "target",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "velocity",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "smoothTime",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "maxSpeed",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					},
+					{
+						"Name": "dt",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					}
+				],
+				"ReturnType": [
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					},
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TweenService",
+			"member": "SmoothDamp",
+			"part": "parameter",
+			"parameter": "target",
+			"before": null,
+			"after": "The target position.",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "SmoothDamp",
+				"Parameters": [
+					{
+						"Name": "current",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "target",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "velocity",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "smoothTime",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "maxSpeed",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					},
+					{
+						"Name": "dt",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					}
+				],
+				"ReturnType": [
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					},
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TweenService",
+			"member": "SmoothDamp",
+			"part": "parameter",
+			"parameter": "velocity",
+			"before": null,
+			"after": "The initial velocity at which the current position should approach the target position.",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "SmoothDamp",
+				"Parameters": [
+					{
+						"Name": "current",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "target",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "velocity",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "smoothTime",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "maxSpeed",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					},
+					{
+						"Name": "dt",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					}
+				],
+				"ReturnType": [
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					},
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TweenService",
+			"member": "SmoothDamp",
+			"part": "parameter",
+			"parameter": "smoothTime",
+			"before": null,
+			"after": "The duration in which the total smoothing operation should take place.",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "SmoothDamp",
+				"Parameters": [
+					{
+						"Name": "current",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "target",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "velocity",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "smoothTime",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "maxSpeed",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					},
+					{
+						"Name": "dt",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					}
+				],
+				"ReturnType": [
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					},
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TweenService",
+			"member": "SmoothDamp",
+			"part": "parameter",
+			"parameter": "maxSpeed",
+			"before": null,
+			"after": "The maximum speed at which the current position should approach the target position.",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "SmoothDamp",
+				"Parameters": [
+					{
+						"Name": "current",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "target",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "velocity",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "smoothTime",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "maxSpeed",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					},
+					{
+						"Name": "dt",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					}
+				],
+				"ReturnType": [
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					},
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TweenService",
+			"member": "SmoothDamp",
+			"part": "parameter",
+			"parameter": "dt",
+			"before": null,
+			"after": "The rate at which the smoothing operation should be applied.",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "SmoothDamp",
+				"Parameters": [
+					{
+						"Name": "current",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "target",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "velocity",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "smoothTime",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "maxSpeed",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					},
+					{
+						"Name": "dt",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					}
+				],
+				"ReturnType": [
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					},
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TweenService",
+			"member": "SmoothDamp",
+			"part": "return",
+			"before": null,
+			"after": "The new position and velocity calculated from the smoothing operation.",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "SmoothDamp",
+				"Parameters": [
+					{
+						"Name": "current",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "target",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "velocity",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "smoothTime",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "maxSpeed",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					},
+					{
+						"Name": "dt",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					}
+				],
+				"ReturnType": [
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					},
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		}
+	]
+}

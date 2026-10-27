@@ -1,0 +1,1090 @@
+{
+	"from": {
+		"version": "0.706.0.7060750",
+		"hash": "dabb43efc3a944c6"
+	},
+	"to": {
+		"version": "0.707.0.7070733",
+		"hash": "9452b94afc9e4b1f"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "GetDescendants",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Group",
+						"Name": "Array"
+					},
+					"after": {
+						"Category": "DataType",
+						"Name": "Instances"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetDescendants",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Instances"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "CreateEditableMeshStripSkinningAsync",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateEditableMeshStripSkinningAsync",
+				"Parameters": [
+					{
+						"Name": "meshId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "ContentId"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "EditableMesh"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioDeviceInput",
+			"member": "MutedByLocalUser",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotReplicated"
+					],
+					"after": [
+						"Hidden",
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Recording",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "MutedByLocalUser",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioEmitter",
+			"member": "PositionOverride",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden"
+					]
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "PositionOverride",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioListener",
+			"member": "PositionOverride",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden"
+					]
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "PositionOverride",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioPlayer",
+			"member": "IsMutedForCapture",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden"
+					]
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "IsMutedForCapture",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "ReadCapturesFromGalleryAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Default": "{}",
+							"Name": "captureTypeFilters",
+							"Type": {
+								"Category": "Group",
+								"Name": "Array"
+							}
+						}
+					],
+					"after": [
+						{
+							"Default": "{}",
+							"Name": "captureTypeFilters",
+							"Type": {
+								"Category": "Group",
+								"Name": "Array"
+							}
+						},
+						{
+							"Default": "false",
+							"Name": "readFromAllEligibleExperiences",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"Capabilities": [
+					"Capture"
+				],
+				"MemberType": "Function",
+				"Name": "ReadCapturesFromGalleryAsync",
+				"Parameters": [
+					{
+						"Default": "{}",
+						"Name": "captureTypeFilters",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "false",
+						"Name": "readFromAllEligibleExperiences",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "DisplayScalingMode",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "DisplayScalingMode",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "DisplayScalingMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsService",
+			"member": "CollisionGroupCollidableChanged",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Physics"
+				],
+				"MemberType": "Event",
+				"Name": "CollisionGroupCollidableChanged",
+				"Parameters": [
+					{
+						"Name": "collisionGroupIndex1",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "collisionGroupIndex2",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ReflectionService",
+			"member": "GetEventsOfClass",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetEventsOfClass",
+				"Parameters": [
+					{
+						"Name": "className",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "filter",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ReflectionService",
+			"member": "GetMethodsOfClass",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetMethodsOfClass",
+				"Parameters": [
+					{
+						"Name": "className",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "filter",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "ChannelCount",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"ReadOnly",
+						"NotReplicated",
+						"NotBrowsable"
+					],
+					"after": [
+						"Hidden",
+						"ReadOnly",
+						"NotReplicated",
+						"NotBrowsable"
+					]
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"LegacySound"
+					]
+				},
+				"Category": "Asset",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "ChannelCount",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated",
+					"NotBrowsable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "IsMutedForCapture",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden"
+					]
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"LegacySound"
+					]
+				},
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "IsMutedForCapture",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "AvatarJointUpgrade",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotReplicated",
+						"NotScriptable",
+						"NotBrowsable"
+					],
+					"after": [
+						"NotReplicated",
+						"NotScriptable"
+					]
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Players"
+					]
+				},
+				"Category": "Character",
+				"Default": "Default",
+				"MemberType": "Property",
+				"Name": "AvatarJointUpgrade",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "RolloutState"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "ClassicDeath",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Players"
+					]
+				},
+				"Category": "Character",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "ClassicDeath",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "CommandBarEnterExec",
+			"type": "Add",
+			"value": {
+				"Category": "Script Editor",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "CommandBarEnterExec",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatService",
+			"member": "GetChatGroupsAsync",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Chat"
+				],
+				"MemberType": "Function",
+				"Name": "GetChatGroupsAsync",
+				"Parameters": [
+					{
+						"Name": "players",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Instances"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VoiceChatService",
+			"member": "GetChatGroupsAsync",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Chat"
+				],
+				"MemberType": "Function",
+				"Name": "GetChatGroupsAsync",
+				"Parameters": [
+					{
+						"Name": "players",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Instances"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TraceRouteService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "TraceRouteService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "WrapDeformMeshProvider",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "WrapDeformMeshProvider",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectCollaboratorNotAgeVerified",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectCollaboratorNotAgeVerified",
+				"Value": 310
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectCollaboratorTrustedConnectionsRequired",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectCollaboratorTrustedConnectionsRequired",
+				"Value": 311
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectCollaboratorOwnerActionRequired",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectCollaboratorOwnerActionRequired",
+				"Value": 312
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectCollaboratorTooManyCollaborators",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectCollaboratorTooManyCollaborators",
+				"Value": 313
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectCollaboratorUnknownError",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectCollaboratorUnknownError",
+				"Value": 314
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DataModelExtractorFileType",
+			"item": "NonFirstSliceSlice",
+			"type": "Remove",
+			"value": {
+				"Name": "NonFirstSliceSlice",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DataModelExtractorFileType",
+			"item": "NonFirstSlice",
+			"type": "Add",
+			"value": {
+				"Name": "NonFirstSlice",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "MouseWheel",
+			"type": "Add",
+			"value": {
+				"Name": "MouseWheel",
+				"Value": 1035
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "TrackpadPan",
+			"type": "Add",
+			"value": {
+				"Name": "TrackpadPan",
+				"Value": 1040
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "TrackpadPinch",
+			"type": "Add",
+			"value": {
+				"Name": "TrackpadPinch",
+				"Value": 1045
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ReservedHighlightId",
+			"item": "NegatedPart",
+			"type": "Add",
+			"value": {
+				"Name": "NegatedPart",
+				"Value": 1048576
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "DisplayScalingMode",
+			"type": "Add",
+			"value": {
+				"Name": "DisplayScalingMode"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DisplayScalingMode",
+			"item": "Default",
+			"type": "Add",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DisplayScalingMode",
+			"item": "Legacy",
+			"type": "Add",
+			"value": {
+				"Name": "Legacy",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DisplayScalingMode",
+			"item": "Responsive",
+			"type": "Add",
+			"value": {
+				"Name": "Responsive",
+				"Value": 2
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "AnimationConstraint",
+			"member": "IsKinematic",
+			"part": "description",
+			"before": "Toggles whether the <code>AnimationConstraint</code> is kinematic or physically simulated.",
+			"after": "Toggles whether the constraint is kinematic or physically simulated.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Physics",
+						"Animation"
+					]
+				},
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "IsKinematic",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationConstraint",
+			"member": "Transform",
+			"part": "description",
+			"before": "Describes the current animation offset of the <code>AnimationConstraint</code> joint.",
+			"after": "Describes the current animation offset of the constraint joint.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Physics",
+						"Animation"
+					]
+				},
+				"Category": "Data",
+				"Default": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+				"MemberType": "Property",
+				"Name": "Transform",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LocalizationTable",
+			"member": "GetTranslator",
+			"part": "description",
+			"before": "Returns a <code>Translator</code> for entries in this LocalizationTable, in the specified language.",
+			"after": "Returns a <code>Translator</code> for entries in this LocalizationTable, in the specified locale.",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "GetTranslator",
+				"Parameters": [
+					{
+						"Name": "localeId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LocalizationTable",
+			"member": "GetTranslator",
+			"part": "return",
+			"before": null,
+			"after": "The <code>Translator</code> instance for the specified locale.",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "GetTranslator",
+				"Parameters": [
+					{
+						"Name": "localeId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "AvatarJointUpgrade",
+			"part": "description",
+			"before": "Controls whether avatars spawn with AnimationConstraint joints for physical simulation.",
+			"after": "Controls whether avatars spawn with <code>AnimationConstraint</code> joints for physical simulation.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Players"
+					]
+				},
+				"Category": "Character",
+				"Default": "Default",
+				"MemberType": "Property",
+				"Name": "AvatarJointUpgrade",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "RolloutState"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "GetFocusedTextBox",
+			"part": "description",
+			"before": "Returns the currently <code>TextBox</code> the client is currently focused on.",
+			"after": "Returns the <code>TextBox</code> the client is currently focused on.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Function",
+				"Name": "GetFocusedTextBox",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "TextBox"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CoreGuiType",
+			"item": "AvatarSwitcher",
+			"part": "description",
+			"before": null,
+			"after": "The <strong>Avatar Switcher</strong> allows users to change their platform avatar.",
+			"value": {
+				"Name": "AvatarSwitcher",
+				"Value": 8
+			}
+		}
+	]
+}

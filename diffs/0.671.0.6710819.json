@@ -1,0 +1,1806 @@
+{
+	"from": {
+		"version": "0.670.0.6700713",
+		"hash": "43bb2135852549ef"
+	},
+	"to": {
+		"version": "0.671.0.6710819",
+		"hash": "afabd320a8b84b9e"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AnnotationsService",
+			"member": "AnnotationsLoadingStatus",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Hidden",
+						"NotReplicated"
+					],
+					"after": [
+						"Hidden"
+					]
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "Loading",
+				"MemberType": "Property",
+				"Name": "AnnotationsLoadingStatus",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AnnotationRequestStatus"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnnotationsService",
+			"member": "ResolvedLoadingStatus",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Hidden",
+						"NotReplicated"
+					],
+					"after": [
+						"Hidden"
+					]
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "Loading",
+				"MemberType": "Property",
+				"Name": "ResolvedLoadingStatus",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AnnotationRequestStatus"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnnotationsService",
+			"member": "LoadResolvedAnnotations",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "LoadResolvedAnnotations",
+				"Parameters": [
+					{
+						"Name": "count",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnnotationsService",
+			"member": "LoadAnnotations",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LoadAnnotations",
+				"Parameters": [
+					{
+						"Name": "resolved",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnnotationsService",
+			"member": "ServerLoadAnnotations",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ServerLoadAnnotations",
+				"Parameters": [
+					{
+						"Name": "resolved",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AuroraScriptService",
+			"member": "BufferSize",
+			"type": "Remove",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "BufferSize",
+				"Security": {
+					"Read": "None",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AuroraScriptService",
+			"member": "GetProperty",
+			"type": "Remove",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "GetProperty",
+				"Parameters": [
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AuroraScriptService",
+			"member": "GetTime",
+			"type": "Remove",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "GetTime",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "double"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AuroraScriptService",
+			"member": "SetProperty",
+			"type": "Remove",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "SetProperty",
+				"Parameters": [
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AuroraService",
+			"member": "Misprediction",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Misprediction",
+				"Parameters": [
+					{
+						"Name": "worldStepId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "mispredictedInstances",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "AutoSetupAvatarAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AutoSetupAvatarAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "model",
+						"Type": {
+							"Category": "Class",
+							"Name": "Model"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "RequestCaptureSignatureV2",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "RequestCaptureSignatureV2",
+				"Parameters": [
+					{
+						"Name": "content",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LinearVelocity",
+			"member": "ReactionForceEnabled",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Physics"
+					]
+				},
+				"Category": "Mode",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "ReactionForceEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AuroraScript",
+			"member": "Tag",
+			"type": "Remove",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "Tag",
+				"Security": {
+					"Read": "None",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "ShorelinesUpgraded",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "false",
+					"after": "true"
+				}
+			],
+			"value": {
+				"Category": "Appearance",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "ShorelinesUpgraded",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PartOperation",
+			"member": "CSGMesh2KernelMap",
+			"type": "Remove",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic",
+						"CSG"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "CSGMesh2KernelMap",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "SharedString"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PartOperation",
+			"member": "CSGPropertyData",
+			"type": "Remove",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic",
+						"CSG"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "CSGPropertyData",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CSGPropertyData"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "ConvexDecompCompressed",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "ConvexDecompCompressed",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ReflectionService",
+			"member": "GetClass",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetClass",
+				"Parameters": [
+					{
+						"Name": "className",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "filter",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary?"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ReflectionService",
+			"member": "GetClasses",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetClasses",
+				"Parameters": [
+					{
+						"Default": "nil",
+						"Name": "filter",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ReflectionService",
+			"member": "GetPropertiesOfClass",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPropertiesOfClass",
+				"Parameters": [
+					{
+						"Name": "className",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "filter",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sky",
+			"member": "SkyboxOrientation",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Environment"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "SkyboxOrientation",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "ClassicDeath",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Players"
+					]
+				},
+				"Category": "Character",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "ClassicDeath",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotBrowsable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "DefaultScriptFileDir",
+			"type": "Remove",
+			"value": {
+				"Category": "Directories",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "DefaultScriptFileDir",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "QDir"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatService",
+			"member": "ChatVersion",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "NotAccessibleSecurity"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "RobloxScriptSecurity"
+					}
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Data",
+				"Default": "LegacyChatService",
+				"MemberType": "Property",
+				"Name": "ChatVersion",
+				"Security": {
+					"Read": "None",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ChatVersion"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AudioRecorder",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Internal",
+				"Name": "AudioRecorder",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioRecorder",
+			"member": "IsRecording",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "State",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "IsRecording",
+				"Security": {
+					"Read": "None",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioRecorder",
+			"member": "TimeLength",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "TimeLength",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "double"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioRecorder",
+			"member": "Clear",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "Clear",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioRecorder",
+			"member": "GetConnectedWires",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "GetConnectedWires",
+				"Parameters": [
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Instances"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioRecorder",
+			"member": "GetInputPins",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "GetInputPins",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioRecorder",
+			"member": "GetOutputPins",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "GetOutputPins",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioRecorder",
+			"member": "GetTemporaryContent",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "GetTemporaryContent",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Content"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioRecorder",
+			"member": "Stop",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "Stop",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioRecorder",
+			"member": "CanRecordAsync",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "CanRecordAsync",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioRecorder",
+			"member": "GetUnrecordableInstancesAsync",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "GetUnrecordableInstancesAsync",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Instances"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioRecorder",
+			"member": "RecordAsync",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "RecordAsync",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioRecorder",
+			"member": "WiringChanged",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Event",
+				"Name": "WiringChanged",
+				"Parameters": [
+					{
+						"Name": "connected",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "wire",
+						"Type": {
+							"Category": "Class",
+							"Name": "Wire"
+						}
+					},
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AuroraScriptObject",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AuroraScriptObject",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AuroraScriptObject",
+			"member": "BehaviorWeak",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "BehaviorWeak",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "AuroraScript"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AuroraScriptObject",
+			"member": "BoundInstanceWeak",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "BoundInstanceWeak",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FeedRankingScoreType",
+			"item": "Invalid",
+			"type": "Remove",
+			"value": {
+				"Name": "Invalid",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FeedRankingScoreType",
+			"item": "Sharing",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 5,
+					"after": 4
+				}
+			],
+			"value": {
+				"Name": "Sharing",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "InputActionType",
+			"item": "Float",
+			"type": "Remove",
+			"value": {
+				"Name": "Float",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "InputActionType",
+			"item": "Direction1D",
+			"type": "Add",
+			"value": {
+				"Name": "Direction1D",
+				"Value": 1
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Class",
+			"class": "AudioTextToSpeech",
+			"part": "description",
+			"before": null,
+			"after": "Plays text as speech audio."
+		},
+		{
+			"element": "Member",
+			"class": "AudioTextToSpeech",
+			"member": "IsLoaded",
+			"part": "description",
+			"before": null,
+			"after": "Denotes whether the <code>AudioTextToSpeech</code> object is loaded, buffered, and ready to play.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "Asset",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "IsLoaded",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioTextToSpeech",
+			"member": "IsPlaying",
+			"part": "description",
+			"before": null,
+			"after": "Denotes whether the <code>AudioTextToSpeech</code> object is currently playing.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "Playback",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "IsPlaying",
+				"Security": {
+					"Read": "None",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioTextToSpeech",
+			"member": "Looping",
+			"part": "description",
+			"before": null,
+			"after": "Controls whether the <code>AudioTextToSpeech</code> object loops.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "Playback",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "Looping",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioTextToSpeech",
+			"member": "Pitch",
+			"part": "description",
+			"before": null,
+			"after": "Controls the pitch of the generated speech audio, which will be independent of its speed.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "Asset",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "Pitch",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioTextToSpeech",
+			"member": "PlaybackSpeed",
+			"part": "description",
+			"before": null,
+			"after": "Controls how quickly the speech audio will be played, which controls its pitch.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "Playback",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "PlaybackSpeed",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioTextToSpeech",
+			"member": "Speed",
+			"part": "description",
+			"before": null,
+			"after": "Controls the speed of the generated speech audio, which will be independent of its pitch.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "Asset",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "Speed",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioTextToSpeech",
+			"member": "Text",
+			"part": "description",
+			"before": null,
+			"after": "The text to be converted into speech audio by <code>AudioTextToSpeech</code>.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "Asset",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "Text",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioTextToSpeech",
+			"member": "TimeLength",
+			"part": "description",
+			"before": null,
+			"after": "Denotes the length of the generated speech audio.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "Asset",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "TimeLength",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "double"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioTextToSpeech",
+			"member": "TimePosition",
+			"part": "description",
+			"before": null,
+			"after": "Tracks the current position of the playhead within the generated speech audio.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "Playback",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "TimePosition",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "double"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioTextToSpeech",
+			"member": "VoiceId",
+			"part": "description",
+			"before": null,
+			"after": "The voice style to be used by <code>AudioTextToSpeech</code>.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "Asset",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "VoiceId",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioTextToSpeech",
+			"member": "Volume",
+			"part": "description",
+			"before": null,
+			"after": "Controls how loudly the generated speech audio will be played.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "State",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "Volume",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioTextToSpeech",
+			"member": "GetConnectedWires",
+			"part": "description",
+			"before": null,
+			"after": "Returns an array of <code>Wires</code> that are connected to the specified pin.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "GetConnectedWires",
+				"Parameters": [
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Instances"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioTextToSpeech",
+			"member": "Pause",
+			"part": "description",
+			"before": null,
+			"after": "Pauses the <code>AudioTextToSpeech</code> object wherever its <code>TimePosition</code> is.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "Pause",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioTextToSpeech",
+			"member": "Play",
+			"part": "description",
+			"before": null,
+			"after": "Plays the <code>AudioTextToSpeech</code> from wherever its <code>TimePosition</code> is.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "Play",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioTextToSpeech",
+			"member": "Unload",
+			"part": "description",
+			"before": null,
+			"after": "Unload the generated speech audio.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "Unload",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioTextToSpeech",
+			"member": "LoadAsync",
+			"part": "description",
+			"before": null,
+			"after": "Generates speech audio.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "LoadAsync",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "AssetFetchStatus"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioTextToSpeech",
+			"member": "Ended",
+			"part": "description",
+			"before": null,
+			"after": "Fires when the <code>AudioTextToSpeech</code> object has completed playback and paused.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Event",
+				"Name": "Ended",
+				"Parameters": [],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioTextToSpeech",
+			"member": "Looped",
+			"part": "description",
+			"before": null,
+			"after": "Fires when the <code>AudioTextToSpeech</code> object loops.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Event",
+				"Name": "Looped",
+				"Parameters": [],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioTextToSpeech",
+			"member": "WiringChanged",
+			"part": "description",
+			"before": null,
+			"after": "Fires when another instance is connected to or disconnected from the <code>AudioTextToSpeech</code> via a <code>Wire</code>.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Event",
+				"Name": "WiringChanged",
+				"Parameters": [
+					{
+						"Name": "connected",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "wire",
+						"Type": {
+							"Category": "Class",
+							"Name": "Wire"
+						}
+					},
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		}
+	]
+}

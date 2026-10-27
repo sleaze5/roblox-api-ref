@@ -1,0 +1,1226 @@
+{
+	"from": {
+		"version": "0.629.0.6290609",
+		"hash": "6fd80b49a9674f97"
+	},
+	"to": {
+		"version": "0.630.0.6300556",
+		"hash": "80c47ff7f44d48f7"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AccessoryDescription",
+			"member": "Position",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "Position",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AccessoryDescription",
+			"member": "Rotation",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "Rotation",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AccessoryDescription",
+			"member": "Scale",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "1, 1, 1",
+				"MemberType": "Property",
+				"Name": "Scale",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarGenerationJob",
+			"member": "Cancel",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Yields"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "Cancel",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "EditableMesh",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotReplicated"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "EditableMesh",
+				"Superclass": "DataModelMesh"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "MeshData",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Hidden",
+						"NotReplicated",
+						"NotScriptable"
+					],
+					"after": [
+						"Hidden",
+						"NotScriptable"
+					]
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "MeshData",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "SharedString"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Path2D",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "Path2D",
+				"Superclass": "GuiBase"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "GetIsMaterialActionAsToolEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetIsMaterialActionAsToolEnabled",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "ToggleMaterialFillToolEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ToggleMaterialFillToolEnabled",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "MaterialFillToolEnabledChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "MaterialFillToolEnabledChanged",
+				"Parameters": [
+					{
+						"Name": "shouldEnable",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginToolbarButton",
+			"member": "SetDropdownActive",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetDropdownActive",
+				"Parameters": [
+					{
+						"Name": "active",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SoundService",
+			"member": "OpenAudioEqualizerEditorSignal",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OpenAudioEqualizerEditorSignal",
+				"Parameters": [
+					{
+						"Name": "selectedEqualizerObjects",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AppLifecycleObserverService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AppLifecycleObserverService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AppLifecycleObserverService",
+			"member": "IsDidDetachSupported",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsDidDetachSupported",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AppLifecycleObserverService",
+			"member": "OnBecomeActive",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnBecomeActive",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AppLifecycleObserverService",
+			"member": "OnDetach",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnDetach",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AppLifecycleObserverService",
+			"member": "OnHide",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnHide",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AppLifecycleObserverService",
+			"member": "OnResignActive",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnResignActive",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AppLifecycleObserverService",
+			"member": "OnStart",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnStart",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AppLifecycleObserverService",
+			"member": "OnUnhide",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnUnhide",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "DataStore",
+			"member": "ListVersionsAsync",
+			"part": "parameter",
+			"parameter": "minDate",
+			"before": "Date after which the versions should be listed.",
+			"after": "Unix timestamp in milliseconds after which the versions should be listed.",
+			"value": {
+				"Capabilities": [
+					"DataStore"
+				],
+				"MemberType": "Function",
+				"Name": "ListVersionsAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "Ascending",
+						"Name": "sortDirection",
+						"Type": {
+							"Category": "Enum",
+							"Name": "SortDirection"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "minDate",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "maxDate",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "pageSize",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "DataStoreVersionPages"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStore",
+			"member": "ListVersionsAsync",
+			"part": "parameter",
+			"parameter": "maxDate",
+			"before": "Date up to which the versions should be listed.",
+			"after": "Unix timestamp in milliseconds up to which the versions should be listed.",
+			"value": {
+				"Capabilities": [
+					"DataStore"
+				],
+				"MemberType": "Function",
+				"Name": "ListVersionsAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "Ascending",
+						"Name": "sortDirection",
+						"Type": {
+							"Category": "Enum",
+							"Name": "SortDirection"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "minDate",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "maxDate",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "pageSize",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "DataStoreVersionPages"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "MoverConstraintRootBehavior",
+			"part": "description",
+			"before": null,
+			"after": "Controls the logic used to select the assembly root part when using any of the mover constraints.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "MoverConstraintRootBehavior",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "MoverConstraintRootBehaviorMode"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "UIComponent",
+			"part": "description",
+			"before": "A base class for UI constraint and layout classes, inherits from <code>UiBase</code>.",
+			"after": "A base class for UI constraint and layout classes."
+		},
+		{
+			"element": "Class",
+			"class": "UIFlexItem",
+			"part": "description",
+			"before": null,
+			"after": "Defines flex behavior for a <code>GuiObject</code> within a <code>UIListLayout</code>."
+		},
+		{
+			"element": "Member",
+			"class": "UIFlexItem",
+			"member": "FlexMode",
+			"part": "description",
+			"before": null,
+			"after": "How the parent <code>GuiObject</code> grows or shrinks with available space in the flex layout's container.",
+			"value": {
+				"Category": "Appearance",
+				"Default": "None",
+				"MemberType": "Property",
+				"Name": "FlexMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "UIFlexMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIFlexItem",
+			"member": "GrowRatio",
+			"part": "description",
+			"before": null,
+			"after": "Determines the amount the parent <code>GuiObject</code> grows relative to other items in the line. Applies only if <code>FlexMode</code> is set to <code>UIFlexMode.Custom</code>.",
+			"value": {
+				"Category": "Appearance",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "GrowRatio",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIFlexItem",
+			"member": "ItemLineAlignment",
+			"part": "description",
+			"before": null,
+			"after": "Cross-axis alignment of the specific parent <code>GuiObject</code> within the flex line.",
+			"value": {
+				"Category": "Appearance",
+				"Default": "Automatic",
+				"MemberType": "Property",
+				"Name": "ItemLineAlignment",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ItemLineAlignment"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIFlexItem",
+			"member": "ShrinkRatio",
+			"part": "description",
+			"before": null,
+			"after": "Determines the amount the parent <code>GuiObject</code> shrinks relative to other items in the line. Applies only if <code>FlexMode</code> is set to <code>UIFlexMode.Custom</code>.",
+			"value": {
+				"Category": "Appearance",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "ShrinkRatio",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIGridStyleLayout",
+			"member": "FillDirection",
+			"part": "description",
+			"before": "Determines the axis in which UI elements are laid out.",
+			"after": "Determines the axis in which UI objects are laid out.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "FillDirection",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "FillDirection"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIGridStyleLayout",
+			"member": "SortOrder",
+			"part": "description",
+			"before": "Determines the manner in which the next UI element is chosen when being laid out.",
+			"after": "Determines the order in which child UI objects are placed in a layout.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "SortOrder",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "SortOrder"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "UIListLayout",
+			"part": "description",
+			"before": "Positions sibling UI elements in a single row.",
+			"after": "Positions sibling UI elements in rows or columns within the parent UI container."
+		},
+		{
+			"element": "Member",
+			"class": "UIListLayout",
+			"member": "HorizontalFlex",
+			"part": "description",
+			"before": null,
+			"after": "Controls how to distribute extra horizontal space.",
+			"value": {
+				"Category": "Data",
+				"Default": "None",
+				"MemberType": "Property",
+				"Name": "HorizontalFlex",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "UIFlexAlignment"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIListLayout",
+			"member": "ItemLineAlignment",
+			"part": "description",
+			"before": null,
+			"after": "In a flex layout, defines the cross-directional alignment of siblings within a line.",
+			"value": {
+				"Category": "Data",
+				"Default": "Automatic",
+				"MemberType": "Property",
+				"Name": "ItemLineAlignment",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ItemLineAlignment"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIListLayout",
+			"member": "Padding",
+			"part": "description",
+			"before": "Determines the amount of free space between each element.",
+			"after": "Amount of free space between each element.",
+			"value": {
+				"Category": "Appearance",
+				"Default": "0, 0",
+				"MemberType": "Property",
+				"Name": "Padding",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "UDim"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIListLayout",
+			"member": "VerticalFlex",
+			"part": "description",
+			"before": null,
+			"after": "Controls how to distribute extra vertical space.",
+			"value": {
+				"Category": "Data",
+				"Default": "None",
+				"MemberType": "Property",
+				"Name": "VerticalFlex",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "UIFlexAlignment"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIListLayout",
+			"member": "Wraps",
+			"part": "description",
+			"before": null,
+			"after": "Controls whether siblings within the parent container wrap.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "Wraps",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FillDirection",
+			"item": "Horizontal",
+			"part": "description",
+			"before": "Fill in the left to right direction.",
+			"after": "Fill in the left-to-right direction.",
+			"value": {
+				"Name": "Horizontal",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FillDirection",
+			"item": "Vertical",
+			"part": "description",
+			"before": "Fill in the top to bottom direction.",
+			"after": "Fill in the top-to-bottom direction.",
+			"value": {
+				"Name": "Vertical",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HorizontalAlignment",
+			"item": "Center",
+			"part": "description",
+			"before": "The grid is placed at the center of its parent (x-direction), extending equally to the left and right of the center according to the size of the grid relative to the x-axis.",
+			"after": "Grid is aligned to the center of its parent along the <strong>X</strong> axis.",
+			"value": {
+				"Name": "Center",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HorizontalAlignment",
+			"item": "Left",
+			"part": "description",
+			"before": "The grid is placed starting along the left edge of the parent, extending to the right according to the size of the grid relative to the x-axis.",
+			"after": "Grid is aligned to the left edge of its parent.",
+			"value": {
+				"Name": "Left",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HorizontalAlignment",
+			"item": "Right",
+			"part": "description",
+			"before": "The grid is placed starting along the left edge of the parent, extending to the left according to the size of the grid relative to the x-axis.",
+			"after": "Grid is aligned to the right edge of its parent.",
+			"value": {
+				"Name": "Right",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ItemLineAlignment",
+			"item": "Automatic",
+			"part": "description",
+			"before": null,
+			"after": "Aligns the siblings of the <code>UIListLayout</code> or the specific <code>UIFlexItem</code> parent to the layout's <code>HorizontalAlignment</code> or <code>VerticalAlignment</code>, depending on its <code>FillDirection</code>. If <code>HorizontalFlex</code> or <code>VerticalFlex</code> is enabled for the <code>UIListLayout</code> cross‑direction, <strong>Stretch</strong> will be used for that direction.",
+			"value": {
+				"Name": "Automatic",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ItemLineAlignment",
+			"item": "Start",
+			"part": "description",
+			"before": null,
+			"after": "Aligns the siblings of the <code>UIListLayout</code> or the specific <code>UIFlexItem</code> parent to the line's <strong>top</strong> in a horizontal fill or the line's <strong>left</strong> in a vertical fill.",
+			"value": {
+				"Name": "Start",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ItemLineAlignment",
+			"item": "Center",
+			"part": "description",
+			"before": null,
+			"after": "Aligns the siblings of the <code>UIListLayout</code> or the specific <code>UIFlexItem</code> parent to the line's <strong>center</strong> in either a horizontal or vertical fill.",
+			"value": {
+				"Name": "Center",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ItemLineAlignment",
+			"item": "End",
+			"part": "description",
+			"before": null,
+			"after": "Aligns the siblings of the <code>UIListLayout</code> or the specific <code>UIFlexItem</code> parent to the line's <strong>bottom</strong> in a horizontal fill or the line's <strong>right</strong> in a vertical fill.",
+			"value": {
+				"Name": "End",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ItemLineAlignment",
+			"item": "Stretch",
+			"part": "description",
+			"before": null,
+			"after": "Stretches the siblings of the <code>UIListLayout</code> or the specific <code>UIFlexItem</code> parent to fill the entire cross-direction of the line in either a horizontal or vertical fill.",
+			"value": {
+				"Name": "Stretch",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "MoverConstraintRootBehaviorMode",
+			"item": "Default",
+			"part": "description",
+			"before": null,
+			"after": "The default option for <code>Workspace.MoverConstraintRootBehavior</code>. Currently set to <strong>Disabled</strong>.",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "MoverConstraintRootBehaviorMode",
+			"item": "Disabled",
+			"part": "description",
+			"before": null,
+			"after": "The legacy logic will be used for assembly root part selection when a mechanism contains a mover constraint.",
+			"value": {
+				"Name": "Disabled",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "MoverConstraintRootBehaviorMode",
+			"item": "Enabled",
+			"part": "description",
+			"before": null,
+			"after": "Improved logic will be used for assembly root part selection when a mechanism contains a mover constraint. This improved logic gives more consistent behavior when compared with other constraints or the deprecated <code>BodyMover</code> classes.",
+			"value": {
+				"Name": "Enabled",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SortOrder",
+			"item": "Name",
+			"part": "description",
+			"before": "Elements will be ordered by their <code>Instance.Name</code> in alphabetical order (e.g. Apple will be placed before Banana).",
+			"after": "Elements are ordered by their <code>Instance.Name</code> in alphabetical order.",
+			"value": {
+				"Name": "Name",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SortOrder",
+			"item": "LayoutOrder",
+			"part": "description",
+			"before": "Elements will be ordered by <code>GuiObject.LayoutOrder</code> in ascending order (e.g. 0 will be placed before 1).",
+			"after": "Elements are ordered by <code>GuiObject.LayoutOrder</code> in ascending order; for example <code>0</code> will be placed before <code>1</code>.",
+			"value": {
+				"Name": "LayoutOrder",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UIFlexAlignment",
+			"item": "None",
+			"part": "description",
+			"before": null,
+			"after": "No flex behavior; siblings maintain their defined width or height.",
+			"value": {
+				"Name": "None",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UIFlexAlignment",
+			"item": "Fill",
+			"part": "description",
+			"before": null,
+			"after": "Siblings resize to fill the entire parent container, overriding their defined width or height.",
+			"value": {
+				"Name": "Fill",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UIFlexAlignment",
+			"item": "SpaceAround",
+			"part": "description",
+			"before": null,
+			"after": "Siblings maintain their defined width or height. Equal spacing is added <strong>between</strong> siblings, and half that spacing is added <strong>around</strong> siblings.",
+			"value": {
+				"Name": "SpaceAround",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UIFlexAlignment",
+			"item": "SpaceBetween",
+			"part": "description",
+			"before": null,
+			"after": "Siblings maintain their defined width or height. Equal spacing is added <strong>between</strong> siblings, but no additional space is added <strong>around</strong> siblings.",
+			"value": {
+				"Name": "SpaceBetween",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UIFlexAlignment",
+			"item": "SpaceEvenly",
+			"part": "description",
+			"before": null,
+			"after": "Siblings maintain their defined width or height. Equal spacing is added both <strong>between</strong> and <strong>around</strong> siblings.",
+			"value": {
+				"Name": "SpaceEvenly",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UIFlexMode",
+			"item": "None",
+			"part": "description",
+			"before": null,
+			"after": "The parent <code>GuiObject</code> is unaffected and neither shrinks nor grows.",
+			"value": {
+				"Name": "None",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UIFlexMode",
+			"item": "Grow",
+			"part": "description",
+			"before": null,
+			"after": "Sets an effective <strong>1:0</strong> grow‑shrink ratio on the parent <code>GuiObject</code>. Objects set to <strong>Grow</strong> never shrink below their basis size, so overflow may occur if the container becomes smaller than the flex line's combined basis size.",
+			"value": {
+				"Name": "Grow",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UIFlexMode",
+			"item": "Shrink",
+			"part": "description",
+			"before": null,
+			"after": "Sets an effective <strong>0:1</strong> grow‑shrink ratio on the parent <code>GuiObject</code>. Objects set to <strong>Shrink</strong> never grow above their basis size, so underflow may occur if the container becomes larger than the flex line's combined basis size.",
+			"value": {
+				"Name": "Shrink",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UIFlexMode",
+			"item": "Fill",
+			"part": "description",
+			"before": null,
+			"after": "Sets an effective <strong>1:1</strong> grow‑shrink ratio on the parent <code>GuiObject</code>. This setting ensures the flex line always fills the container, even if the container size changes.",
+			"value": {
+				"Name": "Fill",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UIFlexMode",
+			"item": "Custom",
+			"part": "description",
+			"before": null,
+			"after": "Enables the <code>GrowRatio</code> and <code>ShrinkRatio</code> properties for the <code>UIFlexItem</code>, allowing for relative growth or shrinking of the parent <code>GuiObject</code> in a ratio compared to other flex objects also under control of a <code>UIFlexItem</code>.",
+			"value": {
+				"Name": "Custom",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "VerticalAlignment",
+			"item": "Center",
+			"part": "description",
+			"before": "Center of the grid.",
+			"after": "Grid is aligned to the center of its parent along the <strong>Y</strong> axis.",
+			"value": {
+				"Name": "Center",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "VerticalAlignment",
+			"item": "Top",
+			"part": "description",
+			"before": "Top of the grid.",
+			"after": "Grid is aligned to the top edge of its parent.",
+			"value": {
+				"Name": "Top",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "VerticalAlignment",
+			"item": "Bottom",
+			"part": "description",
+			"before": "Bottom of the grid.",
+			"after": "Grid is aligned to the bottom edge of its parent.",
+			"value": {
+				"Name": "Bottom",
+				"Value": 2
+			}
+		}
+	]
+}

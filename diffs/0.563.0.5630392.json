@@ -1,0 +1,1512 @@
+{
+	"from": {
+		"version": "0.562.0.5620360",
+		"hash": "aa38aa84df2a4912"
+	},
+	"to": {
+		"version": "0.563.0.5630392",
+		"hash": "55764e68d3cb46c2"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "GetActor",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ThreadSafety",
+					"before": "Unsafe",
+					"after": "Safe"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetActor",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Actor"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetDeliveryProxy",
+			"member": "Interface",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "__api_dump_skipped_class__",
+					"after": ""
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "Interface",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetDeliveryProxy",
+			"member": "Port",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "__api_dump_skipped_class__",
+					"after": "0"
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "Port",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetDeliveryProxy",
+			"member": "StartServer",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "__api_dump_skipped_class__",
+					"after": "false"
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "StartServer",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportService",
+			"member": "StartSessionWithPath",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "StartSessionWithPath",
+				"Parameters": [
+					{
+						"Name": "filePath",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "AssetImportSession"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportService",
+			"member": "PickMultipleFilesWithPrompt",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PickMultipleFilesWithPrompt",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Highlight",
+			"member": "LineThickness",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "975332724",
+					"after": "0"
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "LineThickness",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LiveScriptingService",
+			"member": "SendOperation",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "script",
+							"Type": {
+								"Category": "Class",
+								"Name": "LuaSourceContainer"
+							}
+						},
+						{
+							"Name": "op",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "script",
+							"Type": {
+								"Category": "Class",
+								"Name": "LuaSourceContainer"
+							}
+						},
+						{
+							"Name": "op",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "SendOperation",
+				"Parameters": [
+					{
+						"Name": "script",
+						"Type": {
+							"Category": "Class",
+							"Name": "LuaSourceContainer"
+						}
+					},
+					{
+						"Name": "op",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ReflectionMetadataClass",
+			"member": "InsertableService",
+			"type": "Remove",
+			"value": {
+				"Category": "Reflection",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "InsertableService",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AssetSoundEffect",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Superclass",
+					"before": "SoundEffect",
+					"after": "CustomSoundEffect"
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AssetSoundEffect",
+				"Superclass": "CustomSoundEffect",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Auto Delete Closing Brackets and Quotes",
+			"type": "Add",
+			"value": {
+				"Category": "Script Editor",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Auto Delete Closing Brackets and Quotes",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "MouseIcon",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "MouseIcon",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PatchMapping",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "PatchMapping",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PatchMapping",
+			"member": "FlattenTree",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "FlattenTree",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PatchMapping",
+			"member": "PatchId",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "PatchId",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PatchMapping",
+			"member": "TargetPath",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "TargetPath",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "SafetyService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "SafetyService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SafetyService",
+			"member": "TakeScreenshot",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "TakeScreenshot",
+				"Parameters": [
+					{
+						"Name": "screenshotOptions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SafetyService",
+			"member": "ScreenshotContentReady",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ScreenshotContentReady",
+				"Parameters": [
+					{
+						"Name": "screenshotJobId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "contentId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TeamCreatePublishService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "TeamCreatePublishService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TeamCreatePublishService",
+			"member": "TeamCreatePublishResult",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "TeamCreatePublishResult",
+				"Parameters": [
+					{
+						"Name": "publishSuccessful",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "statusCode",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "errMessage",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "rawMessage",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TeamCreatePublishService",
+			"member": "TeamCreateReplicatedMessage",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "TeamCreateReplicatedMessage",
+				"Parameters": [
+					{
+						"Name": "messageType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "MessageType"
+						}
+					},
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "printToStatusBar",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "statusCode",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "isPublish",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "authorName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TeamCreatePublishService",
+			"member": "TeamCreateSaveResult",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "TeamCreateSaveResult",
+				"Parameters": [
+					{
+						"Name": "saveSuccessful",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "statusCode",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "errMessage",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "rawMessage",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CatalogSortType",
+			"item": "Bestselling",
+			"type": "Add",
+			"value": {
+				"Name": "Bestselling",
+				"Value": 7
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ExperienceAuthScope",
+			"item": "DefaultScope",
+			"type": "Add",
+			"value": {
+				"Name": "DefaultScope",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ExperienceAuthScope",
+			"item": "CreatorAssetsCreate",
+			"type": "Add",
+			"value": {
+				"Name": "CreatorAssetsCreate",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RaycastFilterType",
+			"item": "Blacklist",
+			"type": "Remove",
+			"value": {
+				"LegacyNames": [
+					"Exclude"
+				],
+				"Name": "Blacklist",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RaycastFilterType",
+			"item": "Whitelist",
+			"type": "Remove",
+			"value": {
+				"LegacyNames": [
+					"Include"
+				],
+				"Name": "Whitelist",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RaycastFilterType",
+			"item": "Exclude",
+			"type": "Add",
+			"value": {
+				"LegacyNames": [
+					"Blacklist"
+				],
+				"Name": "Exclude",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RaycastFilterType",
+			"item": "Include",
+			"type": "Add",
+			"value": {
+				"LegacyNames": [
+					"Whitelist"
+				],
+				"Name": "Include",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ScopeCheckResult",
+			"item": "ConsentAccepted",
+			"type": "Add",
+			"value": {
+				"Name": "ConsentAccepted",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ScopeCheckResult",
+			"item": "InvalidScopes",
+			"type": "Add",
+			"value": {
+				"Name": "InvalidScopes",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ScopeCheckResult",
+			"item": "Timeout",
+			"type": "Add",
+			"value": {
+				"Name": "Timeout",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ScopeCheckResult",
+			"item": "NoUserInput",
+			"type": "Add",
+			"value": {
+				"Name": "NoUserInput",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ScopeCheckResult",
+			"item": "BackendError",
+			"type": "Add",
+			"value": {
+				"Name": "BackendError",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ScopeCheckResult",
+			"item": "UnexpectedError",
+			"type": "Add",
+			"value": {
+				"Name": "UnexpectedError",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ScopeCheckResult",
+			"item": "InvalidArgument",
+			"type": "Add",
+			"value": {
+				"Name": "InvalidArgument",
+				"Value": 6
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "CatalogSortAggregation",
+			"type": "Add",
+			"value": {
+				"Name": "CatalogSortAggregation"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CatalogSortAggregation",
+			"item": "Past12Hours",
+			"type": "Add",
+			"value": {
+				"Name": "Past12Hours",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CatalogSortAggregation",
+			"item": "PastDay",
+			"type": "Add",
+			"value": {
+				"Name": "PastDay",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CatalogSortAggregation",
+			"item": "Past3Days",
+			"type": "Add",
+			"value": {
+				"Name": "Past3Days",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CatalogSortAggregation",
+			"item": "PastWeek",
+			"type": "Add",
+			"value": {
+				"Name": "PastWeek",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CatalogSortAggregation",
+			"item": "PastMonth",
+			"type": "Add",
+			"value": {
+				"Name": "PastMonth",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CatalogSortAggregation",
+			"item": "AllTime",
+			"type": "Add",
+			"value": {
+				"Name": "AllTime",
+				"Value": 6
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "SalesTypeFilter",
+			"type": "Add",
+			"value": {
+				"Name": "SalesTypeFilter"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SalesTypeFilter",
+			"item": "All",
+			"type": "Add",
+			"value": {
+				"Name": "All",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SalesTypeFilter",
+			"item": "Collectibles",
+			"type": "Add",
+			"value": {
+				"Name": "Collectibles",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SalesTypeFilter",
+			"item": "Premium",
+			"type": "Add",
+			"value": {
+				"Name": "Premium",
+				"Value": 3
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Class",
+			"class": "PlayerMouse",
+			"part": "description",
+			"before": "The PlayerMouse behaves identically to the <code>Mouse</code> object that is obtained using <code>Tool.Equipped</code>. It can be accessed from <code>LocalScript</code>s using the local player's <code>Player:GetMouse()</code> method.",
+			"after": "The PlayerMouse behaves identically to the <code>Mouse</code> object that is obtained using <code>Tool.Equipped</code>. Both PlayerMouse and <code>Mouse</code> are legacy APIs, superseded by <code>UserInputService</code>."
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "Brightness",
+			"part": "description",
+			"before": null,
+			"after": "Scales the light emitted from the emitter when <code>ParticleEmitter.LightInfluence</code> is 0.",
+			"value": {
+				"Category": "Appearance",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "Brightness",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "Color",
+			"part": "description",
+			"before": "Determines the color of all particles emit over their individual lifetimes.",
+			"after": "Determines the color of all active particles over their individual lifetimes.",
+			"value": {
+				"Category": "Appearance",
+				"Default": "0 1 1 1 0 1 1 1 1 0 ",
+				"MemberType": "Property",
+				"Name": "Color",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "ColorSequence"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "EmissionDirection",
+			"part": "description",
+			"before": "Determines the face towards which particles will be emit.",
+			"after": "Determines the face of the object that particles emit from.",
+			"value": {
+				"Category": "Emission",
+				"Default": "Top",
+				"MemberType": "Property",
+				"Name": "EmissionDirection",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "NormalId"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "Enabled",
+			"part": "description",
+			"before": "Determines whether particles ought to be emit.",
+			"after": "Determines if particles emit from the emitter.",
+			"value": {
+				"Category": "Emission",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "Enabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "Lifetime",
+			"part": "description",
+			"before": "Defines a random range of ages for newly emit particles.",
+			"after": "Defines a random range of ages for newly emitted particles.",
+			"value": {
+				"Category": "Emission",
+				"Default": "5 10 ",
+				"MemberType": "Property",
+				"Name": "Lifetime",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "NumberRange"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "Rate",
+			"part": "description",
+			"before": "Determines the number of particles emit per second.",
+			"after": "Determines the number of particles emitted per second.",
+			"value": {
+				"Category": "Emission",
+				"Default": "20",
+				"MemberType": "Property",
+				"Name": "Rate",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "RotSpeed",
+			"part": "description",
+			"before": "Determines the range of angular speeds emitted particles, measured in degrees per second.",
+			"after": "Determines the range of angular speeds of emitted particles, measured in degrees per second.",
+			"value": {
+				"Category": "Emission",
+				"Default": "0 0 ",
+				"MemberType": "Property",
+				"Name": "RotSpeed",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "NumberRange"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "Rotation",
+			"part": "description",
+			"before": "Determines the range of rotations in degrees for a newly emit particles.",
+			"after": "Determines the range of rotations in degrees for newly emitted particles.",
+			"value": {
+				"Category": "Emission",
+				"Default": "0 0 ",
+				"MemberType": "Property",
+				"Name": "Rotation",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "NumberRange"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "Shape",
+			"part": "description",
+			"before": null,
+			"after": "Sets the shape of the emitter to either a box, sphere, cylinder, or disc.",
+			"value": {
+				"Category": "EmitterShape",
+				"Default": "Box",
+				"MemberType": "Property",
+				"Name": "Shape",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ParticleEmitterShape"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "ShapeInOut",
+			"part": "description",
+			"before": null,
+			"after": "Sets whether particles emit outward only, inward only, or in both directions.",
+			"value": {
+				"Category": "EmitterShape",
+				"Default": "Outward",
+				"MemberType": "Property",
+				"Name": "ShapeInOut",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ParticleEmitterShapeInOut"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "ShapePartial",
+			"part": "description",
+			"before": null,
+			"after": "Influences particle emission from cylinder, disc, sphere, and box shapes.",
+			"value": {
+				"Category": "EmitterShape",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "ShapePartial",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "ShapeStyle",
+			"part": "description",
+			"before": null,
+			"after": "Sets particle emission to either volumetric or surface-only emission.",
+			"value": {
+				"Category": "EmitterShape",
+				"Default": "Volume",
+				"MemberType": "Property",
+				"Name": "ShapeStyle",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ParticleEmitterShapeStyle"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "Speed",
+			"part": "description",
+			"before": "Determines the random range of speeds a new particle will have when emit, measured in studs per second.",
+			"after": "Determines a random range of speeds a new particle can have upon emission, measured in studs per second.",
+			"value": {
+				"Category": "Emission",
+				"Default": "5 5 ",
+				"MemberType": "Property",
+				"Name": "Speed",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "NumberRange"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "Squash",
+			"part": "description",
+			"before": null,
+			"after": "Allows for non-uniform scaling of a particle, curve-controlled over the particle's lifetime.",
+			"value": {
+				"Category": "Appearance",
+				"Default": "0 0 0 1 0 0 ",
+				"MemberType": "Property",
+				"Name": "Squash",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "NumberSequence"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "Clear",
+			"part": "description",
+			"before": "Clears all particles that have been emit.",
+			"after": "Clears all particles that have been emitted.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Clear",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChannel",
+			"member": "DisplaySystemMessage",
+			"part": "parameter",
+			"parameter": "metadata",
+			"before": "Used to identify system message types, such as the default system messages.",
+			"after": "Use to identify system message types, such as the default system messages.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DisplaySystemMessage",
+				"Parameters": [
+					{
+						"Name": "systemMessage",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "metadata",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "TextChatMessage"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChannel",
+			"member": "MessageReceived",
+			"part": "description",
+			"before": "Fires when a <code>TextChannel:SendAsync()</code> response is received by the server or <code>TextChannel:DisplaySystemMessage()</code> is invoked.",
+			"after": "Fires when the server receives a <code>TextChannel:SendAsync()</code> response or invokes <code>TextChannel:DisplaySystemMessage()</code>.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "MessageReceived",
+				"Parameters": [
+					{
+						"Name": "incomingMessage",
+						"Type": {
+							"Category": "Class",
+							"Name": "TextChatMessage"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChannel",
+			"member": "OnIncomingMessage",
+			"part": "description",
+			"before": "Called when <code>TextChatService</code> is receiving an incoming message.",
+			"after": "Called when <code>TextChannel</code> is receiving an incoming message.",
+			"value": {
+				"MemberType": "Callback",
+				"Name": "OnIncomingMessage",
+				"Parameters": [
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Class",
+							"Name": "TextChatMessage"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChannel",
+			"member": "ShouldDeliverCallback",
+			"part": "description",
+			"before": null,
+			"after": "Called when <code>TextChannel</code> is receiving an incoming message to determine whether or not it should be delivered to other clients.",
+			"value": {
+				"MemberType": "Callback",
+				"Name": "ShouldDeliverCallback",
+				"Parameters": [
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Class",
+							"Name": "TextChatMessage"
+						}
+					},
+					{
+						"Name": "textSource",
+						"Type": {
+							"Category": "Class",
+							"Name": "TextSource"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TextChatConfigurations",
+			"part": "description",
+			"before": null,
+			"after": "The parental class of all text chat configurations."
+		},
+		{
+			"element": "Member",
+			"class": "UserGameSettings",
+			"member": "MouseSensitivity",
+			"part": "description",
+			"before": "A float between 0 and 100 representing the sensitivity of the client's mouse.",
+			"after": "A float between 0 and 4 representing the sensitivity of the client's camera sensitivity.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "MouseSensitivity",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		}
+	]
+}

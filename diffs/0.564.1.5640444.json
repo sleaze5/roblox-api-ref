@@ -1,0 +1,1587 @@
+{
+	"from": {
+		"version": "0.563.0.5630392",
+		"hash": "55764e68d3cb46c2"
+	},
+	"to": {
+		"version": "0.564.1.5640444",
+		"hash": "5c8fde006f744898"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AssetImportSession",
+			"member": "IsR15",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsR15",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "NoPromptSaveAvatarThumbnailCustomization",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "thumbnailType",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "emoteAssetId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "cameraDistanceScale",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						},
+						{
+							"Name": "yRotDeg",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						},
+						{
+							"Default": "0",
+							"Name": "fieldOfViewDeg",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "thumbnailType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "AvatarThumbnailCustomizationType"
+							}
+						},
+						{
+							"Name": "emoteAssetId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "cameraDistanceScale",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						},
+						{
+							"Name": "yRotDeg",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						},
+						{
+							"Default": "0",
+							"Name": "fieldOfViewDeg",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "NoPromptSaveAvatarThumbnailCustomization",
+				"Parameters": [
+					{
+						"Name": "thumbnailType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AvatarThumbnailCustomizationType"
+						}
+					},
+					{
+						"Name": "emoteAssetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "cameraDistanceScale",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "yRotDeg",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "fieldOfViewDeg",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "BackpackItem",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "Instances",
+					"after": "PhysicsParts"
+				},
+				{
+					"field": "Superclass",
+					"before": "Instance",
+					"after": "Model"
+				}
+			],
+			"value": {
+				"MemoryCategory": "PhysicsParts",
+				"Name": "BackpackItem",
+				"Superclass": "Model",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "HopperBin",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "Instances",
+					"after": "PhysicsParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "PhysicsParts",
+				"Name": "HopperBin",
+				"Superclass": "BackpackItem",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Tool",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "Instances",
+					"after": "PhysicsParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "PhysicsParts",
+				"Name": "Tool",
+				"Superclass": "BackpackItem"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Flag",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "Instances",
+					"after": "PhysicsParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "PhysicsParts",
+				"Name": "Flag",
+				"Superclass": "Tool",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterGui",
+			"member": "RtlTextSupport",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "RtlTextSupport",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "RtlTextSupport"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContentProvider",
+			"member": "GetAssetFetchStatus",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAssetFetchStatus",
+				"Parameters": [
+					{
+						"Name": "contentId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "AssetFetchStatus"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContentProvider",
+			"member": "GetAssetFetchStatusChangedSignal",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAssetFetchStatusChangedSignal",
+				"Parameters": [
+					{
+						"Name": "contentId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RBXScriptSignal"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AirController",
+			"member": "CancelAirMomentum",
+			"type": "Remove",
+			"value": {
+				"Category": "Movement",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "CancelAirMomentum",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DynamicTextureAlpha",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "DynamicTextureAlpha",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DynamicTextureLayerAlpha",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "DynamicTextureLayerAlpha",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStore",
+			"member": "ListKeysAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Default": "",
+							"Name": "prefix",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "0",
+							"Name": "pageSize",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Default": "",
+							"Name": "cursor",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Default": "",
+							"Name": "prefix",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "0",
+							"Name": "pageSize",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Default": "",
+							"Name": "cursor",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "false",
+							"Name": "excludeDeleted",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "ListKeysAsync",
+				"Parameters": [
+					{
+						"Default": "",
+						"Name": "prefix",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "pageSize",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "cursor",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "false",
+						"Name": "excludeDeleted",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "DataStoreKeyPages"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImporterRootSettings",
+			"member": "RigScale",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "RigScale",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "RigScale"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImporterRootSettings",
+			"member": "UseSceneOriginAsCFrame",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "UseSceneOriginAsCFrame",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "BreakJoints",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "BreakJoints",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "MakeJoints",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "MakeJoints",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "IntersectAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IntersectAsync",
+				"Parameters": [
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					},
+					{
+						"Default": "Default",
+						"Name": "collisionfidelity",
+						"Type": {
+							"Category": "Enum",
+							"Name": "CollisionFidelity"
+						}
+					},
+					{
+						"Default": "Automatic",
+						"Name": "renderFidelity",
+						"Type": {
+							"Category": "Enum",
+							"Name": "RenderFidelity"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "BreakJoints",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "BreakJoints",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "MakeJoints",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "MakeJoints",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "BreakJoints",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "BreakJoints",
+				"Parameters": [
+					{
+						"Name": "objects",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "MakeJoints",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "MakeJoints",
+				"Parameters": [
+					{
+						"Name": "objects",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ReflectionMetadataClass",
+			"member": "ServiceVisibility",
+			"type": "Add",
+			"value": {
+				"Category": "Reflection",
+				"Default": "Always",
+				"MemberType": "Property",
+				"Name": "ServiceVisibility",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ServiceVisibility"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TextureGuiExperimental",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "TextureGuiExperimental",
+				"Superclass": "LayerCollector",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextureGuiExperimental",
+			"member": "Size",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Size",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextureGuiExperimental",
+			"member": "TemporaryId",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "TemporaryId",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ImageDataExperimental",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ImageDataExperimental",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImageDataExperimental",
+			"member": "Size",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Size",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImageDataExperimental",
+			"member": "TemporaryId",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "TemporaryId",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImageDataExperimental",
+			"member": "PopulateFromImageAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PopulateFromImageAsync",
+				"Parameters": [
+					{
+						"Name": "textureId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "IntersectOperation",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "IntersectOperation",
+				"Superclass": "PartOperation"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PatchBundlerFileWatch",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "PatchBundlerFileWatch",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "SyncScriptBuilder",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "SyncScriptBuilder",
+				"Superclass": "ScriptBuilder",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SyncScriptBuilder",
+			"member": "CoverageInfo",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "CoverageInfo",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SyncScriptBuilder",
+			"member": "DebugInfo",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "DebugInfo",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SyncScriptBuilder",
+			"member": "PackAsSource",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "PackAsSource",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SyncScriptBuilder",
+			"member": "RawBytecode",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "RawBytecode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "SharedTableRegistry",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "SharedTableRegistry",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SharedTableRegistry",
+			"member": "GetSharedTable",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetSharedTable",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "SharedTable"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SharedTableRegistry",
+			"member": "SetSharedTable",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetSharedTable",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "st",
+						"Type": {
+							"Category": "DataType",
+							"Name": "SharedTable?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetFetchStatus",
+			"item": "None",
+			"type": "Add",
+			"value": {
+				"Name": "None",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetFetchStatus",
+			"item": "Loading",
+			"type": "Add",
+			"value": {
+				"Name": "Loading",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetFetchStatus",
+			"item": "TimedOut",
+			"type": "Add",
+			"value": {
+				"Name": "TimedOut",
+				"Value": 4
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AvatarThumbnailCustomizationType",
+			"type": "Add",
+			"value": {
+				"Name": "AvatarThumbnailCustomizationType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarThumbnailCustomizationType",
+			"item": "Closeup",
+			"type": "Add",
+			"value": {
+				"Name": "Closeup",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarThumbnailCustomizationType",
+			"item": "FullBody",
+			"type": "Add",
+			"value": {
+				"Name": "FullBody",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "RigScale",
+			"type": "Add",
+			"value": {
+				"Name": "RigScale"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RigScale",
+			"item": "Default",
+			"type": "Add",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RigScale",
+			"item": "Rthro",
+			"type": "Add",
+			"value": {
+				"Name": "Rthro",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RigScale",
+			"item": "RthroNarrow",
+			"type": "Add",
+			"value": {
+				"Name": "RthroNarrow",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "RtlTextSupport",
+			"type": "Add",
+			"value": {
+				"Name": "RtlTextSupport"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RtlTextSupport",
+			"item": "Default",
+			"type": "Add",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RtlTextSupport",
+			"item": "Disabled",
+			"type": "Add",
+			"value": {
+				"Name": "Disabled",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RtlTextSupport",
+			"item": "Enabled",
+			"type": "Add",
+			"value": {
+				"Name": "Enabled",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ServiceVisibility",
+			"type": "Add",
+			"value": {
+				"Name": "ServiceVisibility"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ServiceVisibility",
+			"item": "Always",
+			"type": "Add",
+			"value": {
+				"Name": "Always",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ServiceVisibility",
+			"item": "Off",
+			"type": "Add",
+			"value": {
+				"Name": "Off",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ServiceVisibility",
+			"item": "WithChildren",
+			"type": "Add",
+			"value": {
+				"Name": "WithChildren",
+				"Value": 2
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "ModelStreamingMode",
+			"part": "description",
+			"before": null,
+			"after": "Controls the model streaming behavior on <code>Model</code> instances when streaming is enabled.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "Default",
+				"MemberType": "Property",
+				"Name": "ModelStreamingMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ModelStreamingMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "AddPersistentPlayer",
+			"part": "description",
+			"before": null,
+			"after": "Sets this model to be persistent for the specified player. <code>Model.ModelStreamingMode</code> must be set to <strong>PersistentPerPlayer</strong> for behavior to be changed as a result of addition.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddPersistentPlayer",
+				"Parameters": [
+					{
+						"Default": "nil",
+						"Name": "playerInstance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "RemovePersistentPlayer",
+			"part": "description",
+			"before": null,
+			"after": "Makes this model no longer persistent for specified player. <code>Model.ModelStreamingMode</code> must be set to <strong>PersistentPerPlayer</strong> for behavior to be changed as a result of removal.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RemovePersistentPlayer",
+				"Parameters": [
+					{
+						"Default": "nil",
+						"Name": "playerInstance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "PersistentLoaded",
+			"part": "description",
+			"before": null,
+			"after": "Fires when persistent models have been sent to the specified player.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PersistentLoaded",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "CharacterAppearanceLoaded",
+			"part": "description",
+			"before": "Fires when the full appearance of a <code>Player</code>'s <code>Player.Character</code> has been inserted.",
+			"after": "Fires when the full appearance of a <code>Player.Character</code> has been inserted.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "CharacterAppearanceLoaded",
+				"Parameters": [
+					{
+						"Name": "character",
+						"Type": {
+							"Category": "Class",
+							"Name": "Model"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "VoiceChatService",
+			"part": "description",
+			"before": null,
+			"after": "<strong>VoiceChatService</strong> holds voice functions not tied to other instances."
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ModelLevelOfDetail",
+			"item": "Automatic",
+			"part": "description",
+			"before": null,
+			"after": "Default behavior, currently equivalent to <strong>Disabled</strong>.",
+			"value": {
+				"Name": "Automatic",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ModelLevelOfDetail",
+			"item": "StreamingMesh",
+			"part": "description",
+			"before": null,
+			"after": "A low resolution mesh will be displayed when any descendant of a <code>Model</code> with this setting is not streamed in.",
+			"value": {
+				"Name": "StreamingMesh",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ModelLevelOfDetail",
+			"item": "Disabled",
+			"part": "description",
+			"before": null,
+			"after": "No low level-of-detail mesh will be displayed.",
+			"value": {
+				"Name": "Disabled",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ModelStreamingMode",
+			"item": "Default",
+			"part": "description",
+			"before": null,
+			"after": "Engine determines best behavior. Currently equivalent to <strong>Nonatomic</strong>.",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ModelStreamingMode",
+			"item": "Atomic",
+			"part": "description",
+			"before": null,
+			"after": "The <code>Model</code> and all of its descendants are streamed in/out together. For streaming in, this applies when <strong>any</strong> descendant <code>BasePart</code> is eligible for streaming in. For streaming out, this applies when <strong>all</strong> descendant <code>BaseParts</code> are eligible for streaming out.",
+			"value": {
+				"Name": "Atomic",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ModelStreamingMode",
+			"item": "Persistent",
+			"part": "description",
+			"before": null,
+			"after": "Persistent models are sent as a complete atomic unit soon after the player joins and before the <code>Workspace.PersistentLoaded</code> event fires. Persistent models and their descendants are never streamed out.",
+			"value": {
+				"Name": "Persistent",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ModelStreamingMode",
+			"item": "PersistentPerPlayer",
+			"part": "description",
+			"before": null,
+			"after": "Behaves as a persistent model for players that have been added using <code>Model:AddPersistentPlayer()</code>. For other players, behavior is the same as <strong>Atomic</strong>. You can revert a model from player persistence via <code>Model:RemovePersistentPlayer()</code>.",
+			"value": {
+				"Name": "PersistentPerPlayer",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ModelStreamingMode",
+			"item": "Nonatomic",
+			"part": "description",
+			"before": null,
+			"after": "When a nonatomic model is streamed, descendants are also sent, except for part descendants. Nonatomic models that are not descendants of parts are sent during experience loading.",
+			"value": {
+				"Name": "Nonatomic",
+				"Value": 4
+			}
+		}
+	]
+}

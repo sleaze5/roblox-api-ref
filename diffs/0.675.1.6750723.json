@@ -1,0 +1,1972 @@
+{
+	"from": {
+		"version": "0.674.0.6740785",
+		"hash": "6dbf1fd58a49447c"
+	},
+	"to": {
+		"version": "0.675.1.6750723",
+		"hash": "9a1e7554d93c459d"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AdService",
+			"member": "ShowRewardedVideoAdAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "player",
+							"Type": {
+								"Category": "Class",
+								"Name": "Player"
+							}
+						},
+						{
+							"Name": "reward",
+							"Type": {
+								"Category": "DataType",
+								"Name": "AdReward"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "player",
+							"Type": {
+								"Category": "Class",
+								"Name": "Player"
+							}
+						},
+						{
+							"Name": "reward",
+							"Type": {
+								"Category": "DataType",
+								"Name": "AdReward"
+							}
+						},
+						{
+							"Name": "placementId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64?"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "ShowRewardedVideoAdAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "reward",
+						"Type": {
+							"Category": "DataType",
+							"Name": "AdReward"
+						}
+					},
+					{
+						"Name": "placementId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "ShowAdResult"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AudioChannelMixer",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemoryCategory": "Internal",
+				"Name": "AudioChannelMixer",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AudioChannelSplitter",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemoryCategory": "Internal",
+				"Name": "AudioChannelSplitter",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "AutoSetupAvatarAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "None"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "AutoSetupAvatarAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "model",
+						"Type": {
+							"Category": "Class",
+							"Name": "Model"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "VideoCaptureInProgress",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "isInProgress",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "isInProgress",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "captureTrigger",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "VideoCaptureInProgress",
+				"Parameters": [
+					{
+						"Name": "isInProgress",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "captureTrigger",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "DeleteVideoCapture",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DeleteVideoCapture",
+				"Parameters": [
+					{
+						"Name": "videoCapture",
+						"Type": {
+							"Category": "Class",
+							"Name": "VideoCapture"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "OnVideoCaptureShared",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "OnVideoCaptureShared",
+				"Parameters": [
+					{
+						"Name": "videoCapture",
+						"Type": {
+							"Category": "Class",
+							"Name": "VideoCapture"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "SaveVideoCaptureToExternalStorage",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SaveVideoCaptureToExternalStorage",
+				"Parameters": [
+					{
+						"Name": "videoCapture",
+						"Type": {
+							"Category": "Class",
+							"Name": "VideoCapture"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "ShorelinesUpgraded",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "true",
+					"after": "false"
+				}
+			],
+			"value": {
+				"Category": "Appearance",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "ShorelinesUpgraded",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "ClearVoxelsAsync_beta",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ClearVoxelsAsync_beta",
+				"Parameters": [
+					{
+						"Name": "region",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Region3"
+						}
+					},
+					{
+						"Name": "channelIds",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "IterateVoxelsAsync_beta",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IterateVoxelsAsync_beta",
+				"Parameters": [
+					{
+						"Name": "region",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Region3"
+						}
+					},
+					{
+						"Name": "resolution",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "channelIds",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "TerrainIterateOperation"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "ModifyVoxelsAsync_beta",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ModifyVoxelsAsync_beta",
+				"Parameters": [
+					{
+						"Name": "region",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Region3"
+						}
+					},
+					{
+						"Name": "resolution",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "channelIds",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "TerrainModifyOperation"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "ReadVoxelsAsync_beta",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ReadVoxelsAsync_beta",
+				"Parameters": [
+					{
+						"Name": "region",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Region3"
+						}
+					},
+					{
+						"Name": "resolution",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "channelIds",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "TerrainReadOperation"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "WriteVoxelsAsync_beta",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "WriteVoxelsAsync_beta",
+				"Parameters": [
+					{
+						"Name": "region",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Region3"
+						}
+					},
+					{
+						"Name": "resolution",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "channelIds",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "TerrainWriteOperation"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PartOperation",
+			"member": "ManifoldMesh",
+			"type": "Remove",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic",
+						"CSG"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "ManifoldMesh",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "SharedString"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PartOperation",
+			"member": "ManifoldMesh_DEPRECATED",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic",
+						"CSG"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "ManifoldMesh_DEPRECATED",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated",
+					"NotScriptable",
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "SharedString"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "PinStreamingForInstance",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Players"
+				],
+				"MemberType": "Function",
+				"Name": "PinStreamingForInstance",
+				"Parameters": [
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "depth",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "UnpinStreamingForInstance",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Players"
+				],
+				"MemberType": "Function",
+				"Name": "UnpinStreamingForInstance",
+				"Parameters": [
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "depth",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "PinStreamingStart",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Players"
+				],
+				"MemberType": "Event",
+				"Name": "PinStreamingStart",
+				"Parameters": [
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "depth",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "RequestStreamingPin",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Players"
+				],
+				"MemberType": "Event",
+				"Name": "RequestStreamingPin",
+				"Parameters": [
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "depth",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "StreamingPinComplete",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Players"
+				],
+				"MemberType": "Event",
+				"Name": "StreamingPinComplete",
+				"Parameters": [
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "UnpinStreaming",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Players"
+				],
+				"MemberType": "Event",
+				"Name": "UnpinStreaming",
+				"Parameters": [
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "depth",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextFilterResult",
+			"member": "GetChatForUserAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Yields"
+					],
+					"after": [
+						"Yields",
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Capabilities": [
+					"UI"
+				],
+				"MemberType": "Function",
+				"Name": "GetChatForUserAsync",
+				"Parameters": [
+					{
+						"Name": "toUserId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields",
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "PreferredInput",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Input"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "PreferredInput",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "PreferredInput"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "SlimContentProvider",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "SlimContentProvider",
+				"Superclass": "CacheableContentProvider",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SlimContentProvider",
+			"member": "GetContentMemoryData",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetContentMemoryData",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TerrainIterateOperation",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "TerrainIterateOperation",
+				"Superclass": "Object",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TerrainIterateOperation",
+			"member": "CommitBlock",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CommitBlock",
+				"Parameters": [
+					{
+						"Name": "block",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RBXScriptSignal"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TerrainIterateOperation",
+			"member": "Ready",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Ready",
+				"Parameters": [
+					{
+						"Name": "block",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TerrainModifyOperation",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "TerrainModifyOperation",
+				"Superclass": "Object",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TerrainModifyOperation",
+			"member": "CommitBlock",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CommitBlock",
+				"Parameters": [
+					{
+						"Name": "block",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RBXScriptSignal"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TerrainModifyOperation",
+			"member": "Ready",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Ready",
+				"Parameters": [
+					{
+						"Name": "block",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TerrainReadOperation",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "TerrainReadOperation",
+				"Superclass": "Object",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TerrainReadOperation",
+			"member": "Ready",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Ready",
+				"Parameters": [
+					{
+						"Name": "block",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TerrainWriteOperation",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "TerrainWriteOperation",
+				"Superclass": "Object",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TerrainWriteOperation",
+			"member": "CommitBlock",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CommitBlock",
+				"Parameters": [
+					{
+						"Name": "block",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RBXScriptSignal"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TerrainWriteOperation",
+			"member": "GetBlock",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBlock",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DeveloperMemoryTag",
+			"item": "GraphicsSlimModels",
+			"type": "Add",
+			"value": {
+				"Name": "GraphicsSlimModels",
+				"Value": 25
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "PreferredInput",
+			"type": "Add",
+			"value": {
+				"Name": "PreferredInput"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PreferredInput",
+			"item": "KeyboardAndMouse",
+			"type": "Add",
+			"value": {
+				"Name": "KeyboardAndMouse",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PreferredInput",
+			"item": "Gamepad",
+			"type": "Add",
+			"value": {
+				"Name": "Gamepad",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PreferredInput",
+			"item": "Touch",
+			"type": "Add",
+			"value": {
+				"Name": "Touch",
+				"Value": 2
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Class",
+			"class": "AudioRecorder",
+			"part": "description",
+			"before": null,
+			"after": "Records audio streams in-experience."
+		},
+		{
+			"element": "Class",
+			"class": "CaptureService",
+			"part": "description",
+			"before": "A service which provides control over screenshot capture features.",
+			"after": "A service which provides control over screenshot and video capture features."
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "PromptShareCapture",
+			"part": "description",
+			"before": "Prompts the user to share a specified screenshot capture.",
+			"after": "Prompts the user to share a specified capture.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptShareCapture",
+				"Parameters": [
+					{
+						"Name": "captureContent",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					},
+					{
+						"Name": "launchData",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "onAcceptedCallback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					},
+					{
+						"Name": "onDeniedCallback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "StopVideoCapture",
+			"part": "description",
+			"before": null,
+			"after": "Ends a video capture initiated by <code>StartVideoCaptureAsync()</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "StopVideoCapture",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "StartVideoCaptureAsync",
+			"part": "description",
+			"before": null,
+			"after": "Initiates a video capture recording.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "StartVideoCaptureAsync",
+				"Parameters": [
+					{
+						"Name": "onCaptureReady",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "captureParams",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "VideoCaptureResult"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "StartVideoCaptureAsync",
+			"part": "parameter",
+			"parameter": "onCaptureReady",
+			"before": null,
+			"after": "A callback function that is called with the <code>VideoCapture</code> object and the result of type <code>VideoCaptureResult</code> of the video capture once it is ready.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "StartVideoCaptureAsync",
+				"Parameters": [
+					{
+						"Name": "onCaptureReady",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "captureParams",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "VideoCaptureResult"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "InputAction",
+			"part": "description",
+			"before": null,
+			"after": "Defines a gameplay action mechanic. These actions are then mapped to hardware inputs using <code>InputBinding</code>."
+		},
+		{
+			"element": "Member",
+			"class": "InputAction",
+			"member": "Enabled",
+			"part": "description",
+			"before": null,
+			"after": "Determines if the <code>InputAction</code> is enabled or not.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "Enabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputAction",
+			"member": "Type",
+			"part": "description",
+			"before": null,
+			"after": "Specifies what type of input value the action is expecting.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "Bool",
+				"MemberType": "Property",
+				"Name": "Type",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "InputActionType"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputAction",
+			"member": "Fire",
+			"part": "description",
+			"before": null,
+			"after": "Updates the <code>InputAction</code> to the given state and fires the appropriate signals.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Fire",
+				"Parameters": [
+					{
+						"Name": "state",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputAction",
+			"member": "GetState",
+			"part": "description",
+			"before": null,
+			"after": "Returns the current state of the <code>InputAction</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetState",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputAction",
+			"member": "GetState",
+			"part": "return",
+			"before": null,
+			"after": "The current state of <code>InputAction</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetState",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputAction",
+			"member": "Pressed",
+			"part": "description",
+			"before": null,
+			"after": "Fires only when the <code>InputAction.Type</code> is set to <code>Bool</code> on a state transition from <code>false</code> to <code>true</code>.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Pressed",
+				"Parameters": [],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputAction",
+			"member": "Released",
+			"part": "description",
+			"before": null,
+			"after": "Fires only when the <code>InputAction.Type</code> is set to <code>Bool</code> on a state transition from <code>true</code> to <code>false</code>.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Released",
+				"Parameters": [],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputAction",
+			"member": "StateChanged",
+			"part": "description",
+			"before": null,
+			"after": "Fires for all <code>InputActionType</code> types whenever the state changes, except if the state attempts to transition to the same state.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "StateChanged",
+				"Parameters": [
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "InputBinding",
+			"part": "description",
+			"before": null,
+			"after": "Defines which hardware binding should trigger the parent <code>InputAction</code>."
+		},
+		{
+			"element": "Member",
+			"class": "InputBinding",
+			"member": "Down",
+			"part": "description",
+			"before": null,
+			"after": "Specifies an alternate <code>KeyCode</code> for dispatching directionally \"down\" inputs to the parent <code>InputAction</code>.",
+			"value": {
+				"Category": "Composite Directions",
+				"Default": "Unknown",
+				"MemberType": "Property",
+				"Name": "Down",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "KeyCode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputBinding",
+			"member": "KeyCode",
+			"part": "description",
+			"before": null,
+			"after": "Specifies the <code>KeyCode</code> which triggers the parent <code>InputAction</code>.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "Unknown",
+				"MemberType": "Property",
+				"Name": "KeyCode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "KeyCode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputBinding",
+			"member": "Left",
+			"part": "description",
+			"before": null,
+			"after": "Specifies an alternate <code>KeyCode</code> for dispatching directionally \"left\" inputs to the parent <code>InputAction</code>.",
+			"value": {
+				"Category": "Composite Directions",
+				"Default": "Unknown",
+				"MemberType": "Property",
+				"Name": "Left",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "KeyCode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputBinding",
+			"member": "PressedThreshold",
+			"part": "description",
+			"before": null,
+			"after": "Numerical value above which to fire an <code>InputAction</code> with a <code>Type</code> of <code>Bool</code>.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "0.5",
+				"MemberType": "Property",
+				"Name": "PressedThreshold",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputBinding",
+			"member": "ReleasedThreshold",
+			"part": "description",
+			"before": null,
+			"after": "Numerical value below which to fire an <code>InputAction</code> with a <code>Type</code> of <code>Bool</code>.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "0.200000003",
+				"MemberType": "Property",
+				"Name": "ReleasedThreshold",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputBinding",
+			"member": "Right",
+			"part": "description",
+			"before": null,
+			"after": "Specifies an alternate <code>KeyCode</code> for dispatching directionally \"right\" inputs to the parent <code>InputAction</code>.",
+			"value": {
+				"Category": "Composite Directions",
+				"Default": "Unknown",
+				"MemberType": "Property",
+				"Name": "Right",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "KeyCode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputBinding",
+			"member": "Scale",
+			"part": "description",
+			"before": null,
+			"after": "Amount by which to linearly scale the values of a directional <code>InputAction</code>.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "Scale",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputBinding",
+			"member": "UIButton",
+			"part": "description",
+			"before": null,
+			"after": "Connects a <code>GuiButton</code> to a boolean action.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "UIButton",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "GuiButton"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputBinding",
+			"member": "Up",
+			"part": "description",
+			"before": null,
+			"after": "Specifies an alternate <code>KeyCode</code> for dispatching directionally \"up\" inputs to the parent <code>InputAction</code>.",
+			"value": {
+				"Category": "Composite Directions",
+				"Default": "Unknown",
+				"MemberType": "Property",
+				"Name": "Up",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "KeyCode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputBinding",
+			"member": "Vector2Scale",
+			"part": "description",
+			"before": null,
+			"after": "Amount by which to linearly scale the values of a two-directional <code>InputAction</code>.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "1, 1",
+				"MemberType": "Property",
+				"Name": "Vector2Scale",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "InputContext",
+			"part": "description",
+			"before": null,
+			"after": "Collection of actions which holds related actions and defines how they interact with other contexts/actions."
+		},
+		{
+			"element": "Member",
+			"class": "InputContext",
+			"member": "Enabled",
+			"part": "description",
+			"before": null,
+			"after": "Determines if this <code>InputContext</code> is enabled or not.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "Enabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputContext",
+			"member": "Priority",
+			"part": "description",
+			"before": null,
+			"after": "The priority level at which the context should be run.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "1000",
+				"MemberType": "Property",
+				"Name": "Priority",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputContext",
+			"member": "Sink",
+			"part": "description",
+			"before": null,
+			"after": "Determines whether input bindings of lower priority will be processed.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "Sink",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "InputActionType",
+			"part": "description",
+			"before": null,
+			"after": "This enum is used by <code>InputAction.Type</code> to determine which input data type the <code>InputAction</code> will receive."
+		},
+		{
+			"element": "EnumItem",
+			"enum": "InputActionType",
+			"item": "Bool",
+			"part": "description",
+			"before": null,
+			"after": "The <code>InputAction</code> will receive boolean values from button inputs, for example <code>true</code>/<code>false</code> on press/release from inputs such as <code>KeyCode.ButtonA</code> or <code>KeyCode.E</code>.",
+			"value": {
+				"Name": "Bool",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "InputActionType",
+			"item": "Direction1D",
+			"part": "description",
+			"before": null,
+			"after": "The <code>InputAction</code> will receive numerical values, generally from analog gamepad triggers such as <code>KeyCode.ButtonL2</code> or <code>KeyCode.ButtonR2</code>.",
+			"value": {
+				"Name": "Direction1D",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "InputActionType",
+			"item": "Direction2D",
+			"part": "description",
+			"before": null,
+			"after": "The <code>InputAction</code> will receive <code>Vector2</code> values, generally from thumbstick inputs such as <code>KeyCode.Thumbstick1</code> and <code>KeyCode.Thumbstick2</code>.",
+			"value": {
+				"Name": "Direction2D",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "MouseLeftButton",
+			"part": "description",
+			"before": "<strong>Deprecated:</strong> ",
+			"after": null,
+			"value": {
+				"Name": "MouseLeftButton",
+				"Value": 1018
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "MouseRightButton",
+			"part": "description",
+			"before": "<strong>Deprecated:</strong> ",
+			"after": null,
+			"value": {
+				"Name": "MouseRightButton",
+				"Value": 1019
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "MouseMiddleButton",
+			"part": "description",
+			"before": "<strong>Deprecated:</strong> ",
+			"after": null,
+			"value": {
+				"Name": "MouseMiddleButton",
+				"Value": 1020
+			}
+		}
+	]
+}

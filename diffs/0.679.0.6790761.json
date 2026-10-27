@@ -1,0 +1,5420 @@
+{
+	"from": {
+		"version": "0.678.0.6780751",
+		"hash": "6b3313c2b086401c"
+	},
+	"to": {
+		"version": "0.679.0.6790761",
+		"hash": "c98e1b5b4dd94b96"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AudioPlayer",
+			"member": "IsMutedForCapture",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "IsMutedForCapture",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarAccessoryRules",
+			"member": "willRemoveAccessory",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "willRemoveAccessory",
+				"Parameters": [
+					{
+						"Name": "humanoid",
+						"Type": {
+							"Category": "Class",
+							"Name": "Humanoid"
+						}
+					},
+					{
+						"Name": "accessory",
+						"Type": {
+							"Category": "Class",
+							"Name": "Accoutrement"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarBodyRules",
+			"member": "CustomFaceEnabled",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "CustomFaceEnabled",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarBodyRules",
+			"member": "CustomFaceId",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "CustomFaceId",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextBox",
+			"member": "ShouldEmitTabEvents",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "ShouldEmitTabEvents",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "ViewportSizeInMM",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "ViewportSizeInMM",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "GetUsersPriceLevelsAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetUsersPriceLevelsAsync",
+				"Parameters": [
+					{
+						"Name": "userIds",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialGenerationService",
+			"member": "StartSession",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "StartSession",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "MaterialGenerationSession"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialGenerationService",
+			"member": "DEPRECATED_GenerateMaterialVariantsAync",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DEPRECATED_GenerateMaterialVariantsAync",
+				"Parameters": [
+					{
+						"Name": "prompt",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "samples",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Instances"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialGenerationService",
+			"member": "DEPRECATED_UploadMaterialVariantsAsync",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DEPRECATED_UploadMaterialVariantsAsync",
+				"Parameters": [
+					{
+						"Name": "materialVaraints",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Instances"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "MaterialGenerationSession",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "MaterialGenerationSession",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Moderation",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "Moderation",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TriangleMeshPart",
+			"member": "InertiaMigrated",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					]
+				},
+				"Category": "Behavior",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "InertiaMigrated",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "IsMutedForCapture",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"LegacySound"
+					]
+				},
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "IsMutedForCapture",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioPublishService",
+			"member": "RegisterPublishHold",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterPublishHold",
+				"Parameters": [
+					{
+						"Name": "priority",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "callback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RBXScriptConnection"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "TakeSnapshot",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"InternalTest"
+				],
+				"MemberType": "Function",
+				"Name": "TakeSnapshot",
+				"Parameters": [
+					{
+						"Name": "snapshotname",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatService",
+			"member": "IsLegacyChatDisabled",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Hidden",
+						"NotReplicated"
+					],
+					"after": [
+						"Hidden"
+					]
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "IsLegacyChatDisabled",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UGCValidationService",
+			"member": "IsDeformedLayeredClothingOutOfRenderBounds",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsDeformedLayeredClothingOutOfRenderBounds",
+				"Parameters": [
+					{
+						"Name": "accessory",
+						"Type": {
+							"Category": "Class",
+							"Name": "Accessory"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "MicroProfilerService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "MicroProfilerService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ModerationService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ModerationService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ModerationService",
+			"member": "InternalCreateReviewableContentAsync",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"InternalTest"
+				],
+				"MemberType": "Function",
+				"Name": "InternalCreateReviewableContentAsync",
+				"Parameters": [
+					{
+						"Name": "config",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ModerationService",
+			"member": "InternalRequestReviewableContentReviewAsync",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"InternalTest"
+				],
+				"MemberType": "Function",
+				"Name": "InternalRequestReviewableContentReviewAsync",
+				"Parameters": [
+					{
+						"Name": "config",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ModerationService",
+			"member": "InternalProcessReviewableContentEvent",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"InternalTest"
+				],
+				"MemberType": "Callback",
+				"Name": "InternalProcessReviewableContentEvent",
+				"Parameters": [
+					{
+						"Name": "event",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "SessionCheckService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "SessionCheckService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "UIContainerQuery",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "UIContainerQuery",
+				"Superclass": "UIComponent",
+				"Tags": [
+					"NotReplicated",
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIContainerQuery",
+			"member": "Active",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Behavior",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "Active",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIContainerQuery",
+			"member": "AspectRatioRange",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Behavior",
+				"Default": "0 inf ",
+				"MemberType": "Property",
+				"Name": "AspectRatioRange",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "NumberRange"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIContainerQuery",
+			"member": "MaxSize",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Behavior",
+				"Default": "INF, INF",
+				"MemberType": "Property",
+				"Name": "MaxSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIContainerQuery",
+			"member": "MinSize",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Behavior",
+				"Default": "0, 0",
+				"MemberType": "Property",
+				"Name": "MinSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarSettingsAccessoryLimitMethod",
+			"item": "PreviewScale",
+			"type": "Add",
+			"value": {
+				"Name": "PreviewScale",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarSettingsAccessoryLimitMethod",
+			"item": "PreviewRemove",
+			"type": "Add",
+			"value": {
+				"Name": "PreviewRemove",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HttpError",
+			"item": "CreatorEnvironmentsNotSupportedByService",
+			"type": "Add",
+			"value": {
+				"Name": "CreatorEnvironmentsNotSupportedByService",
+				"Value": 15
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "AddBone",
+			"part": "description",
+			"before": null,
+			"after": "Adds a new bone and returns a stable bone ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddBone",
+				"Parameters": [
+					{
+						"Name": "boneProperties",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "AddBone",
+			"part": "parameter",
+			"parameter": "boneProperties",
+			"before": null,
+			"after": "Options table containing bone parameters: <ul> <li><code>Name</code> — A string that specifies the bone name. Note that all bone   names in a mesh must be unique.</li> <li><code>ParentId</code> — Optional bone ID of the new bone's parent.</li> <li><code>CFrame</code> — Initial <code>CFrame</code> of the bone in the bind pose of   the mesh, in the mesh's local space.</li> <li><code>Virtual</code> — Boolean that specifies whether this bone is virtual.   Virtual bones can only be bound to a <code>FaceControls</code> instance.</li> </ul>",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddBone",
+				"Parameters": [
+					{
+						"Name": "boneProperties",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "AddBone",
+			"part": "return",
+			"before": null,
+			"after": "Stable bone ID of the new bone.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddBone",
+				"Parameters": [
+					{
+						"Name": "boneProperties",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetBoneByName",
+			"part": "description",
+			"before": null,
+			"after": "Finds the bone ID of the bone with the given name.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBoneByName",
+				"Parameters": [
+					{
+						"Name": "boneName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetBoneByName",
+			"part": "parameter",
+			"parameter": "boneName",
+			"before": null,
+			"after": "Bone name to search for.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBoneByName",
+				"Parameters": [
+					{
+						"Name": "boneName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetBoneByName",
+			"part": "return",
+			"before": null,
+			"after": "Bone ID of the bone with the given name.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBoneByName",
+				"Parameters": [
+					{
+						"Name": "boneName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetBoneCFrame",
+			"part": "description",
+			"before": null,
+			"after": "Returns the initial <code>CFrame</code> of the bone in the bind pose of the mesh.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBoneCFrame",
+				"Parameters": [
+					{
+						"Name": "boneId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetBoneCFrame",
+			"part": "parameter",
+			"parameter": "boneId",
+			"before": null,
+			"after": "Bone ID for which to get the <code>CFrame</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBoneCFrame",
+				"Parameters": [
+					{
+						"Name": "boneId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetBoneCFrame",
+			"part": "return",
+			"before": null,
+			"after": "Initial <code>CFrame</code> of the bone in the bind pose of the mesh, in the mesh's local space.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBoneCFrame",
+				"Parameters": [
+					{
+						"Name": "boneId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetBoneIsVirtual",
+			"part": "description",
+			"before": null,
+			"after": "Returns <code>true</code> if the bone is virtual.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBoneIsVirtual",
+				"Parameters": [
+					{
+						"Name": "boneId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetBoneIsVirtual",
+			"part": "parameter",
+			"parameter": "boneId",
+			"before": null,
+			"after": "Bone ID for which to get whether the bone is virtual.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBoneIsVirtual",
+				"Parameters": [
+					{
+						"Name": "boneId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetBoneIsVirtual",
+			"part": "return",
+			"before": null,
+			"after": "Whether the bone with the given bone ID is virtual. Virtual bones can only be bound to a <code>FaceControls</code> instance.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBoneIsVirtual",
+				"Parameters": [
+					{
+						"Name": "boneId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetBoneName",
+			"part": "description",
+			"before": null,
+			"after": "Returns the bone name.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBoneName",
+				"Parameters": [
+					{
+						"Name": "boneId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetBoneName",
+			"part": "parameter",
+			"parameter": "boneId",
+			"before": null,
+			"after": "Bone ID for which to get the name.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBoneName",
+				"Parameters": [
+					{
+						"Name": "boneId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetBoneName",
+			"part": "return",
+			"before": null,
+			"after": "Name of the bone with the given bone ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBoneName",
+				"Parameters": [
+					{
+						"Name": "boneId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetBoneParent",
+			"part": "description",
+			"before": null,
+			"after": "Returns the parent bone ID, if any.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBoneParent",
+				"Parameters": [
+					{
+						"Name": "boneId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetBoneParent",
+			"part": "parameter",
+			"parameter": "boneId",
+			"before": null,
+			"after": "Bone ID for which to get the parent.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBoneParent",
+				"Parameters": [
+					{
+						"Name": "boneId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetBoneParent",
+			"part": "return",
+			"before": null,
+			"after": "Bone ID for the parent of the bone with the given bone ID. If there is no parent, returns <code>0</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBoneParent",
+				"Parameters": [
+					{
+						"Name": "boneId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetBones",
+			"part": "description",
+			"before": null,
+			"after": "Returns all bones of the mesh.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBones",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetBones",
+			"part": "return",
+			"before": null,
+			"after": "List of stable bone IDs.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBones",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetFacsCorrectivePose",
+			"part": "description",
+			"before": null,
+			"after": "Returns bone IDs and bone <code>CFrames</code> for all bones in a specific FACS corrective pose.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFacsCorrectivePose",
+				"Parameters": [
+					{
+						"Name": "actions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetFacsCorrectivePose",
+			"part": "parameter",
+			"parameter": "actions",
+			"before": null,
+			"after": "Array or 2 or 3 <code>FacsActionUnit</code> values that specify a corrective pose.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFacsCorrectivePose",
+				"Parameters": [
+					{
+						"Name": "actions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetFacsCorrectivePose",
+			"part": "return",
+			"before": null,
+			"after": "Array of bone IDs and corresponding array of bone <code>CFrames</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFacsCorrectivePose",
+				"Parameters": [
+					{
+						"Name": "actions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetFacsCorrectivePoses",
+			"part": "description",
+			"before": null,
+			"after": "Returns all FACS corrective poses that are in use.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFacsCorrectivePoses",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetFacsCorrectivePoses",
+			"part": "return",
+			"before": null,
+			"after": "Array of corrective poses. Each corrective pose is specified by a small array of 2 or 3 <code>FacsActionUnit</code> values.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFacsCorrectivePoses",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetFacsPose",
+			"part": "description",
+			"before": null,
+			"after": "Returns bone IDs and bone <code>CFrames</code> for all bones in a specific FACS action unit.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFacsPose",
+				"Parameters": [
+					{
+						"Name": "action",
+						"Type": {
+							"Category": "Enum",
+							"Name": "FacsActionUnit"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetFacsPose",
+			"part": "parameter",
+			"parameter": "action",
+			"before": null,
+			"after": "FACS action unit for which to get the pose.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFacsPose",
+				"Parameters": [
+					{
+						"Name": "action",
+						"Type": {
+							"Category": "Enum",
+							"Name": "FacsActionUnit"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetFacsPose",
+			"part": "return",
+			"before": null,
+			"after": "Array of bone IDs and corresponding array of bone <code>CFrame</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFacsPose",
+				"Parameters": [
+					{
+						"Name": "action",
+						"Type": {
+							"Category": "Enum",
+							"Name": "FacsActionUnit"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetFacsPoses",
+			"part": "description",
+			"before": null,
+			"after": "Returns all FACS action units that have poses defined.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFacsPoses",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetFacsPoses",
+			"part": "return",
+			"before": null,
+			"after": "Array of <code>FacsActionUnit</code>, one for each FACS action unit that has a pose defined.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFacsPoses",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexBoneWeights",
+			"part": "description",
+			"before": null,
+			"after": "Returns skinning blend weights for each bone that is associated with the vertex.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexBoneWeights",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexBoneWeights",
+			"part": "parameter",
+			"parameter": "vertexId",
+			"before": null,
+			"after": "Vertex ID for which to get the associated bone weights.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexBoneWeights",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexBoneWeights",
+			"part": "return",
+			"before": null,
+			"after": "Skinning blend weights for each bone that is associated with the vertex.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexBoneWeights",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexBones",
+			"part": "description",
+			"before": null,
+			"after": "Returns all bone IDs that are associated with the vertex for skinning.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexBones",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexBones",
+			"part": "parameter",
+			"parameter": "vertexId",
+			"before": null,
+			"after": "Vertex ID for which to get the associated bones.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexBones",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexBones",
+			"part": "return",
+			"before": null,
+			"after": "Bone IDs associated with the vertex for skinning.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexBones",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "RemoveBone",
+			"part": "description",
+			"before": null,
+			"after": "Removes a bone using its stable bone ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RemoveBone",
+				"Parameters": [
+					{
+						"Name": "boneId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetBoneCFrame",
+			"part": "description",
+			"before": null,
+			"after": "Set the initial <code>CFrame</code> for a bone in the mesh's bind pose.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetBoneCFrame",
+				"Parameters": [
+					{
+						"Name": "boneId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "cframe",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetBoneCFrame",
+			"part": "parameter",
+			"parameter": "boneId",
+			"before": null,
+			"after": "Bone ID for which to set the initial <code>CFrame</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetBoneCFrame",
+				"Parameters": [
+					{
+						"Name": "boneId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "cframe",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetBoneCFrame",
+			"part": "parameter",
+			"parameter": "cframe",
+			"before": null,
+			"after": "Initial <code>CFrame</code> for the bone in the mesh's bind pose, in the mesh's local space.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetBoneCFrame",
+				"Parameters": [
+					{
+						"Name": "boneId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "cframe",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetBoneIsVirtual",
+			"part": "description",
+			"before": null,
+			"after": "Set whether a bone is virtual.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetBoneIsVirtual",
+				"Parameters": [
+					{
+						"Name": "boneId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "virtual",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetBoneIsVirtual",
+			"part": "parameter",
+			"parameter": "boneId",
+			"before": null,
+			"after": "Bone ID for which to set whether the bone is virtual.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetBoneIsVirtual",
+				"Parameters": [
+					{
+						"Name": "boneId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "virtual",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetBoneIsVirtual",
+			"part": "parameter",
+			"parameter": "virtual",
+			"before": null,
+			"after": "Whether the bone should be virtual.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetBoneIsVirtual",
+				"Parameters": [
+					{
+						"Name": "boneId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "virtual",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetBoneName",
+			"part": "description",
+			"before": null,
+			"after": "Sets the name for a bone.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetBoneName",
+				"Parameters": [
+					{
+						"Name": "boneId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetBoneName",
+			"part": "parameter",
+			"parameter": "boneId",
+			"before": null,
+			"after": "Bone ID for which to set the name.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetBoneName",
+				"Parameters": [
+					{
+						"Name": "boneId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetBoneName",
+			"part": "parameter",
+			"parameter": "name",
+			"before": null,
+			"after": "Bone name to set.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetBoneName",
+				"Parameters": [
+					{
+						"Name": "boneId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetBoneParent",
+			"part": "description",
+			"before": null,
+			"after": "Set a parent for a bone.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetBoneParent",
+				"Parameters": [
+					{
+						"Name": "boneId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "parentBoneId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetBoneParent",
+			"part": "parameter",
+			"parameter": "boneId",
+			"before": null,
+			"after": "Bone ID for which to set the parent.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetBoneParent",
+				"Parameters": [
+					{
+						"Name": "boneId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "parentBoneId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetBoneParent",
+			"part": "parameter",
+			"parameter": "parentBoneId",
+			"before": null,
+			"after": "Parent bone ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetBoneParent",
+				"Parameters": [
+					{
+						"Name": "boneId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "parentBoneId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetFacsBonePose",
+			"part": "description",
+			"before": null,
+			"after": "Set <code>CFrame</code> for an individual bone in a specific FACS action unit.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetFacsBonePose",
+				"Parameters": [
+					{
+						"Name": "action",
+						"Type": {
+							"Category": "Enum",
+							"Name": "FacsActionUnit"
+						}
+					},
+					{
+						"Name": "boneId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "cframe",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetFacsBonePose",
+			"part": "parameter",
+			"parameter": "action",
+			"before": null,
+			"after": "FACS action unit for which to set the pose.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetFacsBonePose",
+				"Parameters": [
+					{
+						"Name": "action",
+						"Type": {
+							"Category": "Enum",
+							"Name": "FacsActionUnit"
+						}
+					},
+					{
+						"Name": "boneId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "cframe",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetFacsBonePose",
+			"part": "parameter",
+			"parameter": "boneId",
+			"before": null,
+			"after": "Bone to set a <code>CFrame</code> for this pose.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetFacsBonePose",
+				"Parameters": [
+					{
+						"Name": "action",
+						"Type": {
+							"Category": "Enum",
+							"Name": "FacsActionUnit"
+						}
+					},
+					{
+						"Name": "boneId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "cframe",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetFacsBonePose",
+			"part": "parameter",
+			"parameter": "cframe",
+			"before": null,
+			"after": "<code>CFrame</code> which transforms the bone from the initial bone <code>CFrame</code> in the bind pose of the mesh to the combined bone <code>CFrame</code> for this pose. All <code>CFrames</code> are in the mesh's local space.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetFacsBonePose",
+				"Parameters": [
+					{
+						"Name": "action",
+						"Type": {
+							"Category": "Enum",
+							"Name": "FacsActionUnit"
+						}
+					},
+					{
+						"Name": "boneId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "cframe",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetFacsCorrectivePose",
+			"part": "description",
+			"before": null,
+			"after": "Set pose for all bones in a specific FACS corrective pose.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetFacsCorrectivePose",
+				"Parameters": [
+					{
+						"Name": "actions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "boneIds",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "cframes",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetFacsCorrectivePose",
+			"part": "parameter",
+			"parameter": "actions",
+			"before": null,
+			"after": "Array or 2 or 3 <code>FacsActionUnit</code> values to apply as a corrective pose.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetFacsCorrectivePose",
+				"Parameters": [
+					{
+						"Name": "actions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "boneIds",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "cframes",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetFacsCorrectivePose",
+			"part": "parameter",
+			"parameter": "boneIds",
+			"before": null,
+			"after": "Bones to set a <code>CFrame</code> for this pose.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetFacsCorrectivePose",
+				"Parameters": [
+					{
+						"Name": "actions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "boneIds",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "cframes",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetFacsCorrectivePose",
+			"part": "parameter",
+			"parameter": "cframes",
+			"before": null,
+			"after": "<code>CFrame</code> transforms for the bones in this corrective pose. Each bone <code>CFrame</code> transforms the bone from the initial bone <code>CFrame</code> in the bind pose of the mesh to the combined bone <code>CFrame</code> for this pose. All <code>CFrames</code> are in the mesh's local space.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetFacsCorrectivePose",
+				"Parameters": [
+					{
+						"Name": "actions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "boneIds",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "cframes",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetFacsPose",
+			"part": "description",
+			"before": null,
+			"after": "Set pose for all bones in a specific FACS action unit.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetFacsPose",
+				"Parameters": [
+					{
+						"Name": "action",
+						"Type": {
+							"Category": "Enum",
+							"Name": "FacsActionUnit"
+						}
+					},
+					{
+						"Name": "boneIds",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "cframes",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetFacsPose",
+			"part": "parameter",
+			"parameter": "action",
+			"before": null,
+			"after": "FACS action unit to set the pose for.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetFacsPose",
+				"Parameters": [
+					{
+						"Name": "action",
+						"Type": {
+							"Category": "Enum",
+							"Name": "FacsActionUnit"
+						}
+					},
+					{
+						"Name": "boneIds",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "cframes",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetFacsPose",
+			"part": "parameter",
+			"parameter": "boneIds",
+			"before": null,
+			"after": "Bones for which to set a <code>CFrame</code> for this pose.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetFacsPose",
+				"Parameters": [
+					{
+						"Name": "action",
+						"Type": {
+							"Category": "Enum",
+							"Name": "FacsActionUnit"
+						}
+					},
+					{
+						"Name": "boneIds",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "cframes",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetFacsPose",
+			"part": "parameter",
+			"parameter": "cframes",
+			"before": null,
+			"after": "<code>CFrame</code> transforms for the bones in this pose. Each bone <code>CFrame</code> transforms the bone from the initial bone <code>CFrame</code> in the bind pose of the mesh to the combined bone <code>CFrame</code> for this pose. All <code>CFrames</code> are in the mesh's local space.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetFacsPose",
+				"Parameters": [
+					{
+						"Name": "action",
+						"Type": {
+							"Category": "Enum",
+							"Name": "FacsActionUnit"
+						}
+					},
+					{
+						"Name": "boneIds",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "cframes",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetVertexBoneWeights",
+			"part": "description",
+			"before": null,
+			"after": "Sets skinning blend weights for each bone associated with the vertex.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetVertexBoneWeights",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "boneWeights",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetVertexBoneWeights",
+			"part": "parameter",
+			"parameter": "vertexId",
+			"before": null,
+			"after": "Vertex ID on which to set skinning blend weights.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetVertexBoneWeights",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "boneWeights",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetVertexBoneWeights",
+			"part": "parameter",
+			"parameter": "boneWeights",
+			"before": null,
+			"after": "Skinning blend weights to set on the vertex.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetVertexBoneWeights",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "boneWeights",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetVertexBones",
+			"part": "description",
+			"before": null,
+			"after": "Assign a list of bones with the vertex for skinning.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetVertexBones",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "boneIDs",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetVertexBones",
+			"part": "parameter",
+			"parameter": "vertexId",
+			"before": null,
+			"after": "Vertex ID to set vertex skinning bones.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetVertexBones",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "boneIDs",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetVertexBones",
+			"part": "parameter",
+			"parameter": "boneIDs",
+			"before": null,
+			"after": "Bone IDs to use with this vertex for skinning.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetVertexBones",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "boneIDs",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextBox",
+			"member": "ClearTextOnFocus",
+			"part": "description",
+			"before": "Determines whether clicking on the TextBox will clear its <code>TextBox.Text</code> property.",
+			"after": "Determines whether clicking on the <code>TextBox</code> will clear its <code>TextBox.Text</code> property.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Data",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "ClearTextOnFocus",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextBox",
+			"member": "MultiLine",
+			"part": "description",
+			"before": "When set to true, text inside a TextBox is able to move onto multiple lines. This also enables players to use the enter key to move onto a new line.",
+			"after": "When set to <code>true</code>, text inside a <code>TextBox</code> is able to move onto multiple lines. This also enables players to use the enter key to move onto a new line.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "MultiLine",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextBox",
+			"member": "PlaceholderColor3",
+			"part": "description",
+			"before": "Sets the text color that gets used when no text has been entered into the TextBox yet.",
+			"after": "Sets the text color that gets used when no text has been entered into the <code>TextBox</code> yet.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Text",
+				"Default": "0.7, 0.7, 0.7",
+				"MemberType": "Property",
+				"Name": "PlaceholderColor3",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextBox",
+			"member": "PlaceholderText",
+			"part": "description",
+			"before": "Sets the text that gets displayed when no text has been entered into the TextBox yet.",
+			"after": "Sets the text that gets displayed when no text has been entered into the <code>TextBox</code> yet.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Text",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "PlaceholderText",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextBox",
+			"member": "RichText",
+			"part": "description",
+			"before": "Determines whether the TextBox renders the <code>TextBox.Text</code> string using rich text formatting.",
+			"after": "Determines whether the <code>TextBox</code> renders the <code>TextBox.Text</code> string using rich text formatting.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Text",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "RichText",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextBox",
+			"member": "IsFocused",
+			"part": "description",
+			"before": "Returns true if the textbox is focused, or false if it is not.",
+			"after": "Returns <code>true</code> if the <code>TextBox</code> is focused or <code>false</code> if it is not.",
+			"value": {
+				"Capabilities": [
+					"UI"
+				],
+				"MemberType": "Function",
+				"Name": "IsFocused",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "EvaluateStateMachine",
+			"part": "description",
+			"before": null,
+			"after": "Used to disable the internal physics and state machine of the Humanoid.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Avatar"
+					]
+				},
+				"Category": "Behavior",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "EvaluateStateMachine",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputAction",
+			"member": "Direction1DState",
+			"part": "description",
+			"before": null,
+			"after": "Non-scriptable read-only property useful for debugging <code>Direction1D</code> input actions.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Input"
+					]
+				},
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "Direction1DState",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputAction",
+			"member": "Direction2DState",
+			"part": "description",
+			"before": null,
+			"after": "Non-scriptable read-only property useful for debugging <code>Direction2D</code> input actions.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Input"
+					]
+				},
+				"Category": "Data",
+				"Default": "0, 0",
+				"MemberType": "Property",
+				"Name": "Direction2DState",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputAction",
+			"member": "Direction3DState",
+			"part": "description",
+			"before": null,
+			"after": "Non-scriptable read-only property useful for debugging <code>Direction3D</code> input actions.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Input"
+					]
+				},
+				"Category": "Data",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "Direction3DState",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputBinding",
+			"member": "Backward",
+			"part": "description",
+			"before": null,
+			"after": "Specifies an alternate <code>KeyCode</code> for dispatching directionally \"backward\" inputs to the parent <code>InputAction</code>.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Input"
+					]
+				},
+				"Category": "Composite Directions",
+				"Default": "Unknown",
+				"MemberType": "Property",
+				"Name": "Backward",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "KeyCode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputBinding",
+			"member": "Forward",
+			"part": "description",
+			"before": null,
+			"after": "Specifies an alternate <code>KeyCode</code> for dispatching directionally \"forward\" inputs to the parent <code>InputAction</code>.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Input"
+					]
+				},
+				"Category": "Composite Directions",
+				"Default": "Unknown",
+				"MemberType": "Property",
+				"Name": "Forward",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "KeyCode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputObject",
+			"member": "Delta",
+			"part": "description",
+			"before": "A Vector3 describing the Delta between mouse/joystick movements.",
+			"after": "A <code>Vector3</code> describing the delta between input movements.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Input"
+					]
+				},
+				"Category": "Data",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "Delta",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputObject",
+			"member": "Position",
+			"part": "description",
+			"before": "Describes a positional value of this input.",
+			"after": "A <code>Vector3</code> describing the positional value of this input.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Input"
+					]
+				},
+				"Category": "Data",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "Position",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputObject",
+			"member": "UserInputType",
+			"part": "description",
+			"before": "Describes the kind of input being performed (mouse, keyboard, gamepad, touch, etc).",
+			"after": "Describes the kind of input being performed (mouse, keyboard, gamepad, touch, etc.).",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Input"
+					]
+				},
+				"Category": "Data",
+				"Default": "None",
+				"MemberType": "Property",
+				"Name": "UserInputType",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "UserInputType"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputObject",
+			"member": "IsModifierKeyDown",
+			"part": "description",
+			"before": null,
+			"after": "Returns whether the passed in modifier key is down.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Function",
+				"Name": "IsModifierKeyDown",
+				"Parameters": [
+					{
+						"Name": "modifierKey",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ModifierKey"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputObject",
+			"member": "IsModifierKeyDown",
+			"part": "return",
+			"before": null,
+			"after": "<code>true</code> if the passed in <code>modifierKey</code> is being held down; <code>false</code> otherwise.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Function",
+				"Name": "IsModifierKeyDown",
+				"Parameters": [
+					{
+						"Name": "modifierKey",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ModifierKey"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Tool",
+			"member": "ManualActivationOnly",
+			"part": "description",
+			"before": "The ManualActivationOnly property controls whether the <code>Tool</code> can be activated without executing <code>Tool:Activate()</code>.",
+			"after": "Controls whether the <code>Tool</code> can be activated without executing <code>Tool:Activate()</code>.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Input"
+					]
+				},
+				"Category": "Behavior",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "ManualActivationOnly",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "GetEventRsvpStatusAsync",
+			"part": "description",
+			"before": null,
+			"after": "Returns the local player's RSVP status for the given event.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetEventRsvpStatusAsync",
+				"Parameters": [
+					{
+						"Name": "eventId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "RsvpStatus"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "GetEventRsvpStatusAsync",
+			"part": "parameter",
+			"parameter": "eventId",
+			"before": null,
+			"after": "The event ID of the event to prompt the player to change their RSVP status for. This must be a valid event ID that exists in the current experience, represented as a string (not a number).",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetEventRsvpStatusAsync",
+				"Parameters": [
+					{
+						"Name": "eventId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "RsvpStatus"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "GetEventRsvpStatusAsync",
+			"part": "return",
+			"before": null,
+			"after": "Returns an <code>RsvpStatus</code> indicating the player's current RSVP status for the event. If the player has not RSVP'd to the event, this will return <code>RsvpStatus.None</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetEventRsvpStatusAsync",
+				"Parameters": [
+					{
+						"Name": "eventId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "RsvpStatus"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "PromptRsvpToEventAsync",
+			"part": "description",
+			"before": null,
+			"after": "Prompts the local <code>Player</code> with a prompt to change their RSVP status to the given event.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptRsvpToEventAsync",
+				"Parameters": [
+					{
+						"Name": "eventId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "RsvpStatus"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "PromptRsvpToEventAsync",
+			"part": "parameter",
+			"parameter": "eventId",
+			"before": null,
+			"after": "The event ID of the event to prompt the player to change their RSVP status for. This must be a valid event ID that exists in the current experience, represented as a string (not a number).",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptRsvpToEventAsync",
+				"Parameters": [
+					{
+						"Name": "eventId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "RsvpStatus"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "PromptRsvpToEventAsync",
+			"part": "return",
+			"before": null,
+			"after": "Returns a <code>RsvpStatus</code> indicating the player's new RSVP status after the prompt is closed. If the player closes the prompt without changing their RSVP status, this will return <code>RsvpStatus.None</code> or their old <code>RsvpStatus</code> if they had already selected a status.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptRsvpToEventAsync",
+				"Parameters": [
+					{
+						"Name": "eventId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "RsvpStatus"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "DevComputerCameraMovementMode",
+			"part": "description",
+			"before": "Lets developer overwrite the default camera mode for each player if the player is on a computer.",
+			"after": "Lets you overwrite the player's camera mode on a computer.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Players"
+					]
+				},
+				"Category": "Camera",
+				"Default": "UserChoice",
+				"MemberType": "Property",
+				"Name": "DevComputerCameraMovementMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "DevComputerCameraMovementMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "DevComputerMovementMode",
+			"part": "description",
+			"before": "Lets developer overwrite the player's movement mode if the player is on a computer.",
+			"after": "Lets you overwrite the player's movement mode on a computer.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Players"
+					]
+				},
+				"Category": "Controls",
+				"Default": "UserChoice",
+				"MemberType": "Property",
+				"Name": "DevComputerMovementMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "DevComputerMovementMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "DevTouchCameraMovementMode",
+			"part": "description",
+			"before": "Lets developer overwrite the default camera movement mode for each player if the player is on a mobile device.",
+			"after": "Lets you overwrite the player's camera mode on a touch-enabled device.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Players"
+					]
+				},
+				"Category": "Camera",
+				"Default": "UserChoice",
+				"MemberType": "Property",
+				"Name": "DevTouchCameraMovementMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "DevTouchCameraMovementMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "DevTouchMovementMode",
+			"part": "description",
+			"before": "Lets developer overwrite the player's movement mode if the player is on a touch device.",
+			"after": "Lets you overwrite the player's movement mode on a touch-enabled device.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Players"
+					]
+				},
+				"Category": "Controls",
+				"Default": "UserChoice",
+				"MemberType": "Property",
+				"Name": "DevTouchMovementMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "DevTouchMovementMode"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "UserInputService",
+			"part": "description",
+			"before": "<code>UserInputService</code> is a service used to detect the type of input available on a user's device via the use of a <code>LocalScript</code>. The service is also used to detect input events.",
+			"after": "<code>UserInputService</code> is primarily used to detect the input types available on a user's device, as well as detect input events."
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "GamepadEnabled",
+			"part": "description",
+			"before": "Describes whether the device being used by a user has an available gamepad.",
+			"after": "Describes whether the user's device has an available gamepad.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Input"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "GamepadEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "MouseIcon",
+			"part": "description",
+			"before": "The content ID of the image used as the user mouse icon.",
+			"after": "The content ID of the image for the user's mouse icon.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Input"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "MouseIcon",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "ContentId"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "MouseIconEnabled",
+			"part": "description",
+			"before": "Determines whether the <code>Mouse</code> icon is visible.",
+			"after": "Determines whether the mouse icon is visible.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Input"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "MouseIconEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "PreferredInput",
+			"part": "description",
+			"before": null,
+			"after": "Queries the primary input type a player is using, based on anticipated user behavior.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Input"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "PreferredInput",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "PreferredInput"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchEnabled",
+			"part": "description",
+			"before": "Describes whether the user's current device has a touch-screen available.",
+			"after": "Describes whether the user's device has a touch screen available.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Input"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "TouchEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "GetDeviceRotation",
+			"part": "description",
+			"before": "Returns an <code>InputObject</code> and a <code>CFrame</code>,describing the device's current rotation vector.",
+			"after": "Returns an <code>InputObject</code> and a <code>CFrame</code> describing the device's current rotation vector.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Function",
+				"Name": "GetDeviceRotation",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "GetDeviceRotation",
+			"part": "return",
+			"before": "A tuple containing two properties: <ol> <li>The delta property describes the amount of rotation that last    happened</li> <li>The CFrame is the device's current rotation relative to its default    reference frame.</li> </ol>",
+			"after": "A tuple containing two properties: The delta describing the amount of rotation that last happened, and the <code>CFrame</code> of the device's current rotation relative to its default reference frame.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Function",
+				"Name": "GetDeviceRotation",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "GetGamepadConnected",
+			"part": "description",
+			"before": "Returns whether a gamepad with the given <code>UserInputType</code>''gamepadNum'' is connected.",
+			"after": "Returns whether a gamepad with the given <code>UserInputType</code> is connected.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Function",
+				"Name": "GetGamepadConnected",
+				"Parameters": [
+					{
+						"Name": "gamepadNum",
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserInputType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "GetMouseButtonsPressed",
+			"part": "description",
+			"before": "Returns an array of <code>InputObjects</code> corresponding with the mouse buttons currently being held down.",
+			"after": "Returns an array of <code>InputObjects</code> associated with the mouse buttons currently being held down.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Function",
+				"Name": "GetMouseButtonsPressed",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "GetMouseLocation",
+			"part": "description",
+			"before": "Returns the current screen location of the player's <code>Mouse</code> relative to the top left corner of the screen.",
+			"after": "Returns the current screen location of the player's <code>Mouse</code> relative to the top-left corner of the screen.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Function",
+				"Name": "GetMouseLocation",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "GetNavigationGamepads",
+			"part": "description",
+			"before": "Returns an array of <code>gamepads</code> connected and enabled for GUI navigation in descending order of priority.",
+			"after": "Returns an array of gamepads connected and enabled for <code>GuiObject</code> navigation in descending order of priority.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Function",
+				"Name": "GetNavigationGamepads",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "GetNavigationGamepads",
+			"part": "return",
+			"before": "An array of <code>UserInputTypes</code> that can be used for GUI navigation, in descending order of priority.",
+			"after": "An array of <code>UserInputTypes</code> that can be used for navigation, in descending order of priority.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Function",
+				"Name": "GetNavigationGamepads",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "IsGamepadButtonDown",
+			"part": "description",
+			"before": "Determines whether a particular button is pressed on a particular gamepad.",
+			"after": "Determines whether a particular button is pressed on a gamepad.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Function",
+				"Name": "IsGamepadButtonDown",
+				"Parameters": [
+					{
+						"Name": "gamepadNum",
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserInputType"
+						}
+					},
+					{
+						"Name": "gamepadKeyCode",
+						"Type": {
+							"Category": "Enum",
+							"Name": "KeyCode"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "IsGamepadButtonDown",
+			"part": "parameter",
+			"parameter": "gamepadKeyCode",
+			"before": "The <code>KeyCode</code> of the specified button.",
+			"after": "The <code>KeyCode</code> of the specified gamepad button.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Function",
+				"Name": "IsGamepadButtonDown",
+				"Parameters": [
+					{
+						"Name": "gamepadNum",
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserInputType"
+						}
+					},
+					{
+						"Name": "gamepadKeyCode",
+						"Type": {
+							"Category": "Enum",
+							"Name": "KeyCode"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "IsGamepadButtonDown",
+			"part": "return",
+			"before": "Whether the specified gamepad button on the given gamepad is pressed is pressed.",
+			"after": "Whether the specified button on the given gamepad is pressed is pressed.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Function",
+				"Name": "IsGamepadButtonDown",
+				"Parameters": [
+					{
+						"Name": "gamepadNum",
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserInputType"
+						}
+					},
+					{
+						"Name": "gamepadKeyCode",
+						"Type": {
+							"Category": "Enum",
+							"Name": "KeyCode"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "IsMouseButtonPressed",
+			"part": "description",
+			"before": "Returns whether the given <code>mouse button</code> is currently held down.",
+			"after": "Returns whether the given mouse button is currently held down.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Function",
+				"Name": "IsMouseButtonPressed",
+				"Parameters": [
+					{
+						"Name": "mouseButton",
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserInputType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "IsNavigationGamepad",
+			"part": "description",
+			"before": "Returns true if the specified <code>UserInputType</code> gamepad is allowed to control the navigation <code>GuiObjects</code>.",
+			"after": "Returns <code>true</code> if the specified gamepad is allowed to control navigation and selection <code>GuiObjects</code>.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Function",
+				"Name": "IsNavigationGamepad",
+				"Parameters": [
+					{
+						"Name": "gamepadEnum",
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserInputType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "SetNavigationGamepad",
+			"part": "description",
+			"before": "Sets whether or not the specified <code>Gamepad</code> can move the <code>GuiObject</code> navigator.",
+			"after": "Sets whether or not the specified gamepad can move the <code>GuiObject</code> navigator.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Function",
+				"Name": "SetNavigationGamepad",
+				"Parameters": [
+					{
+						"Name": "gamepadEnum",
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserInputType"
+						}
+					},
+					{
+						"Name": "enabled",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "DeviceAccelerationChanged",
+			"part": "description",
+			"before": "Fired when a user moves a device that has an accelerometer. Used to track real-world device movement within a Roblox game.",
+			"after": "Fires when a user moves a device that has an accelerometer.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Event",
+				"Name": "DeviceAccelerationChanged",
+				"Parameters": [
+					{
+						"Name": "acceleration",
+						"Type": {
+							"Category": "Class",
+							"Name": "InputObject"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "DeviceGravityChanged",
+			"part": "description",
+			"before": "Fired when the force of gravity changes on a device that has an enabled accelerometer - such as a mobile device.",
+			"after": "Fires when the force of gravity changes on a device that has an enabled accelerometer.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Event",
+				"Name": "DeviceGravityChanged",
+				"Parameters": [
+					{
+						"Name": "gravity",
+						"Type": {
+							"Category": "Class",
+							"Name": "InputObject"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "DeviceRotationChanged",
+			"part": "description",
+			"before": "Fired when a user rotates a device that has a gyroscope.",
+			"after": "Fires when a user rotates a device that has a gyroscope.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Event",
+				"Name": "DeviceRotationChanged",
+				"Parameters": [
+					{
+						"Name": "rotation",
+						"Type": {
+							"Category": "Class",
+							"Name": "InputObject"
+						}
+					},
+					{
+						"Name": "cframe",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "GamepadConnected",
+			"part": "description",
+			"before": "Fires when a gamepad is connected to the client. Passes the ''gamepadNum'' of the gamepad that was connected.",
+			"after": "Fires when a gamepad is connected to the client.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Event",
+				"Name": "GamepadConnected",
+				"Parameters": [
+					{
+						"Name": "gamepadNum",
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserInputType"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "GamepadDisconnected",
+			"part": "description",
+			"before": "Fires when a gamepad is disconnected from the client. Passes the <code>UserInputType</code> of the gamepad that was disconnected.",
+			"after": "Fires when a gamepad is disconnected from the client.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Event",
+				"Name": "GamepadDisconnected",
+				"Parameters": [
+					{
+						"Name": "gamepadNum",
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserInputType"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "InputBegan",
+			"part": "description",
+			"before": "Fired when a user begins interacting via a Human-Computer Interface device - such as a mouse or gamepad.",
+			"after": "Fires when a user begins interacting with an input device such as a mouse or gamepad.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Event",
+				"Name": "InputBegan",
+				"Parameters": [
+					{
+						"Name": "input",
+						"Type": {
+							"Category": "Class",
+							"Name": "InputObject"
+						}
+					},
+					{
+						"Name": "gameProcessedEvent",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "InputChanged",
+			"part": "description",
+			"before": "Fired when a user changes how they're interacting via a Human-Computer Interface device.",
+			"after": "Fires when a user changes how they're interacting with an input device such as a mouse or gamepad.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Event",
+				"Name": "InputChanged",
+				"Parameters": [
+					{
+						"Name": "input",
+						"Type": {
+							"Category": "Class",
+							"Name": "InputObject"
+						}
+					},
+					{
+						"Name": "gameProcessedEvent",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "InputEnded",
+			"part": "description",
+			"before": "Fires when a user stops interacting via a Human-Computer Interface device.",
+			"after": "Fires when a user stops interacting with an input device such as a mouse or gamepad.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Event",
+				"Name": "InputEnded",
+				"Parameters": [
+					{
+						"Name": "input",
+						"Type": {
+							"Category": "Class",
+							"Name": "InputObject"
+						}
+					},
+					{
+						"Name": "gameProcessedEvent",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "LastInputTypeChanged",
+			"part": "description",
+			"before": "Fires when the client's <code>UserInputType</code> is changed.",
+			"after": "Fires whenever the client's <code>UserInputType</code> is changed.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Event",
+				"Name": "LastInputTypeChanged",
+				"Parameters": [
+					{
+						"Name": "lastInputType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserInputType"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "PointerAction",
+			"part": "description",
+			"before": "Fires when the user performs a specific pointer action (wheel, pinch, pan).",
+			"after": "Fires when the user performs a specific pointer action.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Event",
+				"Name": "PointerAction",
+				"Parameters": [
+					{
+						"Name": "wheel",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "pan",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "pinch",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "gameProcessedEvent",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TextBoxFocusReleased",
+			"part": "description",
+			"before": "Fired when the client loses focus on a <code>TextBox</code>.",
+			"after": "Fires when the client loses focus on a <code>TextBox</code>.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Event",
+				"Name": "TextBoxFocusReleased",
+				"Parameters": [
+					{
+						"Name": "textboxReleased",
+						"Type": {
+							"Category": "Class",
+							"Name": "TextBox"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TextBoxFocused",
+			"part": "description",
+			"before": "Fired when the client focuses on a <code>TextBox</code>.",
+			"after": "Fires when the client focuses on a <code>TextBox</code>.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Event",
+				"Name": "TextBoxFocused",
+				"Parameters": [
+					{
+						"Name": "textboxFocused",
+						"Type": {
+							"Category": "Class",
+							"Name": "TextBox"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchDrag",
+			"part": "description",
+			"before": null,
+			"after": "Fires when the user drags on the screen of a <code>TouchEnabled</code> device.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Event",
+				"Name": "TouchDrag",
+				"Parameters": [
+					{
+						"Name": "dragDirection",
+						"Type": {
+							"Category": "Enum",
+							"Name": "SwipeDirection"
+						}
+					},
+					{
+						"Name": "numberOfTouches",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "gameProcessedEvent",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchEnded",
+			"part": "description",
+			"before": "Fired when a user releases their finger from the screen on a TouchEnabled device - such as the screen of a mobile device.",
+			"after": "Fires when a user releases their finger from the screen of a <code>TouchEnabled</code> device.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Event",
+				"Name": "TouchEnded",
+				"Parameters": [
+					{
+						"Name": "touch",
+						"Type": {
+							"Category": "Class",
+							"Name": "InputObject"
+						}
+					},
+					{
+						"Name": "gameProcessedEvent",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchLongPress",
+			"part": "description",
+			"before": "Fired when a user holds at least one finger for a short amount of time on the same screen position on a TouchEnabled device - such as the screen of a mobile device.",
+			"after": "Fires when a user holds at least one finger for a short amount of time on the screen of a <code>TouchEnabled</code> device.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Event",
+				"Name": "TouchLongPress",
+				"Parameters": [
+					{
+						"Name": "touchPositions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "state",
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserInputState"
+						}
+					},
+					{
+						"Name": "gameProcessedEvent",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchMoved",
+			"part": "description",
+			"before": "Fires when a user moves their finger on a <code>TouchEnabled</code> device, such as a tablet or smartphone.",
+			"after": "Fires when a user moves their finger on the screen of a <code>TouchEnabled</code> device.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Event",
+				"Name": "TouchMoved",
+				"Parameters": [
+					{
+						"Name": "touch",
+						"Type": {
+							"Category": "Class",
+							"Name": "InputObject"
+						}
+					},
+					{
+						"Name": "gameProcessedEvent",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchPan",
+			"part": "description",
+			"before": "Fired when a user drags at least one finger on a <code>TouchEnabled</code> device - such as the screen of a mobile device.",
+			"after": "Fires when the user drags at least one finger on the screen of a <code>TouchEnabled</code> device.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Event",
+				"Name": "TouchPan",
+				"Parameters": [
+					{
+						"Name": "touchPositions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "totalTranslation",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "velocity",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "state",
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserInputState"
+						}
+					},
+					{
+						"Name": "gameProcessedEvent",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchPinch",
+			"part": "description",
+			"before": "Fired when a user pinches their fingers on a <code>TouchEnabled</code> device - such as the screen of a mobile device.",
+			"after": "Fires when a user performs a pinch gesture on the screen of a <code>TouchEnabled</code> device.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Event",
+				"Name": "TouchPinch",
+				"Parameters": [
+					{
+						"Name": "touchPositions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "scale",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "velocity",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "state",
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserInputState"
+						}
+					},
+					{
+						"Name": "gameProcessedEvent",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchRotate",
+			"part": "description",
+			"before": "Fires when a user rotates two fingers on a <code>TouchEnabled</code> device - such as the screen of a mobile device.",
+			"after": "Fires when a user rotates two fingers on the screen of a <code>TouchEnabled</code> device.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Event",
+				"Name": "TouchRotate",
+				"Parameters": [
+					{
+						"Name": "touchPositions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "rotation",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "velocity",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "state",
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserInputState"
+						}
+					},
+					{
+						"Name": "gameProcessedEvent",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchStarted",
+			"part": "description",
+			"before": "Fired when a user places their finger on a TouchEnabled device - such as the screen of an Apple iPad or iPhone or a Google Android phone.",
+			"after": "Fires when a user places their finger on the screen of a <code>TouchEnabled</code> device.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Event",
+				"Name": "TouchStarted",
+				"Parameters": [
+					{
+						"Name": "touch",
+						"Type": {
+							"Category": "Class",
+							"Name": "InputObject"
+						}
+					},
+					{
+						"Name": "gameProcessedEvent",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchSwipe",
+			"part": "description",
+			"before": "Fires on a <code>TouchEnabled</code> device when a user places their finger(s) down on the screen, pans across the screen, and lifts their finger off with a certain speed of movement.",
+			"after": "Fires on a <code>TouchEnabled</code> device when a user places their finger(s) down on the screen, pans across the screen, and lifts their finger(s) off with a certain speed of movement.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Event",
+				"Name": "TouchSwipe",
+				"Parameters": [
+					{
+						"Name": "swipeDirection",
+						"Type": {
+							"Category": "Enum",
+							"Name": "SwipeDirection"
+						}
+					},
+					{
+						"Name": "numberOfTouches",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "gameProcessedEvent",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchTap",
+			"part": "description",
+			"before": "Fired when a user taps their finger on a <code>TouchEnabled</code> device - such as the screen of a mobile device.",
+			"after": "Fires when a user taps their finger on the screen of a <code>TouchEnabled</code> device.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Event",
+				"Name": "TouchTap",
+				"Parameters": [
+					{
+						"Name": "touchPositions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "gameProcessedEvent",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchTapInWorld",
+			"part": "description",
+			"before": "Fires when a user taps the game world on a <code>TouchEnabled</code> device - such as the screen of a mobile device.",
+			"after": "Fires when a user taps their finger on the screen of a <code>TouchEnabled</code> device and the tap location is in the 3D world.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Event",
+				"Name": "TouchTapInWorld",
+				"Parameters": [
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "processedByUI",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ContextActionResult",
+			"part": "description",
+			"before": "Describes whether a ContextAction should sink or pass input events.",
+			"after": "Describes whether a contextual action should sink or pass input events."
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ContextActionResult",
+			"item": "Sink",
+			"part": "description",
+			"before": "If <em>functionToBind</em> from <code>ContextActionService:BindAction()</code> returns Enum.ContextActionResult.Sink, the input event will stop at that function and no other bound actions under it will be processed. This is the default behavior if <em>functionToBind</em> does not return anything or yields in any way.",
+			"after": "If <code>functionToBind</code> from <code>ContextActionService:BindAction()</code> returns <code>ContextActionResult.Sink</code>, the input event will stop at that function and no other bound actions under it will be processed. This is the default behavior if <code>functionToBind</code> does not return anything or yields in any way.",
+			"value": {
+				"Name": "Sink",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ContextActionResult",
+			"item": "Pass",
+			"part": "description",
+			"before": "If <em>functionToBind</em> from <code>ContextActionService:BindAction()</code> returns Enum.ContextActionResult.Pass, the input event is considered to have not been handled by <em>functionToBind</em> and will continue being passed to actions bound to the same input type.",
+			"after": "If <code>functionToBind</code> from <code>ContextActionService:BindAction()</code> returns <code>ContextActionResult.Pass</code>, the input event is considered to have not been handled by <code>functionToBind</code> and will continue being passed to actions bound to the same input type.",
+			"value": {
+				"Name": "Pass",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DevComputerMovementMode",
+			"item": "UserChoice",
+			"part": "description",
+			"before": "The player's character will moved based on the user's settings.",
+			"after": "Allows players to choose their desired control scheme from the in-experience menu. This is the default movement mode.",
+			"value": {
+				"Name": "UserChoice",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DevComputerMovementMode",
+			"item": "ClickToMove",
+			"part": "description",
+			"before": "The player can right click in the game world and the character will move there. Player can also control character with mouse and keyboard.",
+			"after": "Players can only move through the experience by clicking a target location. The player's character will automatically jump when reaching a surmountable obstacle/gap while moving to the click destination.",
+			"value": {
+				"Name": "ClickToMove",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DevComputerMovementMode",
+			"item": "Scriptable",
+			"part": "description",
+			"before": "The player will not respond to default controls. You must define any character movement in custom scripts.",
+			"after": "Disables all default controls and allows you to script your own control scheme.",
+			"value": {
+				"Name": "Scriptable",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "DevTouchMovementMode",
+			"part": "description",
+			"before": "Overrides the movement mode of players who are playing on touch devices.",
+			"after": "Overrides the movement mode of players who are playing on touch-enabled devices."
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DevTouchMovementMode",
+			"item": "UserChoice",
+			"part": "description",
+			"before": "The player's character will moved based on the user's settings.",
+			"after": "Allows players to choose their desired control scheme from the in-experience menu. This is the default movement mode.",
+			"value": {
+				"Name": "UserChoice",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DevTouchMovementMode",
+			"item": "Scriptable",
+			"part": "description",
+			"before": "The player will not respond to default controls; any character movement must be defined in custom scripts.",
+			"after": "The player's character will not respond to default controls; any character movement must be defined in custom scripts.",
+			"value": {
+				"Name": "Scriptable",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DevTouchMovementMode",
+			"item": "DynamicThumbstick",
+			"part": "description",
+			"before": "The player's character is controlled with a virtual thumbstick that appears when they touch the lower portion of the screen. Jumping is controlled with a separate button. Good for portrait mode and one handed play.",
+			"after": "The player's character is controlled with a virtual thumbstick that appears when they touch the lower portion of the screen. Jumping is controlled with a separate button.",
+			"value": {
+				"Name": "DynamicThumbstick",
+				"Value": 6
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "InputActionType",
+			"item": "Bool",
+			"part": "description",
+			"before": "The <code>InputAction</code> will receive boolean values from button inputs, for example <code>true</code>/<code>false</code> on press/release from inputs such as <code>KeyCode.ButtonA</code> or <code>KeyCode.E</code>.",
+			"after": "The <code>InputAction</code> will receive boolean values from button inputs, for example <code>true</code>/<code>false</code> on press/release from inputs such as <code>KeyCode.ButtonA</code> or <code>KeyCode.E</code>. This setting also exposes the <code>UIButton</code> property on child <code>InputBindings</code>, allowing you to easily hook up press or release of a <code>GuiButton</code> for the action.",
+			"value": {
+				"Name": "Bool",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "InputActionType",
+			"item": "Direction1D",
+			"part": "description",
+			"before": "The <code>InputAction</code> will receive numerical values, generally from analog gamepad triggers such as <code>KeyCode.ButtonL2</code> or <code>KeyCode.ButtonR2</code>.",
+			"after": "The <code>InputAction</code> will receive numerical values, generally from analog gamepad triggers such as <code>KeyCode.ButtonL2</code> or <code>KeyCode.ButtonR2</code>. This setting also exposes the <code>Up</code> and <code>Down</code> properties on child <code>InputBindings</code>, allowing for boolean inputs or \"1D\" inputs as composite directions for the action.",
+			"value": {
+				"Name": "Direction1D",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "InputActionType",
+			"item": "Direction2D",
+			"part": "description",
+			"before": "The <code>InputAction</code> will receive <code>Vector2</code> values, generally from thumbstick inputs such as <code>KeyCode.Thumbstick1</code> and <code>KeyCode.Thumbstick2</code>.",
+			"after": "The <code>InputAction</code> will receive <code>Vector2</code> values, generally from thumbstick inputs such as <code>KeyCode.Thumbstick1</code> and <code>KeyCode.Thumbstick2</code>. This setting also exposes the <code>Up</code>, <code>Down</code>, <code>Left</code>, and <code>Right</code> properties on child <code>InputBindings</code>, allowing for \"2D\" inputs as composite directions for the action.",
+			"value": {
+				"Name": "Direction2D",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "InputActionType",
+			"item": "Direction3D",
+			"part": "description",
+			"before": null,
+			"after": "The <code>InputAction</code> will receive <code>Vector3</code> values from inputs assigned to the <code>Up</code>, <code>Down</code>, <code>Left</code>, <code>Right</code>, <code>Forward</code>, and/or <code>Backward</code> properties on child <code>InputBindings</code>, allowing for \"3D\" inputs as composite directions for the action.",
+			"value": {
+				"Name": "Direction3D",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "PreferredInput",
+			"part": "description",
+			"before": null,
+			"after": "This enum is used with <code>UserInputService.PreferredInput</code> to indicate the primary input type a player is likely using."
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PreferredInput",
+			"item": "KeyboardAndMouse",
+			"part": "description",
+			"before": null,
+			"after": "The player has connected or most recently interacted with a keyboard or mouse.",
+			"value": {
+				"Name": "KeyboardAndMouse",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PreferredInput",
+			"item": "Gamepad",
+			"part": "description",
+			"before": null,
+			"after": "The player has connected or most recently interacted with a gamepad.",
+			"value": {
+				"Name": "Gamepad",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PreferredInput",
+			"item": "Touch",
+			"part": "description",
+			"before": null,
+			"after": "The player's device has touch capability and no other input method is available or connected.",
+			"value": {
+				"Name": "Touch",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "UserInputState",
+			"part": "description",
+			"before": "The <strong>UserInputState</strong> enum describes the state of an input that is currently or was recently performed.",
+			"after": "This enum describes the state of an input that is currently or was recently performed."
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UserInputState",
+			"item": "Begin",
+			"part": "description",
+			"before": "Occurs when an <code>InputObject</code> starts to interact with the game. For example, a mouse button down, or a key down, or when a touch begins touching the screen.",
+			"after": "Occurs when an <code>InputObject</code> starts to interact with the experience. For example, a mouse button down, a key down, or when the player begins touching the screen.",
+			"value": {
+				"Name": "Begin",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UserInputState",
+			"item": "Change",
+			"part": "description",
+			"before": "Occurs each frame an <code>InputObject</code> has already begun interacting with the game and part of its state is changing. For example, a movement of the mouse position, a gamepad thumbstick, gamepad trigger button, or screen touch point.",
+			"after": "Occurs each frame an <code>InputObject</code> has already begun interacting with the experience and part of its state is changing. For example, movement of the mouse position, a gamepad thumbstick movement, an analog gamepad trigger button change, or screen touch point change.",
+			"value": {
+				"Name": "Change",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UserInputState",
+			"item": "End",
+			"part": "description",
+			"before": "When an <code>InputObject</code> finishes interacting with the game. For example, a mouse button up, or a key up, or when a touch stops touching the screen.",
+			"after": "Occurs when an <code>InputObject</code> finishes interacting with the experience. For example, a mouse button up, a key up, or when the player stops touching the screen.",
+			"value": {
+				"Name": "End",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UserInputState",
+			"item": "Cancel",
+			"part": "description",
+			"before": "A special circumstance state that indicates this input is no longer relevant, particularly with <code>ContextActionService</code>. For example, binding two action-handling functions will cause the first to Cancel if an input was already in-progress when the second was bound.",
+			"after": "A special circumstance state that indicates this input is no longer relevant, particularly with <code>ContextActionService</code>. For example, binding two action-handling functions will cause the first to <code>Cancel</code> if an input was already in-progress when the second was bound.",
+			"value": {
+				"Name": "Cancel",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UserInputState",
+			"item": "None",
+			"part": "description",
+			"before": "A state that should never be seen in a game, essentially just marks the end of the enum.",
+			"after": "A state that should never be seen in an experience; essentially just marks the end of the enum.",
+			"value": {
+				"Name": "None",
+				"Value": 4
+			}
+		}
+	]
+}

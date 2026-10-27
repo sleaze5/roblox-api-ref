@@ -1,0 +1,2722 @@
+{
+	"from": {
+		"version": "0.590.0.5900681",
+		"hash": "d909e3704b9f4694"
+	},
+	"to": {
+		"version": "0.591.0.5910633",
+		"hash": "3bf43d3ad7ce4d3c"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "Capabilities",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Capabilities",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "SecurityCapabilities"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "DefinesCapabilities",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "DefinesCapabilities",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Animator",
+			"member": "RegisterEvaluationParallelCallback",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterEvaluationParallelCallback",
+				"Parameters": [
+					{
+						"Name": "callback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "LoadImageAsync",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LoadImageAsync",
+				"Parameters": [
+					{
+						"Name": "textureId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "DynamicImage"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "CreateDynamicImageAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateDynamicImageAsync",
+				"Parameters": [
+					{
+						"Name": "textureId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "DynamicImage"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DynamicImage",
+			"member": "Crop",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Crop",
+				"Parameters": [
+					{
+						"Name": "min",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "max",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DynamicImage",
+			"member": "DrawImage",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DrawImage",
+				"Parameters": [
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "image",
+						"Type": {
+							"Category": "Class",
+							"Name": "DynamicImage"
+						}
+					},
+					{
+						"Name": "combineType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ImageCombineType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ExperienceNotificationService",
+			"member": "CreateUserNotificationAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateUserNotificationAsync",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "userNotification",
+						"Type": {
+							"Category": "Class",
+							"Name": "UserNotification"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "CalculateConstraintsToPreserve",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "source",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Name": "destination",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Objects"
+							}
+						},
+						{
+							"Name": "options",
+							"Type": {
+								"Category": "Group",
+								"Name": "Variant"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "source",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Name": "destination",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Objects"
+							}
+						},
+						{
+							"Default": "nil",
+							"Name": "options",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "CalculateConstraintsToPreserve",
+				"Parameters": [
+					{
+						"Name": "source",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "destination",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "IntersectAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "part",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Name": "parts",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Objects"
+							}
+						},
+						{
+							"Name": "options",
+							"Type": {
+								"Category": "Group",
+								"Name": "Variant"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "part",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Name": "parts",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Objects"
+							}
+						},
+						{
+							"Default": "nil",
+							"Name": "options",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "IntersectAsync",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "SubtractAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "part",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Name": "parts",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Objects"
+							}
+						},
+						{
+							"Name": "options",
+							"Type": {
+								"Category": "Group",
+								"Name": "Variant"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "part",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Name": "parts",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Objects"
+							}
+						},
+						{
+							"Default": "nil",
+							"Name": "options",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SubtractAsync",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "UnionAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "part",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Name": "parts",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Objects"
+							}
+						},
+						{
+							"Name": "options",
+							"Type": {
+								"Category": "Group",
+								"Name": "Variant"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "part",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Name": "parts",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Objects"
+							}
+						},
+						{
+							"Default": "nil",
+							"Name": "options",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "UnionAsync",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "SetTopbarInset",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "topbarInset",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "topbarInset",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Rect"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetTopbarInset",
+				"Parameters": [
+					{
+						"Name": "topbarInset",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Rect"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "TopbarInsetChanged",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "TopbarInsetChanged",
+				"Parameters": [
+					{
+						"Name": "topbarInset",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "TopbarInset",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "TopbarInset",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Rect"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LiveScriptingService",
+			"member": "KickFromEdit",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "id",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "id",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "msg",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "KickFromEdit",
+				"Parameters": [
+					{
+						"Name": "id",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "msg",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreService",
+			"member": "GetHashMap",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetHashMap",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "MemoryStoreHashMap"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TriangleMeshPart",
+			"member": "AeroMeshData",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "AeroMeshData",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "SharedString"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MeshPart",
+			"member": "AeroMeshData",
+			"type": "Remove",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "AeroMeshData",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "SharedString"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsSettings",
+			"member": "SolverConvergenceMetricType",
+			"type": "Add",
+			"value": {
+				"Category": "Display",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "SolverConvergenceMetricType",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "SolverConvergenceMetricType"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PublishService",
+			"member": "CreateAssetAndWaitForAssetId",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "instances",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Objects"
+							}
+						},
+						{
+							"Name": "operationId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "creatorId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "assetType",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "name",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "description",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "instances",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Objects"
+							}
+						},
+						{
+							"Name": "operationId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "creatorType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "AssetCreatorType"
+							}
+						},
+						{
+							"Name": "creatorId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "assetType",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "name",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "description",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateAssetAndWaitForAssetId",
+				"Parameters": [
+					{
+						"Name": "instances",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					},
+					{
+						"Name": "operationId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "creatorType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AssetCreatorType"
+						}
+					},
+					{
+						"Name": "creatorId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "assetType",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "description",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "GetInstance",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetInstance",
+				"Parameters": [
+					{
+						"Name": "collectorName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "instanceId",
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "RegisterContextCollector",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterContextCollector",
+				"Parameters": [
+					{
+						"Name": "collectorName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "function",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "UnregisterContextCollector",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UnregisterContextCollector",
+				"Parameters": [
+					{
+						"Name": "collectorName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "RequestEnded",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "RequestEnded",
+				"Parameters": [
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "RequestError",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "RequestError",
+				"Parameters": [
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "errorMessage",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "RequestStarted",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "RequestStarted",
+				"Parameters": [
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "Stream",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Stream",
+				"Parameters": [
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "streamContent",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "CameraAdaptiveSpeed",
+			"type": "Add",
+			"value": {
+				"Category": "Camera",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "CameraAdaptiveSpeed",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "CameraTweenFocus",
+			"type": "Add",
+			"value": {
+				"Category": "Camera",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "CameraTweenFocus",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleRule",
+			"member": "StyleRulePropertyChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "StyleRulePropertyChanged",
+				"Parameters": [
+					{
+						"Name": "styleProperty",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TeamCreateService",
+			"member": "GetIsUseUniverseSearchNewEndpoint",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetIsUseUniverseSearchNewEndpoint",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VersionControlService",
+			"member": "BroadcastScriptChangesSubmitted",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "BroadcastScriptChangesSubmitted",
+				"Parameters": [
+					{
+						"Name": "scriptGuid",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "MemoryStoreHashMap",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "MemoryStoreHashMap",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreHashMap",
+			"member": "GetAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreHashMap",
+			"member": "RemoveAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RemoveAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreHashMap",
+			"member": "SetAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "expiration",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreHashMap",
+			"member": "UpdateAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UpdateAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "transformFunction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					},
+					{
+						"Name": "expiration",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AssetCreatorType",
+			"type": "Add",
+			"value": {
+				"Name": "AssetCreatorType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetCreatorType",
+			"item": "User",
+			"type": "Add",
+			"value": {
+				"Name": "User",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetCreatorType",
+			"item": "Group",
+			"type": "Add",
+			"value": {
+				"Name": "Group",
+				"Value": 1
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ImageCombineType",
+			"type": "Add",
+			"value": {
+				"Name": "ImageCombineType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ImageCombineType",
+			"item": "BlendSourceOver",
+			"type": "Add",
+			"value": {
+				"Name": "BlendSourceOver",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ImageCombineType",
+			"item": "Overwrite",
+			"type": "Add",
+			"value": {
+				"Name": "Overwrite",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "SolverConvergenceMetricType",
+			"type": "Add",
+			"value": {
+				"Name": "SolverConvergenceMetricType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SolverConvergenceMetricType",
+			"item": "IterationBased",
+			"type": "Add",
+			"value": {
+				"Name": "IterationBased",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SolverConvergenceMetricType",
+			"item": "AlgorithmAgnostic",
+			"type": "Add",
+			"value": {
+				"Name": "AlgorithmAgnostic",
+				"Value": 1
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "AddTag",
+			"part": "description",
+			"before": null,
+			"after": "Applies a tag to the instance.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddTag",
+				"Parameters": [
+					{
+						"Name": "tag",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "GetTags",
+			"part": "description",
+			"before": null,
+			"after": "Gets an array of all tags applied to the instance.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetTags",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "HasTag",
+			"part": "description",
+			"before": null,
+			"after": "Check whether the instance has a given tag.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "HasTag",
+				"Parameters": [
+					{
+						"Name": "tag",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "RemoveTag",
+			"part": "description",
+			"before": null,
+			"after": "Removes a tag from the instance.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RemoveTag",
+				"Parameters": [
+					{
+						"Name": "tag",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BubbleChatMessageProperties",
+			"member": "BackgroundColor3",
+			"part": "description",
+			"before": null,
+			"after": "Background color of bubbles.",
+			"value": {
+				"Category": "Appearance",
+				"Default": "0.980392, 0.980392, 0.980392",
+				"MemberType": "Property",
+				"Name": "BackgroundColor3",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BubbleChatMessageProperties",
+			"member": "BackgroundTransparency",
+			"part": "description",
+			"before": null,
+			"after": "Background transparency of bubbles.",
+			"value": {
+				"Category": "Appearance",
+				"Default": "0.10000000149011611938",
+				"MemberType": "Property",
+				"Name": "BackgroundTransparency",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "double"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BubbleChatMessageProperties",
+			"member": "FontFace",
+			"part": "description",
+			"before": null,
+			"after": "Font of the bubble text.",
+			"value": {
+				"Category": "Appearance",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "FontFace",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Font"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BubbleChatMessageProperties",
+			"member": "TextColor3",
+			"part": "description",
+			"before": null,
+			"after": "Color of bubble text.",
+			"value": {
+				"Category": "Appearance",
+				"Default": "0.223529, 0.231373, 0.239216",
+				"MemberType": "Property",
+				"Name": "TextColor3",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BubbleChatMessageProperties",
+			"member": "TextSize",
+			"part": "description",
+			"before": null,
+			"after": "Size of bubble text.",
+			"value": {
+				"Category": "Appearance",
+				"Default": "16",
+				"MemberType": "Property",
+				"Name": "TextSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "RigidConstraint",
+			"part": "description",
+			"before": "Creates a rigid connection between two Attachments.",
+			"after": "Creates a rigid connection between two <code>Attachments</code> or <code>Bones</code>."
+		},
+		{
+			"element": "Member",
+			"class": "ContextActionService",
+			"member": "BindAction",
+			"part": "parameter",
+			"parameter": "functionToBind",
+			"before": "The action-handling function, called with the following parameters when the bound inputs are triggered: string (actionName), Enum.UserInputState and an InputObject.",
+			"after": "The action-handling function, called with the following parameters when the bound inputs are triggered: string (actionName), <code>UserInputState</code> and an InputObject.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "BindAction",
+				"Parameters": [
+					{
+						"Name": "actionName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "functionToBind",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					},
+					{
+						"Name": "createTouchButton",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "inputTypes",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContextActionService",
+			"member": "BindAction",
+			"part": "parameter",
+			"parameter": "inputTypes",
+			"before": "Any number of Enum.KeyCode or Enum.UserInputType representing the inputs to bind to the action.",
+			"after": "Any number of <code>KeyCode</code> or <code>UserInputType</code> representing the inputs to bind to the action.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "BindAction",
+				"Parameters": [
+					{
+						"Name": "actionName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "functionToBind",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					},
+					{
+						"Name": "createTouchButton",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "inputTypes",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContextActionService",
+			"member": "BindActionAtPriority",
+			"part": "parameter",
+			"parameter": "functionToBind",
+			"before": "The action-handling function, called with the following parameters when the bound inputs are triggered: string (actionName), Enum.UserInputState and an InputObject.",
+			"after": "The action-handling function, called with the following parameters when the bound inputs are triggered: string (actionName), <code>UserInputState</code> and an InputObject.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "BindActionAtPriority",
+				"Parameters": [
+					{
+						"Name": "actionName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "functionToBind",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					},
+					{
+						"Name": "createTouchButton",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "priorityLevel",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "inputTypes",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "SpecialMesh",
+			"part": "description",
+			"before": "The SpecialMesh is an object that allows developers to provide a standard template or user uploaded mesh to a <code>BasePart</code>.",
+			"after": "The <code>SpecialMesh</code> object applies a mesh to a <code>BasePart</code> depending on the the <code>MeshType</code> property."
+		},
+		{
+			"element": "Member",
+			"class": "DataStoreService",
+			"member": "ListDataStoresAsync",
+			"part": "parameter",
+			"parameter": "pageSize",
+			"before": "<strong>(Optional)</strong> Number of items to be returned in each page.",
+			"after": "<strong>(Optional)</strong> Number of items to be returned in each page. By default is 32.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ListDataStoresAsync",
+				"Parameters": [
+					{
+						"Default": "",
+						"Name": "prefix",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "pageSize",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "cursor",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "DataStoreListingPages"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStore",
+			"member": "ListKeysAsync",
+			"part": "parameter",
+			"parameter": "pageSize",
+			"before": "<strong>(Optional)</strong> Maximum possible number of items that can be returned. There is no guarantee that ListKeys will return the same number of items as the specified pageSize. This parameter will only guarantee that ListKeys will never return more than the specified limit.",
+			"after": "<strong>(Optional)</strong> Maximum possible number of items that can be returned.  By default is 50. There is no guarantee that the method returns the  same number of items as the specified pageSize. This parameter only  guarantees that the method never returns more than the specified  limit.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ListKeysAsync",
+				"Parameters": [
+					{
+						"Default": "",
+						"Name": "prefix",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "pageSize",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "cursor",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "false",
+						"Name": "excludeDeleted",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "DataStoreKeyPages"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStore",
+			"member": "ListVersionsAsync",
+			"part": "parameter",
+			"parameter": "pageSize",
+			"before": "Number of items to be returned in each page.",
+			"after": "Number of items to be returned in each page. By default is 1024.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ListVersionsAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "Ascending",
+						"Name": "sortDirection",
+						"Type": {
+							"Category": "Enum",
+							"Name": "SortDirection"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "minDate",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "maxDate",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "pageSize",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "DataStoreVersionPages"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "OrderedDataStore",
+			"member": "GetSortedAsync",
+			"part": "parameter",
+			"parameter": "pagesize",
+			"before": "The length of each page.",
+			"after": "The length of each page. By default is 50. The max allowed value  is 100.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetSortedAsync",
+				"Parameters": [
+					{
+						"Name": "ascending",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "pagesize",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "minValue",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "maxValue",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IKControl",
+			"member": "Weight",
+			"part": "description",
+			"before": "Specifies how much this IK control should affect the final pose. Should be in the [0, 1] range.",
+			"after": "Specifies the weight of the IK control target. Should be in the [0, 1] range.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "Weight",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreQueue",
+			"member": "ReadAsync",
+			"part": "parameter",
+			"parameter": "waitTimeout",
+			"before": "The duration, in seconds, for which the method will wait if the required number of items is not immediately available in the queue. This parameter can be set to zero to indicate no wait. If this parameter is not provided or set to -1, the method will wait indefinitely.",
+			"after": "The duration, in seconds, for which the method will wait if the required number of items is not immediately available in the queue. Reads are attempted every two seconds during this period. This parameter can be set to zero to indicate no wait. If this parameter is not provided or set to -1, the method will wait indefinitely.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ReadAsync",
+				"Parameters": [
+					{
+						"Name": "count",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Default": "false",
+						"Name": "allOrNothing",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Default": "-1",
+						"Name": "waitTimeout",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "double"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "IntersectAsync",
+			"part": "parameter",
+			"parameter": "collisionfidelity",
+			"before": "The value of <code>CollisionFidelity</code> in the resulting <code>PartOperation</code>.",
+			"after": "The <code>CollisionFidelity</code> value for the resulting <code>IntersectOperation</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IntersectAsync",
+				"Parameters": [
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					},
+					{
+						"Default": "Default",
+						"Name": "collisionfidelity",
+						"Type": {
+							"Category": "Enum",
+							"Name": "CollisionFidelity"
+						}
+					},
+					{
+						"Default": "Automatic",
+						"Name": "renderFidelity",
+						"Type": {
+							"Category": "Enum",
+							"Name": "RenderFidelity"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "IntersectAsync",
+			"part": "parameter",
+			"parameter": "renderFidelity",
+			"before": "The value of <code>RenderFidelity</code> in the resulting <code>PartOperation</code>.",
+			"after": "The <code>RenderFidelity</code> value of the resulting <code>PartOperation</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IntersectAsync",
+				"Parameters": [
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					},
+					{
+						"Default": "Default",
+						"Name": "collisionfidelity",
+						"Type": {
+							"Category": "Enum",
+							"Name": "CollisionFidelity"
+						}
+					},
+					{
+						"Default": "Automatic",
+						"Name": "renderFidelity",
+						"Type": {
+							"Category": "Enum",
+							"Name": "RenderFidelity"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "SubtractAsync",
+			"part": "parameter",
+			"parameter": "collisionfidelity",
+			"before": "The value of <code>CollisionFidelity</code> in the resulting <code>PartOperation</code>.",
+			"after": "The <code>CollisionFidelity</code> value for the resulting <code>UnionOperation</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SubtractAsync",
+				"Parameters": [
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					},
+					{
+						"Default": "Default",
+						"Name": "collisionfidelity",
+						"Type": {
+							"Category": "Enum",
+							"Name": "CollisionFidelity"
+						}
+					},
+					{
+						"Default": "Automatic",
+						"Name": "renderFidelity",
+						"Type": {
+							"Category": "Enum",
+							"Name": "RenderFidelity"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "SubtractAsync",
+			"part": "parameter",
+			"parameter": "renderFidelity",
+			"before": "The value of <code>RenderFidelity</code> in the resulting <code>PartOperation</code>.",
+			"after": "The <code>RenderFidelity</code> value of the resulting <code>PartOperation</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SubtractAsync",
+				"Parameters": [
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					},
+					{
+						"Default": "Default",
+						"Name": "collisionfidelity",
+						"Type": {
+							"Category": "Enum",
+							"Name": "CollisionFidelity"
+						}
+					},
+					{
+						"Default": "Automatic",
+						"Name": "renderFidelity",
+						"Type": {
+							"Category": "Enum",
+							"Name": "RenderFidelity"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "UnionAsync",
+			"part": "parameter",
+			"parameter": "collisionfidelity",
+			"before": "The value of <code>CollisionFidelity</code> in the resulting <code>PartOperation</code>.",
+			"after": "The <code>CollisionFidelity</code> value for the resulting <code>UnionOperation</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UnionAsync",
+				"Parameters": [
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					},
+					{
+						"Default": "Default",
+						"Name": "collisionfidelity",
+						"Type": {
+							"Category": "Enum",
+							"Name": "CollisionFidelity"
+						}
+					},
+					{
+						"Default": "Automatic",
+						"Name": "renderFidelity",
+						"Type": {
+							"Category": "Enum",
+							"Name": "RenderFidelity"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "UnionAsync",
+			"part": "parameter",
+			"parameter": "renderFidelity",
+			"before": "The value of <code>RenderFidelity</code> in the resulting <code>PartOperation</code>.",
+			"after": "The <code>RenderFidelity</code> value of the resulting <code>PartOperation</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UnionAsync",
+				"Parameters": [
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					},
+					{
+						"Default": "Default",
+						"Name": "collisionfidelity",
+						"Type": {
+							"Category": "Enum",
+							"Name": "CollisionFidelity"
+						}
+					},
+					{
+						"Default": "Automatic",
+						"Name": "renderFidelity",
+						"Type": {
+							"Category": "Enum",
+							"Name": "RenderFidelity"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "TouchEnded",
+			"part": "description",
+			"before": "Fired when a part stops touching another part.",
+			"after": "Fires when a part stops touching another part as a result of physical movement.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "TouchEnded",
+				"Parameters": [
+					{
+						"Name": "otherPart",
+						"Type": {
+							"Category": "Class",
+							"Name": "BasePart"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "Touched",
+			"part": "description",
+			"before": "Fired when a part comes in contact with another part.",
+			"after": "Fires when a part touches another part as a result of physical movement.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Touched",
+				"Parameters": [
+					{
+						"Name": "otherPart",
+						"Type": {
+							"Category": "Class",
+							"Name": "BasePart"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "FluidForces",
+			"part": "description",
+			"before": null,
+			"after": "Determines whether the physics engine computes aerodynamic forces on <code>BaseParts</code> whose <code>EnableFluidForces</code> property is true.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "FluidForces",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "FluidForces"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "WeldConstraint",
+			"part": "description",
+			"before": "Joins two <code>BasePart</code> together such that their relative position and orientation remain the same.",
+			"after": "Connects two <code>BaseParts</code> together such that their relative position and orientation remain the same."
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CollisionFidelity",
+			"item": "Default",
+			"part": "description",
+			"before": "Uses the default collision model.",
+			"after": "Collision model uses a voxel-based convex-hull decomposition that is relatively fast but may not be highly accurate, especially for holes, doorways, and cavities in general.",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CollisionFidelity",
+			"item": "Hull",
+			"part": "description",
+			"before": "Collision models behave using a convex hull.",
+			"after": "Collision model uses the convex hull of the visual mesh.",
+			"value": {
+				"Name": "Hull",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CollisionFidelity",
+			"item": "Box",
+			"part": "description",
+			"before": "Collision models behave using a box that corresponds to the union's selection box.",
+			"after": "Collision model uses a bounding box that encompasses the visual mesh.",
+			"value": {
+				"Name": "Box",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CollisionFidelity",
+			"item": "PreciseConvexDecomposition",
+			"part": "description",
+			"before": null,
+			"after": "Collison model uses a convex-hull decomposition of the visual mesh which is computed by a variation of an algorithm called HACD. This option is the most accurate representation of collision geometry for complex objects with built-in tolerances to reduce the total number of convex-hulls by compromising on accuracy when justified.",
+			"value": {
+				"Name": "PreciseConvexDecomposition",
+				"Value": 3
+			}
+		}
+	]
+}

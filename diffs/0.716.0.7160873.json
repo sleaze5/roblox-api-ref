@@ -1,0 +1,1428 @@
+{
+	"from": {
+		"version": "0.715.1.7151119",
+		"hash": "4e0d6381db804162"
+	},
+	"to": {
+		"version": "0.716.0.7160873",
+		"hash": "468628c5c08447ae"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AdService",
+			"member": "RegisterDisclosureButton",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "disclosureButton",
+							"Type": {
+								"Category": "Class",
+								"Name": "GuiButton"
+							}
+						},
+						{
+							"Name": "immersiveBrandedAdId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "disclosureButton",
+							"Type": {
+								"Category": "Class",
+								"Name": "GuiButton"
+							}
+						},
+						{
+							"Name": "adIntegrationPlacementId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"Capabilities": [
+					"Monetization"
+				],
+				"MemberType": "Function",
+				"Name": "RegisterDisclosureButton",
+				"Parameters": [
+					{
+						"Name": "disclosureButton",
+						"Type": {
+							"Category": "Class",
+							"Name": "GuiButton"
+						}
+					},
+					{
+						"Name": "adIntegrationPlacementId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FeatureRestrictionManager",
+			"member": "UpdateExperienceChatTimeout",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "UpdateExperienceChatTimeout",
+				"Parameters": [
+					{
+						"Name": "startTime",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "duration",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FeatureRestrictionManager",
+			"member": "UpdateFeatureTimeout",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "UpdateFeatureTimeout",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "acknowledgeable",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "permanent",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "startTime",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "duration",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "featureRestrictionAbuseVector",
+						"Type": {
+							"Category": "Enum",
+							"Name": "FeatureRestrictionAbuseVector"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GamepadService",
+			"member": "AutoSelectGui",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Function",
+				"Name": "AutoSelectGui",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "ServerResetCharacter",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"AvatarAppearance"
+				],
+				"MemberType": "Event",
+				"Name": "ServerResetCharacter",
+				"Parameters": [],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LodDataEntity",
+			"member": "EntityVisible",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "EntityVisible",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LogService",
+			"member": "MessageOut",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "message",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "messageType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "MessageType"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "message",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "messageType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "MessageType"
+							}
+						},
+						{
+							"Name": "context",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"Capabilities": [
+					"Logging"
+				],
+				"MemberType": "Event",
+				"Name": "MessageOut",
+				"Parameters": [
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "messageType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "MessageType"
+						}
+					},
+					{
+						"Name": "context",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LogService",
+			"member": "Error",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Logging"
+				],
+				"MemberType": "Function",
+				"Name": "Error",
+				"Parameters": [
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "context",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LogService",
+			"member": "Info",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Logging"
+				],
+				"MemberType": "Function",
+				"Name": "Info",
+				"Parameters": [
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "context",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LogService",
+			"member": "Log",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Logging"
+				],
+				"MemberType": "Function",
+				"Name": "Log",
+				"Parameters": [
+					{
+						"Name": "messageType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "MessageType"
+						}
+					},
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "context",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LogService",
+			"member": "Output",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Logging"
+				],
+				"MemberType": "Function",
+				"Name": "Output",
+				"Parameters": [
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "context",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LogService",
+			"member": "Warn",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Logging"
+				],
+				"MemberType": "Function",
+				"Name": "Warn",
+				"Parameters": [
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "context",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptBulkPurchaseRequested",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "player",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Name": "displayData",
+							"Type": {
+								"Category": "Group",
+								"Name": "Array"
+							}
+						},
+						{
+							"Name": "orderRequest",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						},
+						{
+							"Name": "purchaserRobuxBalance",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "orderTotalRobux",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "options",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "player",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Name": "displayData",
+							"Type": {
+								"Category": "Group",
+								"Name": "Array"
+							}
+						},
+						{
+							"Name": "orderRequest",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						},
+						{
+							"Name": "purchaserRobuxBalance",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "orderTotalRobux",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "options",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						},
+						{
+							"Name": "discountInformation",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptBulkPurchaseRequested",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "displayData",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "orderRequest",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Name": "purchaserRobuxBalance",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "orderTotalRobux",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Name": "discountInformation",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NotificationService",
+			"member": "SubscribeToRccEventNamespace",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Players"
+				],
+				"MemberType": "Function",
+				"Name": "SubscribeToRccEventNamespace",
+				"Parameters": [
+					{
+						"Name": "eventNamespace",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "GetObjectsAllOrNone",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "url",
+							"Type": {
+								"Category": "DataType",
+								"Name": "ContentId"
+							}
+						},
+						{
+							"Default": "false",
+							"Name": "binaryFormatOnly",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "url",
+							"Type": {
+								"Category": "DataType",
+								"Name": "ContentId"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetObjectsAllOrNone",
+				"Parameters": [
+					{
+						"Name": "url",
+						"Type": {
+							"Category": "DataType",
+							"Name": "ContentId"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Instances"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SurfaceAppearance",
+			"member": "ResampleMode",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "Default",
+				"MemberType": "Property",
+				"Name": "ResampleMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ResamplerMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatService",
+			"member": "AllocateUniverseChatChannelAsync",
+			"type": "Remove",
+			"value": {
+				"Capabilities": [
+					"Chat"
+				],
+				"MemberType": "Function",
+				"Name": "AllocateUniverseChatChannelAsync",
+				"Parameters": [
+					{
+						"Name": "context",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatService",
+			"member": "HasAllocatedUniverseChatContext",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Chat"
+				],
+				"MemberType": "Function",
+				"Name": "HasAllocatedUniverseChatContext",
+				"Parameters": [
+					{
+						"Name": "context",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatService",
+			"member": "SendingUniverseChatMessage",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Chat"
+				],
+				"MemberType": "Event",
+				"Name": "SendingUniverseChatMessage",
+				"Parameters": [
+					{
+						"Name": "textChatMessage",
+						"Type": {
+							"Category": "Class",
+							"Name": "TextChatMessage"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatService",
+			"member": "ServerToClientChatActionReplicateSignal",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Chat"
+				],
+				"MemberType": "Event",
+				"Name": "ServerToClientChatActionReplicateSignal",
+				"Parameters": [
+					{
+						"Name": "chatActionMessage",
+						"Type": {
+							"Category": "Class",
+							"Name": "TextChatMessage"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatService",
+			"member": "ServerToClientUniverseChatChannelAllocatedSignalV1",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Chat"
+				],
+				"MemberType": "Event",
+				"Name": "ServerToClientUniverseChatChannelAllocatedSignalV1",
+				"Parameters": [
+					{
+						"Name": "context",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatService",
+			"member": "UniverseChatChannelAllocated",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Chat"
+				],
+				"MemberType": "Event",
+				"Name": "UniverseChatChannelAllocated",
+				"Parameters": [
+					{
+						"Name": "context",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RigLabel",
+			"item": "Spine",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "LegacyNames",
+					"before": [
+						"Pelvis"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Name": "Spine",
+				"Value": 23
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RigLabel",
+			"item": "LeftToeBase",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "LegacyNames",
+					"before": [
+						"LeftToes"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Name": "LeftToeBase",
+				"Value": 28
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RigLabel",
+			"item": "RightToeBase",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "LegacyNames",
+					"before": [
+						"RightToes"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Name": "RightToeBase",
+				"Value": 29
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "AudioPlayer",
+			"member": "Cancel",
+			"part": "description",
+			"before": null,
+			"after": "Attempts to cancel a pre-planned future <code>Play</code> or <code>Stop</code> command.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "Cancel",
+				"Parameters": [
+					{
+						"Name": "actionId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioPlayer",
+			"member": "Cancel",
+			"part": "parameter",
+			"parameter": "actionId",
+			"before": null,
+			"after": "The unique-ID of a pre-planned <code>Play</code> or <code>Stop</code> command.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "Cancel",
+				"Parameters": [
+					{
+						"Name": "actionId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioPlayer",
+			"member": "Cancel",
+			"part": "return",
+			"before": null,
+			"after": "Whether the cancellation was successful. Returns false if the action has already occurred, or otherwise does not exist.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "Cancel",
+				"Parameters": [
+					{
+						"Name": "actionId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiButton",
+			"member": "SecondaryActivated",
+			"part": "description",
+			"before": "Fires when a right-click is detected on desktop, long press detected on mobile, or triangle / Y activated in UI navigation mode on console. This function is not available yet.",
+			"after": null,
+			"value": {
+				"Capabilities": [
+					"UI"
+				],
+				"MemberType": "Event",
+				"Name": "SecondaryActivated",
+				"Parameters": [
+					{
+						"Name": "inputObject",
+						"Type": {
+							"Category": "Class",
+							"Name": "InputObject"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "ModelStreamingBehavior",
+			"part": "description",
+			"before": null,
+			"after": "Controls how <code>Models</code> are replicated in experiences when instance streaming is enabled.",
+			"value": {
+				"Category": "Streaming",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "ModelStreamingBehavior",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ModelStreamingBehavior"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "StreamOutBehavior",
+			"part": "description",
+			"before": "Configures how the engine decides when to Stream content away from players.",
+			"after": "Configures how the engine decides when to stream content away from players.",
+			"value": {
+				"Category": "Streaming",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "StreamOutBehavior",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "StreamOutBehavior"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "StreamingIntegrityMode",
+			"part": "description",
+			"before": "Determines whether StreamingIntegrityMode is active.",
+			"after": "Determines whether streaming integrity mode is active.",
+			"value": {
+				"Category": "Streaming",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "StreamingIntegrityMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "StreamingIntegrityMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SoundService",
+			"member": "GetMixerTime",
+			"part": "description",
+			"before": null,
+			"after": "Returns the number of seconds since the audio engine began mixing.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "GetMixerTime",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "double"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SoundService",
+			"member": "GetMixerTime",
+			"part": "return",
+			"before": null,
+			"after": "The number of seconds since the audio engine began mixing. This value is stable, sample-accurate, and monotonically-increasing – intended to be used for scheduling audible changes at precise times.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "GetMixerTime",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "double"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TeleportService",
+			"member": "PromptExperienceDetailsAsync",
+			"part": "parameter",
+			"parameter": "universeId",
+			"before": "<code>DataModel.UniverseId</code> of the experience to be presented to the <code>Player</code>",
+			"after": "<code>DataModel.UniverseId</code> of the experience to be presented to the <code>Player</code>.",
+			"value": {
+				"Capabilities": [
+					"Teleport"
+				],
+				"MemberType": "Function",
+				"Name": "PromptExperienceDetailsAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "universeId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "PromptExperienceDetailsResult"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ModelStreamingBehavior",
+			"item": "Default",
+			"part": "description",
+			"before": "Engine determines best behavior. Currently equivalent to <strong>Legacy</strong>.",
+			"after": "Default behavior (subject to change).",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ModelStreamingBehavior",
+			"item": "Improved",
+			"part": "description",
+			"before": "Models are never sent during player join. Models that are \"non-spatial\" (containing no <code>BasePart</code> descendants) are sent soon after join, but before the <code>Workspace.PersistentLoaded</code> event fires. Models that are \"spatial\" (containing <code>BasePart</code> descendants) are sent when any <code>BasePart</code> descendant needs to be streamed to a client, and may stream out when all <code>BasePart</code> descendants are eligible to stream out.",
+			"after": "Models are never sent during player join. See <a href=\"../../../workspace/streaming/index.md#model-streaming-controls\">model streaming controls</a> for detailed behavioral notes.",
+			"value": {
+				"Name": "Improved",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ModelStreamingMode",
+			"item": "Default",
+			"part": "description",
+			"before": "Engine determines best behavior. Currently equivalent to <strong>Nonatomic</strong>.",
+			"after": "Default behavior (subject to change).",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ModelStreamingMode",
+			"item": "PersistentPerPlayer",
+			"part": "description",
+			"before": "Behaves as a persistent model for players that have been added using <code>Model:AddPersistentPlayer()</code>. For other players, behavior is the same as <strong>Atomic</strong>. You can revert a model from player persistence via <code>Model:RemovePersistentPlayer()</code>.",
+			"after": "Behaves as a persistent model for players that have been added using <code>Model:AddPersistentPlayer()</code>. For other players, behavior is the same as <code>Atomic</code>. You can revert a model from player persistence via <code>Model:RemovePersistentPlayer()</code>.",
+			"value": {
+				"Name": "PersistentPerPlayer",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "StreamOutBehavior",
+			"part": "description",
+			"before": "Determines how content is streamed away from Players.",
+			"after": "Determines how content is streamed out from <code>Player</code> clients."
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StreamOutBehavior",
+			"item": "Default",
+			"part": "description",
+			"before": "Currently equivalent to LowMemory. This will eventually change to Opportunistic.",
+			"after": "Default behavior (subject to change).",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StreamOutBehavior",
+			"item": "Opportunistic",
+			"part": "description",
+			"before": "Stream out content that is significantly outside of the current StreamingRadius.",
+			"after": "Stream out content that is significantly outside of the current <code>Workspace.StreamingTargetRadius</code>.",
+			"value": {
+				"Name": "Opportunistic",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StreamingIntegrityMode",
+			"item": "Default",
+			"part": "description",
+			"before": "Default behavior (currently equivalent to <strong>Disabled</strong>).",
+			"after": "Default behavior (subject to change).",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "StreamingPauseMode",
+			"part": "description",
+			"before": "Determines how a Players client should handle not having enough content streamed in to continue playing properly.",
+			"after": "Determines how a client should handle not having enough content streamed in to continue playing properly."
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StreamingPauseMode",
+			"item": "Default",
+			"part": "description",
+			"before": "<strong>Deprecated:</strong> <br>Default behavior (currently no change to gameplay).",
+			"after": "<strong>Deprecated:</strong> <br>Default behavior (subject to change).",
+			"value": {
+				"Name": "Default",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 0
+			}
+		}
+	]
+}

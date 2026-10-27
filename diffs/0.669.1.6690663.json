@@ -1,0 +1,1975 @@
+{
+	"from": {
+		"version": "0.668.0.6680661",
+		"hash": "aeed6bba24764418"
+	},
+	"to": {
+		"version": "0.669.1.6690663",
+		"hash": "7f0f7a0cd81f40a8"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Annotation",
+			"member": "RequestCompleted",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "requestId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "requestType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "AnnotationRequestType"
+							}
+						},
+						{
+							"Name": "result",
+							"Type": {
+								"Category": "Enum",
+								"Name": "AnnotationRequestResult"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "requestId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "requestType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "AnnotationRequestType"
+							}
+						},
+						{
+							"Name": "result",
+							"Type": {
+								"Category": "Enum",
+								"Name": "AnnotationRequestStatus"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "RequestCompleted",
+				"Parameters": [
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "requestType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AnnotationRequestType"
+						}
+					},
+					{
+						"Name": "result",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AnnotationRequestStatus"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnnotationsService",
+			"member": "annotationsLoadingStatus",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "Loading",
+				"MemberType": "Property",
+				"Name": "annotationsLoadingStatus",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AnnotationRequestStatus"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnnotationsService",
+			"member": "resolvedLoadingStatus",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "Loading",
+				"MemberType": "Property",
+				"Name": "resolvedLoadingStatus",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AnnotationRequestStatus"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "CreateSurfaceAppearance",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateSurfaceAppearance",
+				"Parameters": [
+					{
+						"Name": "content",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "SurfaceAppearance"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RootImportData",
+			"member": "UseSceneOriginAsCFrame",
+			"type": "Remove",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "UseSceneOriginAsCFrame",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LocalizationService",
+			"member": "DynamicTranslationServerToClientResponse",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "DynamicTranslationServerToClientResponse",
+				"Parameters": [
+					{
+						"Name": "entries",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AuroraScript",
+			"member": "DumpMispredictions",
+			"type": "Remove",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "DumpMispredictions",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AuroraScript",
+			"member": "LODDistanceFactor",
+			"type": "Remove",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "LODDistanceFactor",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AuroraScript",
+			"member": "LODFrequencyFactor",
+			"type": "Remove",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "LODFrequencyFactor",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AuroraScript",
+			"member": "EnableCulling",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "EnableCulling",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AuroraScript",
+			"member": "LODCriticality",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "LODCriticality",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PartOperation",
+			"member": "ComponentIndex",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic",
+						"CSG"
+					]
+				},
+				"Category": "Data",
+				"Default": "-1",
+				"MemberType": "Property",
+				"Name": "ComponentIndex",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "PartyId",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "WritePlayerSecurity"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "RobloxSecurity"
+					}
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Players"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "PartyId",
+				"Security": {
+					"Read": "None",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "Environment",
+			"type": "Add",
+			"value": {
+				"Category": "State",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Environment",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "UpdatePlayerPartyData",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "partyId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "partyId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "false",
+							"Name": "isPartyDisabled",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "UpdatePlayerPartyData",
+				"Parameters": [
+					{
+						"Name": "partyId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "false",
+						"Name": "isPartyDisabled",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "PlayerPartyDataChanged",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "partyId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "partyId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "isPartyDisabled",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "PlayerPartyDataChanged",
+				"Parameters": [
+					{
+						"Name": "partyId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "isPartyDisabled",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "GetPartyAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPartyAsync",
+				"Parameters": [
+					{
+						"Name": "partyId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "EnableSelectionTooltips",
+			"type": "Add",
+			"value": {
+				"Category": "Script Editor",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "EnableSelectionTooltips",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "FacialAgeEstimationService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "FacialAgeEstimationService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FacialAgeEstimationService",
+			"member": "IsAvailable",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsAvailable",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FacialAgeEstimationService",
+			"member": "InquiryAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "InquiryAsync",
+				"Parameters": [
+					{
+						"Name": "inquiryId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "SystemThemeService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "SystemThemeService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SystemThemeService",
+			"member": "isSystemThemeAvailable",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "isSystemThemeAvailable",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SystemThemeService",
+			"member": "setTheme",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "setTheme",
+				"Parameters": [
+					{
+						"Name": "theme",
+						"Type": {
+							"Category": "Enum",
+							"Name": "SystemThemeValue"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SystemThemeService",
+			"member": "getSystemThemeAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "getSystemThemeAsync",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "SystemThemeValue"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SystemThemeService",
+			"member": "OnLuaThemeUpdated",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnLuaThemeUpdated",
+				"Parameters": [
+					{
+						"Name": "theme",
+						"Type": {
+							"Category": "Enum",
+							"Name": "SystemThemeValue"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AnnotationRequestResult",
+			"type": "Remove",
+			"value": {
+				"Name": "AnnotationRequestResult"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AnnotationRequestStatus",
+			"type": "Add",
+			"value": {
+				"Name": "AnnotationRequestStatus"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnnotationRequestStatus",
+			"item": "Success",
+			"type": "Add",
+			"value": {
+				"Name": "Success",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnnotationRequestStatus",
+			"item": "Loading",
+			"type": "Add",
+			"value": {
+				"Name": "Loading",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnnotationRequestStatus",
+			"item": "ErrorInternalFailure",
+			"type": "Add",
+			"value": {
+				"Name": "ErrorInternalFailure",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnnotationRequestStatus",
+			"item": "ErrorNotFound",
+			"type": "Add",
+			"value": {
+				"Name": "ErrorNotFound",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnnotationRequestStatus",
+			"item": "ErrorModerated",
+			"type": "Add",
+			"value": {
+				"Name": "ErrorModerated",
+				"Value": 4
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "FacialAgeEstimationResultType",
+			"type": "Add",
+			"value": {
+				"Name": "FacialAgeEstimationResultType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FacialAgeEstimationResultType",
+			"item": "Complete",
+			"type": "Add",
+			"value": {
+				"Name": "Complete",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FacialAgeEstimationResultType",
+			"item": "Cancel",
+			"type": "Add",
+			"value": {
+				"Name": "Cancel",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FacialAgeEstimationResultType",
+			"item": "Error",
+			"type": "Add",
+			"value": {
+				"Name": "Error",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "SystemThemeValue",
+			"type": "Add",
+			"value": {
+				"Name": "SystemThemeValue"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SystemThemeValue",
+			"item": "error",
+			"type": "Add",
+			"value": {
+				"Name": "error",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SystemThemeValue",
+			"item": "light",
+			"type": "Add",
+			"value": {
+				"Name": "light",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SystemThemeValue",
+			"item": "dark",
+			"type": "Add",
+			"value": {
+				"Name": "dark",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SystemThemeValue",
+			"item": "systemLight",
+			"type": "Add",
+			"value": {
+				"Name": "systemLight",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SystemThemeValue",
+			"item": "systemDark",
+			"type": "Add",
+			"value": {
+				"Name": "systemDark",
+				"Value": 4
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetFacesWithAttribute",
+			"part": "description",
+			"before": "Returns a list of faces that use a given attribute ID.",
+			"after": "<strong>Deprecated:</strong> <br>Returns a list of faces that use a given attribute ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFacesWithAttribute",
+				"Parameters": [
+					{
+						"Name": "id",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVerticesWithAttribute",
+			"part": "description",
+			"before": "Returns a list of vertices that use a given attribute ID.",
+			"after": "<strong>Deprecated:</strong> <br>Returns a list of vertices that use a given attribute ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVerticesWithAttribute",
+				"Parameters": [
+					{
+						"Name": "id",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnalyticsService",
+			"member": "FireCustomEvent",
+			"part": "parameter",
+			"parameter": "player",
+			"before": "The player who triggered the custom event. nil if not player related.",
+			"after": "The player who triggered the custom event. <code>nil</code> if not player related.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FireCustomEvent",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "eventCategory",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "customData",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnalyticsService",
+			"member": "FireLogEvent",
+			"part": "parameter",
+			"parameter": "player",
+			"before": "The player who triggered the error event, nil if not player related.",
+			"after": "The player who triggered the error event, <code>nil</code> if not player related.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FireLogEvent",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "logLevel",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AnalyticsLogLevel"
+						}
+					},
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "debugInfo",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "customData",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "KeyframeSequence",
+			"member": "RemoveKeyframe",
+			"part": "description",
+			"before": "This function removes a <code>Keyframe</code> from the <code>KeyframeSequence</code> by setting its parent to nil.",
+			"after": "This function removes a <code>Keyframe</code> from the <code>KeyframeSequence</code> by setting its parent to <code>nil</code>.",
+			"value": {
+				"Capabilities": [
+					"Animation"
+				],
+				"MemberType": "Function",
+				"Name": "RemoveKeyframe",
+				"Parameters": [
+					{
+						"Name": "keyframe",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "CheckApplyDefaultClothing",
+			"part": "return",
+			"before": "Returns a HumanoidDescription if default clothing was necessary. Otherwise returns nil.",
+			"after": "Returns a HumanoidDescription if default clothing was necessary. Otherwise returns <code>nil</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CheckApplyDefaultClothing",
+				"Parameters": [
+					{
+						"Name": "humanoidDescription",
+						"Type": {
+							"Category": "Class",
+							"Name": "HumanoidDescription"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "HumanoidDescription"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContextActionService",
+			"member": "GetCurrentLocalToolIcon",
+			"part": "return",
+			"before": "A content string from the Tool's TextureId, or nil if one could not be found.",
+			"after": "A content string from the Tool's TextureId, or <code>nil</code> if one could not be found.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Function",
+				"Name": "GetCurrentLocalToolIcon",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Keyframe",
+			"member": "RemoveMarker",
+			"part": "description",
+			"before": "Removes a <code>KeyframeMarker</code> from the <code>Keyframe</code> by settings its <code>Instance.Parent</code> to nil.",
+			"after": "Removes a <code>KeyframeMarker</code> from the <code>Keyframe</code> by settings its <code>Instance.Parent</code> to <code>nil</code>.",
+			"value": {
+				"Capabilities": [
+					"Animation"
+				],
+				"MemberType": "Function",
+				"Name": "RemoveMarker",
+				"Parameters": [
+					{
+						"Name": "marker",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Keyframe",
+			"member": "RemovePose",
+			"part": "description",
+			"before": "Removes a <code>Pose</code> from the <code>Keyframe</code> by setting its <code>Instance.Parent</code> to nil.",
+			"after": "Removes a <code>Pose</code> from the <code>Keyframe</code> by setting its <code>Instance.Parent</code> to <code>nil</code>.",
+			"value": {
+				"Capabilities": [
+					"Animation"
+				],
+				"MemberType": "Function",
+				"Name": "RemovePose",
+				"Parameters": [
+					{
+						"Name": "pose",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "MatchmakingService",
+			"part": "description",
+			"before": null,
+			"after": "The service responsible for managing custom matchmaking data."
+		},
+		{
+			"element": "Member",
+			"class": "MatchmakingService",
+			"member": "GetServerAttribute",
+			"part": "description",
+			"before": null,
+			"after": "Retrieves the value of a specific server attribute.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetServerAttribute",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MatchmakingService",
+			"member": "GetServerAttribute",
+			"part": "parameter",
+			"parameter": "name",
+			"before": null,
+			"after": "The name of the server attribute. Limited to a maximum of 50 characters.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetServerAttribute",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MatchmakingService",
+			"member": "GetServerAttribute",
+			"part": "return",
+			"before": null,
+			"after": "Returns the server attribute value if the attribute is found and if the error is <code>nil</code>. Otherwise, returns <code>nil</code> for the attribute value and an error message.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetServerAttribute",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MatchmakingService",
+			"member": "InitializeServerAttributesForStudio",
+			"part": "description",
+			"before": null,
+			"after": "Initiates the server attribute schema and its values to test in Studio.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "InitializeServerAttributesForStudio",
+				"Parameters": [
+					{
+						"Name": "serverAttributes",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MatchmakingService",
+			"member": "InitializeServerAttributesForStudio",
+			"part": "parameter",
+			"parameter": "serverAttributes",
+			"before": null,
+			"after": "An array of attribute name-value pairs.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "InitializeServerAttributesForStudio",
+				"Parameters": [
+					{
+						"Name": "serverAttributes",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MatchmakingService",
+			"member": "InitializeServerAttributesForStudio",
+			"part": "return",
+			"before": null,
+			"after": "Returns <code>true</code> if the call succeeded. Otherwise, returns <code>false</code> and an error message.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "InitializeServerAttributesForStudio",
+				"Parameters": [
+					{
+						"Name": "serverAttributes",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MatchmakingService",
+			"member": "SetServerAttribute",
+			"part": "description",
+			"before": null,
+			"after": "Assigns a value to a specific server attribute.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetServerAttribute",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MatchmakingService",
+			"member": "SetServerAttribute",
+			"part": "parameter",
+			"parameter": "name",
+			"before": null,
+			"after": "The name of the server attribute. Limited to a maximum of 50 characters.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetServerAttribute",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MatchmakingService",
+			"member": "SetServerAttribute",
+			"part": "parameter",
+			"parameter": "value",
+			"before": null,
+			"after": "The value of the server attribute. Limited to a maximum of 50 characters.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetServerAttribute",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MatchmakingService",
+			"member": "SetServerAttribute",
+			"part": "return",
+			"before": null,
+			"after": "Returns <code>true</code> if the call succeeded. Otherwise, returns <code>false</code> and an error message.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetServerAttribute",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreHashMap",
+			"member": "GetAsync",
+			"part": "return",
+			"before": "The value, or nil if the key doesn't exist.",
+			"after": "The value, or <code>nil</code> if the key doesn't exist.",
+			"value": {
+				"Capabilities": [
+					"DataStore"
+				],
+				"MemberType": "Function",
+				"Name": "GetAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreSortedMap",
+			"member": "GetAsync",
+			"part": "return",
+			"before": "A tuple of two values: <ul> <li>Key value, or nil -- if there's no item with the specified key.</li> <li>Sort key, or nil -- if there's no sort key associated with the   specified key.</li> </ul>",
+			"after": "A tuple of two values: <ul> <li>Key value, or <code>nil</code> if there's no item with the specified key.</li> <li>Sort key, or <code>nil</code> if there's no sort key associated with the   specified key.</li> </ul>",
+			"value": {
+				"Capabilities": [
+					"DataStore"
+				],
+				"MemberType": "Function",
+				"Name": "GetAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "GetNetworkOwner",
+			"part": "description",
+			"before": "Returns the current player who is the network owner of this part, or nil in case of the server.",
+			"after": "Returns the current player who is the network owner of this part, or <code>nil</code> in case of the server.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetNetworkOwner",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "GetNetworkOwner",
+			"part": "return",
+			"before": "The current player who is the network owner of this part, or nil in case of the server.",
+			"after": "The current player who is the network owner of this part, or <code>nil</code> in case of the server.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetNetworkOwner",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "GetSetting",
+			"part": "description",
+			"before": "Retrieves a previously stored value with the given key, or nil if the given key doesn't exist.",
+			"after": "Retrieves a previously stored value with the given key, or <code>nil</code> if the given key doesn't exist.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetSetting",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginMenu",
+			"member": "ShowAsync",
+			"part": "return",
+			"before": "The <code>PluginAction</code> item that was selected or nil.",
+			"after": "The <code>PluginAction</code> item that was selected or <code>nil</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ShowAsync",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Pose",
+			"member": "RemoveSubPose",
+			"part": "description",
+			"before": "Removes a sub <code>Pose</code> from the <code>Pose</code> by parenting it to nil.",
+			"after": "Removes a sub <code>Pose</code> from the <code>Pose</code> by parenting it to <code>nil</code>.",
+			"value": {
+				"Capabilities": [
+					"Animation"
+				],
+				"MemberType": "Function",
+				"Name": "RemoveSubPose",
+				"Parameters": [
+					{
+						"Name": "pose",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptEditorService",
+			"member": "FindScriptDocument",
+			"part": "description",
+			"before": "Returns the open <code>ScriptDocument</code> corresponding to the given <code>LuaSourceContainer</code>, or nil if the given script is not open.",
+			"after": "Returns the open <code>ScriptDocument</code> corresponding to the given <code>LuaSourceContainer</code>, or <code>nil</code> if the given script is not open.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindScriptDocument",
+				"Parameters": [
+					{
+						"Name": "script",
+						"Type": {
+							"Category": "Class",
+							"Name": "LuaSourceContainer"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "ScriptDocument"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "PromptImportFile",
+			"part": "parameter",
+			"parameter": "fileTypeFilter",
+			"before": "A list of file types that the user is allowed to select. File types are formatted without a period. For example, {\"jpg\", \"png\"} would allow only a JPG or PNG file to be selected. If no filter is provided, the filter is nil and allows the user to select any file type.",
+			"after": "A list of file types that the user is allowed to select. File types are formatted without a period. For example, {\"jpg\", \"png\"} would allow only a JPG or PNG file to be selected. If no filter is provided, the filter is <code>nil</code> and allows the user to select any file type.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptImportFile",
+				"Parameters": [
+					{
+						"Default": "{}",
+						"Name": "fileTypeFilter",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "PromptImportFile",
+			"part": "return",
+			"before": "The imported <code>File</code>. Returns nil if no files were selected, or if the selected file was too large (FileSize greater than 100 megabytes).",
+			"after": "The imported <code>File</code>. Returns <code>nil</code> if no files were selected, or if the selected file was too large (FileSize greater than 100 megabytes).",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptImportFile",
+				"Parameters": [
+					{
+						"Default": "{}",
+						"Name": "fileTypeFilter",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "PromptImportFiles",
+			"part": "parameter",
+			"parameter": "fileTypeFilter",
+			"before": "A list of file types that the user is allowed to select. File types are formatted without a period. For example, {\"jpg\", \"png\"} would allow only JPG and PNG files to be selected. If no filter is provided, the filter is nil and allows the user to select any file type.",
+			"after": "A list of file types that the user is allowed to select. File types are formatted without a period. For example, {\"jpg\", \"png\"} would allow only JPG and PNG files to be selected. If no filter is provided, the filter is <code>nil</code> and allows the user to select any file type.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptImportFiles",
+				"Parameters": [
+					{
+						"Default": "{}",
+						"Name": "fileTypeFilter",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Instances"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "PromptImportFiles",
+			"part": "return",
+			"before": "The imported <code>Files</code>. Returns an empty list if no files were selected. Returns nil if the user selected one or more files that were too large (FileSize greater than 100 megabytes).",
+			"after": "The imported <code>Files</code>. Returns an empty list if no files were selected. Returns <code>nil</code> if the user selected one or more files that were too large (FileSize greater than 100 megabytes).",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptImportFiles",
+				"Parameters": [
+					{
+						"Default": "{}",
+						"Name": "fileTypeFilter",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Instances"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "MainBackground",
+			"part": "description",
+			"before": "The primary background color used by the ribbon bar and windows.",
+			"after": "The primary background color used by the toolbar and windows.",
+			"value": {
+				"Name": "MainBackground",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "Tooltip",
+			"part": "description",
+			"before": "The background color of tooltips, like those seen when hovering over buttons on the ribbon bar or properties in the Properties window.",
+			"after": "The background color of tooltips, like those seen when hovering over buttons on the toolbar or properties in the Properties window.",
+			"value": {
+				"Name": "Tooltip",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "RibbonTab",
+			"part": "description",
+			"before": "The color of a tab on the ribbon menu (e.g. Home, Model, Test).",
+			"after": "The color of a tab on the toolbar menu.",
+			"value": {
+				"Name": "RibbonTab",
+				"Value": 15
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "RibbonTabTopBar",
+			"part": "description",
+			"before": "The background color of the ribbon menu.",
+			"after": "The background color of the toolbar.",
+			"value": {
+				"Name": "RibbonTabTopBar",
+				"Value": 16
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "RibbonButton",
+			"part": "description",
+			"before": "The background color of buttons on the ribbon menu.",
+			"after": "The background color of buttons on the toolbar.",
+			"value": {
+				"Name": "RibbonButton",
+				"Value": 19
+			}
+		}
+	]
+}

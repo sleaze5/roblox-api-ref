@@ -1,0 +1,1903 @@
+{
+	"from": {
+		"version": "0.688.1.6880864",
+		"hash": "e47680d9b22f419b"
+	},
+	"to": {
+		"version": "0.689.0.6890885",
+		"hash": "35c93a9f28424904"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AuroraScriptService",
+			"member": "FindBinding",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "FindBinding",
+				"Parameters": [
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "scriptName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Object"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AuroraScriptService",
+			"member": "FindBindings",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "FindBindings",
+				"Parameters": [
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HapticEffect",
+			"member": "Waveform",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "Waveform",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "FloatCurve"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HapticEffect",
+			"member": "WaveformData",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "WaveformData",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "BinaryString"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AuroraScript",
+			"member": "AddTo",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "instance",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "instance",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Name": "parameters",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary?"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddTo",
+				"Parameters": [
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "parameters",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "AirTurbulenceIntensity",
+			"type": "Add",
+			"value": {
+				"Category": "AirProperties",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "AirTurbulenceIntensity",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "PinStreamingForInstanceByUniqueId",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Players"
+				],
+				"MemberType": "Function",
+				"Name": "PinStreamingForInstanceByUniqueId",
+				"Parameters": [
+					{
+						"Name": "uniqueIdString",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "depth",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "RequestStreamingPinByUniqueId",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Players"
+				],
+				"MemberType": "Event",
+				"Name": "RequestStreamingPinByUniqueId",
+				"Parameters": [
+					{
+						"Name": "uniqueIdString",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "depth",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RunService",
+			"member": "GetControlAndVariantRolloutFlags",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "GetControlAndVariantRolloutFlags",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "AutoUpdateEnabled",
+			"type": "Add",
+			"value": {
+				"Category": "Updates",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "AutoUpdateEnabled",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "ConvertSlimAcrToObj",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ConvertSlimAcrToObj",
+				"Parameters": [
+					{
+						"Name": "acrFullFilePath",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "objFileName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UGCValidationService",
+			"member": "GetEditableMeshSkinningTransferJointsInfo",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetEditableMeshSkinningTransferJointsInfo",
+				"Parameters": [
+					{
+						"Name": "editableMesh",
+						"Type": {
+							"Category": "Class",
+							"Name": "EditableMesh"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UGCValidationService",
+			"member": "GetSkinningTransferJointsInfo",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetSkinningTransferJointsInfo",
+				"Parameters": [
+					{
+						"Name": "meshId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UniqueIdLookupService",
+			"member": "GetOrCreateUniqueId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetOrCreateUniqueId",
+				"Parameters": [
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UniqueIdLookupService",
+			"member": "GetOrCreateUniqueIdRemoteCommand",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"RemoteCommand"
+				],
+				"MemberType": "Function",
+				"Name": "GetOrCreateUniqueIdRemoteCommand",
+				"Parameters": [
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserGameSettings",
+			"member": "PlayerListVisible",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "PlayerListVisible",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WebViewService",
+			"member": "MutateWindow",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "url",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "title",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string?"
+							}
+						},
+						{
+							"Name": "isVisible",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool?"
+							}
+						},
+						{
+							"Name": "searchType",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string?"
+							}
+						},
+						{
+							"Name": "transitionAnimation",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string?"
+							}
+						},
+						{
+							"Name": "showDomainAsTitle",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool?"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "url",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "title",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string?"
+							}
+						},
+						{
+							"Name": "isVisible",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool?"
+							}
+						},
+						{
+							"Name": "searchType",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string?"
+							}
+						},
+						{
+							"Name": "transitionAnimation",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string?"
+							}
+						},
+						{
+							"Name": "showDomainAsTitle",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool?"
+							}
+						},
+						{
+							"Name": "backButtonVisible",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool?"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "MutateWindow",
+				"Parameters": [
+					{
+						"Name": "url",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "title",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string?"
+						}
+					},
+					{
+						"Name": "isVisible",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool?"
+						}
+					},
+					{
+						"Name": "searchType",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string?"
+						}
+					},
+					{
+						"Name": "transitionAnimation",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string?"
+						}
+					},
+					{
+						"Name": "showDomainAsTitle",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool?"
+						}
+					},
+					{
+						"Name": "backButtonVisible",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WebViewService",
+			"member": "OpenWindow",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "url",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "title",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string?"
+							}
+						},
+						{
+							"Name": "isVisible",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool?"
+							}
+						},
+						{
+							"Name": "searchType",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string?"
+							}
+						},
+						{
+							"Name": "transitionAnimation",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string?"
+							}
+						},
+						{
+							"Name": "showDomainAsTitle",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool?"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "url",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "title",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string?"
+							}
+						},
+						{
+							"Name": "isVisible",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool?"
+							}
+						},
+						{
+							"Name": "searchType",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string?"
+							}
+						},
+						{
+							"Name": "transitionAnimation",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string?"
+							}
+						},
+						{
+							"Name": "showDomainAsTitle",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool?"
+							}
+						},
+						{
+							"Name": "backButtonVisible",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool?"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "OpenWindow",
+				"Parameters": [
+					{
+						"Name": "url",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "title",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string?"
+						}
+					},
+					{
+						"Name": "isVisible",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool?"
+						}
+					},
+					{
+						"Name": "searchType",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string?"
+						}
+					},
+					{
+						"Name": "transitionAnimation",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string?"
+						}
+					},
+					{
+						"Name": "showDomainAsTitle",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool?"
+						}
+					},
+					{
+						"Name": "backButtonVisible",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AudioTremolo",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Internal",
+				"Name": "AudioTremolo",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioTremolo",
+			"member": "Bypass",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "State",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "Bypass",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioTremolo",
+			"member": "Depth",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "State",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "Depth",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioTremolo",
+			"member": "Duty",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "State",
+				"Default": "0.5",
+				"MemberType": "Property",
+				"Name": "Duty",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioTremolo",
+			"member": "Frequency",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "State",
+				"Default": "5",
+				"MemberType": "Property",
+				"Name": "Frequency",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioTremolo",
+			"member": "Shape",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "State",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "Shape",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioTremolo",
+			"member": "Skew",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "State",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "Skew",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioTremolo",
+			"member": "Square",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "State",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "Square",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioTremolo",
+			"member": "GetConnectedWires",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "GetConnectedWires",
+				"Parameters": [
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Instances"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioTremolo",
+			"member": "GetInputPins",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "GetInputPins",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioTremolo",
+			"member": "GetOutputPins",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "GetOutputPins",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioTremolo",
+			"member": "WiringChanged",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Event",
+				"Name": "WiringChanged",
+				"Parameters": [
+					{
+						"Name": "connected",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "wire",
+						"Type": {
+							"Category": "Class",
+							"Name": "Wire"
+						}
+					},
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "OutfitType",
+			"item": "Shoes",
+			"type": "Add",
+			"value": {
+				"Name": "Shoes",
+				"Value": 4
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "UpdateState",
+			"type": "Add",
+			"value": {
+				"Name": "UpdateState"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UpdateState",
+			"item": "UpdateNotAvailable",
+			"type": "Add",
+			"value": {
+				"Name": "UpdateNotAvailable",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UpdateState",
+			"item": "UpdateAvailable",
+			"type": "Add",
+			"value": {
+				"Name": "UpdateAvailable",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UpdateState",
+			"item": "UpdateInProgress",
+			"type": "Add",
+			"value": {
+				"Name": "UpdateInProgress",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UpdateState",
+			"item": "UpdateReady",
+			"type": "Add",
+			"value": {
+				"Name": "UpdateReady",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UpdateState",
+			"item": "UpdateFailed",
+			"type": "Add",
+			"value": {
+				"Name": "UpdateFailed",
+				"Value": 4
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "ClickDetector",
+			"member": "CursorIconContent",
+			"part": "description",
+			"before": null,
+			"after": "Sets the cursor icon to display when the mouse is hovered over the parent of this <code>ClickDetector</code> or <code>DragDetector</code>. Only supports asset URIs.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Input"
+					]
+				},
+				"Category": "Image",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "CursorIconContent",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "ActivatedCursorIconContent",
+			"part": "description",
+			"before": null,
+			"after": "Sets the cursor icon to display when the mouse is activated over the parent of this <code>DragDetector</code>. Only supports asset URIs",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Physics",
+						"Input"
+					]
+				},
+				"Category": "Image",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "ActivatedCursorIconContent",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HttpService",
+			"member": "CreateWebStreamClient",
+			"part": "description",
+			"before": null,
+			"after": "Creates a client that opens a persistent connection to stream data.",
+			"value": {
+				"Capabilities": [
+					"Network"
+				],
+				"MemberType": "Function",
+				"Name": "CreateWebStreamClient",
+				"Parameters": [
+					{
+						"Name": "streamClientType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "WebStreamClientType"
+						}
+					},
+					{
+						"Name": "requestOptions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "WebStreamClient"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HttpService",
+			"member": "CreateWebStreamClient",
+			"part": "parameter",
+			"parameter": "streamClientType",
+			"before": null,
+			"after": "The type of streaming connection to intiialize the client with.",
+			"value": {
+				"Capabilities": [
+					"Network"
+				],
+				"MemberType": "Function",
+				"Name": "CreateWebStreamClient",
+				"Parameters": [
+					{
+						"Name": "streamClientType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "WebStreamClientType"
+						}
+					},
+					{
+						"Name": "requestOptions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "WebStreamClient"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HttpService",
+			"member": "CreateWebStreamClient",
+			"part": "parameter",
+			"parameter": "requestOptions",
+			"before": null,
+			"after": "A dictionary containing information to be requested from the server. It is identical to <code>requestOptions</code> in <code>HttpService:RequestAsync()</code>.",
+			"value": {
+				"Capabilities": [
+					"Network"
+				],
+				"MemberType": "Function",
+				"Name": "CreateWebStreamClient",
+				"Parameters": [
+					{
+						"Name": "streamClientType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "WebStreamClientType"
+						}
+					},
+					{
+						"Name": "requestOptions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "WebStreamClient"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HttpService",
+			"member": "CreateWebStreamClient",
+			"part": "return",
+			"before": null,
+			"after": "A stateful client that emits events in the stream lifecycle.",
+			"value": {
+				"Capabilities": [
+					"Network"
+				],
+				"MemberType": "Function",
+				"Name": "CreateWebStreamClient",
+				"Parameters": [
+					{
+						"Name": "streamClientType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "WebStreamClientType"
+						}
+					},
+					{
+						"Name": "requestOptions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "WebStreamClient"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Mouse",
+			"member": "IconContent",
+			"part": "description",
+			"before": null,
+			"after": "The content of the image used as the <code>Mouse</code> icon. Only supports asset URIs.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Input"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "IconContent",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BackpackItem",
+			"member": "TextureContent",
+			"part": "description",
+			"before": null,
+			"after": "The texture icon that is displayed for a tool in the player's backpack. Only supports asset URIs.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "TextureContent",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RunService",
+			"member": "IsRunMode",
+			"part": "description",
+			"before": "Returns whether the <strong>Run</strong> button has been pressed to run the simulation in Studio.",
+			"after": "Returns whether a <strong>Run</strong> playtest has been initiated in Studio.",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "IsRunMode",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RunService",
+			"member": "IsRunMode",
+			"part": "return",
+			"before": "Whether the <strong>Run</strong> button has been pressed to run the simulation in Studio.",
+			"after": "Whether a <strong>Run</strong> playtest has been initiated in Studio.",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "IsRunMode",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIDragDetector",
+			"member": "ActivatedCursorIconContent",
+			"part": "description",
+			"before": null,
+			"after": "Sets the cursor icon to display when the mouse is activated over the parent of this <code>UIDragDetector</code>. Only supports asset URIs",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Image",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "ActivatedCursorIconContent",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIDragDetector",
+			"member": "CursorIconContent",
+			"part": "description",
+			"before": null,
+			"after": "Sets the cursor icon to display when the mouse is hovered over the parent of this <code>UIDragDetector</code>. Only asset URIs are supported.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Image",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "CursorIconContent",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "MouseIconContent",
+			"part": "description",
+			"before": null,
+			"after": "The content ID of the image for the user's mouse icon. Only supports asset URIs.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Input"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "MouseIconContent",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "WebStreamClient",
+			"part": "description",
+			"before": null,
+			"after": "Maintains a streaming connection."
+		},
+		{
+			"element": "Member",
+			"class": "WebStreamClient",
+			"member": "ConnectionState",
+			"part": "description",
+			"before": null,
+			"after": "The current <code>WebStreamClientState</code> of the client.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "ConnectionState",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "WebStreamClientState"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WebStreamClient",
+			"member": "Close",
+			"part": "description",
+			"before": null,
+			"after": "Closes the client, aborting the ongoing request.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Close",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WebStreamClient",
+			"member": "Error",
+			"part": "description",
+			"before": null,
+			"after": "Fires if an error is received while establishing the connection or during the connection lifetime.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Error",
+				"Parameters": [
+					{
+						"Name": "responseStatusCode",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "errorMessage",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WebStreamClient",
+			"member": "MessageReceived",
+			"part": "description",
+			"before": null,
+			"after": "Fires each time a message is received from the server.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "MessageReceived",
+				"Parameters": [
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WebStreamClient",
+			"member": "Opened",
+			"part": "description",
+			"before": null,
+			"after": "Fires when the a connection is successfully established between the client and server, allowing for events to begin streaming.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Opened",
+				"Parameters": [
+					{
+						"Name": "responseStatusCode",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "headers",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DataStoreRequestType",
+			"item": "SetIncrementSortedAsync",
+			"part": "description",
+			"before": "Refers to <code>SetAsync()</code> and <code>IncrementAsync()</code> while using an <code>OrderedDataStore</code>.",
+			"after": "Refers to <code>SetAsync()</code> <code>IncrementAsync()</code>, <code>RemoveAsync()</code>, and the write of <code>UpdateAsync()</code> while using an <code>OrderedDataStore</code>.",
+			"value": {
+				"Name": "SetIncrementSortedAsync",
+				"Value": 4
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "WebStreamClientState",
+			"part": "description",
+			"before": null,
+			"after": "WebStreamClientState indicates the current state of a WebStreamClient object."
+		},
+		{
+			"element": "EnumItem",
+			"enum": "WebStreamClientState",
+			"item": "Connecting",
+			"part": "description",
+			"before": null,
+			"after": "The client has sent a request to connect with the server and is waiting for a response.",
+			"value": {
+				"Name": "Connecting",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "WebStreamClientState",
+			"item": "Open",
+			"part": "description",
+			"before": null,
+			"after": "The client is connected to the server, allowing for data to be streamed between the server and client.",
+			"value": {
+				"Name": "Open",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "WebStreamClientState",
+			"item": "Error",
+			"part": "description",
+			"before": null,
+			"after": "An unrecoverable error has occured while setting up the connection orduring the connection lifetime, cutting off the stream.",
+			"value": {
+				"Name": "Error",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "WebStreamClientState",
+			"item": "Closed",
+			"part": "description",
+			"before": null,
+			"after": "The connection has run to completion without issues, either closed naturally by the server or manually by the user.",
+			"value": {
+				"Name": "Closed",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "WebStreamClientType",
+			"part": "description",
+			"before": null,
+			"after": "Specifies what type of streaming to use when creating a <code>WebStreamClient</code>."
+		},
+		{
+			"element": "EnumItem",
+			"enum": "WebStreamClientType",
+			"item": "SSE",
+			"part": "description",
+			"before": null,
+			"after": "Traditional Server-Sent Events (SSE) client. Requires <code>text/event-stream</code> to be returned in the <code>Content-Type</code> header. Messages in the stream will follow the <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#event_stream_format\">event stream format</a>.",
+			"value": {
+				"Name": "SSE",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "WebStreamClientType",
+			"item": "RawStream",
+			"part": "description",
+			"before": null,
+			"after": "The client can connect to any server that provides streaming data transfer (e.g. <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Transfer-Encoding\">chunked encoding</a>). It provides no guarantees about the stream format.",
+			"value": {
+				"Name": "RawStream",
+				"Value": 1
+			}
+		}
+	]
+}

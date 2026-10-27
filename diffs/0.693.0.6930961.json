@@ -1,0 +1,4037 @@
+{
+	"from": {
+		"version": "0.692.0.6920844",
+		"hash": "82e3166df8694a7e"
+	},
+	"to": {
+		"version": "0.693.0.6930961",
+		"hash": "8964e8d8854043eb"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Annotation",
+			"member": "ChannelId",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "RobloxSecurity",
+						"Write": "RobloxSecurity"
+					},
+					"after": {
+						"Read": "RobloxScriptSecurity",
+						"Write": "RobloxScriptSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": [
+						"Hidden",
+						"NotScriptable"
+					],
+					"after": [
+						"Hidden"
+					]
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "ChannelId",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnnotationsService",
+			"member": "CreateOrUpdatePlacePreference",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateOrUpdatePlacePreference",
+				"Parameters": [
+					{
+						"Name": "placeId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "placeContentPreference",
+						"Type": {
+							"Category": "Enum",
+							"Name": "PlaceContentPreference"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnnotationsService",
+			"member": "GetPlacePreference",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPlacePreference",
+				"Parameters": [
+					{
+						"Name": "placeId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "PlaceContentPreference"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnnotationsService",
+			"member": "CreateOrUpdateChannelPreferenceAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateOrUpdateChannelPreferenceAsync",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "channelId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "placeId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "channelContentPreference",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AnnotationChannelContentPreference"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnnotationsService",
+			"member": "CreateOrUpdatePlacePreferenceAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateOrUpdatePlacePreferenceAsync",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "placeContentPreference",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AnnotationPlaceContentPreference"
+						}
+					},
+					{
+						"Name": "placeId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnnotationsService",
+			"member": "GetChannelPreferenceAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetChannelPreferenceAsync",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "channelId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "placeId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "AnnotationChannelContentPreference"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnnotationsService",
+			"member": "GetPlacePreferenceAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPlacePreferenceAsync",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "placeId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "AnnotationPlaceContentPreference"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioEmitter",
+			"member": "SimulationFidelity",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated",
+						{
+							"PreferredDescriptorName": "AcousticSimulationEnabled",
+							"ThreadSafety": "Unknown"
+						}
+					]
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "Simulation",
+				"Default": "Automatic",
+				"MemberType": "Property",
+				"Name": "SimulationFidelity",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "AcousticSimulationEnabled",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AudioSimulationFidelity"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioEmitter",
+			"member": "AcousticSimulationEnabled",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "Simulation",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "AcousticSimulationEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioListener",
+			"member": "SimulationFidelity",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated",
+						{
+							"PreferredDescriptorName": "AcousticSimulationEnabled",
+							"ThreadSafety": "Unknown"
+						}
+					]
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "Simulation",
+				"Default": "Automatic",
+				"MemberType": "Property",
+				"Name": "SimulationFidelity",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "AcousticSimulationEnabled",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AudioSimulationFidelity"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioListener",
+			"member": "AcousticSimulationEnabled",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "Simulation",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "AcousticSimulationEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCollisionRules",
+			"member": "SingleColliderSize",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "2, 4, 1",
+					"after": "2, 3, 1"
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "2, 3, 1",
+				"MemberType": "Property",
+				"Name": "SingleColliderSize",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BaseWrap",
+			"member": "HSRAssetId",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "RobloxSecurity",
+						"Write": "RobloxSecurity"
+					},
+					"after": {
+						"Read": "RobloxScriptSecurity",
+						"Write": "RobloxSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": [
+						"NotScriptable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Avatar"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "HSRAssetId",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "ContentId"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Constraint",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "Constraint",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AlignOrientation",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "AlignOrientation",
+				"Superclass": "Constraint"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AlignPosition",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "AlignPosition",
+				"Superclass": "Constraint"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AngularVelocity",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "AngularVelocity",
+				"Superclass": "Constraint"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AnimationConstraint",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "AnimationConstraint",
+				"Superclass": "Constraint",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "BallSocketConstraint",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "BallSocketConstraint",
+				"Superclass": "Constraint"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "HingeConstraint",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "HingeConstraint",
+				"Superclass": "Constraint"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "LineForce",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "LineForce",
+				"Superclass": "Constraint"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "LinearVelocity",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "LinearVelocity",
+				"Superclass": "Constraint"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PlaneConstraint",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "PlaneConstraint",
+				"Superclass": "Constraint"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Plane",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "Plane",
+				"Superclass": "PlaneConstraint",
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "PlaneConstraint",
+						"ThreadSafety": "Unknown"
+					}
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "RigidConstraint",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "RigidConstraint",
+				"Superclass": "Constraint"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "RodConstraint",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "RodConstraint",
+				"Superclass": "Constraint"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "RopeConstraint",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "RopeConstraint",
+				"Superclass": "Constraint"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "SlidingBallConstraint",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "SlidingBallConstraint",
+				"Superclass": "Constraint",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "CylindricalConstraint",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "CylindricalConstraint",
+				"Superclass": "SlidingBallConstraint"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PrismaticConstraint",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "PrismaticConstraint",
+				"Superclass": "SlidingBallConstraint"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "SpringConstraint",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "SpringConstraint",
+				"Superclass": "Constraint"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Torque",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "Torque",
+				"Superclass": "Constraint"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TorsionSpringConstraint",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "TorsionSpringConstraint",
+				"Superclass": "Constraint"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "UniversalConstraint",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "UniversalConstraint",
+				"Superclass": "Constraint"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "VectorForce",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "VectorForce",
+				"Superclass": "Constraint"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "BlockMesh",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "BlockMesh",
+				"Superclass": "BevelMesh"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "CylinderMesh",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "CylinderMesh",
+				"Superclass": "BevelMesh",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "FileMesh",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "FileMesh",
+				"Superclass": "DataModelMesh"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "SpecialMesh",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "SpecialMesh",
+				"Superclass": "FileMesh"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ExperienceStateRecordingService",
+			"member": "ExitPlayback",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ExitPlayback",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ExperienceStateRecordingService",
+			"member": "GetCurrentPlaybackRestartFrames",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCurrentPlaybackRestartFrames",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ExperienceStateRecordingService",
+			"member": "GetPlaybackMode",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPlaybackMode",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "ExperienceStateRecordingPlaybackMode"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ExperienceStateRecordingService",
+			"member": "SetPlaybackMode",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetPlaybackMode",
+				"Parameters": [
+					{
+						"Name": "mode",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ExperienceStateRecordingPlaybackMode"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ExperienceStateRecordingService",
+			"member": "SetPlaybackPercentage",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetPlaybackPercentage",
+				"Parameters": [
+					{
+						"Name": "percentage",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ExperienceStateRecordingService",
+			"member": "LoadPlaybackAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LoadPlaybackAsync",
+				"Parameters": [
+					{
+						"Name": "uri",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "placeFileUri",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string?"
+						}
+					},
+					{
+						"Name": "mode",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ExperienceStateRecordingLoadMode"
+						}
+					},
+					{
+						"Name": "sourceType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ExperienceStateRecordingLoadSourceType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ExperienceStateRecordingService",
+			"member": "PlaybackStatusUpdated",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PlaybackStatusUpdated",
+				"Parameters": [
+					{
+						"Name": "percentage",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "currentFrameNumber",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BillboardGui",
+			"member": "DistanceLowerLimit",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "DistanceLowerLimit",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BillboardGui",
+			"member": "DistanceStep",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "DistanceStep",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BillboardGui",
+			"member": "DistanceUpperLimit",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Data",
+				"Default": "-1",
+				"MemberType": "Property",
+				"Name": "DistanceUpperLimit",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IncrementalPatchBuilder",
+			"member": "UseFileLevelCompressionInsteadOfChunk",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "UseFileLevelCompressionInsteadOfChunk",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "JointInstance",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "JointInstance",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DynamicRotate",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "DynamicRotate",
+				"Superclass": "JointInstance",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "RotateP",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "RotateP",
+				"Superclass": "DynamicRotate",
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "HingeConstraint",
+						"ThreadSafety": "Unknown"
+					}
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "RotateV",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "RotateV",
+				"Superclass": "DynamicRotate",
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "HingeConstraint",
+						"ThreadSafety": "Unknown"
+					}
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Glue",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "Glue",
+				"Superclass": "JointInstance",
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "WeldConstraint",
+						"ThreadSafety": "Unknown"
+					}
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ManualSurfaceJointInstance",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "ManualSurfaceJointInstance",
+				"Superclass": "JointInstance",
+				"Tags": [
+					"NotCreatable",
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "WeldConstraint",
+						"ThreadSafety": "Unknown"
+					}
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ManualGlue",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "ManualGlue",
+				"Superclass": "ManualSurfaceJointInstance",
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "WeldConstraint",
+						"ThreadSafety": "Unknown"
+					}
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ManualWeld",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "ManualWeld",
+				"Superclass": "ManualSurfaceJointInstance",
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "WeldConstraint",
+						"ThreadSafety": "Unknown"
+					}
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Motor",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "Motor",
+				"Superclass": "JointInstance"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Motor6D",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "Motor6D",
+				"Superclass": "Motor"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Rotate",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "Rotate",
+				"Superclass": "JointInstance",
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "HingeConstraint",
+						"ThreadSafety": "Unknown"
+					}
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Snap",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "Snap",
+				"Superclass": "JointInstance",
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "WeldConstraint",
+						"ThreadSafety": "Unknown"
+					}
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "VelocityMotor",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "VelocityMotor",
+				"Superclass": "JointInstance"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Weld",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "Weld",
+				"Superclass": "JointInstance"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ModerationService",
+			"member": "CreateReviewableContentKey",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"InternalTest"
+				],
+				"MemberType": "Function",
+				"Name": "CreateReviewableContentKey",
+				"Parameters": [
+					{
+						"Name": "content",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ModerationService",
+			"member": "TriggeredCaptureUpload",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"InternalTest"
+				],
+				"MemberType": "Event",
+				"Name": "TriggeredCaptureUpload",
+				"Parameters": [
+					{
+						"Name": "config",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "NoCollisionConstraint",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "NoCollisionConstraint",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Part",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "Part",
+				"Superclass": "FormFactorPart"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "FlagStand",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "FlagStand",
+				"Superclass": "Part",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Platform",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "Platform",
+				"Superclass": "Part",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Seat",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "Seat",
+				"Superclass": "Part"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "SkateboardPlatform",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "SkateboardPlatform",
+				"Superclass": "Part",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "SpawnLocation",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "SpawnLocation",
+				"Superclass": "Part"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "MeshPart",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "MeshPart",
+				"Superclass": "TriangleMeshPart"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MeshPart",
+			"member": "HasJointOffset",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Hidden"
+					],
+					"after": [
+						"Hidden",
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "HasJointOffset",
+				"Security": {
+					"Read": "None",
+					"Write": "NotAccessibleSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MeshPart",
+			"member": "JointOffset",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Hidden"
+					],
+					"after": [
+						"Hidden",
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					]
+				},
+				"Category": "Data",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "JointOffset",
+				"Security": {
+					"Read": "None",
+					"Write": "NotAccessibleSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MeshPart",
+			"member": "SolidMeshHolder",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "SolidMeshHolder",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "NetAssetRef"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Model",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "Model",
+				"Superclass": "PVInstance"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Actor",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "Actor",
+				"Superclass": "Model"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "BackpackItem",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "BackpackItem",
+				"Superclass": "Model",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "HopperBin",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "HopperBin",
+				"Superclass": "BackpackItem",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Tool",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "Tool",
+				"Superclass": "BackpackItem"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Flag",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "Flag",
+				"Superclass": "Tool",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Status",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "Status",
+				"Superclass": "Model",
+				"Tags": [
+					"NotCreatable",
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "WorldRoot",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "WorldRoot",
+				"Superclass": "Model",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Workspace",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "Workspace",
+				"Superclass": "WorldRoot",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "WorldModel",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "WorldModel",
+				"Superclass": "WorldRoot"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "PromptSecurityChallengeAsync",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Players"
+				],
+				"MemberType": "Function",
+				"Name": "PromptSecurityChallengeAsync",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "SignalFeedbackSubmissionCompleted",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SignalFeedbackSubmissionCompleted",
+				"Parameters": [
+					{
+						"Name": "feedback",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "SignalFeedbackSubmissionPermissionDenied",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SignalFeedbackSubmissionPermissionDenied",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "PromptFeedbackSubmissionAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptFeedbackSubmissionAsync",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "ShowPromptFeedbackSubmission",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ShowPromptFeedbackSubmission",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "ShowPromptFeedbackUnavailable",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ShowPromptFeedbackUnavailable",
+				"Parameters": [
+					{
+						"Name": "reason",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UGCValidationService",
+			"member": "ValidatePropertiesSensible",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "instance",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "instance",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Default": "nil",
+							"Name": "stringLenRestrictions",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "ValidatePropertiesSensible",
+				"Parameters": [
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "stringLenRestrictions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "UIContainerQuery",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "UIContainerQuery",
+				"Superclass": "UIComponent",
+				"Tags": [
+					"NotReplicated",
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchScreenEnabled",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Input"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "TouchScreenEnabled",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "WeldConstraint",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "PhysicsParts",
+					"after": "BaseParts"
+				}
+			],
+			"value": {
+				"MemoryCategory": "BaseParts",
+				"Name": "WeldConstraint",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "WrapTextureTransfer",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotBrowsable"
+					]
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "WrapTextureTransfer",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "StyleQuery",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "StyleQuery",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotReplicated",
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleQuery",
+			"member": "AspectRatioRange",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"Default": "0 inf ",
+				"MemberType": "Property",
+				"Name": "AspectRatioRange",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "NumberRange"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleQuery",
+			"member": "IsActive",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "IsActive",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleQuery",
+			"member": "MaxSize",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"Default": "INF, INF",
+				"MemberType": "Property",
+				"Name": "MaxSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleQuery",
+			"member": "MinSize",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"Default": "0, 0",
+				"MemberType": "Property",
+				"Name": "MinSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DeveloperMemoryTag",
+			"item": "PhysicsParts",
+			"type": "Remove",
+			"value": {
+				"Name": "PhysicsParts",
+				"Value": 7
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DeveloperMemoryTag",
+			"item": "BaseParts",
+			"type": "Add",
+			"value": {
+				"LegacyNames": [
+					"PhysicsParts"
+				],
+				"Name": "BaseParts",
+				"Value": 7
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RecommendationImpressionType",
+			"item": "NotViewable",
+			"type": "Add",
+			"value": {
+				"Name": "NotViewable",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TeamCreateErrorState",
+			"item": "NoError",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 2,
+					"after": 3
+				}
+			],
+			"value": {
+				"Name": "NoError",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TeamCreateErrorState",
+			"item": "PlaceUploadFailing",
+			"type": "Add",
+			"value": {
+				"Name": "PlaceUploadFailing",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AnnotationChannelContentPreference",
+			"type": "Add",
+			"value": {
+				"Name": "AnnotationChannelContentPreference"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnnotationChannelContentPreference",
+			"item": "None",
+			"type": "Add",
+			"value": {
+				"Name": "None",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnnotationChannelContentPreference",
+			"item": "All",
+			"type": "Add",
+			"value": {
+				"Name": "All",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnnotationChannelContentPreference",
+			"item": "Unknown",
+			"type": "Add",
+			"value": {
+				"Name": "Unknown",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AnnotationPlaceContentPreference",
+			"type": "Add",
+			"value": {
+				"Name": "AnnotationPlaceContentPreference"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnnotationPlaceContentPreference",
+			"item": "None",
+			"type": "Add",
+			"value": {
+				"Name": "None",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnnotationPlaceContentPreference",
+			"item": "All",
+			"type": "Add",
+			"value": {
+				"Name": "All",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnnotationPlaceContentPreference",
+			"item": "MentionsAndReplies",
+			"type": "Add",
+			"value": {
+				"Name": "MentionsAndReplies",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnnotationPlaceContentPreference",
+			"item": "Unknown",
+			"type": "Add",
+			"value": {
+				"Name": "Unknown",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ExperienceStateRecordingLoadMode",
+			"type": "Add",
+			"value": {
+				"Name": "ExperienceStateRecordingLoadMode"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ExperienceStateRecordingLoadMode",
+			"item": "NewReplay",
+			"type": "Add",
+			"value": {
+				"Name": "NewReplay",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ExperienceStateRecordingLoadMode",
+			"item": "ContiguousSlice",
+			"type": "Add",
+			"value": {
+				"Name": "ContiguousSlice",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ExperienceStateRecordingLoadMode",
+			"item": "NoncontiguousSlice",
+			"type": "Add",
+			"value": {
+				"Name": "NoncontiguousSlice",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ExperienceStateRecordingLoadSourceType",
+			"type": "Add",
+			"value": {
+				"Name": "ExperienceStateRecordingLoadSourceType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ExperienceStateRecordingLoadSourceType",
+			"item": "S3Url",
+			"type": "Add",
+			"value": {
+				"Name": "S3Url",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ExperienceStateRecordingLoadSourceType",
+			"item": "File",
+			"type": "Add",
+			"value": {
+				"Name": "File",
+				"Value": 1
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ExperienceStateRecordingPlaybackMode",
+			"type": "Add",
+			"value": {
+				"Name": "ExperienceStateRecordingPlaybackMode"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ExperienceStateRecordingPlaybackMode",
+			"item": "Undefined",
+			"type": "Add",
+			"value": {
+				"Name": "Undefined",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ExperienceStateRecordingPlaybackMode",
+			"item": "Stopped",
+			"type": "Add",
+			"value": {
+				"Name": "Stopped",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ExperienceStateRecordingPlaybackMode",
+			"item": "Playing",
+			"type": "Add",
+			"value": {
+				"Name": "Playing",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ExperienceStateRecordingPlaybackMode",
+			"item": "Rewinding",
+			"type": "Add",
+			"value": {
+				"Name": "Rewinding",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "PlaceContentPreference",
+			"type": "Add",
+			"value": {
+				"Name": "PlaceContentPreference"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PlaceContentPreference",
+			"item": "None",
+			"type": "Add",
+			"value": {
+				"Name": "None",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PlaceContentPreference",
+			"item": "All",
+			"type": "Add",
+			"value": {
+				"Name": "All",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PlaceContentPreference",
+			"item": "MentionsAndReplies",
+			"type": "Add",
+			"value": {
+				"Name": "MentionsAndReplies",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PlaceContentPreference",
+			"item": "Unknown",
+			"type": "Add",
+			"value": {
+				"Name": "Unknown",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "RecommendationDepartureIntent",
+			"type": "Add",
+			"value": {
+				"Name": "RecommendationDepartureIntent"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RecommendationDepartureIntent",
+			"item": "Neutral",
+			"type": "Add",
+			"value": {
+				"Name": "Neutral",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RecommendationDepartureIntent",
+			"item": "Positive",
+			"type": "Add",
+			"value": {
+				"Name": "Positive",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RecommendationDepartureIntent",
+			"item": "Negative",
+			"type": "Add",
+			"value": {
+				"Name": "Negative",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "RecommendationItemContentType",
+			"type": "Add",
+			"value": {
+				"Name": "RecommendationItemContentType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RecommendationItemContentType",
+			"item": "Static",
+			"type": "Add",
+			"value": {
+				"Name": "Static",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RecommendationItemContentType",
+			"item": "Dynamic",
+			"type": "Add",
+			"value": {
+				"Name": "Dynamic",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RecommendationItemContentType",
+			"item": "Interactive",
+			"type": "Add",
+			"value": {
+				"Name": "Interactive",
+				"Value": 2
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVerticesWithColor",
+			"part": "description",
+			"before": "Returns an array of face IDs that use the given color ID.",
+			"after": "Returns an array of vertex IDs that use the given color ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVerticesWithColor",
+				"Parameters": [
+					{
+						"Name": "colorId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AudioSpeechToText",
+			"part": "description",
+			"before": null,
+			"after": "Converts spoken audio into text."
+		},
+		{
+			"element": "Member",
+			"class": "AudioSpeechToText",
+			"member": "Enabled",
+			"part": "description",
+			"before": null,
+			"after": "Whether the <code>AudioSpeechToText</code> object is enabled for processing input audio into text.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "State",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "Enabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioSpeechToText",
+			"member": "Text",
+			"part": "description",
+			"before": null,
+			"after": "The text resulting from the conversion of speech audio.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "State",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "Text",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioSpeechToText",
+			"member": "VoiceDetected",
+			"part": "description",
+			"before": null,
+			"after": "Whether the <code>AudioSpeechToText</code> object is detecting speech in the incoming audio signal.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "State",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "VoiceDetected",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioSpeechToText",
+			"member": "GetConnectedWires",
+			"part": "description",
+			"before": null,
+			"after": "Returns an array of <code>Wires</code> that are connected to the specified pin.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "GetConnectedWires",
+				"Parameters": [
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Instances"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioSpeechToText",
+			"member": "WiringChanged",
+			"part": "description",
+			"before": null,
+			"after": "Fires when another instance is connected to or disconnected from the <code>AudioSpeechToText</code> via a <code>Wire</code>.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Event",
+				"Name": "WiringChanged",
+				"Parameters": [
+					{
+						"Name": "connected",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "wire",
+						"Type": {
+							"Category": "Class",
+							"Name": "Wire"
+						}
+					},
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HapticEffect",
+			"member": "Ended",
+			"part": "description",
+			"before": null,
+			"after": "Fires when the <code>HapticEffect</code> has completed playback and stopped.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Ended",
+				"Parameters": [],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "FlipbookLayout",
+			"part": "description",
+			"before": "Determines the layout of the flipbook texture. Must be None, Grid2x2, Grid4x4, or Grid8x8.",
+			"after": "Determines the layout of the flipbook texture. Must be None, Grid2x2, Grid4x4, Grid8x8 or Custom.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					]
+				},
+				"Category": "Flipbook",
+				"Default": "None",
+				"MemberType": "Property",
+				"Name": "FlipbookLayout",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ParticleFlipbookLayout"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "FlipbookSizeX",
+			"part": "description",
+			"before": null,
+			"after": "Defines the number of horizontal frames in a custom flipbook layout.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					]
+				},
+				"Category": "Flipbook",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "FlipbookSizeX",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "FlipbookSizeY",
+			"part": "description",
+			"before": null,
+			"after": "Defines the number of vertical frames in a custom flipbook layout.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					]
+				},
+				"Category": "Flipbook",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "FlipbookSizeY",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TweenService",
+			"member": "SmoothDamp",
+			"part": "description",
+			"before": "Calculates a value simulating a critically damped spring.",
+			"after": "Smoothly interpolates a value towards a target, simulating a critically damped spring.",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "SmoothDamp",
+				"Parameters": [
+					{
+						"Name": "current",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "target",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "velocity",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "smoothTime",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "maxSpeed",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					},
+					{
+						"Name": "dt",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					}
+				],
+				"ReturnType": [
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					},
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TweenService",
+			"member": "SmoothDamp",
+			"part": "parameter",
+			"parameter": "current",
+			"before": "The current position.",
+			"after": "The current value to smooth.",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "SmoothDamp",
+				"Parameters": [
+					{
+						"Name": "current",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "target",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "velocity",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "smoothTime",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "maxSpeed",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					},
+					{
+						"Name": "dt",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					}
+				],
+				"ReturnType": [
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					},
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TweenService",
+			"member": "SmoothDamp",
+			"part": "parameter",
+			"parameter": "target",
+			"before": "The target position.",
+			"after": "The target value to reach.",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "SmoothDamp",
+				"Parameters": [
+					{
+						"Name": "current",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "target",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "velocity",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "smoothTime",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "maxSpeed",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					},
+					{
+						"Name": "dt",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					}
+				],
+				"ReturnType": [
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					},
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TweenService",
+			"member": "SmoothDamp",
+			"part": "parameter",
+			"parameter": "velocity",
+			"before": "The initial velocity at which the current position should approach the target position.",
+			"after": "The current velocity with which the current value should approach the target value. You shouldn't modify this value between calls yourself, it's used to store the stateful velocity. In most cases, initialize this with <code>0</code>, <code>zero</code>, <code>zero</code>, or <code>identity</code> depending on the type, or if needed, with your initial velocity.",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "SmoothDamp",
+				"Parameters": [
+					{
+						"Name": "current",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "target",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "velocity",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "smoothTime",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "maxSpeed",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					},
+					{
+						"Name": "dt",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					}
+				],
+				"ReturnType": [
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					},
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TweenService",
+			"member": "SmoothDamp",
+			"part": "parameter",
+			"parameter": "smoothTime",
+			"before": "The duration in which the total smoothing operation should take place.",
+			"after": "The duration over which the total smoothing operation should take place. Note that since this is a damped spring, there's no guarantee <code>current</code> will be exactly <code>target</code> after this time, but it will be close. Smaller values result in quicker smoothing.",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "SmoothDamp",
+				"Parameters": [
+					{
+						"Name": "current",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "target",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "velocity",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "smoothTime",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "maxSpeed",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					},
+					{
+						"Name": "dt",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					}
+				],
+				"ReturnType": [
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					},
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TweenService",
+			"member": "SmoothDamp",
+			"part": "parameter",
+			"parameter": "maxSpeed",
+			"before": "The maximum speed at which the current position should approach the target position.",
+			"after": "The maximum speed at which the current value should approach the target value. Leaving this nil defaults to <code>huge</code>, meaning the velocity isn't clamped.",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "SmoothDamp",
+				"Parameters": [
+					{
+						"Name": "current",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "target",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "velocity",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "smoothTime",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "maxSpeed",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					},
+					{
+						"Name": "dt",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					}
+				],
+				"ReturnType": [
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					},
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TweenService",
+			"member": "SmoothDamp",
+			"part": "parameter",
+			"parameter": "dt",
+			"before": "The rate at which the smoothing operation should be applied.",
+			"after": "The rate at which the smoothing operation should be applied. If left nil, the current engine delta time will be used.",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "SmoothDamp",
+				"Parameters": [
+					{
+						"Name": "current",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "target",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "velocity",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "smoothTime",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "maxSpeed",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					},
+					{
+						"Name": "dt",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					}
+				],
+				"ReturnType": [
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					},
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TweenService",
+			"member": "SmoothDamp",
+			"part": "return",
+			"before": "The new position and velocity calculated from the smoothing operation.",
+			"after": "The new value and new velocity calculated from the smoothing operation.",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "SmoothDamp",
+				"Parameters": [
+					{
+						"Name": "current",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "target",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "velocity",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "smoothTime",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "maxSpeed",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					},
+					{
+						"Name": "dt",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					}
+				],
+				"ReturnType": [
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					},
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIStroke",
+			"member": "BorderOffset",
+			"part": "description",
+			"before": null,
+			"after": "Specifies an additional offset to the stroke's position, relative to the parent's minimum height or width.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "0, 0",
+				"MemberType": "Property",
+				"Name": "BorderOffset",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "UDim"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIStroke",
+			"member": "BorderStrokePosition",
+			"part": "description",
+			"before": null,
+			"after": "Determines the stroke's position on its parent's border.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "Outer",
+				"MemberType": "Property",
+				"Name": "BorderStrokePosition",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "BorderStrokePosition"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIStroke",
+			"member": "StrokeSizingMode",
+			"part": "description",
+			"before": null,
+			"after": "Determines whether the stroke's <code>Thickness</code> will be measured in pixels or be relative to the parent.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "FixedSize",
+				"MemberType": "Property",
+				"Name": "StrokeSizingMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "StrokeSizingMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIStroke",
+			"member": "ZIndex",
+			"part": "description",
+			"before": null,
+			"after": "Determines the order in which the stroke renders relative to sibling <code>UIStroke</code> instances.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "ZIndex",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "BorderStrokePosition",
+			"part": "description",
+			"before": null,
+			"after": "Used by <code>UIStroke.BorderStrokePosition</code> to determine the stroke's position on its parent's border."
+		},
+		{
+			"element": "EnumItem",
+			"enum": "BorderStrokePosition",
+			"item": "Outer",
+			"part": "description",
+			"before": null,
+			"after": "The stroke renders on the outer border of the parent UI element.<br /><br /><img src=\"../../../assets/ui/ui-objects/UIStroke-BorderStrokePosition-Outer.png\" width=\"312\" />",
+			"value": {
+				"Name": "Outer",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "BorderStrokePosition",
+			"item": "Center",
+			"part": "description",
+			"before": null,
+			"after": "The stroke renders on the center border of the parent UI element.<br /><br /><img src=\"../../../assets/ui/ui-objects/UIStroke-BorderStrokePosition-Center.png\" width=\"312\" />",
+			"value": {
+				"Name": "Center",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "BorderStrokePosition",
+			"item": "Inner",
+			"part": "description",
+			"before": null,
+			"after": "The stroke renders on the inner border of the parent UI element.<br /><br /><img src=\"../../../assets/ui/ui-objects/UIStroke-BorderStrokePosition-Inner.png\" width=\"312\" />",
+			"value": {
+				"Name": "Inner",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "StrokeSizingMode",
+			"part": "description",
+			"before": null,
+			"after": "Used by <code>UIStroke.StrokeSizingMode</code> to determine whether the stroke's <code>Thickness</code> will be measured in pixels or be relative to the parent."
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StrokeSizingMode",
+			"item": "FixedSize",
+			"part": "description",
+			"before": null,
+			"after": "<code>Thickness</code> is measured in pixels.",
+			"value": {
+				"Name": "FixedSize",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StrokeSizingMode",
+			"item": "ScaledSize",
+			"part": "description",
+			"before": null,
+			"after": "<code>Thickness</code> is relative to minimum parent width or height. If stroke is on text, thickness is relative to font size.",
+			"value": {
+				"Name": "ScaledSize",
+				"Value": 1
+			}
+		}
+	]
+}

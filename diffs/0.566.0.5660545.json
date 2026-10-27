@@ -1,0 +1,1766 @@
+{
+	"from": {
+		"version": "0.565.0.5650363",
+		"hash": "5e6c40ebf3c24205"
+	},
+	"to": {
+		"version": "0.566.0.5660545",
+		"hash": "a021408d33d04054"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Animator",
+			"member": "EvaluationThrottled",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "EvaluationThrottled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated",
+					"NotBrowsable"
+				],
+				"ThreadSafety": "Safe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportSession",
+			"member": "UploadComplete",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "succeeded",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "errorMap",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "results",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "UploadComplete",
+				"Parameters": [
+					{
+						"Name": "results",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportSession",
+			"member": "UploadCompleteDeprecated",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "UploadCompleteDeprecated",
+				"Parameters": [
+					{
+						"Name": "succeeded",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "errorMap",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceAnimatorService",
+			"member": "TrackerPrompt",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "TrackerPrompt",
+				"Parameters": [
+					{
+						"Name": "prompt",
+						"Type": {
+							"Category": "Enum",
+							"Name": "TrackerPromptEvent"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FacialAnimationStreamingServiceV2",
+			"member": "GetStats",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetStats",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "FacialAnimationStreamingServiceStats"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScreenGui",
+			"member": "ClipToDeviceSafeArea",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotBrowsable"
+					]
+				}
+			],
+			"value": {
+				"Category": "Appearance",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "ClipToDeviceSafeArea",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotBrowsable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScreenGui",
+			"member": "SafeAreaCompatibility",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotBrowsable"
+					]
+				}
+			],
+			"value": {
+				"Category": "Appearance",
+				"Default": "FullscreenExtension",
+				"MemberType": "Property",
+				"Name": "SafeAreaCompatibility",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotBrowsable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "SafeAreaCompatibility"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Highlight",
+			"member": "LineThickness",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "0",
+					"after": "1"
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "LineThickness",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "GetState",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ThreadSafety",
+					"before": "Unsafe",
+					"after": "Safe"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetState",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "HumanoidStateType"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "GetStateEnabled",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ThreadSafety",
+					"before": "Unsafe",
+					"after": "Safe"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetStateEnabled",
+				"Parameters": [
+					{
+						"Name": "state",
+						"Type": {
+							"Category": "Enum",
+							"Name": "HumanoidStateType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImporterRootSettings",
+			"member": "ExistingPackageId",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "ExistingPackageId",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImporterRootSettings",
+			"member": "ImportAsPackage",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "ImportAsPackage",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BaseScript",
+			"member": "RunContext",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "PluginSecurity",
+						"Write": "PluginSecurity"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "PluginSecurity"
+					}
+				}
+			],
+			"value": {
+				"Category": "Behavior",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "RunContext",
+				"Security": {
+					"Read": "None",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "RunContext"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "ReplaceMaterialInTransform",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ReplaceMaterialInTransform",
+				"Parameters": [
+					{
+						"Name": "cframe",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					},
+					{
+						"Name": "size",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "sourceMaterial",
+						"Type": {
+							"Category": "Enum",
+							"Name": "Material"
+						}
+					},
+					{
+						"Name": "targetMaterial",
+						"Type": {
+							"Category": "Enum",
+							"Name": "Material"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "SetMaterialInTransform",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetMaterialInTransform",
+				"Parameters": [
+					{
+						"Name": "cframe",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					},
+					{
+						"Name": "size",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "targetMaterial",
+						"Type": {
+							"Category": "Enum",
+							"Name": "Material"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "GetNumAwakeParts",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ThreadSafety",
+					"before": "Unsafe",
+					"after": "Safe"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetNumAwakeParts",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "GetPhysicsThrottling",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ThreadSafety",
+					"before": "Unsafe",
+					"after": "Safe"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPhysicsThrottling",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "GetServerTimeNow",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ThreadSafety",
+					"before": "Unsafe",
+					"after": "Safe"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetServerTimeNow",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "double"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RbxAnalyticsService",
+			"member": "GetPlaySessionId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPlaySessionId",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Selection",
+			"member": "ShowBoundingBox",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "ShowBoundingBox",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VoiceChatService",
+			"member": "VoiceChatPlayerMuteStateChangedClientToServer",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "VoiceChatPlayerMuteStateChangedClientToServer",
+				"Parameters": [
+					{
+						"Name": "muteState",
+						"Type": {
+							"Category": "Enum",
+							"Name": "MuteState"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VoiceChatService",
+			"member": "VoiceChatPlayerMuteStateChangedServerToClient",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "VoiceChatPlayerMuteStateChangedServerToClient",
+				"Parameters": [
+					{
+						"Name": "muteState",
+						"Type": {
+							"Category": "Enum",
+							"Name": "MuteState"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "FacialAnimationStreamingServiceStats",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "FacialAnimationStreamingServiceStats",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FacialAnimationStreamingServiceStats",
+			"member": "Get",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Get",
+				"Parameters": [
+					{
+						"Name": "label",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FacialAnimationStreamingServiceStats",
+			"member": "GetWithPlayerId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetWithPlayerId",
+				"Parameters": [
+					{
+						"Name": "label",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "playerId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "MaterialGenerationService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "MaterialGenerationService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialGenerationService",
+			"member": "StartSession",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "StartSession",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "MaterialGenerationSession"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "MaterialGenerationSession",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "MaterialGenerationSession",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialGenerationSession",
+			"member": "GenerateImagesAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GenerateImagesAsync",
+				"Parameters": [
+					{
+						"Name": "prompt",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialGenerationSession",
+			"member": "GenerateMaterialAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GenerateMaterialAsync",
+				"Parameters": [
+					{
+						"Name": "imageId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ScopeCheckResult",
+			"item": "ConsentDenied",
+			"type": "Add",
+			"value": {
+				"Name": "ConsentDenied",
+				"Value": 7
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "MuteState",
+			"type": "Add",
+			"value": {
+				"Name": "MuteState"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "MuteState",
+			"item": "Unmuted",
+			"type": "Add",
+			"value": {
+				"Name": "Unmuted",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "MuteState",
+			"item": "Muted",
+			"type": "Add",
+			"value": {
+				"Name": "Muted",
+				"Value": 1
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "TrackerPromptEvent",
+			"type": "Add",
+			"value": {
+				"Name": "TrackerPromptEvent"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TrackerPromptEvent",
+			"item": "LODCameraRecommendDisable",
+			"type": "Add",
+			"value": {
+				"Name": "LODCameraRecommendDisable",
+				"Value": 0
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "AdService",
+			"member": "ShowVideoAd",
+			"part": "description",
+			"before": "Historically used to show mobile video adverts.",
+			"after": "Historically used to show mobile video advertisements.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ShowVideoAd",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationClip",
+			"member": "Loop",
+			"part": "description",
+			"before": "Determines whether the animation stored in this AnimationClip is intended to loop by default.",
+			"after": "Determines whether the animation stored in this <code>AnimationClip</code> is intended to loop.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Loop",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "BindableEvent",
+			"part": "description",
+			"before": "An object used to create custom Events that Scripts can fire and connect to.",
+			"after": "An object used to create custom events that scripts can fire and connect to."
+		},
+		{
+			"element": "Member",
+			"class": "BindableEvent",
+			"member": "Fire",
+			"part": "description",
+			"before": "Fires the <code>BindableEvent</code>, which fires the <code>BindableEvent.Event</code> event.",
+			"after": "Fires the <code>BindableEvent</code> which in turn fires the <code>BindableEvent.Event</code> event.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Fire",
+				"Parameters": [
+					{
+						"Name": "arguments",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BindableEvent",
+			"member": "Fire",
+			"part": "parameter",
+			"parameter": "arguments",
+			"before": null,
+			"after": "Values to be passed with the event.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Fire",
+				"Parameters": [
+					{
+						"Name": "arguments",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BindableEvent",
+			"member": "Event",
+			"part": "description",
+			"before": "The event that is fired when <code>Fire</code> is called.",
+			"after": "The event that is fired when <code>BindableEvent:Fire()</code> is called.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Event",
+				"Parameters": [
+					{
+						"Name": "arguments",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "BindableFunction",
+			"part": "description",
+			"before": "An object used to expose one function to other scripts.",
+			"after": "An object used to expose a function to other scripts."
+		},
+		{
+			"element": "Member",
+			"class": "BindableFunction",
+			"member": "OnInvoke",
+			"part": "parameter",
+			"parameter": "arguments",
+			"before": "These are the parameters sent when the BindableFunction is Invoked.",
+			"after": "The parameters sent when the <code>BindableFunction</code> is invoked.",
+			"value": {
+				"MemberType": "Callback",
+				"Name": "OnInvoke",
+				"Parameters": [
+					{
+						"Name": "arguments",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AlignOrientation",
+			"part": "description",
+			"before": "A constraint that applies a torque to make its attachments align.",
+			"after": "Constraint which applies torque to align two attachments, or to align one attachment with a goal orientation."
+		},
+		{
+			"element": "Member",
+			"class": "AlignOrientation",
+			"member": "CFrame",
+			"part": "description",
+			"before": "The goal orientation of the <code>AlignOrientation</code> (the translation component is ignored).",
+			"after": "The <code>CFrame</code> orientation with which the constraint will attempt to match the orientation of <code>Attachment0</code>.",
+			"value": {
+				"Category": "TargetOrientation",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "CFrame",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AlignOrientation",
+			"member": "MaxAngularVelocity",
+			"part": "description",
+			"before": "The maximum angular velocity the constraint can use to reach its goal.",
+			"after": "Maximum angular velocity the constraint can use to reach its goal.",
+			"value": {
+				"Category": "Compliance",
+				"Default": "INF",
+				"MemberType": "Property",
+				"Name": "MaxAngularVelocity",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AlignOrientation",
+			"member": "MaxTorque",
+			"part": "description",
+			"before": "The maximum torque the constraint can use to reach its goal.",
+			"after": "Maximum torque the constraint can use to reach its goal.",
+			"value": {
+				"Category": "Compliance",
+				"Default": "10000",
+				"MemberType": "Property",
+				"Name": "MaxTorque",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AlignOrientation",
+			"member": "Mode",
+			"part": "description",
+			"before": "The way the constraint determines its goal orientation.",
+			"after": "Whether the constraint uses one or two attachments in calculating its goal.",
+			"value": {
+				"Category": "AlignmentMode",
+				"Default": "TwoAttachment",
+				"MemberType": "Property",
+				"Name": "Mode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "OrientationAlignmentMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AlignOrientation",
+			"member": "PrimaryAxis",
+			"part": "description",
+			"before": "The direction of the goal's X-Axis, represented as a unit <code>Vector3</code>.",
+			"after": "The direction of the goal's X axis, represented as a unit <code>Vector3</code>.",
+			"value": {
+				"Category": "TargetOrientation",
+				"Default": "1, 0, 0",
+				"MemberType": "Property",
+				"Name": "PrimaryAxis",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AlignOrientation",
+			"member": "PrimaryAxisOnly",
+			"part": "description",
+			"before": "If true, the <code>AlignOrientation</code> applies torque if the primary axis of its <code>Attachment0</code> becomes unaligned with the goal.",
+			"after": "Determines how the constraint's axes are affected by torque.",
+			"value": {
+				"Category": "AlignOrientation",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "PrimaryAxisOnly",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AlignOrientation",
+			"member": "ReactionTorqueEnabled",
+			"part": "description",
+			"before": "When true the constraint will apply torque on both Attachments to achieve the goal.",
+			"after": "Whether the constraint applies torque only to <code>Attachment0</code>, or to both attachments in equal and opposite directions.",
+			"value": {
+				"Category": "AlignOrientation",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "ReactionTorqueEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AlignOrientation",
+			"member": "Responsiveness",
+			"part": "description",
+			"before": "Controls how quickly the constraint will reach its goal. Higher values will cause the attachment to align quicker. Value can be between 5 and 200.",
+			"after": "Controls how quickly the constraint reaches its goal. Higher values cause the attachment(s) to align more rapidly.",
+			"value": {
+				"Category": "Compliance",
+				"Default": "10",
+				"MemberType": "Property",
+				"Name": "Responsiveness",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AlignOrientation",
+			"member": "RigidityEnabled",
+			"part": "description",
+			"before": "When true, the solver reacts as quickly as possible to complete the alignment. When false, the torque is dependent on <code>MaxTorque</code>, <code>MaxAngularVelocity</code>, and <code>Responsiveness</code>.",
+			"after": "Whether torque is dependent on other properties, or if the physics solver reacts as quickly as possible to complete the alignment.",
+			"value": {
+				"Category": "AlignOrientation",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "RigidityEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AlignOrientation",
+			"member": "SecondaryAxis",
+			"part": "description",
+			"before": "The direction of the goal's Y-Axis, represented as a unit <code>Vector3</code>.",
+			"after": "The direction of the goal's Y axis, represented as a unit <code>Vector3</code>.",
+			"value": {
+				"Category": "TargetOrientation",
+				"Default": "0, 1, 0",
+				"MemberType": "Property",
+				"Name": "SecondaryAxis",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AlignPosition",
+			"part": "description",
+			"before": "A constraint used to apply a force towards a location.",
+			"after": "Constraint which applies force to move two attachments together, or to move one attachment to a goal position."
+		},
+		{
+			"element": "Member",
+			"class": "AlignPosition",
+			"member": "ApplyAtCenterOfMass",
+			"part": "description",
+			"before": "When true, applies force at center of mass of Attachment0's parent Part. When false, applied at Attachment0.",
+			"after": "Whether force is applied to the parent of <code>Attachment0</code> at that attachment's location, or at the parents' center of mass.",
+			"value": {
+				"Category": "AlignPosition",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "ApplyAtCenterOfMass",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AlignPosition",
+			"member": "MaxForce",
+			"part": "description",
+			"before": "Maximum force the constraint can apply to achieve its goal. Only used if RigidityEnabled is false.",
+			"after": "Maximum force the constraint can apply to achieve its goal.",
+			"value": {
+				"Category": "Compliance",
+				"Default": "10000",
+				"MemberType": "Property",
+				"Name": "MaxForce",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AlignPosition",
+			"member": "MaxVelocity",
+			"part": "description",
+			"before": "Maximum speed the Attachment can move when converging. Only used if RigidityEnabled is false.",
+			"after": "Maximum speed the attachments can move when converging.",
+			"value": {
+				"Category": "Compliance",
+				"Default": "INF",
+				"MemberType": "Property",
+				"Name": "MaxVelocity",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AlignPosition",
+			"member": "Mode",
+			"part": "description",
+			"before": "The way the constraint determines its goal.",
+			"after": "Whether the constraint uses one or two attachments in calculating its goal.",
+			"value": {
+				"Category": "AlignmentMode",
+				"Default": "TwoAttachment",
+				"MemberType": "Property",
+				"Name": "Mode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "PositionAlignmentMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AlignPosition",
+			"member": "Position",
+			"part": "description",
+			"before": "The position the constraint should move its <code>Attachment0</code> to when using the <code>OneAttachment</code> mode.",
+			"after": "The position to which the constraint should move its <code>Attachment0</code>.",
+			"value": {
+				"Category": "AlignPosition",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "Position",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AlignPosition",
+			"member": "ReactionForceEnabled",
+			"part": "description",
+			"before": "If true the constraint applies force on both Attachments to achieve the goal.",
+			"after": "Whether the constraint applies force only to <code>Attachment0</code>, or to both attachments in equal and opposite directions.",
+			"value": {
+				"Category": "AlignPosition",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "ReactionForceEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AlignPosition",
+			"member": "Responsiveness",
+			"part": "description",
+			"before": "Controls how quickly the constraint reaches its goal. Higher values will cause the attachment(s) to align more rapidly. Value can be between 5 and 200.",
+			"after": "Controls how quickly the constraint reaches its goal. Higher values cause the attachment(s) to align more rapidly.",
+			"value": {
+				"Category": "Compliance",
+				"Default": "10",
+				"MemberType": "Property",
+				"Name": "Responsiveness",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AlignPosition",
+			"member": "RigidityEnabled",
+			"part": "description",
+			"before": "If true, the solver reacts as quickly as possible to complete the alignment. If false, the torque is dependent on <code>MaxForce</code>, <code>MaxVelocity</code>, and <code>Responsiveness</code>.",
+			"after": "Whether force is dependent on other properties, or if the physics solver reacts as quickly as possible to complete the alignment.",
+			"value": {
+				"Category": "AlignPosition",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "RigidityEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "SlidingBallConstraint",
+			"part": "description",
+			"before": "The base class for constraints that allow their attachments to slide along an axis.",
+			"after": "The base class for constraints that allow their attachments to slide along an axis but not rotate."
+		},
+		{
+			"element": "Class",
+			"class": "PrismaticConstraint",
+			"part": "description",
+			"before": "Constrains two attachments on two parts to have a relative linear motion.",
+			"after": "Constraint which creates a rigid joint between two <code>Attachments</code>, allowing them to slide along one axis but not rotate."
+		},
+		{
+			"element": "Member",
+			"class": "HapticService",
+			"member": "GetMotor",
+			"part": "return",
+			"before": "The current vibration value set to the specified <code>UserInputType</code> and <code>VibrationMotor</code> or nil if <code>HapticService#SetMotor</code> has not been called prior.",
+			"after": "The current vibration value set to the specified <code>UserInputType</code> and <code>VibrationMotor</code> or nil if <code>SetMotor</code> has not been called prior.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetMotor",
+				"Parameters": [
+					{
+						"Name": "inputType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserInputType"
+						}
+					},
+					{
+						"Name": "vibrationMotor",
+						"Type": {
+							"Category": "Enum",
+							"Name": "VibrationMotor"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Players",
+			"part": "description",
+			"before": "A game service that contains presently connected Player objects.",
+			"after": "A service that contains presently connected <code>Player</code> objects."
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "CharacterAutoLoads",
+			"part": "description",
+			"before": "Indicates whether <code>Character</code>s will respawn automatically.",
+			"after": "Indicates whether <code>Characters</code> will respawn automatically.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "CharacterAutoLoads",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "MaxPlayers",
+			"part": "description",
+			"before": "The maximum amount of players that can be in this server.",
+			"after": "The maximum number of players that can be in a server.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "MaxPlayers",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "PreferredPlayers",
+			"part": "description",
+			"before": "The preferred amount of players for this server.",
+			"after": "The preferred number of players for a server.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "PreferredPlayers",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "GetUserThumbnailAsync",
+			"part": "description",
+			"before": "Returns the content URL of a player thumbnail given the size and type (avatar, bust, headshot), and a bool describing if the image is ready to be used.",
+			"after": "Returns the content URL of a player thumbnail given the size and type, as well as a boolean describing if the image is ready to use.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetUserThumbnailAsync",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "thumbnailType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ThumbnailType"
+						}
+					},
+					{
+						"Name": "thumbnailSize",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ThumbnailSize"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		}
+	]
+}

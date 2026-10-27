@@ -1,0 +1,1525 @@
+{
+	"from": {
+		"version": "0.566.0.5660545",
+		"hash": "a021408d33d04054"
+	},
+	"to": {
+		"version": "0.567.1.5670562",
+		"hash": "b57b6fc2eece4732"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AdPortal",
+			"member": "PortalType",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden",
+						"NotScriptable",
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Behavior",
+				"Default": "Forward",
+				"MemberType": "Property",
+				"Name": "PortalType",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotScriptable",
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AdPortalType"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Animator",
+			"member": "OnStreamingUpdated",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnStreamingUpdated",
+				"Parameters": [
+					{
+						"Name": "fadeTime",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "weight",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "priority",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AnimationPriority"
+						}
+					},
+					{
+						"Name": "valuesUpdated",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "PromptPublishAssetAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptPublishAssetAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "assetType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AssetType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "OpenPublishResultModal",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OpenPublishResultModal",
+				"Parameters": [
+					{
+						"Name": "resultType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "PromptPublishAssetResult"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContextActionService",
+			"member": "BindCoreActivate",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "BindCoreActivate",
+				"Parameters": [
+					{
+						"Name": "userInputTypeForActivation",
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserInputType"
+						}
+					},
+					{
+						"Name": "keyCodesForActivation",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContextActionService",
+			"member": "UnbindCoreActivate",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UnbindCoreActivate",
+				"Parameters": [
+					{
+						"Name": "userInputTypeForActivation",
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserInputType"
+						}
+					},
+					{
+						"Default": "Unknown",
+						"Name": "keyCodeForActivation",
+						"Type": {
+							"Category": "Enum",
+							"Name": "KeyCode"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SelectionBox",
+			"member": "StudioSelectionBox",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "StudioSelectionBox",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImageDataExperimental",
+			"member": "Clear",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Clear",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImageDataExperimental",
+			"member": "DrawCircle",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DrawCircle",
+				"Parameters": [
+					{
+						"Name": "center",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "radius",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "color",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Color3"
+						}
+					},
+					{
+						"Name": "alpha",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImageDataExperimental",
+			"member": "Resize",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Resize",
+				"Parameters": [
+					{
+						"Name": "newSize",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImageDataExperimental",
+			"member": "Rotate",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Rotate",
+				"Parameters": [
+					{
+						"Name": "degrees",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Default": "true",
+						"Name": "resizeCanvas",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IncrementalPatchBuilder",
+			"member": "SerializePatch",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "SerializePatch",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InsertService",
+			"member": "GetLocalFileContents",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetLocalFileContents",
+				"Parameters": [
+					{
+						"Name": "contentId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialGenerationService",
+			"member": "GetAccountingBalanceAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAccountingBalanceAsync",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "double"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialGenerationService",
+			"member": "RefillAccountingBalanceAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RefillAccountingBalanceAsync",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "double"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialGenerationSession",
+			"member": "GenerateImagesAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Group",
+						"Name": "Array"
+					},
+					"after": {
+						"Category": "Group",
+						"Name": "Tuple"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GenerateImagesAsync",
+				"Parameters": [
+					{
+						"Name": "prompt",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialGenerationSession",
+			"member": "GenerateMaterialAsync",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GenerateMaterialAsync",
+				"Parameters": [
+					{
+						"Name": "imageId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialGenerationSession",
+			"member": "GenerateMaterialMapsAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GenerateMaterialMapsAsync",
+				"Parameters": [
+					{
+						"Name": "imageId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialGenerationSession",
+			"member": "UploadMaterialAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UploadMaterialAsync",
+				"Parameters": [
+					{
+						"Name": "imageId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "GetNetworkOwner",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ThreadSafety",
+					"before": "Unsafe",
+					"after": "Safe"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetNetworkOwner",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "GetNetworkOwnershipAuto",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ThreadSafety",
+					"before": "Unsafe",
+					"after": "Safe"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetNetworkOwnershipAuto",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "GetMaterialColor",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ThreadSafety",
+					"before": "Unsafe",
+					"after": "Safe"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetMaterialColor",
+				"Parameters": [
+					{
+						"Name": "material",
+						"Type": {
+							"Category": "Enum",
+							"Name": "Material"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "GetPlayerByUserId",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ThreadSafety",
+					"before": "Unsafe",
+					"after": "Safe"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPlayerByUserId",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Player"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "PromptReportServerEnrichmentAndScan",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptReportServerEnrichmentAndScan",
+				"Parameters": [
+					{
+						"Name": "v1comment",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "submitterId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "abuserId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "reportId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptEditorService",
+			"member": "DeregisterScriptAnalysisCallback",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DeregisterScriptAnalysisCallback",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptEditorService",
+			"member": "RegisterScriptAnalysisCallback",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterScriptAnalysisCallback",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "priority",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "callbackFunction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Selection",
+			"member": "SelectionLineThickness",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "RobloxScriptSecurity",
+						"Write": "RobloxScriptSecurity"
+					}
+				}
+			],
+			"value": {
+				"Category": "Appearance",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "SelectionLineThickness",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Selection",
+			"member": "SelectionBoxThickness",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "SelectionBoxThickness",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Selection Box Thickness",
+			"type": "Add",
+			"value": {
+				"Category": "Tools",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Selection Box Thickness",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TeamCreatePublishService",
+			"member": "TeamCreateReplicatedMessage",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "messageType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "MessageType"
+							}
+						},
+						{
+							"Name": "message",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "printToStatusBar",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "statusCode",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "isPublish",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "authorName",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "messageType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "MessageType"
+							}
+						},
+						{
+							"Name": "failureMessage",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "statusCode",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "isPublish",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "authorName",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "TeamCreateReplicatedMessage",
+				"Parameters": [
+					{
+						"Name": "messageType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "MessageType"
+						}
+					},
+					{
+						"Name": "failureMessage",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "statusCode",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "isPublish",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "authorName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UGCValidationService",
+			"member": "CanLoadAsset",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CanLoadAsset",
+				"Parameters": [
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "MeshDataExperimental",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "MeshDataExperimental",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MeshDataExperimental",
+			"member": "Size",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Size",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MeshDataExperimental",
+			"member": "PopulateFromMeshAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PopulateFromMeshAsync",
+				"Parameters": [
+					{
+						"Name": "meshId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "PromptPublishAssetResult",
+			"type": "Add",
+			"value": {
+				"Name": "PromptPublishAssetResult"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PromptPublishAssetResult",
+			"item": "Success",
+			"type": "Add",
+			"value": {
+				"Name": "Success",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PromptPublishAssetResult",
+			"item": "PermissionDenied",
+			"type": "Add",
+			"value": {
+				"Name": "PermissionDenied",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PromptPublishAssetResult",
+			"item": "Timeout",
+			"type": "Add",
+			"value": {
+				"Name": "Timeout",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PromptPublishAssetResult",
+			"item": "UploadFailed",
+			"type": "Add",
+			"value": {
+				"Name": "UploadFailed",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PromptPublishAssetResult",
+			"item": "NoUserInput",
+			"type": "Add",
+			"value": {
+				"Name": "NoUserInput",
+				"Value": 5
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "Severity",
+			"type": "Add",
+			"value": {
+				"Name": "Severity"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Severity",
+			"item": "Error",
+			"type": "Add",
+			"value": {
+				"Name": "Error",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Severity",
+			"item": "Warning",
+			"type": "Add",
+			"value": {
+				"Name": "Warning",
+				"Value": 2
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "ContentProvider",
+			"member": "GetAssetFetchStatus",
+			"part": "description",
+			"before": null,
+			"after": "Gets the current <code>AssetFetchStatus</code> of the <code>contentId</code> provided.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAssetFetchStatus",
+				"Parameters": [
+					{
+						"Name": "contentId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "AssetFetchStatus"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContentProvider",
+			"member": "GetAssetFetchStatus",
+			"part": "parameter",
+			"parameter": "contentId",
+			"before": null,
+			"after": "The ID of the content to fetch the status for.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAssetFetchStatus",
+				"Parameters": [
+					{
+						"Name": "contentId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "AssetFetchStatus"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContentProvider",
+			"member": "GetAssetFetchStatus",
+			"part": "return",
+			"before": null,
+			"after": "The <code>AssetFetchStatus</code> of the content.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAssetFetchStatus",
+				"Parameters": [
+					{
+						"Name": "contentId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "AssetFetchStatus"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContentProvider",
+			"member": "GetAssetFetchStatusChangedSignal",
+			"part": "description",
+			"before": null,
+			"after": "A signal that fires when the <code>AssetFetchStatus</code> of the provided content changes.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAssetFetchStatusChangedSignal",
+				"Parameters": [
+					{
+						"Name": "contentId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RBXScriptSignal"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContentProvider",
+			"member": "PreloadAsync",
+			"part": "description",
+			"before": "Yields until all of the assets associated with the given <code>Instances</code> have loaded.",
+			"after": "Yields until all of the assets associated with the given <code>Instances</code> or <code>Content</code> strings have loaded.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PreloadAsync",
+				"Parameters": [
+					{
+						"Name": "contentIdList",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "callbackFunction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContentProvider",
+			"member": "PreloadAsync",
+			"part": "parameter",
+			"parameter": "contentIdList",
+			"before": "An array of <code>Instance</code>s to be preloaded.",
+			"after": "An array of items to load.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PreloadAsync",
+				"Parameters": [
+					{
+						"Name": "contentIdList",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "callbackFunction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContentProvider",
+			"member": "PreloadAsync",
+			"part": "parameter",
+			"parameter": "callbackFunction",
+			"before": "The Lua function to be called on completion of each asset request.",
+			"after": "The function called when each asset request completes. Returns the <code>content</code> string and the asset's final <code>AssetFetchStatus</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PreloadAsync",
+				"Parameters": [
+					{
+						"Name": "contentIdList",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "callbackFunction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetFetchStatus",
+			"item": "Success",
+			"part": "description",
+			"before": null,
+			"after": "The asset loaded successfully.",
+			"value": {
+				"Name": "Success",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetFetchStatus",
+			"item": "Failure",
+			"part": "description",
+			"before": null,
+			"after": "The asset failed to load successfully. Subsequent attempts are likely the fail; there may be something wrong with the <code>Content</code> string.",
+			"value": {
+				"Name": "Failure",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetFetchStatus",
+			"item": "None",
+			"part": "description",
+			"before": null,
+			"after": "The engine has no information about this asset. The engine never tried to load it.",
+			"value": {
+				"Name": "None",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetFetchStatus",
+			"item": "Loading",
+			"part": "description",
+			"before": null,
+			"after": "The engine is in the middle of trying to load this asset.",
+			"value": {
+				"Name": "Loading",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetFetchStatus",
+			"item": "TimedOut",
+			"part": "description",
+			"before": null,
+			"after": "The engine tried to load this asset but timed out. Future attempts to load may succeed.",
+			"value": {
+				"Name": "TimedOut",
+				"Value": 4
+			}
+		}
+	]
+}

@@ -1,0 +1,1442 @@
+{
+	"from": {
+		"version": "0.646.0.6460700",
+		"hash": "297eb79ede584243"
+	},
+	"to": {
+		"version": "0.647.0.6470717",
+		"hash": "2220a78ed1774256"
+	},
+	"changes": [
+		{
+			"element": "Class",
+			"class": "Instance",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Superclass",
+					"before": "<<<ROOT>>>",
+					"after": "Object"
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "Instance",
+				"Superclass": "Object",
+				"Tags": [
+					"NotCreatable",
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "ClassName",
+			"type": "Remove",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "ClassName",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "className",
+			"type": "Remove",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "className",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated",
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "ClassName",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "GetPropertyChangedSignal",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPropertyChangedSignal",
+				"Parameters": [
+					{
+						"Name": "property",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RBXScriptSignal"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "IsA",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsA",
+				"Parameters": [
+					{
+						"Name": "className",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "isA",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "isA",
+				"Parameters": [
+					{
+						"Name": "className",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated",
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "Changed",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Changed",
+				"Parameters": [
+					{
+						"Name": "property",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "CreateEditableImage",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateEditableImage",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "EditableImage"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "CreateEditableMesh",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateEditableMesh",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "EditableMesh"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "PromptCreateAvatarAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "player",
+							"Type": {
+								"Category": "Class",
+								"Name": "Player"
+							}
+						},
+						{
+							"Name": "humanoidDescription",
+							"Type": {
+								"Category": "Class",
+								"Name": "HumanoidDescription"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "tokenId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "player",
+							"Type": {
+								"Category": "Class",
+								"Name": "Player"
+							}
+						},
+						{
+							"Name": "humanoidDescription",
+							"Type": {
+								"Category": "Class",
+								"Name": "HumanoidDescription"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptCreateAvatarAsync",
+				"Parameters": [
+					{
+						"Name": "tokenId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "humanoidDescription",
+						"Type": {
+							"Category": "Class",
+							"Name": "HumanoidDescription"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "UgcValidationSuccess",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "guid",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "serializedModel",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "guid",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "serializedModel",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "price",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "UgcValidationSuccess",
+				"Parameters": [
+					{
+						"Name": "guid",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "serializedModel",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "price",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "refreshAvatarThumbnails",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "refreshAvatarThumbnails",
+				"Parameters": [
+					{
+						"Name": "thumbnailTypes",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WrapDeformer",
+			"member": "GetDeformedCFrame",
+			"type": "Remove",
+			"value": {
+				"Capabilities": [
+					"Avatar"
+				],
+				"MemberType": "Function",
+				"Name": "GetDeformedCFrame",
+				"Parameters": [
+					{
+						"Name": "originalCFrame",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WrapDeformer",
+			"member": "GetDeformedCFrameAsync",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Avatar"
+				],
+				"MemberType": "Function",
+				"Name": "GetDeformedCFrameAsync",
+				"Parameters": [
+					{
+						"Name": "originalCFrame",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CommerceService",
+			"member": "GetCommerceProductInfoAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCommerceProductInfoAsync",
+				"Parameters": [
+					{
+						"Name": "commerceProductId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ExplorerFilterAutocompleterInstance",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ExplorerFilterAutocompleterInstance",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ExplorerFilterInstance",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ExplorerFilterInstance",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImageButton",
+			"member": "ImageContent",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Image",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "ImageContent",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImageLabel",
+			"member": "ImageContent",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Image",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "ImageContent",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MeshPart",
+			"member": "MeshContent",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "MeshContent",
+				"Security": {
+					"Read": "None",
+					"Write": "NotAccessibleSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MeshPart",
+			"member": "TextureContent",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "TextureContent",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextService",
+			"member": "GetTextSizeOffsetAsync",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"UI"
+				],
+				"MemberType": "Function",
+				"Name": "GetTextSizeOffsetAsync",
+				"Parameters": [
+					{
+						"Name": "fontSize",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "font",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Font"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UGCValidationService",
+			"member": "CalculateEditableMeshInsideMeshPercentage",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CalculateEditableMeshInsideMeshPercentage",
+				"Parameters": [
+					{
+						"Name": "editableMeshRoot",
+						"Type": {
+							"Category": "Class",
+							"Name": "EditableMesh"
+						}
+					},
+					{
+						"Name": "editableMeshQuery",
+						"Type": {
+							"Category": "Class",
+							"Name": "EditableMesh"
+						}
+					},
+					{
+						"Name": "meshQueryTransform",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					},
+					{
+						"Name": "meshQueryScale",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UGCValidationService",
+			"member": "CalculateMeshInsideMeshPercentage",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CalculateMeshInsideMeshPercentage",
+				"Parameters": [
+					{
+						"Name": "meshIdRoot",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "meshIdQuery",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "meshqueryTransform",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					},
+					{
+						"Name": "meshQueryScale",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIGridStyleLayout",
+			"member": "HorizontalAlignment",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Behavior",
+					"after": "Alignment"
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Alignment",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "HorizontalAlignment",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "HorizontalAlignment"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIGridStyleLayout",
+			"member": "VerticalAlignment",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Behavior",
+					"after": "Alignment"
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Alignment",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "VerticalAlignment",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "VerticalAlignment"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIListLayout",
+			"member": "HorizontalFlex",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Data",
+					"after": "Alignment"
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Alignment",
+				"Default": "None",
+				"MemberType": "Property",
+				"Name": "HorizontalFlex",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "UIFlexAlignment"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIListLayout",
+			"member": "ItemLineAlignment",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Data",
+					"after": "Alignment"
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Alignment",
+				"Default": "Automatic",
+				"MemberType": "Property",
+				"Name": "ItemLineAlignment",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ItemLineAlignment"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIListLayout",
+			"member": "VerticalFlex",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Data",
+					"after": "Alignment"
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Alignment",
+				"Default": "None",
+				"MemberType": "Property",
+				"Name": "VerticalFlex",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "UIFlexAlignment"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Object",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "Object",
+				"Superclass": "<<<ROOT>>>",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Object",
+			"member": "ClassName",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "ClassName",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Object",
+			"member": "className",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "className",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated",
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "ClassName",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Object",
+			"member": "GetPropertyChangedSignal",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPropertyChangedSignal",
+				"Parameters": [
+					{
+						"Name": "property",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RBXScriptSignal"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Object",
+			"member": "IsA",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsA",
+				"Parameters": [
+					{
+						"Name": "className",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Object",
+			"member": "isA",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "isA",
+				"Parameters": [
+					{
+						"Name": "className",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Object",
+			"member": "Changed",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Changed",
+				"Parameters": [
+					{
+						"Name": "property",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ExplorerFilter",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ExplorerFilter",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ExplorerFilter",
+			"member": "GetAutocompleter",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAutocompleter",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "ExplorerFilterAutocompleter"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ExplorerFilter",
+			"member": "GetErrors",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetErrors",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ExplorerFilter",
+			"member": "GetLexemes",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetLexemes",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ExplorerFilter",
+			"member": "InstancePassesFilter",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "InstancePassesFilter",
+				"Parameters": [
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ExplorerFilter",
+			"member": "SetFilter",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetFilter",
+				"Parameters": [
+					{
+						"Name": "search",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ExplorerFilterAutocompleter",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ExplorerFilterAutocompleter",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ExplorerFilterAutocompleter",
+			"member": "ReplaceRange",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "ReplaceRange",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ExplorerFilterAutocompleter",
+			"member": "RequiresOutsideContext",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "RequiresOutsideContext",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ExplorerFilterAutocompleter",
+			"member": "GetSuggestions",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetSuggestions",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "GuiBase2d",
+			"member": "AutoLocalize",
+			"part": "description",
+			"before": "When set to true, localization will be applied to this GuiBase2d and its descendants based on the <code>GuiBase2d.RootLocalizationTable</code> specified for this GuiBase2d.",
+			"after": "When set to true, localization will be applied to this GuiBase2d and its descendants.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Localization",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "AutoLocalize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LocalizationService",
+			"member": "GetTableEntries",
+			"part": "description",
+			"before": "Gets all entries used for autotranslation.",
+			"after": "Gets all entries used for automated localization.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetTableEntries",
+				"Parameters": [
+					{
+						"Default": "nil",
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AtmosphereSensor",
+			"part": "description",
+			"before": null,
+			"after": "A <code>SensorBase</code> that outputs data about the <code>AirDenstiy</code> and <code>RelativeWindVelocity</code> at the sensor's position."
+		}
+	]
+}

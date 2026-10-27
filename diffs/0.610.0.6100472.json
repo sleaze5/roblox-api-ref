@@ -1,0 +1,1981 @@
+{
+	"from": {
+		"version": "0.609.1.6090387",
+		"hash": "1aa14760bb5b4dd8"
+	},
+	"to": {
+		"version": "0.610.0.6100472",
+		"hash": "4db4dbde9ef74270"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "GetAudioMetadataAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAudioMetadataAsync",
+				"Parameters": [
+					{
+						"Name": "idList",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RootImportData",
+			"member": "PreferredUploadId",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "PreferredUploadId",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "OpenShareCapturePrompt",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "promptId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "contentId",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Content"
+							}
+						},
+						{
+							"Name": "capturePath",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "launchData",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "promptId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "contentId",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Content"
+							}
+						},
+						{
+							"Name": "launchData",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "OpenShareCapturePrompt",
+				"Parameters": [
+					{
+						"Name": "promptId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "contentId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					},
+					{
+						"Name": "launchData",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "GetCaptureFilePathAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCaptureFilePathAsync",
+				"Parameters": [
+					{
+						"Name": "captureContentId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CollaboratorsService",
+			"member": "CollaboratorIdleUpdate",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxSecurity",
+					"after": "RobloxScriptSecurity"
+				},
+				{
+					"field": "Tags",
+					"before": [
+						"Hidden"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "CollaboratorIdleUpdate",
+				"Parameters": [
+					{
+						"Name": "collaboratorId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "isIdle",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CollaboratorsService",
+			"member": "CollaboratorInstanceCreatedSignal",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Hidden"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "CollaboratorInstanceCreatedSignal",
+				"Parameters": [
+					{
+						"Name": "collaboratorId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CollaboratorsService",
+			"member": "CollaboratorInstanceDestroyedSignal",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Hidden"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "CollaboratorInstanceDestroyedSignal",
+				"Parameters": [
+					{
+						"Name": "collaboratorId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CollaboratorsService",
+			"member": "CollaboratorStatusUpdatedSignal",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Hidden"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "CollaboratorStatusUpdatedSignal",
+				"Parameters": [
+					{
+						"Name": "collaboratorId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "newStatus",
+						"Type": {
+							"Category": "Enum",
+							"Name": "CollaboratorStatus"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Path2D",
+			"member": "ZIndex",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "ZIndex",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Path2D",
+			"member": "GetBoundingRect2D",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBoundingRect2D",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Rect"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialGenerationService",
+			"member": "GetAccountingBalanceAsync",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAccountingBalanceAsync",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "double"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialGenerationService",
+			"member": "RefillAccountingBalanceAsync",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RefillAccountingBalanceAsync",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "double"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioPublishService",
+			"member": "PublishAs",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "universeId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "placeId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "groupId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "isPublish",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "publishParameters",
+							"Type": {
+								"Category": "Group",
+								"Name": "Variant"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "universeId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "placeId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "groupId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "isPublish",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "publishParameters",
+							"Type": {
+								"Category": "Group",
+								"Name": "Variant"
+							}
+						},
+						{
+							"Default": "false",
+							"Name": "willRetryOnConflict",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "PublishAs",
+				"Parameters": [
+					{
+						"Name": "universeId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "placeId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "groupId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "isPublish",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "publishParameters",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Default": "false",
+						"Name": "willRetryOnConflict",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "VRService",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotCreatable",
+						"Service"
+					],
+					"after": [
+						"NotCreatable",
+						"Service",
+						"NotBrowsable"
+					]
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "VRService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VRService",
+			"member": "AutomaticScaling",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "__api_dump_class_not_creatable__",
+					"after": "World"
+				},
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": false,
+						"CanSave": false
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": true
+					}
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "World",
+				"MemberType": "Property",
+				"Name": "AutomaticScaling",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "VRScaling"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VRService",
+			"member": "DidPointerHit",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "__api_dump_class_not_creatable__",
+					"after": "false"
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "DidPointerHit",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VRService",
+			"member": "FadeOutViewOnCollision",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "__api_dump_class_not_creatable__",
+					"after": "true"
+				},
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": false,
+						"CanSave": false
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": true
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "FadeOutViewOnCollision",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VRService",
+			"member": "GuiInputUserCFrame",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "__api_dump_class_not_creatable__",
+					"after": "Head"
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "Head",
+				"MemberType": "Property",
+				"Name": "GuiInputUserCFrame",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "UserCFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VRService",
+			"member": "LaserDistance",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "__api_dump_class_not_creatable__",
+					"after": "50"
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "50",
+				"MemberType": "Property",
+				"Name": "LaserDistance",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VRService",
+			"member": "PointerHitCFrame",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "__api_dump_class_not_creatable__",
+					"after": "__api_dump_no_string_value__"
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "PointerHitCFrame",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VRService",
+			"member": "QuestASWState",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "__api_dump_class_not_creatable__",
+					"after": "false"
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "QuestASWState",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VRService",
+			"member": "QuestDisplayRefreshRate",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "__api_dump_class_not_creatable__",
+					"after": "0"
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "QuestDisplayRefreshRate",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VRService",
+			"member": "ThirdPersonFollowCamEnabled",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "__api_dump_class_not_creatable__",
+					"after": "true"
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "ThirdPersonFollowCamEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VRService",
+			"member": "VRDeviceAvailable",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "__api_dump_class_not_creatable__",
+					"after": "false"
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "VRDeviceAvailable",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VRService",
+			"member": "VRDeviceName",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "__api_dump_class_not_creatable__",
+					"after": ""
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "VRDeviceName",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VRService",
+			"member": "VREnabled",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "__api_dump_class_not_creatable__",
+					"after": "false"
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "VREnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VRService",
+			"member": "VRSessionState",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "__api_dump_class_not_creatable__",
+					"after": "Undefined"
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "Undefined",
+				"MemberType": "Property",
+				"Name": "VRSessionState",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "VRSessionState"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TextureGenerationService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "TextureGenerationService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextureGenerationService",
+			"member": "CancelGenerationRequestAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CancelGenerationRequestAsync",
+				"Parameters": [
+					{
+						"Name": "jobUuid",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextureGenerationService",
+			"member": "GenerateTextureAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GenerateTextureAsync",
+				"Parameters": [
+					{
+						"Name": "previewUuid",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextureGenerationService",
+			"member": "GetQuotasAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetQuotasAsync",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextureGenerationService",
+			"member": "PreviewTextureAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PreviewTextureAsync",
+				"Parameters": [
+					{
+						"Name": "meshObj",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "prompt",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextureGenerationService",
+			"member": "GenerationNotificationSignal",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "GenerationNotificationSignal",
+				"Parameters": [
+					{
+						"Name": "notificationData",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextureGenerationService",
+			"member": "PreviewNotificationSignal",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PreviewNotificationSignal",
+				"Parameters": [
+					{
+						"Name": "notificationData",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CollaboratorStatus",
+			"item": "Editing3D",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 0,
+					"after": 1
+				}
+			],
+			"value": {
+				"Name": "Editing3D",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CollaboratorStatus",
+			"item": "Scripting",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 1,
+					"after": 2
+				}
+			],
+			"value": {
+				"Name": "Scripting",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CollaboratorStatus",
+			"item": "PrivateScripting",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 2,
+					"after": 3
+				}
+			],
+			"value": {
+				"Name": "PrivateScripting",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CollaboratorStatus",
+			"item": "None",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 3,
+					"after": 0
+				}
+			],
+			"value": {
+				"Name": "None",
+				"Value": 0
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ModerationStatus",
+			"type": "Add",
+			"value": {
+				"Name": "ModerationStatus"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ModerationStatus",
+			"item": "ReviewedApproved",
+			"type": "Add",
+			"value": {
+				"Name": "ReviewedApproved",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ModerationStatus",
+			"item": "ReviewedRejected",
+			"type": "Add",
+			"value": {
+				"Name": "ReviewedRejected",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ModerationStatus",
+			"item": "NotReviewed",
+			"type": "Add",
+			"value": {
+				"Name": "NotReviewed",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ModerationStatus",
+			"item": "NotApplicable",
+			"type": "Add",
+			"value": {
+				"Name": "NotApplicable",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ModerationStatus",
+			"item": "Invalid",
+			"type": "Add",
+			"value": {
+				"Name": "Invalid",
+				"Value": 5
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "EnumItem",
+			"enum": "CameraMode",
+			"item": "Classic",
+			"part": "description",
+			"before": "Third-person camera which can be zoomed into first-person.",
+			"after": "Third person camera which can be zoomed into first person.",
+			"value": {
+				"Name": "Classic",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CameraMode",
+			"item": "LockFirstPerson",
+			"part": "description",
+			"before": "Exclusively first-person camera.",
+			"after": "Exclusively first person camera.",
+			"value": {
+				"Name": "LockFirstPerson",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Legacy",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/Legacy.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Legacy.png\" /> .",
+			"value": {
+				"Name": "Legacy",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Arial",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/Arial.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Arial.png\" /> .",
+			"value": {
+				"Name": "Arial",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "ArialBold",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/ArialBold.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/ArialBold.png\" /> .",
+			"value": {
+				"Name": "ArialBold",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "SourceSans",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/SourceSans.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/SourceSans.png\" /> .",
+			"value": {
+				"Name": "SourceSans",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "SourceSansBold",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/SourceSansBold.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/SourceSansBold.png\" /> .",
+			"value": {
+				"Name": "SourceSansBold",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "SourceSansLight",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/SourceSansLight.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/SourceSansLight.png\" /> .",
+			"value": {
+				"Name": "SourceSansLight",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "SourceSansItalic",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/SourceSansItalic.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/SourceSansItalic.png\" /> .",
+			"value": {
+				"Name": "SourceSansItalic",
+				"Value": 6
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Bodoni",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/Bodoni.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Bodoni.png\" /> .",
+			"value": {
+				"Name": "Bodoni",
+				"Value": 7
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Garamond",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/Garamond.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Garamond.png\" /> .",
+			"value": {
+				"Name": "Garamond",
+				"Value": 8
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Cartoon",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/Cartoon.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Cartoon.png\" /> .",
+			"value": {
+				"Name": "Cartoon",
+				"Value": 9
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Code",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/Code.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Code.png\" /> .",
+			"value": {
+				"Name": "Code",
+				"Value": 10
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Highway",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/Highway.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Highway.png\" /> .",
+			"value": {
+				"Name": "Highway",
+				"Value": 11
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "SciFi",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/SciFi.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/SciFi.png\" /> .",
+			"value": {
+				"Name": "SciFi",
+				"Value": 12
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Arcade",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/Arcade.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Arcade.png\" /> .",
+			"value": {
+				"Name": "Arcade",
+				"Value": 13
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Fantasy",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/Fantasy.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Fantasy.png\" /> .",
+			"value": {
+				"Name": "Fantasy",
+				"Value": 14
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Antique",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/Antique.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Antique.png\" /> .",
+			"value": {
+				"Name": "Antique",
+				"Value": 15
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "SourceSansSemibold",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/SourceSansSemibold.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/SourceSansSemibold.png\" /> .",
+			"value": {
+				"Name": "SourceSansSemibold",
+				"Value": 16
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Gotham",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/Gotham.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Gotham.png\" /> .",
+			"value": {
+				"LegacyNames": [
+					"Montserrat"
+				],
+				"Name": "Gotham",
+				"Value": 17
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "GothamMedium",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/GothamMedium.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/GothamMedium.png\" /> .",
+			"value": {
+				"LegacyNames": [
+					"GothamSemibold",
+					"MontserratMedium"
+				],
+				"Name": "GothamMedium",
+				"Value": 18
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "GothamBold",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/GothamBold.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/GothamBold.png\" /> .",
+			"value": {
+				"LegacyNames": [
+					"MontserratBold"
+				],
+				"Name": "GothamBold",
+				"Value": 19
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "GothamBlack",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/GothamBlack.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/GothamBlack.png\" /> .",
+			"value": {
+				"LegacyNames": [
+					"MontserratBlack"
+				],
+				"Name": "GothamBlack",
+				"Value": 20
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "AmaticSC",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/AmaticSC.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/AmaticSC.png\" /> .",
+			"value": {
+				"Name": "AmaticSC",
+				"Value": 21
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Bangers",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/Bangers.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Bangers.png\" /> .",
+			"value": {
+				"Name": "Bangers",
+				"Value": 22
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Creepster",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/Creepster.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Creepster.png\" /> .",
+			"value": {
+				"Name": "Creepster",
+				"Value": 23
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "DenkOne",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/DenkOne.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/DenkOne.png\" /> .",
+			"value": {
+				"Name": "DenkOne",
+				"Value": 24
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Fondamento",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/Fondamento.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Fondamento.png\" /> .",
+			"value": {
+				"Name": "Fondamento",
+				"Value": 25
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "FredokaOne",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/FredokaOne.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/FredokaOne.png\" /> .",
+			"value": {
+				"Name": "FredokaOne",
+				"Value": 26
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "GrenzeGotisch",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/GrenzeGotisch.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/GrenzeGotisch.png\" /> .",
+			"value": {
+				"Name": "GrenzeGotisch",
+				"Value": 27
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "IndieFlower",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/IndieFlower.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/IndieFlower.png\" /> .",
+			"value": {
+				"Name": "IndieFlower",
+				"Value": 28
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "JosefinSans",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/JosefinSans.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/JosefinSans.png\" /> .",
+			"value": {
+				"Name": "JosefinSans",
+				"Value": 29
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Jura",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/Jura.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Jura.png\" /> .",
+			"value": {
+				"Name": "Jura",
+				"Value": 30
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Kalam",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/Kalam.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Kalam.png\" /> .",
+			"value": {
+				"Name": "Kalam",
+				"Value": 31
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "LuckiestGuy",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/LuckiestGuy.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/LuckiestGuy.png\" /> .",
+			"value": {
+				"Name": "LuckiestGuy",
+				"Value": 32
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Merriweather",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/Merriweather.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Merriweather.png\" /> .",
+			"value": {
+				"Name": "Merriweather",
+				"Value": 33
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Michroma",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/Michroma.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Michroma.png\" /> .",
+			"value": {
+				"Name": "Michroma",
+				"Value": 34
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Nunito",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/Nunito.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Nunito.png\" /> .",
+			"value": {
+				"Name": "Nunito",
+				"Value": 35
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Oswald",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/Oswald.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Oswald.png\" /> .",
+			"value": {
+				"Name": "Oswald",
+				"Value": 36
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "PatrickHand",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/PatrickHand.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/PatrickHand.png\" /> .",
+			"value": {
+				"Name": "PatrickHand",
+				"Value": 37
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "PermanentMarker",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/PermanentMarker.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/PermanentMarker.png\" /> .",
+			"value": {
+				"Name": "PermanentMarker",
+				"Value": 38
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Roboto",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/Roboto.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Roboto.png\" /> .",
+			"value": {
+				"Name": "Roboto",
+				"Value": 39
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "RobotoCondensed",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/RobotoCondensed.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/RobotoCondensed.png\" /> .",
+			"value": {
+				"Name": "RobotoCondensed",
+				"Value": 40
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "RobotoMono",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/RobotoMono.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/RobotoMono.png\" /> .",
+			"value": {
+				"Name": "RobotoMono",
+				"Value": 41
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Sarpanch",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/Sarpanch.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Sarpanch.png\" /> .",
+			"value": {
+				"Name": "Sarpanch",
+				"Value": 42
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "SpecialElite",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/SpecialElite.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/SpecialElite.png\" /> .",
+			"value": {
+				"Name": "SpecialElite",
+				"Value": 43
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "TitilliumWeb",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/TitilliumWeb.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/TitilliumWeb.png\" /> .",
+			"value": {
+				"Name": "TitilliumWeb",
+				"Value": 44
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Ubuntu",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"/assets/engine-api/enums/Font/Ubuntu.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Ubuntu.png\" /> .",
+			"value": {
+				"Name": "Ubuntu",
+				"Value": 45
+			}
+		}
+	]
+}

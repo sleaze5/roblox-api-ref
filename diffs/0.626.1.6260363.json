@@ -1,0 +1,1381 @@
+{
+	"from": {
+		"version": "0.625.0.6250509",
+		"hash": "c5a2369e0d774f91"
+	},
+	"to": {
+		"version": "0.626.1.6260363",
+		"hash": "994928499b784c5c"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "SendAnalyticsEvent",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SendAnalyticsEvent",
+				"Parameters": [
+					{
+						"Name": "eventName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "params",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "CaptureSavedInternal",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "captureInfo",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "captureInfo",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						},
+						{
+							"Name": "triggerSource",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "CaptureSavedInternal",
+				"Parameters": [
+					{
+						"Name": "captureInfo",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Name": "triggerSource",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ConversationalAIAcceptanceService",
+			"member": "CodeRunnerActivated",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "requestId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "code",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "requestId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "code",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "serverAutorun",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "autorunEnabled",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "autoExpandDropdowns",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "CodeRunnerActivated",
+				"Parameters": [
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "code",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "serverAutorun",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "autorunEnabled",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "autoExpandDropdowns",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Explosion",
+			"member": "LocalTransparencyModifier",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "LocalTransparencyModifier",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Fire",
+			"member": "LocalTransparencyModifier",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "LocalTransparencyModifier",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InsertService",
+			"member": "CreateMeshPartAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "PluginSecurity",
+					"after": "None"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateMeshPartAsync",
+				"Parameters": [
+					{
+						"Name": "meshId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					},
+					{
+						"Name": "collisionFidelity",
+						"Type": {
+							"Category": "Enum",
+							"Name": "CollisionFidelity"
+						}
+					},
+					{
+						"Name": "renderFidelity",
+						"Type": {
+							"Category": "Enum",
+							"Name": "RenderFidelity"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "MeshPart"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Smoke",
+			"member": "LocalTransparencyModifier",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "LocalTransparencyModifier",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sparkles",
+			"member": "LocalTransparencyModifier",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "LocalTransparencyModifier",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Server Audio Behavior",
+			"type": "Remove",
+			"value": {
+				"Category": "Audio",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Server Audio Behavior",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ServerAudioBehavior"
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "MarketplaceItemPurchaseStatus",
+			"item": "PlaceInvalid",
+			"type": "Add",
+			"value": {
+				"Name": "PlaceInvalid",
+				"Value": 13
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ServerAudioBehavior",
+			"type": "Remove",
+			"value": {
+				"Name": "ServerAudioBehavior"
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Class",
+			"class": "AdService",
+			"part": "description",
+			"before": "A decommissioned service that is no longer operational. Historically used to display mobile video ads.",
+			"after": "A class that allows the display of mobile video ads."
+		},
+		{
+			"element": "Member",
+			"class": "AdService",
+			"member": "ShowVideoAd",
+			"part": "description",
+			"before": "Historically used to show mobile video advertisements.",
+			"after": "Show mobile video advertisements.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ShowVideoAd",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AdService",
+			"member": "VideoAdClosed",
+			"part": "description",
+			"before": "Historically fired when an <code>AdService</code> video closed.",
+			"after": "Fires when an <code>AdService</code> video closes.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "VideoAdClosed",
+				"Parameters": [
+					{
+						"Name": "adShown",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Camera",
+			"part": "description",
+			"before": "A class which defines a view of the 3D game world.",
+			"after": "A class which defines a view of the 3D world."
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "CoordinateFrame",
+			"part": "description",
+			"before": "The old version of the <code>Camera.CFrame</code> property which functions identically to it. This item should be used in a <code>LocalScript</code> in order to work as expected online.",
+			"after": null,
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "CoordinateFrame",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated",
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "CFrame",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "HeadLocked",
+			"part": "description",
+			"before": "Toggles whether the <code>Camera</code> will automatically track the head motion of a player using a VR device.",
+			"after": "Toggles whether the camera will automatically track the head motion of a player using a VR device.",
+			"value": {
+				"Category": "Data",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "HeadLocked",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "NearPlaneZ",
+			"part": "description",
+			"before": "Describes the negative z-offset, in studs, of the camera's near clipping plane.",
+			"after": "Describes the negative <strong>Z</strong> offset, in studs, of the camera's near clipping plane.",
+			"value": {
+				"Category": "Data",
+				"Default": "-0.5",
+				"MemberType": "Property",
+				"Name": "NearPlaneZ",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "GetPartsObscuringTarget",
+			"part": "description",
+			"before": "Returns an array of <code>BaseParts</code> that are obscuring the lines of sight between the camera's <code>Camera.CFrame</code> and the <em>castPoints</em>.",
+			"after": "Returns an array of <code>BaseParts</code> that are obscuring the lines of sight between the camera's <code>Camera.CFrame</code> and the cast points.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPartsObscuringTarget",
+				"Parameters": [
+					{
+						"Name": "castPoints",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "ignoreList",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "GetPartsObscuringTarget",
+			"part": "parameter",
+			"parameter": "ignoreList",
+			"before": "An array of <code>Instances</code> that, along with their descendants, are to be ignored.",
+			"after": "An array of <code>Instances</code> that should be ignored, along with their descendants.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPartsObscuringTarget",
+				"Parameters": [
+					{
+						"Name": "castPoints",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "ignoreList",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "GetPartsObscuringTarget",
+			"part": "return",
+			"before": "An array of <code>BaseParts</code> that obscure the lines of sight between the camera's <code>Camera.CFrame</code> and the <em>castPoints</em>.",
+			"after": "An array of <code>BaseParts</code> that obscure the lines of sight between the camera's <code>Camera.CFrame</code> and the <code>castPoints</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPartsObscuringTarget",
+				"Parameters": [
+					{
+						"Name": "castPoints",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "ignoreList",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "ViewportPointToRay",
+			"part": "description",
+			"before": "Creates a unit <code>Ray</code> from a position on the viewport (in pixels), at a given depth from the <code>Camera</code> orientated in the camera's direction. Does not account for the GUI inset.",
+			"after": "Creates a unit <code>Ray</code> from a position on the viewport (in pixels), at a given depth from the <code>Camera</code>, orientated in the camera's direction. Does not account for the GUI inset.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ViewportPointToRay",
+				"Parameters": [
+					{
+						"Name": "x",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "y",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "depth",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Ray"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "WorldToScreenPoint",
+			"part": "description",
+			"before": "Returns the 2D screen location of a <code>Vector3</code> position in the world, the depth of it from the screen and whether it is visible. Accounts for the GUI inset.",
+			"after": "Returns the screen location and depth of a <code>Vector3</code> <code>worldPoint</code> and whether this point is within the bounds of the screen. Accounts for the GUI inset.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "WorldToScreenPoint",
+				"Parameters": [
+					{
+						"Name": "worldPoint",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "WorldToScreenPoint",
+			"part": "return",
+			"before": "A tuple containing, in order: A <code>Vector3</code> whose X and Y components represent the offset of the <em>worldPoint</em> from the top left corner of the screen, in pixels. The <code>Vector3</code> Z component represents the depth of the <em>worldPoint</em> from the screen (in studs). A bool indicating if the <em>worldPoint</em> is within the bounds of the screen",
+			"after": "A tuple containing, in order: <ul> <li> A <code>Vector3</code> whose X and Y components represent the offset   of the <code>worldPoint</code> from the top left corner of the screen, in   pixels. The <code>Vector3</code> <strong>Z</strong> component represents the depth   of the <code>worldPoint</code> from the screen (in studs). </li> <li> A boolean indicating if the <code>worldPoint</code> is within the bounds of the   screen. </li> </ul>",
+			"value": {
+				"MemberType": "Function",
+				"Name": "WorldToScreenPoint",
+				"Parameters": [
+					{
+						"Name": "worldPoint",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "WorldToViewportPoint",
+			"part": "description",
+			"before": "Returns the 2D screen location of a <code>Vector3</code> position in the world, but does not account for the GUI inset.",
+			"after": "Returns the screen location and depth of a <code>Vector3</code> <code>worldPoint</code> and whether this point is within the bounds of the screen. Does not account for the GUI inset.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "WorldToViewportPoint",
+				"Parameters": [
+					{
+						"Name": "worldPoint",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "WorldToViewportPoint",
+			"part": "return",
+			"before": "A tuple containing, in order: A <code>Vector3</code> whose X and Y components represent the offset of the <em>worldPoint</em> from the top left corner of the viewport, in pixels. The <code>Vector3</code> Z component represents the depth of the <em>worldPoint</em> from the screen (in studs). A bool indicating if the <em>worldPoint</em> is within the bounds of the viewport.",
+			"after": "A tuple containing, in order: <ul> <li> A <code>Vector3</code> whose <strong>X</strong> and <strong>Y</strong> components represent the   offset of the <code>worldPoint</code> from the top left corner of the viewport,   in pixels. The <code>Vector3</code> <strong>Z</strong> component represents the   depth of the <code>worldPoint</code> from the screen (in studs). </li> <li> A boolean indicating if the <code>worldPoint</code> is within the bounds of the   screen. </li> </ul>",
+			"value": {
+				"MemberType": "Function",
+				"Name": "WorldToViewportPoint",
+				"Parameters": [
+					{
+						"Name": "worldPoint",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ClickDetector",
+			"member": "mouseClick",
+			"part": "description",
+			"before": "Deprecated in favor of <code>ClickDetector.MouseClick</code>.",
+			"after": null,
+			"value": {
+				"MemberType": "Event",
+				"Name": "mouseClick",
+				"Parameters": [
+					{
+						"Name": "playerWhoClicked",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					}
+				],
+				"Security": "None",
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "MouseClick",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TorsionSpringConstraint",
+			"member": "LimitEnabled",
+			"part": "description",
+			"before": "Deprecated duplicate of <code>TorsionSpringConstraint.LimitsEnabled</code>.",
+			"after": null,
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Physics"
+					]
+				},
+				"Category": "Spring",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "LimitEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "LimitsEnabled",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ForceField",
+			"part": "description",
+			"before": "A <code>ForceField</code> protects a <code>Humanoid</code> from taking damage using the <code>Humanoid:TakeDamage()</code> function, and protects <code>BaseParts</code> from having their joints broken due to an <code>Explosion</code>.",
+			"after": "Protects a <code>Humanoid</code> from taking damage dealt through the <code>Humanoid:TakeDamage()</code> method and protects <code>BaseParts</code> from having their joints broken due to an <code>Explosion</code>."
+		},
+		{
+			"element": "Class",
+			"class": "GuiMain",
+			"part": "description",
+			"before": null,
+			"after": "The original name of the <code>ScreenGui</code>."
+		},
+		{
+			"element": "Class",
+			"class": "Hopper",
+			"part": "description",
+			"before": "Deprecated. Hopper has been replaced by StarterPack and should not be used.",
+			"after": "Hopper is the original name of the StarterPack service."
+		},
+		{
+			"element": "Class",
+			"class": "KeyframeSequenceProvider",
+			"part": "description",
+			"before": "Provides functions to load and preview <code>KeyframeSequence</code>s.",
+			"after": "Provides functions to load and preview <code>KeyframeSequence</code>."
+		},
+		{
+			"element": "Class",
+			"class": "Message",
+			"part": "description",
+			"before": "Fills the entire screen with a semi-transparent grey background, with centered text in the middle of the screen. With the introduction of Roblox's GUI features it has been deprecated and <code>TextLabels</code> should be used instead for new work.",
+			"after": "Fills the entire screen with a semi-transparent grey background, with centered text in the middle of the screen."
+		},
+		{
+			"element": "Class",
+			"class": "Hint",
+			"part": "description",
+			"before": "A Hint is an object that creates a small black bar at the very top of the screen with text. Its appearance cannot be customized in any way. With the introduction of Roblox's GUI features it has been deprecated and <code>TextLabels</code> should be used instead for new work.",
+			"after": "A Hint is an object that creates a small black bar at the very top of the screen with text."
+		},
+		{
+			"element": "Class",
+			"class": "FlagStand",
+			"part": "description",
+			"before": "The FlagStand and <code>Flag</code> are deprecated objects that were used to make capture the flag games.",
+			"after": "The FlagStand object helps you make 'capture the flag' style games."
+		},
+		{
+			"element": "Member",
+			"class": "MeshPart",
+			"member": "DoubleSided",
+			"part": "description",
+			"before": "Render both faces of polygons in the mesh.",
+			"after": "Determines whether to render both faces of polygons in the mesh.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "DoubleSided",
+				"Security": {
+					"Read": "None",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "BreakJoints",
+			"part": "description",
+			"before": "Breaks connections between <code>BaseParts</code>, including surface connections with any adjacent parts, <code>WeldConstraints</code> and all <code>Welds</code> and other <code>JointInstance</code>s.",
+			"after": "Breaks connections between <code>BaseParts</code>, including surface connections with any adjacent parts, <code>WeldConstraints</code> and all <code>Welds</code> and other <code>JointInstances</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "BreakJoints",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "GetModelCFrame",
+			"part": "description",
+			"before": "This value historically returned the CFrame of a central position in the model. It has been deprecated as it did not provide reliable results.",
+			"after": "This value historically returned the CFrame of a central position in the model.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetModelCFrame",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "GetPrimaryPartCFrame",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Flag",
+			"part": "description",
+			"before": "The Flag object is a deprecated object that was used to make capture the flag games.",
+			"after": "The Flag object helps you make 'capture the flag' style games."
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "GridSize",
+			"part": "description",
+			"before": "Returns the grid size the user has set in studio under the Model tab.",
+			"after": "Returns the grid snapping size the user has set in Studio.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "GridSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PluginMenu",
+			"part": "description",
+			"before": "A context menu that can be shown in Studio. Displays a list of PluginActions and supports submenus.",
+			"after": "A context menu that can be shown in Studio. Displays a list of <code>PluginActions</code> and supports submenus."
+		},
+		{
+			"element": "Member",
+			"class": "PluginToolbar",
+			"member": "CreateButton",
+			"part": "description",
+			"before": "Creates <code>PluginToolbarButton</code> that allows the user to initiate a single, one-off action in Roblox Studio through the <code>Click</code> event.",
+			"after": "Creates a <code>PluginToolbarButton</code> that allows the user to initiate a single, one-off action in Studio.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateButton",
+				"Parameters": [
+					{
+						"Name": "buttonId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "tooltip",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "iconname",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "text",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "PluginToolbarButton"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "NumberPose",
+			"part": "description",
+			"before": "A NumberPose holds the value applied to a specific FACS control. The control which is affected depends on the name of the NumberPose.",
+			"after": "Holds the value applied to a specific FACS control."
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "Pitch",
+			"part": "description",
+			"before": "Deprecated. Sets how high pitched and fast a <code>Sound</code> is when it is played. The greater the integer, the higher and faster the <code>Sound</code> is.",
+			"after": "Sets how high pitched and fast a <code>Sound</code> is when it is played. The greater the integer, the higher and faster the <code>Sound</code> is.",
+			"value": {
+				"Category": "Data",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "Pitch",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "PlaybackSpeed",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "SpawnerService",
+			"part": "description",
+			"before": "An internal service that is responsible for the behavior or <code>SpawnLocation</code>s. Its functionality is not accessible to developers.",
+			"after": "An internal service that is responsible for the behavior or <code>SpawnLocations</code>. Its functionality is not accessible to developers."
+		},
+		{
+			"element": "Member",
+			"class": "Team",
+			"member": "Score",
+			"part": "description",
+			"before": "Deprecated. This property can be used to store an integer value associated with the team. This property offers no additional functionality and is not used by any game services.",
+			"after": "This property can be used to store an integer value associated with the team. This property offers no additional functionality and is not used by any game services.",
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "Score",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AlignType",
+			"item": "Parallel",
+			"part": "description",
+			"before": "Deprecated. Use <strong>PrimaryAxisParallel</strong> instead.",
+			"after": null,
+			"value": {
+				"Name": "Parallel",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AlignType",
+			"item": "Perpendicular",
+			"part": "description",
+			"before": "Deprecated. Use <strong>PrimaryAxisPerpendicular</strong> instead.",
+			"after": null,
+			"value": {
+				"Name": "Perpendicular",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AlphaMode",
+			"item": "Overlay",
+			"part": "description",
+			"before": "Overlays the <code>SurfaceAppearance.ColorMap</code> on top of the underlying part color based on the map's alpha channel. <img alt=\"AlphaMode OverLay\" src=\"/assets/legacy/fern-overlay.png\" />",
+			"after": "Overlays the <code>ColorMap</code> on top of the underlying part color based on the map's alpha channel. <img src=\"/assets/engine-api/enums/AlphaMode/Fern-Overlay.png\" width=\"512\" />",
+			"value": {
+				"Name": "Overlay",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AlphaMode",
+			"item": "Transparency",
+			"part": "description",
+			"before": "Uses the <code>ColorMap</code> alpha channel to control the transparency of the surface. <img alt=\"AlphaMode Transparency\" src=\"/assets/legacy/fern-cutout.png\" />.",
+			"after": "Uses the <code>ColorMap</code> alpha channel to control the transparency of the surface. <img src=\"/assets/engine-api/enums/AlphaMode/Fern-Cutout.png\" width=\"512\" />",
+			"value": {
+				"Name": "Transparency",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DevTouchMovementMode",
+			"item": "Thumbstick",
+			"part": "description",
+			"before": "This item is deprecated. Use <code>DynamicThumbstick</code> for virtual thumbstick applications.",
+			"after": null,
+			"value": {
+				"Name": "Thumbstick",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DevTouchMovementMode",
+			"item": "DPad",
+			"part": "description",
+			"before": "This item is deprecated. Use <code>DynamicThumbstick</code> for virtual DPad applications.",
+			"after": null,
+			"value": {
+				"Name": "DPad",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DevTouchMovementMode",
+			"item": "Thumbpad",
+			"part": "description",
+			"before": "This item is deprecated. Use <code>DynamicThumbstick</code> for virtual thumbpad applications.",
+			"after": null,
+			"value": {
+				"Name": "Thumbpad",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FrameStyle",
+			"item": "Custom",
+			"part": "description",
+			"before": "Uses the frame's <code>GuiObject.BackgroundColor3</code>, <code>GuiObject.BorderColor3</code>, and <code>GuiObject.BackgroundTransparency</code> properties to determine the frame's appearance. It has no padding; elements with the position <code>{{0, 0}, {0, 0}}</code> will appear at the frame's top-left corner.",
+			"after": "Uses the frame's <code>GuiObject.BackgroundColor3</code>, <code>GuiObject.BorderColor3</code>, and <code>GuiObject.BackgroundTransparency</code> properties to determine the frame's appearance. It has no padding; elements with the position <code>UDim2.new(0, 0, 0, 0)</code> will appear at the frame's top-left corner.",
+			"value": {
+				"Name": "Custom",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FrameStyle",
+			"item": "ChatBlue",
+			"part": "description",
+			"before": "Causes the frame to appear similar to a <code>Dialog</code> with its <code>Dialog.Tone</code> property set to <code>DialogTone</code> neutral. This has a padding of fifteen pixels on all sides.",
+			"after": "Causes the frame to appear similar to a <code>Dialog</code> with its <code>Tone</code> property set to <code>DialogTone.Neutral</code>. Like <strong>ChatGreen</strong> and <strong>ChatRed</strong>, this has a padding of fifteen pixels on all sides.",
+			"value": {
+				"Name": "ChatBlue",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FrameStyle",
+			"item": "RobloxRound",
+			"part": "description",
+			"before": "Causes the frame to appear as a translucent dark gray rectangle with rounded edges. Like \"RobloxSquare\" this has a padding of five pixels on all sides.",
+			"after": "Causes the frame to appear as a translucent dark gray rectangle with rounded edges. Like <strong>RobloxSquare</strong>, this has a padding of five pixels on all sides.",
+			"value": {
+				"Name": "RobloxRound",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FrameStyle",
+			"item": "ChatGreen",
+			"part": "description",
+			"before": "Causes the frame to appear similar to a Dialog with its Tone property set to \"Friendly.\" Like \"ChatBlue\" this has a padding of fifteen pixels on all sides.",
+			"after": "Causes the frame to appear similar to a <code>Dialog</code> with its <code>Tone</code> property set to <code>DialogTone.Friendly</code>. Like <strong>ChatBlue</strong> and <strong>ChatRed</strong>, this has a padding of fifteen pixels on all sides.",
+			"value": {
+				"Name": "ChatGreen",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FrameStyle",
+			"item": "ChatRed",
+			"part": "description",
+			"before": "Causes the frame to appear similar to a Dialog with its Tone property set to \"Enemy.\" Like \"ChatBlue\" and \"ChatGreen\" this has a padding of fifteen pixels on all sides.",
+			"after": "Causes the frame to appear similar to a <code>Dialog</code> with its <code>Tone</code> property set to <code>DialogTone.Enemy</code>. Like <strong>ChatBlue</strong> and <strong>ChatGreen</strong>, this has a padding of fifteen pixels on all sides.",
+			"value": {
+				"Name": "ChatRed",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "ForceField",
+			"part": "description",
+			"before": "Must be used on a <code>MeshPart</code> with UVs laid out to cover much of the 0:1 UV space or more (larger is better). The <code>MeshPart</code> must also have a texture applied to its <code>TextureID</code>, and that texture image must have a wide value range since the material displays the range from dark/black to light/white values. Obtain <a href=\"https://create.roblox.com/marketplace/asset/15507769146/ForceFieldMesh\">this model</a> for a functional example of the <strong>ForceField</strong> material.",
+			"after": "Must be used on a <code>MeshPart</code> with UVs laid out to cover much of the 0:1 UV space or more (larger is better). The <code>MeshPart</code> must also have a texture applied to its <code>TextureID</code>, and that texture image must have a wide value range since the material displays the range from dark/black to light/white values. Obtain <a href=\"https://create.roblox.com/store/asset/15507769146/ForceFieldMesh\">this model</a> for a functional example of the <strong>ForceField</strong> material.",
+			"value": {
+				"Name": "ForceField",
+				"Value": 1584
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SortOrder",
+			"item": "Custom",
+			"part": "description",
+			"before": "Deprecated. Elements are ordered by the function passed to <code>UIGridStyleLayout:SetCustomSortFunction()</code>.",
+			"after": "Elements are ordered by the function passed to <code>UIGridStyleLayout:SetCustomSortFunction()</code>.",
+			"value": {
+				"Name": "Custom",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 1
+			}
+		}
+	]
+}

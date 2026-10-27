@@ -1,0 +1,1226 @@
+{
+	"from": {
+		"version": "0.640.1.6400735",
+		"hash": "a8766ccdec1d49d3"
+	},
+	"to": {
+		"version": "0.641.2.6410741",
+		"hash": "cc14b244a0c64f28"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "GetStyled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetStyled",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioListener",
+			"member": "DistanceAttenuation",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "Listening",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "DistanceAttenuation",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "BinaryString"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioListener",
+			"member": "GetDistanceAttenuation",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "GetDistanceAttenuation",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioListener",
+			"member": "SetDistanceAttenuation",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "SetDistanceAttenuation",
+				"Parameters": [
+					{
+						"Name": "curve",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "CreateAvatarGenerationSessionAsync",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateAvatarGenerationSessionAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "AvatarGenerationSession"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "GenerateAvatarAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GenerateAvatarAsync",
+				"Parameters": [
+					{
+						"Name": "sessionId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "previewId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "GenerateAvatarPreviewAsync2",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GenerateAvatarPreviewAsync2",
+				"Parameters": [
+					{
+						"Name": "sessionId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "fileId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "textPrompt",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "LoadAvatarHumanoidDescriptionAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LoadAvatarHumanoidDescriptionAsync",
+				"Parameters": [
+					{
+						"Name": "id",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "HumanoidDescription"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "RequestAvatarGenerationSessionAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RequestAvatarGenerationSessionAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "callback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AvatarGenerationJob",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AvatarGenerationJob",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Avatar2DGenerationJob",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "Avatar2DGenerationJob",
+				"Superclass": "AvatarGenerationJob",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Avatar3DGenerationJob",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "Avatar3DGenerationJob",
+				"Superclass": "AvatarGenerationJob",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AvatarGenerationSession",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AvatarGenerationSession",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "GetCaptureUploadDataAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCaptureUploadDataAsync",
+				"Parameters": [
+					{
+						"Name": "capturePath",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ConversationalAIAcceptanceService",
+			"member": "ReportJSONEncodeFailure",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ReportJSONEncodeFailure",
+				"Parameters": [
+					{
+						"Name": "instanceName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "className",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "DismissNotification",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DismissNotification",
+				"Parameters": [
+					{
+						"Name": "notificationId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "NotificationDismissed",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "NotificationDismissed",
+				"Parameters": [
+					{
+						"Name": "notificationId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "NotificationDisplayed",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "NotificationDisplayed",
+				"Parameters": [
+					{
+						"Name": "notificationId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "SendNotification",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SendNotification",
+				"Parameters": [
+					{
+						"Name": "notificationInfo",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "UserInteractedWithNotification",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UserInteractedWithNotification",
+				"Parameters": [
+					{
+						"Name": "notificationId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "buttonIndex",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InsertService",
+			"member": "GetCollection",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Yields"
+					],
+					"after": [
+						"Yields",
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCollection",
+				"Parameters": [
+					{
+						"Name": "categoryId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields",
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InsertService",
+			"member": "GetUserSets",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Yields"
+					],
+					"after": [
+						"Yields",
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetUserSets",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields",
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Lighting",
+			"member": "Intent",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"Default": "Realistic",
+				"MemberType": "Property",
+				"Name": "Intent",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "Intent"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Lighting",
+			"member": "Quality",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"Default": "Quality",
+				"MemberType": "Property",
+				"Name": "Quality",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "Quality"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "getMass",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Deprecated"
+					],
+					"after": [
+						"Deprecated",
+						{
+							"PreferredDescriptorName": "GetMass",
+							"ThreadSafety": "Safe"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "getMass",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "GetMass",
+						"ThreadSafety": "Safe"
+					}
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChannelTabsConfiguration",
+			"member": "TextSize",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "14",
+					"after": "18"
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "18",
+				"MemberType": "Property",
+				"Name": "TextSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AvatarGenerationJobStatus",
+			"type": "Remove",
+			"value": {
+				"Name": "AvatarGenerationJobStatus"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Technology",
+			"item": "Unified",
+			"type": "Add",
+			"value": {
+				"Name": "Unified",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 5
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "Intent",
+			"type": "Add",
+			"value": {
+				"Name": "Intent"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Intent",
+			"item": "Realistic",
+			"type": "Add",
+			"value": {
+				"Name": "Realistic",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Intent",
+			"item": "Flat",
+			"type": "Add",
+			"value": {
+				"Name": "Flat",
+				"Value": 1
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "Quality",
+			"type": "Add",
+			"value": {
+				"Name": "Quality"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Quality",
+			"item": "Performance",
+			"type": "Add",
+			"value": {
+				"Name": "Performance",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Quality",
+			"item": "Quality",
+			"type": "Add",
+			"value": {
+				"Name": "Quality",
+				"Value": 1
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "AnalyticsService",
+			"member": "LogCustomEvent",
+			"part": "description",
+			"before": null,
+			"after": "Logs an event used to track custom metrics of a user in experience.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LogCustomEvent",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "eventName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "1",
+						"Name": "value",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "double"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "customFields",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnalyticsService",
+			"member": "LogCustomEvent",
+			"part": "parameter",
+			"parameter": "player",
+			"before": null,
+			"after": "The user who triggered the event.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LogCustomEvent",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "eventName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "1",
+						"Name": "value",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "double"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "customFields",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnalyticsService",
+			"member": "LogCustomEvent",
+			"part": "parameter",
+			"parameter": "eventName",
+			"before": null,
+			"after": "The name of the custom event.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LogCustomEvent",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "eventName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "1",
+						"Name": "value",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "double"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "customFields",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnalyticsService",
+			"member": "LogCustomEvent",
+			"part": "parameter",
+			"parameter": "value",
+			"before": null,
+			"after": "The value of the event that will be used in aggregation.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LogCustomEvent",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "eventName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "1",
+						"Name": "value",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "double"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "customFields",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnalyticsService",
+			"member": "LogCustomEvent",
+			"part": "parameter",
+			"parameter": "customFields",
+			"before": null,
+			"after": "Optional dictionary of custom fields that will provide breakdowns in Roblox-provided charts. Only specific keys, provided by <code>AnalyticsCustomFieldKeys</code>, will be used for these breakdowns. Limited to 8,000 unique combinations of values across the three custom fields per experience.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LogCustomEvent",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "eventName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "1",
+						"Name": "value",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "double"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "customFields",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "IsGrounded",
+			"part": "description",
+			"before": "Returns true if the object is connected to a part that will hold it in place (eg an <code>BasePart.Anchored</code> part), otherwise returns false.",
+			"after": "Returns true if the object is connected to a part that will hold it in place (eg an <code>Anchored</code> part), otherwise returns false.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsGrounded",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "BindToClose",
+			"part": "description",
+			"before": "Binds a function to be called before the game shuts down.",
+			"after": "Binds a function to be called before the server shuts down.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "BindToClose",
+				"Parameters": [
+					{
+						"Name": "function",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "BindToClose",
+			"part": "parameter",
+			"parameter": "function",
+			"before": "A function to be called prior to the game shutting down.",
+			"after": "A function called before the experience server shuts down.  If the bound function accepts a parameter, it passes <code>CloseReason</code> specifying the reason for the server shutdown.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "BindToClose",
+				"Parameters": [
+					{
+						"Name": "function",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CloseReason",
+			"item": "Unknown",
+			"part": "description",
+			"before": null,
+			"after": "The server shut down for an unknown reason.",
+			"value": {
+				"Name": "Unknown",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CloseReason",
+			"item": "RobloxMaintenance",
+			"part": "description",
+			"before": null,
+			"after": "The server shut down for maintenance.",
+			"value": {
+				"Name": "RobloxMaintenance",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CloseReason",
+			"item": "DeveloperShutdown",
+			"part": "description",
+			"before": null,
+			"after": "The experience developer has shut down the server, or functions bound by <code>BindToClose()</code> have been called inside Studio.",
+			"value": {
+				"Name": "DeveloperShutdown",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CloseReason",
+			"item": "DeveloperUpdate",
+			"part": "description",
+			"before": null,
+			"after": "The experience developer has migrated the server to a new place version.",
+			"value": {
+				"Name": "DeveloperUpdate",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CloseReason",
+			"item": "ServerEmpty",
+			"part": "description",
+			"before": null,
+			"after": "The last player has left and the experience is empty.",
+			"value": {
+				"Name": "ServerEmpty",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CloseReason",
+			"item": "OutOfMemory",
+			"part": "description",
+			"before": null,
+			"after": "The experience has hit the memory limit for the game server.",
+			"value": {
+				"Name": "OutOfMemory",
+				"Value": 5
+			}
+		}
+	]
+}

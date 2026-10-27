@@ -1,0 +1,1005 @@
+{
+	"from": {
+		"version": "0.690.0.6900721",
+		"hash": "ffd2994ae3bd41ab"
+	},
+	"to": {
+		"version": "0.691.0.6910867",
+		"hash": "f0b439683245446c"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "ConfigSnapshot",
+			"member": "GetValue",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "key",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "defaultValue",
+							"Type": {
+								"Category": "Group",
+								"Name": "Variant"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "key",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetValue",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "GetPredictionMode",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"InternalTest"
+				],
+				"MemberType": "Function",
+				"Name": "GetPredictionMode",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "PredictionMode"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AdService",
+			"member": "GetAdAvailabilityNowForUniverseAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAdAvailabilityNowForUniverseAsync",
+				"Parameters": [
+					{
+						"Name": "adFormat",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AdFormat"
+						}
+					},
+					{
+						"Name": "universeId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "isUniversalAppDM",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportSession",
+			"member": "AddKnownAssetsToCache",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddKnownAssetsToCache",
+				"Parameters": [
+					{
+						"Name": "knownAssets",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Lighting",
+			"member": "LightingStyle",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "RobloxScriptSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": [
+						"NotScriptable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Environment"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "Realistic",
+				"MemberType": "Property",
+				"Name": "LightingStyle",
+				"Security": {
+					"Read": "None",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "LightingStyle"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Lighting",
+			"member": "PrioritizeLightingQuality",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "RobloxScriptSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": [
+						"NotScriptable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Environment"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "PrioritizeLightingQuality",
+				"Security": {
+					"Read": "None",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "InstancePinned",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Players"
+				],
+				"MemberType": "Event",
+				"Name": "InstancePinned",
+				"Parameters": [
+					{
+						"Name": "uniqueIdString",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "depth",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "InstanceUnpinned",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Players"
+				],
+				"MemberType": "Event",
+				"Name": "InstanceUnpinned",
+				"Parameters": [
+					{
+						"Name": "uniqueIdString",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "depth",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "OpenScript",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "OpenScript",
+				"Parameters": [
+					{
+						"Name": "script",
+						"Type": {
+							"Category": "Class",
+							"Name": "LuaSourceContainer"
+						}
+					},
+					{
+						"Default": "1",
+						"Name": "lineNumber",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SoundService",
+			"member": "AcousticSimulationEnabled",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "AcousticSimulationEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "StudioStreamingMaxRadius",
+			"type": "Remove",
+			"value": {
+				"Category": "Streaming",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "StudioStreamingMaxRadius",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "StudioStreamingMinRadius",
+			"type": "Remove",
+			"value": {
+				"Category": "Streaming",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "StudioStreamingMinRadius",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "MaxFindReplaceAllResults",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "MaxFindReplaceAllResults",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioAssetService",
+			"member": "AutoSetupAvatarAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "modelId",
+							"Type": {
+								"Category": "DataType",
+								"Name": "ContentId"
+							}
+						},
+						{
+							"Name": "progressCallback",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Function"
+							}
+						},
+						{
+							"Name": "notificationCallback",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Function?"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "modelId",
+							"Type": {
+								"Category": "DataType",
+								"Name": "ContentId"
+							}
+						},
+						{
+							"Name": "progressCallback",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Function"
+							}
+						},
+						{
+							"Name": "notificationCallback",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Function?"
+							}
+						},
+						{
+							"Name": "options",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary?"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "AutoSetupAvatarAsync",
+				"Parameters": [
+					{
+						"Name": "modelId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "ContentId"
+						}
+					},
+					{
+						"Name": "progressCallback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					},
+					{
+						"Name": "notificationCallback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function?"
+						}
+					},
+					{
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioAssetService",
+			"member": "AutoSetupSerializedAvatarAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "serializedInstance",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "publishInfo",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						},
+						{
+							"Name": "telemetryMetadata",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						},
+						{
+							"Name": "progressCallback",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Function"
+							}
+						},
+						{
+							"Name": "notificationCallback",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Function?"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "serializedInstance",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "publishInfo",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						},
+						{
+							"Name": "telemetryMetadata",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						},
+						{
+							"Name": "progressCallback",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Function"
+							}
+						},
+						{
+							"Name": "notificationCallback",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Function?"
+							}
+						},
+						{
+							"Name": "options",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary?"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "AutoSetupSerializedAvatarAsync",
+				"Parameters": [
+					{
+						"Name": "serializedInstance",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "publishInfo",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Name": "telemetryMetadata",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Name": "progressCallback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					},
+					{
+						"Name": "notificationCallback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function?"
+						}
+					},
+					{
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UGCValidationService",
+			"member": "ValidatePropertiesSensible",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ValidatePropertiesSensible",
+				"Parameters": [
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserGameSettings",
+			"member": "PeoplePageLayout",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "PeoplePageLayout",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "PeoplePageLayout"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WrapTextureTransfer",
+			"member": "ReferenceCageMeshContent",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Avatar"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "ReferenceCageMeshContent",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WrapTextureTransfer",
+			"member": "UVMaxBound",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Avatar"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "-INF, -INF",
+				"MemberType": "Property",
+				"Name": "UVMaxBound",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WrapTextureTransfer",
+			"member": "UVMinBound",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Avatar"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "INF, INF",
+				"MemberType": "Property",
+				"Name": "UVMinBound",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AppUpdateStatus",
+			"item": "AvailableBetaProgram",
+			"type": "Add",
+			"value": {
+				"Name": "AvailableBetaProgram",
+				"Value": 6
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "ScreentimeLockoutKick",
+			"type": "Add",
+			"value": {
+				"Name": "ScreentimeLockoutKick",
+				"Value": 307
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "PeoplePageLayout",
+			"type": "Add",
+			"value": {
+				"Name": "PeoplePageLayout"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PeoplePageLayout",
+			"item": "Card",
+			"type": "Add",
+			"value": {
+				"Name": "Card",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PeoplePageLayout",
+			"item": "List",
+			"type": "Add",
+			"value": {
+				"Name": "List",
+				"Value": 1
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Class",
+			"class": "Attachment",
+			"part": "description",
+			"before": "Defines a point and orientation relative to a parent <code>BasePart</code>, <code>Bone</code>, or another <code>Attachment</code>.",
+			"after": "Defines a point and orientation relative to an ancestor <code>PVInstance</code>, <code>Bone</code>, or another <code>Attachment</code>."
+		},
+		{
+			"element": "Class",
+			"class": "PVInstance",
+			"part": "description",
+			"before": "Abstract class for all objects that have a physical location in the world, specifically <code>BaseParts</code> and <code>Models</code>.",
+			"after": "Abstract class for all objects that have a physical location in the world."
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "GetRootPart",
+			"part": "description",
+			"before": "Returns the base part of an assembly of parts.",
+			"after": "<strong>Deprecated:</strong> <br>Returns the base part of an assembly of parts.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRootPart",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "AssemblyRootPart",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextGenerator",
+			"member": "Seed",
+			"part": "description",
+			"before": "Sets a fixed seed for the random number generator, allowing reproducible responses in cases where the same input parameters are used across      multiple requests.",
+			"after": "Sets a fixed seed for the random number generator, allowing reproducible responses in cases where the same input parameters are used across multiple requests.",
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "Seed",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextGenerator",
+			"member": "GenerateTextAsync",
+			"part": "parameter",
+			"parameter": "request",
+			"before": "A dictionary containing optional parameters for the text generation request. The currently supported parameters are <code>UserPrompt</code>,      <code>ContextToken</code>, and <code>MaxTokens</code>.",
+			"after": "A dictionary containing optional parameters for the text generation request. The currently supported parameters are <code>UserPrompt</code>, <code>ContextToken</code>, and <code>MaxTokens</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GenerateTextAsync",
+				"Parameters": [
+					{
+						"Name": "request",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		}
+	]
+}

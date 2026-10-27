@@ -1,0 +1,2842 @@
+{
+	"from": {
+		"version": "0.699.0.6990877",
+		"hash": "874602c66c70451a"
+	},
+	"to": {
+		"version": "0.700.0.7000935",
+		"hash": "d638b440a9224bb2"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "GetPredictionMode",
+			"type": "Remove",
+			"value": {
+				"Capabilities": [
+					"InternalTest"
+				],
+				"MemberType": "Function",
+				"Name": "GetPredictionMode",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "PredictionMode"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "IsPredicted",
+			"type": "Remove",
+			"value": {
+				"Capabilities": [
+					"InternalTest"
+				],
+				"MemberType": "Function",
+				"Name": "IsPredicted",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "SetPredictionMode",
+			"type": "Remove",
+			"value": {
+				"Capabilities": [
+					"InternalTest"
+				],
+				"MemberType": "Function",
+				"Name": "SetPredictionMode",
+				"Parameters": [
+					{
+						"Name": "mode",
+						"Type": {
+							"Category": "Enum",
+							"Name": "PredictionMode"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationNodeDefinition",
+			"member": "GetInputPinNames",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Animation"
+				],
+				"MemberType": "Function",
+				"Name": "GetInputPinNames",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationNodeDefinition",
+			"member": "SetInputPinNames",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Animation"
+				],
+				"MemberType": "Function",
+				"Name": "SetInputPinNames",
+				"Parameters": [
+					{
+						"Name": "pins",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GameSettings",
+			"member": "VideoCaptureEnabled",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Video",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "VideoCaptureEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GameSettings",
+			"member": "VideoRecording",
+			"type": "Remove",
+			"value": {
+				"Category": "Video",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "VideoRecording",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GroupService",
+			"member": "PromptJoinCompleted",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptJoinCompleted",
+				"Parameters": [
+					{
+						"Name": "groupId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "success",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "groupMembershipStatus",
+						"Type": {
+							"Category": "Enum",
+							"Name": "GroupMembershipStatus"
+						}
+					},
+					{
+						"Name": "errorMessage",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GroupService",
+			"member": "PromptJoinAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptJoinAsync",
+				"Parameters": [
+					{
+						"Name": "groupId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "GroupMembershipStatus"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GroupService",
+			"member": "ShowJoinPrompt",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ShowJoinPrompt",
+				"Parameters": [
+					{
+						"Name": "groupId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "ShowVolumes",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Animation"
+				],
+				"MemberType": "Function",
+				"Name": "ShowVolumes",
+				"Parameters": [
+					{
+						"Name": "show",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "RankProductsAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RankProductsAsync",
+				"Parameters": [
+					{
+						"Name": "productIdentifiers",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkPeer",
+			"member": "InitializeRemoteAllowList",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "InitializeRemoteAllowList",
+				"Parameters": [
+					{
+						"Name": "names",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RunService",
+			"member": "PredictionState",
+			"type": "Remove",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic",
+						"InternalTest"
+					],
+					"Write": [
+						"InternalTest"
+					]
+				},
+				"Category": "Server Authority",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "PredictionState",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "PredictionState"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RunService",
+			"member": "GetPredictionStatus",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Basic",
+					"InternalTest"
+				],
+				"MemberType": "Function",
+				"Name": "GetPredictionStatus",
+				"Parameters": [
+					{
+						"Name": "context",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "PredictionStatus"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RunService",
+			"member": "SetPredictionMode",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Basic",
+					"InternalTest"
+				],
+				"MemberType": "Function",
+				"Name": "SetPredictionMode",
+				"Parameters": [
+					{
+						"Name": "context",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "mode",
+						"Type": {
+							"Category": "Enum",
+							"Name": "PredictionMode"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "LuaCharacterController",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Players"
+					]
+				},
+				"Category": "Controls",
+				"Default": "Default",
+				"MemberType": "Property",
+				"Name": "LuaCharacterController",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "CharacterControlMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "RagdollDeath",
+			"type": "Remove",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Players"
+					]
+				},
+				"Category": "Character",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "RagdollDeath",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotBrowsable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "CharacterBreakJointsOnDeath",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Players"
+					]
+				},
+				"Category": "Character",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "CharacterBreakJointsOnDeath",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ThirdPartyUserService",
+			"member": "VoiceChatRestrictionStatus",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "VoiceChatRestrictionStatus",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ChatRestrictionStatus"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ThirdPartyUserService",
+			"member": "IsSingleSignOnSupported",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsSingleSignOnSupported",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VoiceChatService",
+			"member": "RuppInitialToken",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "RuppInitialToken",
+				"Parameters": [
+					{
+						"Name": "sessionId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "token",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "destinationIpAddress",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "destinationPort",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VoiceChatService",
+			"member": "RuppPeriodicToken",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "RuppPeriodicToken",
+				"Parameters": [
+					{
+						"Name": "sessionId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "token",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "destinationIpAddress",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "destinationPort",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "sourceIpAddress",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "sourcePort",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VoiceChatService",
+			"member": "VoiceUdmuxVip",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "VoiceUdmuxVip",
+				"Parameters": [
+					{
+						"Name": "sessionId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "udmuxVipAddress",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VoiceChatService",
+			"member": "ClientStreamSwitchAck",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ClientStreamSwitchAck",
+				"Parameters": [
+					{
+						"Name": "eventTag",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "sessionId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PyramidHandleAdornment",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "PyramidHandleAdornment",
+				"Superclass": "HandleAdornment"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PyramidHandleAdornment",
+			"member": "Height",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic",
+						"UI"
+					]
+				},
+				"Category": "Data",
+				"Default": "2",
+				"MemberType": "Property",
+				"Name": "Height",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PyramidHandleAdornment",
+			"member": "Shading",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic",
+						"UI"
+					]
+				},
+				"Category": "Data",
+				"Default": "Default",
+				"MemberType": "Property",
+				"Name": "Shading",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AdornShading"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PyramidHandleAdornment",
+			"member": "Sides",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic",
+						"UI"
+					]
+				},
+				"Category": "Data",
+				"Default": "4",
+				"MemberType": "Property",
+				"Name": "Sides",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PyramidHandleAdornment",
+			"member": "Size",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic",
+						"UI"
+					]
+				},
+				"Category": "Data",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "Size",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "StudioTestService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "StudioTestService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioTestService",
+			"member": "EndTest",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "EndTest",
+				"Parameters": [
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioTestService",
+			"member": "GetTestArgs",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetTestArgs",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioTestService",
+			"member": "ExecutePlayModeAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ExecutePlayModeAsync",
+				"Parameters": [
+					{
+						"Name": "args",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioTestService",
+			"member": "ExecuteRunModeAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ExecuteRunModeAsync",
+				"Parameters": [
+					{
+						"Name": "args",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DataStoreRequestType",
+			"item": "StandardRead",
+			"type": "Add",
+			"value": {
+				"Name": "StandardRead",
+				"Value": 9
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DataStoreRequestType",
+			"item": "StandardWrite",
+			"type": "Add",
+			"value": {
+				"Name": "StandardWrite",
+				"Value": 10
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DataStoreRequestType",
+			"item": "StandardList",
+			"type": "Add",
+			"value": {
+				"Name": "StandardList",
+				"Value": 11
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DataStoreRequestType",
+			"item": "StandardRemove",
+			"type": "Add",
+			"value": {
+				"Name": "StandardRemove",
+				"Value": 12
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DataStoreRequestType",
+			"item": "OrderedRead",
+			"type": "Add",
+			"value": {
+				"Name": "OrderedRead",
+				"Value": 13
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DataStoreRequestType",
+			"item": "OrderedWrite",
+			"type": "Add",
+			"value": {
+				"Name": "OrderedWrite",
+				"Value": 14
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DataStoreRequestType",
+			"item": "OrderedList",
+			"type": "Add",
+			"value": {
+				"Name": "OrderedList",
+				"Value": 15
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DataStoreRequestType",
+			"item": "OrderedRemove",
+			"type": "Add",
+			"value": {
+				"Name": "OrderedRemove",
+				"Value": 16
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LuauTypeCheckMode",
+			"item": "NoCheck",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 0,
+					"after": 1
+				}
+			],
+			"value": {
+				"Name": "NoCheck",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LuauTypeCheckMode",
+			"item": "Nonstrict",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 1,
+					"after": 2
+				}
+			],
+			"value": {
+				"Name": "Nonstrict",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LuauTypeCheckMode",
+			"item": "Strict",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 2,
+					"after": 3
+				}
+			],
+			"value": {
+				"Name": "Strict",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LuauTypeCheckMode",
+			"item": "Default",
+			"type": "Add",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "PredictionState",
+			"type": "Remove",
+			"value": {
+				"Name": "PredictionState"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RigType",
+			"item": "Custom",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 1,
+					"after": 2
+				}
+			],
+			"value": {
+				"Name": "Custom",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RigType",
+			"item": "None",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 2,
+					"after": 3
+				}
+			],
+			"value": {
+				"Name": "None",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RigType",
+			"item": "CustomHumanoid",
+			"type": "Add",
+			"value": {
+				"Name": "CustomHumanoid",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SalesTypeFilter",
+			"item": "TimedOptions",
+			"type": "Add",
+			"value": {
+				"Name": "TimedOptions",
+				"Value": 4
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AnimationNodeTransitionType",
+			"type": "Add",
+			"value": {
+				"Name": "AnimationNodeTransitionType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnimationNodeTransitionType",
+			"item": "CrossFade",
+			"type": "Add",
+			"value": {
+				"Name": "CrossFade",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnimationNodeTransitionType",
+			"item": "InertialBlend",
+			"type": "Add",
+			"value": {
+				"Name": "InertialBlend",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnimationNodeTransitionType",
+			"item": "DeadBlend",
+			"type": "Add",
+			"value": {
+				"Name": "DeadBlend",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "GroupMembershipStatus",
+			"type": "Add",
+			"value": {
+				"Name": "GroupMembershipStatus"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "GroupMembershipStatus",
+			"item": "None",
+			"type": "Add",
+			"value": {
+				"Name": "None",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "GroupMembershipStatus",
+			"item": "Joined",
+			"type": "Add",
+			"value": {
+				"Name": "Joined",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "GroupMembershipStatus",
+			"item": "JoinRequestPending",
+			"type": "Add",
+			"value": {
+				"Name": "JoinRequestPending",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "GroupMembershipStatus",
+			"item": "AlreadyMember",
+			"type": "Add",
+			"value": {
+				"Name": "AlreadyMember",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "PredictionStatus",
+			"type": "Add",
+			"value": {
+				"Name": "PredictionStatus"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PredictionStatus",
+			"item": "Authoritative",
+			"type": "Add",
+			"value": {
+				"Name": "Authoritative",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PredictionStatus",
+			"item": "Predicted",
+			"type": "Add",
+			"value": {
+				"Name": "Predicted",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PredictionStatus",
+			"item": "None",
+			"type": "Add",
+			"value": {
+				"Name": "None",
+				"Value": 2
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Class",
+			"class": "Capture",
+			"part": "description",
+			"before": null,
+			"after": "A class which defines a piece of content, such as a screnshot or video, taken in-experience."
+		},
+		{
+			"element": "Class",
+			"class": "ScreenshotCapture",
+			"part": "description",
+			"before": null,
+			"after": "A child class of <code>Capture</code> for screenshots."
+		},
+		{
+			"element": "Class",
+			"class": "VideoCapture",
+			"part": "description",
+			"before": null,
+			"after": "A child class of <code>Capture</code> for videos."
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "PromptCaptureGalleryPermissionAsync",
+			"part": "parameter",
+			"parameter": "captureGalleryPermission",
+			"before": null,
+			"after": "An <code>CaptureGalleryPermission</code> representing the type of access for which the user will be prompted.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptCaptureGalleryPermissionAsync",
+				"Parameters": [
+					{
+						"Name": "captureGalleryPermission",
+						"Type": {
+							"Category": "Enum",
+							"Name": "CaptureGalleryPermission"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "PromptCaptureGalleryPermissionAsync",
+			"part": "return",
+			"before": null,
+			"after": "A boolean representing whether or not the user has allowed access to their captures.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptCaptureGalleryPermissionAsync",
+				"Parameters": [
+					{
+						"Name": "captureGalleryPermission",
+						"Type": {
+							"Category": "Enum",
+							"Name": "CaptureGalleryPermission"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "ReadCapturesFromGalleryAsync",
+			"part": "parameter",
+			"parameter": "captureTypeFilters",
+			"before": null,
+			"after": "An array of <code>CaptureType</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ReadCapturesFromGalleryAsync",
+				"Parameters": [
+					{
+						"Default": "{}",
+						"Name": "captureTypeFilters",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "ReadCapturesFromGalleryAsync",
+			"part": "return",
+			"before": null,
+			"after": "Tuple of (result: <code>ReadCapturesFromGalleryResult</code>, capturesPages: <code>CapturesPages</code>)",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ReadCapturesFromGalleryAsync",
+				"Parameters": [
+					{
+						"Default": "{}",
+						"Name": "captureTypeFilters",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "UploadCaptureAsync",
+			"part": "parameter",
+			"parameter": "capture",
+			"before": null,
+			"after": "a capture object of type <code>Capture</code>",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UploadCaptureAsync",
+				"Parameters": [
+					{
+						"Name": "capture",
+						"Type": {
+							"Category": "Class",
+							"Name": "Capture"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "UploadCaptureAsync",
+			"part": "return",
+			"before": null,
+			"after": "Tuple of (result: <code>UploadCaptureResult</code>, assetId: <code>number</code>)",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UploadCaptureAsync",
+				"Parameters": [
+					{
+						"Name": "capture",
+						"Type": {
+							"Category": "Class",
+							"Name": "Capture"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "FaceInstance",
+			"part": "description",
+			"before": "The FaceInstance class is an abstract class from which the <code>Decal</code> class inherits.",
+			"after": "An abstract class from which the <code>Decal</code> and <code>Texture</code> classes inherit."
+		},
+		{
+			"element": "Member",
+			"class": "FaceInstance",
+			"member": "Face",
+			"part": "description",
+			"before": "Sets what face of the brick the object appears on.",
+			"after": "Sets which face of the parent <code>BasePart</code> the object appears on.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Face",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "NormalId"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Decal",
+			"part": "description",
+			"before": "The Decal object is an object which applies an image to a face of a <code>BasePart</code>.",
+			"after": "Applies an image texture to a face of a parent <code>BasePart</code>."
+		},
+		{
+			"element": "Member",
+			"class": "Decal",
+			"member": "ColorMap",
+			"part": "description",
+			"before": null,
+			"after": "Content ID that determines the color and opacity of the surface.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "ColorMap",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "ContentId"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Decal",
+			"member": "ColorMapContent",
+			"part": "description",
+			"before": null,
+			"after": "<code>Content</code> object that determines the color and opacity of the surface.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "ColorMapContent",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Decal",
+			"member": "LocalTransparencyModifier",
+			"part": "description",
+			"before": "Acts as a multiplier for the decal's <code>Decal.Transparency</code> property. The effects are only visible to the local player.",
+			"after": "Acts as a multiplier for the decal's <code>Transparency</code> property. The effects are only visible to the local player.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "LocalTransparencyModifier",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Decal",
+			"member": "Specular",
+			"part": "description",
+			"before": "<strong>Deprecated:</strong> This property no longer functions correctly and is deprecated. It should not be used in new work. Developers looking to alter how light interacts with images applied to parts should use <code>SurfaceGuis</code>.",
+			"after": "<strong>Deprecated:</strong> This property no longer functions correctly and is deprecated. It should not be used in new work.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "Specular",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Decal",
+			"member": "Texture",
+			"part": "description",
+			"before": "The ContentId of the image to be applied by the <code>Decal</code>.",
+			"after": "The content ID of the image to be applied by the <code>Decal</code>.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "Texture",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "ContentId"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Decal",
+			"member": "TextureContent",
+			"part": "description",
+			"before": "The texture content displayed by the Decal. Supports <a href=\"../../../projects/assets/index.md#asset-uris\">asset URIs</a> and <code>EditableImage</code> objects.",
+			"after": "The texture content displayed by the <code>Decal</code>.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "TextureContent",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Decal",
+			"member": "Transparency",
+			"part": "description",
+			"before": "Determines the transparency of the <code>Decal</code> with 0 being completely opaque and 1 completely transparent.",
+			"after": "Determines the transparency of the <code>Decal</code>.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "Transparency",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Decal",
+			"member": "UVOffset",
+			"part": "description",
+			"before": null,
+			"after": "Shifts the UV coordinates by adding an offset before texture mapping.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "0, 0",
+				"MemberType": "Property",
+				"Name": "UVOffset",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Decal",
+			"member": "UVScale",
+			"part": "description",
+			"before": null,
+			"after": "Stretches or compresses the UV coordinates by multiplying a scale factor.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "1, 1",
+				"MemberType": "Property",
+				"Name": "UVScale",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Decal",
+			"member": "ZIndex",
+			"part": "description",
+			"before": "Determines the rendering order when multiple Decals are assigned the same face.",
+			"after": "Determines the rendering order when multiple decals are assigned the same face.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "ZIndex",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Texture",
+			"part": "description",
+			"before": "A Texture object applies a repeating texture to the face of a <code>BasePart</code>.",
+			"after": "Applies a repeating image texture to the face of a parent <code>BasePart</code>."
+		},
+		{
+			"element": "Class",
+			"class": "CapturesPages",
+			"part": "description",
+			"before": null,
+			"after": "A special version of the <code>Pages</code> class returned by <code>CaptureService.ReadCapturesFromGalleryAsync</code>."
+		},
+		{
+			"element": "Class",
+			"class": "RecommendationPages",
+			"part": "description",
+			"before": null,
+			"after": "A special version of the <code>Pages</code> class returned by <code>GenerateItemListAsync</code>."
+		},
+		{
+			"element": "Class",
+			"class": "RecommendationService",
+			"part": "description",
+			"before": null,
+			"after": "A service that provides an interface for you to manage and display personalized content recommendations."
+		},
+		{
+			"element": "Member",
+			"class": "RecommendationService",
+			"member": "LogActionEvent",
+			"part": "parameter",
+			"parameter": "actionType",
+			"before": null,
+			"after": "The enum for the type of action.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LogActionEvent",
+				"Parameters": [
+					{
+						"Name": "actionType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "RecommendationActionType"
+						}
+					},
+					{
+						"Name": "itemId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "tracingId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "actionEventDetails",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RecommendationService",
+			"member": "LogActionEvent",
+			"part": "parameter",
+			"parameter": "itemId",
+			"before": null,
+			"after": "The item ID returned from registration and <code>GenerateItemListAsync</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LogActionEvent",
+				"Parameters": [
+					{
+						"Name": "actionType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "RecommendationActionType"
+						}
+					},
+					{
+						"Name": "itemId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "tracingId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "actionEventDetails",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RecommendationService",
+			"member": "LogActionEvent",
+			"part": "parameter",
+			"parameter": "tracingId",
+			"before": null,
+			"after": "The tracing ID returned from the <code>GenerateItemListAsync</code> response. Each item has a <code>TracingId</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LogActionEvent",
+				"Parameters": [
+					{
+						"Name": "actionType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "RecommendationActionType"
+						}
+					},
+					{
+						"Name": "itemId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "tracingId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "actionEventDetails",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RecommendationService",
+			"member": "LogActionEvent",
+			"part": "parameter",
+			"parameter": "actionEventDetails",
+			"before": null,
+			"after": "A dictionary containing the following fields: <ul> <li><code>Weight</code> &mdash; A number representing the weight of the action. Default is 1.</li> <li><code>DestinationPlaceId</code> &mdash; The ID of the place the user was sent to after the action. Used for <code>Play</code>.</li> <li><code>CommentText</code> &mdash; Any text associated with the action, such as a comment. Used for <code>Comment</code>.</li> <li><code>ReactionType</code> &mdash; A string describing the type of reaction, for example, \"like\" or \"dislike\". Used for <code>AddReaction</code> or <code>RemoveReaction</code>.</li> </ul>",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LogActionEvent",
+				"Parameters": [
+					{
+						"Name": "actionType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "RecommendationActionType"
+						}
+					},
+					{
+						"Name": "itemId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "tracingId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "actionEventDetails",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RecommendationService",
+			"member": "LogImpressionEvent",
+			"part": "parameter",
+			"parameter": "impressionType",
+			"before": null,
+			"after": "The enum for the type of the impression.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LogImpressionEvent",
+				"Parameters": [
+					{
+						"Name": "impressionType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "RecommendationImpressionType"
+						}
+					},
+					{
+						"Name": "itemId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "tracingId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "impressionEventDetails",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RecommendationService",
+			"member": "LogImpressionEvent",
+			"part": "parameter",
+			"parameter": "itemId",
+			"before": null,
+			"after": "The item ID returned from registration and <code>GenerateItemListAsync</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LogImpressionEvent",
+				"Parameters": [
+					{
+						"Name": "impressionType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "RecommendationImpressionType"
+						}
+					},
+					{
+						"Name": "itemId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "tracingId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "impressionEventDetails",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RecommendationService",
+			"member": "LogImpressionEvent",
+			"part": "parameter",
+			"parameter": "tracingId",
+			"before": null,
+			"after": "The tracing ID returned from the <code>GenerateItemListAsync</code> response. Each item has a <code>TracingId</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LogImpressionEvent",
+				"Parameters": [
+					{
+						"Name": "impressionType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "RecommendationImpressionType"
+						}
+					},
+					{
+						"Name": "itemId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "tracingId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "impressionEventDetails",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RecommendationService",
+			"member": "LogImpressionEvent",
+			"part": "parameter",
+			"parameter": "impressionEventDetails",
+			"before": null,
+			"after": "A dictionary containing the following fields: <ul> <li><code>Duration</code> &mdash; The duration of the impression in seconds.</li> <li><code>Weight</code> &mdash; A number representing the weight of the impression. Default is 1.</li> <li><code>ItemPosition</code> &mdash; The position of the item in the recommendation list.</li> <li><code>DepartureIntent</code> &mdash; The <code>RecommendationDepartureIntent</code> indicating the user's intent when leaving a view. For example, <code>Positive</code> if the view is considered good.</li> </ul>",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LogImpressionEvent",
+				"Parameters": [
+					{
+						"Name": "impressionType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "RecommendationImpressionType"
+						}
+					},
+					{
+						"Name": "itemId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "tracingId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "impressionEventDetails",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RecommendationService",
+			"member": "GenerateItemListAsync",
+			"part": "parameter",
+			"parameter": "generateRecommendationItemListRequest",
+			"before": null,
+			"after": "A dictionary containing the following  fields: <ul> <li><code>ConfigName</code> &mdash; A unique ID for the specific configuration. This determines how the candidates are ranked.</li> <li><code>LocationId</code> &mdash; A developer-defined string that specifies the location where the recommendation is used, such as <code>\"For_you\"</code> or <code>\"Lobby\"</code>. This parameter will not affect the items returned, and it can help you track the performance of multiple recommendation features within your experience. Recommendation metrics for each individual location will be displayed in the Creator Hub. <code>LocationId</code> <strong>must</strong> be a string and cannot be <code>\"Other\"</code> or <code>\"other\"</code> as these values are reserved by the Creator Hub.</li> <li><code>PageSize</code> &mdash; The number of items returned for each page.</li> <li><code>BoostCustomTags</code> &mdash; A list of string tags. Any item with this tag will be boosted in ranking. Note: only supports boosting one tag now.</li> <li><code>CustomContexts</code> &mdash; A table of key-value pairs used to pass in additional context data for ranking. For example, <code>UserId</code> for a Server script.</li> </ul>",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GenerateItemListAsync",
+				"Parameters": [
+					{
+						"Name": "generateRecommendationItemListRequest",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "RecommendationPages"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RecommendationService",
+			"member": "GetRecommendationItemAsync",
+			"part": "parameter",
+			"parameter": "itemId",
+			"before": null,
+			"after": "The ID of the item to retrieve.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRecommendationItemAsync",
+				"Parameters": [
+					{
+						"Name": "itemId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RecommendationService",
+			"member": "GetRecommendationItemAsync",
+			"part": "return",
+			"before": null,
+			"after": "A dictionary representing the recommendation item with the following fields: - <code>ItemId</code> &mdash; The unique ID for the item. - <code>ReferenceId</code> &mdash; The developer-provided ID for the item. - <code>TracingId</code> &mdash; An ID for tracking recommendation sessions. This will be empty when fetching a single item directly. - <code>Creator</code> &mdash; A table containing the <code>CreatorId</code> and <code>CreatorType</code>. - <code>Attributes</code> &mdash; A list of content attributes associated with the item. - <code>CustomTags</code> &mdash; A list of custom string tags. - <code>Visibility</code> &mdash; An enum of type <code>RecommendationItemVisibility</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRecommendationItemAsync",
+				"Parameters": [
+					{
+						"Name": "itemId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RecommendationService",
+			"member": "RegisterItemAsync",
+			"part": "parameter",
+			"parameter": "player",
+			"before": null,
+			"after": "The player who created the item.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterItemAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "registerRecommendationItemsRequest",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RecommendationService",
+			"member": "RegisterItemAsync",
+			"part": "parameter",
+			"parameter": "registerRecommendationItemsRequest",
+			"before": null,
+			"after": "A dictionary containing the following fields: <ul> <li><code>ContentType</code> &mdash; The <code>RecommendationItemContentType</code> specifying the type of content. Type is defined in a generic way. For example, you can use <code>Static</code> for images, <code>Dynamic</code> for videos, and <code>Interactive</code> for 3D models that support interaction.</li> <li><code>ReferenceId</code> &mdash; The developer-defined string that uniquely identifies the item.</li> <li><code>Duration</code> &mdash; The duration of the content in seconds.</li> <li><code>Attributes</code> &mdash; The table of attributes for the item, such as <code>AssetId</code> or <code>Description</code>.</li> <li><code>CustomTags</code> &mdash; The list of string tags for filtering and boosting.</li> <li><code>Visibility</code> &mdash; The <code>RecommendationItemVisibility</code> enum that controls the item's visibility, such as <code>Public</code> or <code>Private</code>.</li> </ul>",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterItemAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "registerRecommendationItemsRequest",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RecommendationService",
+			"member": "RegisterItemAsync",
+			"part": "return",
+			"before": null,
+			"after": "A table with only two fields: <code>ItemId</code> and <code>ReferenceId</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterItemAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "registerRecommendationItemsRequest",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RecommendationService",
+			"member": "RemoveItemAsync",
+			"part": "parameter",
+			"parameter": "itemId",
+			"before": null,
+			"after": "The itemId to remove.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RemoveItemAsync",
+				"Parameters": [
+					{
+						"Name": "itemId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RecommendationService",
+			"member": "UpdateItemAsync",
+			"part": "parameter",
+			"parameter": "updateRecommendationItemRequest",
+			"before": null,
+			"after": "A dictionary containing the following fields: <ul> <li><code>ItemId</code> &mdash; The ID of the item to update.</li> <li><code>ReferenceId</code> &mdash; The new developer-defined string to identify the item.</li> <li><code>Creator</code> &mdash; The new creator for the item. Creator is a table containing two fields: <code>CreatorId: number</code> and <code>CreatorType: Enum.CreatorType</code>.</li> <li><code>Duration</code> &mdash; The new duration for the content in seconds.</li> <li><code>Visibility</code> &mdash; The new visibility setting for the item.</li> <li><code>Attributes</code> &mdash; The new table of attributes for the item.</li> <li><code>CustomTags</code> &mdash; The new list of string tags.</li> </ul>",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UpdateItemAsync",
+				"Parameters": [
+					{
+						"Name": "updateRecommendationItemRequest",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "GroupMembershipStatus",
+			"part": "description",
+			"before": null,
+			"after": "Defines the possible outcomes of the <code>GroupService:PromptJoinAsync()</code> method."
+		},
+		{
+			"element": "EnumItem",
+			"enum": "GroupMembershipStatus",
+			"item": "None",
+			"part": "description",
+			"before": null,
+			"after": "The player chose not to join, cancelled the prompt, or was not eligible to join the group.",
+			"value": {
+				"Name": "None",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "GroupMembershipStatus",
+			"item": "Joined",
+			"part": "description",
+			"before": null,
+			"after": "The player successfully joined the group during the prompt.",
+			"value": {
+				"Name": "Joined",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "GroupMembershipStatus",
+			"item": "JoinRequestPending",
+			"part": "description",
+			"before": null,
+			"after": "The player submitted a request to join the group.",
+			"value": {
+				"Name": "JoinRequestPending",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "GroupMembershipStatus",
+			"item": "AlreadyMember",
+			"part": "description",
+			"before": null,
+			"after": "The player was already a member of the group.",
+			"value": {
+				"Name": "AlreadyMember",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RecommendationActionType",
+			"item": "AddReaction",
+			"part": "description",
+			"before": null,
+			"after": "The user added a reaction to the item, such as a \"like\".",
+			"value": {
+				"Name": "AddReaction",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RecommendationActionType",
+			"item": "RemoveReaction",
+			"part": "description",
+			"before": null,
+			"after": "The user removed a reaction from the item.",
+			"value": {
+				"Name": "RemoveReaction",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RecommendationActionType",
+			"item": "Share",
+			"part": "description",
+			"before": null,
+			"after": "The user shared the item.",
+			"value": {
+				"Name": "Share",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RecommendationActionType",
+			"item": "Report",
+			"part": "description",
+			"before": null,
+			"after": "The user created an abuse report of the item.",
+			"value": {
+				"Name": "Report",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RecommendationActionType",
+			"item": "Comment",
+			"part": "description",
+			"before": null,
+			"after": "The user commented on the item.",
+			"value": {
+				"Name": "Comment",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RecommendationActionType",
+			"item": "Play",
+			"part": "description",
+			"before": null,
+			"after": "The user joined an experience through the item.",
+			"value": {
+				"Name": "Play",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RecommendationActionType",
+			"item": "Purchase",
+			"part": "description",
+			"before": null,
+			"after": "The user made a purchase from the item.",
+			"value": {
+				"Name": "Purchase",
+				"Value": 6
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RecommendationImpressionType",
+			"item": "View",
+			"part": "description",
+			"before": null,
+			"after": "A complete view of the item.",
+			"value": {
+				"Name": "View",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RecommendationImpressionType",
+			"item": "NotViewable",
+			"part": "description",
+			"before": null,
+			"after": "The item has failed to render.",
+			"value": {
+				"Name": "NotViewable",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RecommendationItemContentType",
+			"item": "Static",
+			"part": "description",
+			"before": null,
+			"after": "The item is static, such as an image.",
+			"value": {
+				"Name": "Static",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RecommendationItemContentType",
+			"item": "Dynamic",
+			"part": "description",
+			"before": null,
+			"after": "The item is dynamic; for example, it is a video.",
+			"value": {
+				"Name": "Dynamic",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RecommendationItemContentType",
+			"item": "Interactive",
+			"part": "description",
+			"before": null,
+			"after": "The item is interactive, such as a 3D model or a mini-game.",
+			"value": {
+				"Name": "Interactive",
+				"Value": 2
+			}
+		}
+	]
+}

@@ -1,0 +1,1067 @@
+{
+	"from": {
+		"version": "0.576.0.5760523",
+		"hash": "d45b3e99e1fe47be"
+	},
+	"to": {
+		"version": "0.577.0.5770506",
+		"hash": "486ee8d8bd9e4525"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AdPortal",
+			"member": "PortalStatus",
+			"type": "Remove",
+			"value": {
+				"Category": "Behavior",
+				"Default": "Invalid",
+				"MemberType": "Property",
+				"Name": "PortalStatus",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated",
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AdPortalStatus"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportSession",
+			"member": "ApplySettings",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ApplySettings",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "CSGOptions",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "CSGOptions",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "VRTiltAndRollEnabled",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "VRTiltAndRollEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VehicleSeat",
+			"member": "Steer",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Control",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "Steer",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VehicleSeat",
+			"member": "Throttle",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Control",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "Throttle",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RenderingTest",
+			"member": "Timeout",
+			"type": "Add",
+			"value": {
+				"Category": "RenderingTest",
+				"Default": "10",
+				"MemberType": "Property",
+				"Name": "Timeout",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SafetyService",
+			"member": "ForceScreenshotSignal",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ForceScreenshotSignal",
+				"Parameters": [
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "playerId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "mac",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "args",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SafetyService",
+			"member": "FSTriggeredSignal",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "FSTriggeredSignal",
+				"Parameters": [
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "playerId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "mac",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "args",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "InvokeIrisInvite",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "InvokeIrisInvite",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "tag",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "irisParticipantIds",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "InvokeIrisInvitePromptClosed",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "InvokeIrisInvitePromptClosed",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "PromptIrisInvite",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptIrisInvite",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "tag",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "CanSendIrisInviteAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CanSendIrisInviteAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "IrisInvitePromptClosed",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "IrisInvitePromptClosed",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "PromptIrisInviteRequested",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptIrisInviteRequested",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "tag",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "OnIrisInviteInvoked",
+			"type": "Add",
+			"value": {
+				"MemberType": "Callback",
+				"Name": "OnIrisInviteInvoked",
+				"Parameters": [
+					{
+						"Name": "tag",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "irisParticipantIds",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Display Team Create toggle when creating a new experience",
+			"type": "Remove",
+			"value": {
+				"Category": "Advanced",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Display Team Create toggle when creating a new experience",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "File > New creates a place with Team Create off",
+			"type": "Remove",
+			"value": {
+				"Category": "Advanced",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "File > New creates a place with Team Create off",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TeamCreateService",
+			"member": "SendUnarchiveUniverseAsync",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SendUnarchiveUniverseAsync",
+				"Parameters": [
+					{
+						"Name": "universeId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TeamCreateService",
+			"member": "SendUnarchiveUniverseWithReasonAsync",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SendUnarchiveUniverseWithReasonAsync",
+				"Parameters": [
+					{
+						"Name": "universeId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "reason",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatMessage",
+			"member": "Status",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "Sending",
+					"after": "Floodchecked"
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "Floodchecked",
+				"MemberType": "Property",
+				"Name": "Status",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "TextChatMessageStatus"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ScriptCommitService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ScriptCommitService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "StyleBase",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Gui",
+				"Name": "StyleBase",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "StyleRule",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Gui",
+				"Name": "StyleRule",
+				"Superclass": "StyleBase"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleRule",
+			"member": "Index",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "-1",
+				"MemberType": "Property",
+				"Name": "Index",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleRule",
+			"member": "PropertiesSerialize",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "PropertiesSerialize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "BinaryString"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleRule",
+			"member": "Selector",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "Selector",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleRule",
+			"member": "SelectorError",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "SelectorError",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "StyleSheet",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Gui",
+				"Name": "StyleSheet",
+				"Superclass": "StyleBase"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "StyleDerive",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Gui",
+				"Name": "StyleDerive",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleDerive",
+			"member": "Index",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "-1",
+				"MemberType": "Property",
+				"Name": "Index",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "StyleLink",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Gui",
+				"Name": "StyleLink",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "StylingService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Gui",
+				"Name": "StylingService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AdPortalStatus",
+			"type": "Remove",
+			"value": {
+				"Name": "AdPortalStatus"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TrackerError",
+			"item": "UnsupportedDevice",
+			"type": "Add",
+			"value": {
+				"Name": "UnsupportedDevice",
+				"Value": 10
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "Orientation",
+			"part": "description",
+			"before": "Describes the position of the part in the world.",
+			"after": "Describes the rotation of the part in the world.",
+			"value": {
+				"Category": "Transform",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Orientation",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "SharedTableRegistry",
+			"part": "description",
+			"before": null,
+			"after": "Provides a global registry of named <code>SharedTable</code> objects."
+		},
+		{
+			"element": "Member",
+			"class": "SharedTableRegistry",
+			"member": "GetSharedTable",
+			"part": "description",
+			"before": null,
+			"after": "Gets the registered <code>SharedTable</code> with the specified name.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetSharedTable",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "SharedTable"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SharedTableRegistry",
+			"member": "GetSharedTable",
+			"part": "parameter",
+			"parameter": "name",
+			"before": null,
+			"after": "The name of the registered <code>SharedTable</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetSharedTable",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "SharedTable"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SharedTableRegistry",
+			"member": "SetSharedTable",
+			"part": "description",
+			"before": null,
+			"after": "Registers the provided <code>SharedTable</code> with the specified name.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetSharedTable",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "st",
+						"Type": {
+							"Category": "DataType",
+							"Name": "SharedTable?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SharedTableRegistry",
+			"member": "SetSharedTable",
+			"part": "parameter",
+			"parameter": "name",
+			"before": null,
+			"after": "The name of the registered <code>SharedTable</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetSharedTable",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "st",
+						"Type": {
+							"Category": "DataType",
+							"Name": "SharedTable?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SharedTableRegistry",
+			"member": "SetSharedTable",
+			"part": "parameter",
+			"parameter": "st",
+			"before": null,
+			"after": "The <code>SharedTable</code> object to register, or <code>nil</code> to unregister any previously registered <code>SharedTable</code> object.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetSharedTable",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "st",
+						"Type": {
+							"Category": "DataType",
+							"Name": "SharedTable?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		}
+	]
+}

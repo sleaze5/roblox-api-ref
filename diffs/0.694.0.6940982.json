@@ -1,0 +1,2145 @@
+{
+	"from": {
+		"version": "0.693.0.6930961",
+		"hash": "8964e8d8854043eb"
+	},
+	"to": {
+		"version": "0.694.0.6940982",
+		"hash": "89ce51d2707749ab"
+	},
+	"changes": [
+		{
+			"element": "Class",
+			"class": "AudioTremolo",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemoryCategory": "Internal",
+				"Name": "AudioTremolo",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChangeHistoryStreamingService",
+			"member": "SendCreateInstanceFromStudio",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "SendCreateInstanceFromStudio",
+				"Parameters": [
+					{
+						"Name": "parentInstance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChangeHistoryStreamingService",
+			"member": "SendDeleteInstanceFromStudio",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "SendDeleteInstanceFromStudio",
+				"Parameters": [
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "setParentToNull",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChangeHistoryStreamingService",
+			"member": "SendReparentInstanceFromStudio",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "SendReparentInstanceFromStudio",
+				"Parameters": [
+					{
+						"Name": "parentInstance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HttpService",
+			"member": "CreateWebStreamClientInternal",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateWebStreamClientInternal",
+				"Parameters": [
+					{
+						"Name": "streamClientType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "WebStreamClientType"
+						}
+					},
+					{
+						"Name": "requestOptions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "WebStreamClient"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "PlayerRemoving",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "player",
+							"Type": {
+								"Category": "Class",
+								"Name": "Player"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "player",
+							"Type": {
+								"Category": "Class",
+								"Name": "Player"
+							}
+						},
+						{
+							"Name": "reason",
+							"Type": {
+								"Category": "Enum",
+								"Name": "PlayerExitReason"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"Capabilities": [
+					"Players"
+				],
+				"MemberType": "Event",
+				"Name": "PlayerRemoving",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "reason",
+						"Type": {
+							"Category": "Enum",
+							"Name": "PlayerExitReason"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RunService",
+			"member": "PredictionState",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic",
+						"InternalTest"
+					],
+					"Write": [
+						"InternalTest"
+					]
+				},
+				"Category": "Server Authority",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "PredictionState",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "PredictionState"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RunService",
+			"member": "getThrottleFramerateEnabled",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "getThrottleFramerateEnabled",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RunService",
+			"member": "Misprediction",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Basic",
+					"InternalTest"
+				],
+				"MemberType": "Event",
+				"Name": "Misprediction",
+				"Parameters": [
+					{
+						"Name": "remoteWorldStepId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "mispredictedInstances",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioPublishService",
+			"member": "SaveOrPublishPlaceToRobloxIsCanceled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SaveOrPublishPlaceToRobloxIsCanceled",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatService",
+			"member": "SendExpChatMessageClientRendered",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "textChatMessage",
+							"Type": {
+								"Category": "Class",
+								"Name": "TextChatMessage"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "textChatMessage",
+							"Type": {
+								"Category": "Class",
+								"Name": "TextChatMessage"
+							}
+						},
+						{
+							"Default": "unknown",
+							"Name": "messageRenderedSurface",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"Capabilities": [
+					"Chat"
+				],
+				"MemberType": "Function",
+				"Name": "SendExpChatMessageClientRendered",
+				"Parameters": [
+					{
+						"Name": "textChatMessage",
+						"Type": {
+							"Category": "Class",
+							"Name": "TextChatMessage"
+						}
+					},
+					{
+						"Default": "unknown",
+						"Name": "messageRenderedSurface",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "InstanceExtensionsService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "InstanceExtensionsService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InstanceExtensionsService",
+			"member": "CountChildren",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CountChildren",
+				"Parameters": [
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "RuntimeContentService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "RuntimeContentService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RuntimeContentService",
+			"member": "RuntimeContentFail",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "RuntimeContentFail",
+				"Parameters": [
+					{
+						"Name": "id",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RuntimeContentService",
+			"member": "RuntimeContentQuery",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "RuntimeContentQuery",
+				"Parameters": [
+					{
+						"Name": "id",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "content",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RuntimeContentService",
+			"member": "RuntimeContentShare",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "RuntimeContentShare",
+				"Parameters": [
+					{
+						"Name": "id",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "content",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "ConnectErrors",
+			"type": "Add",
+			"value": {
+				"Name": "ConnectErrors",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "AlreadyConnected",
+			"type": "Add",
+			"value": {
+				"Name": "AlreadyConnected",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "NoFreeIncomingConnections",
+			"type": "Add",
+			"value": {
+				"Name": "NoFreeIncomingConnections",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "ConnectionBanned",
+			"type": "Add",
+			"value": {
+				"Name": "ConnectionBanned",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "InvalidPassword",
+			"type": "Add",
+			"value": {
+				"Name": "InvalidPassword",
+				"Value": 6
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "IncompatibleProtocolVersion",
+			"type": "Add",
+			"value": {
+				"Name": "IncompatibleProtocolVersion",
+				"Value": 7
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "IPRecentlyConnected",
+			"type": "Add",
+			"value": {
+				"Name": "IPRecentlyConnected",
+				"Value": 8
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "OurSystemRequiresSecurity",
+			"type": "Add",
+			"value": {
+				"Name": "OurSystemRequiresSecurity",
+				"Value": 9
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "SecurityKeyMismatch",
+			"type": "Add",
+			"value": {
+				"Name": "SecurityKeyMismatch",
+				"Value": 10
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectionNotification",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectionNotification",
+				"Value": 308
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ContentSourceType",
+			"item": "Opaque",
+			"type": "Add",
+			"value": {
+				"Name": "Opaque",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "PlayerExitReason",
+			"type": "Add",
+			"value": {
+				"Name": "PlayerExitReason"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PlayerExitReason",
+			"item": "Unknown",
+			"type": "Add",
+			"value": {
+				"Name": "Unknown",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PlayerExitReason",
+			"item": "PlatformKick",
+			"type": "Add",
+			"value": {
+				"Name": "PlatformKick",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PlayerExitReason",
+			"item": "CreatorKick",
+			"type": "Add",
+			"value": {
+				"Name": "CreatorKick",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "PredictionState",
+			"type": "Add",
+			"value": {
+				"Name": "PredictionState"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PredictionState",
+			"item": "Idle",
+			"type": "Add",
+			"value": {
+				"Name": "Idle",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PredictionState",
+			"item": "Simulating",
+			"type": "Add",
+			"value": {
+				"Name": "Simulating",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PredictionState",
+			"item": "RollingBack",
+			"type": "Add",
+			"value": {
+				"Name": "RollingBack",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PredictionState",
+			"item": "Resimulating",
+			"type": "Add",
+			"value": {
+				"Name": "Resimulating",
+				"Value": 3
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "ComposeDecalAsync",
+			"part": "description",
+			"before": null,
+			"after": "Creates a Decal instance that uses composite PBR textures created by layering the provided textures in the order they are provided in the <code>layers</code> array. Textures layer based on the alpha value of the ColorMap.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ComposeDecalAsync",
+				"Parameters": [
+					{
+						"Name": "layers",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Decal"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "ComposeDecalAsync",
+			"part": "parameter",
+			"parameter": "layers",
+			"before": null,
+			"after": "An array of <code>Dictionary</code> tables that maps PBR names to ContentID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ComposeDecalAsync",
+				"Parameters": [
+					{
+						"Name": "layers",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Decal"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "ComposeDecalAsync",
+			"part": "return",
+			"before": null,
+			"after": "A new <code>Decal</code> containing the composed texture set.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ComposeDecalAsync",
+				"Parameters": [
+					{
+						"Name": "layers",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Decal"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioEmitter",
+			"member": "SimulationFidelity",
+			"part": "description",
+			"before": "Controls how detailed the audio simulation should be for this <code>AudioEmitter</code>.",
+			"after": "<strong>Deprecated:</strong> <br>Controls how detailed the audio simulation should be for this <code>AudioEmitter</code>.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "Simulation",
+				"Default": "Automatic",
+				"MemberType": "Property",
+				"Name": "SimulationFidelity",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "AcousticSimulationEnabled",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AudioSimulationFidelity"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioListener",
+			"member": "SimulationFidelity",
+			"part": "description",
+			"before": "Controls how detailed the audio simulation should be for this <code>AudioListener</code>.",
+			"after": "<strong>Deprecated:</strong> <br>Controls how detailed the audio simulation should be for this <code>AudioListener</code>.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "Simulation",
+				"Default": "Automatic",
+				"MemberType": "Property",
+				"Name": "SimulationFidelity",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "AcousticSimulationEnabled",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AudioSimulationFidelity"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "VideoDisplay",
+			"part": "description",
+			"before": null,
+			"after": "A GUI object that displays video content from a connected <code>VideoPlayer</code>."
+		},
+		{
+			"element": "Member",
+			"class": "VideoDisplay",
+			"member": "ResampleMode",
+			"part": "description",
+			"before": null,
+			"after": "Selects the texture resampling mode for the <code>VideoDisplay</code>.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Video",
+				"Default": "Default",
+				"MemberType": "Property",
+				"Name": "ResampleMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ResamplerMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoDisplay",
+			"member": "ScaleType",
+			"part": "description",
+			"before": null,
+			"after": "Determines how a video will scale if displayed in a UI element whose aspect ratio differs from the source video.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Video",
+				"Default": "Stretch",
+				"MemberType": "Property",
+				"Name": "ScaleType",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ScaleType"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoDisplay",
+			"member": "VideoColor3",
+			"part": "description",
+			"before": null,
+			"after": "Determines how a rendered video will be colorized.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Video",
+				"Default": "1, 1, 1",
+				"MemberType": "Property",
+				"Name": "VideoColor3",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoDisplay",
+			"member": "VideoRectOffset",
+			"part": "description",
+			"before": null,
+			"after": "The offset in pixels of the sub-area of a video to be displayed.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Video",
+				"Default": "0, 0",
+				"MemberType": "Property",
+				"Name": "VideoRectOffset",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoDisplay",
+			"member": "VideoRectSize",
+			"part": "description",
+			"before": null,
+			"after": "Determines the size in pixels of the sub-area of a video to be displayed.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Video",
+				"Default": "0, 0",
+				"MemberType": "Property",
+				"Name": "VideoRectSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoDisplay",
+			"member": "VideoTransparency",
+			"part": "description",
+			"before": null,
+			"after": "Determines the transparency of the rendered video.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Video",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "VideoTransparency",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoDisplay",
+			"member": "GetConnectedWires",
+			"part": "description",
+			"before": null,
+			"after": "Returns an array of <code>Wires</code> that are connected to the specified pin.",
+			"value": {
+				"Capabilities": [
+					"UI"
+				],
+				"MemberType": "Function",
+				"Name": "GetConnectedWires",
+				"Parameters": [
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Instances"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoDisplay",
+			"member": "WiringChanged",
+			"part": "description",
+			"before": null,
+			"after": "Fires when another instance is connected to or disconnected from the <code>VideoDisplay</code> via a <code>Wire</code>.",
+			"value": {
+				"Capabilities": [
+					"UI"
+				],
+				"MemberType": "Event",
+				"Name": "WiringChanged",
+				"Parameters": [
+					{
+						"Name": "connected",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "wire",
+						"Type": {
+							"Category": "Class",
+							"Name": "Wire"
+						}
+					},
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BillboardGui",
+			"member": "DistanceLowerLimit",
+			"part": "description",
+			"before": "Determines the distance in studs at which the <code>BillboardGui</code> will stop scaling larger in size.",
+			"after": "<strong>Deprecated:</strong> <br>Determines the distance in studs at which the <code>BillboardGui</code> will stop scaling larger in size.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "DistanceLowerLimit",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BillboardGui",
+			"member": "DistanceUpperLimit",
+			"part": "description",
+			"before": "Determines the distance in studs at which the <code>BillboardGui</code> will stop scaling smaller in size.",
+			"after": "<strong>Deprecated:</strong> <br>Determines the distance in studs at which the <code>BillboardGui</code> will stop scaling smaller in size.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Data",
+				"Default": "-1",
+				"MemberType": "Property",
+				"Name": "DistanceUpperLimit",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "GetUsersPriceLevelsAsync",
+			"part": "description",
+			"before": null,
+			"after": "Returns the regionalized price level of a user, representing the recommended price for an item in their regional market.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetUsersPriceLevelsAsync",
+				"Parameters": [
+					{
+						"Name": "userIds",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "GetUsersPriceLevelsAsync",
+			"part": "parameter",
+			"parameter": "userIds",
+			"before": null,
+			"after": "An array of user IDs.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetUsersPriceLevelsAsync",
+				"Parameters": [
+					{
+						"Name": "userIds",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "GetUsersPriceLevelsAsync",
+			"part": "return",
+			"before": null,
+			"after": "Returns an array of <code>PriceLevelInfo</code> objects with a dictionary where the keys are user IDs (strings) and their values are the corresponding price levels (integers between 1 and 1000).",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetUsersPriceLevelsAsync",
+				"Parameters": [
+					{
+						"Name": "userIds",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MeshPart",
+			"member": "HasJointOffset",
+			"part": "description",
+			"before": null,
+			"after": "<strong>Deprecated:</strong> ",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "HasJointOffset",
+				"Security": {
+					"Read": "None",
+					"Write": "NotAccessibleSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MeshPart",
+			"member": "JointOffset",
+			"part": "description",
+			"before": null,
+			"after": "<strong>Deprecated:</strong> ",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					]
+				},
+				"Category": "Data",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "JointOffset",
+				"Security": {
+					"Read": "None",
+					"Write": "NotAccessibleSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "WorldModel",
+			"part": "description",
+			"before": "Provides some physics features to a <code>ViewportFrame</code>.",
+			"after": "Extends limited physics for its children on to a parent <code>ViewportFrame</code>."
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "PromptFeedbackSubmissionAsync",
+			"part": "description",
+			"before": null,
+			"after": "Prompts the player to submit feedback about the current experience.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptFeedbackSubmissionAsync",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "PromptLinkSharing",
+			"part": "parameter",
+			"parameter": "player",
+			"before": null,
+			"after": "Prompts the given <code>Player</code> with a Roblox platform-level share sheet with a generated share link.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptLinkSharing",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "PromptLinkSharing",
+			"part": "parameter",
+			"parameter": "options",
+			"before": null,
+			"after": "<code>Dictionary</code> that specifies the configuration for the generated link. It includes the following optional key-value pairs: <ul> <li><code>FallbackLinkId</code> (string). Determines how this share link will   direct player to once expired. Default to experience join link.</li> <li><code>ExpirationSeconds</code> (number). Determines time to expiration once the   share link is created. Truncates to nearest integer. Defaults to   86,400.</li> <li><code>PreviewTitle</code> (string) Preview title of the share link.</li> <li><code>PreiviewDescription</code> (string) Preview description of the share   link.</li> <li><code>PreviewAssettId</code> (number) Image asset ID used for share link   preview.</li> <li><code>LaunchData</code> (string). Used to set a parameter in   <code>Player:GetJoinData()</code> when a player joined using the   generated share link.</li> </ul>",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptLinkSharing",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "VideoPlayer",
+			"part": "description",
+			"before": null,
+			"after": "Used to play video assets."
+		},
+		{
+			"element": "Member",
+			"class": "VideoPlayer",
+			"member": "AutoLoadInStudio",
+			"part": "description",
+			"before": null,
+			"after": "Loads the <code>VideoContent</code> while in Studio Edit mode.",
+			"value": {
+				"Category": "Debug",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "AutoLoadInStudio",
+				"Security": {
+					"Read": "None",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoPlayer",
+			"member": "AutoPlayInStudio",
+			"part": "description",
+			"before": null,
+			"after": "Plays the <code>VideoContent</code> while in Studio Edit mode.",
+			"value": {
+				"Category": "Debug",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "AutoPlayInStudio",
+				"Security": {
+					"Read": "None",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoPlayer",
+			"member": "IsLoaded",
+			"part": "description",
+			"before": null,
+			"after": "Indicates when the <code>VideoContent</code> has loaded and is ready to play.",
+			"value": {
+				"Category": "Asset",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "IsLoaded",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoPlayer",
+			"member": "IsPlaying",
+			"part": "description",
+			"before": null,
+			"after": "Denotes whether this <code>VideoPlayer</code> is currently playing.",
+			"value": {
+				"Category": "Playback",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "IsPlaying",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoPlayer",
+			"member": "Looping",
+			"part": "description",
+			"before": null,
+			"after": "Controls whether this <code>VideoPlayer</code> loops.",
+			"value": {
+				"Category": "Playback",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "Looping",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoPlayer",
+			"member": "PlaybackSpeed",
+			"part": "description",
+			"before": null,
+			"after": "Controls the speed at which the video is played.",
+			"value": {
+				"Category": "Playback",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "PlaybackSpeed",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoPlayer",
+			"member": "Resolution",
+			"part": "description",
+			"before": null,
+			"after": "Gets the original source resolution of the <code>VideoContent</code> file.",
+			"value": {
+				"Category": "Asset",
+				"Default": "0, 0",
+				"MemberType": "Property",
+				"Name": "Resolution",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoPlayer",
+			"member": "TimeLength",
+			"part": "description",
+			"before": null,
+			"after": "Indicates the length of the <code>VideoContent</code> in seconds.",
+			"value": {
+				"Category": "Asset",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "TimeLength",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "double"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoPlayer",
+			"member": "TimePosition",
+			"part": "description",
+			"before": null,
+			"after": "Indicates the progress in seconds of the <code>VideoContent</code>.",
+			"value": {
+				"Category": "Playback",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "TimePosition",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "double"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoPlayer",
+			"member": "VideoContent",
+			"part": "description",
+			"before": null,
+			"after": "The asset to be loaded into the <code>VideoPlayer</code>.",
+			"value": {
+				"Category": "Asset",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "VideoContent",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoPlayer",
+			"member": "Volume",
+			"part": "description",
+			"before": null,
+			"after": "Controls how loudly the audio track will be played.",
+			"value": {
+				"Category": "State",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "Volume",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoPlayer",
+			"member": "GetConnectedWires",
+			"part": "description",
+			"before": null,
+			"after": "Returns an array of <code>Wires</code> that are connected to the specified pin.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetConnectedWires",
+				"Parameters": [
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Instances"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoPlayer",
+			"member": "Pause",
+			"part": "description",
+			"before": null,
+			"after": "Pauses the <code>VideoPlayer</code> wherever its <code>TimePosition</code> is.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Pause",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoPlayer",
+			"member": "Play",
+			"part": "description",
+			"before": null,
+			"after": "Plays the <code>VideoPlayer</code> from wherever its <code>TimePosition</code> is.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Play",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoPlayer",
+			"member": "Unload",
+			"part": "description",
+			"before": null,
+			"after": "Unloads the <code>VideoPlayer.VideoContent</code> to save resources.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Unload",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoPlayer",
+			"member": "LoadAsync",
+			"part": "description",
+			"before": null,
+			"after": "Loads the <code>VideoContent</code> before it is played.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LoadAsync",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "AssetFetchStatus"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoPlayer",
+			"member": "DidEnd",
+			"part": "description",
+			"before": null,
+			"after": "Fires when the <code>VideoContent</code> has completed playback and stopped.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "DidEnd",
+				"Parameters": [],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoPlayer",
+			"member": "DidLoop",
+			"part": "description",
+			"before": null,
+			"after": "Fires when the <code>VideoContent</code> loops.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "DidLoop",
+				"Parameters": [],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoPlayer",
+			"member": "WiringChanged",
+			"part": "description",
+			"before": null,
+			"after": "Fires when another instance is connected to or disconnected from the <code>VideoPlayer</code> via a <code>Wire</code>.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "WiringChanged",
+				"Parameters": [
+					{
+						"Name": "connected",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "wire",
+						"Type": {
+							"Category": "Class",
+							"Name": "Wire"
+						}
+					},
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "WrapTextureTransfer",
+			"part": "description",
+			"before": null,
+			"after": "<code>WrapTextureTransfer</code> allows a parent <code>Decal</code> to be wrapped around its parent <code>MeshPart</code> based on the cage of its <code>WrapTarget</code>."
+		},
+		{
+			"element": "Member",
+			"class": "WrapTextureTransfer",
+			"member": "ReferenceCageMeshContent",
+			"part": "description",
+			"before": null,
+			"after": "An optional reference mesh used for pruning and validating the target cage.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Avatar"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "ReferenceCageMeshContent",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WrapTextureTransfer",
+			"member": "UVMaxBound",
+			"part": "description",
+			"before": null,
+			"after": "Determines the maximum bound of the UV space to include in the transfer.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Avatar"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "-INF, -INF",
+				"MemberType": "Property",
+				"Name": "UVMaxBound",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WrapTextureTransfer",
+			"member": "UVMinBound",
+			"part": "description",
+			"before": null,
+			"after": "Determines the minimum bound of the UV space to include in the transfer.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Avatar"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "INF, INF",
+				"MemberType": "Property",
+				"Name": "UVMinBound",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DeveloperMemoryTag",
+			"item": "BaseParts",
+			"part": "description",
+			"before": null,
+			"after": "3D parts used for simulation.",
+			"value": {
+				"LegacyNames": [
+					"PhysicsParts"
+				],
+				"Name": "BaseParts",
+				"Value": 7
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ParticleFlipbookLayout",
+			"item": "Custom",
+			"part": "description",
+			"before": null,
+			"after": "A custom grid size defined by <code>FlipbookSizeX</code> and <code>FlipbookSizeY</code>.",
+			"value": {
+				"Name": "Custom",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PreferredInput",
+			"item": "Touch",
+			"part": "description",
+			"before": "The player's device has touch capability and no other input method is available or connected.",
+			"after": "The player's device has touch capability and no other input method is available or was recently interacted with.",
+			"value": {
+				"Name": "Touch",
+				"Value": 2
+			}
+		}
+	]
+}

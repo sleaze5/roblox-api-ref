@@ -1,0 +1,1206 @@
+{
+	"from": {
+		"version": "0.695.1.6950959",
+		"hash": "382d495669d945ed"
+	},
+	"to": {
+		"version": "0.696.0.6960797",
+		"hash": "30215da31a3b42e2"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "AutoSetupAvatarNewAsync",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"InternalTest"
+				],
+				"MemberType": "Function",
+				"Name": "AutoSetupAvatarNewAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "autoSetupParams",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Name": "progressCallback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Chat",
+			"member": "ReconcileCommunicationAccess",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ReconcileCommunicationAccess",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Chat",
+			"member": "ReconcileCommunicationAccessCompleted",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ReconcileCommunicationAccessCompleted",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Chat",
+			"member": "ReconcileCommunicationAccessSignal",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ReconcileCommunicationAccessSignal",
+				"Parameters": [],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FeatureRestrictionManager",
+			"member": "UpdateClientFeatureTimeout",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "startTime",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "duration",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "featureRestrictionAbuseVector",
+							"Type": {
+								"Category": "Enum",
+								"Name": "FeatureRestrictionAbuseVector"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "acknowledgeable",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "permanent",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "startTime",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "duration",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "featureRestrictionAbuseVector",
+							"Type": {
+								"Category": "Enum",
+								"Name": "FeatureRestrictionAbuseVector"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "UpdateClientFeatureTimeout",
+				"Parameters": [
+					{
+						"Name": "acknowledgeable",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "permanent",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "startTime",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "duration",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "featureRestrictionAbuseVector",
+						"Type": {
+							"Category": "Enum",
+							"Name": "FeatureRestrictionAbuseVector"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FeatureRestrictionManager",
+			"member": "UpdateFeatureTimeout",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "userId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "startTime",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "duration",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "featureRestrictionAbuseVector",
+							"Type": {
+								"Category": "Enum",
+								"Name": "FeatureRestrictionAbuseVector"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "userId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "acknowledgeable",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "permanent",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "startTime",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "duration",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "featureRestrictionAbuseVector",
+							"Type": {
+								"Category": "Enum",
+								"Name": "FeatureRestrictionAbuseVector"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "UpdateFeatureTimeout",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "acknowledgeable",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "permanent",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "startTime",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "duration",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "featureRestrictionAbuseVector",
+						"Type": {
+							"Category": "Enum",
+							"Name": "FeatureRestrictionAbuseVector"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FeatureRestrictionManager",
+			"member": "FeatureTimeoutRestored",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "FeatureTimeoutRestored",
+				"Parameters": [
+					{
+						"Name": "featureRestrictionAbuseVector",
+						"Type": {
+							"Category": "Enum",
+							"Name": "FeatureRestrictionAbuseVector"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FeatureRestrictionManager",
+			"member": "RefreshFeatureRestrictions",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "RefreshFeatureRestrictions",
+				"Parameters": [
+					{
+						"Name": "featureRestrictionAbuseVector",
+						"Type": {
+							"Category": "Enum",
+							"Name": "FeatureRestrictionAbuseVector"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginGui",
+			"member": "Plugin",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Plugin",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Plugin"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportSession",
+			"member": "GetKeyframeSequences",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetKeyframeSequences",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Instances"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LocalizationService",
+			"member": "GetIsLoadingInternalTranslations",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetIsLoadingInternalTranslations",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LocalizationService",
+			"member": "IsLoadingInternalTranslationsSettingChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsLoadingInternalTranslationsSettingChanged",
+				"Parameters": [
+					{
+						"Name": "newIsLoadingInternalTranslations",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "SlimHash",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "",
+					"after": "__api_dump_no_string_value__"
+				},
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": false,
+						"CanSave": false
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": true
+					}
+				},
+				{
+					"field": "ValueType",
+					"before": {
+						"Category": "DataType",
+						"Name": "BinaryString"
+					},
+					"after": {
+						"Category": "DataType",
+						"Name": "SharedString"
+					}
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "SlimHash",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "SharedString"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "GameplayPaused",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": false,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden"
+					]
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Players"
+					]
+				},
+				"Category": "Behavior",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "GameplayPaused",
+				"Security": {
+					"Read": "None",
+					"Write": "NotAccessibleSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "ChatAvailabilityStatus",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Players"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "ChatAvailabilityStatus",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "ReportAvatarAbuse",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Players"
+				],
+				"MemberType": "Function",
+				"Name": "ReportAvatarAbuse",
+				"Parameters": [
+					{
+						"Name": "targetUserId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "tags",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "PromptGameServerAvatarReportEnrichment",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Players"
+				],
+				"MemberType": "Event",
+				"Name": "PromptGameServerAvatarReportEnrichment",
+				"Parameters": [
+					{
+						"Name": "reportId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "targetUserId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "CreatePropertySetDiff",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreatePropertySetDiff",
+				"Parameters": [
+					{
+						"Name": "sourceA",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "sourceB",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatMessage",
+			"member": "Status",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "",
+					"after": "Unknown"
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Data",
+				"Default": "Unknown",
+				"MemberType": "Property",
+				"Name": "Status",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "TextChatMessageStatus"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UGCValidationService",
+			"member": "FetchQualityResultsAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FetchQualityResultsAsync",
+				"Parameters": [
+					{
+						"Name": "uploadModel",
+						"Type": {
+							"Category": "Class",
+							"Name": "Model"
+						}
+					},
+					{
+						"Name": "desiredDatas",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WebStreamClient",
+			"member": "Send",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Send",
+				"Parameters": [
+					{
+						"Name": "data",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DeviceFeatureType",
+			"item": "InExperienceFAE",
+			"type": "Add",
+			"value": {
+				"Name": "InExperienceFAE",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "MouseLeftButton",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 1018,
+					"after": 1026
+				}
+			],
+			"value": {
+				"Name": "MouseLeftButton",
+				"Value": 1026
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "MouseRightButton",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 1019,
+					"after": 1027
+				}
+			],
+			"value": {
+				"Name": "MouseRightButton",
+				"Value": 1027
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "MouseMiddleButton",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 1020,
+					"after": 1028
+				}
+			],
+			"value": {
+				"Name": "MouseMiddleButton",
+				"Value": 1028
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "MousePosition",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 1025,
+					"after": 1033
+				}
+			],
+			"value": {
+				"Name": "MousePosition",
+				"Value": 1033
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "MouseBackButton",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 1021,
+					"after": 1029
+				}
+			],
+			"value": {
+				"Name": "MouseBackButton",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 1029
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "MouseNoButton",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 1022,
+					"after": 1030
+				}
+			],
+			"value": {
+				"Name": "MouseNoButton",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 1030
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "MouseX",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 1023,
+					"after": 1031
+				}
+			],
+			"value": {
+				"Name": "MouseX",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 1031
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "MouseY",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 1024,
+					"after": 1032
+				}
+			],
+			"value": {
+				"Name": "MouseY",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 1032
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "Thumbstick1Up",
+			"type": "Add",
+			"value": {
+				"Name": "Thumbstick1Up",
+				"Value": 1018
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "Thumbstick1Down",
+			"type": "Add",
+			"value": {
+				"Name": "Thumbstick1Down",
+				"Value": 1019
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "Thumbstick1Left",
+			"type": "Add",
+			"value": {
+				"Name": "Thumbstick1Left",
+				"Value": 1020
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "Thumbstick1Right",
+			"type": "Add",
+			"value": {
+				"Name": "Thumbstick1Right",
+				"Value": 1021
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "Thumbstick2Up",
+			"type": "Add",
+			"value": {
+				"Name": "Thumbstick2Up",
+				"Value": 1022
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "Thumbstick2Down",
+			"type": "Add",
+			"value": {
+				"Name": "Thumbstick2Down",
+				"Value": 1023
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "Thumbstick2Left",
+			"type": "Add",
+			"value": {
+				"Name": "Thumbstick2Left",
+				"Value": 1024
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "Thumbstick2Right",
+			"type": "Add",
+			"value": {
+				"Name": "Thumbstick2Right",
+				"Value": 1025
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "WebStreamClientType",
+			"item": "WebSocket",
+			"type": "Add",
+			"value": {
+				"Name": "WebSocket",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "CatalogTimedOptionFilter",
+			"type": "Add",
+			"value": {
+				"Name": "CatalogTimedOptionFilter"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CatalogTimedOptionFilter",
+			"item": "All",
+			"type": "Add",
+			"value": {
+				"Name": "All",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CatalogTimedOptionFilter",
+			"item": "TimedOptionOnly",
+			"type": "Add",
+			"value": {
+				"Name": "TimedOptionOnly",
+				"Value": 2
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "ClearAllChildren",
+			"part": "description",
+			"before": "This function destroys all of an instance's children.",
+			"after": "This method destroys all of an instance's children.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ClearAllChildren",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "IsPropertyModified",
+			"part": "description",
+			"before": "Returns <code>true</code> if the value stored in the specified property is equal to the code-instantiated default.",
+			"after": "Returns <code>true</code> if the value stored in the specified property is not equal to the code-instantiated default.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsPropertyModified",
+				"Parameters": [
+					{
+						"Name": "property",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "IsPropertyModified",
+			"part": "return",
+			"before": "Boolean indicating whether the property is modified.",
+			"after": "Boolean indicating whether the property is modified from its code‑instantiated default.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsPropertyModified",
+				"Parameters": [
+					{
+						"Name": "property",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "CorrodedMetal",
+			"part": "description",
+			"before": "Applies to <code>BasePart</code> and <code>Terrain</code>.",
+			"after": "Applies to <code>BasePart</code> only.",
+			"value": {
+				"LegacyNames": [
+					"Corroded Metal"
+				],
+				"Name": "CorrodedMetal",
+				"Value": 1040
+			}
+		}
+	]
+}

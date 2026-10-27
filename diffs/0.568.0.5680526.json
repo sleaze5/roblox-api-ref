@@ -1,0 +1,1111 @@
+{
+	"from": {
+		"version": "0.567.1.5670562",
+		"hash": "b57b6fc2eece4732"
+	},
+	"to": {
+		"version": "0.568.0.5680526",
+		"hash": "213a0d32befd4145"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AdPortal",
+			"member": "PortalStatus",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"ReadOnly",
+						"NotReplicated"
+					],
+					"after": [
+						"ReadOnly",
+						"NotReplicated",
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Behavior",
+				"Default": "Invalid",
+				"MemberType": "Property",
+				"Name": "PortalStatus",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated",
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AdPortalStatus"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AdPortal",
+			"member": "Status",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"Default": "Active",
+				"MemberType": "Property",
+				"Name": "Status",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AdUnitStatus"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "SearchAudio",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SearchAudio",
+				"Parameters": [
+					{
+						"Name": "searchParameters",
+						"Type": {
+							"Category": "Class",
+							"Name": "AudioSearchParams"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "AudioPages"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ControllerManager",
+			"member": "ActiveController",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": false,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": true
+					}
+				},
+				{
+					"field": "Tags",
+					"before": [
+						"ReadOnly",
+						"NotReplicated"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Category": "Behavior",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "ActiveController",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "ControllerBase"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ControllerManager",
+			"member": "GetControllers",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ThreadSafety",
+					"before": "Safe",
+					"after": "Unsafe"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetControllers",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ExperienceAuthService",
+			"member": "scopeCheckUIComplete",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "scopeCheckUIComplete",
+				"Parameters": [
+					{
+						"Name": "guid",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "scopes",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "result",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ScopeCheckResult"
+						}
+					},
+					{
+						"Name": "metadata",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ExperienceAuthService",
+			"member": "ScopeCheckUIComplete",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ScopeCheckUIComplete",
+				"Parameters": [
+					{
+						"Name": "guid",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "scopes",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "result",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ScopeCheckResult"
+						}
+					},
+					{
+						"Name": "metadata",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AdGui",
+			"member": "Status",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"Default": "Active",
+				"MemberType": "Property",
+				"Name": "Status",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AdUnitStatus"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IKControl",
+			"member": "GetNodeLocalCFrame",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetNodeLocalCFrame",
+				"Parameters": [
+					{
+						"Name": "index",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				},
+				"Security": "None",
+				"Tags": [
+					"NotBrowsable"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IKControl",
+			"member": "GetNodeWorldCFrame",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetNodeWorldCFrame",
+				"Parameters": [
+					{
+						"Name": "index",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				},
+				"Security": "None",
+				"Tags": [
+					"NotBrowsable"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IKControl",
+			"member": "GetRawFinalTarget",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRawFinalTarget",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				},
+				"Security": "None",
+				"Tags": [
+					"NotBrowsable"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IKControl",
+			"member": "GetSmoothedFinalTarget",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetSmoothedFinalTarget",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				},
+				"Security": "None",
+				"Tags": [
+					"NotBrowsable"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PartOperation",
+			"member": "SerializedCSGTree",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "SerializedCSGTree",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "SharedString"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Actor",
+			"member": "BindToMessage",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "BindToMessage",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "function",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RBXScriptConnection"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Actor",
+			"member": "BindToMessageParallel",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "BindToMessageParallel",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "function",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RBXScriptConnection"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Actor",
+			"member": "SendMessage",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SendMessage",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsSettings",
+			"member": "AreSolverIslandsShown",
+			"type": "Add",
+			"value": {
+				"Category": "Display",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "AreSolverIslandsShown",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsSettings",
+			"member": "SolverConvergenceVisualizationMode",
+			"type": "Add",
+			"value": {
+				"Category": "Display",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "SolverConvergenceVisualizationMode",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "SolverConvergenceVisualizationMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "Intersect",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Intersect",
+				"Parameters": [
+					{
+						"Name": "objects",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "IsContentLoaded",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsContentLoaded",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "SetIsLoaded",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetIsLoaded",
+				"Parameters": [
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "placeSizeInBytes",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "StudioHighDpiService",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "StudioHighDpiService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserGameSettings",
+			"member": "PlayerHeight",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "PlayerHeight",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserGameSettings",
+			"member": "VRSafetyBubbleMode",
+			"type": "Add",
+			"value": {
+				"Category": "Control",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "VRSafetyBubbleMode",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "VRSafetyBubbleMode"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AudioSearchParams",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AudioSearchParams",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioSearchParams",
+			"member": "Album",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "Album",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioSearchParams",
+			"member": "Artist",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "Artist",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioSearchParams",
+			"member": "AudioSubtype",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "Music",
+				"MemberType": "Property",
+				"Name": "AudioSubtype",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AudioSubType"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioSearchParams",
+			"member": "MaxDuration",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "2147483647",
+				"MemberType": "Property",
+				"Name": "MaxDuration",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioSearchParams",
+			"member": "MinDuration",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "MinDuration",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioSearchParams",
+			"member": "SearchKeyword",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "SearchKeyword",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioSearchParams",
+			"member": "Tag",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "Tag",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioSearchParams",
+			"member": "Title",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "Title",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AudioPages",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AudioPages",
+				"Superclass": "Pages",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AdUnitStatus",
+			"type": "Add",
+			"value": {
+				"Name": "AdUnitStatus"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AdUnitStatus",
+			"item": "Inactive",
+			"type": "Add",
+			"value": {
+				"Name": "Inactive",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AdUnitStatus",
+			"item": "Active",
+			"type": "Add",
+			"value": {
+				"Name": "Active",
+				"Value": 1
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AudioSubType",
+			"type": "Add",
+			"value": {
+				"Name": "AudioSubType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AudioSubType",
+			"item": "Music",
+			"type": "Add",
+			"value": {
+				"Name": "Music",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AudioSubType",
+			"item": "SoundEffect",
+			"type": "Add",
+			"value": {
+				"Name": "SoundEffect",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "SolverConvergenceVisualizationMode",
+			"type": "Add",
+			"value": {
+				"Name": "SolverConvergenceVisualizationMode"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SolverConvergenceVisualizationMode",
+			"item": "Disabled",
+			"type": "Add",
+			"value": {
+				"Name": "Disabled",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SolverConvergenceVisualizationMode",
+			"item": "PerIsland",
+			"type": "Add",
+			"value": {
+				"Name": "PerIsland",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SolverConvergenceVisualizationMode",
+			"item": "PerEdge",
+			"type": "Add",
+			"value": {
+				"Name": "PerEdge",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "VRSafetyBubbleMode",
+			"type": "Add",
+			"value": {
+				"Name": "VRSafetyBubbleMode"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "VRSafetyBubbleMode",
+			"item": "NoOne",
+			"type": "Add",
+			"value": {
+				"Name": "NoOne",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "VRSafetyBubbleMode",
+			"item": "OnlyFriends",
+			"type": "Add",
+			"value": {
+				"Name": "OnlyFriends",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "VRSafetyBubbleMode",
+			"item": "Anyone",
+			"type": "Add",
+			"value": {
+				"Name": "Anyone",
+				"Value": 2
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "VRService",
+			"member": "FadeOutViewOnCollision",
+			"part": "description",
+			"before": null,
+			"after": "When true, a VR player's view will fade to black when their head collides with an object.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "FadeOutViewOnCollision",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		}
+	]
+}

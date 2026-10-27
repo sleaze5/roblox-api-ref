@@ -1,0 +1,1632 @@
+{
+	"from": {
+		"version": "0.698.1.6980943",
+		"hash": "260f9e4fe1c74bfb"
+	},
+	"to": {
+		"version": "0.699.0.6990877",
+		"hash": "874602c66c70451a"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AudioPlayer",
+			"member": "AutoPlay",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "Playback",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "AutoPlay",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ExperienceStateCaptureService",
+			"member": "SelectionMode",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "Default",
+				"MemberType": "Property",
+				"Name": "SelectionMode",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ExperienceStateCaptureSelectionMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GenerationService",
+			"member": "GenerateModelAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GenerateModelAsync",
+				"Parameters": [
+					{
+						"Name": "inputs",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Name": "schema",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GenerationService",
+			"member": "LoadModelFromGlbAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LoadModelFromGlbAsync",
+				"Parameters": [
+					{
+						"Name": "glbPath",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Model"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "SweepPartAsync",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"CSG",
+					"InternalTest"
+				],
+				"MemberType": "Function",
+				"Name": "SweepPartAsync",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "BasePart"
+						}
+					},
+					{
+						"Name": "cframes",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "MeshPart"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "Automap",
+			"type": "Remove",
+			"value": {
+				"Capabilities": [
+					"Animation"
+				],
+				"MemberType": "Function",
+				"Name": "Automap",
+				"Parameters": [
+					{
+						"Name": "character",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "AutoRig",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Animation"
+				],
+				"MemberType": "Function",
+				"Name": "AutoRig",
+				"Parameters": [
+					{
+						"Name": "character",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "RecommendTopProductsAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RecommendTopProductsAsync",
+				"Parameters": [
+					{
+						"Name": "infoTypes",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TriangleMeshPart",
+			"member": "ConvexDecompHolder",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Hidden",
+						"NotScriptable"
+					],
+					"after": [
+						"Hidden",
+						"NotReplicated",
+						"NotScriptable"
+					]
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "ConvexDecompHolder",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "NetAssetRef"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "SendServerTime",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "SendServerTime",
+				"Parameters": [
+					{
+						"Name": "serverTimeMs",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RunService",
+			"member": "FixedHeartbeat",
+			"type": "Remove",
+			"value": {
+				"Capabilities": [
+					"Basic",
+					"InternalTest"
+				],
+				"MemberType": "Event",
+				"Name": "FixedHeartbeat",
+				"Parameters": [
+					{
+						"Name": "deltaTime",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "double"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RunService",
+			"member": "BindToSimulation",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Basic",
+					"InternalTest"
+				],
+				"MemberType": "Function",
+				"Name": "BindToSimulation",
+				"Parameters": [
+					{
+						"Name": "function",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					},
+					{
+						"Default": "Hz60",
+						"Name": "frequency",
+						"Type": {
+							"Category": "Enum",
+							"Name": "StepFrequency"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RBXScriptConnection"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SoundService",
+			"member": "AudioPlayerVolumeFix",
+			"type": "Remove",
+			"value": {
+				"Category": "Data",
+				"Default": "Default",
+				"MemberType": "Property",
+				"Name": "AudioPlayerVolumeFix",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "RolloutState"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "CreateDefaultPlayerModule",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Players"
+					]
+				},
+				"Category": "Controls",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "CreateDefaultPlayerModule",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleQuery",
+			"member": "ConditionsSerialize",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "ConditionsSerialize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "BinaryString"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleQuery",
+			"member": "GetCondition",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCondition",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleQuery",
+			"member": "GetConditions",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetConditions",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleQuery",
+			"member": "SetCondition",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetCondition",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleQuery",
+			"member": "SetConditions",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetConditions",
+				"Parameters": [
+					{
+						"Name": "conditions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ThirdPartyUserService",
+			"member": "HasActiveUser",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "HasActiveUser",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetType",
+			"item": "FaceMakeup",
+			"type": "Add",
+			"value": {
+				"Name": "FaceMakeup",
+				"Value": 88
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetType",
+			"item": "LipMakeup",
+			"type": "Add",
+			"value": {
+				"Name": "LipMakeup",
+				"Value": 89
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetType",
+			"item": "EyeMakeup",
+			"type": "Add",
+			"value": {
+				"Name": "EyeMakeup",
+				"Value": 90
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "FaceMakeup",
+			"type": "Add",
+			"value": {
+				"Name": "FaceMakeup",
+				"Value": 88
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "LipMakeup",
+			"type": "Add",
+			"value": {
+				"Name": "LipMakeup",
+				"Value": 89
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "EyeMakeup",
+			"type": "Add",
+			"value": {
+				"Name": "EyeMakeup",
+				"Value": 90
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AnimationNodePlayMode",
+			"type": "Add",
+			"value": {
+				"Name": "AnimationNodePlayMode"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnimationNodePlayMode",
+			"item": "Loop",
+			"type": "Add",
+			"value": {
+				"Name": "Loop",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnimationNodePlayMode",
+			"item": "PingPong",
+			"type": "Add",
+			"value": {
+				"Name": "PingPong",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnimationNodePlayMode",
+			"item": "OnceAndHold",
+			"type": "Add",
+			"value": {
+				"Name": "OnceAndHold",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnimationNodePlayMode",
+			"item": "OnceAndReset",
+			"type": "Add",
+			"value": {
+				"Name": "OnceAndReset",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ExperienceStateCaptureSelectionMode",
+			"type": "Add",
+			"value": {
+				"Name": "ExperienceStateCaptureSelectionMode"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ExperienceStateCaptureSelectionMode",
+			"item": "Default",
+			"type": "Add",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ExperienceStateCaptureSelectionMode",
+			"item": "SafetyHighlightMode",
+			"type": "Add",
+			"value": {
+				"Name": "SafetyHighlightMode",
+				"Value": 1
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "StepFrequency",
+			"type": "Add",
+			"value": {
+				"Name": "StepFrequency"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StepFrequency",
+			"item": "Hz60",
+			"type": "Add",
+			"value": {
+				"Name": "Hz60",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StepFrequency",
+			"item": "Hz30",
+			"type": "Add",
+			"value": {
+				"Name": "Hz30",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StepFrequency",
+			"item": "Hz15",
+			"type": "Add",
+			"value": {
+				"Name": "Hz15",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StepFrequency",
+			"item": "Hz10",
+			"type": "Add",
+			"value": {
+				"Name": "Hz10",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StepFrequency",
+			"item": "Hz5",
+			"type": "Add",
+			"value": {
+				"Name": "Hz5",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StepFrequency",
+			"item": "Hz1",
+			"type": "Add",
+			"value": {
+				"Name": "Hz1",
+				"Value": 5
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "ApplyDescription",
+			"part": "parameter",
+			"parameter": "assetTypeVerification",
+			"before": "⚠️ The default value for this parameter will change from <code>ClientOnly</code> to <code>Always</code> after 10/20/2025. See <a href=\"https://devforum.roblox.com/t/potential-action-required-update-for-humanoiddescription-apis/3982903\">here</a> for details.",
+			"after": "The asset type verification mode.",
+			"value": {
+				"Capabilities": [
+					"Avatar"
+				],
+				"MemberType": "Function",
+				"Name": "ApplyDescription",
+				"Parameters": [
+					{
+						"Name": "humanoidDescription",
+						"Type": {
+							"Category": "Class",
+							"Name": "HumanoidDescription"
+						}
+					},
+					{
+						"Default": "Default",
+						"Name": "assetTypeVerification",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AssetTypeVerification"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "ApplyDescriptionReset",
+			"part": "parameter",
+			"parameter": "assetTypeVerification",
+			"before": "⚠️ The default value for this parameter will change from <code>ClientOnly</code> to <code>Always</code> after 10/20/2025. See <a href=\"https://devforum.roblox.com/t/potential-action-required-update-for-humanoiddescription-apis/3982903\">here</a> for details.",
+			"after": "The asset type verification mode.",
+			"value": {
+				"Capabilities": [
+					"Avatar"
+				],
+				"MemberType": "Function",
+				"Name": "ApplyDescriptionReset",
+				"Parameters": [
+					{
+						"Name": "humanoidDescription",
+						"Type": {
+							"Category": "Class",
+							"Name": "HumanoidDescription"
+						}
+					},
+					{
+						"Default": "Default",
+						"Name": "assetTypeVerification",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AssetTypeVerification"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputBinding",
+			"member": "ResponseCurve",
+			"part": "description",
+			"before": null,
+			"after": "Numerical value to configure scaling for more precise thumbstick aiming.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Input"
+					]
+				},
+				"Category": "Behavior",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "ResponseCurve",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "OpenCloudApiV1",
+			"part": "description",
+			"before": null,
+			"after": "<strong>Deprecated:</strong> This class is deprecated and should not be used for new work. Use <code>HttpService</code> instead and see the <a href=\"../../../cloud-services/http-service.md\">In-experience HTTP requests guide</a>."
+		},
+		{
+			"element": "Member",
+			"class": "OpenCloudApiV1",
+			"member": "CreateModel",
+			"part": "description",
+			"before": null,
+			"after": "<strong>Deprecated:</strong> ",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateModel",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "OpenCloudModel"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated",
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "OpenCloudApiV1",
+			"member": "CreateUserNotificationAsync",
+			"part": "description",
+			"before": null,
+			"after": "<strong>Deprecated:</strong> ",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateUserNotificationAsync",
+				"Parameters": [
+					{
+						"Name": "user",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "userNotification",
+						"Type": {
+							"Category": "DataType",
+							"Name": "OpenCloudModel"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "OpenCloudModel"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields",
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "OpenCloudService",
+			"part": "description",
+			"before": null,
+			"after": "<strong>Deprecated:</strong> This class is deprecated and should not be used for new work. Use <code>HttpService</code> instead and see the <a href=\"../../../cloud-services/http-service.md\">In-experience HTTP requests guide</a>."
+		},
+		{
+			"element": "Member",
+			"class": "OpenCloudService",
+			"member": "GetApiV1",
+			"part": "description",
+			"before": null,
+			"after": "<strong>Deprecated:</strong> ",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetApiV1",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "OpenCloudApiV1"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "OpenCloudService",
+			"member": "InvokeAsync",
+			"part": "description",
+			"before": null,
+			"after": "<strong>Deprecated:</strong> ",
+			"value": {
+				"MemberType": "Function",
+				"Name": "InvokeAsync",
+				"Parameters": [
+					{
+						"Name": "version",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "methodName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "arguments",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "headers",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields",
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "Scale",
+			"part": "description",
+			"before": "Editor-only property used to scale the model around its pivot. Setting this property will move the scale as though <code>Model/ScaleTo</code> was called on it.",
+			"after": "Editor-only property used to scale the model around its pivot. Setting this property will move the scale as though <code>Model:ScaleTo()</code> was called on it.",
+			"value": {
+				"Category": "Pivot",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "Scale",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "GetScale",
+			"part": "description",
+			"before": "Returns the canonical scale of the model, which defaults to 1 for newly created models and will change as it is scaled via <code>Model/ScaleTo</code>.",
+			"after": "Returns the canonical scale of the model, which defaults to 1 for newly created models and will change as it is scaled via <code>Model:ScaleTo()</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetScale",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "CreateHumanoidModelFromDescription",
+			"part": "parameter",
+			"parameter": "assetTypeVerification",
+			"before": "Asset type verification determines if this function will load models or not. ⚠️&nbsp;The default value for this parameter will change from <code>ClientOnly</code> to <code>Always</code> after 10/20/2025. See <a href=\"https://devforum.roblox.com/t/potential-action-required-update-for-humanoiddescription-apis/3982903\">here</a> for details.",
+			"after": "The asset type verification mode.",
+			"value": {
+				"Capabilities": [
+					"Avatar",
+					"Players"
+				],
+				"MemberType": "Function",
+				"Name": "CreateHumanoidModelFromDescription",
+				"Parameters": [
+					{
+						"Name": "description",
+						"Type": {
+							"Category": "Class",
+							"Name": "HumanoidDescription"
+						}
+					},
+					{
+						"Name": "rigType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "HumanoidRigType"
+						}
+					},
+					{
+						"Default": "Default",
+						"Name": "assetTypeVerification",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AssetTypeVerification"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Model"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoService",
+			"member": "CreateVideoSamplerAsync",
+			"part": "description",
+			"before": null,
+			"after": "Creates a <code>VideoSampler</code> that samples frames from the provided video content.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateVideoSamplerAsync",
+				"Parameters": [
+					{
+						"Name": "content",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					},
+					{
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "VideoSampler"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoService",
+			"member": "CreateVideoSamplerAsync",
+			"part": "parameter",
+			"parameter": "content",
+			"before": null,
+			"after": "The video content to sample from.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateVideoSamplerAsync",
+				"Parameters": [
+					{
+						"Name": "content",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					},
+					{
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "VideoSampler"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoService",
+			"member": "CreateVideoSamplerAsync",
+			"part": "parameter",
+			"parameter": "options",
+			"before": null,
+			"after": "Options table for creating the <code>VideoSampler</code>: <ul> <li><code>Size</code> – A <code>VideoSampleSize</code> value that determines the   resolution of textures produced by the <code>VideoSampler</code>.   Defaults to <code>VideoSampleSize.Small</code>. Use the smallest   resolution that meets your needs to minimize memory usage and   improve sampling performance.</li> </ul>",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateVideoSamplerAsync",
+				"Parameters": [
+					{
+						"Name": "content",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					},
+					{
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "VideoSampler"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoService",
+			"member": "CreateVideoSamplerAsync",
+			"part": "return",
+			"before": null,
+			"after": "The created <code>VideoSampler</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateVideoSamplerAsync",
+				"Parameters": [
+					{
+						"Name": "content",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					},
+					{
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "VideoSampler"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "VideoSampler",
+			"part": "description",
+			"before": null,
+			"after": "An object for sampling frames from video content."
+		},
+		{
+			"element": "Member",
+			"class": "VideoSampler",
+			"member": "TimeLength",
+			"part": "description",
+			"before": null,
+			"after": "The length of the <code>VideoContent</code> in seconds.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_failed_to_create_class__",
+				"MemberType": "Property",
+				"Name": "TimeLength",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "double"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoSampler",
+			"member": "VideoContent",
+			"part": "description",
+			"before": null,
+			"after": "The asset loaded into the <code>VideoSampler</code>.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "VideoContent",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoSampler",
+			"member": "GetSamplesAtTimesAsync",
+			"part": "description",
+			"before": null,
+			"after": "Gets image frames at the specified timestamps.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetSamplesAtTimesAsync",
+				"Parameters": [
+					{
+						"Name": "times",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoSampler",
+			"member": "GetSamplesAtTimesAsync",
+			"part": "parameter",
+			"parameter": "times",
+			"before": null,
+			"after": "An array of requested timestamps in seconds for which to retrieve image frames. Each timestamp should be a number between <code>0</code> and <code>TimeLength</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetSamplesAtTimesAsync",
+				"Parameters": [
+					{
+						"Name": "times",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoSampler",
+			"member": "GetSamplesAtTimesAsync",
+			"part": "return",
+			"before": null,
+			"after": "An array of dictionary or nil values for each requested timestamp. If a requested timestamp is out of range or the <code>VideoSampler</code> was unable to produce a sample, the corresponding entry in the returned array will be nil. Each dictionary contains the following keys: <ul> <li><code>Time</code> (number): The timestamp of the returned image frame in   seconds. This value may differ slightly from the requested   timestamp.</li> <li><code>Image</code> (<code>Content</code>): A <code>Content</code> with a   <code>SourceType</code> of   <code>ContentSourceType.Opaque</code> containing the image frame at the   corresponding timestamp.</li> </ul>",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetSamplesAtTimesAsync",
+				"Parameters": [
+					{
+						"Name": "times",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "InputActionType",
+			"item": "ViewportPosition",
+			"part": "description",
+			"before": null,
+			"after": "The <code>InputAction</code> will receive <code>Vector2</code> values representing the absolute pixel (<strong>X</strong>, <strong>Y</strong>) coordinates of a pointer input in the viewport.",
+			"value": {
+				"Name": "ViewportPosition",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "Thumbstick1Up",
+			"part": "description",
+			"before": null,
+			"after": "Up vector on the gamepad primary thumbstick. Primarily used in the <a href=\"../../../input/input-action-system.md\">Input Action System</a>.",
+			"value": {
+				"Name": "Thumbstick1Up",
+				"Value": 1018
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "Thumbstick1Down",
+			"part": "description",
+			"before": null,
+			"after": "Down vector on the gamepad primary thumbstick. Primarily used in the <a href=\"../../../input/input-action-system.md\">Input Action System</a>.",
+			"value": {
+				"Name": "Thumbstick1Down",
+				"Value": 1019
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "Thumbstick1Left",
+			"part": "description",
+			"before": null,
+			"after": "Left vector on the gamepad primary thumbstick. Primarily used in the <a href=\"../../../input/input-action-system.md\">Input Action System</a>.",
+			"value": {
+				"Name": "Thumbstick1Left",
+				"Value": 1020
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "Thumbstick1Right",
+			"part": "description",
+			"before": null,
+			"after": "Right vector on the gamepad primary thumbstick. Primarily used in the <a href=\"../../../input/input-action-system.md\">Input Action System</a>.",
+			"value": {
+				"Name": "Thumbstick1Right",
+				"Value": 1021
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "Thumbstick2Up",
+			"part": "description",
+			"before": null,
+			"after": "Up vector on the gamepad secondary thumbstick. Primarily used in the <a href=\"../../../input/input-action-system.md\">Input Action System</a>.",
+			"value": {
+				"Name": "Thumbstick2Up",
+				"Value": 1022
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "Thumbstick2Down",
+			"part": "description",
+			"before": null,
+			"after": "Down vector on the gamepad secondary thumbstick. Primarily used in the <a href=\"../../../input/input-action-system.md\">Input Action System</a>.",
+			"value": {
+				"Name": "Thumbstick2Down",
+				"Value": 1023
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "Thumbstick2Left",
+			"part": "description",
+			"before": null,
+			"after": "Left vector on the gamepad secondary thumbstick. Primarily used in the <a href=\"../../../input/input-action-system.md\">Input Action System</a>.",
+			"value": {
+				"Name": "Thumbstick2Left",
+				"Value": 1024
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "Thumbstick2Right",
+			"part": "description",
+			"before": null,
+			"after": "Right vector on the gamepad secondary thumbstick. Primarily used in the <a href=\"../../../input/input-action-system.md\">Input Action System</a>.",
+			"value": {
+				"Name": "Thumbstick2Right",
+				"Value": 1025
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "MousePosition",
+			"part": "description",
+			"before": null,
+			"after": "The position of a mouse in the viewport. Primarily used in the <a href=\"../../../input/input-action-system.md\">Input Action System</a>.",
+			"value": {
+				"Name": "MousePosition",
+				"Value": 1033
+			}
+		}
+	]
+}

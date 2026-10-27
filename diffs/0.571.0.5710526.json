@@ -1,0 +1,1511 @@
+{
+	"from": {
+		"version": "0.570.0.5700563",
+		"hash": "fbd72ebcaac54eff"
+	},
+	"to": {
+		"version": "0.571.0.5710526",
+		"hash": "f7201b54e8084437"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AudioSearchParams",
+			"member": "AudioSubtype",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated",
+						"Deprecated",
+						{
+							"PreferredDescriptorName": "AudioSubType",
+							"ThreadSafety": "Unknown"
+						}
+					]
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "Music",
+				"MemberType": "Property",
+				"Name": "AudioSubtype",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "AudioSubType",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AudioSubType"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioSearchParams",
+			"member": "AudioSubType",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "Music",
+				"MemberType": "Property",
+				"Name": "AudioSubType",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AudioSubType"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AirController",
+			"member": "MaintainAngularMomentum",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Movement",
+					"after": "Turn"
+				}
+			],
+			"value": {
+				"Category": "Turn",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "MaintainAngularMomentum",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AirController",
+			"member": "OrientationMaxTorque",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Balance",
+					"after": "Orientation"
+				}
+			],
+			"value": {
+				"Category": "Orientation",
+				"Default": "10000",
+				"MemberType": "Property",
+				"Name": "OrientationMaxTorque",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AirController",
+			"member": "OrientationSpeedFactor",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Balance",
+					"after": "Orientation"
+				}
+			],
+			"value": {
+				"Category": "Orientation",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "OrientationSpeedFactor",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AirController",
+			"member": "VectorForce",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Balance",
+					"after": "Movement"
+				}
+			],
+			"value": {
+				"Category": "Movement",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "VectorForce",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AirController",
+			"member": "BalanceMaxTorque",
+			"type": "Add",
+			"value": {
+				"Category": "Balance",
+				"Default": "10000",
+				"MemberType": "Property",
+				"Name": "BalanceMaxTorque",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AirController",
+			"member": "BalanceRigidityEnabled",
+			"type": "Add",
+			"value": {
+				"Category": "Balance",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "BalanceRigidityEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AirController",
+			"member": "BalanceSpeed",
+			"type": "Add",
+			"value": {
+				"Category": "Balance",
+				"Default": "100",
+				"MemberType": "Property",
+				"Name": "BalanceSpeed",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AirController",
+			"member": "TurningMaxTorque",
+			"type": "Add",
+			"value": {
+				"Category": "Turn",
+				"Default": "10000",
+				"MemberType": "Property",
+				"Name": "TurningMaxTorque",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AirController",
+			"member": "TurningSpeedFactor",
+			"type": "Add",
+			"value": {
+				"Category": "Turn",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "TurningSpeedFactor",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ClimbController",
+			"member": "MoveMaxForce",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "INF",
+					"after": "10000"
+				}
+			],
+			"value": {
+				"Category": "Movement",
+				"Default": "10000",
+				"MemberType": "Property",
+				"Name": "MoveMaxForce",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ClimbController",
+			"member": "OrientationMaxTorque",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "INF",
+					"after": "10000"
+				}
+			],
+			"value": {
+				"Category": "Balance",
+				"Default": "10000",
+				"MemberType": "Property",
+				"Name": "OrientationMaxTorque",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ClimbController",
+			"member": "OrientationSpeedFactor",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "1",
+					"after": "100"
+				}
+			],
+			"value": {
+				"Category": "Balance",
+				"Default": "100",
+				"MemberType": "Property",
+				"Name": "OrientationSpeedFactor",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ClimbController",
+			"member": "BalanceMaxTorque",
+			"type": "Add",
+			"value": {
+				"Category": "Balance",
+				"Default": "10000",
+				"MemberType": "Property",
+				"Name": "BalanceMaxTorque",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ClimbController",
+			"member": "BalanceRigidityEnabled",
+			"type": "Add",
+			"value": {
+				"Category": "Balance",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "BalanceRigidityEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ClimbController",
+			"member": "BalanceSpeed",
+			"type": "Add",
+			"value": {
+				"Category": "Balance",
+				"Default": "100",
+				"MemberType": "Property",
+				"Name": "BalanceSpeed",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GroundController",
+			"member": "BalanceMaxTorque",
+			"type": "Add",
+			"value": {
+				"Category": "Balance",
+				"Default": "10000",
+				"MemberType": "Property",
+				"Name": "BalanceMaxTorque",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GroundController",
+			"member": "BalanceRigidityEnabled",
+			"type": "Add",
+			"value": {
+				"Category": "Balance",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "BalanceRigidityEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GroundController",
+			"member": "BalanceSpeed",
+			"type": "Add",
+			"value": {
+				"Category": "Balance",
+				"Default": "100",
+				"MemberType": "Property",
+				"Name": "BalanceSpeed",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "SetFlagVersion",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetFlagVersion",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "version",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatMessage",
+			"member": "Status",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "Floodchecked",
+					"after": ""
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "Status",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "TextChatMessageStatus"
+				}
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "SearchAudio",
+			"part": "description",
+			"before": null,
+			"after": "Finds audio assets matching a variety of search criteria.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SearchAudio",
+				"Parameters": [
+					{
+						"Name": "searchParameters",
+						"Type": {
+							"Category": "Class",
+							"Name": "AudioSearchParams"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "AudioPages"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AudioSearchParams",
+			"part": "description",
+			"before": null,
+			"after": "Instance to be passed to <code>AssetService:SearchAudio()</code> to search for audio assets."
+		},
+		{
+			"element": "Member",
+			"class": "AudioSearchParams",
+			"member": "Album",
+			"part": "description",
+			"before": null,
+			"after": "The album the audio asset belongs to.",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "Album",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioSearchParams",
+			"member": "Artist",
+			"part": "description",
+			"before": null,
+			"after": "The artist that created the audio asset.",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "Artist",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioSearchParams",
+			"member": "AudioSubtype",
+			"part": "description",
+			"before": null,
+			"after": "The subtype of the audio asset.",
+			"value": {
+				"Category": "Data",
+				"Default": "Music",
+				"MemberType": "Property",
+				"Name": "AudioSubtype",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "AudioSubType",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AudioSubType"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioSearchParams",
+			"member": "MaxDuration",
+			"part": "description",
+			"before": null,
+			"after": "The maximum duration of the audio asset.",
+			"value": {
+				"Category": "Data",
+				"Default": "2147483647",
+				"MemberType": "Property",
+				"Name": "MaxDuration",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioSearchParams",
+			"member": "MinDuration",
+			"part": "description",
+			"before": null,
+			"after": "The minimum duration of the audio asset.",
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "MinDuration",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioSearchParams",
+			"member": "SearchKeyword",
+			"part": "description",
+			"before": null,
+			"after": "The keyword to search for.",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "SearchKeyword",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioSearchParams",
+			"member": "Tag",
+			"part": "description",
+			"before": null,
+			"after": "The tag of the audio asset.",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "Tag",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioSearchParams",
+			"member": "Title",
+			"part": "description",
+			"before": null,
+			"after": "The title of the audio asset.",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "Title",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Actor",
+			"member": "BindToMessage",
+			"part": "description",
+			"before": null,
+			"after": "Binds a Luau callback to a message with the specified topic.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "BindToMessage",
+				"Parameters": [
+					{
+						"Name": "topic",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "function",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RBXScriptConnection"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Actor",
+			"member": "BindToMessage",
+			"part": "parameter",
+			"parameter": "topic",
+			"before": null,
+			"after": "The topic used to identify the type of message.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "BindToMessage",
+				"Parameters": [
+					{
+						"Name": "topic",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "function",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RBXScriptConnection"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Actor",
+			"member": "BindToMessage",
+			"part": "return",
+			"before": null,
+			"after": "This connection object may be used to disconnect the Luau callback from receiving messages.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "BindToMessage",
+				"Parameters": [
+					{
+						"Name": "topic",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "function",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RBXScriptConnection"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Actor",
+			"member": "BindToMessageParallel",
+			"part": "description",
+			"before": null,
+			"after": "Binds a Luau callback to a message with the specified topic.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "BindToMessageParallel",
+				"Parameters": [
+					{
+						"Name": "topic",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "function",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RBXScriptConnection"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Actor",
+			"member": "BindToMessageParallel",
+			"part": "parameter",
+			"parameter": "topic",
+			"before": null,
+			"after": "The topic used to identify the type of message.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "BindToMessageParallel",
+				"Parameters": [
+					{
+						"Name": "topic",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "function",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RBXScriptConnection"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Actor",
+			"member": "BindToMessageParallel",
+			"part": "return",
+			"before": null,
+			"after": "This connection object may be used to disconnect the Luau callback from receiving messages.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "BindToMessageParallel",
+				"Parameters": [
+					{
+						"Name": "topic",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "function",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RBXScriptConnection"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Actor",
+			"member": "SendMessage",
+			"part": "description",
+			"before": null,
+			"after": "Sends a message to an Actor.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SendMessage",
+				"Parameters": [
+					{
+						"Name": "topic",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Actor",
+			"member": "SendMessage",
+			"part": "parameter",
+			"parameter": "topic",
+			"before": null,
+			"after": "The topic used to identify the message being sent.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SendMessage",
+				"Parameters": [
+					{
+						"Name": "topic",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Actor",
+			"member": "SendMessage",
+			"part": "parameter",
+			"parameter": "message",
+			"before": null,
+			"after": "The contents of the message to send to the Actor.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SendMessage",
+				"Parameters": [
+					{
+						"Name": "topic",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AudioPages",
+			"part": "description",
+			"before": null,
+			"after": "A special version of the <code>Pages</code> class returned by <code>AssetService:SearchAudio()</code>."
+		},
+		{
+			"element": "Class",
+			"class": "SensorBase",
+			"part": "description",
+			"before": null,
+			"after": "An abstract class for various sensor instance types."
+		},
+		{
+			"element": "Member",
+			"class": "SensorBase",
+			"member": "UpdateType",
+			"part": "description",
+			"before": null,
+			"after": "Determines how the sensor will update its output data.",
+			"value": {
+				"Category": "Settings",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "UpdateType",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "SensorUpdateType"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "BuoyancySensor",
+			"part": "description",
+			"before": null,
+			"after": "A <code>SensorBase</code> that outputs data about how its <code>BasePart</code> is interacting with <code>Terrain</code> water."
+		},
+		{
+			"element": "Member",
+			"class": "BuoyancySensor",
+			"member": "FullySubmerged",
+			"part": "description",
+			"before": null,
+			"after": "True when the entirety of the <code>BasePart</code> is submerged in <code>Terrain</code> water with at least one voxel of water above it.",
+			"value": {
+				"Category": "Output",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "FullySubmerged",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BuoyancySensor",
+			"member": "TouchingSurface",
+			"part": "description",
+			"before": null,
+			"after": "True when any position on the <code>BasePart</code> is touching <code>Terrain</code> water.",
+			"value": {
+				"Category": "Output",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "TouchingSurface",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ControllerPartSensor",
+			"part": "description",
+			"before": null,
+			"after": "A <code>SensorBase</code> that outputs data about another <code>BasePart</code> based on <code>Humanoid</code> floor and ladder detection logic."
+		},
+		{
+			"element": "Member",
+			"class": "ControllerPartSensor",
+			"member": "HitFrame",
+			"part": "description",
+			"before": null,
+			"after": "The position in world space where the sensor hit the <code>ControllerPartSensor.SensedPart</code>.",
+			"value": {
+				"Category": "Output",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "HitFrame",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ControllerPartSensor",
+			"member": "HitNormal",
+			"part": "description",
+			"before": null,
+			"after": "The surface normal at the position where the sensor hit the <code>ControllerPartSensor.SensedPart</code>.",
+			"value": {
+				"Category": "Output",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "HitNormal",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ControllerPartSensor",
+			"member": "SearchDistance",
+			"part": "description",
+			"before": null,
+			"after": "The distance from the sensor's parent <code>BasePart</code> to use when sensing other parts.",
+			"value": {
+				"Category": "Input",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "SearchDistance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ControllerPartSensor",
+			"member": "SensedPart",
+			"part": "description",
+			"before": null,
+			"after": "A reference to the <code>BasePart</code> hit by the sensor.",
+			"value": {
+				"Category": "Output",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "SensedPart",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "BasePart"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ControllerPartSensor",
+			"member": "SensorMode",
+			"part": "description",
+			"before": null,
+			"after": "Determines what behavior this <code>SensorBase</code> uses when sensing other parts.",
+			"value": {
+				"Category": "Input",
+				"Default": "Floor",
+				"MemberType": "Property",
+				"Name": "SensorMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "SensorMode"
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ProductLocationRestriction",
+			"item": "AvatarShop",
+			"part": "description",
+			"before": "Item is purchasable only in the Avatar Shop.",
+			"after": "Item is purchasable only in the Marketplace.",
+			"value": {
+				"Name": "AvatarShop",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ProductLocationRestriction",
+			"item": "AllowedGames",
+			"part": "description",
+			"before": "Item is purchasable in the Avatar Shop and experiences owned by the item creator.",
+			"after": "Item is purchasable in the Marketplace and experiences owned by the item creator.",
+			"value": {
+				"Name": "AllowedGames",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ProductLocationRestriction",
+			"item": "AllGames",
+			"part": "description",
+			"before": "(Default) Item is purchasable in the Avatar Shop and all experiences.",
+			"after": "(Default) Item is purchasable in the Marketplace and all experiences.",
+			"value": {
+				"Name": "AllGames",
+				"Value": 2
+			}
+		}
+	]
+}

@@ -1,0 +1,2223 @@
+{
+	"from": {
+		"version": "0.649.0.6490878",
+		"hash": "7cc6d2bdac2f4837"
+	},
+	"to": {
+		"version": "0.650.0.6500743",
+		"hash": "0fe66fbb77d84a42"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Object",
+			"member": "isA",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"CustomLuaState"
+					],
+					"after": [
+						"Deprecated",
+						{
+							"PreferredDescriptorName": "IsA",
+							"ThreadSafety": "Safe"
+						},
+						"CustomLuaState"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "isA",
+				"Parameters": [
+					{
+						"Name": "className",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "IsA",
+						"ThreadSafety": "Safe"
+					},
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableImage",
+			"member": "DrawProjectionImage",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DrawProjectionImage",
+				"Parameters": [
+					{
+						"Name": "mesh",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Object"
+						}
+					},
+					{
+						"Name": "projection",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Name": "brushConfig",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableImage",
+			"member": "DrawImageProjected",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DrawImageProjected",
+				"Parameters": [
+					{
+						"Name": "mesh",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Object"
+						}
+					},
+					{
+						"Name": "projection",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Name": "brushConfig",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableImage",
+			"member": "DrawImageTransformed",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DrawImageTransformed",
+				"Parameters": [
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "scale",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "rotation",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "image",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Object"
+						}
+					},
+					{
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetCenter",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCenter",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetSize",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetSize",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioEcho",
+			"member": "RampTime",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "State",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "RampTime",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScrollingFrame",
+			"member": "DraggingScrollBar",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Data",
+				"Default": "None",
+				"MemberType": "Property",
+				"Name": "DraggingScrollBar",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "DraggingScrollBar"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScreenGui",
+			"member": "IgnoreGuiInset",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "IgnoreGuiInset",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "NotificationDismissed",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "NotificationDismissed",
+				"Parameters": [
+					{
+						"Name": "notificationId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "NotificationDisplayed",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "NotificationDisplayed",
+				"Parameters": [
+					{
+						"Name": "notificationId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "UserInteractedWithNotification",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UserInteractedWithNotification",
+				"Parameters": [
+					{
+						"Name": "notificationId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "buttonIndex",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "OnNotificationDisplayed",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "OnNotificationDisplayed",
+				"Parameters": [
+					{
+						"Name": "notificationId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "OnNotificationInteraction",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "OnNotificationInteraction",
+				"Parameters": [
+					{
+						"Name": "notificationId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "buttonIndex",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "AccessoryRigidAndLayeredBlob",
+			"type": "Remove",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Avatar"
+					]
+				},
+				"Category": "Accessories",
+				"Default": "[]",
+				"MemberType": "Property",
+				"Name": "AccessoryRigidAndLayeredBlob",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "TouchEventsUseCollisionGroups",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "TouchEventsUseCollisionGroups",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "RolloutState"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "AvatarJointUpgrade",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotReplicated",
+						"NotBrowsable"
+					],
+					"after": [
+						"NotReplicated",
+						"NotScriptable",
+						"NotBrowsable"
+					]
+				},
+				{
+					"field": "ValueType",
+					"before": {
+						"Category": "Enum",
+						"Name": "AvatarJointUpgrade"
+					},
+					"after": {
+						"Category": "Enum",
+						"Name": "RolloutState"
+					}
+				}
+			],
+			"value": {
+				"Category": "Character",
+				"Default": "Default",
+				"MemberType": "Property",
+				"Name": "AvatarJointUpgrade",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable",
+					"NotBrowsable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "RolloutState"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "AvatarJointUpgrade_Serialized",
+			"type": "Remove",
+			"value": {
+				"Category": "Character",
+				"Default": "Default",
+				"MemberType": "Property",
+				"Name": "AvatarJointUpgrade_Serialized",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AvatarJointUpgrade"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "AvatarJointUpgrade_SerializedRollout",
+			"type": "Add",
+			"value": {
+				"Category": "Character",
+				"Default": "Default",
+				"MemberType": "Property",
+				"Name": "AvatarJointUpgrade_SerializedRollout",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "RolloutState"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "DEPRECATED_RegisterCommand",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Capabilities",
+					"before": [
+						"Assistant"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "DEPRECATED_RegisterCommand",
+				"Parameters": [
+					{
+						"Name": "commandName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "function",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "DEPRECATED_RegisterSequentialCommand",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Capabilities",
+					"before": [
+						"Assistant"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "DEPRECATED_RegisterSequentialCommand",
+				"Parameters": [
+					{
+						"Name": "commandName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "function",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "GetEphemeralVariable",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Capabilities",
+					"before": [
+						"Assistant"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetEphemeralVariable",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "GetInstance",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Capabilities",
+					"before": [
+						"Assistant"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetInstance",
+				"Parameters": [
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "instanceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "InvokeCommand",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Capabilities",
+					"before": [
+						"Assistant"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "InvokeCommand",
+				"Parameters": [
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "commandName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "arg",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "RegisterCommandInternal",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Capabilities",
+					"before": [
+						"Assistant"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterCommandInternal",
+				"Parameters": [
+					{
+						"Name": "commandName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "function",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					},
+					{
+						"Default": "false",
+						"Name": "isSequential",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Default": "false",
+						"Name": "isPublic",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "RegisterContextCollector",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Capabilities",
+					"before": [
+						"Assistant"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterContextCollector",
+				"Parameters": [
+					{
+						"Name": "collectorName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "function",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "SetEphemeralVariable",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Capabilities",
+					"before": [
+						"Assistant"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetEphemeralVariable",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Default": "-1",
+						"Name": "timeToLive",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "SetPluginInfoCallback",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Capabilities",
+					"before": [
+						"Assistant"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetPluginInfoCallback",
+				"Parameters": [
+					{
+						"Default": "nil",
+						"Name": "function",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "UnregisterCommand",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Capabilities",
+					"before": [
+						"Assistant"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "UnregisterCommand",
+				"Parameters": [
+					{
+						"Name": "commandName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "UnregisterContextCollector",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Capabilities",
+					"before": [
+						"Assistant"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "UnregisterContextCollector",
+				"Parameters": [
+					{
+						"Name": "collectorName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "AttemptSaveAndSendPlaceTelemetry",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Capabilities",
+					"before": [
+						"Assistant"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "AttemptSaveAndSendPlaceTelemetry",
+				"Parameters": [
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "toolSource",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "BindCodeToGuid",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Capabilities",
+					"before": [
+						"Assistant"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "BindCodeToGuid",
+				"Parameters": [
+					{
+						"Name": "runCodeGuid",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "code",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "RunSandboxedCode",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Capabilities",
+					"before": [
+						"Assistant"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "RunSandboxedCode",
+				"Parameters": [
+					{
+						"Name": "runCodeGuid",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "ConversationCleared",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Capabilities",
+					"before": [
+						"Assistant"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "ConversationCleared",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "RequestEnded",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Capabilities",
+					"before": [
+						"Assistant"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "RequestEnded",
+				"Parameters": [
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "RequestError",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Capabilities",
+					"before": [
+						"Assistant"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "RequestError",
+				"Parameters": [
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "errorType",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "errorMessage",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "RequestStarted",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Capabilities",
+					"before": [
+						"Assistant"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "RequestStarted",
+				"Parameters": [
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "queryToProcess",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "SequentialCommandsFinished",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Capabilities",
+					"before": [
+						"Assistant"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "SequentialCommandsFinished",
+				"Parameters": [
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "success",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "Stream",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Capabilities",
+					"before": [
+						"Assistant"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "Stream",
+				"Parameters": [
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "commandName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "streamContent",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TeamCreatePublishService",
+			"member": "TeamCreateErrorStatus",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "TeamCreateErrorStatus",
+				"Parameters": [
+					{
+						"Name": "result",
+						"Type": {
+							"Category": "Enum",
+							"Name": "TeamCreateErrorState"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatService",
+			"member": "CanUsersDirectChatAsync",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Chat"
+				],
+				"MemberType": "Function",
+				"Name": "CanUsersDirectChatAsync",
+				"Parameters": [
+					{
+						"Name": "requesterUserId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "userIds",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "UIDragDetector",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "UIDragDetector",
+				"Superclass": "UIComponent"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchDrag",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "None"
+				}
+			],
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Event",
+				"Name": "TouchDrag",
+				"Parameters": [
+					{
+						"Name": "dragDirection",
+						"Type": {
+							"Category": "Enum",
+							"Name": "SwipeDirection"
+						}
+					},
+					{
+						"Name": "numberOfTouches",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "gameProcessedEvent",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AvatarJointUpgrade",
+			"type": "Remove",
+			"value": {
+				"Name": "AvatarJointUpgrade"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PromptCreateAvatarResult",
+			"item": "UnknownFailure",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 10,
+					"after": 11
+				}
+			],
+			"value": {
+				"Name": "UnknownFailure",
+				"Value": 11
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PromptCreateAvatarResult",
+			"item": "PurchaseFailure",
+			"type": "Add",
+			"value": {
+				"Name": "PurchaseFailure",
+				"Value": 10
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "DraggingScrollBar",
+			"type": "Add",
+			"value": {
+				"Name": "DraggingScrollBar"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DraggingScrollBar",
+			"item": "None",
+			"type": "Add",
+			"value": {
+				"Name": "None",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DraggingScrollBar",
+			"item": "Horizontal",
+			"type": "Add",
+			"value": {
+				"Name": "Horizontal",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DraggingScrollBar",
+			"item": "Vertical",
+			"type": "Add",
+			"value": {
+				"Name": "Vertical",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "TeamCreateErrorState",
+			"type": "Add",
+			"value": {
+				"Name": "TeamCreateErrorState"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TeamCreateErrorState",
+			"item": "PlaceSizeTooLarge",
+			"type": "Add",
+			"value": {
+				"Name": "PlaceSizeTooLarge",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TeamCreateErrorState",
+			"item": "PlaceSizeApproachingLimit",
+			"type": "Add",
+			"value": {
+				"Name": "PlaceSizeApproachingLimit",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TeamCreateErrorState",
+			"item": "NoError",
+			"type": "Add",
+			"value": {
+				"Name": "NoError",
+				"Value": 2
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "Destroying",
+			"part": "description",
+			"before": "Fires immediately before the instance is destroyed via <code>Instance:Destroy()</code>.",
+			"after": "Fires immediately before (or is deferred until after) the instance is destroyed via <code>Instance:Destroy()</code>.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Destroying",
+				"Parameters": [],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "CreateEditableMeshFromPartAsync",
+			"part": "description",
+			"before": "Returns a new <code>EditableMesh</code> instance created from an existing <code>MeshPart</code>.",
+			"after": "<strong>Deprecated:</strong> This function has been deprecated - use <code>AssetService:CreateEditableMeshAsync()</code>.<br>Returns a new <code>EditableMesh</code> instance created from an existing <code>MeshPart</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateEditableMeshFromPartAsync",
+				"Parameters": [
+					{
+						"Name": "meshPart",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Object"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields",
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "CreateEditableMeshAsync",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "SignalBehavior",
+			"part": "description",
+			"before": null,
+			"after": "Configures when the engine resumes event handlers.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "SignalBehavior",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "SignalBehavior"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AtmosphereSensor",
+			"part": "description",
+			"before": "A <code>SensorBase</code> that outputs data about the <code>AirDenstiy</code> and <code>RelativeWindVelocity</code> at the sensor's position.",
+			"after": "A <code>SensorBase</code> that outputs data about the <code>AirDensity</code> and <code>RelativeWindVelocity</code> at the sensor's position."
+		},
+		{
+			"element": "Class",
+			"class": "FluidForceSensor",
+			"part": "description",
+			"before": null,
+			"after": "A <code>SensorBase</code> that outputs <code>Force</code>, <code>Torque</code> and <code>CenterOfPressure</code>."
+		},
+		{
+			"element": "Member",
+			"class": "FluidForceSensor",
+			"member": "CenterOfPressure",
+			"part": "description",
+			"before": null,
+			"after": "Assembly center of pressure offset from its center of mass in world coordinates.",
+			"value": {
+				"Category": "Output",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "CenterOfPressure",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FluidForceSensor",
+			"member": "Force",
+			"part": "description",
+			"before": null,
+			"after": "Assembly fluid force in world coordinates.",
+			"value": {
+				"Category": "Output",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "Force",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FluidForceSensor",
+			"member": "Torque",
+			"part": "description",
+			"before": null,
+			"after": "Assembly fluid torque in world coordinates.",
+			"value": {
+				"Category": "Output",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "Torque",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FluidForceSensor",
+			"member": "EvaluateAsync",
+			"part": "description",
+			"before": null,
+			"after": "Asynchronously computes force, torque, and center of pressure for the parent part of a sensor given provided inputs.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "EvaluateAsync",
+				"Parameters": [
+					{
+						"Name": "linearVelocity",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "angularVelocity",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "cframe",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FluidForceSensor",
+			"member": "EvaluateAsync",
+			"part": "parameter",
+			"parameter": "linearVelocity",
+			"before": null,
+			"after": "Linear velocity in world coordinates.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "EvaluateAsync",
+				"Parameters": [
+					{
+						"Name": "linearVelocity",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "angularVelocity",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "cframe",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FluidForceSensor",
+			"member": "EvaluateAsync",
+			"part": "parameter",
+			"parameter": "angularVelocity",
+			"before": null,
+			"after": "Angular velocity in world coordinates.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "EvaluateAsync",
+				"Parameters": [
+					{
+						"Name": "linearVelocity",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "angularVelocity",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "cframe",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FluidForceSensor",
+			"member": "EvaluateAsync",
+			"part": "parameter",
+			"parameter": "cframe",
+			"before": null,
+			"after": "<code>CFrame</code> to be used for evaluation.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "EvaluateAsync",
+				"Parameters": [
+					{
+						"Name": "linearVelocity",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "angularVelocity",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "cframe",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FluidForceSensor",
+			"member": "EvaluateAsync",
+			"part": "return",
+			"before": null,
+			"after": "Tuple of <code>Force</code>, <code>Torque</code> and <code>CenterOfPressure</code> calculated given the input parameters.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "EvaluateAsync",
+				"Parameters": [
+					{
+						"Name": "linearVelocity",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "angularVelocity",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "cframe",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Stats",
+			"member": "HeartbeatTimeMs",
+			"part": "description",
+			"before": "A measurement of the total amount of time it takes long it takes for Roblox to update all of its Task Scheduler jobs, in milliseconds.",
+			"after": "<strong>Deprecated:</strong> <br>A measurement of the total amount of time it takes long it takes for Roblox to update all of its Task Scheduler jobs, in milliseconds.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "HeartbeatTimeMs",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated",
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Stats",
+			"member": "PhysicsStepTimeMs",
+			"part": "description",
+			"before": "A measurement of how long it takes for the physics engine to update its current state, in milliseconds. If this value is high, then it means the game instance is under stress from the physics simulations taking place.",
+			"after": "<strong>Deprecated:</strong> <br>A measurement of how long it takes for the physics engine to update its current state, in milliseconds. If this value is high, then it means the game instance is under stress from the physics simulations taking place.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "PhysicsStepTimeMs",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated",
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "SignalBehavior",
+			"part": "description",
+			"before": null,
+			"after": "Determines when the engine resumes event handlers."
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SignalBehavior",
+			"item": "Default",
+			"part": "description",
+			"before": null,
+			"after": "The default behavior; currently equivalent to <code>Immediate</code> but this will eventually change to <code>Deferred</code>.",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SignalBehavior",
+			"item": "Immediate",
+			"part": "description",
+			"before": null,
+			"after": "Event handlers are resumed immediately when the event occurs.",
+			"value": {
+				"Name": "Immediate",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SignalBehavior",
+			"item": "Deferred",
+			"part": "description",
+			"before": null,
+			"after": "All events are deferred and their handlers resumed at specific resumptions points each frame.",
+			"value": {
+				"Name": "Deferred",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SignalBehavior",
+			"item": "AncestryDeferred",
+			"part": "description",
+			"before": null,
+			"after": "Equivalent to <code>Deferred</code> but only for events triggered by changes in ancestry.",
+			"value": {
+				"Name": "AncestryDeferred",
+				"Value": 3
+			}
+		}
+	]
+}

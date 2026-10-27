@@ -1,0 +1,2638 @@
+{
+	"from": {
+		"version": "0.601.0.6010507",
+		"hash": "b69d15cafda64a49"
+	},
+	"to": {
+		"version": "0.602.0.6020632",
+		"hash": "b84d300e7e20485c"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "CreateDynamicMeshAsync",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateDynamicMeshAsync",
+				"Parameters": [
+					{
+						"Name": "meshId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "DynamicMesh"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "createDynamicMeshFromPartAsync",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "createDynamicMeshFromPartAsync",
+				"Parameters": [
+					{
+						"Name": "meshPart",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "DynamicMesh"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "CreateEditableMeshAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateEditableMeshAsync",
+				"Parameters": [
+					{
+						"Name": "meshId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "EditableMesh"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "CreateEditableMeshFromPartAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateEditableMeshFromPartAsync",
+				"Parameters": [
+					{
+						"Name": "meshPart",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "EditableMesh"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DynamicMesh",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "DynamicMesh",
+				"Superclass": "DataModelMesh"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScreenGui",
+			"member": "ClipToDeviceSafeArea",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Category": "Appearance",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "ClipToDeviceSafeArea",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScreenGui",
+			"member": "SafeAreaCompatibility",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Category": "Appearance",
+				"Default": "FullscreenExtension",
+				"MemberType": "Property",
+				"Name": "SafeAreaCompatibility",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "SafeAreaCompatibility"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Path2D",
+			"member": "Visible",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Appearance",
+					"after": "Data"
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "Visible",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Path2D",
+			"member": "Color",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "Color",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Path2D",
+			"member": "Thickness",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "Thickness",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Path2D",
+			"member": "GetPositionOnCurve",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPositionOnCurve",
+				"Parameters": [
+					{
+						"Name": "t",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "UDim2"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Path2D",
+			"member": "GetPositionOnCurveArcLength",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPositionOnCurveArcLength",
+				"Parameters": [
+					{
+						"Name": "t",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "UDim2"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Path2D",
+			"member": "GetSegmentCount",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetSegmentCount",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Path2D",
+			"member": "GetTangentOnCurve",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetTangentOnCurve",
+				"Parameters": [
+					{
+						"Name": "t",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Path2D",
+			"member": "GetTangentOnCurveArcLength",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetTangentOnCurveArcLength",
+				"Parameters": [
+					{
+						"Name": "t",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarkerCurve",
+			"member": "ValuesAndTimes",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "",
+					"after": "\u0001"
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "\u0001",
+				"MemberType": "Property",
+				"Name": "ValuesAndTimes",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "BinaryString"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialGenerationService",
+			"member": "GenerateMaterialVariantsAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GenerateMaterialVariantsAsync",
+				"Parameters": [
+					{
+						"Name": "prompt",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "samples",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialGenerationService",
+			"member": "UploadMaterialVariantsAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UploadMaterialVariantsAsync",
+				"Parameters": [
+					{
+						"Name": "materialVaraints",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MeshPart",
+			"member": "DynamicMeshData",
+			"type": "Remove",
+			"value": {
+				"Category": "Appearance",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "DynamicMeshData",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "SharedString"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MeshPart",
+			"member": "EditableMeshString",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "EditableMeshString",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "SharedString"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RibbonNotificationService",
+			"member": "ToggleNotificationTray",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "checked",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "checked",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "newNotificationAvailable",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "ToggleNotificationTray",
+				"Parameters": [
+					{
+						"Name": "checked",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "newNotificationAvailable",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "PromptIrisInvite",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptIrisInvite",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "tag",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "CanSendIrisInviteAsync",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CanSendIrisInviteAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "IrisInvitePromptClosed",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "IrisInvitePromptClosed",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "OnIrisInviteInvoked",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Callback",
+				"Name": "OnIrisInviteInvoked",
+				"Parameters": [
+					{
+						"Name": "tag",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "irisParticipantIds",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "RequestError",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "requestId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "errorMessage",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "requestId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "errorType",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "errorMessage",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "RequestError",
+				"Parameters": [
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "errorType",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "errorMessage",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "SetPluginInfoCallback",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetPluginInfoCallback",
+				"Parameters": [
+					{
+						"Default": "nil",
+						"Name": "function",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioAssetService",
+			"member": "RequestAvatarAutosetupAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RequestAvatarAutosetupAsync",
+				"Parameters": [
+					{
+						"Name": "meshId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					},
+					{
+						"Name": "textureId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					},
+					{
+						"Name": "progressCallback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioPublishService",
+			"member": "GamePublishFinished",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "success",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "gameId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "message",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "success",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "gameId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "message",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "reason",
+							"Type": {
+								"Category": "Enum",
+								"Name": "StudioPlaceUpdateFailureReason"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "GamePublishFinished",
+				"Parameters": [
+					{
+						"Name": "success",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "gameId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "reason",
+						"Type": {
+							"Category": "Enum",
+							"Name": "StudioPlaceUpdateFailureReason"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UGCValidationService",
+			"member": "RegisterUGCValidationFunction",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterUGCValidationFunction",
+				"Parameters": [
+					{
+						"Name": "setFunction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UGCValidationService",
+			"member": "ValidateEditableImageSize",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ValidateEditableImageSize",
+				"Parameters": [
+					{
+						"Name": "editableImage",
+						"Type": {
+							"Category": "Class",
+							"Name": "EditableImage"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AccountService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AccountService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AccountService",
+			"member": "DeviceIntegrityAvailable",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DeviceIntegrityAvailable",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AccountService",
+			"member": "GetDeviceIntegrityToken",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetDeviceIntegrityToken",
+				"Parameters": [
+					{
+						"Name": "data",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "EditableMesh",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "EditableMesh",
+				"Superclass": "DataModelMesh"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "MeshData",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "MeshData",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "SharedString"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "MeshVersion",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "MeshVersion",
+				"Security": {
+					"Read": "None",
+					"Write": "NotAccessibleSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "AddTriangle",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddTriangle",
+				"Parameters": [
+					{
+						"Name": "vertexId0",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "vertexId1",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "vertexId2",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "AddVertex",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddVertex",
+				"Parameters": [
+					{
+						"Name": "p",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "FindClosestPointOnSurface",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindClosestPointOnSurface",
+				"Parameters": [
+					{
+						"Name": "point",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "FindClosestVertex",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindClosestVertex",
+				"Parameters": [
+					{
+						"Name": "toThisPoint",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "FindVerticesWithinSphere",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindVerticesWithinSphere",
+				"Parameters": [
+					{
+						"Name": "center",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "radius",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetAdjacentTriangles",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAdjacentTriangles",
+				"Parameters": [
+					{
+						"Name": "triangleId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetAdjacentVertices",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAdjacentVertices",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetPosition",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPosition",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetTriangleVertices",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetTriangleVertices",
+				"Parameters": [
+					{
+						"Name": "triangleId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetTriangles",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetTriangles",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetUV",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetUV",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexColor",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexColor",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexColorAlpha",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexColorAlpha",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexNormal",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexNormal",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertices",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertices",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "Raycast",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Raycast",
+				"Parameters": [
+					{
+						"Name": "origin",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "direction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "RemoveTriangle",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RemoveTriangle",
+				"Parameters": [
+					{
+						"Name": "triangleId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "RemoveVertex",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RemoveVertex",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetPosition",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetPosition",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "p",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetUV",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetUV",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "uv",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetVertexColor",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetVertexColor",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "color",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Color3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetVertexColorAlpha",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetVertexColorAlpha",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "alpha",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetVertexNormal",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetVertexNormal",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "vnormal",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "CreateMeshPartAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateMeshPartAsync",
+				"Parameters": [
+					{
+						"Name": "collisionFidelity",
+						"Type": {
+							"Category": "Enum",
+							"Name": "CollisionFidelity"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "MeshPart"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AlignType",
+			"item": "Parallel",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Name": "Parallel",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AlignType",
+			"item": "Perpendicular",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Name": "Perpendicular",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AlignType",
+			"item": "PrimaryAxisParallel",
+			"type": "Add",
+			"value": {
+				"Name": "PrimaryAxisParallel",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AlignType",
+			"item": "PrimaryAxisPerpendicular",
+			"type": "Add",
+			"value": {
+				"Name": "PrimaryAxisPerpendicular",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AlignType",
+			"item": "PrimaryAxisLookAt",
+			"type": "Add",
+			"value": {
+				"Name": "PrimaryAxisLookAt",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AlignType",
+			"item": "AllAxes",
+			"type": "Add",
+			"value": {
+				"Name": "AllAxes",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "ReplacementReady",
+			"type": "Add",
+			"value": {
+				"Name": "ReplacementReady",
+				"Value": 301
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "PromptCreateAvatarResult",
+			"type": "Add",
+			"value": {
+				"Name": "PromptCreateAvatarResult"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PromptCreateAvatarResult",
+			"item": "Success",
+			"type": "Add",
+			"value": {
+				"Name": "Success",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PromptCreateAvatarResult",
+			"item": "PermissionDenied",
+			"type": "Add",
+			"value": {
+				"Name": "PermissionDenied",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PromptCreateAvatarResult",
+			"item": "Timeout",
+			"type": "Add",
+			"value": {
+				"Name": "Timeout",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PromptCreateAvatarResult",
+			"item": "UploadFailed",
+			"type": "Add",
+			"value": {
+				"Name": "UploadFailed",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PromptCreateAvatarResult",
+			"item": "NoUserInput",
+			"type": "Add",
+			"value": {
+				"Name": "NoUserInput",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PromptCreateAvatarResult",
+			"item": "InvalidHumanoidDescription",
+			"type": "Add",
+			"value": {
+				"Name": "InvalidHumanoidDescription",
+				"Value": 6
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PromptCreateAvatarResult",
+			"item": "UGCValidationFailed",
+			"type": "Add",
+			"value": {
+				"Name": "UGCValidationFailed",
+				"Value": 7
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PromptCreateAvatarResult",
+			"item": "ModeratedName",
+			"type": "Add",
+			"value": {
+				"Name": "ModeratedName",
+				"Value": 8
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PromptCreateAvatarResult",
+			"item": "MaxOutfits",
+			"type": "Add",
+			"value": {
+				"Name": "MaxOutfits",
+				"Value": 9
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PromptCreateAvatarResult",
+			"item": "UnknownFailure",
+			"type": "Add",
+			"value": {
+				"Name": "UnknownFailure",
+				"Value": 10
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "StudioPlaceUpdateFailureReason",
+			"type": "Add",
+			"value": {
+				"Name": "StudioPlaceUpdateFailureReason"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioPlaceUpdateFailureReason",
+			"item": "Other",
+			"type": "Add",
+			"value": {
+				"Name": "Other",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioPlaceUpdateFailureReason",
+			"item": "TeamCreateConflict",
+			"type": "Add",
+			"value": {
+				"Name": "TeamCreateConflict",
+				"Value": 1
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "LinearVelocity",
+			"member": "ForceLimitsEnabled",
+			"part": "description",
+			"before": null,
+			"after": "Determines if the constraint force will be limited or if the physics solver can apply an unlimited force to achieve the target velocity.",
+			"value": {
+				"Category": "Mode",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "ForceLimitsEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LinearVelocity",
+			"member": "MaxAxesForce",
+			"part": "description",
+			"before": "Maximum force along each axis that the constraint can apply to achieve the vector velocity. Only used if <code>ForceLimitMode</code> is <code>PerAxis</code> and <code>VelocityConstraintMode</code> is <code>Vector</code>.",
+			"after": "Maximum force along each axis that the constraint can apply to achieve the vector velocity. Only used if <code>ForceLimitsEnabled</code> is true, <code>ForceLimitMode</code> is <code>PerAxis</code>, and <code>VelocityConstraintMode</code> is <code>Vector</code>.",
+			"value": {
+				"Category": "Limits",
+				"Default": "1000, 1000, 1000",
+				"MemberType": "Property",
+				"Name": "MaxAxesForce",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LinearVelocity",
+			"member": "MaxPlanarAxesForce",
+			"part": "description",
+			"before": "Maximum force along each axis that the constraint can apply to achieve the plane velocity. Only used if <code>ForceLimitMode</code> is <code>PerAxis</code> and <code>VelocityConstraintMode</code> is <code>Plane</code>.",
+			"after": "Maximum force along each axis that the constraint can apply to achieve the plane velocity. Only used if <code>ForceLimitsEnabled</code> is true, <code>ForceLimitMode</code> is <code>PerAxis</code>, and <code>VelocityConstraintMode</code> is <code>Plane</code>.",
+			"value": {
+				"Category": "Limits",
+				"Default": "1000, 1000",
+				"MemberType": "Property",
+				"Name": "MaxPlanarAxesForce",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContentProvider",
+			"member": "PreloadAsync",
+			"part": "description",
+			"before": "Yields until all of the assets associated with the given <code>Instances</code> or <code>Content</code> strings have loaded.",
+			"after": "Yields until all of the assets associated with the given <code>Instances</code> have loaded.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PreloadAsync",
+				"Parameters": [
+					{
+						"Name": "contentIdList",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "callbackFunction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreSortedMap",
+			"member": "GetAsync",
+			"part": "description",
+			"before": "Retrieves the value of a key in the sorted map.",
+			"after": "Retrieves the value and sort key of a key in the sorted map.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreSortedMap",
+			"member": "GetAsync",
+			"part": "return",
+			"before": "Key value, or nil -- if there's no item with the specified key.",
+			"after": "A tuple of two values:   - Key value, or nil -- if there's no item with the specified key.   - Sort key, or nil -- if there's no sort key associated with the specified key.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreSortedMap",
+			"member": "GetRangeAsync",
+			"part": "parameter",
+			"parameter": "exclusiveLowerBound",
+			"before": "<strong>(Optional)</strong> Lower bound, exclusive, for the returned keys.",
+			"after": "<strong>(Optional)</strong> Lower bound, exclusive, for the returned keys. This is provided as a table where one or both of Key and sort key can be specified: {   key: string, sortKey: Variant }",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRangeAsync",
+				"Parameters": [
+					{
+						"Name": "direction",
+						"Type": {
+							"Category": "Enum",
+							"Name": "SortDirection"
+						}
+					},
+					{
+						"Name": "count",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "exclusiveLowerBound",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "exclusiveUpperBound",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreSortedMap",
+			"member": "GetRangeAsync",
+			"part": "parameter",
+			"parameter": "exclusiveUpperBound",
+			"before": "<strong>(Optional)</strong> Upper bound, exclusive, for the returned keys.",
+			"after": "<strong>(Optional)</strong> Upper bound, exclusive, for the returned keys. This is provided as a table where one or both of Key and sort key can be specified: {   key: string, sortKey: Variant }",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRangeAsync",
+				"Parameters": [
+					{
+						"Name": "direction",
+						"Type": {
+							"Category": "Enum",
+							"Name": "SortDirection"
+						}
+					},
+					{
+						"Name": "count",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "exclusiveLowerBound",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "exclusiveUpperBound",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreSortedMap",
+			"member": "GetRangeAsync",
+			"part": "return",
+			"before": "Item keys and values in the requested range.",
+			"after": "Item keys, values and sort keys in the requested range.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRangeAsync",
+				"Parameters": [
+					{
+						"Name": "direction",
+						"Type": {
+							"Category": "Enum",
+							"Name": "SortDirection"
+						}
+					},
+					{
+						"Name": "count",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "exclusiveLowerBound",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "exclusiveUpperBound",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreSortedMap",
+			"member": "SetAsync",
+			"part": "parameter",
+			"parameter": "sortKey",
+			"before": null,
+			"after": "<strong>(Optional)</strong> Sort key to set for this key. Accepted types are a number (integer or decimal) or a string.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "expiration",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "sortKey",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreSortedMap",
+			"member": "UpdateAsync",
+			"part": "description",
+			"before": "Retrieves the value of a key from a sorted map and updates it with a new value.",
+			"after": "Retrieves the value and sort key of a key from a sorted map and updates it with a new value and sort key.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UpdateAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "transformFunction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					},
+					{
+						"Name": "expiration",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreSortedMap",
+			"member": "UpdateAsync",
+			"part": "parameter",
+			"parameter": "transformFunction",
+			"before": "A function which you need to provide. The function takes the key's old value as input and returns the new value.",
+			"after": "A function which you need to provide. The function takes the key's old value and old sort key as input and returns the new value and new sort key.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UpdateAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "transformFunction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					},
+					{
+						"Name": "expiration",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreSortedMap",
+			"member": "UpdateAsync",
+			"part": "return",
+			"before": "The return value is the last value returned by the transform function.",
+			"after": "The return value is a tuple of the last value and sort key returned by the transform function.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UpdateAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "transformFunction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					},
+					{
+						"Name": "expiration",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "EasingStyle",
+			"item": "Circular",
+			"part": "description",
+			"before": "Follows a circlular arc, slowing down as tween approaches the target.",
+			"after": "Follows a circular arc, slowing down as tween approaches the target.",
+			"value": {
+				"Name": "Circular",
+				"Value": 9
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RotationOrder",
+			"item": "XYZ",
+			"part": "description",
+			"before": "Applies rotations in order X, Y, Z.",
+			"after": "X, Y, Z order.",
+			"value": {
+				"Name": "XYZ",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RotationOrder",
+			"item": "XZY",
+			"part": "description",
+			"before": "Applies rotations in order X, Z, Y.",
+			"after": "X, Z, Y order.",
+			"value": {
+				"Name": "XZY",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RotationOrder",
+			"item": "YZX",
+			"part": "description",
+			"before": "Applies rotations in order Y, Z, X.",
+			"after": "Y, Z, X order.",
+			"value": {
+				"Name": "YZX",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RotationOrder",
+			"item": "YXZ",
+			"part": "description",
+			"before": "Applies rotations in order Y, X, Z.",
+			"after": "Y, X, Z order.",
+			"value": {
+				"Name": "YXZ",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RotationOrder",
+			"item": "ZXY",
+			"part": "description",
+			"before": "Applies rotations in order Z, X, Y.",
+			"after": "Z, X, Y order.",
+			"value": {
+				"Name": "ZXY",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RotationOrder",
+			"item": "ZYX",
+			"part": "description",
+			"before": "Applies rotations in order Z, Y, X.",
+			"after": "Z, Y, X order.",
+			"value": {
+				"Name": "ZYX",
+				"Value": 5
+			}
+		}
+	]
+}

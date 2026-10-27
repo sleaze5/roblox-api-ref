@@ -1,0 +1,3535 @@
+{
+	"from": {
+		"version": "0.600.1.6000716",
+		"hash": "2eb55fb1b29347c9"
+	},
+	"to": {
+		"version": "0.601.0.6010507",
+		"hash": "b69d15cafda64a49"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "CreateDynamicImageAsync",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateDynamicImageAsync",
+				"Parameters": [
+					{
+						"Name": "textureId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "DynamicImage"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "CreateEditableImageAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateEditableImageAsync",
+				"Parameters": [
+					{
+						"Name": "textureId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "EditableImage"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "createDynamicMeshFromPartAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "createDynamicMeshFromPartAsync",
+				"Parameters": [
+					{
+						"Name": "meshPart",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "DynamicMesh"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "SaveCaptureToExternalStorage",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SaveCaptureToExternalStorage",
+				"Parameters": [
+					{
+						"Name": "capturePath",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatbotUIService",
+			"member": "GetSettings",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetSettings",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatbotUIService",
+			"member": "ActionActivatedSignal",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ActionActivatedSignal",
+				"Parameters": [
+					{
+						"Name": "action",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatbotUIService",
+			"member": "FindVariationsSignal",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "FindVariationsSignal",
+				"Parameters": [
+					{
+						"Name": "action",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatbotUIService",
+			"member": "SettingChangedSignal",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "SettingChangedSignal",
+				"Parameters": [
+					{
+						"Name": "setting",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatbotUIService",
+			"member": "ShiftToAssetIdSignal",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ShiftToAssetIdSignal",
+				"Parameters": [
+					{
+						"Name": "action",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "change",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatbotUIService",
+			"member": "ShiftVariationSignal",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ShiftVariationSignal",
+				"Parameters": [
+					{
+						"Name": "action",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "change",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DynamicImage",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "DynamicImage",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MeshPart",
+			"member": "DynamicMeshData",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "DynamicMeshData",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "SharedString"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PackageLink",
+			"member": "DefaultName",
+			"type": "Add",
+			"value": {
+				"Category": "Link",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "DefaultName",
+				"Security": {
+					"Read": "None",
+					"Write": "NotAccessibleSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PackageLink",
+			"member": "SerializedDefaultAttributes",
+			"type": "Add",
+			"value": {
+				"Category": "Link",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "SerializedDefaultAttributes",
+				"Security": {
+					"Read": "None",
+					"Write": "NotAccessibleSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "BinaryString"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "RemoteEvent",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Superclass",
+					"before": "Instance",
+					"after": "BaseRemoteEvent"
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "RemoteEvent",
+				"Superclass": "BaseRemoteEvent"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RibbonNotificationService",
+			"member": "NewNotificationFromPlugin",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "NewNotificationFromPlugin",
+				"Parameters": [
+					{
+						"Name": "notificationId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RibbonNotificationService",
+			"member": "NewNotificationFromPlugin2",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "NewNotificationFromPlugin2",
+				"Parameters": [
+					{
+						"Name": "notificationId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RibbonNotificationService",
+			"member": "NewNotificationFromRibbon",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "notificationId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "newNotificationId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "NewNotificationFromRibbon",
+				"Parameters": [
+					{
+						"Name": "newNotificationId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RibbonNotificationService",
+			"member": "NewNotificationId",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "NewNotificationId",
+				"Parameters": [
+					{
+						"Name": "notificationId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RibbonNotificationService",
+			"member": "OnNotificationUpdateFromPlugin",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "OnNotificationUpdateFromPlugin",
+				"Parameters": [
+					{
+						"Name": "newNotificationId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "seenNotificationId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RibbonNotificationService",
+			"member": "ToggleNotificationTray",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ToggleNotificationTray",
+				"Parameters": [
+					{
+						"Name": "checked",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RomarkService",
+			"member": "EndRemoteRomarkTest",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "None"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "EndRemoteRomarkTest",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "EmitterSize",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated",
+						{
+							"PreferredDescriptorName": "RollOffMinDistance",
+							"ThreadSafety": "Unknown"
+						}
+					]
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "10",
+				"MemberType": "Property",
+				"Name": "EmitterSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "RollOffMinDistance",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "MaxDistance",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated",
+						{
+							"PreferredDescriptorName": "RollOffMaxDistance",
+							"ThreadSafety": "Unknown"
+						}
+					]
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "10000",
+				"MemberType": "Property",
+				"Name": "MaxDistance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "RollOffMaxDistance",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "MinDistance",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated",
+						{
+							"PreferredDescriptorName": "RollOffMinDistance",
+							"ThreadSafety": "Unknown"
+						}
+					]
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "10",
+				"MemberType": "Property",
+				"Name": "MinDistance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "RollOffMinDistance",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "xmlRead_MaxDistance_3",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Hidden",
+						"NotReplicated",
+						"NotScriptable"
+					],
+					"after": [
+						"Hidden",
+						"NotReplicated",
+						"NotScriptable",
+						"Deprecated",
+						{
+							"PreferredDescriptorName": "RollOffMaxDistance",
+							"ThreadSafety": "Unknown"
+						}
+					]
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "10000",
+				"MemberType": "Property",
+				"Name": "xmlRead_MaxDistance_3",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated",
+					"NotScriptable",
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "RollOffMaxDistance",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "xmlRead_MinDistance_3",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Hidden",
+						"NotReplicated",
+						"NotScriptable"
+					],
+					"after": [
+						"Hidden",
+						"NotReplicated",
+						"NotScriptable",
+						"Deprecated",
+						{
+							"PreferredDescriptorName": "RollOffMinDistance",
+							"ThreadSafety": "Unknown"
+						}
+					]
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "10",
+				"MemberType": "Property",
+				"Name": "xmlRead_MinDistance_3",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated",
+					"NotScriptable",
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "RollOffMinDistance",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "RequestStarted",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "requestId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "requestId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "queryToProcess",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "RequestStarted",
+				"Parameters": [
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "queryToProcess",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "GetEphemeralVariable",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetEphemeralVariable",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "InvokeCommand",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "InvokeCommand",
+				"Parameters": [
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "commandName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "arg",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "RegisterSequentialCommand",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterSequentialCommand",
+				"Parameters": [
+					{
+						"Name": "commandName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "function",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "SetEphemeralVariable",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetEphemeralVariable",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Default": "-1",
+						"Name": "timeToLive",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "SequentialCommandsFinished",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "SequentialCommandsFinished",
+				"Parameters": [
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "success",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioAssetService",
+			"member": "ShowSaveToRoblox",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "instances",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Objects"
+							}
+						},
+						{
+							"Name": "assetType",
+							"Type": {
+								"Category": "Group",
+								"Name": "Variant"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "instances",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Objects"
+							}
+						},
+						{
+							"Name": "assetType",
+							"Type": {
+								"Category": "Group",
+								"Name": "Variant"
+							}
+						},
+						{
+							"Default": "false",
+							"Name": "hasSubsequent",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "ShowSaveToRoblox",
+				"Parameters": [
+					{
+						"Name": "instances",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					},
+					{
+						"Name": "assetType",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Default": "false",
+						"Name": "hasSubsequent",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioAssetService",
+			"member": "OnSaveToRoblox",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "instances",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Objects"
+							}
+						},
+						{
+							"Name": "assetType",
+							"Type": {
+								"Category": "Group",
+								"Name": "Variant"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "instances",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Objects"
+							}
+						},
+						{
+							"Name": "assetType",
+							"Type": {
+								"Category": "Group",
+								"Name": "Variant"
+							}
+						},
+						{
+							"Name": "hasSubsequent",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnSaveToRoblox",
+				"Parameters": [
+					{
+						"Name": "instances",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					},
+					{
+						"Name": "assetType",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "hasSubsequent",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioAssetService",
+			"member": "FireOnUGCSubmitCompleted",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FireOnUGCSubmitCompleted",
+				"Parameters": [
+					{
+						"Name": "cancelled",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioAssetService",
+			"member": "OnUGCSubmitCompleted",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnUGCSubmitCompleted",
+				"Parameters": [
+					{
+						"Name": "cancelled",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "BaseRemoteEvent",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "BaseRemoteEvent",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "UnreliableRemoteEvent",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "UnreliableRemoteEvent",
+				"Superclass": "BaseRemoteEvent",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UnreliableRemoteEvent",
+			"member": "FireAllClients",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FireAllClients",
+				"Parameters": [
+					{
+						"Name": "arguments",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UnreliableRemoteEvent",
+			"member": "FireClient",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FireClient",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "arguments",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UnreliableRemoteEvent",
+			"member": "FireServer",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FireServer",
+				"Parameters": [
+					{
+						"Name": "arguments",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UnreliableRemoteEvent",
+			"member": "OnClientEvent",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnClientEvent",
+				"Parameters": [
+					{
+						"Name": "arguments",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UnreliableRemoteEvent",
+			"member": "OnServerEvent",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnServerEvent",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "arguments",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "EditableImage",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "EditableImage",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableImage",
+			"member": "ImageData",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "ImageData",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "BinaryString"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableImage",
+			"member": "Size",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "512, 512",
+				"MemberType": "Property",
+				"Name": "Size",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableImage",
+			"member": "Copy",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Copy",
+				"Parameters": [
+					{
+						"Name": "min",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "max",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "EditableImage"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableImage",
+			"member": "Crop",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Crop",
+				"Parameters": [
+					{
+						"Name": "min",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "max",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableImage",
+			"member": "DrawCircle",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DrawCircle",
+				"Parameters": [
+					{
+						"Name": "center",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "radius",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "color",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Color3"
+						}
+					},
+					{
+						"Name": "transparency",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableImage",
+			"member": "DrawImage",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DrawImage",
+				"Parameters": [
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "image",
+						"Type": {
+							"Category": "Class",
+							"Name": "EditableImage"
+						}
+					},
+					{
+						"Name": "combineType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ImageCombineType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableImage",
+			"member": "DrawLine",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DrawLine",
+				"Parameters": [
+					{
+						"Name": "p1",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "p2",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "color",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Color3"
+						}
+					},
+					{
+						"Name": "transparency",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableImage",
+			"member": "DrawRectangle",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DrawRectangle",
+				"Parameters": [
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "size",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "color",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Color3"
+						}
+					},
+					{
+						"Name": "transparency",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableImage",
+			"member": "ReadPixels",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ReadPixels",
+				"Parameters": [
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "size",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableImage",
+			"member": "Resize",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Resize",
+				"Parameters": [
+					{
+						"Name": "size",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableImage",
+			"member": "Rotate",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Rotate",
+				"Parameters": [
+					{
+						"Name": "degrees",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "changeSize",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableImage",
+			"member": "WritePixels",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "WritePixels",
+				"Parameters": [
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "size",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "pixels",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Path2D",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "Path2D",
+				"Superclass": "GuiBase",
+				"Tags": [
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Path2D",
+			"member": "AbsoluteSize",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0, 0",
+				"MemberType": "Property",
+				"Name": "AbsoluteSize",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Path2D",
+			"member": "Position",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "{0, 0}, {0, 0}",
+				"MemberType": "Property",
+				"Name": "Position",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "UDim2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Path2D",
+			"member": "SelectedControlPoint",
+			"type": "Add",
+			"value": {
+				"Category": "Control Points",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "SelectedControlPoint",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Path2D",
+			"member": "Visible",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "Visible",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Path2D",
+			"member": "GetControlPoints",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetControlPoints",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Path2D",
+			"member": "SetControlPoints",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetControlPoints",
+				"Parameters": [
+					{
+						"Name": "controlPoints",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CoreGuiType",
+			"item": "Captures",
+			"type": "Add",
+			"value": {
+				"Name": "Captures",
+				"Value": 7
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Class",
+			"class": "AvatarImportService",
+			"part": "description",
+			"before": "Roblox uses this service internally to handle the import of animations and avatars to RobloxStudio.",
+			"after": null
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "SetDragStyleFunction",
+			"part": "parameter",
+			"parameter": "function",
+			"before": "Function for monitoring <code>DragContinue</code> signals. This function receives the signal's world space cursor ray and it returns a <code>CFrame</code> containing the desired location and orientation of the pivot in world space.",
+			"after": "Function for monitoring <code>DragContinue</code> signals. This function receives the signal's world space cursor ray and it returns a <code>CFrame</code> containing the desired location and orientation of the pivot in world space. If the function returns <code>nil</code>, the object will not be moved.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetDragStyleFunction",
+				"Parameters": [
+					{
+						"Name": "function",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "CorePackages",
+			"part": "description",
+			"before": "An internal service which stores <code>ModuleScript</code>s used by Roblox's <code>CoreScript</code>s.",
+			"after": null
+		},
+		{
+			"element": "Class",
+			"class": "DebuggerBreakpoint",
+			"part": "description",
+			"before": "Represents a breakpoint in Roblox's Lua Debugger. This object cannot be created, but it can be retrieved from the <code>ScriptDebugger</code> class.",
+			"after": null
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerBreakpoint",
+			"member": "Condition",
+			"part": "description",
+			"before": "The condition of the debugger breakpoint.",
+			"after": null,
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "Condition",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerBreakpoint",
+			"member": "ContinueExecution",
+			"part": "description",
+			"before": "Whether or not to continue execution when breakpoint is hit.",
+			"after": null,
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "ContinueExecution",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerBreakpoint",
+			"member": "IsEnabled",
+			"part": "description",
+			"before": "Whether or not the breakpoint is enabled.",
+			"after": null,
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "IsEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerBreakpoint",
+			"member": "Line",
+			"part": "description",
+			"before": "The line that the breakpoint has been placed on.",
+			"after": null,
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "Line",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerBreakpoint",
+			"member": "LogExpression",
+			"part": "description",
+			"before": "An expression to log into the Output window.",
+			"after": null,
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "LogExpression",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerBreakpoint",
+			"member": "isContextDependentBreakpoint",
+			"part": "description",
+			"before": "Whether the breakpoint is unique for a single script instance or not.",
+			"after": null,
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "isContextDependentBreakpoint",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DebuggerManager",
+			"part": "description",
+			"before": "A singleton class to interact with and control the Lua Debugger.",
+			"after": null
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerManager",
+			"member": "DebuggingEnabled",
+			"part": "description",
+			"before": "Whether the debugger is enabled or disabled.",
+			"after": null,
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "DebuggingEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerManager",
+			"member": "AddDebugger",
+			"part": "description",
+			"before": "Registers a script to be used in the Lua Debugger. Returns a <code>ScriptDebugger</code> for the script.",
+			"after": null,
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddDebugger",
+				"Parameters": [
+					{
+						"Name": "script",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerManager",
+			"member": "EnableDebugging",
+			"part": "description",
+			"before": "Enables the DebuggerManager.",
+			"after": null,
+			"value": {
+				"MemberType": "Function",
+				"Name": "EnableDebugging",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "LocalUserSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerManager",
+			"member": "GetDebuggers",
+			"part": "description",
+			"before": "Returns a list of <code>ScriptDebugger</code> present in the experience.",
+			"after": null,
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetDebuggers",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerManager",
+			"member": "Resume",
+			"part": "description",
+			"before": "Resumes the Lua Debugger if it is paused.",
+			"after": null,
+			"value": {
+				"MemberType": "Function",
+				"Name": "Resume",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerManager",
+			"member": "StepIn",
+			"part": "description",
+			"before": "Performs a Lua Debugger step into operation on the Lua Debugger.",
+			"after": null,
+			"value": {
+				"MemberType": "Function",
+				"Name": "StepIn",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerManager",
+			"member": "StepOut",
+			"part": "description",
+			"before": "Performs a Lua Debugger step out operation on the Lua Debugger.",
+			"after": null,
+			"value": {
+				"MemberType": "Function",
+				"Name": "StepOut",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerManager",
+			"member": "StepOver",
+			"part": "description",
+			"before": "Performs a Lua Debugger step over operation on the Lua Debugger.",
+			"after": null,
+			"value": {
+				"MemberType": "Function",
+				"Name": "StepOver",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerManager",
+			"member": "DebuggerAdded",
+			"part": "description",
+			"before": "Fires when a new <code>ScriptDebugger</code> is created through the <code>DebuggerManager:AddDebugger()</code> method.",
+			"after": null,
+			"value": {
+				"MemberType": "Event",
+				"Name": "DebuggerAdded",
+				"Parameters": [
+					{
+						"Name": "debugger",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerManager",
+			"member": "DebuggerRemoved",
+			"part": "description",
+			"before": "Fires when a registered <code>ScriptDebugger</code> has been discontinued.",
+			"after": null,
+			"value": {
+				"MemberType": "Event",
+				"Name": "DebuggerRemoved",
+				"Parameters": [
+					{
+						"Name": "debugger",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DebuggerWatch",
+			"part": "description",
+			"before": "Represents a watch in Roblox's Lua Debugger.",
+			"after": null
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerWatch",
+			"member": "Expression",
+			"part": "description",
+			"before": "The expression set for the DebuggerWatch.",
+			"after": null,
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "Expression",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "FlyweightService",
+			"part": "description",
+			"before": "Internal service with no functionality available to developers.",
+			"after": null
+		},
+		{
+			"element": "Class",
+			"class": "CSGDictionaryService",
+			"part": "description",
+			"before": "CSGDictionaryService is an internal service that stores a cache of <code>BinaryStringValue</code> objects, each value representing a unique data set for solid modeling data.",
+			"after": null
+		},
+		{
+			"element": "Class",
+			"class": "NonReplicatedCSGDictionaryService",
+			"part": "description",
+			"before": "A version of the <code>CSGDictionaryService</code> that does not replicate to clients.",
+			"after": null
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "CalculateConstraintsToPreserve",
+			"part": "parameter",
+			"parameter": "options",
+			"before": "Options table for the method: - <code>tolerance</code> – The distance tolerance, in regards to <code>Attachment</code> preservation, between the attachment and the closest point on the original part's surface versus the closest point on the resulting part's surface. If the resulting distance following the solid modeling operation is greater than this value, the <code>Parent</code> of attachments and their associated constraints will be <code>nil</code> in the returned recommendation table. - <code>weldConstraintPreserve</code> – A <code>WeldConstraintPreserve</code> enum value describing how <code>WeldConstraints</code> are preserved in the resulting recommendation table.",
+			"after": "Options table for the method: <ul> <li><code>tolerance</code> – The distance tolerance, in regards to   <code>Attachment</code> preservation, between the attachment and the   closest point on the original part's surface versus the closest   point on the resulting part's surface. If the resulting distance   following the solid modeling operation is greater than this value,   the <code>Parent</code> of attachments and their   associated constraints will be <code>nil</code> in the returned recommendation   table.</li> <li><code>weldConstraintPreserve</code> – A <code>WeldConstraintPreserve</code> enum   value describing how <code>WeldConstraints</code> are   preserved in the resulting recommendation table.</li> </ul>",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CalculateConstraintsToPreserve",
+				"Parameters": [
+					{
+						"Name": "source",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "destination",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "IntersectAsync",
+			"part": "parameter",
+			"parameter": "options",
+			"before": "Options table containing all the controls for the method: - <code>CollisionFidelity</code> – The value of <code>CollisionFidelity</code> in the resulting parts. - <code>RenderFidelity</code> – The value of <code>RenderFidelity</code> in the resulting parts. - <code>SplitApart</code> – Boolean controlling whether the objects should all be kept together or properly split apart. Default is <code>true</code> (split).",
+			"after": "Options table containing all the controls for the method: <ul> <li><code>CollisionFidelity</code> – The value of   <code>CollisionFidelity</code> in the   resulting parts.</li> <li><code>RenderFidelity</code> – The value of   <code>RenderFidelity</code> in the resulting   parts.</li> <li><code>SplitApart</code> – Boolean controlling whether the objects should all be   kept together or properly split apart. Default is <code>true</code> (split).</li> </ul>",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IntersectAsync",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "SubtractAsync",
+			"part": "parameter",
+			"parameter": "options",
+			"before": "Options table containing all the controls for the method: - <code>CollisionFidelity</code> – The value of <code>CollisionFidelity</code> in the resulting parts. - <code>RenderFidelity</code> – The value of <code>RenderFidelity</code> in the resulting parts. - <code>SplitApart</code> – Boolean controlling whether the objects should all be kept together or properly split apart. Default is <code>true</code> (split).",
+			"after": "Options table containing all the controls for the method: <ul> <li><code>CollisionFidelity</code> – The value of   <code>CollisionFidelity</code> in the   resulting parts.</li> <li><code>RenderFidelity</code> – The value of   <code>RenderFidelity</code> in the resulting   parts.</li> <li><code>SplitApart</code> – Boolean controlling whether the objects should all be   kept together or properly split apart. Default is <code>true</code> (split).</li> </ul>",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SubtractAsync",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "UnionAsync",
+			"part": "parameter",
+			"parameter": "options",
+			"before": "Options table containing all the controls for the method: - <code>CollisionFidelity</code> – The value of <code>CollisionFidelity</code> in the resulting parts. - <code>RenderFidelity</code> – The value of <code>RenderFidelity</code> in the resulting parts. - <code>SplitApart</code> – Boolean controlling whether the objects should all be kept together or properly split apart. Default is <code>true</code> (split).",
+			"after": "Options table containing all the controls for the method: <ul> <li><code>CollisionFidelity</code> – The value of   <code>CollisionFidelity</code> in the   resulting parts.</li> <li><code>RenderFidelity</code> – The value of   <code>RenderFidelity</code> in the resulting   parts.</li> <li><code>SplitApart</code> – Boolean controlling whether the objects should all be   kept together or properly split apart. Default is <code>true</code> (split).</li> </ul>",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UnionAsync",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "CoreScript",
+			"part": "description",
+			"before": "An internal Roblox game script.",
+			"after": null
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "LevelOfDetail",
+			"part": "description",
+			"before": "Sets the level of detail on the model for experiences with content streaming enabled.",
+			"after": "Sets the level of detail on the model for experiences with instance streaming enabled.",
+			"value": {
+				"Category": "Appearance",
+				"Default": "Automatic",
+				"MemberType": "Property",
+				"Name": "LevelOfDetail",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ModelLevelOfDetail"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "ModelStreamingMode",
+			"part": "description",
+			"before": "Controls the model streaming behavior on <code>Model</code> instances when streaming is enabled.",
+			"after": "Controls the model streaming behavior on <code>Models</code> when instance streaming is enabled.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "Default",
+				"MemberType": "Property",
+				"Name": "ModelStreamingMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ModelStreamingMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsSettings",
+			"member": "FluidForceDrawScale",
+			"part": "description",
+			"before": null,
+			"after": "Sets the scale of arrows drawn for aerodynamic force visualization.",
+			"value": {
+				"Category": "Display",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "FluidForceDrawScale",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsSettings",
+			"member": "ShowFluidForcesForSelectedOrHoveredMechanisms",
+			"part": "description",
+			"before": null,
+			"after": "When set to true, enables aerodynamic visualization for selected or hovered mechanisms in Studio's play and run modes.",
+			"value": {
+				"Category": "Display",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "ShowFluidForcesForSelectedOrHoveredMechanisms",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "RobloxReplicatedStorage",
+			"part": "description",
+			"before": "An internal version of the <code>ReplicatedStorage</code> service. This cannot be used by developers.",
+			"after": null
+		},
+		{
+			"element": "Class",
+			"class": "RuntimeScriptService",
+			"part": "description",
+			"before": "An internal service, probably in charge of managing the execution of scripts in run-time.",
+			"after": null
+		},
+		{
+			"element": "Class",
+			"class": "ScriptDebugger",
+			"part": "description",
+			"before": "Handles debugging of a specific script.",
+			"after": null
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDebugger",
+			"member": "CurrentLine",
+			"part": "description",
+			"before": "The current line that the script is on.",
+			"after": null,
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "CurrentLine",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDebugger",
+			"member": "IsDebugging",
+			"part": "description",
+			"before": "Describes if this ScriptDebugger is actually debugging the script attached to it.",
+			"after": null,
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "IsDebugging",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDebugger",
+			"member": "IsPaused",
+			"part": "description",
+			"before": "Describes if this ScriptDebugger is paused.",
+			"after": null,
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "IsPaused",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDebugger",
+			"member": "Script",
+			"part": "description",
+			"before": "The script object this debugger is linked to.",
+			"after": null,
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "Script",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDebugger",
+			"member": "AddWatch",
+			"part": "description",
+			"before": "Adds a <code>DebuggerWatch</code> with the given expression.",
+			"after": null,
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddWatch",
+				"Parameters": [
+					{
+						"Name": "expression",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDebugger",
+			"member": "GetBreakpoints",
+			"part": "description",
+			"before": "Returns a list of <code>DebuggerBreakpoint</code> present in the script.",
+			"after": null,
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBreakpoints",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDebugger",
+			"member": "GetGlobals",
+			"part": "description",
+			"before": "Returns a dictionary of all variables that are present in the global environment of the stack frame.",
+			"after": null,
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetGlobals",
+				"Parameters": [
+					{
+						"Default": "0",
+						"Name": "stackFrame",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Map"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDebugger",
+			"member": "GetLocals",
+			"part": "description",
+			"before": "Returns a dictionary of all local variables in the specified stack frame.",
+			"after": null,
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetLocals",
+				"Parameters": [
+					{
+						"Default": "0",
+						"Name": "stackFrame",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Map"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDebugger",
+			"member": "GetStack",
+			"part": "description",
+			"before": "Returns an array of all active call stack frames in the script.",
+			"after": null,
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetStack",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDebugger",
+			"member": "GetUpvalues",
+			"part": "description",
+			"before": "Returns a dictionary of all upvalues present in the specified stack frame.",
+			"after": null,
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetUpvalues",
+				"Parameters": [
+					{
+						"Default": "0",
+						"Name": "stackFrame",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Map"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDebugger",
+			"member": "GetWatchValue",
+			"part": "description",
+			"before": "Returns the current value of a variable being watched by a <code>DebuggerWatch</code>.",
+			"after": null,
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetWatchValue",
+				"Parameters": [
+					{
+						"Name": "watch",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDebugger",
+			"member": "GetWatches",
+			"part": "description",
+			"before": "Returns a list with all the <code>DebuggerWatch</code> instances for this debugger.",
+			"after": null,
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetWatches",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDebugger",
+			"member": "SetBreakpoint",
+			"part": "description",
+			"before": "Sets the specified line of the script as a breakpoint. Returns a <code>DebuggerBreakpoint</code> that you can use to manage the breakpoint.",
+			"after": null,
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetBreakpoint",
+				"Parameters": [
+					{
+						"Name": "line",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "isContextDependentBreakpoint",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDebugger",
+			"member": "SetBreakpoint",
+			"part": "parameter",
+			"parameter": "isContextDependentBreakpoint",
+			"before": "Whether the breakpoint is unique for a single script instance or not.",
+			"after": null,
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetBreakpoint",
+				"Parameters": [
+					{
+						"Name": "line",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "isContextDependentBreakpoint",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDebugger",
+			"member": "SetGlobal",
+			"part": "description",
+			"before": "Sets the value of the variable <code>name</code> as <code>value</code> in the global environment of the specified stack frame.",
+			"after": null,
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetGlobal",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "stackFrame",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDebugger",
+			"member": "SetLocal",
+			"part": "description",
+			"before": "Sets the value of the variable <code>name</code> as <code>value</code> in the specified stack frame.",
+			"after": null,
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetLocal",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "stackFrame",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDebugger",
+			"member": "SetUpvalue",
+			"part": "description",
+			"before": "Sets the value of the upvalue <em>name</em> as <em>value</em> in the specified stack frame.",
+			"after": null,
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetUpvalue",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "stackFrame",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDebugger",
+			"member": "BreakpointAdded",
+			"part": "description",
+			"before": "Fires when a <code>DebuggerBreakpoint</code> is added to the script.",
+			"after": null,
+			"value": {
+				"MemberType": "Event",
+				"Name": "BreakpointAdded",
+				"Parameters": [
+					{
+						"Name": "breakpoint",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDebugger",
+			"member": "BreakpointRemoved",
+			"part": "description",
+			"before": "Fires when a <code>DebuggerBreakpoint</code> is removed from the script.",
+			"after": null,
+			"value": {
+				"MemberType": "Event",
+				"Name": "BreakpointRemoved",
+				"Parameters": [
+					{
+						"Name": "breakpoint",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDebugger",
+			"member": "EncounteredBreak",
+			"part": "description",
+			"before": "Fires when a <code>DebuggerBreakpoint</code> is encountered by the script.",
+			"after": null,
+			"value": {
+				"MemberType": "Event",
+				"Name": "EncounteredBreak",
+				"Parameters": [
+					{
+						"Name": "line",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "breakReason",
+						"Type": {
+							"Category": "Enum",
+							"Name": "BreakReason"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDebugger",
+			"member": "Resuming",
+			"part": "description",
+			"before": "Fires when the game is resumed after being paused by a breakpoint.",
+			"after": null,
+			"value": {
+				"MemberType": "Event",
+				"Name": "Resuming",
+				"Parameters": [],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDebugger",
+			"member": "WatchAdded",
+			"part": "description",
+			"before": "Fires when a <code>DebuggerWatch</code> is added to this script debugger.",
+			"after": null,
+			"value": {
+				"MemberType": "Event",
+				"Name": "WatchAdded",
+				"Parameters": [
+					{
+						"Name": "watch",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDebugger",
+			"member": "WatchRemoved",
+			"part": "description",
+			"before": "Fires when a <code>DebuggerWatch</code> is removed from this script debugger.",
+			"after": null,
+			"value": {
+				"MemberType": "Event",
+				"Name": "WatchRemoved",
+				"Parameters": [
+					{
+						"Name": "watch",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AnalysticsSettings",
+			"part": "description",
+			"before": "Storage object for Google Analytics configuration data.",
+			"after": null
+		},
+		{
+			"element": "Class",
+			"class": "ThirdPartyUserService",
+			"part": "description",
+			"before": "An internal service that is used to handle third-party related users.",
+			"after": null
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FluidFidelity",
+			"item": "Automatic",
+			"part": "description",
+			"before": null,
+			"after": "Let the physics engine select the geometric representation for aerodynamic force and torque calculations.<br /> .",
+			"value": {
+				"Name": "Automatic",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FluidFidelity",
+			"item": "UseCollisionGeometry",
+			"part": "description",
+			"before": null,
+			"after": "Use the current collision geometry specified by <code>TriangleMeshPart.CollisionFidelity</code> for aerodynamic force and torque calculations .",
+			"value": {
+				"Name": "UseCollisionGeometry",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FluidFidelity",
+			"item": "UsePreciseGeometry",
+			"part": "description",
+			"before": null,
+			"after": "Force the engine to compute aerodynamic forces and torques using a more precise geometry representation based on the original mesh. This option may increase join and replication time if used on a large scale.",
+			"value": {
+				"Name": "UsePreciseGeometry",
+				"Value": 2
+			}
+		}
+	]
+}

@@ -1,0 +1,4039 @@
+{
+	"from": {
+		"version": "0.607.0.6070550",
+		"hash": "0b512dafaf26466f"
+	},
+	"to": {
+		"version": "0.608.2.6080487",
+		"hash": "2f24a8b4fde64ad2"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "CaptureScreenshot",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CaptureScreenshot",
+				"Parameters": [
+					{
+						"Name": "onCaptureReady",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Collaborator",
+			"member": "IsIdle",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "IsIdle",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CollaboratorsService",
+			"member": "CollaboratorIdleUpdate",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "CollaboratorIdleUpdate",
+				"Parameters": [
+					{
+						"Name": "collaboratorId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "isIdle",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DraftsService",
+			"member": "ShowSourceDiffsAgainstCurrent",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ShowSourceDiffsAgainstCurrent",
+				"Parameters": [
+					{
+						"Name": "sources",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "scripts",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PlayerViewService",
+			"member": "OnCameraCFrameReplicationRequest",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "OnCameraCFrameReplicationRequest",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PlayerViewService",
+			"member": "UpdateDeviceCFrame",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UpdateDeviceCFrame",
+				"Parameters": [
+					{
+						"Default": "nil",
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Default": "Identity",
+						"Name": "cframe",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "timestamp",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptContext",
+			"member": "SaveScriptProfilingData",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "filename",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "jsonString",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "filename",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					]
+				},
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Primitive",
+						"Name": "null"
+					},
+					"after": {
+						"Category": "Primitive",
+						"Name": "string"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SaveScriptProfilingData",
+				"Parameters": [
+					{
+						"Name": "jsonString",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "filename",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "AnimationCompositorMode",
+			"type": "Remove",
+			"value": {
+				"Category": "Character",
+				"Default": "Default",
+				"MemberType": "Property",
+				"Name": "AnimationCompositorMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotBrowsable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AnimationCompositorMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "HumanoidStateMachineMode",
+			"type": "Remove",
+			"value": {
+				"Category": "Controls",
+				"Default": "Default",
+				"MemberType": "Property",
+				"Name": "HumanoidStateMachineMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotBrowsable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "HumanoidStateMachineMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UGCValidationService",
+			"member": "ResetCollisionFidelityWithEditableMeshDataLua",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ResetCollisionFidelityWithEditableMeshDataLua",
+				"Parameters": [
+					{
+						"Name": "meshPart",
+						"Type": {
+							"Category": "Class",
+							"Name": "MeshPart"
+						}
+					},
+					{
+						"Name": "editableMesh",
+						"Type": {
+							"Category": "Class",
+							"Name": "EditableMesh"
+						}
+					},
+					{
+						"Default": "Box",
+						"Name": "collisionFidelity",
+						"Type": {
+							"Category": "Enum",
+							"Name": "CollisionFidelity"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AnimationCompositorMode",
+			"type": "Remove",
+			"value": {
+				"Name": "AnimationCompositorMode"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "HumanoidStateMachineMode",
+			"type": "Remove",
+			"value": {
+				"Name": "HumanoidStateMachineMode"
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "ClearAllChildren",
+			"part": "description",
+			"before": "This function destroys all of an <code>Instance</code>'s children.",
+			"after": "This function destroys all of an instance's children.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ClearAllChildren",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "GetAttributes",
+			"part": "description",
+			"before": "Returns a dictionary of string → variant pairs for each of the <code>Instance</code>'s attributes.",
+			"after": "Returns a dictionary of string → variant pairs for each of the instance's attributes.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAttributes",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "GetChildren",
+			"part": "description",
+			"before": "Returns an array containing all of the <code>Instance</code>'s children.",
+			"after": "Returns an array containing all of the instance's children.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetChildren",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "GetChildren",
+			"part": "return",
+			"before": "An array containing the <code>Instance</code>'s children.",
+			"after": "An array containing the instance's children.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetChildren",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "GetDebugId",
+			"part": "description",
+			"before": "Returns a coded string of the <code>Instance</code>s DebugId used internally by Roblox.",
+			"after": "Returns a coded string of the debug ID used internally by Roblox.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetDebugId",
+				"Parameters": [
+					{
+						"Default": "4",
+						"Name": "scopeLength",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"NotBrowsable"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "GetDescendants",
+			"part": "return",
+			"before": "An array containing the <code>Instance</code>'s descendants.",
+			"after": "An array containing the instance's descendants.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetDescendants",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "GetFullName",
+			"part": "description",
+			"before": "Returns a string describing the <code>Instance</code>'s ancestry.",
+			"after": "Returns a string describing the instance's ancestry.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFullName",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "IsA",
+			"part": "description",
+			"before": "Returns true if an <code>Instance</code>'s class matches or inherits from a given class.",
+			"after": "Returns true if an instance's class matches or inherits from a given class.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsA",
+				"Parameters": [
+					{
+						"Name": "className",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "KeyframeSequence",
+			"part": "description",
+			"before": "This object stores all of the <code>Keyframe</code>s and other data for the animation.",
+			"after": "This object stores all of the <code>Keyframes</code> and other data for the animation."
+		},
+		{
+			"element": "Member",
+			"class": "KeyframeSequence",
+			"member": "GetKeyframes",
+			"part": "description",
+			"before": "Returns an array that contains all <code>Keyframe</code>s contained in a <code>KeyframeSequence</code>.",
+			"after": "Returns an array that contains all <code>Keyframes</code> contained in a <code>KeyframeSequence</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetKeyframes",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "KeyframeSequence",
+			"member": "GetKeyframes",
+			"part": "return",
+			"before": "An array of <code>Keyframe</code>s.",
+			"after": "An array of <code>Keyframe</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetKeyframes",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AnimationController",
+			"part": "description",
+			"before": "Allows animations to be loaded and applied to a character or model in place of a <code>Humanoid</code> when a Humanoid is not needed.",
+			"after": "Allows animations to be loaded and applied to a character or model in place of a <code>Humanoid</code>."
+		},
+		{
+			"element": "Member",
+			"class": "AnimationController",
+			"member": "GetPlayingAnimationTracks",
+			"part": "return",
+			"before": "An array of playing <code>AnimationTrack</code>s.",
+			"after": "An array of playing <code>AnimationTracks</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPlayingAnimationTracks",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "GetPlayingAnimationTracks",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Animator",
+			"member": "StepAnimations",
+			"part": "description",
+			"before": "Increments the <code>AnimationTrack.TimePosition</code> of all playing <code>AnimationTrack</code>s that are loaded onto the <code>Animator</code>, applying the offsets to the model associated with the <code>Animator</code>. For use in the command bar or by plugins only.",
+			"after": "Increments the <code>AnimationTrack.TimePosition</code> of all playing <code>AnimationTracks</code> that are loaded onto the <code>Animator</code>, applying the offsets to the model associated with the <code>Animator</code>. For use in the command bar or by plugins only.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "StepAnimations",
+				"Parameters": [
+					{
+						"Name": "deltaTime",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Backpack",
+			"part": "description",
+			"before": "A container object that holds a <code>Player</code>'s inventory. Any <code>Tool</code> in a player's Backpack will be displayed in their inventory at the bottom of their screen.",
+			"after": "A container object that holds a player's inventory. Any <code>Tool</code> in a player's Backpack will be displayed in their inventory at the bottom of their screen."
+		},
+		{
+			"element": "Class",
+			"class": "Beam",
+			"part": "description",
+			"before": "Connects two <code>Attachment</code>s by drawing a texture between them.",
+			"after": "Connects two <code>Attachments</code> by drawing a texture between them."
+		},
+		{
+			"element": "Member",
+			"class": "Beam",
+			"member": "CurveSize0",
+			"part": "description",
+			"before": "Determines, along with <code>Beam.Attachment0</code> the position of the first control point in the <code>Beam</code>'s Bézier curve.",
+			"after": "Determines, along with <code>Beam.Attachment0</code> the position of the first control point in the beam's Bézier curve.",
+			"value": {
+				"Category": "Shape",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "CurveSize0",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Beam",
+			"member": "CurveSize1",
+			"part": "description",
+			"before": "Determines, along with <code>Beam.Attachment1</code> the position of the second control point in the <code>Beam</code>'s Bézier curve.",
+			"after": "Determines, along with <code>Beam.Attachment1</code> the position of the second control point in the beam's Bézier curve.",
+			"value": {
+				"Category": "Shape",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "CurveSize1",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Beam",
+			"member": "TextureLength",
+			"part": "description",
+			"before": "Sets the length of the <code>Beam</code>s texture if <code>Beam.TextureMode</code> is 'Wrap' or 'Static'. If <code>Beam.TextureMode</code> is 'Stretch' then it determines the size of the texture relative to the <code>Beam's</code> length.",
+			"after": "Sets the length of the <code>Beam</code> texture if <code>Beam.TextureMode</code> is 'Wrap' or 'Static'. If <code>Beam.TextureMode</code> is 'Stretch' then it determines the size of the texture relative to the <code>Beam's</code> length.",
+			"value": {
+				"Category": "Appearance",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "TextureLength",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Beam",
+			"member": "ZOffset",
+			"part": "description",
+			"before": "The distance, in studs, the <code>Beam</code>s display is offset by relative to the <code>Workspace.CurrentCamera</code>.",
+			"after": "The distance, in studs, the <code>Beam</code> display is offset by relative to the <code>Workspace.CurrentCamera</code>.",
+			"value": {
+				"Category": "Appearance",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "ZOffset",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Beam",
+			"member": "SetTextureOffset",
+			"part": "description",
+			"before": "Sets the current offset of the <code>Beam</code>'s texture cycle.",
+			"after": "Sets the current offset of the beam's texture cycle.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetTextureOffset",
+				"Parameters": [
+					{
+						"Default": "0",
+						"Name": "offset",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "CameraSubject",
+			"part": "description",
+			"before": "The <code>Humanoid</code> or <code>BasePart</code> that is the <code>Camera</code>'s subject.",
+			"after": "The <code>Humanoid</code> or <code>BasePart</code> that is the <code>Camera</code> subject.",
+			"value": {
+				"Category": "Camera",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "CameraSubject",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "DiagonalFieldOfView",
+			"part": "description",
+			"before": "Sets the angle of the <code>Camera</code>'s diagonal field of view.",
+			"after": "Sets the angle of the camera's diagonal field of view.",
+			"value": {
+				"Category": "Camera",
+				"Default": "88.8765335",
+				"MemberType": "Property",
+				"Name": "DiagonalFieldOfView",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "FieldOfView",
+			"part": "description",
+			"before": "Sets the angle of the <code>Camera</code>'s vertical field of view.",
+			"after": "Sets the angle of the camera's vertical field of view.",
+			"value": {
+				"Category": "Camera",
+				"Default": "70",
+				"MemberType": "Property",
+				"Name": "FieldOfView",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "MaxAxisFieldOfView",
+			"part": "description",
+			"before": "Sets the angle of the <code>Camera</code>'s field of view along the longest viewport axis.",
+			"after": "Sets the angle of the camera's field of view along the longest viewport axis.",
+			"value": {
+				"Category": "Camera",
+				"Default": "70",
+				"MemberType": "Property",
+				"Name": "MaxAxisFieldOfView",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "NearPlaneZ",
+			"part": "description",
+			"before": "Describes the negative z-offset, in studs, of the <code>Camera</code>'s near clipping plane.",
+			"after": "Describes the negative z-offset, in studs, of the camera's near clipping plane.",
+			"value": {
+				"Category": "Data",
+				"Default": "-0.5",
+				"MemberType": "Property",
+				"Name": "NearPlaneZ",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "GetPartsObscuringTarget",
+			"part": "description",
+			"before": "Returns an array of <code>BaseParts</code> that are obscuring the lines of sight between the <code>Camera</code>'s <code>Camera.CFrame</code> and the <em>castPoints</em>.",
+			"after": "Returns an array of <code>BaseParts</code> that are obscuring the lines of sight between the camera's <code>Camera.CFrame</code> and the <em>castPoints</em>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPartsObscuringTarget",
+				"Parameters": [
+					{
+						"Name": "castPoints",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "ignoreList",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "GetPartsObscuringTarget",
+			"part": "return",
+			"before": "An array of <code>BaseParts</code> that obscure the lines of sight between the <code>Camera</code>'s <code>Camera.CFrame</code> and the <em>castPoints</em>.",
+			"after": "An array of <code>BaseParts</code> that obscure the lines of sight between the camera's <code>Camera.CFrame</code> and the <em>castPoints</em>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPartsObscuringTarget",
+				"Parameters": [
+					{
+						"Name": "castPoints",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "ignoreList",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "GetRoll",
+			"part": "description",
+			"before": "Returns in radians the current roll, or rotation around the <code>Camera</code>'s Z-axis, applied to the <code>Camera</code> using <code>Camera:SetRoll()</code>.",
+			"after": "Returns in radians the current roll, or rotation around the camera's Z-axis, applied to the <code>Camera</code> using <code>Camera:SetRoll()</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRoll",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "GetTiltSpeed",
+			"part": "return",
+			"before": "The speed at which the <code>Camera</code> is rotating around its <code>Camera.Focus</code> around the <code>Camera</code>'s X axis.",
+			"after": "The speed at which the <code>Camera</code> is rotating around its <code>Camera.Focus</code> around the camera's X axis.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetTiltSpeed",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "Interpolate",
+			"part": "parameter",
+			"parameter": "endFocus",
+			"before": "The <code>CFrame</code> for the <code>Camera</code>'s <code>Camera.Focus</code> to tween to.",
+			"after": "The <code>CFrame</code> for the camera's <code>Camera.Focus</code> to tween to.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Interpolate",
+				"Parameters": [
+					{
+						"Name": "endPos",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					},
+					{
+						"Name": "endFocus",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					},
+					{
+						"Name": "duration",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "ScreenPointToRay",
+			"part": "description",
+			"before": "Creates a unit <code>Ray</code> from a position on the screen (in pixels), at a set depth from the <code>Camera</code> orientated in the <code>Camera</code>'s direction. Accounts for the GUI inset.",
+			"after": "Creates a unit <code>Ray</code> from a position on the screen (in pixels), at a set depth from the <code>Camera</code> orientated in the camera's direction. Accounts for the GUI inset.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ScreenPointToRay",
+				"Parameters": [
+					{
+						"Name": "x",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "y",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "depth",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Ray"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "SetRoll",
+			"part": "description",
+			"before": "Sets the current rotation applied around the <code>Camera</code>'s Z-axis.",
+			"after": "Sets the current rotation applied around the camera's Z-axis.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetRoll",
+				"Parameters": [
+					{
+						"Name": "rollAngle",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "TiltUnits",
+			"part": "description",
+			"before": "Tilts the <code>Camera</code> around its <code>Camera.Focus</code> in 10 degree increments around the <code>Camera</code>'s X axis.",
+			"after": "Tilts the <code>Camera</code> around its <code>Camera.Focus</code> in 10 degree increments around the camera's X axis.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "TiltUnits",
+				"Parameters": [
+					{
+						"Name": "units",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "ViewportPointToRay",
+			"part": "description",
+			"before": "Creates a unit <code>Ray</code> from a position on the viewport (in pixels), at a given depth from the <code>Camera</code> orientated in the <code>Camera</code>'s direction. Does not account for the GUI inset.",
+			"after": "Creates a unit <code>Ray</code> from a position on the viewport (in pixels), at a given depth from the <code>Camera</code> orientated in the camera's direction. Does not account for the GUI inset.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ViewportPointToRay",
+				"Parameters": [
+					{
+						"Name": "x",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "y",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "depth",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Ray"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "WorldToScreenPoint",
+			"part": "return",
+			"before": "A tuple containing, in order: A <code>Vector3</code> whose X and Y components represent the offset of the <em>worldPoint</em> from the top left corner of the screen, in pixels. The <code>Vector3</code>'s Z component represents the depth of the <em>worldPoint</em> from the screen (in studs). A bool indicating if the <em>worldPoint</em> is within the bounds of the screen",
+			"after": "A tuple containing, in order: A <code>Vector3</code> whose X and Y components represent the offset of the <em>worldPoint</em> from the top left corner of the screen, in pixels. The <code>Vector3</code> Z component represents the depth of the <em>worldPoint</em> from the screen (in studs). A bool indicating if the <em>worldPoint</em> is within the bounds of the screen",
+			"value": {
+				"MemberType": "Function",
+				"Name": "WorldToScreenPoint",
+				"Parameters": [
+					{
+						"Name": "worldPoint",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "WorldToViewportPoint",
+			"part": "return",
+			"before": "A tuple containing, in order: A <code>Vector3</code> whose X and Y components represent the offset of the <em>worldPoint</em> from the top left corner of the viewport, in pixels. The <code>Vector3</code>'s Z component represents the depth of the <em>worldPoint</em> from the screen (in studs). A bool indicating if the <em>worldPoint</em> is within the bounds of the viewport.",
+			"after": "A tuple containing, in order: A <code>Vector3</code> whose X and Y components represent the offset of the <em>worldPoint</em> from the top left corner of the viewport, in pixels. The <code>Vector3</code> Z component represents the depth of the <em>worldPoint</em> from the screen (in studs). A bool indicating if the <em>worldPoint</em> is within the bounds of the viewport.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "WorldToViewportPoint",
+				"Parameters": [
+					{
+						"Name": "worldPoint",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CollectionService",
+			"member": "TagAdded",
+			"part": "description",
+			"before": null,
+			"after": "Fires when a tag is added to an object and the added tag is the only occurrence of that tag in the place.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "TagAdded",
+				"Parameters": [
+					{
+						"Name": "tag",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CollectionService",
+			"member": "TagRemoved",
+			"part": "description",
+			"before": null,
+			"after": "Fires when a tag is removed from an object and the removed tag is no longer used anywhere in the place.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "TagRemoved",
+				"Parameters": [
+					{
+						"Name": "tag",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Configuration",
+			"part": "description",
+			"before": "The Configuration object is a container object that is designed to hold value objects to make values used in <code>Tool</code>s or any model using <code>Script</code>s more accessible.",
+			"after": "The Configuration object is a container object that is designed to hold value objects to make values used in <code>Tools</code> or any model using <code>Scripts</code> more accessible."
+		},
+		{
+			"element": "Member",
+			"class": "ContentProvider",
+			"member": "RequestQueueSize",
+			"part": "description",
+			"before": "Gives the number of items in <code>ContentProvider</code>'s request queue that need to be downloaded.",
+			"after": "Gives the number of items in the <code>ContentProvider</code> request queue that need to be downloaded.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "RequestQueueSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContentProvider",
+			"member": "PreloadAsync",
+			"part": "parameter",
+			"parameter": "contentIdList",
+			"before": "An array of items to load.",
+			"after": "An array of instances or content ID strings (for images) to load.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PreloadAsync",
+				"Parameters": [
+					{
+						"Name": "contentIdList",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "callbackFunction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "SpecialMesh",
+			"part": "description",
+			"before": "The <code>SpecialMesh</code> object applies a mesh to a <code>BasePart</code> depending on the the <code>MeshType</code> property.",
+			"after": "The <code>SpecialMesh</code> object applies a mesh to a <code>BasePart</code> depending on the <code>MeshType</code> property."
+		},
+		{
+			"element": "Member",
+			"class": "Explosion",
+			"member": "BlastPressure",
+			"part": "description",
+			"before": "Used to determine the amount of force applied to <code>BasePart</code>s caught in the <code>Explosion.BlastRadius</code>.",
+			"after": "Used to determine the amount of force applied to <code>BaseParts</code> caught in the <code>Explosion.BlastRadius</code>.",
+			"value": {
+				"Category": "Data",
+				"Default": "500000",
+				"MemberType": "Property",
+				"Name": "BlastPressure",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Explosion",
+			"member": "Position",
+			"part": "description",
+			"before": "This property is the position of the center of the <code>Explosion</code>. It is defined in world-space and not influenced by the <code>Explosion</code>'s parent.",
+			"after": "This property is the position of the center of the <code>Explosion</code>. It is defined in world-space and not influenced by the <code>Explosion</code> parent.",
+			"value": {
+				"Category": "Data",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "Position",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Decal",
+			"member": "LocalTransparencyModifier",
+			"part": "description",
+			"before": "Acts as a multiplier for the <code>Decal</code>'s <code>Decal.Transparency</code> property. The effects are only visible to the local player.",
+			"after": "Acts as a multiplier for the decal's <code>Decal.Transparency</code> property. The effects are only visible to the local player.",
+			"value": {
+				"Category": "Appearance",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "LocalTransparencyModifier",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ForceField",
+			"part": "description",
+			"before": "A <code>ForceField</code> protects a <code>Humanoid</code> from taking damage using the <code>Humanoid:TakeDamage()</code> function, and protects <code>BasePart</code>s from having their joints broken due to an <code>Explosion</code>.",
+			"after": "A <code>ForceField</code> protects a <code>Humanoid</code> from taking damage using the <code>Humanoid:TakeDamage()</code> function, and protects <code>BaseParts</code> from having their joints broken due to an <code>Explosion</code>."
+		},
+		{
+			"element": "Member",
+			"class": "ForceField",
+			"member": "Visible",
+			"part": "description",
+			"before": "Determines whether or not the <code>ForceField</code>'s particle effect is visible.",
+			"after": "Determines whether or not the <code>ForceField</code> particle effect is visible.",
+			"value": {
+				"Category": "Data",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "Visible",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiBase2d",
+			"member": "Localize",
+			"part": "description",
+			"before": "Automatically set to true when a LocalizationTable's Root targets this object, or an ancestor of this object.",
+			"after": "Automatically set to true when a localization table's <code>LocalizationTable.Root</code> targets this object, or an ancestor of this object.",
+			"value": {
+				"Category": "Localization",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Localize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated",
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "AutoLocalize",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HttpService",
+			"member": "GetSecret",
+			"part": "description",
+			"before": null,
+			"after": "Returns a <code>Secret</code> from the secrets store.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetSecret",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Secret"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "AutomaticScalingEnabled",
+			"part": "description",
+			"before": "When Enabled, AutomaticScalingEnabled causes the size of the character to change in response to the values in the <code>Humanoid</code>'s child scale values changing.",
+			"after": "When Enabled, AutomaticScalingEnabled causes the size of the character to change in response to the values in the humanoid's child scale values changing.",
+			"value": {
+				"Category": "Game",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "AutomaticScalingEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InsertService",
+			"member": "GetFreeDecals",
+			"part": "description",
+			"before": "Retrieves a list of Free Decals from the Catalog.",
+			"after": "Retrieves a list of free Decals from the Catalog.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFreeDecals",
+				"Parameters": [
+					{
+						"Name": "searchText",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "pageNum",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Keyframe",
+			"part": "description",
+			"before": "A Keyframe holds the <code>Poses</code> applied to joints in a <code>Model</code> at a given point of time in an animation. <code>Keyframe</code>s are interpolated between during animation playback.",
+			"after": "A Keyframe holds the <code>Poses</code> applied to joints in a <code>Model</code> at a given point of time in an animation. <code>Keyframes</code> are interpolated between during animation playback."
+		},
+		{
+			"element": "Member",
+			"class": "Keyframe",
+			"member": "Time",
+			"part": "description",
+			"before": "The <code>Keyframe</code>'s time position (in seconds) in an animation. This determines the time at which the <code>Pose</code>s inside the keyframe will be shown.",
+			"after": "The <code>Keyframe</code> time position (in seconds) in an animation. This determines the time at which the <code>Poses</code> inside the keyframe will be shown.",
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "Time",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Keyframe",
+			"member": "GetPoses",
+			"part": "description",
+			"before": "Returns an array containing all <code>Pose</code>s that have been added to a <code>Keyframe</code>.",
+			"after": "Returns an array containing all <code>Poses</code> that have been added to a <code>Keyframe</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPoses",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Keyframe",
+			"member": "GetPoses",
+			"part": "return",
+			"before": "An array of <code>Pose</code>s.",
+			"after": "An array of <code>Poses</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPoses",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Lighting",
+			"member": "FogColor",
+			"part": "description",
+			"before": "A <code>Color3</code> value giving the hue of <code>Lighting</code>'s fog.",
+			"after": "A <code>Color3</code> value giving the hue of <code>Lighting</code> fog.",
+			"value": {
+				"Category": "Fog",
+				"Default": "0.75, 0.75, 0.75",
+				"MemberType": "Property",
+				"Name": "FogColor",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Lighting",
+			"member": "GeographicLatitude",
+			"part": "description",
+			"before": "The geographic latitude, in degrees, of the scene, influencing the result of <code>Lighting</code>s time on the position of the sun and moon.",
+			"after": "The geographic latitude, in degrees, of the scene, influencing the result of `Class.Lighting time on the position of the sun and moon.",
+			"value": {
+				"Category": "Data",
+				"Default": "41.7332993",
+				"MemberType": "Property",
+				"Name": "GeographicLatitude",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Message",
+			"part": "description",
+			"before": "Fills the entire screen with a semi-transparent grey background, with centered text in the middle of the screen. With the introduction of Roblox's GUI features it has been deprecated and <code>TextLabel</code>s should be used instead for new work.",
+			"after": "Fills the entire screen with a semi-transparent grey background, with centered text in the middle of the screen. With the introduction of Roblox's GUI features it has been deprecated and <code>TextLabels</code> should be used instead for new work."
+		},
+		{
+			"element": "Class",
+			"class": "Hint",
+			"part": "description",
+			"before": "A Hint is an object that creates a small black bar at the very top of the screen with text. Its appearance cannot be customized in any way. With the introduction of Roblox's GUI features it has been deprecated and <code>TextLabel</code>s should be used instead for new work.",
+			"after": "A Hint is an object that creates a small black bar at the very top of the screen with text. Its appearance cannot be customized in any way. With the introduction of Roblox's GUI features it has been deprecated and <code>TextLabels</code> should be used instead for new work."
+		},
+		{
+			"element": "Member",
+			"class": "Mouse",
+			"member": "Icon",
+			"part": "description",
+			"before": "The content ID of the image used as the <code>Mouse</code>'s icon.",
+			"after": "The content ID of the image used as the <code>Mouse</code> icon.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Icon",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Mouse",
+			"member": "Origin",
+			"part": "description",
+			"before": "A <code>CFrame</code> positioned at the <code>Workspace.CurrentCamera</code> and oriented toward the <code>Mouse</code>'s 3D position.",
+			"after": "A <code>CFrame</code> positioned at the <code>Workspace.CurrentCamera</code> and oriented toward the mouse's 3D position.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Origin",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Mouse",
+			"member": "UnitRay",
+			"part": "description",
+			"before": "A <code>Ray</code> directed towards the <code>Mouse</code>'s world position, originating from the <code>Camera</code>'s world position.",
+			"after": "A <code>Ray</code> directed towards the mouse's world position, originating from the <code>Workspace.CurrentCamera</code> world position.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "UnitRay",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Ray"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PluginMouse",
+			"part": "description",
+			"before": "The PluginMouse object gives <code>Plugin</code>s access to the mouse. It works like the <code>Mouse</code> object and can be obtained using the plugin <code>Plugin:GetMouse()</code> method.",
+			"after": "The PluginMouse object gives <code>Plugins</code> access to the mouse. It works like the <code>Mouse</code> object and can be obtained using the plugin <code>Plugin:GetMouse()</code> method."
+		},
+		{
+			"element": "Member",
+			"class": "NetworkSettings",
+			"member": "ShowActiveAnimationAsset",
+			"part": "description",
+			"before": "When set to true, a label will be shown above each <code>Player</code>'s head, showing the current animation being played by the Player's <code>Humanoid</code>, if any.",
+			"after": "When set to true, a label will be shown above each player's head, showing the current animation being played by the Player's <code>Humanoid</code>, if any.",
+			"value": {
+				"Category": "Appearance",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "ShowActiveAnimationAsset",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "CanSetNetworkOwnership",
+			"part": "description",
+			"before": "Checks whether you can set a <code>part</code>'s network ownership.",
+			"after": "Checks whether you can set a part's network ownership.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CanSetNetworkOwnership",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SpawnLocation",
+			"member": "TeamColor",
+			"part": "description",
+			"before": "Sets what team the <code>SpawnLocation</code> is affiliated to. If <code>SpawnLocation.Neutral</code> property is false, only <code>Player</code>s with the same <code>Player.TeamColor</code> as the spawn's TeamColor will be able to spawn there.",
+			"after": "Sets what team the <code>SpawnLocation</code> is affiliated to. If <code>SpawnLocation.Neutral</code> property is false, only <code>Players</code> with the same <code>Player.TeamColor</code> as the spawn's TeamColor will be able to spawn there.",
+			"value": {
+				"Category": "Teams",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "TeamColor",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "BrickColor"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "BreakJoints",
+			"part": "description",
+			"before": "Breaks connections between <code>BaseParts</code>, including surface connections with any adjacent parts, <code>WeldConstraint</code>s and all <code>Weld</code>s and other <code>JointInstance</code>s.",
+			"after": "Breaks connections between <code>BaseParts</code>, including surface connections with any adjacent parts, <code>WeldConstraints</code> and all <code>Welds</code> and other <code>JointInstance</code>s.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "BreakJoints",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "GetBoundingBox",
+			"part": "return",
+			"before": "A <code>CFrame</code> representing the orientation of the volume followed by a <code>Vector3</code> representing the size of the volume.",
+			"after": null,
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBoundingBox",
+				"Parameters": [],
+				"ReturnType": [
+					{
+						"Category": "DataType",
+						"Name": "CFrame"
+					},
+					{
+						"Category": "DataType",
+						"Name": "Vector3"
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "GetExtentsSize",
+			"part": "description",
+			"before": "Returns the size of the smallest bounding box that contains all of the <code>BasePart</code>s in the <code>Model</code>, aligned with the <code>Model.PrimaryPart</code> if it is set.",
+			"after": "Returns the size of the smallest bounding box that contains all of the <code>BaseParts</code> in the <code>Model</code>, aligned with the <code>Model.PrimaryPart</code> if it is set.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetExtentsSize",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "GetPrimaryPartCFrame",
+			"part": "description",
+			"before": "Returns the <code>CFrame</code> of the <code>Model</code>'s <code>Model.PrimaryPart</code>. This function will throw an error if no primary part exists for the <code>Model</code>.",
+			"after": "Returns the <code>CFrame</code> of the model's <code>Model.PrimaryPart</code>. This function will throw an error if no primary part exists for the <code>Model</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPrimaryPartCFrame",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "GetPivot",
+						"ThreadSafety": "Safe"
+					}
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "MakeJoints",
+			"part": "description",
+			"before": "Goes through all <code>BasePart</code>s in the <code>Model</code>. If any part's side has a SurfaceType that can make a joint it will create a joint with any adjacent parts.",
+			"after": "Goes through all <code>BaseParts</code> in the <code>Model</code>. If any part's side has a SurfaceType that can make a joint it will create a joint with any adjacent parts.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "MakeJoints",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "SetPrimaryPartCFrame",
+			"part": "description",
+			"before": "Sets the <code>BasePart.CFrame</code> of the <code>Model</code>'s <code>Model.PrimaryPart</code>. All other parts in the model will also be moved and will maintain their orientation and offset respective to the <code>Model.PrimaryPart</code>.",
+			"after": "Sets the <code>BasePart.CFrame</code> of the model's <code>Model.PrimaryPart</code>. All other parts in the model will also be moved and will maintain their orientation and offset respective to the <code>Model.PrimaryPart</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetPrimaryPartCFrame",
+				"Parameters": [
+					{
+						"Name": "cframe",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "PivotTo",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "TranslateBy",
+			"part": "description",
+			"before": "Shifts a <code>Model</code> by the given <code>Vector3</code> offset, preserving the <code>Model</code>'s orientation. If another <code>BasePart</code> or <code>Terrain</code> already exists at the new position then the <code>Model</code> will overlap said object.",
+			"after": "Shifts a <code>Model</code> by the given <code>Vector3</code> offset, preserving the model's orientation. If another <code>BasePart</code> or <code>Terrain</code> already exists at the new position then the <code>Model</code> will overlap said object.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "TranslateBy",
+				"Parameters": [
+					{
+						"Name": "delta",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BackpackItem",
+			"member": "TextureId",
+			"part": "description",
+			"before": "The texture icon that is displayed for a tool in the <code>Player</code>'s backpack.",
+			"after": "The texture icon that is displayed for a tool in the player's backpack.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "TextureId",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "Blockcast",
+			"part": "parameter",
+			"parameter": "size",
+			"before": "The size of the cast block shape.",
+			"after": "The size of the cast block shape in studs. The maximum size is 512 studs.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Blockcast",
+				"Parameters": [
+					{
+						"Name": "cframe",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					},
+					{
+						"Name": "size",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "direction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Default": "RaycastParams{IgnoreWater=false, BruteForceAllSlow=false, RespectCanCollide=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+						"Name": "params",
+						"Type": {
+							"Category": "DataType",
+							"Name": "RaycastParams"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RaycastResult"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "Blockcast",
+			"part": "parameter",
+			"parameter": "direction",
+			"before": "Direction of the shapecast, with the magnitude representing the maximum distance the shape can travel.",
+			"after": "Direction of the shapecast, with the magnitude representing the maximum distance the shape can travel. The maximum distance is 1024 studs.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Blockcast",
+				"Parameters": [
+					{
+						"Name": "cframe",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					},
+					{
+						"Name": "size",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "direction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Default": "RaycastParams{IgnoreWater=false, BruteForceAllSlow=false, RespectCanCollide=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+						"Name": "params",
+						"Type": {
+							"Category": "DataType",
+							"Name": "RaycastParams"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RaycastResult"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "FindPartsInRegion3",
+			"part": "description",
+			"before": "Returns an array of <code>BasePart</code>s in the given <code>Region3</code>.",
+			"after": "Returns an array of <code>BaseParts</code> in the given <code>Region3</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindPartsInRegion3",
+				"Parameters": [
+					{
+						"Name": "region",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Region3"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "ignoreDescendantsInstance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Default": "20",
+						"Name": "maxParts",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "GetPartBoundsInBox",
+						"ThreadSafety": "Safe"
+					}
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "FindPartsInRegion3",
+			"part": "parameter",
+			"parameter": "maxParts",
+			"before": "The maximum amount of <code>BasePart</code>s to be returned.",
+			"after": "The maximum amount of <code>BaseParts</code> to be returned.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindPartsInRegion3",
+				"Parameters": [
+					{
+						"Name": "region",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Region3"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "ignoreDescendantsInstance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Default": "20",
+						"Name": "maxParts",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "GetPartBoundsInBox",
+						"ThreadSafety": "Safe"
+					}
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "FindPartsInRegion3",
+			"part": "return",
+			"before": "An array of <code>BasePart</code>s within the <code>Region3</code>.",
+			"after": "An array of <code>BaseParts</code> within the <code>Region3</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindPartsInRegion3",
+				"Parameters": [
+					{
+						"Name": "region",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Region3"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "ignoreDescendantsInstance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Default": "20",
+						"Name": "maxParts",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "GetPartBoundsInBox",
+						"ThreadSafety": "Safe"
+					}
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "FindPartsInRegion3WithIgnoreList",
+			"part": "parameter",
+			"parameter": "maxParts",
+			"before": "The maximum number of <code>BasePart</code>s to be returned.",
+			"after": "The maximum number of <code>BaseParts</code> to be returned.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindPartsInRegion3WithIgnoreList",
+				"Parameters": [
+					{
+						"Name": "region",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Region3"
+						}
+					},
+					{
+						"Name": "ignoreDescendantsTable",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					},
+					{
+						"Default": "20",
+						"Name": "maxParts",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "GetPartBoundsInBox",
+						"ThreadSafety": "Safe"
+					}
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "FindPartsInRegion3WithIgnoreList",
+			"part": "return",
+			"before": "An array of <code>BasePart</code>s found within the <code>Region3</code>.",
+			"after": "An array of <code>BaseParts</code> found within the <code>Region3</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindPartsInRegion3WithIgnoreList",
+				"Parameters": [
+					{
+						"Name": "region",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Region3"
+						}
+					},
+					{
+						"Name": "ignoreDescendantsTable",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					},
+					{
+						"Default": "20",
+						"Name": "maxParts",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "GetPartBoundsInBox",
+						"ThreadSafety": "Safe"
+					}
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "FindPartsInRegion3WithWhiteList",
+			"part": "parameter",
+			"parameter": "maxParts",
+			"before": "The maximum number of <code>BasePart</code>s to be returned.",
+			"after": "The maximum number of <code>BaseParts</code> to be returned.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindPartsInRegion3WithWhiteList",
+				"Parameters": [
+					{
+						"Name": "region",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Region3"
+						}
+					},
+					{
+						"Name": "whitelistDescendantsTable",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					},
+					{
+						"Default": "20",
+						"Name": "maxParts",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "GetPartBoundsInBox",
+						"ThreadSafety": "Safe"
+					}
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "FindPartsInRegion3WithWhiteList",
+			"part": "return",
+			"before": "An array of <code>BasePart</code>s within the <code>Region3</code>.",
+			"after": "An array of <code>BaseParts</code> within the <code>Region3</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindPartsInRegion3WithWhiteList",
+				"Parameters": [
+					{
+						"Name": "region",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Region3"
+						}
+					},
+					{
+						"Name": "whitelistDescendantsTable",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					},
+					{
+						"Default": "20",
+						"Name": "maxParts",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "GetPartBoundsInBox",
+						"ThreadSafety": "Safe"
+					}
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "IsRegion3Empty",
+			"part": "description",
+			"before": "Returns a bool indicating whether there are no <code>BasePart</code>s within the given <code>Region3</code>.",
+			"after": "Returns a bool indicating whether there are no <code>BaseParts</code> within the given <code>Region3</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsRegion3Empty",
+				"Parameters": [
+					{
+						"Name": "region",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Region3"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "ignoreDescendentsInstance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "GetPartBoundsInBox",
+						"ThreadSafety": "Safe"
+					}
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "Spherecast",
+			"part": "parameter",
+			"parameter": "radius",
+			"before": "The radius of the cast spherical shape in studs.",
+			"after": "The radius of the cast spherical shape in studs. The maximum radius is 256 studs.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Spherecast",
+				"Parameters": [
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "radius",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "direction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Default": "RaycastParams{IgnoreWater=false, BruteForceAllSlow=false, RespectCanCollide=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+						"Name": "params",
+						"Type": {
+							"Category": "DataType",
+							"Name": "RaycastParams"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RaycastResult"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "Spherecast",
+			"part": "parameter",
+			"parameter": "direction",
+			"before": "Direction of the shapecast, with the magnitude representing the maximum distance the shape can travel.",
+			"after": "Direction of the shapecast, with the magnitude representing the maximum distance the shape can travel. The maximum distance is 1024 studs.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Spherecast",
+				"Parameters": [
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "radius",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "direction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Default": "RaycastParams{IgnoreWater=false, BruteForceAllSlow=false, RespectCanCollide=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+						"Name": "params",
+						"Type": {
+							"Category": "DataType",
+							"Name": "RaycastParams"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RaycastResult"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "Gravity",
+			"part": "description",
+			"before": "Determines the acceleration due to gravity applied to falling <code>BasePart</code>s.",
+			"after": "Determines the acceleration due to gravity applied to falling <code>BaseParts</code>.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Gravity",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "BreakJoints",
+			"part": "description",
+			"before": "Goes through all <code>BasePart</code>s given, breaking any joints connected to these parts.",
+			"after": "Goes through all <code>BaseParts</code> given, breaking any joints connected to these parts.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "BreakJoints",
+				"Parameters": [
+					{
+						"Name": "objects",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "BreakJoints",
+			"part": "parameter",
+			"parameter": "objects",
+			"before": "An array of <code>BasePart</code>s for whom joints are to be broken.",
+			"after": "An array of <code>BaseParts</code> for whom joints are to be broken.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "BreakJoints",
+				"Parameters": [
+					{
+						"Name": "objects",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "GetNumAwakeParts",
+			"part": "description",
+			"before": "Returns the number of <code>BasePart</code>s that are deemed physically active, due to being recently under the influence of physics.",
+			"after": "Returns the number of <code>BaseParts</code> that are deemed physically active, due to being recently under the influence of physics.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetNumAwakeParts",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "JoinToOutsiders",
+			"part": "parameter",
+			"parameter": "objects",
+			"before": "An array of <code>BasePart</code>s for whom joints are to be made.",
+			"after": "An array of <code>BaseParts</code> for whom joints are to be made.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "JoinToOutsiders",
+				"Parameters": [
+					{
+						"Name": "objects",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					},
+					{
+						"Name": "jointType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "JointCreationMode"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "MakeJoints",
+			"part": "description",
+			"before": "Goes through all <code>BasePart</code>s given. If any part's side has a <code>SurfaceType</code> that can make a joint it will create a joint with any adjacent parts.",
+			"after": "Goes through all <code>BaseParts</code> given. If any part's side has a <code>SurfaceType</code> that can make a joint it will create a joint with any adjacent parts.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "MakeJoints",
+				"Parameters": [
+					{
+						"Name": "objects",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "UnjoinFromOutsiders",
+			"part": "description",
+			"before": "Breaks all joints between the specified <code>BasePart</code>s and other <code>BasePart</code>s.",
+			"after": "Breaks all joints between the specified <code>BaseParts</code> and other <code>BaseParts</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UnjoinFromOutsiders",
+				"Parameters": [
+					{
+						"Name": "objects",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "UnjoinFromOutsiders",
+			"part": "parameter",
+			"parameter": "objects",
+			"before": "An array of <code>BasePart</code>s for whom joints are to be broken.",
+			"after": "An array of <code>BaseParts</code> for whom joints are to be broken.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UnjoinFromOutsiders",
+				"Parameters": [
+					{
+						"Name": "objects",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "ZoomToExtents",
+			"part": "description",
+			"before": "Positions and zooms the <code>Workspace.CurrentCamera</code> to show the extent of <code>BasePart</code>s currently in the <code>Workspace</code>.",
+			"after": "Positions and zooms the <code>Workspace.CurrentCamera</code> to show the extent of <code>BaseParts</code> currently in the <code>Workspace</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ZoomToExtents",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ParticleEmitter",
+			"part": "description",
+			"before": "A special object that emits customizable 2D billboard particles into the world.",
+			"after": "A special object that emits customizable 2D particles into the world."
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "Acceleration",
+			"part": "description",
+			"before": "Determines the global-axis acceleration of all alive particles, measured in studs per second squared.",
+			"after": "Determines the global-axis acceleration of all active particles, measured in studs per second squared.",
+			"value": {
+				"Category": "Motion",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "Acceleration",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "FlipbookIncompatible",
+			"part": "description",
+			"before": "The error message to display if the <code>Texture</code> is incompatible for a flipbook. The texture must be a 1024&times;1024 image.",
+			"after": "The error message to display if the <code>Texture</code> is incompatible for a flipbook.",
+			"value": {
+				"Category": "Flipbook",
+				"Default": "Particle texture must be 1024 by 1024 to use flipbooks.",
+				"MemberType": "Property",
+				"Name": "FlipbookIncompatible",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "LightInfluence",
+			"part": "description",
+			"before": "Determines how much particles are influenced by the environment light.",
+			"after": "Determines how much particles are influenced by the environmental light.",
+			"value": {
+				"Category": "Appearance",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "LightInfluence",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "Speed",
+			"part": "description",
+			"before": "Determines a random range of speeds a new particle can have upon emission, measured in studs per second.",
+			"after": "Determines a random range of velocities (minimum to maximum) at which new particles will emit, measured in studs per second.",
+			"value": {
+				"Category": "Emission",
+				"Default": "5 5 ",
+				"MemberType": "Property",
+				"Name": "Speed",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "NumberRange"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "Squash",
+			"part": "description",
+			"before": "Allows for non-uniform scaling of a particle, curve-controlled over the particle's lifetime.",
+			"after": "Allows for non-uniform scaling of particles, curve-controlled over their lifetime.",
+			"value": {
+				"Category": "Appearance",
+				"Default": "0 0 0 1 0 0 ",
+				"MemberType": "Property",
+				"Name": "Squash",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "NumberSequence"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "Texture",
+			"part": "description",
+			"before": "Determines the image rendered on particle billboards.",
+			"after": "Determines the image rendered on particles.",
+			"value": {
+				"Category": "Appearance",
+				"Default": "rbxasset://textures/particles/sparkles_main.dds",
+				"MemberType": "Property",
+				"Name": "Texture",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "TimeScale",
+			"part": "description",
+			"before": "Value between 0-1 that controls the speed of the particle effect.",
+			"after": "Value between 0 and 1 that controls the speed of the particle effect.",
+			"value": {
+				"Category": "Particles",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "TimeScale",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsSettings",
+			"member": "AreOwnersShown",
+			"part": "description",
+			"before": "When set to true, each <code>Player</code>'s character is outlined with a unique color, and each part that the player has network ownership over is outlined with the same color.",
+			"after": "When set to true, each player's character is outlined with a unique color, and each part that the player has network ownership over is outlined with the same color.",
+			"value": {
+				"Category": "Display",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "AreOwnersShown",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsSettings",
+			"member": "AreRegionsShown",
+			"part": "description",
+			"before": "When set to true, a cylinder is drawn around each <code>Player</code>'s character, representing their <code>Player.SimulationRadius</code>.",
+			"after": "When set to true, a cylinder is drawn around each player's character, representing their <code>Player.SimulationRadius</code>.",
+			"value": {
+				"Category": "Display",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "AreRegionsShown",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "LoadCharacterAppearance",
+			"part": "parameter",
+			"parameter": "assetInstance",
+			"before": "An instance of the asset being loaded, which can be obtained using <code>InsertService</code>'s <code>InsertService:LoadAsset()</code> function.",
+			"after": "An instance of the asset being loaded, which can be obtained using the <code>InsertService:LoadAsset()</code> function.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LoadCharacterAppearance",
+				"Parameters": [
+					{
+						"Name": "assetInstance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Pose",
+			"member": "GetSubPoses",
+			"part": "description",
+			"before": "Returns an array containing all sub <code>Pose</code>s that have been added to a <code>Pose</code>.",
+			"after": "Returns an array containing all sub <code>Poses</code> that have been added to a <code>Pose</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetSubPoses",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Pose",
+			"member": "GetSubPoses",
+			"part": "return",
+			"before": "An array of sub <code>Pose</code>s.",
+			"after": "An array of sub <code>Poses</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetSubPoses",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ProximityPrompt",
+			"member": "RootLocalizationTable",
+			"part": "description",
+			"before": "A reference to a <code>LocalizationTable</code> to be used to apply automated localization to this <code>ProximityPrompt</code>'s <code>ProximityPrompt.ActionText</code> and <code>ProximityPrompt.ObjectText</code>.",
+			"after": "A reference to a <code>LocalizationTable</code> to be used to apply automated localization to this prompt's <code>ProximityPrompt.ActionText</code> and <code>ProximityPrompt.ObjectText</code>.",
+			"value": {
+				"Category": "Localization",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "RootLocalizationTable",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "LocalizationTable"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ReflectionMetadataCallbacks",
+			"part": "description",
+			"before": "Acts as a <code>Folder</code> containing information about callbacks for a <code>ReflectionMetadataClass</code>, and should be parented to it. <code>ReflectionMetadataMember</code>s that are parented to this object will be perceived as callbacks under the class this is parented to.",
+			"after": "Acts as a <code>Folder</code> containing information about callbacks for a <code>ReflectionMetadataClass</code>, and should be parented to it. <code>ReflectionMetadataMembers</code> that are parented to this object will be perceived as callbacks under the class this is parented to."
+		},
+		{
+			"element": "Class",
+			"class": "ReflectionMetadataEvents",
+			"part": "description",
+			"before": "Acts as a <code>Folder</code> containing information about events for a <code>ReflectionMetadataClass</code>, and should be parented to it. <code>ReflectionMetadataMember</code>s that are parented to this object will be perceived as events under the class this is parented to.",
+			"after": "Acts as a <code>Folder</code> containing information about events for a <code>ReflectionMetadataClass</code>, and should be parented to it. <code>ReflectionMetadataMembers</code> that are parented to this object will be perceived as events under the class this is parented to."
+		},
+		{
+			"element": "Class",
+			"class": "ReflectionMetadataFunctions",
+			"part": "description",
+			"before": "Acts as a <code>Folder</code> containing information about functions for a <code>ReflectionMetadataClass</code>, and should be parented to it. <code>ReflectionMetadataMember</code>s that are parented to this object will be perceived as functions under the class this is parented to.",
+			"after": "Acts as a <code>Folder</code> containing information about functions for a <code>ReflectionMetadataClass</code>, and should be parented to it. <code>ReflectionMetadataMembers</code> that are parented to this object will be perceived as functions under the class this is parented to."
+		},
+		{
+			"element": "Class",
+			"class": "ReflectionMetadataProperties",
+			"part": "description",
+			"before": "Acts as a <code>Folder</code> containing information about properties for a <code>ReflectionMetadataClass</code>, and should be parented to it. <code>ReflectionMetadataMember</code>s that are parented to this object will be perceived as properties under the class this is parented to.",
+			"after": "Acts as a <code>Folder</code> containing information about properties for a <code>ReflectionMetadataClass</code>, and should be parented to it. <code>ReflectionMetadataMembers</code> that are parented to this object will be perceived as properties under the class this is parented to."
+		},
+		{
+			"element": "Class",
+			"class": "ReflectionMetadataYieldFunctions",
+			"part": "description",
+			"before": "Acts as a <code>Folder</code> containing information about yielding functions for a <code>ReflectionMetadataClass</code>, and should be parented to it. <code>ReflectionMetadataMember</code>s that are parented to this object will be perceived as yielding functions under the class this is parented to.",
+			"after": "Acts as a <code>Folder</code> containing information about yielding functions for a <code>ReflectionMetadataClass</code>, and should be parented to it. <code>ReflectionMetadataMembers</code> that are parented to this object will be perceived as yielding functions under the class this is parented to."
+		},
+		{
+			"element": "Member",
+			"class": "RunService",
+			"member": "BindToRenderStep",
+			"part": "description",
+			"before": "Given a string name of a function and a priority, this method binds the function to <code>RunService.RenderStepped</code>.",
+			"after": "Given a string name of a function and a priority, this method binds the function to <code>RunService.PreRender</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "BindToRenderStep",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "priority",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "function",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RunService",
+			"member": "PostSimulation",
+			"part": "description",
+			"before": null,
+			"after": "Fires every <em>frame</em> after the physics simulation has completed.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PostSimulation",
+				"Parameters": [
+					{
+						"Name": "deltaTimeSim",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "double"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RunService",
+			"member": "PreAnimation",
+			"part": "description",
+			"before": null,
+			"after": "Fires every <em>frame</em> prior to the physics simulation but after rendering.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PreAnimation",
+				"Parameters": [
+					{
+						"Name": "deltaTimeSim",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "double"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RunService",
+			"member": "PreRender",
+			"part": "description",
+			"before": null,
+			"after": "Fires every <em>frame</em> prior to the frame being rendered.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PreRender",
+				"Parameters": [
+					{
+						"Name": "deltaTimeRender",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "double"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RunService",
+			"member": "PreSimulation",
+			"part": "description",
+			"before": null,
+			"after": "Fires every <em>frame</em> prior to the physics simulation.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PreSimulation",
+				"Parameters": [
+					{
+						"Name": "deltaTimeSim",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "double"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Selection",
+			"part": "description",
+			"before": "The Selection service controls the <code>Instance</code>s that are selected in Roblox Studio.",
+			"after": "The Selection service controls the <code>Instances</code> that are selected in Roblox Studio."
+		},
+		{
+			"element": "Member",
+			"class": "Selection",
+			"member": "Get",
+			"part": "description",
+			"before": "Returns an array of currently selected <code>Instance</code>s in Roblox Studio.",
+			"after": "Returns an array of currently selected <code>Instances</code> in Roblox Studio.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Get",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Selection",
+			"member": "Get",
+			"part": "return",
+			"before": "An array of currently selected <code>Instance</code>s.",
+			"after": "An array of currently selected <code>Instances</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Get",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Selection",
+			"member": "Set",
+			"part": "description",
+			"before": "Sets the currently selected objects in Roblox Studio to <code>Instance</code>s in the given array.",
+			"after": "Sets the currently selected objects in Roblox Studio to <code>Instances</code> in the given array.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Set",
+				"Parameters": [
+					{
+						"Name": "selection",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Selection",
+			"member": "Set",
+			"part": "parameter",
+			"parameter": "selection",
+			"before": "An array of <code>Instance</code>s to set the current selection to.",
+			"after": "An array of <code>Instances</code> to set the current selection to.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Set",
+				"Parameters": [
+					{
+						"Name": "selection",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Selection",
+			"member": "SelectionChanged",
+			"part": "description",
+			"before": "Fires when the <code>Instance</code>s selected in Roblox Studio changes.",
+			"after": "Fires when the <code>Instances</code> selected in Roblox Studio changes.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "SelectionChanged",
+				"Parameters": [],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ServerStorage",
+			"part": "description",
+			"before": "A container whose contents are only accessible on the server. Objects descending from ServerStorage will not replicate to the client and will not be accessible from <code>LocalScript</code>s.",
+			"after": "A container whose contents are only accessible on the server. Objects descending from ServerStorage will not replicate to the client and will not be accessible from <code>LocalScripts</code>."
+		},
+		{
+			"element": "Class",
+			"class": "SoundGroup",
+			"part": "description",
+			"before": "A <code>SoundGroup</code> is used to manage the volume and sound effects on multiple <code>Sound</code>s at once. <code>Sound</code>s in the SoundGroup will have their volume and effects adjusted by the SoundGroup.",
+			"after": "A <code>SoundGroup</code> is used to manage the volume and sound effects on multiple <code>Sounds</code> at once. <code>Sounds</code> in the SoundGroup will have their volume and effects adjusted by the SoundGroup."
+		},
+		{
+			"element": "Member",
+			"class": "SoundGroup",
+			"member": "Volume",
+			"part": "description",
+			"before": "The volume multiplier applied to <code>Sound</code>s that are in the <code>SoundGroup</code>. This value ranges from 0 to 10.",
+			"after": "The volume multiplier applied to <code>Sounds</code> that are in the <code>SoundGroup</code>. This value ranges from 0 to 10.",
+			"value": {
+				"Category": "State",
+				"Default": "0.5",
+				"MemberType": "Property",
+				"Name": "Volume",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "SoundService",
+			"part": "description",
+			"before": "A service that determines various aspects of how <code>Sound</code>s play in the game.",
+			"after": "A service that determines various aspects of how <code>Sounds</code> play in the game."
+		},
+		{
+			"element": "Member",
+			"class": "SoundService",
+			"member": "GetListener",
+			"part": "description",
+			"before": "GetListener returns <code>SoundService</code>s current listener type and what is set as listener.",
+			"after": "GetListener returns the current <code>SoundService</code> listener type and what is set as listener.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetListener",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "StarterGear",
+			"part": "description",
+			"before": "If the game allows gear, StarterGear contains all of a player's appropriate gear. Whenever the <code>Player</code>'s character spawns, all of the contents of that player's StarterGear will get copied into the player's <code>Backpack</code>.",
+			"after": "If the game allows gear, StarterGear contains all of a player's appropriate gear. Whenever the player's character spawns, all of the contents of that player's StarterGear will get copied into the player's <code>Backpack</code>."
+		},
+		{
+			"element": "Class",
+			"class": "StarterPack",
+			"part": "description",
+			"before": "A service-level container whose contents are copied into each <code>Player</code>'s <code>Backpack</code> when the player spawns. It is generally used to hold <code>Tools</code>, but is sometimes used to hold <code>LocalScript</code>s to ensure that each player gets a copy.",
+			"after": "A service-level container whose contents are copied into each player's <code>Backpack</code> when the player spawns. It is generally used to hold <code>Tools</code>, but is sometimes used to hold <code>LocalScripts</code> to ensure that each player gets a copy."
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "HealthDisplayDistance",
+			"part": "description",
+			"before": "Sets the distance at which this player will see other Humanoid's health bars. If set to 0, the health bars will not be displayed.",
+			"after": "Sets the distance at which this player will see other <code>Humanoid</code> health bars. If set to 0, the health bars will not be displayed.",
+			"value": {
+				"Category": "Data",
+				"Default": "100",
+				"MemberType": "Property",
+				"Name": "HealthDisplayDistance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "NameDisplayDistance",
+			"part": "description",
+			"before": "Sets the distance at which this player will see other Humanoid's names. If set to 0, names are hidden.",
+			"after": "Sets the distance at which this player will see other <code>Humanoid</code> names. If set to 0, names are hidden.",
+			"value": {
+				"Category": "Data",
+				"Default": "100",
+				"MemberType": "Property",
+				"Name": "NameDisplayDistance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Team",
+			"member": "AutoAssignable",
+			"part": "description",
+			"before": "This property determines whether <code>Player</code>s will be automatically placed onto the <code>Team</code> when joining. If multiple teams have this property set to true, Roblox will attempt to even the teams out when <code>Player</code>s are added.",
+			"after": "This property determines whether <code>Players</code> will be automatically placed onto the <code>Team</code> when joining. If multiple teams have this property set to true, Roblox will attempt to even the teams out when <code>Players</code> are added.",
+			"value": {
+				"Category": "Data",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "AutoAssignable",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Team",
+			"member": "GetPlayers",
+			"part": "description",
+			"before": "Returns a list of <code>Player</code>s who are assigned to the <code>Team</code>. A <code>Player</code> is considered assigned if their <code>Player.Team</code> property is equal to the <code>Team</code> and <code>Player.Neutral</code> is false.",
+			"after": "Returns a list of <code>Players</code> who are assigned to the <code>Team</code>. A <code>Player</code> is considered assigned if their <code>Player.Team</code> property is equal to the <code>Team</code> and <code>Player.Neutral</code> is false.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPlayers",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Team",
+			"member": "GetPlayers",
+			"part": "return",
+			"before": "An array of <code>Player</code>s in the <code>Team</code>.",
+			"after": "An array of <code>Players</code> in the <code>Team</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPlayers",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Teams",
+			"member": "GetTeams",
+			"part": "return",
+			"before": "An array of <code>Team</code>s in the game.",
+			"after": "An array of <code>Teams</code> in the game.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetTeams",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatService",
+			"member": "CreateDefaultCommands",
+			"part": "description",
+			"before": "Determines whether <code>TextChatService</code> should create default <code>TextChatCommand</code>s.",
+			"after": "Determines whether <code>TextChatService</code> should create default <code>TextChatCommands</code>.",
+			"value": {
+				"Category": "Data",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "CreateDefaultCommands",
+				"Security": {
+					"Read": "None",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatService",
+			"member": "CreateDefaultTextChannels",
+			"part": "description",
+			"before": "Determines whether <code>TextChatService</code> should create default <code>TextChannel</code>s.",
+			"after": "Determines whether <code>TextChatService</code> should create default <code>TextChannels</code>.",
+			"value": {
+				"Category": "Data",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "CreateDefaultTextChannels",
+				"Security": {
+					"Read": "None",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TweenService",
+			"part": "description",
+			"before": "TweenService is used to create <code>Tween</code>s, which are used to interpolate, or tween, the properties of instances. <code>Tween</code>s can be used on any object with compatible property types.",
+			"after": "TweenService is used to create <code>Tweens</code> which are used to interpolate, or tween, the properties of instances. <code>Tweens</code> can be used on any object with compatible property types."
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CameraPanMode",
+			"item": "EdgeBump",
+			"part": "description",
+			"before": "Disables swipe to pan on mobile devices, and enables edge bump camera controls. It does not affect PC or Mac users.",
+			"after": "Disables swipe to pan on mobile devices, and enables edge bump camera controls. It does not affect Windows or Mac users.",
+			"value": {
+				"Name": "EdgeBump",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "GuiState",
+			"item": "Idle",
+			"part": "description",
+			"before": null,
+			"after": "The GUI currently has no state.",
+			"value": {
+				"Name": "Idle",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "GuiState",
+			"item": "Hover",
+			"part": "description",
+			"before": null,
+			"after": "The GUI is being hovered over by the user.",
+			"value": {
+				"Name": "Hover",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "GuiState",
+			"item": "Press",
+			"part": "description",
+			"before": null,
+			"after": "The GUI is being pressed/held down by the user.",
+			"value": {
+				"Name": "Press",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "GuiState",
+			"item": "NonInteractable",
+			"part": "description",
+			"before": null,
+			"after": "The GUI cannot be interacted with and therefore has no states.",
+			"value": {
+				"Name": "NonInteractable",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "Slash",
+			"part": "description",
+			"before": "The `` key.",
+			"after": "The <code>/</code> key.",
+			"value": {
+				"Name": "Slash",
+				"Value": 47
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TeleportResult",
+			"item": "Success",
+			"part": "description",
+			"before": "The teleport was successful!.",
+			"after": "The teleport was successful.",
+			"value": {
+				"Name": "Success",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TeleportResult",
+			"item": "Failure",
+			"part": "description",
+			"before": "The teleport failed for an unknown reason!.",
+			"after": "The teleport failed for an unknown reason.",
+			"value": {
+				"Name": "Failure",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UserInputType",
+			"item": "InputMethod",
+			"part": "description",
+			"before": "Text input from an input method editor (IME). <code>InputObject</code>s with this type aren't currently fired.",
+			"after": "Text input from an input method editor (IME). <code>InputObjects</code> with this type aren't currently fired.",
+			"value": {
+				"Name": "InputMethod",
+				"Value": 21
+			}
+		}
+	]
+}

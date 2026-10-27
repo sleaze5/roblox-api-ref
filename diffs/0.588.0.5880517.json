@@ -1,0 +1,3654 @@
+{
+	"from": {
+		"version": "0.587.0.5870056",
+		"hash": "6eb3dbf0f5cb4e2a"
+	},
+	"to": {
+		"version": "0.588.0.5880517",
+		"hash": "529912f49e934861"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AlignOrientation",
+			"member": "LookAtPosition",
+			"type": "Add",
+			"value": {
+				"Category": "TargetOrientation",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "LookAtPosition",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerUIService",
+			"member": "OpenExceptionMessagePopup",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "OpenExceptionMessagePopup",
+				"Parameters": [
+					{
+						"Name": "exceptionMessage",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "pausedLine",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DynamicImage",
+			"member": "DrawCircle",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "center",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector2"
+							}
+						},
+						{
+							"Name": "radius",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "color",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Color3"
+							}
+						},
+						{
+							"Name": "alpha",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "center",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector2"
+							}
+						},
+						{
+							"Name": "radius",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "color",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Color3"
+							}
+						},
+						{
+							"Name": "transparency",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "DrawCircle",
+				"Parameters": [
+					{
+						"Name": "center",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "radius",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "color",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Color3"
+						}
+					},
+					{
+						"Name": "transparency",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiObject",
+			"member": "GuiState",
+			"type": "Add",
+			"value": {
+				"Category": "State",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "GuiState",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "GuiState"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PrepareCollectiblesPurchase",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "player",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Name": "collectibleItemId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "collectibleItemInstanceId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "collectibleProductId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "expectedPrice",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "player",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Name": "assetId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "collectibleItemId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "collectibleItemInstanceId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "collectibleProductId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "expectedPrice",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "PrepareCollectiblesPurchase",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "collectibleItemId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "collectibleItemInstanceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "collectibleProductId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "expectedPrice",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptCollectiblesPurchase",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "player",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Name": "collectibleItemId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "collectibleItemInstanceId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "collectibleProductId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "expectedPrice",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "player",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Name": "assetId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "collectibleItemId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "collectibleItemInstanceId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "collectibleProductId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "expectedPrice",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptCollectiblesPurchase",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "collectibleItemId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "collectibleItemInstanceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "collectibleProductId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "expectedPrice",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PrepareCollectiblesPurchaseRequested",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "player",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Name": "collectibleItemId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "collectibleItemInstanceId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "collectibleProductId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "expectedPrice",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "player",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Name": "assetId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "collectibleItemId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "collectibleItemInstanceId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "collectibleProductId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "expectedPrice",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "PrepareCollectiblesPurchaseRequested",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "collectibleItemId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "collectibleItemInstanceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "collectibleProductId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "expectedPrice",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptCollectiblesPurchaseRequested",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "player",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Name": "collectibleItemId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "collectibleItemInstanceId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "collectibleProductId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "expectedPrice",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "idempotencyKey",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "purchaseAuthToken",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "player",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Name": "assetId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "collectibleItemId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "collectibleItemInstanceId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "collectibleProductId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "expectedPrice",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "idempotencyKey",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "purchaseAuthToken",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptCollectiblesPurchaseRequested",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "collectibleItemId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "collectibleItemInstanceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "collectibleProductId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "expectedPrice",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "idempotencyKey",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "purchaseAuthToken",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "CardboardName",
+			"type": "Add",
+			"value": {
+				"Category": "Material Overrides",
+				"Default": "Cardboard",
+				"MemberType": "Property",
+				"Name": "CardboardName",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "CarpetName",
+			"type": "Add",
+			"value": {
+				"Category": "Material Overrides",
+				"Default": "Carpet",
+				"MemberType": "Property",
+				"Name": "CarpetName",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "CeramicTilesName",
+			"type": "Add",
+			"value": {
+				"Category": "Material Overrides",
+				"Default": "CeramicTiles",
+				"MemberType": "Property",
+				"Name": "CeramicTilesName",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "ClayRoofTilesName",
+			"type": "Add",
+			"value": {
+				"Category": "Material Overrides",
+				"Default": "ClayRoofTiles",
+				"MemberType": "Property",
+				"Name": "ClayRoofTilesName",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "LeatherName",
+			"type": "Add",
+			"value": {
+				"Category": "Material Overrides",
+				"Default": "Leather",
+				"MemberType": "Property",
+				"Name": "LeatherName",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "PlasterName",
+			"type": "Add",
+			"value": {
+				"Category": "Material Overrides",
+				"Default": "Plaster",
+				"MemberType": "Property",
+				"Name": "PlasterName",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "RoofShinglesName",
+			"type": "Add",
+			"value": {
+				"Category": "Material Overrides",
+				"Default": "RoofShingles",
+				"MemberType": "Property",
+				"Name": "RoofShinglesName",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "RubberName",
+			"type": "Add",
+			"value": {
+				"Category": "Material Overrides",
+				"Default": "Rubber",
+				"MemberType": "Property",
+				"Name": "RubberName",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "subtractAsync2_INTERNAL",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "subtractAsync2_INTERNAL",
+				"Parameters": [
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					},
+					{
+						"Default": "Default",
+						"Name": "collisionfidelity",
+						"Type": {
+							"Category": "Enum",
+							"Name": "CollisionFidelity"
+						}
+					},
+					{
+						"Default": "Automatic",
+						"Name": "renderFidelity",
+						"Type": {
+							"Category": "Enum",
+							"Name": "RenderFidelity"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "unionAsync2_INTERNAL",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "unionAsync2_INTERNAL",
+				"Parameters": [
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					},
+					{
+						"Default": "Default",
+						"Name": "collisionfidelity",
+						"Type": {
+							"Category": "Enum",
+							"Name": "CollisionFidelity"
+						}
+					},
+					{
+						"Default": "Automatic",
+						"Name": "renderFidelity",
+						"Type": {
+							"Category": "Enum",
+							"Name": "RenderFidelity"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsSettings",
+			"member": "AreAssemblyCentersOfMassShown",
+			"type": "Add",
+			"value": {
+				"Category": "Display",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "AreAssemblyCentersOfMassShown",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RenderSettings",
+			"member": "Enable VR Mode",
+			"type": "Add",
+			"value": {
+				"Category": "General",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Enable VR Mode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "AvatarJointUpgrade",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "",
+					"after": "Default"
+				}
+			],
+			"value": {
+				"Category": "Character",
+				"Default": "Default",
+				"MemberType": "Property",
+				"Name": "AvatarJointUpgrade",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotBrowsable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AvatarJointUpgrade"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatInputBarConfiguration",
+			"member": "AutocompleteEnabled",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "AutocompleteEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AudioAnalyzer",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AudioAnalyzer",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioAnalyzer",
+			"member": "PeakLevel",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "PeakLevel",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioAnalyzer",
+			"member": "RmsLevel",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "RmsLevel",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AudioChorus",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AudioChorus",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioChorus",
+			"member": "Depth",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0.449999988",
+				"MemberType": "Property",
+				"Name": "Depth",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioChorus",
+			"member": "Mix",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0.850000024",
+				"MemberType": "Property",
+				"Name": "Mix",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioChorus",
+			"member": "Rate",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "5",
+				"MemberType": "Property",
+				"Name": "Rate",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AudioCompressor",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AudioCompressor",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioCompressor",
+			"member": "Attack",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0.100000001",
+				"MemberType": "Property",
+				"Name": "Attack",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioCompressor",
+			"member": "MakeupGain",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "MakeupGain",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioCompressor",
+			"member": "Ratio",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "40",
+				"MemberType": "Property",
+				"Name": "Ratio",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioCompressor",
+			"member": "Release",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0.100000001",
+				"MemberType": "Property",
+				"Name": "Release",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioCompressor",
+			"member": "Threshold",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "-40",
+				"MemberType": "Property",
+				"Name": "Threshold",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AudioDeviceInput",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AudioDeviceInput",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioDeviceInput",
+			"member": "AccessList",
+			"type": "Add",
+			"value": {
+				"Category": "userIds",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "AccessList",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "BinaryString"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioDeviceInput",
+			"member": "AccessType",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "Deny",
+				"MemberType": "Property",
+				"Name": "AccessType",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AccessModifierType"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioDeviceInput",
+			"member": "Active",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "Active",
+				"Security": {
+					"Read": "None",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioDeviceInput",
+			"member": "IsReady",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "IsReady",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioDeviceInput",
+			"member": "Muted",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "Muted",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioDeviceInput",
+			"member": "Player",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "Player",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Player"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioDeviceInput",
+			"member": "GetUserIdAccessList",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetUserIdAccessList",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioDeviceInput",
+			"member": "SetUserIdAccessList",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetUserIdAccessList",
+				"Parameters": [
+					{
+						"Name": "userIds",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AudioDeviceOutput",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AudioDeviceOutput",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioDeviceOutput",
+			"member": "Player",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "Player",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Player"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AudioDistortion",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AudioDistortion",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioDistortion",
+			"member": "Level",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0.5",
+				"MemberType": "Property",
+				"Name": "Level",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AudioEcho",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AudioEcho",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioEcho",
+			"member": "DelayTime",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "DelayTime",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioEcho",
+			"member": "DryLevel",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "DryLevel",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioEcho",
+			"member": "Feedback",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0.5",
+				"MemberType": "Property",
+				"Name": "Feedback",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioEcho",
+			"member": "WetLevel",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "WetLevel",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AudioEmitter",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AudioEmitter",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioEmitter",
+			"member": "AudioInteractionGroup",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "AudioInteractionGroup",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AudioEqualizer",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AudioEqualizer",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioEqualizer",
+			"member": "HighGain",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "HighGain",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioEqualizer",
+			"member": "LowGain",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "LowGain",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioEqualizer",
+			"member": "MidGain",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "MidGain",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioEqualizer",
+			"member": "MidRange",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "400 4000 ",
+				"MemberType": "Property",
+				"Name": "MidRange",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "NumberRange"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AudioFader",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AudioFader",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioFader",
+			"member": "Volume",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "Volume",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AudioFlanger",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AudioFlanger",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioFlanger",
+			"member": "Depth",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0.449999988",
+				"MemberType": "Property",
+				"Name": "Depth",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioFlanger",
+			"member": "Mix",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0.850000024",
+				"MemberType": "Property",
+				"Name": "Mix",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioFlanger",
+			"member": "Rate",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "5",
+				"MemberType": "Property",
+				"Name": "Rate",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AudioListener",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AudioListener",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioListener",
+			"member": "AudioInteractionGroup",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "AudioInteractionGroup",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AudioPitchShifter",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AudioPitchShifter",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioPitchShifter",
+			"member": "Pitch",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "1.25",
+				"MemberType": "Property",
+				"Name": "Pitch",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AudioPlayer",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AudioPlayer",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioPlayer",
+			"member": "AssetId",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "AssetId",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioPlayer",
+			"member": "AutoLoad",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "AutoLoad",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioPlayer",
+			"member": "IsPlaying",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "IsPlaying",
+				"Security": {
+					"Read": "None",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioPlayer",
+			"member": "IsReady",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "IsReady",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioPlayer",
+			"member": "LoopRegion",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0 60000 ",
+				"MemberType": "Property",
+				"Name": "LoopRegion",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "NumberRange"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioPlayer",
+			"member": "Looping",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "Looping",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioPlayer",
+			"member": "PlaybackRegion",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0 60000 ",
+				"MemberType": "Property",
+				"Name": "PlaybackRegion",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "NumberRange"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioPlayer",
+			"member": "PlaybackSpeed",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "PlaybackSpeed",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "double"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioPlayer",
+			"member": "TimeLength",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "TimeLength",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "double"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioPlayer",
+			"member": "TimePosition",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "TimePosition",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "double"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioPlayer",
+			"member": "Play",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Play",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioPlayer",
+			"member": "Stop",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Stop",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AudioReverb",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AudioReverb",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioReverb",
+			"member": "DecayRatio",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0.5",
+				"MemberType": "Property",
+				"Name": "DecayRatio",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioReverb",
+			"member": "DecayTime",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "1.5",
+				"MemberType": "Property",
+				"Name": "DecayTime",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioReverb",
+			"member": "Density",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "Density",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioReverb",
+			"member": "Diffusion",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "Diffusion",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioReverb",
+			"member": "DryLevel",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "DryLevel",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioReverb",
+			"member": "EarlyDelayTime",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0.0199999996",
+				"MemberType": "Property",
+				"Name": "EarlyDelayTime",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioReverb",
+			"member": "HighCutFrequency",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "20000",
+				"MemberType": "Property",
+				"Name": "HighCutFrequency",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioReverb",
+			"member": "LateDelayTime",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0.0399999991",
+				"MemberType": "Property",
+				"Name": "LateDelayTime",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioReverb",
+			"member": "LowShelfFrequency",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "250",
+				"MemberType": "Property",
+				"Name": "LowShelfFrequency",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioReverb",
+			"member": "LowShelfGain",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "LowShelfGain",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioReverb",
+			"member": "ReferenceFrequency",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "5000",
+				"MemberType": "Property",
+				"Name": "ReferenceFrequency",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioReverb",
+			"member": "WetLevel",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "-6",
+				"MemberType": "Property",
+				"Name": "WetLevel",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Wire",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "Wire",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Wire",
+			"member": "Connected",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "Connected",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Wire",
+			"member": "SourceInstance",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "SourceInstance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Wire",
+			"member": "SourceName",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "Output",
+				"MemberType": "Property",
+				"Name": "SourceName",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Wire",
+			"member": "TargetInstance",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "TargetInstance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Wire",
+			"member": "TargetName",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "Input",
+				"MemberType": "Property",
+				"Name": "TargetName",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Cardboard",
+			"type": "Add",
+			"value": {
+				"Name": "Cardboard",
+				"Value": 2304
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Carpet",
+			"type": "Add",
+			"value": {
+				"Name": "Carpet",
+				"Value": 2305
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "CeramicTiles",
+			"type": "Add",
+			"value": {
+				"Name": "CeramicTiles",
+				"Value": 2306
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "ClayRoofTiles",
+			"type": "Add",
+			"value": {
+				"Name": "ClayRoofTiles",
+				"Value": 2307
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "RoofShingles",
+			"type": "Add",
+			"value": {
+				"Name": "RoofShingles",
+				"Value": 2308
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Leather",
+			"type": "Add",
+			"value": {
+				"Name": "Leather",
+				"Value": 2309
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Plaster",
+			"type": "Add",
+			"value": {
+				"Name": "Plaster",
+				"Value": 2310
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Rubber",
+			"type": "Add",
+			"value": {
+				"Name": "Rubber",
+				"Value": 2311
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AccessModifierType",
+			"type": "Add",
+			"value": {
+				"Name": "AccessModifierType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AccessModifierType",
+			"item": "Allow",
+			"type": "Add",
+			"value": {
+				"Name": "Allow",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AccessModifierType",
+			"item": "Deny",
+			"type": "Add",
+			"value": {
+				"Name": "Deny",
+				"Value": 1
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AudioWindowSize",
+			"type": "Add",
+			"value": {
+				"Name": "AudioWindowSize"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AudioWindowSize",
+			"item": "Small",
+			"type": "Add",
+			"value": {
+				"Name": "Small",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AudioWindowSize",
+			"item": "Medium",
+			"type": "Add",
+			"value": {
+				"Name": "Medium",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AudioWindowSize",
+			"item": "Large",
+			"type": "Add",
+			"value": {
+				"Name": "Large",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "GuiState",
+			"type": "Add",
+			"value": {
+				"Name": "GuiState"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "GuiState",
+			"item": "Idle",
+			"type": "Add",
+			"value": {
+				"Name": "Idle",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "GuiState",
+			"item": "Hover",
+			"type": "Add",
+			"value": {
+				"Name": "Hover",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "GuiState",
+			"item": "Press",
+			"type": "Add",
+			"value": {
+				"Name": "Press",
+				"Value": 2
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "EnableFluidForces",
+			"part": "description",
+			"before": null,
+			"after": "Used to enable or disable aerodynamic forces on parts and assemblies.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "EnableFluidForces",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BubbleChatConfiguration",
+			"member": "FontFace",
+			"part": "description",
+			"before": null,
+			"after": "<code>Font</code> of the bubble text.",
+			"value": {
+				"Category": "Appearance",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "FontFace",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Font"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BubbleChatConfiguration",
+			"member": "MaxBubbles",
+			"part": "description",
+			"before": null,
+			"after": "Maximum number of text chat bubbles shown per user.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "3",
+				"MemberType": "Property",
+				"Name": "MaxBubbles",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BubbleChatConfiguration",
+			"member": "TailVisible",
+			"part": "description",
+			"before": null,
+			"after": "Determines if the tail at the bottom of the text chat bubbles is visible.",
+			"value": {
+				"Category": "Appearance",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "TailVisible",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatService",
+			"member": "DisplayBubble",
+			"part": "description",
+			"before": null,
+			"after": "Displays a chat bubble above the provided part or character.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DisplayBubble",
+				"Parameters": [
+					{
+						"Name": "partOrCharacter",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatService",
+			"member": "DisplayBubble",
+			"part": "parameter",
+			"parameter": "partOrCharacter",
+			"before": null,
+			"after": "The part or character that the bubble to be displayed above.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DisplayBubble",
+				"Parameters": [
+					{
+						"Name": "partOrCharacter",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatService",
+			"member": "DisplayBubble",
+			"part": "parameter",
+			"parameter": "message",
+			"before": null,
+			"after": "The text to be displayed in the chat bubble.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DisplayBubble",
+				"Parameters": [
+					{
+						"Name": "partOrCharacter",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatService",
+			"member": "BubbleDisplayed",
+			"part": "description",
+			"before": null,
+			"after": "Fires when <code>TextChatService:DisplayBubble()</code> is called.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "BubbleDisplayed",
+				"Parameters": [
+					{
+						"Name": "partOrCharacter",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "textChatMessage",
+						"Type": {
+							"Category": "Class",
+							"Name": "TextChatMessage"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatService",
+			"member": "OnBubbleAdded",
+			"part": "description",
+			"before": null,
+			"after": "Called when a bubble chat is about to be displayed.",
+			"value": {
+				"MemberType": "Callback",
+				"Name": "OnBubbleAdded",
+				"Parameters": [
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Class",
+							"Name": "TextChatMessage"
+						}
+					},
+					{
+						"Name": "adornee",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatService",
+			"member": "OnBubbleAdded",
+			"part": "parameter",
+			"parameter": "message",
+			"before": null,
+			"after": "The incoming <code>TextChatMessage</code>.",
+			"value": {
+				"MemberType": "Callback",
+				"Name": "OnBubbleAdded",
+				"Parameters": [
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Class",
+							"Name": "TextChatMessage"
+						}
+					},
+					{
+						"Name": "adornee",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatService",
+			"member": "OnBubbleAdded",
+			"part": "parameter",
+			"parameter": "adornee",
+			"before": null,
+			"after": "The <em>partOrCharacter</em> the bubble chat message is attached to.",
+			"value": {
+				"MemberType": "Callback",
+				"Name": "OnBubbleAdded",
+				"Parameters": [
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Class",
+							"Name": "TextChatMessage"
+						}
+					},
+					{
+						"Name": "adornee",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatService",
+			"member": "OnBubbleAdded",
+			"part": "return",
+			"before": null,
+			"after": "If a <code>TextChatMessagethose properties will be applied to the associated bubble, overriding</code>Class.BubbleChatConfiguration` properties.",
+			"value": {
+				"MemberType": "Callback",
+				"Name": "OnBubbleAdded",
+				"Parameters": [
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Class",
+							"Name": "TextChatMessage"
+						}
+					},
+					{
+						"Name": "adornee",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FluidForces",
+			"item": "Default",
+			"part": "description",
+			"before": null,
+			"after": "Aerodynamic forces will not be calculated on any <code>BaseParts</code>.",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FluidForces",
+			"item": "Experimental",
+			"part": "description",
+			"before": null,
+			"after": "Aerodynamic forces will be calculated on <code>BaseParts</code> with <code>EnableFluidForces</code> set to true. During the beta phase, the behavior of the aerodynamic force model may change as the model improves.",
+			"value": {
+				"Name": "Experimental",
+				"Value": 1
+			}
+		}
+	]
+}

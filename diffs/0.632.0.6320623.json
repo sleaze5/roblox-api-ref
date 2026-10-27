@@ -1,0 +1,2291 @@
+{
+	"from": {
+		"version": "0.631.1.6310472",
+		"hash": "034c0d4a0a9b44cc"
+	},
+	"to": {
+		"version": "0.632.0.6320623",
+		"hash": "fe7775edf1e54944"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AccessoryDescription",
+			"member": "GetAppliedInstance",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAppliedInstance",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnalyticsService",
+			"member": "LogFunnelStepEvent",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "player",
+							"Type": {
+								"Category": "Class",
+								"Name": "Player"
+							}
+						},
+						{
+							"Name": "funnelName",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "",
+							"Name": "funnelSessionId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "0",
+							"Name": "step",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Default": "",
+							"Name": "stepName",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "nil",
+							"Name": "customFields",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "player",
+							"Type": {
+								"Category": "Class",
+								"Name": "Player"
+							}
+						},
+						{
+							"Name": "funnelName",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "",
+							"Name": "funnelSessionId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "1",
+							"Name": "step",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Default": "",
+							"Name": "stepName",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "nil",
+							"Name": "customFields",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "LogFunnelStepEvent",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "funnelName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "funnelSessionId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "1",
+						"Name": "step",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "stepName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "customFields",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "CaptureSaved",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated",
+						{
+							"PreferredDescriptorName": "UserCaptureSaved",
+							"ThreadSafety": "Unknown"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "CaptureSaved",
+				"Parameters": [
+					{
+						"Name": "captureInfo",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"Security": "None",
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "UserCaptureSaved",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "CreatePostAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreatePostAsync",
+				"Parameters": [
+					{
+						"Name": "pathArr",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "caption",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableImage",
+			"member": "DrawCircle",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "center",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector2"
+							}
+						},
+						{
+							"Name": "radius",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "color",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Color3"
+							}
+						},
+						{
+							"Name": "transparency",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "center",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector2"
+							}
+						},
+						{
+							"Name": "radius",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "color",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Color3"
+							}
+						},
+						{
+							"Name": "transparency",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						},
+						{
+							"Name": "combineType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "ImageCombineType"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "DrawCircle",
+				"Parameters": [
+					{
+						"Name": "center",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "radius",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "color",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Color3"
+						}
+					},
+					{
+						"Name": "transparency",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "combineType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ImageCombineType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableImage",
+			"member": "DrawLine",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "p1",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector2"
+							}
+						},
+						{
+							"Name": "p2",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector2"
+							}
+						},
+						{
+							"Name": "color",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Color3"
+							}
+						},
+						{
+							"Name": "transparency",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "p1",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector2"
+							}
+						},
+						{
+							"Name": "p2",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector2"
+							}
+						},
+						{
+							"Name": "color",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Color3"
+							}
+						},
+						{
+							"Name": "transparency",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						},
+						{
+							"Name": "combineType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "ImageCombineType"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "DrawLine",
+				"Parameters": [
+					{
+						"Name": "p1",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "p2",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "color",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Color3"
+						}
+					},
+					{
+						"Name": "transparency",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "combineType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ImageCombineType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableImage",
+			"member": "DrawRectangle",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "position",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector2"
+							}
+						},
+						{
+							"Name": "size",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector2"
+							}
+						},
+						{
+							"Name": "color",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Color3"
+							}
+						},
+						{
+							"Name": "transparency",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "position",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector2"
+							}
+						},
+						{
+							"Name": "size",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector2"
+							}
+						},
+						{
+							"Name": "color",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Color3"
+							}
+						},
+						{
+							"Name": "transparency",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						},
+						{
+							"Name": "combineType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "ImageCombineType"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "DrawRectangle",
+				"Parameters": [
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "size",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "color",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Color3"
+						}
+					},
+					{
+						"Name": "transparency",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "combineType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ImageCombineType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "ApplyDescriptionFinished",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ApplyDescriptionFinished",
+				"Parameters": [
+					{
+						"Name": "description",
+						"Type": {
+							"Category": "Class",
+							"Name": "HumanoidDescription"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScreenshotHud",
+			"member": "ExperienceNameOverlayEnabled",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden",
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Appearance",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "ExperienceNameOverlayEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScreenshotHud",
+			"member": "OverlayFont",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden",
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Appearance",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "OverlayFont",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "Font"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScreenshotHud",
+			"member": "UsernameOverlayEnabled",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden",
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Appearance",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "UsernameOverlayEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioDeviceEmulatorService",
+			"member": "ConnectGamepad",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ConnectGamepad",
+				"Parameters": [
+					{
+						"Name": "deviceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "gamepadDeviceType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "GamepadType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioDeviceEmulatorService",
+			"member": "DisconnectGamepad",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DisconnectGamepad",
+				"Parameters": [
+					{
+						"Name": "deviceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioDeviceEmulatorService",
+			"member": "GetKeyboardShortcut",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetKeyboardShortcut",
+				"Parameters": [
+					{
+						"Name": "deviceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "gamepadKey",
+						"Type": {
+							"Category": "Enum",
+							"Name": "KeyCode"
+						}
+					},
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioDeviceEmulatorService",
+			"member": "SendGamepadEvent",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SendGamepadEvent",
+				"Parameters": [
+					{
+						"Name": "deviceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "keyCode",
+						"Type": {
+							"Category": "Enum",
+							"Name": "KeyCode"
+						}
+					},
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "rotation",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioDeviceEmulatorService",
+			"member": "SetGamepadEmulationEnabled",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetGamepadEmulationEnabled",
+				"Parameters": [
+					{
+						"Name": "enable",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioDeviceEmulatorService",
+			"member": "UpdateKeyMapping",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UpdateKeyMapping",
+				"Parameters": [
+					{
+						"Name": "deviceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "keyboardShortcut",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "gamepadKey",
+						"Type": {
+							"Category": "Enum",
+							"Name": "KeyCode"
+						}
+					},
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserGameSettings",
+			"member": "PreferredTextSize",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "PreferredTextSize",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "PreferredTextSize"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoCaptureService",
+			"member": "CameraID",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "{NullDeviceGuid}",
+					"after": ""
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "CameraID",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VoiceChatService",
+			"member": "SubscriptionDropped",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "SubscriptionDropped",
+				"Parameters": [
+					{
+						"Name": "sessionId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "RTAnimationTracker",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "RTAnimationTracker",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RTAnimationTracker",
+			"member": "Active",
+			"type": "Add",
+			"value": {
+				"Category": "Control",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "Active",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RTAnimationTracker",
+			"member": "EnableFallbackAudioInput",
+			"type": "Add",
+			"value": {
+				"Category": "Control",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "EnableFallbackAudioInput",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RTAnimationTracker",
+			"member": "SessionName",
+			"type": "Add",
+			"value": {
+				"Category": "Control",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "SessionName",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RTAnimationTracker",
+			"member": "TrackerMode",
+			"type": "Add",
+			"value": {
+				"Category": "Control",
+				"Default": "None",
+				"MemberType": "Property",
+				"Name": "TrackerMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "TrackerMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RTAnimationTracker",
+			"member": "TrackerType",
+			"type": "Add",
+			"value": {
+				"Category": "Control",
+				"Default": "Face",
+				"MemberType": "Property",
+				"Name": "TrackerType",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "TrackerType"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RTAnimationTracker",
+			"member": "TrackerError",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "TrackerError",
+				"Parameters": [
+					{
+						"Name": "errorCode",
+						"Type": {
+							"Category": "Enum",
+							"Name": "TrackerError"
+						}
+					},
+					{
+						"Name": "msg",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RTAnimationTracker",
+			"member": "TrackerPrompt",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "TrackerPrompt",
+				"Parameters": [
+					{
+						"Name": "prompt",
+						"Type": {
+							"Category": "Enum",
+							"Name": "TrackerPromptEvent"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AtmosphereSensor",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AtmosphereSensor",
+				"Superclass": "SensorBase"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AtmosphereSensor",
+			"member": "AirDensity",
+			"type": "Add",
+			"value": {
+				"Category": "Output",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "AirDensity",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AtmosphereSensor",
+			"member": "RelativeWindVelocity",
+			"type": "Add",
+			"value": {
+				"Category": "Output",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "RelativeWindVelocity",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "PreferredTextSize",
+			"type": "Add",
+			"value": {
+				"Name": "PreferredTextSize"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PreferredTextSize",
+			"item": "Medium",
+			"type": "Add",
+			"value": {
+				"Name": "Medium",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PreferredTextSize",
+			"item": "Large",
+			"type": "Add",
+			"value": {
+				"Name": "Large",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PreferredTextSize",
+			"item": "Larger",
+			"type": "Add",
+			"value": {
+				"Name": "Larger",
+				"Value": 9
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PreferredTextSize",
+			"item": "Largest",
+			"type": "Add",
+			"value": {
+				"Name": "Largest",
+				"Value": 14
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "TrackerType",
+			"type": "Add",
+			"value": {
+				"Name": "TrackerType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TrackerType",
+			"item": "None",
+			"type": "Add",
+			"value": {
+				"Name": "None",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TrackerType",
+			"item": "Face",
+			"type": "Add",
+			"value": {
+				"Name": "Face",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TrackerType",
+			"item": "UpperBody",
+			"type": "Add",
+			"value": {
+				"Name": "UpperBody",
+				"Value": 2
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "Path2D",
+			"member": "GetBoundingRect",
+			"part": "description",
+			"before": null,
+			"after": "Returns the bounding size for the <code>Path2D</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBoundingRect",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Rect"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "BanHistoryPages",
+			"part": "description",
+			"before": null,
+			"after": "Returned by <code>Players:GetBanHistoryAsync</code> to view the entire ban and unban history of any UserId."
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "BanAsync",
+			"part": "description",
+			"before": "Service not live.",
+			"after": "Bans users from your experience, with options to specify duration, reason, whether the ban applies to the entire universe or just the current place, and more.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "BanAsync",
+				"Parameters": [
+					{
+						"Name": "config",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "BanAsync",
+			"part": "parameter",
+			"parameter": "config",
+			"before": null,
+			"after": "<table><thead> <tr>   <th>Name</th>   <th>Type</th>   <th>Description</th> </tr></thead> <tbody>   <tr>     <td><code>UserIds</code></td>     <td>array</td>     <td>(Required) UserID of the players to be banned. <br /><br />Max size is <code>50</code>.</td>   </tr>   <tr>     <td><code>ApplyToUniverse</code></td>     <td>boolean</td>     <td>(Optional, default is <code>true</code>) Propagates the ban to all places within this universe.</td>   </tr>   <tr>     <td><code>Duration</code></td>     <td>int</td>     <td>(Required) Duration of the ban in seconds. Permanent bans should have a value of <code>-1</code>. <br /><br />Zero and all other negative values are invalid.</td>   </tr>   <tr>     <td><code>DisplayReason</code></td>     <td>string</td>     <td>(Required) The message that will be displayed to users when they attempt to and fail to join an experience. Max size is 400.</td>   </tr>   <tr>     <td><code>PrivateReason</code></td>     <td>string</td>     <td>(Required) Any internal messaging that will be returned when querying the user's ban history. Max size is 1000.</td>   </tr>   <tr>     <td><code>ExcludeAltAccounts</code></td>     <td>boolean</td>     <td>(Optional, default is <code>false</code>) When <code>true</code>, Roblox does not attempt to ban alt accounts.</td>   </tr> </tbody></table>",
+			"value": {
+				"MemberType": "Function",
+				"Name": "BanAsync",
+				"Parameters": [
+					{
+						"Name": "config",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "GetBanHistoryAsync",
+			"part": "description",
+			"before": null,
+			"after": "Retrieves the ban and unban history of any user within the experience's universe.'",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBanHistoryAsync",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "BanHistoryPages"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "GetBanHistoryAsync",
+			"part": "return",
+			"before": null,
+			"after": "The items within <code>BanHistoryPages</code> are tables with the following fields. <table><thead>   <tr>     <th>Name</th>     <th>Type</th>     <th>Description</th>   </tr></thead> <tbody>   <tr>     <td><code>DisplayReason</code></td>     <td>string</td>     <td>The <code>DisplayReason</code> that was shown to the user</td>   </tr>   <tr>     <td><code>PrivateReason</code></td>     <td>string</td>     <td>The <code>PrivateReason</code> that was sent with this ban.</td>   </tr>   <tr>     <td><code>StartTime</code></td>     <td>string</td>     <td>The time that this ban was applied in ISO 8601 format.</td>   </tr>   <tr>     <td><code>Duration</code></td>     <td>number</td>     <td>The length of the ban in seconds. If it is a permanent ban, it will be <code>-1</code>.</td>   </tr>   <tr>     <td><code>Ban</code></td>     <td>boolean</td>     <td>If the action was a ban, it will be <code>true</code>. If the action was an unban, it will be <code>false</code>.</td>   </tr>   <tr>     <td><code>PlaceId</code></td>     <td>number</td>     <td>The place in which a ban or unban was explicitly updated. This field is <code>-1</code> if the action was applied on the universe level.</td>   </tr> </tbody> </table>",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBanHistoryAsync",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "BanHistoryPages"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "UnbanAsync",
+			"part": "description",
+			"before": "Service not live.",
+			"after": "Unbans players banned from <code>Players.BanAsync</code> or the User Restrictions Open Cloud API.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UnbanAsync",
+				"Parameters": [
+					{
+						"Name": "config",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "UnbanAsync",
+			"part": "parameter",
+			"parameter": "config",
+			"before": null,
+			"after": "<table><thead> <tr>   <th>Name</th>   <th>Type</th>   <th>Description</th> </tr></thead> <tbody>   <tr>     <td><code>UserIds</code></td>     <td>array</td>     <td>UserIDs to be force allowed into the experience(s). <br /> <br />Max size is <code>50</code>.</td>   </tr>   <tr>     <td><code>ApplyToUniverse</code></td>     <td>boolean</td>     <td>Propagates the unban to all places within this universe.<br /></td>   </tr> </tbody> </table>",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UnbanAsync",
+				"Parameters": [
+					{
+						"Name": "config",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SurfaceAppearance",
+			"member": "Color",
+			"part": "description",
+			"before": null,
+			"after": "Feature not live - Applies a tint to your existing colormap. Set directly with color picker or programmatically with <code>Color3</code>.",
+			"value": {
+				"Category": "Appearance",
+				"Default": "1, 1, 1",
+				"MemberType": "Property",
+				"Name": "Color",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Legacy",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Legacy.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Legacy.png\" />",
+			"value": {
+				"Name": "Legacy",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Arial",
+			"part": "description",
+			"before": "Arial has been removed from Roblox. Use Arimo instead. See the <a href=\"https://devforum.roblox.com/t/introducing-builder-font-deprecating-gotham-and-arial/2868222\">forum announcement</a> for more information.",
+			"after": "Arial has been removed from Roblox. Use Arimo instead.",
+			"value": {
+				"Name": "Arial",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "ArialBold",
+			"part": "description",
+			"before": "Arial has been removed from Roblox. Use Arimo instead. See the <a href=\"https://devforum.roblox.com/t/introducing-builder-font-deprecating-gotham-and-arial/2868222\">forum announcement</a> for more information.",
+			"after": "Arial has been removed from Roblox. Use Arimo instead.",
+			"value": {
+				"Name": "ArialBold",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "SourceSans",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/SourceSans.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/SourceSans.png\" />",
+			"value": {
+				"Name": "SourceSans",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "SourceSansBold",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/SourceSansBold.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/SourceSansBold.png\" />",
+			"value": {
+				"Name": "SourceSansBold",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "SourceSansLight",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/SourceSansLight.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/SourceSansLight.png\" />",
+			"value": {
+				"Name": "SourceSansLight",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "SourceSansItalic",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/SourceSansItalic.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/SourceSansItalic.png\" />",
+			"value": {
+				"Name": "SourceSansItalic",
+				"Value": 6
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Bodoni",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Bodoni.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Bodoni.png\" />",
+			"value": {
+				"Name": "Bodoni",
+				"Value": 7
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Garamond",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Garamond.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Garamond.png\" />",
+			"value": {
+				"Name": "Garamond",
+				"Value": 8
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Cartoon",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Cartoon.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Cartoon.png\" />",
+			"value": {
+				"Name": "Cartoon",
+				"Value": 9
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Code",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Code.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Code.png\" />",
+			"value": {
+				"Name": "Code",
+				"Value": 10
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Highway",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Highway.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Highway.png\" />",
+			"value": {
+				"Name": "Highway",
+				"Value": 11
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "SciFi",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/SciFi.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/SciFi.png\" />",
+			"value": {
+				"Name": "SciFi",
+				"Value": 12
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Arcade",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Arcade.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Arcade.png\" />",
+			"value": {
+				"Name": "Arcade",
+				"Value": 13
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Fantasy",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Fantasy.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Fantasy.png\" />",
+			"value": {
+				"Name": "Fantasy",
+				"Value": 14
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Antique",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Antique.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Antique.png\" />",
+			"value": {
+				"Name": "Antique",
+				"Value": 15
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "SourceSansSemibold",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/SourceSansSemibold.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/SourceSansSemibold.png\" />",
+			"value": {
+				"Name": "SourceSansSemibold",
+				"Value": 16
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Gotham",
+			"part": "description",
+			"before": "Gotham has been removed from Roblox. Use Montserrat instead. See the <a href=\"https://devforum.roblox.com/t/introducing-builder-font-deprecating-gotham-and-arial/2868222\">forum announcement</a> for more information.",
+			"after": "Gotham has been removed from Roblox. Use Montserrat instead.",
+			"value": {
+				"LegacyNames": [
+					"Montserrat"
+				],
+				"Name": "Gotham",
+				"Value": 17
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "GothamMedium",
+			"part": "description",
+			"before": "Gotham has been removed from Roblox. Use Montserrat instead. See the <a href=\"https://devforum.roblox.com/t/introducing-builder-font-deprecating-gotham-and-arial/2868222\">forum announcement</a> for more information.",
+			"after": "Gotham has been removed from Roblox. Use Montserrat instead.",
+			"value": {
+				"LegacyNames": [
+					"GothamSemibold",
+					"MontserratMedium"
+				],
+				"Name": "GothamMedium",
+				"Value": 18
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "GothamBold",
+			"part": "description",
+			"before": "Gotham has been removed from Roblox. Use Montserrat instead. See the <a href=\"https://devforum.roblox.com/t/introducing-builder-font-deprecating-gotham-and-arial/2868222\">forum announcement</a> for more information.",
+			"after": "Gotham has been removed from Roblox. Use Montserrat instead.",
+			"value": {
+				"LegacyNames": [
+					"MontserratBold"
+				],
+				"Name": "GothamBold",
+				"Value": 19
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "GothamBlack",
+			"part": "description",
+			"before": "Gotham has been removed from Roblox. Use Montserrat instead. See the <a href=\"https://devforum.roblox.com/t/introducing-builder-font-deprecating-gotham-and-arial/2868222\">forum announcement</a> for more information.",
+			"after": "Gotham has been removed from Roblox. Use Montserrat instead.",
+			"value": {
+				"LegacyNames": [
+					"MontserratBlack"
+				],
+				"Name": "GothamBlack",
+				"Value": 20
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "AmaticSC",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/AmaticSC.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/AmaticSC.png\" />",
+			"value": {
+				"Name": "AmaticSC",
+				"Value": 21
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Bangers",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Bangers.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Bangers.png\" />",
+			"value": {
+				"Name": "Bangers",
+				"Value": 22
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Creepster",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Creepster.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Creepster.png\" />",
+			"value": {
+				"Name": "Creepster",
+				"Value": 23
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "DenkOne",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/DenkOne.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/DenkOne.png\" />",
+			"value": {
+				"Name": "DenkOne",
+				"Value": 24
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Fondamento",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Fondamento.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Fondamento.png\" />",
+			"value": {
+				"Name": "Fondamento",
+				"Value": 25
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "FredokaOne",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/FredokaOne.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/FredokaOne.png\" />",
+			"value": {
+				"Name": "FredokaOne",
+				"Value": 26
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "GrenzeGotisch",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/GrenzeGotisch.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/GrenzeGotisch.png\" />",
+			"value": {
+				"Name": "GrenzeGotisch",
+				"Value": 27
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "IndieFlower",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/IndieFlower.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/IndieFlower.png\" />",
+			"value": {
+				"Name": "IndieFlower",
+				"Value": 28
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "JosefinSans",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/JosefinSans.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/JosefinSans.png\" />",
+			"value": {
+				"Name": "JosefinSans",
+				"Value": 29
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Jura",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Jura.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Jura.png\" />",
+			"value": {
+				"Name": "Jura",
+				"Value": 30
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Kalam",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Kalam.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Kalam.png\" />",
+			"value": {
+				"Name": "Kalam",
+				"Value": 31
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "LuckiestGuy",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/LuckiestGuy.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/LuckiestGuy.png\" />",
+			"value": {
+				"Name": "LuckiestGuy",
+				"Value": 32
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Merriweather",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Merriweather.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Merriweather.png\" />",
+			"value": {
+				"Name": "Merriweather",
+				"Value": 33
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Michroma",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Michroma.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Michroma.png\" />",
+			"value": {
+				"Name": "Michroma",
+				"Value": 34
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Nunito",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Nunito.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Nunito.png\" />",
+			"value": {
+				"Name": "Nunito",
+				"Value": 35
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Oswald",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Oswald.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Oswald.png\" />",
+			"value": {
+				"Name": "Oswald",
+				"Value": 36
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "PatrickHand",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/PatrickHand.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/PatrickHand.png\" />",
+			"value": {
+				"Name": "PatrickHand",
+				"Value": 37
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "PermanentMarker",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/PermanentMarker.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/PermanentMarker.png\" />",
+			"value": {
+				"Name": "PermanentMarker",
+				"Value": 38
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Roboto",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Roboto.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Roboto.png\" />",
+			"value": {
+				"Name": "Roboto",
+				"Value": 39
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "RobotoCondensed",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/RobotoCondensed.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/RobotoCondensed.png\" />",
+			"value": {
+				"Name": "RobotoCondensed",
+				"Value": 40
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "RobotoMono",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/RobotoMono.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/RobotoMono.png\" />",
+			"value": {
+				"Name": "RobotoMono",
+				"Value": 41
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Sarpanch",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Sarpanch.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Sarpanch.png\" />",
+			"value": {
+				"Name": "Sarpanch",
+				"Value": 42
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "SpecialElite",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/SpecialElite.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/SpecialElite.png\" />",
+			"value": {
+				"Name": "SpecialElite",
+				"Value": 43
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "TitilliumWeb",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/TitilliumWeb.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/TitilliumWeb.png\" />",
+			"value": {
+				"Name": "TitilliumWeb",
+				"Value": 44
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Ubuntu",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Ubuntu.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Ubuntu.png\" />",
+			"value": {
+				"Name": "Ubuntu",
+				"Value": 45
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Arimo",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Arimo.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Arimo.png\" />",
+			"value": {
+				"Name": "Arimo",
+				"Value": 50
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "ArimoBold",
+			"part": "description",
+			"before": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/ArimoBold.png\" /> .",
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/ArimoBold.png\" />",
+			"value": {
+				"Name": "ArimoBold",
+				"Value": 51
+			}
+		}
+	]
+}

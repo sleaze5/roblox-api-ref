@@ -1,0 +1,7448 @@
+{
+	"from": {
+		"version": "0.654.2.6540482",
+		"hash": "281ccda49d704f6e"
+	},
+	"to": {
+		"version": "0.655.0.6551095",
+		"hash": "d7ec89f14d9e47ce"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AdService",
+			"member": "ShowStaticEudsaDisclosure",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ShowStaticEudsaDisclosure",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AdService",
+			"member": "CreateAdRewardFromDevProductId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateAdRewardFromDevProductId",
+				"Parameters": [
+					{
+						"Name": "devProductId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "AdReward"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AdService",
+			"member": "GetAdAvailability",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAdAvailability",
+				"Parameters": [
+					{
+						"Name": "adFormat",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AdFormat"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AdService",
+			"member": "ShowRewardedVideoAdAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ShowRewardedVideoAdAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "reward",
+						"Type": {
+							"Category": "DataType",
+							"Name": "AdReward"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "ShowAdResult"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AdService",
+			"member": "AdAvailabilityChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "AdAvailabilityChanged",
+				"Parameters": [
+					{
+						"Name": "adFormat",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AdFormat"
+						}
+					},
+					{
+						"Name": "adAvailabilityResult",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AdService",
+			"member": "ShowReportAdPopup",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ShowReportAdPopup",
+				"Parameters": [
+					{
+						"Name": "adInfo",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AdService",
+			"member": "rewardedVideoAdPlayServerToClient",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "rewardedVideoAdPlayServerToClient",
+				"Parameters": [
+					{
+						"Name": "rewardDetails",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AdService",
+			"member": "rewardedVideoAdResultClientToServer",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "rewardedVideoAdResultClientToServer",
+				"Parameters": [
+					{
+						"Name": "result",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ShowAdResult"
+						}
+					},
+					{
+						"Name": "encryptedAdTrackingData",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "encryptionMetadata",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioCompressor",
+			"member": "Editor",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "State Editing",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "Editor",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioLimiter",
+			"member": "Editor",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "State Editing",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "Editor",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AuroraService",
+			"member": "GetDesyncedInstances",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetDesyncedInstances",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AuroraService",
+			"member": "GetRemoteWorldStepId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRemoteWorldStepId",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AuroraService",
+			"member": "GetWorldStepId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetWorldStepId",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AuroraService",
+			"member": "StepPhysics",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "StepPhysics",
+				"Parameters": [
+					{
+						"Name": "worldSteps",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Default": "{}",
+						"Name": "parts",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Instances"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AuroraService",
+			"member": "Desynced",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Desynced",
+				"Parameters": [
+					{
+						"Name": "target",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AuroraService",
+			"member": "Synced",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Synced",
+				"Parameters": [
+					{
+						"Name": "target",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextBox",
+			"member": "ShouldEmitUpAndDownArrowEvents",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "ShouldEmitUpAndDownArrowEvents",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HapticEffect",
+			"member": "Position",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "RobloxScriptSecurity",
+						"Write": "RobloxScriptSecurity"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "None"
+					}
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "Position",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HapticEffect",
+			"member": "Radius",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "RobloxScriptSecurity",
+						"Write": "RobloxScriptSecurity"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "None"
+					}
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "3",
+				"MemberType": "Property",
+				"Name": "Radius",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HapticEffect",
+			"member": "SetKeys",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetKeys",
+				"Parameters": [
+					{
+						"Name": "keys",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HapticEffect",
+			"member": "SetWaveformKeys",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetWaveformKeys",
+				"Parameters": [
+					{
+						"Name": "keys",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "FallHeightEnabled",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "FallHeightEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RenderingTest",
+			"member": "RenderingTestFrameCount",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "120",
+					"after": "20"
+				}
+			],
+			"value": {
+				"Category": "RenderingTest",
+				"Default": "20",
+				"MemberType": "Property",
+				"Name": "RenderingTestFrameCount",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RenderingTest",
+			"member": "Timeout",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "10",
+					"after": "30"
+				}
+			],
+			"value": {
+				"Category": "RenderingTest",
+				"Default": "30",
+				"MemberType": "Property",
+				"Name": "Timeout",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SoundService",
+			"member": "OpenAudioCompressorEditorSignal",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OpenAudioCompressorEditorSignal",
+				"Parameters": [
+					{
+						"Name": "selectedCompressorObjects",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Instances"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Stats",
+			"member": "GetMemoryCategoryNames",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetMemoryCategoryNames",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Stats",
+			"member": "GetMemoryUsageMbAllCategories",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetMemoryUsageMbAllCategories",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "DEPRECATED_RegisterCommand",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DEPRECATED_RegisterCommand",
+				"Parameters": [
+					{
+						"Name": "commandName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "function",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "DEPRECATED_RegisterSequentialCommand",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DEPRECATED_RegisterSequentialCommand",
+				"Parameters": [
+					{
+						"Name": "commandName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "function",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioWidgetsService",
+			"member": "AttachPluginGui",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AttachPluginGui",
+				"Parameters": [
+					{
+						"Name": "target",
+						"Type": {
+							"Category": "Class",
+							"Name": "StudioWidget"
+						}
+					},
+					{
+						"Name": "gui",
+						"Type": {
+							"Category": "Class",
+							"Name": "PluginGui"
+						}
+					},
+					{
+						"Name": "attachment",
+						"Type": {
+							"Category": "Class",
+							"Name": "StudioAttachment"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TweenService",
+			"member": "SmoothDamp",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ThreadSafety",
+					"before": "Unsafe",
+					"after": "Safe"
+				}
+			],
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "SmoothDamp",
+				"Parameters": [
+					{
+						"Name": "current",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "target",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "velocity",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "smoothTime",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "maxSpeed",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					},
+					{
+						"Name": "dt",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					}
+				],
+				"ReturnType": [
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					},
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WebViewService",
+			"member": "MutateWindow",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "url",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "title",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string?"
+							}
+						},
+						{
+							"Name": "isVisible",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool?"
+							}
+						},
+						{
+							"Name": "searchType",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string?"
+							}
+						},
+						{
+							"Name": "transitionAnimation",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string?"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "url",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "title",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string?"
+							}
+						},
+						{
+							"Name": "isVisible",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool?"
+							}
+						},
+						{
+							"Name": "searchType",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string?"
+							}
+						},
+						{
+							"Name": "transitionAnimation",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string?"
+							}
+						},
+						{
+							"Name": "showDomainAsTitle",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool?"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "MutateWindow",
+				"Parameters": [
+					{
+						"Name": "url",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "title",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string?"
+						}
+					},
+					{
+						"Name": "isVisible",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool?"
+						}
+					},
+					{
+						"Name": "searchType",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string?"
+						}
+					},
+					{
+						"Name": "transitionAnimation",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string?"
+						}
+					},
+					{
+						"Name": "showDomainAsTitle",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WebViewService",
+			"member": "OpenWindow",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "url",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "title",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string?"
+							}
+						},
+						{
+							"Name": "isVisible",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool?"
+							}
+						},
+						{
+							"Name": "searchType",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string?"
+							}
+						},
+						{
+							"Name": "transitionAnimation",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string?"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "url",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "title",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string?"
+							}
+						},
+						{
+							"Name": "isVisible",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool?"
+							}
+						},
+						{
+							"Name": "searchType",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string?"
+							}
+						},
+						{
+							"Name": "transitionAnimation",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string?"
+							}
+						},
+						{
+							"Name": "showDomainAsTitle",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool?"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "OpenWindow",
+				"Parameters": [
+					{
+						"Name": "url",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "title",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string?"
+						}
+					},
+					{
+						"Name": "isVisible",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool?"
+						}
+					},
+					{
+						"Name": "searchType",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string?"
+						}
+					},
+					{
+						"Name": "transitionAnimation",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string?"
+						}
+					},
+					{
+						"Name": "showDomainAsTitle",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HapticEffectType",
+			"item": "Custom",
+			"type": "Add",
+			"value": {
+				"Name": "Custom",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PromptCreateAvatarResult",
+			"item": "TokenInvalid",
+			"type": "Add",
+			"value": {
+				"Name": "TokenInvalid",
+				"Value": 12
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AdFormat",
+			"type": "Add",
+			"value": {
+				"Name": "AdFormat"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AdFormat",
+			"item": "RewardedVideo",
+			"type": "Add",
+			"value": {
+				"Name": "RewardedVideo",
+				"Value": 0
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ShowAdResult",
+			"type": "Add",
+			"value": {
+				"Name": "ShowAdResult"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ShowAdResult",
+			"item": "PlayerIneligible",
+			"type": "Add",
+			"value": {
+				"Name": "PlayerIneligible",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ShowAdResult",
+			"item": "ExperienceIneligible",
+			"type": "Add",
+			"value": {
+				"Name": "ExperienceIneligible",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ShowAdResult",
+			"item": "NotShown",
+			"type": "Add",
+			"value": {
+				"Name": "NotShown",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ShowAdResult",
+			"item": "ShowCompleted",
+			"type": "Add",
+			"value": {
+				"Name": "ShowCompleted",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ShowAdResult",
+			"item": "ShowInterrupted",
+			"type": "Add",
+			"value": {
+				"Name": "ShowInterrupted",
+				"Value": 4
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "AdService",
+			"member": "ShowVideoAd",
+			"part": "description",
+			"before": "<strong>Deprecated:</strong> <code>AdService</code> has been decommissioned and is no longer operational. There is no replacement service and this event should not be used in new work.<br>Show mobile video advertisements.",
+			"after": "<strong>Deprecated:</strong> <code>AdService</code> has been decommissioned and is no longer operational. <a href=\"../../../production/monetization/immersive-ads.md\">Immersive Ads</a> should be used as a replacement for <code>AdService</code>.<br>Show mobile video advertisements.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ShowVideoAd",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AdService",
+			"member": "VideoAdClosed",
+			"part": "description",
+			"before": "<strong>Deprecated:</strong> <code>AdService</code> has been decommissioned and is no longer operational. There is no replacement service and this event should not be used in new work.<br>Fires when an <code>AdService</code> video closes.",
+			"after": "<strong>Deprecated:</strong> <code>AdService</code> has been decommissioned and is no longer operational. <a href=\"../../../production/monetization/immersive-ads.md\">Immersive Ads</a> should be used as a replacement for <code>AdService</code>.<br>Fires when an <code>AdService</code> video closes.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "VideoAdClosed",
+				"Parameters": [
+					{
+						"Name": "adShown",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "CreateAssetAsync",
+			"part": "description",
+			"before": null,
+			"after": "Creates a new asset from the given object.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateAssetAsync",
+				"Parameters": [
+					{
+						"Name": "object",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Object"
+						}
+					},
+					{
+						"Name": "assetType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AssetType"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "requestParameters",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "CreateAssetAsync",
+			"part": "parameter",
+			"parameter": "object",
+			"before": null,
+			"after": "The object to be created as an asset.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateAssetAsync",
+				"Parameters": [
+					{
+						"Name": "object",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Object"
+						}
+					},
+					{
+						"Name": "assetType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AssetType"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "requestParameters",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "CreateAssetAsync",
+			"part": "parameter",
+			"parameter": "assetType",
+			"before": null,
+			"after": "Currently supported types are: - <code>AssetType.Model</code> – with <code>object</code> as any valid <code>Instance</code>   root. - <code>AssetType.Plugin</code> – with <code>object</code> as any valid   <code>Instance</code> root. - <code>AssetType.Mesh</code> – with <code>object</code> as any valid   <code>EditableMesh</code> root. - <code>AssetType.Image</code> – with <code>object</code> as any valid   <code>EditableImage</code> root.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateAssetAsync",
+				"Parameters": [
+					{
+						"Name": "object",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Object"
+						}
+					},
+					{
+						"Name": "assetType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AssetType"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "requestParameters",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "CreateAssetAsync",
+			"part": "parameter",
+			"parameter": "requestParameters",
+			"before": null,
+			"after": "Options table containing asset metadata: - <code>Name</code> – Name of the asset as a string. Defaults to <code>[object.Name]</code>. - <code>Description</code> – Description of the asset as a string. Defaults to <code>\"Created with AssetService:CreateAssetAsync\"</code>. - <code>CreatorId</code> – ID of the asset creator as a number. Defaults to the logged in Roblox Studio user for Plugin context. Required for Open Cloud Luau Execution context. - <code>CreatorType</code> – <code>AssetCreatorType</code> indicating the type of asset creator. Defaults to <code>AssetCreatorType.User</code> in Plugin context. Required for Open Cloud Luau Execution context. - <code>IsPackage</code> – Boolean value, only applicable to the <code>AssetType.Model</code> type. Defaults to <code>true</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateAssetAsync",
+				"Parameters": [
+					{
+						"Name": "object",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Object"
+						}
+					},
+					{
+						"Name": "assetType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AssetType"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "requestParameters",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "CreateAssetAsync",
+			"part": "return",
+			"before": null,
+			"after": "The <code>CreateAssetResult</code> and asset ID pair if successful.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateAssetAsync",
+				"Parameters": [
+					{
+						"Name": "object",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Object"
+						}
+					},
+					{
+						"Name": "assetType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AssetType"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "requestParameters",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "CreateAssetVersionAsync",
+			"part": "description",
+			"before": null,
+			"after": "Creates a new version for an existing asset from the given object.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateAssetVersionAsync",
+				"Parameters": [
+					{
+						"Name": "object",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Object"
+						}
+					},
+					{
+						"Name": "assetType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AssetType"
+						}
+					},
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "requestParameters",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "CreateAssetVersionAsync",
+			"part": "parameter",
+			"parameter": "object",
+			"before": null,
+			"after": "The object to be created as an asset.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateAssetVersionAsync",
+				"Parameters": [
+					{
+						"Name": "object",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Object"
+						}
+					},
+					{
+						"Name": "assetType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AssetType"
+						}
+					},
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "requestParameters",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "CreateAssetVersionAsync",
+			"part": "parameter",
+			"parameter": "assetType",
+			"before": null,
+			"after": "Currently supported types are: - <code>AssetType.Model</code> – with <code>object</code> as any valid <code>Instance</code>   root. - <code>AssetType.Plugin</code> – with <code>object</code> as any valid   <code>Instance</code> root. - <code>AssetType.Mesh</code> – with <code>object</code> as any valid   <code>EditableMesh</code> root. - <code>AssetType.Image</code> – with <code>object</code> as any valid   <code>EditableImage</code> root.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateAssetVersionAsync",
+				"Parameters": [
+					{
+						"Name": "object",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Object"
+						}
+					},
+					{
+						"Name": "assetType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AssetType"
+						}
+					},
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "requestParameters",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "CreateAssetVersionAsync",
+			"part": "parameter",
+			"parameter": "assetId",
+			"before": null,
+			"after": "The ID of the asset for the new version.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateAssetVersionAsync",
+				"Parameters": [
+					{
+						"Name": "object",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Object"
+						}
+					},
+					{
+						"Name": "assetType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AssetType"
+						}
+					},
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "requestParameters",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "CreateAssetVersionAsync",
+			"part": "parameter",
+			"parameter": "requestParameters",
+			"before": null,
+			"after": "Options table containing asset metadata: - <code>Name</code> – A <code>string</code>. Name of the asset. Default: object.Name. - <code>Description</code> – A <code>string</code>. Description of the asset. Default: \"Created with AssetService:CreateAssetAsync\". - <code>CreatorId</code> – A <code>number</code>. ID of the asset creator. Default: The logged in Roblox Studio user for Plugin context. Required for Open Cloud Luau Execution context. - <code>CreatorType</code> – A <code>AssetCreatorType</code>. Type of asset creator. Default: <code>AssetCreatorType.User</code> in Plugin context. Required for Open Cloud Luau Execution context. - <code>IsPackage</code> – A <code>bool</code>. Only applicable to the <code>AssetType.Model</code> type. Default: true.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateAssetVersionAsync",
+				"Parameters": [
+					{
+						"Name": "object",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Object"
+						}
+					},
+					{
+						"Name": "assetType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AssetType"
+						}
+					},
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "requestParameters",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "CreateAssetVersionAsync",
+			"part": "return",
+			"before": null,
+			"after": "The <code>CreateAssetResult</code> and asset version number pair if successful.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateAssetVersionAsync",
+				"Parameters": [
+					{
+						"Name": "object",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Object"
+						}
+					},
+					{
+						"Name": "assetType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AssetType"
+						}
+					},
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "requestParameters",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioAnalyzer",
+			"member": "WiringChanged",
+			"part": "description",
+			"before": null,
+			"after": "Fires when another instance is connected to or disconnected from the <code>AudioAnalyzer</code> via a <code>Wire</code>.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Event",
+				"Name": "WiringChanged",
+				"Parameters": [
+					{
+						"Name": "connected",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "wire",
+						"Type": {
+							"Category": "Class",
+							"Name": "Wire"
+						}
+					},
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioChorus",
+			"member": "WiringChanged",
+			"part": "description",
+			"before": null,
+			"after": "Fires when another instance is connected to or disconnected from the <code>AudioChorus</code> via a <code>Wire</code>.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Event",
+				"Name": "WiringChanged",
+				"Parameters": [
+					{
+						"Name": "connected",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "wire",
+						"Type": {
+							"Category": "Class",
+							"Name": "Wire"
+						}
+					},
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioCompressor",
+			"member": "WiringChanged",
+			"part": "description",
+			"before": null,
+			"after": "Fires when another instance is connected to or disconnected from the <code>AudioCompressor</code> via a <code>Wire</code>.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Event",
+				"Name": "WiringChanged",
+				"Parameters": [
+					{
+						"Name": "connected",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "wire",
+						"Type": {
+							"Category": "Class",
+							"Name": "Wire"
+						}
+					},
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioDeviceInput",
+			"member": "WiringChanged",
+			"part": "description",
+			"before": null,
+			"after": "Fires when another instance is connected to or disconnected from the <code>AudioDeviceInput</code> via a <code>Wire</code>.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "WiringChanged",
+				"Parameters": [
+					{
+						"Name": "connected",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "wire",
+						"Type": {
+							"Category": "Class",
+							"Name": "Wire"
+						}
+					},
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioDeviceOutput",
+			"member": "WiringChanged",
+			"part": "description",
+			"before": null,
+			"after": "Fires when another instance is connected to or disconnected from the <code>AudioDeviceOutput</code> via a <code>Wire</code>.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Event",
+				"Name": "WiringChanged",
+				"Parameters": [
+					{
+						"Name": "connected",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "wire",
+						"Type": {
+							"Category": "Class",
+							"Name": "Wire"
+						}
+					},
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioDistortion",
+			"member": "WiringChanged",
+			"part": "description",
+			"before": null,
+			"after": "Fires when another instance is connected to or disconnected from the <code>AudioDistortion</code> via a <code>Wire</code>.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Event",
+				"Name": "WiringChanged",
+				"Parameters": [
+					{
+						"Name": "connected",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "wire",
+						"Type": {
+							"Category": "Class",
+							"Name": "Wire"
+						}
+					},
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioEcho",
+			"member": "WiringChanged",
+			"part": "description",
+			"before": null,
+			"after": "Fires when another instance is connected to or disconnected from the <code>AudioEcho</code> via a <code>Wire</code>.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Event",
+				"Name": "WiringChanged",
+				"Parameters": [
+					{
+						"Name": "connected",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "wire",
+						"Type": {
+							"Category": "Class",
+							"Name": "Wire"
+						}
+					},
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioEmitter",
+			"member": "WiringChanged",
+			"part": "description",
+			"before": null,
+			"after": "Fires when another instance is connected to or disconnected from the <code>AudioEmitter</code> via a <code>Wire</code>.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Event",
+				"Name": "WiringChanged",
+				"Parameters": [
+					{
+						"Name": "connected",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "wire",
+						"Type": {
+							"Category": "Class",
+							"Name": "Wire"
+						}
+					},
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioEqualizer",
+			"member": "WiringChanged",
+			"part": "description",
+			"before": null,
+			"after": "Fires when another instance is connected to or disconnected from the <code>AudioEqualizer</code> via a <code>Wire</code>.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Event",
+				"Name": "WiringChanged",
+				"Parameters": [
+					{
+						"Name": "connected",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "wire",
+						"Type": {
+							"Category": "Class",
+							"Name": "Wire"
+						}
+					},
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioFader",
+			"member": "WiringChanged",
+			"part": "description",
+			"before": null,
+			"after": "Fires when another instance is connected to or disconnected from the <code>AudioFader</code> via a <code>Wire</code>.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Event",
+				"Name": "WiringChanged",
+				"Parameters": [
+					{
+						"Name": "connected",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "wire",
+						"Type": {
+							"Category": "Class",
+							"Name": "Wire"
+						}
+					},
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioFilter",
+			"member": "WiringChanged",
+			"part": "description",
+			"before": null,
+			"after": "Fires when another instance is connected to or disconnected from the <code>AudioFilter</code> via a <code>Wire</code>.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Event",
+				"Name": "WiringChanged",
+				"Parameters": [
+					{
+						"Name": "connected",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "wire",
+						"Type": {
+							"Category": "Class",
+							"Name": "Wire"
+						}
+					},
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioFlanger",
+			"member": "WiringChanged",
+			"part": "description",
+			"before": null,
+			"after": "Fires when another instance is connected to or disconnected from the <code>AudioFlanger</code> via a <code>Wire</code>.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Event",
+				"Name": "WiringChanged",
+				"Parameters": [
+					{
+						"Name": "connected",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "wire",
+						"Type": {
+							"Category": "Class",
+							"Name": "Wire"
+						}
+					},
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioLimiter",
+			"member": "WiringChanged",
+			"part": "description",
+			"before": null,
+			"after": "Fires when another instance is connected to or disconnected from the <code>AudioLimiter</code> via a <code>Wire</code>.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Event",
+				"Name": "WiringChanged",
+				"Parameters": [
+					{
+						"Name": "connected",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "wire",
+						"Type": {
+							"Category": "Class",
+							"Name": "Wire"
+						}
+					},
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioListener",
+			"member": "WiringChanged",
+			"part": "description",
+			"before": null,
+			"after": "Fires when another instance is connected to or disconnected from the <code>AudioListener</code> via a <code>Wire</code>.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Event",
+				"Name": "WiringChanged",
+				"Parameters": [
+					{
+						"Name": "connected",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "wire",
+						"Type": {
+							"Category": "Class",
+							"Name": "Wire"
+						}
+					},
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioPitchShifter",
+			"member": "WiringChanged",
+			"part": "description",
+			"before": null,
+			"after": "Fires when another instance is connected to or disconnected from the <code>AudioPitchShifter</code> via a <code>Wire</code>.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Event",
+				"Name": "WiringChanged",
+				"Parameters": [
+					{
+						"Name": "connected",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "wire",
+						"Type": {
+							"Category": "Class",
+							"Name": "Wire"
+						}
+					},
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioPlayer",
+			"member": "WiringChanged",
+			"part": "description",
+			"before": null,
+			"after": "Fires when another instance is connected to or disconnected from the <code>AudioPlayer</code> via a <code>Wire</code>.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Event",
+				"Name": "WiringChanged",
+				"Parameters": [
+					{
+						"Name": "connected",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "wire",
+						"Type": {
+							"Category": "Class",
+							"Name": "Wire"
+						}
+					},
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioReverb",
+			"member": "WiringChanged",
+			"part": "description",
+			"before": null,
+			"after": "Fires when another instance is connected to or disconnected from the <code>AudioReverb</code> via a <code>Wire</code>.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Event",
+				"Name": "WiringChanged",
+				"Parameters": [
+					{
+						"Name": "connected",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "wire",
+						"Type": {
+							"Category": "Class",
+							"Name": "Wire"
+						}
+					},
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AvatarCreationService",
+			"part": "description",
+			"before": null,
+			"after": "A service to support developer avatar creators."
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "GetValidationRules",
+			"part": "description",
+			"before": null,
+			"after": "Gets data regarding rules that assets must abide by to pass UGC validation.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetValidationRules",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "GetValidationRules",
+			"part": "return",
+			"before": null,
+			"after": "Dictionary of validation rules as detailed above.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetValidationRules",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "GetBatchTokenDetailsAsync",
+			"part": "description",
+			"before": null,
+			"after": "Gets the avatar creation token details for a list of avatar creation tokens at once.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBatchTokenDetailsAsync",
+				"Parameters": [
+					{
+						"Name": "tokenIds",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "GetBatchTokenDetailsAsync",
+			"part": "parameter",
+			"parameter": "tokenIds",
+			"before": null,
+			"after": "The list of avatar creation token IDs to get details of.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBatchTokenDetailsAsync",
+				"Parameters": [
+					{
+						"Name": "tokenIds",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "GetBatchTokenDetailsAsync",
+			"part": "return",
+			"before": null,
+			"after": "Array of avatar creation token details as outlined above.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBatchTokenDetailsAsync",
+				"Parameters": [
+					{
+						"Name": "tokenIds",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "PromptCreateAvatarAsync",
+			"part": "description",
+			"before": null,
+			"after": "Prompts a <code>Player</code> to purchase and create an avatar from a <code>HumanoidDescription</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptCreateAvatarAsync",
+				"Parameters": [
+					{
+						"Name": "tokenId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "humanoidDescription",
+						"Type": {
+							"Category": "Class",
+							"Name": "HumanoidDescription"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "PromptCreateAvatarAsync",
+			"part": "parameter",
+			"parameter": "tokenId",
+			"before": null,
+			"after": "The ID of an avatar creation token. The token must be valid in that the universe the method is called from is the same universe the token was created for. Furthermore, the token creator must maintain ID verification and <a href=\"https://www.roblox.com/premium/membership\">Roblox Premium</a>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptCreateAvatarAsync",
+				"Parameters": [
+					{
+						"Name": "tokenId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "humanoidDescription",
+						"Type": {
+							"Category": "Class",
+							"Name": "HumanoidDescription"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "PromptCreateAvatarAsync",
+			"part": "parameter",
+			"parameter": "player",
+			"before": null,
+			"after": "The <code>Player</code> intended to be presented with the creation prompt.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptCreateAvatarAsync",
+				"Parameters": [
+					{
+						"Name": "tokenId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "humanoidDescription",
+						"Type": {
+							"Category": "Class",
+							"Name": "HumanoidDescription"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "PromptCreateAvatarAsync",
+			"part": "parameter",
+			"parameter": "humanoidDescription",
+			"before": null,
+			"after": "The <code>HumanoidDescription</code> of the avatar intended for creation.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptCreateAvatarAsync",
+				"Parameters": [
+					{
+						"Name": "tokenId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "humanoidDescription",
+						"Type": {
+							"Category": "Class",
+							"Name": "HumanoidDescription"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "PromptCreateAvatarAsync",
+			"part": "return",
+			"before": null,
+			"after": "A tuple containing, in order: <ul> <li> An <code>PromptCreateAvatarResult</code> indicating the result of the   creation prompt. </li> <li> A string result. In the case of   <code>PromptCreateAvatarResult.Success</code>, this will indicate the   bundle ID. In the case of any failure enum, this will indicate the   resultant error message. </li> <li> A secondary optional string result. In the case of   <code>PromptCreateAvatarResult.Success</code>, this will indicate the   outfit ID. In the case of any failure enum, this will be <code>nil</code>. </li> </ul>",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptCreateAvatarAsync",
+				"Parameters": [
+					{
+						"Name": "tokenId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "humanoidDescription",
+						"Type": {
+							"Category": "Class",
+							"Name": "HumanoidDescription"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "ValidateUGCAccessoryAsync",
+			"part": "description",
+			"before": null,
+			"after": "Studio only. Runs UGC validation for an <code>AccessoryType</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ValidateUGCAccessoryAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "accessory",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "accessoryType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AccessoryType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "ValidateUGCAccessoryAsync",
+			"part": "parameter",
+			"parameter": "player",
+			"before": null,
+			"after": "The <code>Player</code> validation is completed for.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ValidateUGCAccessoryAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "accessory",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "accessoryType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AccessoryType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "ValidateUGCAccessoryAsync",
+			"part": "parameter",
+			"parameter": "accessory",
+			"before": null,
+			"after": "The instance validation is run on.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ValidateUGCAccessoryAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "accessory",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "accessoryType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AccessoryType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "ValidateUGCAccessoryAsync",
+			"part": "parameter",
+			"parameter": "accessoryType",
+			"before": null,
+			"after": "<code>AccessoryType</code> the instance is expected to be. Expects <code>Eyebrow</code>, <code>Eyelash</code>, or <code>Hair</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ValidateUGCAccessoryAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "accessory",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "accessoryType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AccessoryType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "ValidateUGCAccessoryAsync",
+			"part": "return",
+			"before": null,
+			"after": "A tuple containing, in order: <ul> <li>A boolean indicating if validation was successful for the accessory.</li> <li>An optional table of strings. This includes failure reasons if   validation was unsuccessful; otherwise <code>nil</code> if validation was   successful.</li> </ul>",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ValidateUGCAccessoryAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "accessory",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "accessoryType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AccessoryType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "ValidateUGCBodyPartAsync",
+			"part": "description",
+			"before": null,
+			"after": "Studio only. Runs UGC validation for an <code>BodyPart</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ValidateUGCBodyPartAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "bodyPart",
+						"Type": {
+							"Category": "Enum",
+							"Name": "BodyPart"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "ValidateUGCBodyPartAsync",
+			"part": "parameter",
+			"parameter": "player",
+			"before": null,
+			"after": "The <code>Player</code> validation is completed for.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ValidateUGCBodyPartAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "bodyPart",
+						"Type": {
+							"Category": "Enum",
+							"Name": "BodyPart"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "ValidateUGCBodyPartAsync",
+			"part": "parameter",
+			"parameter": "instance",
+			"before": null,
+			"after": "The instance validation is run on.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ValidateUGCBodyPartAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "bodyPart",
+						"Type": {
+							"Category": "Enum",
+							"Name": "BodyPart"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "ValidateUGCBodyPartAsync",
+			"part": "parameter",
+			"parameter": "bodyPart",
+			"before": null,
+			"after": "<code>BodyPart</code> the instance is expected to be.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ValidateUGCBodyPartAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "bodyPart",
+						"Type": {
+							"Category": "Enum",
+							"Name": "BodyPart"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "ValidateUGCBodyPartAsync",
+			"part": "return",
+			"before": null,
+			"after": "A tuple containing, in order: <ul> <li>A boolean indicating if validation was successful for the body part.</li> <li>An optional table of strings. This includes failure reasons if   validation was unsuccessful; otherwise <code>nil</code> if validation was   successful.</li> </ul>",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ValidateUGCBodyPartAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "bodyPart",
+						"Type": {
+							"Category": "Enum",
+							"Name": "BodyPart"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "ValidateUGCFullBodyAsync",
+			"part": "description",
+			"before": null,
+			"after": "Studio only. Runs UGC validation for a whole body.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ValidateUGCFullBodyAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "humanoidDescription",
+						"Type": {
+							"Category": "Class",
+							"Name": "HumanoidDescription"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "ValidateUGCFullBodyAsync",
+			"part": "parameter",
+			"parameter": "player",
+			"before": null,
+			"after": "The <code>Player</code> validation is completed for.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ValidateUGCFullBodyAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "humanoidDescription",
+						"Type": {
+							"Category": "Class",
+							"Name": "HumanoidDescription"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "ValidateUGCFullBodyAsync",
+			"part": "parameter",
+			"parameter": "humanoidDescription",
+			"before": null,
+			"after": "<code>HumanoidDescription</code> representing the body that validation is run on.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ValidateUGCFullBodyAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "humanoidDescription",
+						"Type": {
+							"Category": "Class",
+							"Name": "HumanoidDescription"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "ValidateUGCFullBodyAsync",
+			"part": "return",
+			"before": null,
+			"after": "A tuple containing, in order: <ul> <li>A boolean indicating if validation was successful for the body.</li> <li>An optional table of strings. This includes failure reasons if   validation was unsuccessful; otherwise <code>nil</code> if validation was   successful.</li> </ul>",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ValidateUGCFullBodyAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "humanoidDescription",
+						"Type": {
+							"Category": "Class",
+							"Name": "HumanoidDescription"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterGui",
+			"member": "ResetPlayerGuiOnSpawn",
+			"part": "description",
+			"before": "<strong>Deprecated:</strong> This property is deprecated. Use <code>LayerCollector.ResetOnSpawn</code> to control the resetting behavior for individual <code>GUI objects</code>.<br>Determines whether each child parented to the StarterGui will be cloned into a player's PlayerGui when that player's character is respawned.",
+			"after": "<strong>Deprecated:</strong> This property is deprecated. Use <code>LayerCollector.ResetOnSpawn</code> to control the resetting behavior for individual <code>LayerCollector</code> objects.<br>Determines whether each child parented to the StarterGui will be cloned into a player's PlayerGui when that player's character is respawned.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "ResetPlayerGuiOnSpawn",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "WrapDeformer",
+			"part": "description",
+			"before": null,
+			"after": "Allows for the real-time deformation of a <code>MeshPart</code>."
+		},
+		{
+			"element": "Member",
+			"class": "WrapDeformer",
+			"member": "SetCageMeshContent",
+			"part": "description",
+			"before": null,
+			"after": "Sets the cage mesh used to deform against a sibling <code>WrapTarget</code> cage mesh.",
+			"value": {
+				"Capabilities": [
+					"Avatar"
+				],
+				"MemberType": "Function",
+				"Name": "SetCageMeshContent",
+				"Parameters": [
+					{
+						"Name": "content",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WrapDeformer",
+			"member": "CreateEditableMeshAsync",
+			"part": "description",
+			"before": null,
+			"after": "Returns an <code>EditableMesh</code> (currently unskinned) equivalent to the deformed parent mesh.",
+			"value": {
+				"Capabilities": [
+					"Avatar"
+				],
+				"MemberType": "Function",
+				"Name": "CreateEditableMeshAsync",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Object"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WrapDeformer",
+			"member": "GetDeformedCFrameAsync",
+			"part": "description",
+			"before": null,
+			"after": "Returns a <code>CFrame</code> deformed comparably to the <code>MeshPart</code>.",
+			"value": {
+				"Capabilities": [
+					"Avatar"
+				],
+				"MemberType": "Function",
+				"Name": "GetDeformedCFrameAsync",
+				"Parameters": [
+					{
+						"Name": "originalCFrame",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "GetRoll",
+			"part": "description",
+			"before": "<strong>Deprecated:</strong> This method has been deprecated.<br>Returns in radians the current roll, or rotation around the camera's Z-axis, applied to the <code>Camera</code> using <code>SetRoll()</code>.",
+			"after": "Returns in radians the current roll, or rotation around the camera's Z-axis, applied to the <code>Camera</code> using <code>SetRoll()</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRoll",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "SetRoll",
+			"part": "description",
+			"before": "<strong>Deprecated:</strong> This method has been deprecated. Instead use the <code>CFrame</code> property to 'roll' the <code>Camera</code>.<br>Sets the current rotation applied around the camera's Z-axis.",
+			"after": "Sets the current rotation applied around the camera's Z-axis.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetRoll",
+				"Parameters": [
+					{
+						"Name": "rollAngle",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "WorldToScreenPoint",
+			"part": "return",
+			"before": "A tuple containing, in order: <ul> <li> A <code>Vector3</code> whose <strong>X</strong> and <strong>Y</strong> components represent the offset   of the <code>worldPoint</code> from the top left corner of the screen, in   pixels. The <code>Vector3</code> <strong>Z</strong> component represents the depth   of the <code>worldPoint</code> from the screen (in studs). </li> <li> A boolean indicating if the <code>worldPoint</code> is within the bounds of the   screen. </li> </ul>",
+			"after": "A tuple containing, in order: <ul> <li> A <code>Vector3</code> whose <strong>X</strong> and <strong>Y</strong> components represent the   offset of the <code>worldPoint</code> from the top left corner of the screen,   in pixels. The <code>Vector3</code> <strong>Z</strong> component represents the   depth of the <code>worldPoint</code> from the screen (in studs). </li> <li> A boolean indicating if the <code>worldPoint</code> is within the bounds of the   screen. </li> </ul>",
+			"value": {
+				"MemberType": "Function",
+				"Name": "WorldToScreenPoint",
+				"Parameters": [
+					{
+						"Name": "worldPoint",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "InterpolationFinished",
+			"part": "description",
+			"before": "<strong>Deprecated:</strong> This event has been deprecated. Instead use <code>TweenService</code> to smoothly animate the <code>Camera</code>.<br>Fired when the <code>Camera</code> has finished interpolating using<code>Interpolate()</code>.",
+			"after": "Fired when the <code>Camera</code> has finished interpolating using<code>Interpolate()</code>.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "InterpolationFinished",
+				"Parameters": [],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStore",
+			"member": "GetVersionAtTimeAsync",
+			"part": "parameter",
+			"parameter": "timestamp",
+			"before": "Unix timestamp in milliseconds for which the requested version was  current. Must be greater than zero. Must not be more then ten minutes  in the future.",
+			"after": "Unix timestamp in milliseconds for which the requested version was current. Must be greater than zero. Must not be more than ten minutes in the future.",
+			"value": {
+				"Capabilities": [
+					"DataStore"
+				],
+				"MemberType": "Function",
+				"Name": "GetVersionAtTimeAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "timestamp",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "GuiBase2d",
+			"part": "description",
+			"before": "GuiBase2d is an abstract class inherited by 2D GUI Objects.",
+			"after": "An abstract class inherited by 2D <code>GuiObjects</code>."
+		},
+		{
+			"element": "Member",
+			"class": "GuiBase2d",
+			"member": "AbsolutePosition",
+			"part": "description",
+			"before": "Describes the actual screen position of a UI element, in pixels.",
+			"after": "Describes the actual screen position of a <code>GuiBase2d</code> element, in pixels.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "AbsolutePosition",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "Unsafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiBase2d",
+			"member": "AbsoluteRotation",
+			"part": "description",
+			"before": "Describes the actual screen rotation of a UI element, in degrees.",
+			"after": "Describes the actual screen rotation of a <code>GuiBase2d</code> element, in degrees.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "AbsoluteRotation",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "Unsafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiBase2d",
+			"member": "AbsoluteSize",
+			"part": "description",
+			"before": "Describes the actual screen size of a UI element, in pixels.",
+			"after": "Describes the actual screen size of a <code>GuiBase2d</code> element, in pixels.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "AbsoluteSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "Unsafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiBase2d",
+			"member": "AutoLocalize",
+			"part": "description",
+			"before": "When set to true, localization will be applied to this GuiBase2d and its descendants.",
+			"after": "When set to <code>true</code>, localization will be applied to this <code>GuiBase2d</code> and its descendants.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Localization",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "AutoLocalize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiBase2d",
+			"member": "RootLocalizationTable",
+			"part": "description",
+			"before": "A reference to a <code>LocalizationTable</code> to be used to apply automated localization to this GuiBase2d and its descendants.",
+			"after": "A reference to a <code>LocalizationTable</code> to be used to apply automated localization to this <code>GuiBase2d</code> and its descendants.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Localization",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "RootLocalizationTable",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "LocalizationTable"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiBase2d",
+			"member": "SelectionChanged",
+			"part": "description",
+			"before": "Fires when the gamepad selection moves to, leaves, or changes within the connected GuiBase2d or any descendant GuiObjects.",
+			"after": "Fires when the gamepad selection moves to, leaves, or changes within the connected <code>GuiBase2d</code> or any descendant <code>GuiObjects</code>.",
+			"value": {
+				"Capabilities": [
+					"UI"
+				],
+				"MemberType": "Event",
+				"Name": "SelectionChanged",
+				"Parameters": [
+					{
+						"Name": "amISelected",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "previousSelection",
+						"Type": {
+							"Category": "Class",
+							"Name": "GuiObject"
+						}
+					},
+					{
+						"Name": "newSelection",
+						"Type": {
+							"Category": "Class",
+							"Name": "GuiObject"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiObject",
+			"member": "Draggable",
+			"part": "description",
+			"before": "<strong>Deprecated:</strong> This property is deprecated. Use <code>UIDragDetector</code> instead, as it supports more input types and can be better customized.<br>Determines whether a <code>GUI</code> (and its descendants) can be dragged around the screen.",
+			"after": "<strong>Deprecated:</strong> This property is deprecated. Use <code>UIDragDetector</code> instead, as it supports more input types and can be better customized.<br>Determines whether a <code>GuiObject</code> (and its descendants) can be dragged around the screen.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Behavior",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Draggable",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiObject",
+			"member": "Selectable",
+			"part": "description",
+			"before": "Determine whether the <code>GUI</code> can be selected by a gamepad.",
+			"after": "Determine whether the <code>GuiObject</code> can be selected by a gamepad.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Selection",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Selectable",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiObject",
+			"member": "TweenSize",
+			"part": "description",
+			"before": "Smoothly resizes a GUI to a new <code>UDim2</code>.",
+			"after": "Smoothly resizes a <code>GuiObject</code> to a new <code>UDim2</code>.",
+			"value": {
+				"Capabilities": [
+					"UI"
+				],
+				"MemberType": "Function",
+				"Name": "TweenSize",
+				"Parameters": [
+					{
+						"Name": "endSize",
+						"Type": {
+							"Category": "DataType",
+							"Name": "UDim2"
+						}
+					},
+					{
+						"Default": "Out",
+						"Name": "easingDirection",
+						"Type": {
+							"Category": "Enum",
+							"Name": "EasingDirection"
+						}
+					},
+					{
+						"Default": "Quad",
+						"Name": "easingStyle",
+						"Type": {
+							"Category": "Enum",
+							"Name": "EasingStyle"
+						}
+					},
+					{
+						"Default": "1",
+						"Name": "time",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Default": "false",
+						"Name": "override",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "callback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiButton",
+			"member": "Modal",
+			"part": "description",
+			"before": "If true while the GUI element is visible, the mouse will not be locked unless the right mouse button is down.",
+			"after": "If <code>true</code> while the GUI element is visible, the mouse will not be locked unless the right mouse button is down.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Modal",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiButton",
+			"member": "Style",
+			"part": "description",
+			"before": "Sets the style of the GuiButton based on a list of pre-determined styles.",
+			"after": "Sets the style of the <code>GuiButton</code> based on a list of pre-determined styles.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Style",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ButtonStyle"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiButton",
+			"member": "MouseButton1Click",
+			"part": "description",
+			"before": "Fired when the mouse has fully left clicked the GUI button.",
+			"after": "Fires when the user's mouse fully left clicks the <code>GuiButton</code>.",
+			"value": {
+				"Capabilities": [
+					"UI"
+				],
+				"MemberType": "Event",
+				"Name": "MouseButton1Click",
+				"Parameters": [],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiButton",
+			"member": "MouseButton1Down",
+			"part": "description",
+			"before": "Fired when the mouse is in the left mouse down state on the GUI object.",
+			"after": "Fires when the user presses their left mouse button down on the <code>GuiButton</code>.",
+			"value": {
+				"Capabilities": [
+					"UI"
+				],
+				"MemberType": "Event",
+				"Name": "MouseButton1Down",
+				"Parameters": [
+					{
+						"Name": "x",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "y",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiButton",
+			"member": "MouseButton1Up",
+			"part": "description",
+			"before": "Fired when the left mouse has released the GUI object.",
+			"after": "Fires when the user releases their left mouse button off of the <code>GuiButton</code>.",
+			"value": {
+				"Capabilities": [
+					"UI"
+				],
+				"MemberType": "Event",
+				"Name": "MouseButton1Up",
+				"Parameters": [
+					{
+						"Name": "x",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "y",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiButton",
+			"member": "MouseButton2Click",
+			"part": "description",
+			"before": "Fired when the mouse has fully right clicked the GUI button.",
+			"after": "Fires when the user's mouse fully right clicks the <code>GuiButton</code>.",
+			"value": {
+				"Capabilities": [
+					"UI"
+				],
+				"MemberType": "Event",
+				"Name": "MouseButton2Click",
+				"Parameters": [],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiButton",
+			"member": "MouseButton2Down",
+			"part": "description",
+			"before": "Fired when the mouse is in the right mouse down state on the GUI object.",
+			"after": "Fires when the user presses their right mouse button down on the <code>GuiButton</code>.",
+			"value": {
+				"Capabilities": [
+					"UI"
+				],
+				"MemberType": "Event",
+				"Name": "MouseButton2Down",
+				"Parameters": [
+					{
+						"Name": "x",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "y",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiButton",
+			"member": "MouseButton2Up",
+			"part": "description",
+			"before": "Fired when the right mouse button has been released on a GUI Object.",
+			"after": "Fires when the user releases their right mouse button off of the <code>GuiButton</code>.",
+			"value": {
+				"Capabilities": [
+					"UI"
+				],
+				"MemberType": "Event",
+				"Name": "MouseButton2Up",
+				"Parameters": [
+					{
+						"Name": "x",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "y",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImageButton",
+			"member": "Image",
+			"part": "description",
+			"before": "The image content displayed by the UI element. Reads and writes to <code>ImageContent</code>.",
+			"after": "The image content displayed by the <code>ImageButton</code> element. Reads and writes to <code>ImageContent</code>.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Image",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "Image",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "ContentId"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImageButton",
+			"member": "ImageContent",
+			"part": "description",
+			"before": "The image content displayed by the UI element. Supports <a href=\"../../../projects/assets/index.md#asset-uris\">asset URIs</a> and <code>EditableImage</code> objects.",
+			"after": "The image content displayed by the UI element. Supports asset URIs and <code>EditableImage</code> objects.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Image",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "ImageContent",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImageButton",
+			"member": "PressedImage",
+			"part": "description",
+			"before": "A textureId that will be used when an <code>ImageButton</code> is being pressed.",
+			"after": "A texture ID that will be used when an <code>ImageButton</code> is being pressed.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Image",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "PressedImage",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "ContentId"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextButton",
+			"member": "FontSize",
+			"part": "description",
+			"before": "<strong>Deprecated:</strong> This item has been superseded by <code>TextButton.TextSize</code> which should be used in all new work.<br>Determines the font size to be used.",
+			"after": "<strong>Deprecated:</strong> This property is deprecated in favor of <code>TextSize</code> which is an integer and not an enum and thus offers far more options for sizes.<br>Determines the font size to be used.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Text",
+				"Default": "Size8",
+				"MemberType": "Property",
+				"Name": "FontSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "TextSize",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "FontSize"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextButton",
+			"member": "RichText",
+			"part": "description",
+			"before": "Determines whether the TextButton renders the <code>TextButton.Text</code> string using rich text formatting.",
+			"after": "Determines whether the <code>TextButton</code> renders its text using rich text formatting.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Text",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "RichText",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextButton",
+			"member": "Text",
+			"part": "description",
+			"before": "Determines the string rendered by the UI element.",
+			"after": "Determines the string rendered by the <code>TextButton</code>.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Text",
+				"Default": "Button",
+				"MemberType": "Property",
+				"Name": "Text",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextButton",
+			"member": "TextBounds",
+			"part": "description",
+			"before": "The size of a UI element's text in offsets.",
+			"after": "Read-only property which reflects the absolute size of rendered text in offsets.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Text",
+				"Default": "0, 0",
+				"MemberType": "Property",
+				"Name": "TextBounds",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextButton",
+			"member": "TextDirection",
+			"part": "description",
+			"before": null,
+			"after": "Direction in which the text is rendered.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Text",
+				"Default": "Auto",
+				"MemberType": "Property",
+				"Name": "TextDirection",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "TextDirection"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextButton",
+			"member": "TextFits",
+			"part": "description",
+			"before": "A boolean representation of whether the TextButton's text fits within the size of it.",
+			"after": "A boolean representation of whether the button's text fits within the size of it.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Text",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "TextFits",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextButton",
+			"member": "TextScaled",
+			"part": "description",
+			"before": "Changes whether text is resized to fit within the TextButton.",
+			"after": "Changes whether text is resized to fit within the <code>TextButton</code>.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Text",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "TextScaled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextButton",
+			"member": "TextSize",
+			"part": "description",
+			"before": "Determine the line height of text in offsets.",
+			"after": "Determines the line height of text in offsets.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Text",
+				"Default": "8",
+				"MemberType": "Property",
+				"Name": "TextSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextButton",
+			"member": "TextTruncate",
+			"part": "description",
+			"before": "Controls the truncation of the text displayed in this TextButton.",
+			"after": "Controls the truncation of the text displayed in the <code>TextButton</code>.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Text",
+				"Default": "None",
+				"MemberType": "Property",
+				"Name": "TextTruncate",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "TextTruncate"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextButton",
+			"member": "TextWrap",
+			"part": "description",
+			"before": "<strong>Deprecated:</strong> This item has been superseded by <code>TextButton.TextWrapped</code> which should be used in all new work.<br>Determines whether or not text should wrap at the edges of the object.",
+			"after": "<strong>Deprecated:</strong> This item has been superseded by <code>TextButton.TextWrapped</code> which should be used in all new work.<br>Determines whether or not text should wrap at the edges of the <code>TextButton</code> element's space.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Text",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "TextWrap",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "TextWrapped",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextButton",
+			"member": "TextWrapped",
+			"part": "description",
+			"before": "Determines if text wraps to multiple lines within the <code>GUI</code> element space, truncating excess text.",
+			"after": "Determines if text wraps to multiple lines within the <code>TextButton</code> element's space, truncating excess text.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Text",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "TextWrapped",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImageLabel",
+			"member": "TileSize",
+			"part": "description",
+			"before": "Sets the tiling size of the ImageLabel.",
+			"after": "Sets the tiling size of the <code>ImageLabel</code>.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Image",
+				"Default": "{1, 0}, {1, 0}",
+				"MemberType": "Property",
+				"Name": "TileSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "UDim2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextLabel",
+			"member": "FontSize",
+			"part": "description",
+			"before": "<strong>Deprecated:</strong> This property is deprecated in favor of <code>TextSize</code>. Since TextSize is an integer and not an enum, there are far more options for sizes.<br>Determines the height in offsets of one line of text.",
+			"after": "<strong>Deprecated:</strong> This property is deprecated in favor of <code>TextSize</code> which is an integer and not an enum and thus offers far more options for sizes.<br>Determines the font size to be used.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Text",
+				"Default": "Size8",
+				"MemberType": "Property",
+				"Name": "FontSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "TextSize",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "FontSize"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextLabel",
+			"member": "RichText",
+			"part": "description",
+			"before": "Determines whether the TextLabel renders the <code>TextLabel.Text</code> string using rich text formatting.",
+			"after": "Determines whether the <code>TextLabel</code> renders its text using rich text formatting.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Text",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "RichText",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextLabel",
+			"member": "Text",
+			"part": "description",
+			"before": "Determines the string rendered by the UI element.",
+			"after": "Determines the string rendered by the <code>TextLabel</code>.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Text",
+				"Default": "Label",
+				"MemberType": "Property",
+				"Name": "Text",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextLabel",
+			"member": "TextBounds",
+			"part": "description",
+			"before": "The size of a UI element's text in offsets.",
+			"after": "Read-only property which reflects the absolute size of rendered text in offsets.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Text",
+				"Default": "0, 0",
+				"MemberType": "Property",
+				"Name": "TextBounds",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextLabel",
+			"member": "TextColor",
+			"part": "description",
+			"before": "<strong>Deprecated:</strong> This property has been deprecated in favor of <code>TextLabel.TextColor3</code>, which should be used instead. This property is a BrickColor and the TextColor3 property is a Color3, so it has many more color options.",
+			"after": "<strong>Deprecated:</strong> This item has been superseded by <code>TextLabel.TextColor3</code> which should be used in all new work.<br>Determines the color of text.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Text",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "TextColor",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated",
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "BrickColor"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextLabel",
+			"member": "TextColor3",
+			"part": "description",
+			"before": "This property determines the color of rendered text.",
+			"after": "Determines the color of rendered text.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Text",
+				"Default": "0.105882, 0.164706, 0.207843",
+				"MemberType": "Property",
+				"Name": "TextColor3",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextLabel",
+			"member": "TextDirection",
+			"part": "description",
+			"before": null,
+			"after": "Direction in which the text is rendered.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Text",
+				"Default": "Auto",
+				"MemberType": "Property",
+				"Name": "TextDirection",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "TextDirection"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextLabel",
+			"member": "TextFits",
+			"part": "description",
+			"before": "Enables when rendered text content does not fit within the UI element's space.",
+			"after": "A boolean representation of whether the label's text fits within the size of it.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Text",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "TextFits",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextLabel",
+			"member": "TextScaled",
+			"part": "description",
+			"before": "Determines whether text in a UI element is scaled to fill the UI element.",
+			"after": "Changes whether text is resized to fit within the <code>TextLabel</code>.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Text",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "TextScaled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextLabel",
+			"member": "TextSize",
+			"part": "description",
+			"before": "Determine the line height of text in offsets.",
+			"after": "Determines the line height of text in offsets.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Text",
+				"Default": "8",
+				"MemberType": "Property",
+				"Name": "TextSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextLabel",
+			"member": "TextTruncate",
+			"part": "description",
+			"before": "Controls the truncation of the text displayed in this TextLabel.",
+			"after": "Controls the truncation of the text displayed in the <code>TextLabel</code>.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Text",
+				"Default": "None",
+				"MemberType": "Property",
+				"Name": "TextTruncate",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "TextTruncate"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextLabel",
+			"member": "TextWrap",
+			"part": "description",
+			"before": "<strong>Deprecated:</strong> This property is simply an alias for <code>TextWrapped</code>. Use the past-tense version instead.<br>Determines if text wraps to multiple lines within the UI element space, truncating excess text.",
+			"after": "<strong>Deprecated:</strong> This property is simply an alias for <code>TextWrapped</code>. Use the past-tense version instead.<br>Determines whether or not text should wrap at the edges of the <code>TextLabel</code> element's space.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Text",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "TextWrap",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "TextWrapped",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextLabel",
+			"member": "TextWrapped",
+			"part": "description",
+			"before": "Determines if text wraps to multiple lines within the <code>GUI</code> element space, truncating excess text.",
+			"after": "Determines if text wraps to multiple lines within the <code>TextLabel</code> element's space, truncating excess text.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Text",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "TextWrapped",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextBox",
+			"member": "CursorPosition",
+			"part": "description",
+			"before": "Determines the offset of the text cursor in bytes, or -1 if there is no cursor.",
+			"after": "Determines the offset of the text cursor in bytes, or <code>-1</code> if there is no cursor.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Data",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "CursorPosition",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextBox",
+			"member": "FontSize",
+			"part": "description",
+			"before": "<strong>Deprecated:</strong> This item has been superseded by <code>TextBox.TextSize</code> which should be used in all new work.<br>Determines the font size of a <code>GUI</code> object.",
+			"after": "<strong>Deprecated:</strong> This item has been superseded by <code>TextBox.TextSize</code> which should be used in all new work.<br>Determines the font size of a <code>TextBox</code> object.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Text",
+				"Default": "Size8",
+				"MemberType": "Property",
+				"Name": "FontSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "TextSize",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "FontSize"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextBox",
+			"member": "TextWrapped",
+			"part": "description",
+			"before": "Determines if text wraps to multiple lines within the <code>GUI</code> element space, truncating excess text.",
+			"after": "Determines if text wraps to multiple lines within the <code>GuiObject</code> element space, truncating excess text.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Text",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "TextWrapped",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ViewportFrame",
+			"part": "description",
+			"before": "<code>GUI</code> that can display children 3D objects.",
+			"after": "<code>GuiObject</code> that can display children 3D objects."
+		},
+		{
+			"element": "Member",
+			"class": "Lighting",
+			"member": "GetMoonPhase",
+			"part": "description",
+			"before": "<strong>Deprecated:</strong> There is currently no way to change the moon's phase, and thus this method should not be used.<br>Returns the moon's current phase.",
+			"after": "Returns the moon's current phase.",
+			"value": {
+				"Capabilities": [
+					"Environment"
+				],
+				"MemberType": "Function",
+				"Name": "GetMoonPhase",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ModuleScript",
+			"part": "description",
+			"before": "A type of script object that runs once when <code>require</code> is called with it. Returns exactly one value, usually a table of functions, to used by other scripts. Useful for compartmentalizing code.",
+			"after": "A script type that runs once when <code>require()</code> is called with it. Returns exactly one value, usually a table of functions, to used by other scripts. Useful for compartmentalizing code."
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "GetServerTimeNow",
+			"part": "description",
+			"before": "Returns the server epoch time in seconds.",
+			"after": "Returns the server's Unix time in seconds.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetServerTimeNow",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "double"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "GetServerTimeNow",
+			"part": "return",
+			"before": "The estimated epoch time on the server.",
+			"after": "The estimated Unix timestamp on the server.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetServerTimeNow",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "double"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "CharacterAutoLoads",
+			"part": "description",
+			"before": "Indicates whether <code>Characters</code> will respawn automatically.",
+			"after": "Indicates whether <code>characters</code> will respawn automatically.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "CharacterAutoLoads",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "GetPlayerFromCharacter",
+			"part": "description",
+			"before": "Returns the <code>Player</code> whose <code>Character</code> matches the given instance, or <code>nil</code> if one cannot be found.",
+			"after": "Returns the <code>Player</code> whose <code>Player.Character</code> matches the given instance, or <code>nil</code> if one cannot be found.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPlayerFromCharacter",
+				"Parameters": [
+					{
+						"Name": "character",
+						"Type": {
+							"Category": "Class",
+							"Name": "Model"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Player"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "TeamChat",
+			"part": "description",
+			"before": "Makes the <code>LocalPlayer</code> chat the given message, which will only be viewable by users on the same team.",
+			"after": "Makes the local player chat the given message, which will only be viewable by users on the same team.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "TeamChat",
+				"Parameters": [
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ReplicatedStorage",
+			"part": "description",
+			"before": "A container service for objects that are replicated to all game clients.",
+			"after": "A container service for objects that are replicated to all clients."
+		},
+		{
+			"element": "Class",
+			"class": "Sound",
+			"part": "description",
+			"before": "A <code>Sound</code> is an object that emits sound. Sounds can be placed within a <code>BasePart</code> or <code>Attachment</code> to emit a sound from a particular position within a place or world, or it can be attached elsewhere to play the sound at a constant volume throughout the entire place.",
+			"after": "An object that emits sound. This object can be placed within a <code>BasePart</code> or <code>Attachment</code> to emit a sound from a particular position within a place or world, or it can be attached elsewhere to play the sound at a constant volume throughout the entire place."
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "IsLoaded",
+			"part": "description",
+			"before": "This property will be true when the <code>Sound</code> has loaded from Roblox servers and is ready to play.",
+			"after": "This property is <code>true</code> when the <code>Sound</code> has loaded from Roblox servers and is ready to play.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"LegacySound"
+					]
+				},
+				"Category": "Asset",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "IsLoaded",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "IsPaused",
+			"part": "description",
+			"before": "This read-only property will return true when the <code>Sound</code> is not playing.",
+			"after": "Read-only property which returns <code>true</code> when the <code>Sound</code> is not playing.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"LegacySound"
+					]
+				},
+				"Category": "Playback",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "IsPaused",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "IsPlaying",
+			"part": "description",
+			"before": "This read-only property will return true when the <code>Sound</code> is playing.",
+			"after": "Read-only property which returns <code>true</code> when the <code>Sound</code> is playing.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"LegacySound"
+					]
+				},
+				"Category": "Playback",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "IsPlaying",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "LoopRegion",
+			"part": "description",
+			"before": "A range denoting a desired loop-start and loop-end within the <code>Sound.PlaybackRegion</code>, in seconds.",
+			"after": "A range denoting a desired loop start and loop end within the <code>PlaybackRegion</code>, in seconds.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"LegacySound"
+					]
+				},
+				"Category": "Regions",
+				"Default": "0 60000 ",
+				"MemberType": "Property",
+				"Name": "LoopRegion",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "NumberRange"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "Looped",
+			"part": "description",
+			"before": "This sets whether or not the <code>Sound</code> repeats once it has finished when it is playing.",
+			"after": "Sets whether or not the <code>Sound</code> repeats once it has finished playing.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"LegacySound"
+					]
+				},
+				"Category": "Playback",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "Looped",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "PlayOnRemove",
+			"part": "description",
+			"before": "When true, the <code>Sound</code> will play when it is removed from the game, by parenting the <code>Sound</code> or one if its ancestors to nil.",
+			"after": "When <code>true</code>, the <code>Sound</code> will play when it is removed from the experience.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"LegacySound"
+					]
+				},
+				"Category": "Behavior",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "PlayOnRemove",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "PlaybackLoudness",
+			"part": "description",
+			"before": "A number between 0 and 1000 indicating how loud the <code>Sound</code> is currently playing back.",
+			"after": "A number between <code>0</code> and <code>1000</code> indicating how loud the <code>Sound</code> is currently playing back.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"LegacySound"
+					]
+				},
+				"Category": "Playback",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "PlaybackLoudness",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "double"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "PlaybackRegion",
+			"part": "description",
+			"before": "A range denoting a desired start (min) and stop (max) time within the <code>Sound.TimeLength</code>, in seconds.",
+			"after": "A range denoting a desired start and stop time within the <code>TimeLength</code>, in seconds.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"LegacySound"
+					]
+				},
+				"Category": "Regions",
+				"Default": "0 60000 ",
+				"MemberType": "Property",
+				"Name": "PlaybackRegion",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "NumberRange"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "PlaybackRegionsEnabled",
+			"part": "description",
+			"before": "If <strong>true</strong>, this property gives your <code>Sound</code> access to the <code>Sound.PlaybackRegion</code> and <code>Sound.LoopRegion</code> properties, which can more-accurately control its playback.",
+			"after": "If <code>true</code>, this property gives your <code>Sound</code> access to the <code>PlaybackRegion</code> and <code>LoopRegion</code> properties which can more-accurately control its playback.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"LegacySound"
+					]
+				},
+				"Category": "Playback",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "PlaybackRegionsEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "RollOffMaxDistance",
+			"part": "description",
+			"before": "The maximum distance, in studs, a client's listener can be from the <code>Sound\\s</code> origin and still hear it. Only applies to Sounds parented to a <code>Part</code> or <code>Attachment</code> (3D sounds).",
+			"after": "The maximum distance, in studs, a client's listener can be from the sound's origin and still hear it. Only applies to <code>Sounds</code> parented to a <code>BasePart</code> or <code>Attachment</code>.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"LegacySound"
+					]
+				},
+				"Category": "Emitter",
+				"Default": "10000",
+				"MemberType": "Property",
+				"Name": "RollOffMaxDistance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "RollOffMinDistance",
+			"part": "description",
+			"before": "The minimum distance, in studs, at which a 3D <code>Sound</code> (direct child of a <code>BasePart</code> or <code>Attachment</code>) will begin to attenuate (decrease in volume).",
+			"after": "The minimum distance, in studs, at which a <code>Sound</code> which is parented to a <code>BasePart</code> or <code>Attachment</code> will begin to attenuate (decrease in volume).",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"LegacySound"
+					]
+				},
+				"Category": "Emitter",
+				"Default": "10",
+				"MemberType": "Property",
+				"Name": "RollOffMinDistance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "RollOffMode",
+			"part": "description",
+			"before": "Controls how the volume of a 3D <code>Sound</code> (parented to a <code>BasePart</code> or <code>Attachment</code>) behaves as the distance between the listener and sound's parent changes.",
+			"after": "Controls how the volume of a <code>Sound</code> which is parented to a <code>BasePart</code> or <code>Attachment</code> attenuates (fades out) as the distance between the listener and parent changes.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"LegacySound"
+					]
+				},
+				"Category": "Emitter",
+				"Default": "Inverse",
+				"MemberType": "Property",
+				"Name": "RollOffMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "RollOffMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "SoundGroup",
+			"part": "description",
+			"before": "The <code>SoundGroup</code> that is linked to this <code>Sound</code>. Volume and SoundEffects applied to this sound group will pass onto the sound. A sound can only be in one sound group at a time.",
+			"after": "The <code>SoundGroup</code> that is linked to this <code>Sound</code>.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"LegacySound"
+					]
+				},
+				"Category": "Routing",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "SoundGroup",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "SoundGroup"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "SoundId",
+			"part": "description",
+			"before": "This property is the content ID of the sound file a <code>Sound</code> object is associated with. Once a sound has been uploaded to Roblox the content ID can be found in the uploaded sound's URL.",
+			"after": "Content ID of the sound file to associate with the <code>Sound</code>.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"LegacySound"
+					]
+				},
+				"Category": "Asset",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "SoundId",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "ContentId"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "TimeLength",
+			"part": "description",
+			"before": "The length of the <code>Sound</code> in seconds. If the <code>Sound</code> is not loaded, this value will be 0.",
+			"after": "The length of the <code>Sound</code> in seconds.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"LegacySound"
+					]
+				},
+				"Category": "Asset",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "TimeLength",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "double"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "TimePosition",
+			"part": "description",
+			"before": "Shows the progress in seconds of the <code>Sound</code>. Can be changed to move the playback position of the <code>Sound</code> both before and during playback.",
+			"after": "Progress of the <code>Sound</code> in seconds. Can be changed to move the playback position of the <code>Sound</code> both before and during playback.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"LegacySound"
+					]
+				},
+				"Category": "Playback",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "TimePosition",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "double"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "Volume",
+			"part": "description",
+			"before": "The volume of the <code>Sound</code>. Can be set between 0 and 10. Defaults to 0.5.",
+			"after": "The volume of the <code>Sound</code>.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"LegacySound"
+					]
+				},
+				"Category": "Playback",
+				"Default": "0.5",
+				"MemberType": "Property",
+				"Name": "Volume",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "Pause",
+			"part": "description",
+			"before": "Sets <code>Sound.Playing</code> to false. This pauses the playback of the <code>Sound</code> if the sound is playing. As <code>Sound.TimePosition</code> is not reset ,when the <code>Sound</code> is resumed it will continue from its previous position.",
+			"after": "Pauses playback of the <code>Sound</code> if it is playing.",
+			"value": {
+				"Capabilities": [
+					"LegacySound"
+				],
+				"MemberType": "Function",
+				"Name": "Pause",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "Play",
+			"part": "description",
+			"before": "Plays the <code>Sound</code>. Sets <code>Sound.TimePosition</code> to the last value set by a <code>Script</code> (or 0 if it has not been set), and then sets <code>Sound.Playing</code> to true.",
+			"after": "Plays the <code>Sound</code>.",
+			"value": {
+				"Capabilities": [
+					"LegacySound"
+				],
+				"MemberType": "Function",
+				"Name": "Play",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "Resume",
+			"part": "description",
+			"before": "Resumes the <code>Sound</code>. Sets <code>Sound.Playing</code> to true. Does not alter <code>Sound.TimePosition</code> and thus can be used to resume the playback of a sound stopped using <code>Sound:Pause()</code>.",
+			"after": "Resumes the <code>Sound</code>.",
+			"value": {
+				"Capabilities": [
+					"LegacySound"
+				],
+				"MemberType": "Function",
+				"Name": "Resume",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "Stop",
+			"part": "description",
+			"before": "Stops the <code>Sound</code>. Sets <code>Sound.Playing</code> to false then sets <code>Sound.TimePosition</code> to 0.",
+			"after": "Stops the <code>Sound</code>.",
+			"value": {
+				"Capabilities": [
+					"LegacySound"
+				],
+				"MemberType": "Function",
+				"Name": "Stop",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "DidLoop",
+			"part": "description",
+			"before": "Event that fires whenever the <code>Sound</code> loops. Returns soundId and numOfTimesLooped, giving the contentID of the sound and the number of times looped respectively.",
+			"after": "Fires whenever the <code>Sound</code> loops.",
+			"value": {
+				"Capabilities": [
+					"LegacySound"
+				],
+				"MemberType": "Event",
+				"Name": "DidLoop",
+				"Parameters": [
+					{
+						"Name": "soundId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "numOfTimesLooped",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "Paused",
+			"part": "description",
+			"before": "Fires whenever the <code>Sound</code> is paused using <code>Sound:Pause()</code>.",
+			"after": "Fires whenever the <code>Sound</code> is paused using <code>Pause()</code>.",
+			"value": {
+				"Capabilities": [
+					"LegacySound"
+				],
+				"MemberType": "Event",
+				"Name": "Paused",
+				"Parameters": [
+					{
+						"Name": "soundId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "Played",
+			"part": "description",
+			"before": "Fires whenever the <code>Sound</code> is played using the <code>Sound:Play()</code> function.",
+			"after": "Fires whenever the <code>Sound</code> is played using <code>Play()</code>.",
+			"value": {
+				"Capabilities": [
+					"LegacySound"
+				],
+				"MemberType": "Event",
+				"Name": "Played",
+				"Parameters": [
+					{
+						"Name": "soundId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "Resumed",
+			"part": "description",
+			"before": "Fires when the <code>Sound</code> is resumed using <code>Sound:Resume()</code>.",
+			"after": "Fires when the <code>Sound</code> is resumed using <code>Resume()</code>.",
+			"value": {
+				"Capabilities": [
+					"LegacySound"
+				],
+				"MemberType": "Event",
+				"Name": "Resumed",
+				"Parameters": [
+					{
+						"Name": "soundId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "Stopped",
+			"part": "description",
+			"before": "Fires when the <code>Sound</code> is stopped due to the <code>Sound:Stop()</code> function.",
+			"after": "Fires when the <code>Sound</code> is stopped through using <code>Stop()</code>.",
+			"value": {
+				"Capabilities": [
+					"LegacySound"
+				],
+				"MemberType": "Event",
+				"Name": "Stopped",
+				"Parameters": [
+					{
+						"Name": "soundId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SoundGroup",
+			"member": "Volume",
+			"part": "description",
+			"before": "The volume multiplier applied to <code>Sounds</code> that are in the <code>SoundGroup</code>. This value ranges from 0 to 10.",
+			"after": "The volume multiplier applied to <code>Sounds</code> that are in the <code>SoundGroup</code>.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"LegacySound"
+					]
+				},
+				"Category": "State",
+				"Default": "0.5",
+				"MemberType": "Property",
+				"Name": "Volume",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "SoundService",
+			"part": "description",
+			"before": "A service that determines various aspects of how <code>Sounds</code> play in the game.",
+			"after": "A service that determines various aspects of how <code>Sounds</code> play in the experience."
+		},
+		{
+			"element": "Member",
+			"class": "SoundService",
+			"member": "DistanceFactor",
+			"part": "description",
+			"before": "The number of studs to be considered a meter by <code>SoundService</code> when calculating 3D <code>Sound</code> volume attenuation.",
+			"after": "The number of studs to be considered a meter by <code>SoundService</code> when calculating volume attenuation of <code>Sounds</code> parented to a <code>BasePart</code> or <code>Attachment</code>.",
+			"value": {
+				"Category": "Data",
+				"Default": "3.32999992",
+				"MemberType": "Property",
+				"Name": "DistanceFactor",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SoundService",
+			"member": "DopplerScale",
+			"part": "description",
+			"before": "This property determines the degree to which a 3D <code>Sound</code> object's pitch varies due to the Doppler effect.",
+			"after": "Degree to which the pitch of a <code>Sound</code> varies due to the Doppler effect.",
+			"value": {
+				"Category": "Data",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "DopplerScale",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SoundService",
+			"member": "RolloffScale",
+			"part": "description",
+			"before": "Sets how fast 3D <code>Sound</code> volume attenuates, or 'rolls off'.",
+			"after": "Sets how fast <code>Sound</code> volume attenuates.",
+			"value": {
+				"Category": "Data",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "RolloffScale",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SoundService",
+			"member": "GetListener",
+			"part": "description",
+			"before": "GetListener returns the current <code>SoundService</code> listener type and what is set as listener.",
+			"after": "Returns the current <code>SoundService</code> listener type and what is set as the listener.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetListener",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SoundService",
+			"member": "GetListener",
+			"part": "return",
+			"before": "The current <code>ListenerType</code> and what the listener has been set to. Dependent on <code>ListenerType</code> the listener could be a <code>BasePart</code>, a <code>CFrame</code> or nil.",
+			"after": "The current <code>ListenerType</code> and what the listener has been set to. Listener can be a <code>BasePart</code>, a <code>CFrame</code>, or <code>nil</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetListener",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SoundService",
+			"member": "PlayLocalSound",
+			"part": "description",
+			"before": "Plays a <code>Sound</code> locally, meaning the sound will only be heard by the client calling this function, regardless of where it's parented to.",
+			"after": "Plays a <code>Sound</code> locally, meaning the sound will only be heard by the client calling this method, regardless of where it's parented to.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PlayLocalSound",
+				"Parameters": [
+					{
+						"Name": "sound",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SoundService",
+			"member": "SetListener",
+			"part": "parameter",
+			"parameter": "listener",
+			"before": "Dependent on the <code>ListenerType</code>. <code>BasePart</code> for 'ObjectPosition' or 'ObjectCFrame', <code>CFrame</code> for 'CFrame', nil for 'Camera'.",
+			"after": "Dependent on the <code>ListenerType</code>. Use a <code>BasePart</code> for <code>ListenerType.ObjectPosition</code> or <code>ListenerType.ObjectCFrame</code>, a <code>CFrame</code> for <code>ListenerType.CFrame</code>, or <code>nil</code> for <code>ListenerType.Camera</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetListener",
+				"Parameters": [
+					{
+						"Name": "listenerType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ListenerType"
+						}
+					},
+					{
+						"Name": "listener",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "NameDisplayDistance",
+			"part": "description",
+			"before": "Sets the distance at which this player will see other <code>Humanoid</code> names. If set to 0, names are hidden.",
+			"after": "Sets the distance at which this player will see other <code>Humanoid</code> names.",
+			"value": {
+				"Category": "Data",
+				"Default": "100",
+				"MemberType": "Property",
+				"Name": "NameDisplayDistance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Stats",
+			"member": "FrameTime",
+			"part": "description",
+			"before": null,
+			"after": "A measurement of how long it takes for the engine to process all tasks required to render a frame.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "FrameTime",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Stats",
+			"member": "HeartbeatTime",
+			"part": "description",
+			"before": null,
+			"after": "A measurement of the total amount of time it takes for the server to update its Task Scheduler jobs in seconds.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "HeartbeatTime",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Stats",
+			"member": "PhysicsStepTime",
+			"part": "description",
+			"before": null,
+			"after": "A measurement of how long it takes for the physics engine to update its current state.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "PhysicsStepTime",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Stats",
+			"member": "RenderCPUFrameTime",
+			"part": "description",
+			"before": null,
+			"after": "A measurement of how long it takes for the CPU to process all of its rendering tasks for a frame.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "RenderCPUFrameTime",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Stats",
+			"member": "RenderGPUFrameTime",
+			"part": "description",
+			"before": null,
+			"after": "A measurement of how long it takes for the GPU to process all of its tasks required to render a frame.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "RenderGPUFrameTime",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Stats",
+			"member": "SceneDrawcallCount",
+			"part": "description",
+			"before": null,
+			"after": "A measurement of the number of draw calls made by the game's current scene.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "SceneDrawcallCount",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Stats",
+			"member": "SceneTriangleCount",
+			"part": "description",
+			"before": null,
+			"after": "A measurement of the number of triangles rendered by the game's current scene.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "SceneTriangleCount",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Stats",
+			"member": "ShadowsDrawcallCount",
+			"part": "description",
+			"before": null,
+			"after": "A measurement of the number of draw calls being made for shadows by the game's current scene.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "ShadowsDrawcallCount",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Stats",
+			"member": "ShadowsTriangleCount",
+			"part": "description",
+			"before": null,
+			"after": "A measurement of the number of triangles rendered as shadows in the game's current scene.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "ShadowsTriangleCount",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Stats",
+			"member": "UI2DDrawcallCount",
+			"part": "description",
+			"before": null,
+			"after": "A measurement of the number of 2D draw calls made for UI elements in the game's current scene.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "UI2DDrawcallCount",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Stats",
+			"member": "UI2DTriangleCount",
+			"part": "description",
+			"before": null,
+			"after": "A measurement of the number of triangles that are being rendered for 2D UI elements in the game's current scene.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "UI2DTriangleCount",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Stats",
+			"member": "UI3DDrawcallCount",
+			"part": "description",
+			"before": null,
+			"after": "A measurement of the number of 3D draw calls made for UI elements in the game's current scene.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "UI3DDrawcallCount",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Stats",
+			"member": "UI3DTriangleCount",
+			"part": "description",
+			"before": null,
+			"after": "A measurement of the number of triangles being rendered for 3D UI elements in the game's current scene.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "UI3DTriangleCount",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TweenService",
+			"member": "SmoothDamp",
+			"part": "description",
+			"before": null,
+			"after": "Calculates a value simulating a critically damped spring.",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "SmoothDamp",
+				"Parameters": [
+					{
+						"Name": "current",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "target",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "velocity",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "smoothTime",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "maxSpeed",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					},
+					{
+						"Name": "dt",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float?"
+						}
+					}
+				],
+				"ReturnType": [
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					},
+					{
+						"Category": "Group",
+						"Name": "Variant"
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "IsNavigationGamepad",
+			"part": "description",
+			"before": "Returns true if the specified <code>UserInputType</code> gamepad is allowed to control the navigation <code>GUIs</code>.",
+			"after": "Returns true if the specified <code>UserInputType</code> gamepad is allowed to control the navigation <code>GuiObjects</code>.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Function",
+				"Name": "IsNavigationGamepad",
+				"Parameters": [
+					{
+						"Name": "gamepadEnum",
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserInputType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "SetNavigationGamepad",
+			"part": "description",
+			"before": "Sets whether or not the specified <code>Gamepad</code> can move the <code>GUI</code> navigator.",
+			"after": "Sets whether or not the specified <code>Gamepad</code> can move the <code>GuiObject</code> navigator.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Function",
+				"Name": "SetNavigationGamepad",
+				"Parameters": [
+					{
+						"Name": "gamepadEnum",
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserInputType"
+						}
+					},
+					{
+						"Name": "enabled",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchDrag",
+			"part": "description",
+			"before": "Fires when a user drags at least one finger on a  <code>TouchEnabled</code> device at a speed  above a certain threshold.",
+			"after": null,
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Event",
+				"Name": "TouchDrag",
+				"Parameters": [
+					{
+						"Name": "dragDirection",
+						"Type": {
+							"Category": "Enum",
+							"Name": "SwipeDirection"
+						}
+					},
+					{
+						"Name": "numberOfTouches",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "gameProcessedEvent",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "CoreGuiType",
+			"part": "description",
+			"before": "Represents all <code>CoreGui</code> \"types\" which are available, such as the <code>Backpack</code> and text chat window.",
+			"after": "Represents all available <code>CoreGui</code> \"types\" such as the <code>Backpack</code> and text chat window."
+		},
+		{
+			"element": "Enum",
+			"enum": "EasingDirection",
+			"part": "description",
+			"before": "Pass to <code>TweenInfo.new()</code> to control the direction <code>Tweens</code> play in.",
+			"after": "Enum used with <code>TweenInfo.new()</code> to control the direction <code>Tweens</code> play in."
+		},
+		{
+			"element": "Enum",
+			"enum": "EasingStyle",
+			"part": "description",
+			"before": "Pass to <code>TweenInfo.new</code> to control the motion of a <code>Tween</code>.",
+			"after": "Enum used with <code>TweenInfo.new</code> to control the motion of a <code>Tween</code>."
+		},
+		{
+			"element": "EnumItem",
+			"enum": "EasingStyle",
+			"item": "Quad",
+			"part": "description",
+			"before": "Similar to <strong>Sine</strong> but with a slightly sharper curve based on quadratic interpolation.",
+			"after": "Similar to <code>Sine</code> but with a slightly sharper curve based on quadratic interpolation.",
+			"value": {
+				"Name": "Quad",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "EasingStyle",
+			"item": "Quart",
+			"part": "description",
+			"before": "Similar to <strong>Cubic</strong> but with an even sharper curve based on quartic interpolation.",
+			"after": "Similar to <code>Cubic</code> but with an even sharper curve based on quartic interpolation.",
+			"value": {
+				"Name": "Quart",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "EasingStyle",
+			"item": "Quint",
+			"part": "description",
+			"before": "Similar to <strong>Quart</strong> but with an even sharper curve based on quintic interpolation.",
+			"after": "Similar to <code>Quart</code> but with an even sharper curve based on quintic interpolation.",
+			"value": {
+				"Name": "Quint",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "EasingStyle",
+			"item": "Circular",
+			"part": "description",
+			"before": "Follows a circular arc, such that acceleration is more sudden and deceleration more gradual versus <strong>Quint</strong> or <strong>Exponential</strong>.",
+			"after": "Follows a circular arc, such that acceleration is more sudden and deceleration more gradual versus <code>Quint</code> or <code>Exponential</code>.",
+			"value": {
+				"Name": "Circular",
+				"Value": 9
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "EasingStyle",
+			"item": "Cubic",
+			"part": "description",
+			"before": "Similar to <strong>Quad</strong> but with a slightly sharper curve based on cubic interpolation.",
+			"after": "Similar to <code>Quad</code> but with a slightly sharper curve based on cubic interpolation.",
+			"value": {
+				"Name": "Cubic",
+				"Value": 10
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "RollOffMode",
+			"part": "description",
+			"before": "How 3D <code>Sounds</code> attenuate (fade out) as the distance between the listener and the Sound's parent increases.",
+			"after": "How <code>Sounds</code> parented to a <code>BasePart</code> or <code>Attachment</code> attenuate (fade out) as the distance between the listener and the parent increases."
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RollOffMode",
+			"item": "Inverse",
+			"part": "description",
+			"before": "Volume attenuates from <code>Sound.RollOffMinDistance</code> in an inverse manner.",
+			"after": "Volume attenuates from <code>Sound.RollOffMinDistance</code> in an inverse manner. This option mirrors how sounds attenuate in the real world.",
+			"value": {
+				"Name": "Inverse",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RollOffMode",
+			"item": "InverseTapered",
+			"part": "description",
+			"before": "A hybrid model. Follows the Inverse model when close to <code>Sound.RollOffMinDistance</code> and the Linear Square model when close to <code>Sound.RollOffMaxDistance</code>.",
+			"after": "A hybrid model which follows the <code>Inverse</code> model when close to <code>Sound.RollOffMinDistance</code> and the <code>LinearSquare</code> model when close to <code>Sound.RollOffMaxDistance</code>.",
+			"value": {
+				"Name": "InverseTapered",
+				"Value": 3
+			}
+		}
+	]
+}

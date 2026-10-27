@@ -1,0 +1,1786 @@
+{
+	"from": {
+		"version": "0.568.0.5680526",
+		"hash": "213a0d32befd4145"
+	},
+	"to": {
+		"version": "0.569.2.5690484",
+		"hash": "1226658cbedb4e8b"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AdPortal",
+			"member": "Status",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "Active",
+					"after": "Inactive"
+				}
+			],
+			"value": {
+				"Category": "Behavior",
+				"Default": "Inactive",
+				"MemberType": "Property",
+				"Name": "Status",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AdUnitStatus"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationStreamTrack",
+			"member": "TogglePause",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "TogglePause",
+				"Parameters": [
+					{
+						"Name": "paused",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Animator",
+			"member": "LoadStreamAnimationForSelfieView_deprecated",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LoadStreamAnimationForSelfieView_deprecated",
+				"Parameters": [
+					{
+						"Name": "animation",
+						"Type": {
+							"Category": "Class",
+							"Name": "TrackerStreamAnimation"
+						}
+					},
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "AnimationStreamTrack"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationConstraint",
+			"member": "IsKinematic",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "IsKinematic",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FacialAnimationStreamingServiceStats",
+			"member": "isStreamingFacsUpdated",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "isStreamingFacsUpdated",
+				"Parameters": [
+					{
+						"Name": "isStreaming",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "playerId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AdGui",
+			"member": "Status",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "Active",
+					"after": "Inactive"
+				}
+			],
+			"value": {
+				"Category": "Behavior",
+				"Default": "Inactive",
+				"MemberType": "Property",
+				"Name": "Status",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AdUnitStatus"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IncrementalPatchBuilder",
+			"member": "BuildDebouncePeriod",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0.10000000000000000555",
+				"MemberType": "Property",
+				"Name": "BuildDebouncePeriod",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "double"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LiveScriptingService",
+			"member": "BeginEdit",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "script",
+							"Type": {
+								"Category": "Class",
+								"Name": "LuaSourceContainer"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "guid",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "BeginEdit",
+				"Parameters": [
+					{
+						"Name": "guid",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LiveScriptingService",
+			"member": "EndEdit",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "script",
+							"Type": {
+								"Category": "Class",
+								"Name": "LuaSourceContainer"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "script",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "EndEdit",
+				"Parameters": [
+					{
+						"Name": "script",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LiveScriptingService",
+			"member": "OpenedWithSource",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "script",
+							"Type": {
+								"Category": "Class",
+								"Name": "LuaSourceContainer"
+							}
+						},
+						{
+							"Name": "source",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "script",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "source",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "OpenedWithSource",
+				"Parameters": [
+					{
+						"Name": "script",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "source",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LiveScriptingService",
+			"member": "SendOperation",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "script",
+							"Type": {
+								"Category": "Class",
+								"Name": "LuaSourceContainer"
+							}
+						},
+						{
+							"Name": "op",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "script",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "op",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "SendOperation",
+				"Parameters": [
+					{
+						"Name": "script",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "op",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LiveScriptingService",
+			"member": "FailedToOpen",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "FailedToOpen",
+				"Parameters": [
+					{
+						"Name": "guid",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "SmoothRegion",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SmoothRegion",
+				"Parameters": [
+					{
+						"Name": "region",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Region3"
+						}
+					},
+					{
+						"Name": "resolution",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "strength",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "Blockcast",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Blockcast",
+				"Parameters": [
+					{
+						"Name": "cframe",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					},
+					{
+						"Name": "size",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "direction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Default": "RaycastParams{IgnoreWater=false, BruteForceAllSlow=false, RespectCanCollide=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+						"Name": "params",
+						"Type": {
+							"Category": "DataType",
+							"Name": "RaycastParams"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RaycastResult"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "Spherecast",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Spherecast",
+				"Parameters": [
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "radius",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "direction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Default": "RaycastParams{IgnoreWater=false, BruteForceAllSlow=false, RespectCanCollide=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+						"Name": "params",
+						"Type": {
+							"Category": "DataType",
+							"Name": "RaycastParams"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RaycastResult"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsSettings",
+			"member": "AreConstraintForcesShownForSelectedOrHoveredInstances",
+			"type": "Add",
+			"value": {
+				"Category": "Display",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "AreConstraintForcesShownForSelectedOrHoveredInstances",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsSettings",
+			"member": "AreConstraintTorquesShownForSelectedOrHoveredInstances",
+			"type": "Add",
+			"value": {
+				"Category": "Display",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "AreConstraintTorquesShownForSelectedOrHoveredInstances",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsSettings",
+			"member": "AreContactForcesShownForSelectedOrHoveredAssemblies",
+			"type": "Add",
+			"value": {
+				"Category": "Display",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "AreContactForcesShownForSelectedOrHoveredAssemblies",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsSettings",
+			"member": "AreMagnitudesShownForDrawnForcesAndTorques",
+			"type": "Add",
+			"value": {
+				"Category": "Display",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "AreMagnitudesShownForDrawnForcesAndTorques",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsSettings",
+			"member": "ForceDrawScale",
+			"type": "Add",
+			"value": {
+				"Category": "Display",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "ForceDrawScale",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptEditorService",
+			"member": "ForceReloadSource",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ForceReloadSource",
+				"Parameters": [
+					{
+						"Name": "uri",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "newsrc",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "IsUniverseMetadataLoaded",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsUniverseMetadataLoaded",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "UniverseMetadataLoaded",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "UniverseMetadataLoaded",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TerrainRegion",
+			"member": "GetRegionWireframe",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRegionWireframe",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ScriptRuntime",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ScriptRuntime",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TrackerError",
+			"item": "NoAudio",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 6,
+					"after": 7
+				}
+			],
+			"value": {
+				"Name": "NoAudio",
+				"Value": 7
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TrackerError",
+			"item": "AudioError",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 7,
+					"after": 8
+				}
+			],
+			"value": {
+				"Name": "AudioError",
+				"Value": 8
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TrackerError",
+			"item": "AudioNoPermission",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 8,
+					"after": 9
+				}
+			],
+			"value": {
+				"Name": "AudioNoPermission",
+				"Value": 9
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TrackerError",
+			"item": "VideoUnsupported",
+			"type": "Add",
+			"value": {
+				"Name": "VideoUnsupported",
+				"Value": 6
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptBundlePurchase",
+			"part": "description",
+			"before": "Used to prompt a user to purchase a bundle with the given bundleId.",
+			"after": "Prompts a user to purchase a bundle with the given <code>bundleId</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptBundlePurchase",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "bundleId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptGamePassPurchase",
+			"part": "description",
+			"before": "Used to prompt a user to purchase a game pass with the given assetId.",
+			"after": "Prompts a user to purchase a pass with the given <code>gamePassId</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptGamePassPurchase",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "gamePassId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptPremiumPurchase",
+			"part": "description",
+			"before": "Used to prompt a user to purchase Premium.",
+			"after": "Prompts a user to purchase Roblox Premium.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptPremiumPurchase",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptPremiumPurchase",
+			"part": "parameter",
+			"parameter": "player",
+			"before": "The player being prompted to purchase premium.",
+			"after": "The player being prompted to purchase Premium.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptPremiumPurchase",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptProductPurchase",
+			"part": "description",
+			"before": "Used to prompt a user to purchase a product with the given product id.",
+			"after": "Prompts a user to purchase a developer product with the given <code>productId</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptProductPurchase",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "productId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Default": "true",
+						"Name": "equipIfPurchased",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Default": "Default",
+						"Name": "currencyType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "CurrencyType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptPurchase",
+			"part": "description",
+			"before": "Used to prompt a user to purchase an item with the given assetId.",
+			"after": "Prompts a user to purchase an item with the given <code>assetId</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptPurchase",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Default": "true",
+						"Name": "equipIfPurchased",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Default": "Default",
+						"Name": "currencyType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "CurrencyType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "GetDeveloperProductsAsync",
+			"part": "description",
+			"before": "Returns a <code>Pages</code> object which contains information for all of the current game's developer products.",
+			"after": "Returns a <code>Pages</code> object which contains information for all of the current experience's developer products.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetDeveloperProductsAsync",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "GetProductInfo",
+			"part": "description",
+			"before": "Returns the product information of an asset using its assetId.",
+			"after": "Returns the product information of an asset using its asset ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetProductInfo",
+				"Parameters": [
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Default": "Asset",
+						"Name": "infoType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "InfoType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "GetProductInfo",
+			"part": "parameter",
+			"parameter": "assetId",
+			"before": "The assetId of the specified product.",
+			"after": "The asset ID of the specified product.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetProductInfo",
+				"Parameters": [
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Default": "Asset",
+						"Name": "infoType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "InfoType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "GetProductInfo",
+			"part": "return",
+			"before": "A dictionary containing information about the queried item (described in the table above). Note that not all information is provided or necessarily relevant for the kind of object you are querying.",
+			"after": "A dictionary containing information about the queried item, described in the previous tables.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetProductInfo",
+				"Parameters": [
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Default": "Asset",
+						"Name": "infoType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "InfoType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PlayerOwnsAsset",
+			"part": "parameter",
+			"parameter": "player",
+			"before": "A Player object whose inventory shall be tested for the ownership of the given asset.",
+			"after": "A <code>Player</code> object whose inventory shall be tested for the ownership of the given asset.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PlayerOwnsAsset",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PlayerOwnsAsset",
+			"part": "parameter",
+			"parameter": "assetId",
+			"before": "The ID of an asset for which the given player's inventory shall be tested.",
+			"after": "The asset ID for which the given player's inventory shall be tested.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PlayerOwnsAsset",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PlayerOwnsAsset",
+			"part": "return",
+			"before": "Indicates whether the given Player's inventory contains the given asset.",
+			"after": "Indicates whether the given player's inventory contains the given asset.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PlayerOwnsAsset",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PlayerOwnsBundle",
+			"part": "parameter",
+			"parameter": "player",
+			"before": "A Player object whose inventory shall be tested for the ownership of the given bundle.",
+			"after": "A <code>Player</code> object whose inventory shall be tested for the ownership of the given bundle.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PlayerOwnsBundle",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "bundleId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PlayerOwnsBundle",
+			"part": "parameter",
+			"parameter": "bundleId",
+			"before": "The ID of a bundle for which the given player's inventory shall be tested.",
+			"after": "The bundle ID for which the given player's inventory shall be tested.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PlayerOwnsBundle",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "bundleId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PlayerOwnsBundle",
+			"part": "return",
+			"before": "Indicates whether the given Player's inventory contains the given bundle.",
+			"after": "Indicates whether the given player's inventory contains the given bundle.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PlayerOwnsBundle",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "bundleId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "UserOwnsGamePassAsync",
+			"part": "description",
+			"before": "Returns true if the player with the given <code>UserId</code> owns the game pass with the given game pass ID.",
+			"after": "Returns true if the player with the given <code>UserId</code> owns the pass with the given <code>gamePassId</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UserOwnsGamePassAsync",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "gamePassId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "UserOwnsGamePassAsync",
+			"part": "parameter",
+			"parameter": "gamePassId",
+			"before": "The game pass ID of the game pass to be checked, not to be confused with asset ID.",
+			"after": "Pass ID to check, not to be confused with an asset ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UserOwnsGamePassAsync",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "gamePassId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptGamePassPurchaseFinished",
+			"part": "description",
+			"before": "Fires when a purchase prompt closes for a game pass.",
+			"after": "Fires when a purchase prompt for a pass is closed.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptGamePassPurchaseFinished",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "gamePassId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "wasPurchased",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptPremiumPurchaseFinished",
+			"part": "description",
+			"before": "Fires when the Premium purchase modal closes.",
+			"after": "Fires when the Roblox Premium purchase modal closes.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptPremiumPurchaseFinished",
+				"Parameters": [],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptProductPurchaseFinished",
+			"part": "description",
+			"before": "Fires when a purchase prompt closes for a developer product. <strong>Warning:</strong> You can use this event to detect when a purchase prompt is closed. Don't use this event to process purchases; instead use <code>MarketplaceService.ProcessReceipt</code>.",
+			"after": "Fires when a purchase prompt closes for a developer product. You can use this event to detect when a purchase prompt is closed, but it should <strong>not</strong> be used to process purchases; instead use <code>MarketplaceService.ProcessReceipt</code>.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptProductPurchaseFinished",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "productId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "isPurchased",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptPurchaseFinished",
+			"part": "description",
+			"before": "Fires when a purchase prompt closes for an affiliate gear sale or other asset (does not fire for developer product or game pass prompts).",
+			"after": "Fires when a purchase prompt for an affiliate gear sale or other asset is closed. Does <strong>not</strong> fire for developer product or pass prompts.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptPurchaseFinished",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "isPurchased",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "ProcessReceipt",
+			"part": "description",
+			"before": "A callback to process receipts of product purchases.",
+			"after": "A callback to process receipts of developer product purchases.",
+			"value": {
+				"MemberType": "Callback",
+				"Name": "ProcessReceipt",
+				"Parameters": [
+					{
+						"Name": "receiptInfo",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "ProductPurchaseDecision"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "ProcessReceipt",
+			"part": "parameter",
+			"parameter": "receiptInfo",
+			"before": "The receiptInfo is a table with the following keys: <ul> <li><code>PlayerId</code> (number): The user ID of the player that made a purchase</li> <li><code>PlaceIdWherePurchased</code> (number): The place ID in which a purchase   was made</li> <li><code>PurchaseId</code> (string): A unique identifier for a purchase that ought   to be used to prevent granting a product multiple times</li> <li><code>ProductId</code> (number): The ID number of the purchased product</li> <li><code>CurrencyType</code> (Enum.CurrencyType): Deprecated. The type of   currency used in the transaction.</li> <li><code>CurrencySpent</code> (number): The amount of currency spent in the   transaction.</li> </ul>",
+			"after": "The <code>receiptInfo</code> table passed to this callback will contain the following data: <ul> <li><code>PurchaseId</code> &mdash; A unique identifier for the specific purchase.</li> <li><code>PlayerId</code> &mdash; The user ID of the player who made the purchase.</li> <li><code>ProductId</code> &mdash; The ID of the purchased product.</li> <li><code>PlaceIdWherePurchased</code> &mdash; The place ID in which the purchase   was made; not necessarily the same as the current place's ID.</li> <li><code>CurrencySpent</code> &mdash; The amount of currency spent in the   transaction.</li> <li><code>CurrencyType</code> &mdash; The type of currency spent in the purchase; always <code>CurrencyType.Robux</code>.</li> </ul>",
+			"value": {
+				"MemberType": "Callback",
+				"Name": "ProcessReceipt",
+				"Parameters": [
+					{
+						"Name": "receiptInfo",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "ProductPurchaseDecision"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "ProcessReceipt",
+			"part": "return",
+			"before": "An enum representing in what manner the developer product receipt was processed: <ul> <li><code>PurchaseGranted</code> indicates that the game successfully granted the   player the benefit the developer product is meant to provide, such   as a currency boost, gameplay bonus, item, etc. This indicates to   Roblox that the sale was performed successfully. <strong>Do not return   PurchaseGranted if the product could not be granted.</strong></li> <li><code>NotProcessedYet</code> indicates the developer product's benefit could   not be granted, such as a product the player is not eligible to   purchase, is no longer relevant to the current game state, etc.</li> </ul>",
+			"after": "An enum representing in what manner the developer product receipt was processed: <ul> <li><code>PurchaseGranted</code> indicates that the experience successfully granted the   player the benefit the developer product is meant to provide, such   as a currency boost, gameplay bonus, item, etc. This indicates to   Roblox that the sale was performed successfully.</li> <li><code>NotProcessedYet</code> indicates the developer product's benefit could   not be granted, such as a product the player is not eligible to   purchase, is no longer relevant to the current experience state, etc.</li> </ul>",
+			"value": {
+				"MemberType": "Callback",
+				"Name": "ProcessReceipt",
+				"Parameters": [
+					{
+						"Name": "receiptInfo",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "ProductPurchaseDecision"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "MouseIcon",
+			"part": "description",
+			"before": null,
+			"after": "The content ID of the image used as the user mouse icon.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "MouseIcon",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		}
+	]
+}

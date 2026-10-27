@@ -1,0 +1,1740 @@
+{
+	"from": {
+		"version": "0.712.0.7120919",
+		"hash": "cdda02ef6a294442"
+	},
+	"to": {
+		"version": "0.713.0.7130910",
+		"hash": "913142fd943640d2"
+	},
+	"changes": [
+		{
+			"element": "Class",
+			"class": "AuroraHandle",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AuroraHandle",
+				"Superclass": "Object",
+				"Tags": [
+					"NotCreatable",
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnalyticsService",
+			"member": "GetPlayerSegmentsAsync",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "GetPlayerSegmentsAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationClip",
+			"member": "Length",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Length",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "CreateDataModelContentAsync",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"DynamicGeneration"
+				],
+				"MemberType": "Function",
+				"Name": "CreateDataModelContentAsync",
+				"Parameters": [
+					{
+						"Name": "content",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					},
+					{
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AuroraScriptService",
+			"member": "CreateCollection",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Class",
+						"Name": "AuroraHandle"
+					},
+					"after": {
+						"Category": "DataType",
+						"Name": "CollectionHandle"
+					}
+				}
+			],
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "CreateCollection",
+				"Parameters": [
+					{
+						"Name": "query",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "root",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "CollectionHandle"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AuroraService",
+			"member": "Rollback",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Rollback",
+				"Parameters": [
+					{
+						"Name": "worldStepId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RootImportData",
+			"member": "ScaleFactor",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "ScaleFactor",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "GetScreenshotCaptureObject",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Capture"
+				],
+				"MemberType": "Function",
+				"Name": "GetScreenshotCaptureObject",
+				"Parameters": [
+					{
+						"Name": "capturePath",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Capture"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiObject",
+			"member": "TweenPositionInternal",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"UI"
+				],
+				"MemberType": "Function",
+				"Name": "TweenPositionInternal",
+				"Parameters": [
+					{
+						"Name": "endPosition",
+						"Type": {
+							"Category": "DataType",
+							"Name": "UDim2"
+						}
+					},
+					{
+						"Default": "Out",
+						"Name": "easingDirection",
+						"Type": {
+							"Category": "Enum",
+							"Name": "EasingDirection"
+						}
+					},
+					{
+						"Default": "Quad",
+						"Name": "easingStyle",
+						"Type": {
+							"Category": "Enum",
+							"Name": "EasingStyle"
+						}
+					},
+					{
+						"Default": "1",
+						"Name": "time",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Default": "false",
+						"Name": "override",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "callback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiObject",
+			"member": "TweenSizeAndPositionInternal",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"UI"
+				],
+				"MemberType": "Function",
+				"Name": "TweenSizeAndPositionInternal",
+				"Parameters": [
+					{
+						"Name": "endSize",
+						"Type": {
+							"Category": "DataType",
+							"Name": "UDim2"
+						}
+					},
+					{
+						"Name": "endPosition",
+						"Type": {
+							"Category": "DataType",
+							"Name": "UDim2"
+						}
+					},
+					{
+						"Default": "Out",
+						"Name": "easingDirection",
+						"Type": {
+							"Category": "Enum",
+							"Name": "EasingDirection"
+						}
+					},
+					{
+						"Default": "Quad",
+						"Name": "easingStyle",
+						"Type": {
+							"Category": "Enum",
+							"Name": "EasingStyle"
+						}
+					},
+					{
+						"Default": "1",
+						"Name": "time",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Default": "false",
+						"Name": "override",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "callback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiObject",
+			"member": "TweenSizeInternal",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"UI"
+				],
+				"MemberType": "Function",
+				"Name": "TweenSizeInternal",
+				"Parameters": [
+					{
+						"Name": "endSize",
+						"Type": {
+							"Category": "DataType",
+							"Name": "UDim2"
+						}
+					},
+					{
+						"Default": "Out",
+						"Name": "easingDirection",
+						"Type": {
+							"Category": "Enum",
+							"Name": "EasingDirection"
+						}
+					},
+					{
+						"Default": "Quad",
+						"Name": "easingStyle",
+						"Type": {
+							"Category": "Enum",
+							"Name": "EasingStyle"
+						}
+					},
+					{
+						"Default": "1",
+						"Name": "time",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Default": "false",
+						"Name": "override",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "callback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoFrame",
+			"member": "RollOffMaxDistance",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio",
+						"UI"
+					],
+					"Write": [
+						"Audio",
+						"UI"
+					]
+				},
+				"Category": "Video",
+				"Default": "10000",
+				"MemberType": "Property",
+				"Name": "RollOffMaxDistance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoFrame",
+			"member": "RollOffMinDistance",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio",
+						"UI"
+					],
+					"Write": [
+						"Audio",
+						"UI"
+					]
+				},
+				"Category": "Video",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "RollOffMinDistance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoFrame",
+			"member": "RollOffMode",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio",
+						"UI"
+					],
+					"Write": [
+						"Audio",
+						"UI"
+					]
+				},
+				"Category": "Video",
+				"Default": "Inverse",
+				"MemberType": "Property",
+				"Name": "RollOffMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "RollOffMode"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "MakeupDescription",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "MakeupDescription",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "LoadCharacterWithHumanoidDescription",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "humanoidDescription",
+							"Type": {
+								"Category": "Class",
+								"Name": "HumanoidDescription"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "humanoidDescription",
+							"Type": {
+								"Category": "Class",
+								"Name": "HumanoidDescription"
+							}
+						},
+						{
+							"Default": "Default",
+							"Name": "assetTypeVerification",
+							"Type": {
+								"Category": "Enum",
+								"Name": "AssetTypeVerification"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"Capabilities": [
+					"Players"
+				],
+				"MemberType": "Function",
+				"Name": "LoadCharacterWithHumanoidDescription",
+				"Parameters": [
+					{
+						"Name": "humanoidDescription",
+						"Type": {
+							"Category": "Class",
+							"Name": "HumanoidDescription"
+						}
+					},
+					{
+						"Default": "Default",
+						"Name": "assetTypeVerification",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AssetTypeVerification"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields",
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "LoadCharacterWithHumanoidDescriptionAsync",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "LoadCharacterWithHumanoidDescriptionAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "humanoidDescription",
+							"Type": {
+								"Category": "Class",
+								"Name": "HumanoidDescription"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "humanoidDescription",
+							"Type": {
+								"Category": "Class",
+								"Name": "HumanoidDescription"
+							}
+						},
+						{
+							"Default": "Default",
+							"Name": "assetTypeVerification",
+							"Type": {
+								"Category": "Enum",
+								"Name": "AssetTypeVerification"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"Capabilities": [
+					"Players"
+				],
+				"MemberType": "Function",
+				"Name": "LoadCharacterWithHumanoidDescriptionAsync",
+				"Parameters": [
+					{
+						"Name": "humanoidDescription",
+						"Type": {
+							"Category": "Class",
+							"Name": "HumanoidDescription"
+						}
+					},
+					{
+						"Default": "Default",
+						"Name": "assetTypeVerification",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AssetTypeVerification"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginAction",
+			"member": "Visible",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "Visible",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginMenu",
+			"member": "Visible",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Visible",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RunService",
+			"member": "Rollback",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Event",
+				"Name": "Rollback",
+				"Parameters": [
+					{
+						"Name": "time",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "double"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StyleRule",
+			"member": "SetPropertyTransition",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "None"
+				}
+			],
+			"value": {
+				"Capabilities": [
+					"UI"
+				],
+				"MemberType": "Function",
+				"Name": "SetPropertyTransition",
+				"Parameters": [
+					{
+						"Name": "property",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "transitionParams",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "StyleQuery",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "StyleQuery",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatMessage",
+			"member": "IsHiddenMessage",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "IsHiddenMessage",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UGCValidationService",
+			"member": "GetMinAndMaxMeshSizeAcrossAllFacs",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetMinAndMaxMeshSizeAcrossAllFacs",
+				"Parameters": [
+					{
+						"Name": "editableMesh",
+						"Type": {
+							"Category": "Class",
+							"Name": "EditableMesh"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UICorner",
+			"member": "BottomLeftRadius",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Data",
+				"Default": "0, 8",
+				"MemberType": "Property",
+				"Name": "BottomLeftRadius",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "UDim"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UICorner",
+			"member": "BottomRightRadius",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Data",
+				"Default": "0, 8",
+				"MemberType": "Property",
+				"Name": "BottomRightRadius",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "UDim"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UICorner",
+			"member": "TopLeftRadius",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Data",
+				"Default": "0, 8",
+				"MemberType": "Property",
+				"Name": "TopLeftRadius",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "UDim"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UICorner",
+			"member": "TopRightRadius",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Data",
+				"Default": "0, 8",
+				"MemberType": "Property",
+				"Name": "TopRightRadius",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "UDim"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "UIShadow",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotBrowsable"
+					]
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "UIShadow",
+				"Superclass": "UIComponent",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "WrapTextureTransfer",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "WrapTextureTransfer",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "OutputLink",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "OutputLink",
+				"Superclass": "Object",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "OutputLink",
+			"member": "Print",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Print",
+				"Parameters": [
+					{
+						"Name": "messageType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "MessageType"
+						}
+					},
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "urlText",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnimationNodeType",
+			"item": "BlendNode",
+			"type": "Remove",
+			"value": {
+				"Name": "BlendNode",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnimationNodeType",
+			"item": "OverNode",
+			"type": "Add",
+			"value": {
+				"LegacyNames": [
+					"BlendNode"
+				],
+				"Name": "OverNode",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ActivePayerStatus",
+			"type": "Add",
+			"value": {
+				"Name": "ActivePayerStatus"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ActivePayerStatus",
+			"item": "Unknown",
+			"type": "Add",
+			"value": {
+				"Name": "Unknown",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ActivePayerStatus",
+			"item": "Never",
+			"type": "Add",
+			"value": {
+				"Name": "Never",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ActivePayerStatus",
+			"item": "Lapsed",
+			"type": "Add",
+			"value": {
+				"Name": "Lapsed",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ActivePayerStatus",
+			"item": "Casual50Percent",
+			"type": "Add",
+			"value": {
+				"Name": "Casual50Percent",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ActivePayerStatus",
+			"item": "Intermediate35Percent",
+			"type": "Add",
+			"value": {
+				"Name": "Intermediate35Percent",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ActivePayerStatus",
+			"item": "Top15Percent",
+			"type": "Add",
+			"value": {
+				"Name": "Top15Percent",
+				"Value": 5
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AnimationNodePhaseSync",
+			"type": "Add",
+			"value": {
+				"Name": "AnimationNodePhaseSync"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnimationNodePhaseSync",
+			"item": "Synced",
+			"type": "Add",
+			"value": {
+				"Name": "Synced",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnimationNodePhaseSync",
+			"item": "Unsynced",
+			"type": "Add",
+			"value": {
+				"Name": "Unsynced",
+				"Value": 1
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "CreateContentResult",
+			"type": "Add",
+			"value": {
+				"Name": "CreateContentResult"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CreateContentResult",
+			"item": "Success",
+			"type": "Add",
+			"value": {
+				"Name": "Success",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CreateContentResult",
+			"item": "PermissionDenied",
+			"type": "Add",
+			"value": {
+				"Name": "PermissionDenied",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CreateContentResult",
+			"item": "UploadFailed",
+			"type": "Add",
+			"value": {
+				"Name": "UploadFailed",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CreateContentResult",
+			"item": "Unknown",
+			"type": "Add",
+			"value": {
+				"Name": "Unknown",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CreateContentResult",
+			"item": "StorageLimitExceeded",
+			"type": "Add",
+			"value": {
+				"Name": "StorageLimitExceeded",
+				"Value": 5
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "PlayerPlatformSpenderStatus",
+			"type": "Add",
+			"value": {
+				"Name": "PlayerPlatformSpenderStatus"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PlayerPlatformSpenderStatus",
+			"item": "Unknown",
+			"type": "Add",
+			"value": {
+				"Name": "Unknown",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PlayerPlatformSpenderStatus",
+			"item": "Active",
+			"type": "Add",
+			"value": {
+				"Name": "Active",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PlayerPlatformSpenderStatus",
+			"item": "OtherPayer",
+			"type": "Add",
+			"value": {
+				"Name": "OtherPayer",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "WhenUserFirstPlayed",
+			"type": "Add",
+			"value": {
+				"Name": "WhenUserFirstPlayed"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "WhenUserFirstPlayed",
+			"item": "Unknown",
+			"type": "Add",
+			"value": {
+				"Name": "Unknown",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "WhenUserFirstPlayed",
+			"item": "Days0To30",
+			"type": "Add",
+			"value": {
+				"Name": "Days0To30",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "WhenUserFirstPlayed",
+			"item": "Days31To90",
+			"type": "Add",
+			"value": {
+				"Name": "Days31To90",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "WhenUserFirstPlayed",
+			"item": "Days91To180",
+			"type": "Add",
+			"value": {
+				"Name": "Days91To180",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "WhenUserFirstPlayed",
+			"item": "Days181To365",
+			"type": "Add",
+			"value": {
+				"Name": "Days181To365",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "WhenUserFirstPlayed",
+			"item": "Days366Plus",
+			"type": "Add",
+			"value": {
+				"Name": "Days366Plus",
+				"Value": 5
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Class",
+			"class": "AnalyticsService",
+			"part": "description",
+			"before": "Collection of methods that allows developers to track how users interact with their experiences.",
+			"after": "Collection of methods that allows you to track how users interact with your experiences."
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "UploadCaptureAsync",
+			"part": "parameter",
+			"parameter": "capture",
+			"before": "a capture object of type <code>Capture</code>",
+			"after": "The <code>Capture</code> to upload.",
+			"value": {
+				"Capabilities": [
+					"Capture"
+				],
+				"MemberType": "Function",
+				"Name": "UploadCaptureAsync",
+				"Parameters": [
+					{
+						"Name": "capture",
+						"Type": {
+							"Category": "Class",
+							"Name": "Capture"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStoreService",
+			"member": "SetRateLimitForRequestType",
+			"part": "description",
+			"before": null,
+			"after": "Sets the rate limit for a given request type per minute.",
+			"value": {
+				"Capabilities": [
+					"DataStore"
+				],
+				"MemberType": "Function",
+				"Name": "SetRateLimitForRequestType",
+				"Parameters": [
+					{
+						"Name": "requestType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "DataStoreRequestType"
+						}
+					},
+					{
+						"Name": "baseLimit",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "perPlayerLimit",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiButton",
+			"member": "SecondaryActivated",
+			"part": "description",
+			"before": null,
+			"after": "Fires when a right-click is detected on desktop, long press detected on mobile, or triangle / Y activated in UI navigation mode on console. This function is not available yet.",
+			"value": {
+				"Capabilities": [
+					"UI"
+				],
+				"MemberType": "Event",
+				"Name": "SecondaryActivated",
+				"Parameters": [
+					{
+						"Name": "inputObject",
+						"Type": {
+							"Category": "Class",
+							"Name": "InputObject"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "LoadCharacterWithHumanoidDescription",
+			"part": "parameter",
+			"parameter": "assetTypeVerification",
+			"before": null,
+			"after": "The asset type verification mode.",
+			"value": {
+				"Capabilities": [
+					"Players"
+				],
+				"MemberType": "Function",
+				"Name": "LoadCharacterWithHumanoidDescription",
+				"Parameters": [
+					{
+						"Name": "humanoidDescription",
+						"Type": {
+							"Category": "Class",
+							"Name": "HumanoidDescription"
+						}
+					},
+					{
+						"Default": "Default",
+						"Name": "assetTypeVerification",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AssetTypeVerification"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields",
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "LoadCharacterWithHumanoidDescriptionAsync",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "LoadCharacterWithHumanoidDescriptionAsync",
+			"part": "parameter",
+			"parameter": "assetTypeVerification",
+			"before": null,
+			"after": "The asset type verification mode.",
+			"value": {
+				"Capabilities": [
+					"Players"
+				],
+				"MemberType": "Function",
+				"Name": "LoadCharacterWithHumanoidDescriptionAsync",
+				"Parameters": [
+					{
+						"Name": "humanoidDescription",
+						"Type": {
+							"Category": "Class",
+							"Name": "HumanoidDescription"
+						}
+					},
+					{
+						"Default": "Default",
+						"Name": "assetTypeVerification",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AssetTypeVerification"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DataStoreRequestType",
+			"item": "StandardRead",
+			"part": "description",
+			"before": "This request type is not yet active, <code>GetRequestBudgetForRequestType()</code> with this enum will return <code>0</code>.<br /><br /> Refers to <code>GetAsync()</code>, <code>GetVersionAsync()</code>, <code>GetVersionAtTimeAsync()</code>, and the read of <code>UpdateAsync()</code> for <code>DataStore</code>.",
+			"after": "Refers to <code>GetAsync()</code>, <code>GetVersionAsync()</code>, <code>GetVersionAtTimeAsync()</code>, and the read of <code>UpdateAsync()</code> for <code>DataStore</code>.",
+			"value": {
+				"Name": "StandardRead",
+				"Value": 9
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DataStoreRequestType",
+			"item": "StandardWrite",
+			"part": "description",
+			"before": "This request type is not yet active, <code>GetRequestBudgetForRequestType()</code> with this enum will return <code>0</code>.<br /><br /> Refers to <code>SetAsync()</code>, <code>IncrementAsync()</code>, and the write of <code>UpdateAsync()</code> for <code>DataStore</code>.",
+			"after": "Refers to <code>SetAsync()</code>, <code>IncrementAsync()</code>, and the write of <code>UpdateAsync()</code> for <code>DataStore</code>.",
+			"value": {
+				"Name": "StandardWrite",
+				"Value": 10
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DataStoreRequestType",
+			"item": "StandardList",
+			"part": "description",
+			"before": "This request type is not yet active, <code>GetRequestBudgetForRequestType()</code> with this enum will return <code>0</code>.<br /><br /> Refers to <code>ListDataStoresAsync()</code>, and <code>ListKeysAsync()</code> and <code>ListVersionsAsync()</code> for <code>DataStore</code>.",
+			"after": "Refers to <code>ListDataStoresAsync()</code>, and <code>ListKeysAsync()</code> and <code>ListVersionsAsync()</code> for <code>DataStore</code>.",
+			"value": {
+				"Name": "StandardList",
+				"Value": 11
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DataStoreRequestType",
+			"item": "StandardRemove",
+			"part": "description",
+			"before": "This request type is not yet active, <code>GetRequestBudgetForRequestType()</code> with this enum will return <code>0</code>.<br /><br /> Refers to <code>RemoveAsync()</code> for <code>DataStore</code>.",
+			"after": "Refers to <code>RemoveAsync()</code> for <code>DataStore</code>.",
+			"value": {
+				"Name": "StandardRemove",
+				"Value": 12
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DataStoreRequestType",
+			"item": "OrderedRead",
+			"part": "description",
+			"before": "This request type is not yet active, <code>GetRequestBudgetForRequestType()</code> with this enum will return <code>0</code>.<br /><br /> Refers to <code>GetAsync()</code> and the read of <code>UpdateAsync()</code> for <code>OrderedDataStore</code>.",
+			"after": "Refers to <code>GetAsync()</code> and the read of <code>UpdateAsync()</code> for <code>OrderedDataStore</code>.",
+			"value": {
+				"Name": "OrderedRead",
+				"Value": 13
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DataStoreRequestType",
+			"item": "OrderedWrite",
+			"part": "description",
+			"before": "This request type is not yet active, <code>GetRequestBudgetForRequestType()</code> with this enum will return <code>0</code>.<br /><br /> Refers to <code>SetAsync()</code>, <code>IncrementAsync()</code>, and the write of <code>UpdateAsync()</code> for <code>OrderedDataStore</code>.",
+			"after": "Refers to <code>SetAsync()</code>, <code>IncrementAsync()</code>, and the write of <code>UpdateAsync()</code> for <code>OrderedDataStore</code>.",
+			"value": {
+				"Name": "OrderedWrite",
+				"Value": 14
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DataStoreRequestType",
+			"item": "OrderedList",
+			"part": "description",
+			"before": "This request type is not yet active, <code>GetRequestBudgetForRequestType()</code> with this enum will return <code>0</code>.<br /><br /> Refers to <code>GetSortedAsync()</code> for <code>OrderedDataStore</code>. GetRequestBudgetForRequestType()<code>with this enum will return</code>0`.",
+			"after": "Refers to <code>GetSortedAsync()</code> for <code>OrderedDataStore</code>. GetRequestBudgetForRequestType()<code>with this enum will return</code>0`.",
+			"value": {
+				"Name": "OrderedList",
+				"Value": 15
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DataStoreRequestType",
+			"item": "OrderedRemove",
+			"part": "description",
+			"before": "This request type is not yet active, <code>GetRequestBudgetForRequestType()</code> with this enum will return <code>0</code>.<br /><br /> Refers to <code>RemoveAsync()</code> for <code>OrderedDataStore</code>.",
+			"after": "Refers to <code>RemoveAsync()</code> for <code>OrderedDataStore</code>.",
+			"value": {
+				"Name": "OrderedRemove",
+				"Value": 16
+			}
+		}
+	]
+}

@@ -1,0 +1,359 @@
+{
+	"from": {
+		"version": "0.574.0.5740446",
+		"hash": "fd1da08994284d2c"
+	},
+	"to": {
+		"version": "0.575.0.5750424",
+		"hash": "70b47f4403964382"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "RenderingTest",
+			"member": "PerfTest",
+			"type": "Add",
+			"value": {
+				"Category": "RenderingTest",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "PerfTest",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SafetyService",
+			"member": "ForceScreenshotSignal",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ForceScreenshotSignal",
+				"Parameters": [
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "playerId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "mac",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "args",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptEditorService",
+			"member": "GetEditorSource",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetEditorSource",
+				"Parameters": [
+					{
+						"Name": "script",
+						"Type": {
+							"Category": "Class",
+							"Name": "LuaSourceContainer"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Speaker",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Internal",
+				"Name": "Speaker",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "DrawConstraintsOnTop",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"ReadOnly",
+						"NotReplicated"
+					],
+					"after": [
+						"ReadOnly",
+						"NotReplicated",
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "DrawConstraintsOnTop",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated",
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatInputBarConfiguration",
+			"member": "KeyboardKeyCode",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "Unknown",
+					"after": "Slash"
+				},
+				{
+					"field": "Tags",
+					"before": [
+						"Hidden"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Category": "Behavior",
+				"Default": "Slash",
+				"MemberType": "Property",
+				"Name": "KeyboardKeyCode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "KeyCode"
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PartType",
+			"item": "Wedge",
+			"type": "Add",
+			"value": {
+				"Name": "Wedge",
+				"Tags": [
+					"NotBrowsable"
+				],
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PartType",
+			"item": "CornerWedge",
+			"type": "Add",
+			"value": {
+				"Name": "CornerWedge",
+				"Tags": [
+					"NotBrowsable"
+				],
+				"Value": 4
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "WeldConstraintPreserve",
+			"type": "Add",
+			"value": {
+				"Name": "WeldConstraintPreserve"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "WeldConstraintPreserve",
+			"item": "All",
+			"type": "Add",
+			"value": {
+				"Name": "All",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "WeldConstraintPreserve",
+			"item": "None",
+			"type": "Add",
+			"value": {
+				"Name": "None",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "WeldConstraintPreserve",
+			"item": "Touching",
+			"type": "Add",
+			"value": {
+				"Name": "Touching",
+				"Value": 2
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Class",
+			"class": "OutfitPages",
+			"part": "description",
+			"before": null,
+			"after": "The <code>OutfitPages</code> class is used in the case of iterating over a user's outfits."
+		},
+		{
+			"element": "Member",
+			"class": "ChatInputBarConfiguration",
+			"member": "IsFocused",
+			"part": "description",
+			"before": "Describes if the default chat input bar is focused or not.",
+			"after": null,
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "IsFocused",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "Unsafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatInputBarConfiguration",
+			"member": "KeyboardKeyCode",
+			"part": "description",
+			"before": "Determines an additional key users can press to trigger focusing on the default chat input bar.",
+			"after": null,
+			"value": {
+				"Category": "Behavior",
+				"Default": "Slash",
+				"MemberType": "Property",
+				"Name": "KeyboardKeyCode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "KeyCode"
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "EasingStyle",
+			"item": "Quart",
+			"part": "description",
+			"before": "Similar to <strong>Quad</strong>, but starts at a higher speed.",
+			"after": "Similar to <strong>Quad</strong>, but starts at a higher speed determined by quartic interpolation.",
+			"value": {
+				"Name": "Quart",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "EasingStyle",
+			"item": "Quint",
+			"part": "description",
+			"before": "Similar to <strong>Quart</strong>, but starts at a higher speed.",
+			"after": "Similar to <strong>Quart</strong>, but starts at a higher speed determined by quintic interpolation.",
+			"value": {
+				"Name": "Quint",
+				"Value": 5
+			}
+		}
+	]
+}

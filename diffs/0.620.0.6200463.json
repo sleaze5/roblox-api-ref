@@ -1,0 +1,1380 @@
+{
+	"from": {
+		"version": "0.619.0.6190508",
+		"hash": "636c3b2697eb4e58"
+	},
+	"to": {
+		"version": "0.620.0.6200463",
+		"hash": "e2bc56a1e4374ca0"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "ActivityHistoryService",
+			"member": "onEventNotificationReceived",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "onEventNotificationReceived",
+				"Parameters": [],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ActivityHistoryService",
+			"member": "EventNotificationReceived",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "EventNotificationReceived",
+				"Parameters": [],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioEmitter",
+			"member": "DistanceAttenuation",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "DistanceAttenuation",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "BinaryString"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioEmitter",
+			"member": "GetDistanceAttenuation",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "GetDistanceAttenuation",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioEmitter",
+			"member": "SetDistanceAttenuation",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "SetDistanceAttenuation",
+				"Parameters": [
+					{
+						"Name": "curve",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "ReplicateAvatarTempAssetIds",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "serializedModel",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "bufferMap",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "id",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "serializedModel",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "bufferMap",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "ReplicateAvatarTempAssetIds",
+				"Parameters": [
+					{
+						"Name": "id",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "serializedModel",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "bufferMap",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "LoadAvatarModelAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LoadAvatarModelAsync",
+				"Parameters": [
+					{
+						"Name": "id",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "LoadAvatarPreviewImageAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LoadAvatarPreviewImageAsync",
+				"Parameters": [
+					{
+						"Name": "avatarPreview",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "EditableImage"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "RequestAvatarModel",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "RequestAvatarModel",
+				"Parameters": [
+					{
+						"Name": "id",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "DeleteCapturesAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DeleteCapturesAsync",
+				"Parameters": [
+					{
+						"Name": "pathArr",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "OpenAttenuationCurveEditor",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OpenAttenuationCurveEditor",
+				"Parameters": [
+					{
+						"Name": "selectedCurveObject",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "SetCurrentMaterial",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetCurrentMaterial",
+				"Parameters": [
+					{
+						"Name": "baseMaterial",
+						"Type": {
+							"Category": "Enum",
+							"Name": "Material"
+						}
+					},
+					{
+						"Name": "materialVariant",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "InsertPoint",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "InsertPoint",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Selection",
+			"member": "AddFocusCallback",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddFocusCallback",
+				"Parameters": [
+					{
+						"Name": "priority",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "function",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RBXScriptConnection"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "DeathStyle",
+			"type": "Remove",
+			"value": {
+				"Category": "Character",
+				"Default": "Default",
+				"MemberType": "Property",
+				"Name": "DeathStyle",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotBrowsable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "DeathStyle"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AvatarGenerationJob",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AvatarGenerationJob",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarGenerationJob",
+			"member": "Error",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Error",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AvatarGenerationError"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarGenerationJob",
+			"member": "ErrorMessage",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "ErrorMessage",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarGenerationJob",
+			"member": "Progress",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Progress",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarGenerationJob",
+			"member": "Status",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Status",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AvatarGenerationJobStatus"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarGenerationJob",
+			"member": "Cancel",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Cancel",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarGenerationJob",
+			"member": "Wait",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Wait",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Avatar2DGenerationJob",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "Avatar2DGenerationJob",
+				"Superclass": "AvatarGenerationJob",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Avatar2DGenerationJob",
+			"member": "Result",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "Result",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Avatar3DGenerationJob",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "Avatar3DGenerationJob",
+				"Superclass": "AvatarGenerationJob",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Avatar3DGenerationJob",
+			"member": "Result",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "Result",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Model"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AvatarGenerationSession",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AvatarGenerationSession",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarGenerationSession",
+			"member": "GenerateAvatarModel",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GenerateAvatarModel",
+				"Parameters": [
+					{
+						"Name": "previewJob",
+						"Type": {
+							"Category": "Class",
+							"Name": "Avatar2DGenerationJob"
+						}
+					},
+					{
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Avatar3DGenerationJob"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarGenerationSession",
+			"member": "GenerateAvatarPreview",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GenerateAvatarPreview",
+				"Parameters": [
+					{
+						"Name": "textPrompt",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Avatar2DGenerationJob"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "CommerceService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "CommerceService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CommerceService",
+			"member": "PromptRealWorldCommerceBrowser",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptRealWorldCommerceBrowser",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "url",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CommerceService",
+			"member": "UserEligibleForRealWorldCommerceAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UserEligibleForRealWorldCommerceAsync",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CommerceService",
+			"member": "InExperienceBrowserRequested",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "InExperienceBrowserRequested",
+				"Parameters": [
+					{
+						"Name": "url",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ScriptProfilerService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ScriptProfilerService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptProfilerService",
+			"member": "ClientRequestData",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ClientRequestData",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptProfilerService",
+			"member": "ClientStart",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ClientStart",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "frequency",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptProfilerService",
+			"member": "ClientStop",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ClientStop",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptProfilerService",
+			"member": "DeserializeJSON",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DeserializeJSON",
+				"Parameters": [
+					{
+						"Name": "jsonString",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptProfilerService",
+			"member": "SaveScriptProfilingData",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SaveScriptProfilingData",
+				"Parameters": [
+					{
+						"Name": "jsonString",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "filename",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptProfilerService",
+			"member": "ServerRequestData",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ServerRequestData",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptProfilerService",
+			"member": "ServerStart",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ServerStart",
+				"Parameters": [
+					{
+						"Name": "frequency",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptProfilerService",
+			"member": "ServerStop",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ServerStop",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptProfilerService",
+			"member": "OnNewData",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnNewData",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "jsonString",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptProfilerService",
+			"member": "RequestData",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "RequestData",
+				"Parameters": [],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptProfilerService",
+			"member": "SetProfilingState",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "SetProfilingState",
+				"Parameters": [
+					{
+						"Name": "start",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "frequency",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "DeathStyle",
+			"type": "Remove",
+			"value": {
+				"Name": "DeathStyle"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TextTruncate",
+			"item": "SplitWord",
+			"type": "Add",
+			"value": {
+				"Name": "SplitWord",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AvatarGenerationError",
+			"type": "Add",
+			"value": {
+				"Name": "AvatarGenerationError"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarGenerationError",
+			"item": "None",
+			"type": "Add",
+			"value": {
+				"Name": "None",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarGenerationError",
+			"item": "Timeout",
+			"type": "Add",
+			"value": {
+				"Name": "Timeout",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarGenerationError",
+			"item": "DownloadFailed",
+			"type": "Add",
+			"value": {
+				"Name": "DownloadFailed",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarGenerationError",
+			"item": "Canceled",
+			"type": "Add",
+			"value": {
+				"Name": "Canceled",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarGenerationError",
+			"item": "Unknown",
+			"type": "Add",
+			"value": {
+				"Name": "Unknown",
+				"Value": 4
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AvatarGenerationJobStatus",
+			"type": "Add",
+			"value": {
+				"Name": "AvatarGenerationJobStatus"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarGenerationJobStatus",
+			"item": "NotStarted",
+			"type": "Add",
+			"value": {
+				"Name": "NotStarted",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarGenerationJobStatus",
+			"item": "InProgress",
+			"type": "Add",
+			"value": {
+				"Name": "InProgress",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarGenerationJobStatus",
+			"item": "Completed",
+			"type": "Add",
+			"value": {
+				"Name": "Completed",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarGenerationJobStatus",
+			"item": "Failed",
+			"type": "Add",
+			"value": {
+				"Name": "Failed",
+				"Value": 3
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Class",
+			"class": "ExperienceNotificationService",
+			"part": "description",
+			"before": null,
+			"after": "Service containing methods to validate users and prompt them to enable experience notifications."
+		},
+		{
+			"element": "Member",
+			"class": "ExperienceNotificationService",
+			"member": "PromptOptIn",
+			"part": "description",
+			"before": null,
+			"after": "Shows an in-experience prompt for the local player to enable notifications.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptOptIn",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ExperienceNotificationService",
+			"member": "CanPromptOptInAsync",
+			"part": "description",
+			"before": null,
+			"after": "Indicates whether the local player can be prompted to enable notifications.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CanPromptOptInAsync",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ExperienceNotificationService",
+			"member": "CanPromptOptInAsync",
+			"part": "return",
+			"before": null,
+			"after": "Whether the local player can be prompted to enable notifications.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CanPromptOptInAsync",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ExperienceNotificationService",
+			"member": "OptInPromptClosed",
+			"part": "description",
+			"before": null,
+			"after": "Fires when the local player closes the prompt.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OptInPromptClosed",
+				"Parameters": [],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Arimo",
+			"part": "description",
+			"before": null,
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/Arimo.png\" />",
+			"value": {
+				"Name": "Arimo",
+				"Value": 50
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "ArimoBold",
+			"part": "description",
+			"before": null,
+			"after": "<img width=\"80%\" src=\"../../../assets/engine-api/enums/Font/ArimoBold.png\" />",
+			"value": {
+				"Name": "ArimoBold",
+				"Value": 51
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TextTruncate",
+			"item": "AtEnd",
+			"part": "description",
+			"before": "Text is truncated at the end of the text, extra graphemes that cannot fit into the space are replaced with '...'.",
+			"after": "Text is truncated at the end of the text; extra graphemes that cannot fit into the space are replaced with <code>...</code>.",
+			"value": {
+				"Name": "AtEnd",
+				"Value": 1
+			}
+		}
+	]
+}

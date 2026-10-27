@@ -1,0 +1,2468 @@
+{
+	"from": {
+		"version": "0.599.1.5990473",
+		"hash": "09a49a76c4be4dab"
+	},
+	"to": {
+		"version": "0.600.1.6000716",
+		"hash": "2eb55fb1b29347c9"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "HingeConstraint",
+			"member": "SoftlockServoUponReachingTarget",
+			"type": "Add",
+			"value": {
+				"Category": "Servo",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "SoftlockServoUponReachingTarget",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SlidingBallConstraint",
+			"member": "SoftlockServoUponReachingTarget",
+			"type": "Add",
+			"value": {
+				"Category": "Servo",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "SoftlockServoUponReachingTarget",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CylindricalConstraint",
+			"member": "SoftlockAngularServoUponReachingTarget",
+			"type": "Add",
+			"value": {
+				"Category": "AngularServo",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "SoftlockAngularServoUponReachingTarget",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DynamicImage",
+			"member": "ImageData",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "ImageData",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "BinaryString"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "HashMeshAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "HashMeshAsync",
+				"Parameters": [
+					{
+						"Name": "meshId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "StitchMeshesAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "StitchMeshesAsync",
+				"Parameters": [
+					{
+						"Name": "meshParts",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Content"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreSortedMap",
+			"member": "GetAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Group",
+						"Name": "Variant"
+					},
+					"after": {
+						"Category": "Group",
+						"Name": "Tuple"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreSortedMap",
+			"member": "GetRangeAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "direction",
+							"Type": {
+								"Category": "Enum",
+								"Name": "SortDirection"
+							}
+						},
+						{
+							"Name": "count",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Default": "",
+							"Name": "exclusiveLowerBound",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "",
+							"Name": "exclusiveUpperBound",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "direction",
+							"Type": {
+								"Category": "Enum",
+								"Name": "SortDirection"
+							}
+						},
+						{
+							"Name": "count",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "exclusiveLowerBound",
+							"Type": {
+								"Category": "Group",
+								"Name": "Variant"
+							}
+						},
+						{
+							"Name": "exclusiveUpperBound",
+							"Type": {
+								"Category": "Group",
+								"Name": "Variant"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRangeAsync",
+				"Parameters": [
+					{
+						"Name": "direction",
+						"Type": {
+							"Category": "Enum",
+							"Name": "SortDirection"
+						}
+					},
+					{
+						"Name": "count",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "exclusiveLowerBound",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "exclusiveUpperBound",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreSortedMap",
+			"member": "SetAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "key",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "value",
+							"Type": {
+								"Category": "Group",
+								"Name": "Variant"
+							}
+						},
+						{
+							"Name": "expiration",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "key",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "value",
+							"Type": {
+								"Category": "Group",
+								"Name": "Variant"
+							}
+						},
+						{
+							"Name": "expiration",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "sortKey",
+							"Type": {
+								"Category": "Group",
+								"Name": "Variant"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "expiration",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "sortKey",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreSortedMap",
+			"member": "UpdateAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Group",
+						"Name": "Variant"
+					},
+					"after": {
+						"Category": "Group",
+						"Name": "Tuple"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "UpdateAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "transformFunction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					},
+					{
+						"Name": "expiration",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ClientReplicator",
+			"member": "RequestServerScriptProfilingData",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RequestServerScriptProfilingData",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "OpenCloudService",
+			"member": "RegistrationComplete",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegistrationComplete",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TriangleMeshPart",
+			"member": "FluidFidelity",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "FluidFidelity",
+				"Security": {
+					"Read": "None",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "FluidFidelity"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TriangleMeshPart",
+			"member": "FluidFidelityInternal",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "FluidFidelityInternal",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "FluidFidelity"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "NewPhysicsSolver",
+			"type": "Remove",
+			"value": {
+				"Category": "Behavior",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "NewPhysicsSolver",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "PhysicsSolver"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "PrimalPhysicsSolver",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "PrimalPhysicsSolver",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "PrimalPhysicsSolver"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsSettings",
+			"member": "ShowFluidForcesForSelectedOrHoveredAssemblies",
+			"type": "Remove",
+			"value": {
+				"Category": "Display",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "ShowFluidForcesForSelectedOrHoveredAssemblies",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsSettings",
+			"member": "ShowFluidForcesForSelectedOrHoveredMechanisms",
+			"type": "Add",
+			"value": {
+				"Category": "Display",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "ShowFluidForcesForSelectedOrHoveredMechanisms",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RibbonNotificationService",
+			"member": "NewNotificationFromPlugin2",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "NewNotificationFromPlugin2",
+				"Parameters": [
+					{
+						"Name": "notificationId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RibbonNotificationService",
+			"member": "NewNotificationFromRibbon",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "NewNotificationFromRibbon",
+				"Parameters": [
+					{
+						"Name": "notificationId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptContext",
+			"member": "GetScriptProfilingData",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetScriptProfilingData",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "PromptPhoneBook",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptPhoneBook",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "tag",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "CanSendCallInviteAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CanSendCallInviteAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "CallInviteStateChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "CallInviteStateChanged",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "inviteState",
+						"Type": {
+							"Category": "Enum",
+							"Name": "InviteState"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "PhoneBookPromptClosed",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PhoneBookPromptClosed",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "OnCallInviteInvoked",
+			"type": "Add",
+			"value": {
+				"MemberType": "Callback",
+				"Name": "OnCallInviteInvoked",
+				"Parameters": [
+					{
+						"Name": "tag",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "callParticipantIds",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UGCValidationService",
+			"member": "ValidateTextureRGBFromFile",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ValidateTextureRGBFromFile",
+				"Parameters": [
+					{
+						"Name": "path1",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "path2",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "crop_x",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "crop_y",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "screen_x",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "screen_y",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "color1",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Color3"
+						}
+					},
+					{
+						"Name": "color2",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Color3"
+						}
+					},
+					{
+						"Name": "pixelWidth",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UGCValidationService",
+			"member": "GetDynamicHeadMeshInactiveControls",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetDynamicHeadMeshInactiveControls",
+				"Parameters": [
+					{
+						"Name": "meshId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "controlNames",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UGCValidationService",
+			"member": "ValidateImageTransparencyThresholdByteString",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ValidateImageTransparencyThresholdByteString",
+				"Parameters": [
+					{
+						"Name": "image",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "threshold",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UGCValidationService",
+			"member": "ValidateImageTransparencyThresholdTextureID",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ValidateImageTransparencyThresholdTextureID",
+				"Parameters": [
+					{
+						"Name": "textureId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "threshold",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VoiceChatService",
+			"member": "VoiceChatSubscriptionInitialBatchEmpty",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "VoiceChatSubscriptionInitialBatchEmpty",
+				"Parameters": [
+					{
+						"Name": "sessionId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "EngineAPICloudProcessingService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "EngineAPICloudProcessingService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "PhysicsSolver",
+			"type": "Remove",
+			"value": {
+				"Name": "PhysicsSolver"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "FluidFidelity",
+			"type": "Add",
+			"value": {
+				"Name": "FluidFidelity"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FluidFidelity",
+			"item": "Automatic",
+			"type": "Add",
+			"value": {
+				"Name": "Automatic",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FluidFidelity",
+			"item": "UseCollisionGeometry",
+			"type": "Add",
+			"value": {
+				"Name": "UseCollisionGeometry",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FluidFidelity",
+			"item": "UsePreciseGeometry",
+			"type": "Add",
+			"value": {
+				"Name": "UsePreciseGeometry",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "InviteState",
+			"type": "Add",
+			"value": {
+				"Name": "InviteState"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "InviteState",
+			"item": "Placed",
+			"type": "Add",
+			"value": {
+				"Name": "Placed",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "InviteState",
+			"item": "Accepted",
+			"type": "Add",
+			"value": {
+				"Name": "Accepted",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "InviteState",
+			"item": "Declined",
+			"type": "Add",
+			"value": {
+				"Name": "Declined",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "InviteState",
+			"item": "Missed",
+			"type": "Add",
+			"value": {
+				"Name": "Missed",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "PrimalPhysicsSolver",
+			"type": "Add",
+			"value": {
+				"Name": "PrimalPhysicsSolver"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PrimalPhysicsSolver",
+			"item": "Default",
+			"type": "Add",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PrimalPhysicsSolver",
+			"item": "Experimental",
+			"type": "Add",
+			"value": {
+				"Name": "Experimental",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PrimalPhysicsSolver",
+			"item": "Disabled",
+			"type": "Add",
+			"value": {
+				"Name": "Disabled",
+				"Value": 2
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "Attachment",
+			"member": "GetConstraints",
+			"part": "description",
+			"before": null,
+			"after": "Returns a list of <code>Constraints</code> connected to the attachment.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetConstraints",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Beam",
+			"part": "description",
+			"before": "A Beam object connects two <code>Attachment</code>s by drawing a texture between them.",
+			"after": "Connects two <code>Attachment</code>s by drawing a texture between them."
+		},
+		{
+			"element": "Class",
+			"class": "GeometryService",
+			"part": "description",
+			"before": null,
+			"after": "Service containing geometric operations."
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "CalculateConstraintsToPreserve",
+			"part": "description",
+			"before": null,
+			"after": "Returns a table of <code>Constraints</code> and <code>Attachments</code> which you may choose to preserve, along with their respective parents.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CalculateConstraintsToPreserve",
+				"Parameters": [
+					{
+						"Name": "source",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "destination",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "CalculateConstraintsToPreserve",
+			"part": "parameter",
+			"parameter": "source",
+			"before": null,
+			"after": "An original object that the solid modeling operation was performed on, for example <code>part</code> in <code>UnionAsync()</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CalculateConstraintsToPreserve",
+				"Parameters": [
+					{
+						"Name": "source",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "destination",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "CalculateConstraintsToPreserve",
+			"part": "parameter",
+			"parameter": "options",
+			"before": null,
+			"after": "Options table for the method: - <code>tolerance</code> – The distance tolerance, in regards to <code>Attachment</code> preservation, between the attachment and the closest point on the original part's surface versus the closest point on the resulting part's surface. If the resulting distance following the solid modeling operation is greater than this value, the <code>Parent</code> of attachments and their associated constraints will be <code>nil</code> in the returned recommendation table. - <code>weldConstraintPreserve</code> – A <code>WeldConstraintPreserve</code> enum value describing how <code>WeldConstraints</code> are preserved in the resulting recommendation table.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CalculateConstraintsToPreserve",
+				"Parameters": [
+					{
+						"Name": "source",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "destination",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "CalculateConstraintsToPreserve",
+			"part": "return",
+			"before": null,
+			"after": "Table containing information for general case <code>Constraints</code>, <code>NoCollisionConstraints</code>, and <code>WeldConstraints</code>. In cases where an <code>Attachment</code> or <code>Constraint</code> should be dropped, its respective parent will be <code>nil</code>. For general case <code>Constraints</code> such as <code>HingeConstraint</code>: <table size=\"small\"> <thead>   <tr>     <th>Key</th>     <th>Type</th>   </tr> </thead> <tbody>   <tr>     <td>Attachment</td>     <td><code>Class.Attachment</code></td>   </tr>   <tr>     <td>Constraint</td>     <td><code>Class.Constraint</code></td>   </tr>   <tr>     <td>AttachmentParent</td>     <td><code>Class.BasePart</code> or <code>nil</code></td>   </tr>   <tr>     <td>ConstraintParent</td>     <td><code>Class.BasePart</code> or <code>nil</code></td>   </tr> </tbody> </table>  For <code>WeldConstraints</code>: <table size=\"small\"> <thead>   <tr>     <th>Key</th>     <th>Type</th>   </tr> </thead> <tbody>   <tr>     <td>WeldConstraint</td>     <td><code>Class.WeldConstraint</code></td>   </tr>   <tr>     <td>WeldConstraintParent</td>     <td><code>Class.BasePart</code> or <code>nil</code></td>   </tr>   <tr>     <td>WeldConstraintPart0</td>     <td><code>Class.BasePart</code></td>   </tr>   <tr>     <td>WeldConstraintPart1</td>     <td><code>Class.BasePart</code></td>   </tr> </tbody> </table>  For <code>NoCollisionConstraints</code>: <table size=\"small\"> <thead>   <tr>     <th>Key</th>     <th>Type</th>   </tr> </thead> <tbody>   <tr>     <td>NoCollisionConstraint</td>     <td><code>Class.NoCollisionConstraint</code></td>   </tr>   <tr>     <td>NoCollisionConstraintParent</td>     <td><code>Class.BasePart</code> or <code>nil</code></td>   </tr>   <tr>     <td>NoCollisionConstraintPart0</td>     <td><code>Class.BasePart</code></td>   </tr>   <tr>     <td>NoCollisionConstraintPart1</td>     <td><code>Class.BasePart</code></td>   </tr> </tbody> </table>",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CalculateConstraintsToPreserve",
+				"Parameters": [
+					{
+						"Name": "source",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "destination",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "IntersectAsync",
+			"part": "description",
+			"before": null,
+			"after": "Creates one or more <code>PartOperations</code> from the intersecting geometry of one part and other parts.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IntersectAsync",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "IntersectAsync",
+			"part": "parameter",
+			"parameter": "part",
+			"before": null,
+			"after": "Main <code>Part</code> or <code>PartOperation</code> to operate on.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IntersectAsync",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "IntersectAsync",
+			"part": "parameter",
+			"parameter": "parts",
+			"before": null,
+			"after": "Array of parts to intersect with the main part.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IntersectAsync",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "IntersectAsync",
+			"part": "parameter",
+			"parameter": "options",
+			"before": null,
+			"after": "Options table containing all the controls for the method: - <code>CollisionFidelity</code> – The value of <code>CollisionFidelity</code> in the resulting parts. - <code>RenderFidelity</code> – The value of <code>RenderFidelity</code> in the resulting parts. - <code>SplitApart</code> – Boolean controlling whether the objects should all be kept together or properly split apart. Default is <code>true</code> (split).",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IntersectAsync",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "IntersectAsync",
+			"part": "return",
+			"before": null,
+			"after": "One or more <code>PartOperations</code> from the intersecting geometry of the main part (<code>part</code>) and the other parts.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IntersectAsync",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "SubtractAsync",
+			"part": "description",
+			"before": null,
+			"after": "Creates one or more <code>PartOperations</code> from one part minus the geometry occupied by other parts.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SubtractAsync",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "SubtractAsync",
+			"part": "parameter",
+			"parameter": "part",
+			"before": null,
+			"after": "Main <code>Part</code> or <code>PartOperation</code> to operate on.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SubtractAsync",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "SubtractAsync",
+			"part": "parameter",
+			"parameter": "parts",
+			"before": null,
+			"after": "Array of parts to subtract from the main part.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SubtractAsync",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "SubtractAsync",
+			"part": "parameter",
+			"parameter": "options",
+			"before": null,
+			"after": "Options table containing all the controls for the method: - <code>CollisionFidelity</code> – The value of <code>CollisionFidelity</code> in the resulting parts. - <code>RenderFidelity</code> – The value of <code>RenderFidelity</code> in the resulting parts. - <code>SplitApart</code> – Boolean controlling whether the objects should all be kept together or properly split apart. Default is <code>true</code> (split).",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SubtractAsync",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "SubtractAsync",
+			"part": "return",
+			"before": null,
+			"after": "One or more <code>PartOperations</code> from the geometry of the main part (<code>part</code>) minus the geometry occupied by the other parts.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SubtractAsync",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "UnionAsync",
+			"part": "description",
+			"before": null,
+			"after": "Creates one or more <code>PartOperations</code> from one part plus the geometry occupied by other parts.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UnionAsync",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "UnionAsync",
+			"part": "parameter",
+			"parameter": "part",
+			"before": null,
+			"after": "Main <code>Part</code> or <code>PartOperation</code> to operate on.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UnionAsync",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "UnionAsync",
+			"part": "parameter",
+			"parameter": "parts",
+			"before": null,
+			"after": "Array of parts to union with the main part.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UnionAsync",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "UnionAsync",
+			"part": "parameter",
+			"parameter": "options",
+			"before": null,
+			"after": "Options table containing all the controls for the method: - <code>CollisionFidelity</code> – The value of <code>CollisionFidelity</code> in the resulting parts. - <code>RenderFidelity</code> – The value of <code>RenderFidelity</code> in the resulting parts. - <code>SplitApart</code> – Boolean controlling whether the objects should all be kept together or properly split apart. Default is <code>true</code> (split).",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UnionAsync",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "UnionAsync",
+			"part": "return",
+			"before": null,
+			"after": "One or more <code>PartOperations</code> from the geometry of the main part (<code>part</code>) plus the geometry occupied by the other parts.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UnionAsync",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiObject",
+			"member": "BorderMode",
+			"part": "description",
+			"before": "Determines in what manner a GuiObject's border is laid out relative to its dimensions.",
+			"after": "Determines in what manner the <code>GuiObject</code> border is laid out relative to its dimensions.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "BorderMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "BorderMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiObject",
+			"member": "BorderSizePixel",
+			"part": "description",
+			"before": "Determines the pixel width of a <code>GUI's</code> border.",
+			"after": "Determines the pixel width of a <code>GuiObject</code> border.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "BorderSizePixel",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScrollingFrame",
+			"member": "ElasticBehavior",
+			"part": "description",
+			"before": "Determines how elastic scrolling behaves for touch input.",
+			"after": "Determines when elastic scrolling is allowed.",
+			"value": {
+				"Category": "Scrolling",
+				"Default": "WhenScrollable",
+				"MemberType": "Property",
+				"Name": "ElasticBehavior",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ElasticBehavior"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PartOperation",
+			"member": "TriangleCount",
+			"part": "description",
+			"before": "The number of polygons in this solid model. This value will always be &lt;= 5000.",
+			"after": "The number of polygons in this solid model.",
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "TriangleCount",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PartOperation",
+			"member": "SubstituteGeometry",
+			"part": "description",
+			"before": null,
+			"after": "Substitutes the geometry of this <code>PartOperation</code> with the geometry of another <code>PartOperation</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SubstituteGeometry",
+				"Parameters": [
+					{
+						"Name": "source",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PartOperation",
+			"member": "SubstituteGeometry",
+			"part": "parameter",
+			"parameter": "source",
+			"before": null,
+			"after": "The <code>PartOperation</code> whose geometry will substitute the geometry of this <code>PartOperation</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SubstituteGeometry",
+				"Parameters": [
+					{
+						"Name": "source",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "GetNetworkPing",
+			"part": "description",
+			"before": "Returns the engine-calculated latency in seconds.",
+			"after": "Returns the isolated network latency in seconds.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetNetworkPing",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Trail",
+			"member": "Enabled",
+			"part": "description",
+			"before": "Toggles whether a trail will be drawn or not.",
+			"after": "Toggles whether the trail will be drawn or not.",
+			"value": {
+				"Category": "Emission",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "Enabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Trail",
+			"member": "FaceCamera",
+			"part": "description",
+			"before": "If set to true, the trail textures will always face the camera.",
+			"after": "Whether the trail textures will always face the camera.",
+			"value": {
+				"Category": "Appearance",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "FaceCamera",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Trail",
+			"member": "TextureMode",
+			"part": "description",
+			"before": "Sets how the Texture will be drawn.",
+			"after": "Sets how <code>Trail.Texture</code> will be drawn.",
+			"value": {
+				"Category": "Appearance",
+				"Default": "Stretch",
+				"MemberType": "Property",
+				"Name": "TextureMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "TextureMode"
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AlphaMode",
+			"item": "Overlay",
+			"part": "description",
+			"before": "Overlays the <code>SurfaceAppearance.ColorMap</code> on top of the underlying part color based on the ColorMap's alpha channel. <img alt=\"AlphaMode OverLay\" src=\"/assets/legacy/fern-cutout.png\" />",
+			"after": "Overlays the <code>SurfaceAppearance.ColorMap</code> on top of the underlying part color based on the map's alpha channel. <img alt=\"AlphaMode OverLay\" src=\"/assets/legacy/fern-overlay.png\" />",
+			"value": {
+				"Name": "Overlay",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AlphaMode",
+			"item": "Transparency",
+			"part": "description",
+			"before": "Overlays the <code>SurfaceAppearance.ColorMap</code> on top of the underlying part <code>color</code> color based on the ColorMap's alpha channel. <img alt=\"AlphaMode Transparency\" src=\"/assets/legacy/fern-overlay.png\" />.",
+			"after": "Uses the <code>ColorMap</code> alpha channel to control the transparency of the surface. <img alt=\"AlphaMode Transparency\" src=\"/assets/legacy/fern-cutout.png\" />.",
+			"value": {
+				"Name": "Transparency",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "WeldConstraintPreserve",
+			"item": "All",
+			"part": "description",
+			"before": null,
+			"after": "All <code>WeldConstraints</code> will be returned in the recommended table.",
+			"value": {
+				"Name": "All",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "WeldConstraintPreserve",
+			"item": "None",
+			"part": "description",
+			"before": null,
+			"after": "<code>WeldConstraints</code> will be ignored and not returned in the recommended table.",
+			"value": {
+				"Name": "None",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "WeldConstraintPreserve",
+			"item": "Touching",
+			"part": "description",
+			"before": null,
+			"after": "Only <code>WeldConstraints</code> that connect touching parts in the performed operation will be returned in the recommended table.",
+			"value": {
+				"Name": "Touching",
+				"Value": 2
+			}
+		}
+	]
+}

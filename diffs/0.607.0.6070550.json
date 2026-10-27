@@ -1,0 +1,2422 @@
+{
+	"from": {
+		"version": "0.605.3.6050660",
+		"hash": "7dbfc10d48084820"
+	},
+	"to": {
+		"version": "0.607.0.6070550",
+		"hash": "0b512dafaf26466f"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AnimationStreamTrack",
+			"member": "FACSDataLod",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "FACSDataLod",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "FACSDataLod"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Animator",
+			"member": "SynchronizeWith",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SynchronizeWith",
+				"Parameters": [
+					{
+						"Name": "otherAnimator",
+						"Type": {
+							"Category": "Class",
+							"Name": "Animator"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportSession",
+			"member": "GetCurrentStatusTable",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCurrentStatusTable",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportSession",
+			"member": "GetRigVisualization",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [],
+					"after": [
+						{
+							"Name": "importDataInstance",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRigVisualization",
+				"Parameters": [
+					{
+						"Name": "importDataInstance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportSession",
+			"member": "GetCurrentStatusTable_DEPRECATED",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCurrentStatusTable_DEPRECATED",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportSession",
+			"member": "GetRigVisualization_DEPRECATED",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRigVisualization_DEPRECATED",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportSession",
+			"member": "GetStatuses",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetStatuses",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetManagerService",
+			"member": "InsertImages",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "InsertImages",
+				"Parameters": [
+					{
+						"Name": "assetIds",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "CreateEditableMeshStripSkinningAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateEditableMeshStripSkinningAsync",
+				"Parameters": [
+					{
+						"Name": "meshId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "EditableMesh"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioAnalyzer",
+			"member": "GetConnectedWires",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetConnectedWires",
+				"Parameters": [
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioChorus",
+			"member": "GetConnectedWires",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetConnectedWires",
+				"Parameters": [
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioCompressor",
+			"member": "GetConnectedWires",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetConnectedWires",
+				"Parameters": [
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioDeviceInput",
+			"member": "GetConnectedWires",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetConnectedWires",
+				"Parameters": [
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioDeviceOutput",
+			"member": "GetConnectedWires",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetConnectedWires",
+				"Parameters": [
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioDistortion",
+			"member": "GetConnectedWires",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetConnectedWires",
+				"Parameters": [
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioEcho",
+			"member": "GetConnectedWires",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetConnectedWires",
+				"Parameters": [
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioEmitter",
+			"member": "GetConnectedWires",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetConnectedWires",
+				"Parameters": [
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioEqualizer",
+			"member": "GetConnectedWires",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetConnectedWires",
+				"Parameters": [
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioFader",
+			"member": "GetConnectedWires",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetConnectedWires",
+				"Parameters": [
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioFlanger",
+			"member": "GetConnectedWires",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetConnectedWires",
+				"Parameters": [
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioListener",
+			"member": "GetConnectedWires",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetConnectedWires",
+				"Parameters": [
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioPitchShifter",
+			"member": "GetConnectedWires",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetConnectedWires",
+				"Parameters": [
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioPlayer",
+			"member": "GetConnectedWires",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetConnectedWires",
+				"Parameters": [
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioReverb",
+			"member": "GetConnectedWires",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetConnectedWires",
+				"Parameters": [
+					{
+						"Name": "pin",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AvatarCreationService",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotCreatable",
+						"Service",
+						"NotReplicated"
+					],
+					"after": [
+						"NotCreatable",
+						"Service"
+					]
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AvatarCreationService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "UgcValidationFailure",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "UgcValidationFailure",
+				"Parameters": [
+					{
+						"Name": "guid",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "errorMessage",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "UgcValidationSuccess",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "UgcValidationSuccess",
+				"Parameters": [
+					{
+						"Name": "guid",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "serializedModel",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "NoPromptCreateOutfit",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "humanoidDescription",
+							"Type": {
+								"Category": "Class",
+								"Name": "HumanoidDescription"
+							}
+						},
+						{
+							"Name": "rigType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "HumanoidRigType"
+							}
+						},
+						{
+							"Name": "name",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "humanoidDescription",
+							"Type": {
+								"Category": "Class",
+								"Name": "HumanoidDescription"
+							}
+						},
+						{
+							"Name": "rigType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "HumanoidRigType"
+							}
+						},
+						{
+							"Name": "name",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "0",
+							"Name": "gearAssetId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "NoPromptCreateOutfit",
+				"Parameters": [
+					{
+						"Name": "humanoidDescription",
+						"Type": {
+							"Category": "Class",
+							"Name": "HumanoidDescription"
+						}
+					},
+					{
+						"Name": "rigType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "HumanoidRigType"
+						}
+					},
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "gearAssetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "NoPromptUpdateOutfit",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "outfitId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "humanoidDescription",
+							"Type": {
+								"Category": "Class",
+								"Name": "HumanoidDescription"
+							}
+						},
+						{
+							"Name": "rigType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "HumanoidRigType"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "outfitId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "humanoidDescription",
+							"Type": {
+								"Category": "Class",
+								"Name": "HumanoidDescription"
+							}
+						},
+						{
+							"Name": "rigType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "HumanoidRigType"
+							}
+						},
+						{
+							"Default": "0",
+							"Name": "gearAssetId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "NoPromptUpdateOutfit",
+				"Parameters": [
+					{
+						"Name": "outfitId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "humanoidDescription",
+						"Type": {
+							"Category": "Class",
+							"Name": "HumanoidDescription"
+						}
+					},
+					{
+						"Name": "rigType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "HumanoidRigType"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "gearAssetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BaseImportData",
+			"member": "GetPreview",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPreview",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CollectionService",
+			"member": "GetCollection",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "clazz",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "class",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCollection",
+				"Parameters": [
+					{
+						"Name": "class",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "GetTagged",
+						"ThreadSafety": "Safe"
+					}
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "MeshVersion",
+			"type": "Remove",
+			"value": {
+				"Category": "Appearance",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "MeshVersion",
+				"Security": {
+					"Read": "None",
+					"Write": "NotAccessibleSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoFrame",
+			"member": "SetStudioPreview",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetStudioPreview",
+				"Parameters": [
+					{
+						"Name": "isPreview",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ClientReplicator",
+			"member": "RequestServerLuauHeapData",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RequestServerLuauHeapData",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "GetBoundingBox",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Group",
+						"Name": "Tuple"
+					},
+					"after": [
+						{
+							"Category": "DataType",
+							"Name": "CFrame"
+						},
+						{
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBoundingBox",
+				"Parameters": [],
+				"ReturnType": [
+					{
+						"Category": "DataType",
+						"Name": "CFrame"
+					},
+					{
+						"Category": "DataType",
+						"Name": "Vector3"
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PackageUIService",
+			"member": "PublishPackage",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "packageInstance",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "packageInstance",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Name": "addUndoWayPoint",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "PublishPackage",
+				"Parameters": [
+					{
+						"Name": "packageInstance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "addUndoWayPoint",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptContext",
+			"member": "GetLuauHeapInstanceReferenceReport",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetLuauHeapInstanceReferenceReport",
+				"Parameters": [
+					{
+						"Name": "target",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptContext",
+			"member": "GetLuauHeapMemoryReport",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetLuauHeapMemoryReport",
+				"Parameters": [
+					{
+						"Name": "target",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextService",
+			"member": "FilterAndTranslateStringAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Class",
+						"Name": "Instance"
+					},
+					"after": {
+						"Category": "Class",
+						"Name": "TextFilterTranslatedResult"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "FilterAndTranslateStringAsync",
+				"Parameters": [
+					{
+						"Name": "stringToFilter",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "fromUserId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "targetLocales",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "PrivateChat",
+						"Name": "textContext",
+						"Type": {
+							"Category": "Enum",
+							"Name": "TextFilterContext"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "TextFilterTranslatedResult"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextService",
+			"member": "FilterStringAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Class",
+						"Name": "Instance"
+					},
+					"after": {
+						"Category": "Class",
+						"Name": "TextFilterResult"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "FilterStringAsync",
+				"Parameters": [
+					{
+						"Name": "stringToFilter",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "fromUserId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Default": "PrivateChat",
+						"Name": "textContext",
+						"Type": {
+							"Category": "Enum",
+							"Name": "TextFilterContext"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "TextFilterResult"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VoiceChatService",
+			"member": "SubscriptionInitialClientDescriptor",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "SubscriptionInitialClientDescriptor",
+				"Parameters": [
+					{
+						"Name": "eventTag",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "initialClientDescriptor",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "sessionId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VoiceChatService",
+			"member": "SubscriptionInitialClientDescriptorRequested",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "SubscriptionInitialClientDescriptorRequested",
+				"Parameters": [
+					{
+						"Name": "eventTag",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "sessionId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VoiceChatService",
+			"member": "SubscriptionReset",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "SubscriptionReset",
+				"Parameters": [
+					{
+						"Name": "sessionId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ConnectivityService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ConnectivityService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ConnectivityService",
+			"member": "NetworkStatus",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "Unknown",
+				"MemberType": "Property",
+				"Name": "NetworkStatus",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "NetworkStatus"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ConnectivityService",
+			"member": "IsNetworkStateAvailable",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsNetworkStateAvailable",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ConversationalAIAcceptanceService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ConversationalAIAcceptanceService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ConversationalAIAcceptanceService",
+			"member": "AlternativeAssetSelected",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AlternativeAssetSelected",
+				"Parameters": [
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "previousAssetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ConversationalAIAcceptanceService",
+			"member": "AssetInserted",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AssetInserted",
+				"Parameters": [
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ConversationalAIAcceptanceService",
+			"member": "InstanceInserted",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "InstanceInserted",
+				"Parameters": [
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "RobloxEditableImage",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "RobloxEditableImage",
+				"Superclass": "EditableImage"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RobloxEditableImage",
+			"member": "ImageDataSerialize",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "ImageDataSerialize",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "BinaryString"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "StartupMessageService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "StartupMessageService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StartupMessageService",
+			"member": "GetStartupMessage",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetStartupMessage",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "FACSDataLod",
+			"type": "Add",
+			"value": {
+				"Name": "FACSDataLod"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FACSDataLod",
+			"item": "LOD0",
+			"type": "Add",
+			"value": {
+				"Name": "LOD0",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FACSDataLod",
+			"item": "LOD1",
+			"type": "Add",
+			"value": {
+				"Name": "LOD1",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FACSDataLod",
+			"item": "LODCount",
+			"type": "Add",
+			"value": {
+				"Name": "LODCount",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "NetworkStatus",
+			"type": "Add",
+			"value": {
+				"Name": "NetworkStatus"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "NetworkStatus",
+			"item": "Unknown",
+			"type": "Add",
+			"value": {
+				"Name": "Unknown",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "NetworkStatus",
+			"item": "Connected",
+			"type": "Add",
+			"value": {
+				"Name": "Connected",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "NetworkStatus",
+			"item": "Disconnected",
+			"type": "Add",
+			"value": {
+				"Name": "Disconnected",
+				"Value": 2
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Class",
+			"class": "UnreliableRemoteEvent",
+			"part": "description",
+			"before": null,
+			"after": "An object which facilitates asynchronous, unordered and unreliable, one-way communication across the client-server boundary. Scripts firing a <code>UnreliableRemoteEvent</code> do not yield."
+		},
+		{
+			"element": "Member",
+			"class": "UnreliableRemoteEvent",
+			"member": "FireAllClients",
+			"part": "description",
+			"before": null,
+			"after": "Fires the <code>OnClientEvent</code> event for each client connected to the same <code>UnreliableRemoteEvent</code>. Has a 900 byte limit to the payload of the event, otherwise event is dropped.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FireAllClients",
+				"Parameters": [
+					{
+						"Name": "arguments",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UnreliableRemoteEvent",
+			"member": "FireAllClients",
+			"part": "parameter",
+			"parameter": "arguments",
+			"before": null,
+			"after": "Values to pass to all <code>OnClientEvent</code> events connected to the same <code>UnreliableRemoteEvent</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FireAllClients",
+				"Parameters": [
+					{
+						"Name": "arguments",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UnreliableRemoteEvent",
+			"member": "FireClient",
+			"part": "description",
+			"before": null,
+			"after": "Fires the <code>OnClientEvent</code> event for a specific client connected to the same <code>UnreliableRemoteEvent</code>. Has a 900 byte limit to the payload of the event, otherwise event is dropped.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FireClient",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "arguments",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UnreliableRemoteEvent",
+			"member": "FireClient",
+			"part": "parameter",
+			"parameter": "player",
+			"before": null,
+			"after": "The client of the <code>Player</code> to fire the event to.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FireClient",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "arguments",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UnreliableRemoteEvent",
+			"member": "FireClient",
+			"part": "parameter",
+			"parameter": "arguments",
+			"before": null,
+			"after": "Values to pass to <code>OnClientEvent</code> events connected to the same <code>UnreliableRemoteEvent</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FireClient",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "arguments",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UnreliableRemoteEvent",
+			"member": "FireServer",
+			"part": "description",
+			"before": null,
+			"after": "Fires the <code>OnServerEvent</code> event on the server from one client connected to the same <code>UnreliableRemoteEvent</code>. Has a 900 byte limit to the payload of the event, otherwise event is dropped.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FireServer",
+				"Parameters": [
+					{
+						"Name": "arguments",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UnreliableRemoteEvent",
+			"member": "FireServer",
+			"part": "parameter",
+			"parameter": "arguments",
+			"before": null,
+			"after": "Values to pass to <code>OnServerEvent</code> events connected to the same <code>UnreliableRemoteEvent</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FireServer",
+				"Parameters": [
+					{
+						"Name": "arguments",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UnreliableRemoteEvent",
+			"member": "OnClientEvent",
+			"part": "description",
+			"before": null,
+			"after": "Fires from a <code>LocalScript</code> when either <code>FireClient()</code> or <code>FireAllClients()</code> is called on the same <code>UnreliableRemoteEvent</code> instance from a <code>Script</code>, although this firing is not guaranteed even if one of the above methods are called. This can occur due to packet loss or to maintain optimal engine performance.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnClientEvent",
+				"Parameters": [
+					{
+						"Name": "arguments",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UnreliableRemoteEvent",
+			"member": "OnServerEvent",
+			"part": "description",
+			"before": null,
+			"after": "Fires from a <code>Script</code> when <code>FireServer()</code> is called on the same <code>UnreliableRemoteEvent</code> instance from a <code>LocalScript</code>, although this firing is not guaranteed even if the above methods is called. This can occur due to packet loss or to maintain optimal engine performance.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnServerEvent",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "arguments",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "VRTiltAndRollEnabled",
+			"part": "description",
+			"before": null,
+			"after": "Toggles whether to apply tilt and roll from the <code>Camera.CFrame</code> property while the player is using a VR device.",
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "VRTiltAndRollEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LogService",
+			"member": "ClearOutput",
+			"part": "description",
+			"before": null,
+			"after": "Clears the Roblox Studio output window.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ClearOutput",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "BulkMoveTo",
+			"part": "description",
+			"before": "Moves a table of <code>parts</code> to <code>CFrames</code> in a table of CFrames, without firing property changed events.",
+			"after": "Moves a table of <code>BaseParts</code> to a table of <code>CFrames</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "BulkMoveTo",
+				"Parameters": [
+					{
+						"Name": "partList",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					},
+					{
+						"Name": "cframeList",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "FireAllEvents",
+						"Name": "eventMode",
+						"Type": {
+							"Category": "Enum",
+							"Name": "BulkMoveMode"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChannel",
+			"member": "ShouldDeliverCallback",
+			"part": "description",
+			"before": "Called when <code>TextChannel</code> is receiving an incoming message to determine whether or not it should be delivered to other clients.",
+			"after": "Called for each client when <code>TextChannel</code> is receiving an incoming message to determine whether or not it should be delivered to that client.",
+			"value": {
+				"MemberType": "Callback",
+				"Name": "ShouldDeliverCallback",
+				"Parameters": [
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Class",
+							"Name": "TextChatMessage"
+						}
+					},
+					{
+						"Name": "textSource",
+						"Type": {
+							"Category": "Class",
+							"Name": "TextSource"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "BundleType",
+			"item": "Shoes",
+			"part": "description",
+			"before": null,
+			"after": "A bundle of left shoe and right shoe.",
+			"value": {
+				"Name": "Shoes",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "BundleType",
+			"item": "DynamicHead",
+			"part": "description",
+			"before": null,
+			"after": "A bundle consisting of dynamicHead and moodAnimation assets, optionally with eyebrowAccessory and eyelashAccessory.",
+			"value": {
+				"Name": "DynamicHead",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DataStoreRequestType",
+			"item": "GetAsync",
+			"part": "description",
+			"before": "Refers to <code>GetAsync()</code>.",
+			"after": "Refers to <code>GetAsync()</code> and the read of <code>UpdateAsync()</code>.",
+			"value": {
+				"Name": "GetAsync",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DataStoreRequestType",
+			"item": "SetIncrementAsync",
+			"part": "description",
+			"before": "Refers to <code>SetAsync()</code> and <code>IncrementAsync()</code>.",
+			"after": "Refers to <code>SetAsync()</code>, <code>IncrementAsync()</code>, <code>RemoveAsync()</code>, and the write of <code>UpdateAsync()</code> when it returns a non-<code>nil</code> value.",
+			"value": {
+				"Name": "SetIncrementAsync",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DataStoreRequestType",
+			"item": "GetSortedAsync",
+			"part": "description",
+			"before": "Refers to <code>GetAsync()</code> while using an <code>OrderedDataStore</code>.",
+			"after": "Refers to <code>GetSortedAsync()</code>.",
+			"value": {
+				"Name": "GetSortedAsync",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DataStoreRequestType",
+			"item": "ListAsync",
+			"part": "description",
+			"before": null,
+			"after": "Refers to <code>ListKeysAsync()</code> and <code>ListVersionsAsync()</code>.",
+			"value": {
+				"Name": "ListAsync",
+				"Value": 6
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DataStoreRequestType",
+			"item": "GetVersionAsync",
+			"part": "description",
+			"before": null,
+			"after": "Refers to <code>GetVersionAsync()</code>.",
+			"value": {
+				"Name": "GetVersionAsync",
+				"Value": 7
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DataStoreRequestType",
+			"item": "RemoveVersionAsync",
+			"part": "description",
+			"before": null,
+			"after": "Refers to <code>RemoveVersionAsync()</code>.",
+			"value": {
+				"Name": "RemoveVersionAsync",
+				"Value": 8
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "InputType",
+			"item": "Sin",
+			"part": "description",
+			"before": "Rotate at a velocity of: <code>ParamA * math.sin(game.Workspace.DistributedGameTime * ParamB)</code>, where <code>BasePart</code> <code>ParamA</code> determines the maximum speed at which the part spins, and <code>BasePart</code> <code>ParamB</code> determines how frequently it changes direction.",
+			"after": "Rotate at a velocity of: <code>ParamA * math.sin(workspace.DistributedGameTime * ParamB)</code>, where <code>BasePart</code> <code>ParamA</code> determines the maximum speed at which the part spins, and <code>BasePart</code> <code>ParamB</code> determines how frequently it changes direction.",
+			"value": {
+				"Name": "Sin",
+				"Value": 13
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "ForceField",
+			"part": "description",
+			"before": "Applies to <code>BasePart</code> only.",
+			"after": "Must be used on a <code>MeshPart</code> with UVs laid out to cover much of the 0:1 UV space or more (larger is better). The <code>MeshPart</code> must also have a texture applied to its <code>TextureID</code>, and that texture image must have a wide value range since the material displays the range from dark/black to light/white values. Obtain <a href=\"https://create.roblox.com/marketplace/asset/15507769146/ForceFieldMesh\">this model</a> for a functional example of the <strong>ForceField</strong> material.",
+			"value": {
+				"Name": "ForceField",
+				"Value": 1584
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SaveFilter",
+			"item": "SaveWorld",
+			"part": "description",
+			"before": null,
+			"after": "Saves only the world-related data.",
+			"value": {
+				"Name": "SaveWorld",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SaveFilter",
+			"item": "SaveGame",
+			"part": "description",
+			"before": null,
+			"after": "Saves only the game-related data.",
+			"value": {
+				"Name": "SaveGame",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SaveFilter",
+			"item": "SaveAll",
+			"part": "description",
+			"before": null,
+			"after": "Saves all data, including both world and game-related information.",
+			"value": {
+				"Name": "SaveAll",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ScaleType",
+			"item": "Slice",
+			"part": "description",
+			"before": "9-Slice scaling: slice the image into 9 regions and apply different scaling rules to each region. The slice boundaries are determined by <code>ImageLabel.SliceCenter</code> or <code>ImageButton.SliceCenter</code>. See UI 9 Slice Design for more information.",
+			"after": "9-Slice scaling: slice the image into 9 regions and apply different scaling rules to each region. The slice boundaries are determined by <code>ImageLabel.SliceCenter</code> or <code>ImageButton.SliceCenter</code>. See <a href=\"../../../ui/9-slice.md\">UI 9-Slice Design</a> for more information. .",
+			"value": {
+				"Name": "Slice",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ScaleType",
+			"item": "Tile",
+			"part": "description",
+			"before": "The image is is tiled to fit within the element. For example, if the element is twice the X dimension of the image, the image will appear twice (2 tiles).",
+			"after": "The image is tiled to fit within the element. For example, if the element is twice the X dimension of the image, the image will appear twice (2 tiles).",
+			"value": {
+				"Name": "Tile",
+				"Value": 2
+			}
+		}
+	]
+}

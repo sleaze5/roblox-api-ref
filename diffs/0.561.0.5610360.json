@@ -1,0 +1,495 @@
+{
+	"from": {
+		"version": "0.560.0.5600365",
+		"hash": "f9c9efd23ea0497a"
+	},
+	"to": {
+		"version": "0.561.0.5610360",
+		"hash": "fd82debdda8d435f"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Animator",
+			"member": "StreamSyncRequest",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "StreamSyncRequest",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CoreGui",
+			"member": "UserGuiRenderingChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "UserGuiRenderingChanged",
+				"Parameters": [
+					{
+						"Name": "enabled",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "guiAdornee",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "faceId",
+						"Type": {
+							"Category": "Enum",
+							"Name": "NormalId"
+						}
+					},
+					{
+						"Name": "horizontalCurvature",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ExperienceAuthService",
+			"member": "ScopeCheckResult",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "guid",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "result",
+							"Type": {
+								"Category": "Enum",
+								"Name": "ScopeCheckResult"
+							}
+						},
+						{
+							"Name": "token",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "metadata",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "guid",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "result",
+							"Type": {
+								"Category": "Enum",
+								"Name": "ScopeCheckResult"
+							}
+						},
+						{
+							"Name": "token",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "scopes",
+							"Type": {
+								"Category": "Group",
+								"Name": "Array"
+							}
+						},
+						{
+							"Name": "metadata",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "ScopeCheckResult",
+				"Parameters": [
+					{
+						"Name": "guid",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "result",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ScopeCheckResult"
+						}
+					},
+					{
+						"Name": "token",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "scopes",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "metadata",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ExperienceAuthService",
+			"member": "scopeCheckUIComplete",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "scopeCheckUIComplete",
+				"Parameters": [
+					{
+						"Name": "guid",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "scopes",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "result",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ScopeCheckResult"
+						}
+					},
+					{
+						"Name": "metadata",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ExperienceAuthService",
+			"member": "OpenAuthPrompt",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OpenAuthPrompt",
+				"Parameters": [
+					{
+						"Name": "guid",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "scopes",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "metadata",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FacialAnimationRecordingService",
+			"member": "BiometricDataConsent",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Default",
+					"before": "false",
+					"after": "__api_dump_skipped_class__"
+				}
+			],
+			"value": {
+				"Category": "State",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "BiometricDataConsent",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "SetPurchasePromptIsShown",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetPurchasePromptIsShown",
+				"Parameters": [
+					{
+						"Name": "isShown",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "PurchasePromptShown",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PurchasePromptShown",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "CoreScriptDebuggingManagerHelper",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "CoreScriptDebuggingManagerHelper",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "SelectionHighlightManager",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "SelectionHighlightManager",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "SpringConstraint",
+			"member": "Damping",
+			"part": "description",
+			"before": "Damping constant for the SpringConstraint. Multiplied to the velocity of the constraintâ€™s <code>Attachment</code> to reduce the spring force applied.",
+			"after": "Damping constant for the SpringConstraint. Multiplied to the velocity of the constraint's <code>Attachment</code> to reduce the spring force applied.",
+			"value": {
+				"Category": "Spring",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "Damping",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IKControl",
+			"member": "EndEffectorOffset",
+			"part": "description",
+			"before": null,
+			"after": "An additional offset applied on top of the <code>EndEffector</code> in its local space to change where it moves.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "EndEffectorOffset",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IKControl",
+			"member": "SmoothTime",
+			"part": "description",
+			"before": null,
+			"after": "Specifies the average number of seconds that it takes for the <code>EndEffector</code> to smoothly reach the <code>Target</code>.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "0.0500000007",
+				"MemberType": "Property",
+				"Name": "SmoothTime",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "HasVerifiedBadge",
+			"part": "description",
+			"before": null,
+			"after": "Indicates if a player has a Verified Badge.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "HasVerifiedBadge",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		}
+	]
+}

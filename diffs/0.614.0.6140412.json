@@ -1,0 +1,1828 @@
+{
+	"from": {
+		"version": "0.613.1.6130510",
+		"hash": "b0be9ce0740f40b4"
+	},
+	"to": {
+		"version": "0.614.0.6140412",
+		"hash": "cb331d8b7b3f42ec"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "AudioMetadataFailedResponse",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "AudioMetadataFailedResponse",
+				"Parameters": [
+					{
+						"Name": "requestid",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "AudioMetadataRequest",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "AudioMetadataRequest",
+				"Parameters": [
+					{
+						"Name": "requestid",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "request",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "AudioMetadataResponse",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "AudioMetadataResponse",
+				"Parameters": [
+					{
+						"Name": "requestid",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "response",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RemoteEvent",
+			"member": "OnRemoteServerEvent",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnRemoteServerEvent",
+				"Parameters": [
+					{
+						"Name": "arguments",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UnreliableRemoteEvent",
+			"member": "OnRemoteServerEvent",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnRemoteServerEvent",
+				"Parameters": [
+					{
+						"Name": "arguments",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Path2D",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "Path2D",
+				"Superclass": "GuiBase"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Path2D",
+			"member": "Thickness",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "RobloxScriptSecurity",
+						"Write": "RobloxScriptSecurity"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "None"
+					}
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "Thickness",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Path2D",
+			"member": "GetLength",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetLength",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BaseScript",
+			"member": "LinkedSource",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "LinkedSource",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ModuleScript",
+			"member": "LinkedSource",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "LinkedSource",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "GetUserSubscriptionDetailsAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetUserSubscriptionDetailsAsync",
+				"Parameters": [
+					{
+						"Name": "user",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "subscriptionId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PublishService",
+			"member": "CreateAssetOrAssetVersionAndPollAssetWithTelemetryAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateAssetOrAssetVersionAndPollAssetWithTelemetryAsync",
+				"Parameters": [
+					{
+						"Name": "serializedInstance",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "creatorType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AssetCreatorType"
+						}
+					},
+					{
+						"Name": "creatorId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "assetType",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "description",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "token",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "contentType",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "expectedPrice",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "LoadAllBuiltinPluginsInRunModes",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "LoadAllBuiltinPluginsInRunModes",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "LoadUserPluginsInRunModes",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "LoadUserPluginsInRunModes",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TextureGenerationMeshHandler",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "TextureGenerationMeshHandler",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VRService",
+			"member": "AutomaticScaling",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotReplicated"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Category": "Behavior",
+				"Default": "World",
+				"MemberType": "Property",
+				"Name": "AutomaticScaling",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "VRScaling"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VRService",
+			"member": "DidPointerHit",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": false,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": false,
+						"CanSave": false
+					}
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "DidPointerHit",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VRService",
+			"member": "FadeOutViewOnCollision",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotReplicated"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Category": "Behavior",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "FadeOutViewOnCollision",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VRService",
+			"member": "LaserDistance",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": false,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": false,
+						"CanSave": false
+					}
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "50",
+				"MemberType": "Property",
+				"Name": "LaserDistance",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VRService",
+			"member": "PointerHitCFrame",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": false,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": false,
+						"CanSave": false
+					}
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "PointerHitCFrame",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VRService",
+			"member": "QuestASWState",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Hidden"
+					],
+					"after": [
+						"Hidden",
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "QuestASWState",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VRService",
+			"member": "QuestDisplayRefreshRate",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Hidden"
+					],
+					"after": [
+						"Hidden",
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "QuestDisplayRefreshRate",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VRService",
+			"member": "VRDeviceAvailable",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": false,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": false,
+						"CanSave": false
+					}
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "VRDeviceAvailable",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VRService",
+			"member": "VREnabled",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": false,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": false,
+						"CanSave": false
+					}
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "VREnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Noise",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "Noise",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Noise",
+			"member": "NoiseType",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "SimplexGabor",
+				"MemberType": "Property",
+				"Name": "NoiseType",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "NoiseType"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Noise",
+			"member": "Seed",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "1234",
+				"MemberType": "Property",
+				"Name": "Seed",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Noise",
+			"member": "SampleDirectional",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SampleDirectional",
+				"Parameters": [
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "direction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Noise",
+			"member": "SampleUniform",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SampleUniform",
+				"Parameters": [
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TextureGenerationPartGroup",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "TextureGenerationPartGroup",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextureGenerationPartGroup",
+			"member": "GetInstances",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetInstances",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextureGenerationPartGroup",
+			"member": "GetMeshIdsHash",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetMeshIdsHash",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioCloseMode",
+			"item": "LogOut",
+			"type": "Add",
+			"value": {
+				"Name": "LogOut",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "BreakpointMarker",
+			"type": "Add",
+			"value": {
+				"Name": "BreakpointMarker",
+				"Value": 136
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "TextureGenerationMeshHandlerUnwrapMode",
+			"type": "Remove",
+			"value": {
+				"Name": "TextureGenerationMeshHandlerUnwrapMode"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "NoiseType",
+			"type": "Add",
+			"value": {
+				"Name": "NoiseType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "NoiseType",
+			"item": "SimplexGabor",
+			"type": "Add",
+			"value": {
+				"Name": "SimplexGabor",
+				"Value": 0
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "SubscriptionExpirationReason",
+			"type": "Add",
+			"value": {
+				"Name": "SubscriptionExpirationReason"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SubscriptionExpirationReason",
+			"item": "ProductInactive",
+			"type": "Add",
+			"value": {
+				"Name": "ProductInactive",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SubscriptionExpirationReason",
+			"item": "ProductDeleted",
+			"type": "Add",
+			"value": {
+				"Name": "ProductDeleted",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SubscriptionExpirationReason",
+			"item": "SubscriberCancelled",
+			"type": "Add",
+			"value": {
+				"Name": "SubscriberCancelled",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SubscriptionExpirationReason",
+			"item": "SubscriberRefunded",
+			"type": "Add",
+			"value": {
+				"Name": "SubscriberRefunded",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SubscriptionExpirationReason",
+			"item": "Lapsed",
+			"type": "Add",
+			"value": {
+				"Name": "Lapsed",
+				"Value": 4
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "SubscriptionState",
+			"type": "Add",
+			"value": {
+				"Name": "SubscriptionState"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SubscriptionState",
+			"item": "NeverSubscribed",
+			"type": "Add",
+			"value": {
+				"Name": "NeverSubscribed",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SubscriptionState",
+			"item": "SubscribedWillRenew",
+			"type": "Add",
+			"value": {
+				"Name": "SubscribedWillRenew",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SubscriptionState",
+			"item": "SubscribedWillNotRenew",
+			"type": "Add",
+			"value": {
+				"Name": "SubscribedWillNotRenew",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SubscriptionState",
+			"item": "SubscribedRenewalPaymentPending",
+			"type": "Add",
+			"value": {
+				"Name": "SubscribedRenewalPaymentPending",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SubscriptionState",
+			"item": "Expired",
+			"type": "Add",
+			"value": {
+				"Name": "Expired",
+				"Value": 4
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "GetAttribute",
+			"part": "description",
+			"before": "Returns the attribute which has been assigned to the given name.",
+			"after": "Returns the value which has been assigned to the given attribute name.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAttribute",
+				"Parameters": [
+					{
+						"Name": "attribute",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "GetAttribute",
+			"part": "return",
+			"before": "The attribute which has been assigned to the given name. If no attribute has been assigned then nil is returned.",
+			"after": "The value which has been assigned to the given attribute name. If no attribute has been assigned, <code>nil</code> is returned.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAttribute",
+				"Parameters": [
+					{
+						"Name": "attribute",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "GetAttributes",
+			"part": "description",
+			"before": "Returns a dictionary of string → variant pairs for each of the instance's attributes.",
+			"after": "Returns a dictionary of the instance's attributes.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAttributes",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "GetPropertyChangedSignal",
+			"part": "description",
+			"before": "Get an event that fires when a given property of an object changes.",
+			"after": "Get an event that fires when a given property of the instance changes.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPropertyChangedSignal",
+				"Parameters": [
+					{
+						"Name": "property",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RBXScriptSignal"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "SetAttribute",
+			"part": "parameter",
+			"parameter": "value",
+			"before": "The value that the specified attribute is being set to.",
+			"after": "The value to set the specified attribute to.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetAttribute",
+				"Parameters": [
+					{
+						"Name": "attribute",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "Changed",
+			"part": "description",
+			"before": "Fired immediately after a property of an object changes.",
+			"after": "Fired immediately after a property of the instance changes.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Changed",
+				"Parameters": [
+					{
+						"Name": "property",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AccessoryDescription",
+			"part": "description",
+			"before": null,
+			"after": "Describes the appearance of an <code>Accessory</code> for the <code>HumanoidDescription</code>."
+		},
+		{
+			"element": "Class",
+			"class": "BodyPartDescription",
+			"part": "description",
+			"before": null,
+			"after": "Describes the appearance of an avatar body part for the <code>HumanoidDescription</code>."
+		},
+		{
+			"element": "Member",
+			"class": "GamePassService",
+			"member": "PlayerHasPass",
+			"part": "description",
+			"before": "Returns <em>true</em> if the <code>Player</code> has the specified legacy game pass. Does not work with new game passes.",
+			"after": "Returns <code>true</code> if the <code>Player</code> has the specified <strong>legacy</strong> game pass. Does not work with new game passes.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PlayerHasPass",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "gamePassId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields",
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HapticService",
+			"member": "SetMotor",
+			"part": "parameter",
+			"parameter": "vibrationValues",
+			"before": "How intensely the motor should vibrate. Only takes the first value in the tuple.",
+			"after": "How intensely the motor should vibrate. Only uses the first value in the tuple, which should be a number.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetMotor",
+				"Parameters": [
+					{
+						"Name": "inputType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserInputType"
+						}
+					},
+					{
+						"Name": "vibrationMotor",
+						"Type": {
+							"Category": "Enum",
+							"Name": "VibrationMotor"
+						}
+					},
+					{
+						"Name": "vibrationValues",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreSortedMap",
+			"member": "GetAsync",
+			"part": "parameter",
+			"parameter": "key",
+			"before": "Key whose value to retrieve.",
+			"after": "Key whose value and sort key to retrieve.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreSortedMap",
+			"member": "GetRangeAsync",
+			"part": "description",
+			"before": "Retrieves items within a sorted range of keys.",
+			"after": "Retrieves items within a sorted range of keys and sort keys.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRangeAsync",
+				"Parameters": [
+					{
+						"Name": "direction",
+						"Type": {
+							"Category": "Enum",
+							"Name": "SortDirection"
+						}
+					},
+					{
+						"Name": "count",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "exclusiveLowerBound",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "exclusiveUpperBound",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreSortedMap",
+			"member": "GetRangeAsync",
+			"part": "parameter",
+			"parameter": "exclusiveLowerBound",
+			"before": "<strong>(Optional)</strong> Lower bound, exclusive, for the returned keys. This is provided as a table where one or both of Key and sort key can be specified: { key: string, sortKey: Variant } .",
+			"after": "<strong>(Optional)</strong> Lower bound, exclusive, for the returned keys. This is provided as a table where one or both of key and sort key can be specified: { key: string, sortKey: Variant } .",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRangeAsync",
+				"Parameters": [
+					{
+						"Name": "direction",
+						"Type": {
+							"Category": "Enum",
+							"Name": "SortDirection"
+						}
+					},
+					{
+						"Name": "count",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "exclusiveLowerBound",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "exclusiveUpperBound",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreSortedMap",
+			"member": "GetRangeAsync",
+			"part": "parameter",
+			"parameter": "exclusiveUpperBound",
+			"before": "<strong>(Optional)</strong> Upper bound, exclusive, for the returned keys. This is provided as a table where one or both of Key and sort key can be specified: { key: string, sortKey: Variant } .",
+			"after": "<strong>(Optional)</strong> Upper bound, exclusive, for the returned keys. This is provided as a table where one or both of key and sort key can be specified: { key: string, sortKey: Variant } .",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRangeAsync",
+				"Parameters": [
+					{
+						"Name": "direction",
+						"Type": {
+							"Category": "Enum",
+							"Name": "SortDirection"
+						}
+					},
+					{
+						"Name": "count",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "exclusiveLowerBound",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "exclusiveUpperBound",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptEditorService",
+			"member": "RegisterAutocompleteCallback",
+			"part": "description",
+			"before": "Registers an Autocomplete callback <code>callbackFunction</code> named <code>name</code> with priority <code>priority</code>.",
+			"after": "Registers an autocomplete callback <code>callbackFunction</code> named <code>name</code> with priority <code>priority</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterAutocompleteCallback",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "priority",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "callbackFunction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatService",
+			"member": "MessageReceived",
+			"part": "description",
+			"before": "Fires when a <code>TextChannel:SendAsync()</code> response is received by the server or <code>TextChannel:DisplaySystemMessage()</code> is invoked.",
+			"after": "Fires when a <code>TextChannel:SendAsync()</code> response is received by the server, or when <code>TextChannel:DisplaySystemMessage()</code> is invoked on the client.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "MessageReceived",
+				"Parameters": [
+					{
+						"Name": "textChatMessage",
+						"Type": {
+							"Category": "Class",
+							"Name": "TextChatMessage"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatService",
+			"member": "OnBubbleAdded",
+			"part": "parameter",
+			"parameter": "adornee",
+			"before": "The <em>partOrCharacter</em> the bubble chat message is attached to.",
+			"after": "The part or character the bubble chat message is attached to.",
+			"value": {
+				"MemberType": "Callback",
+				"Name": "OnBubbleAdded",
+				"Parameters": [
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Class",
+							"Name": "TextChatMessage"
+						}
+					},
+					{
+						"Name": "adornee",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatService",
+			"member": "OnBubbleAdded",
+			"part": "return",
+			"before": "If a <code>TextChatMessagethose properties will be applied to the associated bubble, overriding</code>Class.BubbleChatConfiguration` properties.",
+			"after": "If a <code>TextChatMessage</code> is returned, those properties will be applied to the associated bubble, overriding <code>BubbleChatConfiguration</code> properties.",
+			"value": {
+				"MemberType": "Callback",
+				"Name": "OnBubbleAdded",
+				"Parameters": [
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Class",
+							"Name": "TextChatMessage"
+						}
+					},
+					{
+						"Name": "adornee",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidStateType",
+			"item": "Ragdoll",
+			"part": "description",
+			"before": "The Humanoid has been hit by a fast moving object (uncontrolled falling). <em>The Humanoid can recover from this.</em>",
+			"after": "(Deprecated) The Humanoid has been hit by a fast moving object (uncontrolled falling). <em>The Humanoid can recover from this.</em> This state has to be set and unset manually using <code>Humanoid:ChangeState()</code>.",
+			"value": {
+				"Name": "Ragdoll",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidStateType",
+			"item": "GettingUp",
+			"part": "description",
+			"before": "The Humanoid is getting back on their feet after Ragdoll.",
+			"after": "The Humanoid is getting back on their feet after FallingDown or Ragdoll.",
+			"value": {
+				"Name": "GettingUp",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidStateType",
+			"item": "Jumping",
+			"part": "description",
+			"before": "The Humanoid just jumped. (Check <code>Humanoid.Jump</code>). This state lasts only briefly. This state normally transitions into either Standing, if on the ground, or Freefall, if still in the air.",
+			"after": "The Humanoid just jumped. (Check <code>Humanoid.Jump</code>). This state lasts only briefly. This state normally transitions into either Landed, if on the ground, or Freefall, if still in the air.",
+			"value": {
+				"Name": "Jumping",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidStateType",
+			"item": "Freefall",
+			"part": "description",
+			"before": "The Humanoid is currently freefalling (jumped from a height).",
+			"after": "The Humanoid is currently freefalling (jumped from a height or fell off a ledge).",
+			"value": {
+				"Name": "Freefall",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidStateType",
+			"item": "Running",
+			"part": "description",
+			"before": "Currently running while physics of parts in range are being calculated (e.g. After a jump, close to other players, and others).",
+			"after": "Currently running while on the ground.",
+			"value": {
+				"Name": "Running",
+				"Value": 8
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidStateType",
+			"item": "RunningNoPhysics",
+			"part": "description",
+			"before": "Currently running and not near other physical objects. (deprecated).",
+			"after": "(Deprecated) Currently running and not near other physical objects.",
+			"value": {
+				"Name": "RunningNoPhysics",
+				"Value": 10
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidStateType",
+			"item": "Dead",
+			"part": "description",
+			"before": "The Humanoid died. Changing a Humanoid's state to this one will kill it.",
+			"after": "The Humanoid died. Changing a Humanoid's state to this state will kill it.",
+			"value": {
+				"Name": "Dead",
+				"Value": 15
+			}
+		}
+	]
+}

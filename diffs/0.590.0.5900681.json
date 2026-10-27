@@ -1,0 +1,2080 @@
+{
+	"from": {
+		"version": "0.589.0.5890596",
+		"hash": "e2033e371c614ede"
+	},
+	"to": {
+		"version": "0.590.0.5900681",
+		"hash": "d909e3704b9f4694"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "BaseImportData",
+			"member": "GetStatuses_DEPRECATED",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetStatuses_DEPRECATED",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BaseImportData",
+			"member": "StatusRemoved",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "StatusRemoved",
+				"Parameters": [
+					{
+						"Name": "status",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BaseImportData",
+			"member": "StatusReported",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "StatusReported",
+				"Parameters": [
+					{
+						"Name": "status",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BubbleChatMessageProperties",
+			"member": "TailVisible",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "TailVisible",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatbotUIService",
+			"member": "DisplayCommand",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DisplayCommand",
+				"Parameters": [
+					{
+						"Name": "commandName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "requestParam",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Collaborator",
+			"member": "CollaboratorColor",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "CollaboratorColor",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Collaborator",
+			"member": "CurDocGUID",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "CurDocGUID",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Collaborator",
+			"member": "CurScriptLineNumber",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "CurScriptLineNumber",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Collaborator",
+			"member": "Status",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "3",
+				"MemberType": "Property",
+				"Name": "Status",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "CollaboratorStatus"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CollaboratorsService",
+			"member": "CollaboratorInstanceCreatedSignal",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "CollaboratorInstanceCreatedSignal",
+				"Parameters": [
+					{
+						"Name": "collaboratorId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CollaboratorsService",
+			"member": "CollaboratorInstanceDestroyedSignal",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "CollaboratorInstanceDestroyedSignal",
+				"Parameters": [
+					{
+						"Name": "collaboratorId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CollaboratorsService",
+			"member": "CollaboratorStatusUpdateRequestedSignal",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "CollaboratorStatusUpdateRequestedSignal",
+				"Parameters": [
+					{
+						"Name": "collaboratorId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "newStatus",
+						"Type": {
+							"Category": "Enum",
+							"Name": "CollaboratorStatus"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CollaboratorsService",
+			"member": "CollaboratorStatusUpdatedSignal",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "CollaboratorStatusUpdatedSignal",
+				"Parameters": [
+					{
+						"Name": "collaboratorId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "newStatus",
+						"Type": {
+							"Category": "Enum",
+							"Name": "CollaboratorStatus"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DynamicMesh",
+			"member": "MeshVersion",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "MeshVersion",
+				"Security": {
+					"Read": "None",
+					"Write": "NotAccessibleSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GeometryService",
+			"member": "CalculateConstraintsToPreserve",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Group",
+						"Name": "Dictionary"
+					},
+					"after": {
+						"Category": "Group",
+						"Name": "Array"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "CalculateConstraintsToPreserve",
+				"Parameters": [
+					{
+						"Name": "source",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "destination",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					},
+					{
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SurfaceGui",
+			"member": "MaxDistance",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "MaxDistance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotBrowsable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "SetTopbarInset",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetTopbarInset",
+				"Parameters": [
+					{
+						"Name": "topbarInset",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "TopbarInsetChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "TopbarInsetChanged",
+				"Parameters": [
+					{
+						"Name": "topbarInset",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptSubscriptionPurchaseFinished",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptSubscriptionPurchaseFinished",
+				"Parameters": [
+					{
+						"Name": "subscriptionId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "didTryPurchasing",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptSubscriptionPurchaseFinished",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptSubscriptionPurchaseFinished",
+				"Parameters": [
+					{
+						"Name": "user",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "subscriptionId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "didTryPurchasing",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptSubscriptionPurchaseRequested",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "user",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Name": "subscriptionId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "subscriptionId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptSubscriptionPurchaseRequested",
+				"Parameters": [
+					{
+						"Name": "subscriptionId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptSubscriptionPurchase",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptSubscriptionPurchase",
+				"Parameters": [
+					{
+						"Name": "user",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "subscriptionId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "SignalPromptSubscriptionPurchaseFinished",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SignalPromptSubscriptionPurchaseFinished",
+				"Parameters": [
+					{
+						"Name": "subscriptionId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "didTryPurchasing",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "MockConfirmUserSubscriptionPurchase",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "MockConfirmUserSubscriptionPurchase",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "subscriptionId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "FlipbookTextureCompatible",
+			"type": "Remove",
+			"value": {
+				"Category": "Flipbook",
+				"Default": "Unknown",
+				"MemberType": "Property",
+				"Name": "FlipbookTextureCompatible",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ParticleFlipbookTextureCompatible"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "UserSubscriptionStatusChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "UserSubscriptionStatusChanged",
+				"Parameters": [
+					{
+						"Name": "user",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "subscriptionId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "Is30FpsThrottleEnabled",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden",
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Physics",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "Is30FpsThrottleEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "IsPhysicsEnvironmentalThrottled",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden",
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Physics",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "IsPhysicsEnvironmentalThrottled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VoiceChatService",
+			"member": "UseNewAudioApi",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Hidden",
+						"NotScriptable"
+					],
+					"after": [
+						"Hidden"
+					]
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "UseNewAudioApi",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ExperienceNotificationService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ExperienceNotificationService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "StreamingService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "StreamingService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "RegisterCommand",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterCommand",
+				"Parameters": [
+					{
+						"Name": "commandName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "function",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "UnregisterCommand",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UnregisterCommand",
+				"Parameters": [
+					{
+						"Name": "commandName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "UserNotification",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "UserNotification",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserNotification",
+			"member": "Id",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "Id",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserNotification",
+			"member": "Payload",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "Payload",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "UserNotificationPayload"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "UserNotificationPayload",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "UserNotificationPayload",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserNotificationPayload",
+			"member": "AnalyticsData",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "AnalyticsData",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "UserNotificationPayloadAnalyticsData"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserNotificationPayload",
+			"member": "JoinExperience",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "JoinExperience",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "UserNotificationPayloadJoinExperience"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserNotificationPayload",
+			"member": "MessageId",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "MessageId",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserNotificationPayload",
+			"member": "Type",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "Type",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserNotificationPayload",
+			"member": "GetParameters",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetParameters",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserNotificationPayload",
+			"member": "SetParameters",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetParameters",
+				"Parameters": [
+					{
+						"Name": "parameters",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "UserNotificationPayloadAnalyticsData",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "UserNotificationPayloadAnalyticsData",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserNotificationPayloadAnalyticsData",
+			"member": "Category",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "Category",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "UserNotificationPayloadJoinExperience",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "UserNotificationPayloadJoinExperience",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserNotificationPayloadJoinExperience",
+			"member": "LaunchData",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "LaunchData",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "UserNotificationPayloadParameterValue",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "UserNotificationPayloadParameterValue",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserNotificationPayloadParameterValue",
+			"member": "Int64Value",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "Int64Value",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserNotificationPayloadParameterValue",
+			"member": "StringValue",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "StringValue",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CollisionFidelity",
+			"item": "DynamicPreciseConvexDecomposition",
+			"type": "Remove",
+			"value": {
+				"Name": "DynamicPreciseConvexDecomposition",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RibbonTool",
+			"item": "PivotEditor",
+			"type": "Add",
+			"value": {
+				"Name": "PivotEditor",
+				"Value": 10
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "CollaboratorStatus",
+			"type": "Add",
+			"value": {
+				"Name": "CollaboratorStatus"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CollaboratorStatus",
+			"item": "0",
+			"type": "Add",
+			"value": {
+				"Name": "0",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CollaboratorStatus",
+			"item": "1",
+			"type": "Add",
+			"value": {
+				"Name": "1",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CollaboratorStatus",
+			"item": "2",
+			"type": "Add",
+			"value": {
+				"Name": "2",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CollaboratorStatus",
+			"item": "3",
+			"type": "Add",
+			"value": {
+				"Name": "3",
+				"Value": 3
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Class",
+			"class": "Attachment",
+			"part": "description",
+			"before": "Defines a point and orientation relative to a parent <code>BasePart</code> or another <code>Attachment</code>, typically used with <code>Constraints</code>.",
+			"after": "Defines a point and orientation relative to a parent <code>BasePart</code>, <code>Bone</code>, or another <code>Attachment</code>."
+		},
+		{
+			"element": "Member",
+			"class": "ChangeHistoryService",
+			"member": "FinishRecording",
+			"part": "description",
+			"before": null,
+			"after": "Communicates to Studio that the identified recording is finished and to take the final operation to complete the recording.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FinishRecording",
+				"Parameters": [
+					{
+						"Name": "identifier",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "operation",
+						"Type": {
+							"Category": "Enum",
+							"Name": "FinishRecordingOperation"
+						}
+					},
+					{
+						"Name": "finalOptions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChangeHistoryService",
+			"member": "FinishRecording",
+			"part": "parameter",
+			"parameter": "identifier",
+			"before": null,
+			"after": "Identifies the recording from the previous call to <code>TryBeginRecording()</code>. If the operation is <code>ChangeHistoryService.FinishRecordingOperation.Cancel</code>, this value is ignored, and the recording is determined by context.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FinishRecording",
+				"Parameters": [
+					{
+						"Name": "identifier",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "operation",
+						"Type": {
+							"Category": "Enum",
+							"Name": "FinishRecordingOperation"
+						}
+					},
+					{
+						"Name": "finalOptions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChangeHistoryService",
+			"member": "FinishRecording",
+			"part": "parameter",
+			"parameter": "operation",
+			"before": null,
+			"after": "Specifies the operation to take.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FinishRecording",
+				"Parameters": [
+					{
+						"Name": "identifier",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "operation",
+						"Type": {
+							"Category": "Enum",
+							"Name": "FinishRecordingOperation"
+						}
+					},
+					{
+						"Name": "finalOptions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChangeHistoryService",
+			"member": "FinishRecording",
+			"part": "parameter",
+			"parameter": "finalOptions",
+			"before": null,
+			"after": "Optional table of values to pass to <code>OnFinishRecording</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FinishRecording",
+				"Parameters": [
+					{
+						"Name": "identifier",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "operation",
+						"Type": {
+							"Category": "Enum",
+							"Name": "FinishRecordingOperation"
+						}
+					},
+					{
+						"Name": "finalOptions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChangeHistoryService",
+			"member": "TryBeginRecording",
+			"part": "description",
+			"before": null,
+			"after": "Begins tracking changes made to the data model into a recording.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "TryBeginRecording",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "displayName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string?"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChangeHistoryService",
+			"member": "TryBeginRecording",
+			"part": "parameter",
+			"parameter": "name",
+			"before": null,
+			"after": "Name of the action being performed suitable for logging and coding purposes.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "TryBeginRecording",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "displayName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string?"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChangeHistoryService",
+			"member": "TryBeginRecording",
+			"part": "parameter",
+			"parameter": "displayName",
+			"before": null,
+			"after": "Name of the action being performed to display to the user.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "TryBeginRecording",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "displayName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string?"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChangeHistoryService",
+			"member": "OnRecordingFinished",
+			"part": "description",
+			"before": null,
+			"after": "Fired when the user completes an action. Parameters come from <code>TryBeginRecording()</code> and <code>FinishRecording()</code>.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnRecordingFinished",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "displayName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string?"
+						}
+					},
+					{
+						"Name": "identifier",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string?"
+						}
+					},
+					{
+						"Name": "operationn",
+						"Type": {
+							"Category": "Enum",
+							"Name": "FinishRecordingOperation"
+						}
+					},
+					{
+						"Name": "finalOptions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary?"
+						}
+					}
+				],
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChangeHistoryService",
+			"member": "OnRecordingStarted",
+			"part": "description",
+			"before": null,
+			"after": "Fired when the user begins an action. Parameters come from <code>TryBeginRecording()</code>.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnRecordingStarted",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "displayName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string?"
+						}
+					}
+				],
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LinearVelocity",
+			"member": "ForceLimitMode",
+			"part": "description",
+			"before": null,
+			"after": "Determines how the constraint force will be limited.",
+			"value": {
+				"Category": "Limits",
+				"Default": "Magnitude",
+				"MemberType": "Property",
+				"Name": "ForceLimitMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ForceLimitMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LinearVelocity",
+			"member": "MaxAxesForce",
+			"part": "description",
+			"before": null,
+			"after": "Maximum force along each axis that the constraint can apply to achieve the vector velocity. Only used if <code>ForceLimitMode</code> is <code>PerAxis</code> and <code>VelocityConstraintMode</code> is <code>Vector</code>.",
+			"value": {
+				"Category": "Limits",
+				"Default": "1000, 1000, 1000",
+				"MemberType": "Property",
+				"Name": "MaxAxesForce",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LinearVelocity",
+			"member": "MaxPlanarAxesForce",
+			"part": "description",
+			"before": null,
+			"after": "Maximum force along each axis that the constraint can apply to achieve the plane velocity. Only used if <code>ForceLimitMode</code> is <code>PerAxis</code> and <code>VelocityConstraintMode</code> is <code>Plane</code>.",
+			"value": {
+				"Category": "Limits",
+				"Default": "1000, 1000",
+				"MemberType": "Property",
+				"Name": "MaxPlanarAxesForce",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStoreService",
+			"member": "GetDataStore",
+			"part": "return",
+			"before": "A <code>GlobalDataStore</code> instance with provided name and optional scope.",
+			"after": "A <code>DataStore</code> instance with provided name and optional scope.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetDataStore",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "global",
+						"Name": "scope",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "GlobalDataStore"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "Scale",
+			"part": "description",
+			"before": null,
+			"after": "Editor-only property used to scale the model around its pivot. Setting this property will move the scale as though <code>Model/ScaleTo</code> was called on it.",
+			"value": {
+				"Category": "Pivot",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "Scale",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "GetScale",
+			"part": "description",
+			"before": null,
+			"after": "Returns the canonical scale of the model, which defaults to 1 for newly created models and will change as it is scaled via <code>Model/ScaleTo</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetScale",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "GetScale",
+			"part": "return",
+			"before": null,
+			"after": "The current canonical scale factor of the model.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetScale",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "ScaleTo",
+			"part": "description",
+			"before": null,
+			"after": "Sets the scale factor of the model, adjusting the sizing and location of all descendant Instances such that they have that scale factor relative to their initial sizes and locations when scale factor was 1.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ScaleTo",
+				"Parameters": [
+					{
+						"Name": "newScaleFactor",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "AirDensity",
+			"part": "description",
+			"before": null,
+			"after": "The air density at ground level, used in the aerodynamic force model.",
+			"value": {
+				"Category": "AirProperties",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "AirDensity",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatInputBarConfiguration",
+			"member": "AutocompleteEnabled",
+			"part": "description",
+			"before": null,
+			"after": "Determines whether to enable autocomplete for the chat input bar.",
+			"value": {
+				"Category": "Behavior",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "AutocompleteEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FinishRecordingOperation",
+			"item": "Cancel",
+			"part": "description",
+			"before": null,
+			"after": "Cancels the recording, automatically undoing any work in progress.",
+			"value": {
+				"Name": "Cancel",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FinishRecordingOperation",
+			"item": "Commit",
+			"part": "description",
+			"before": null,
+			"after": "Commits the recorded work.",
+			"value": {
+				"Name": "Commit",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FinishRecordingOperation",
+			"item": "Append",
+			"part": "description",
+			"before": null,
+			"after": "Commits the recorded work and merges with the previous recording if possible.",
+			"value": {
+				"Name": "Append",
+				"Value": 2
+			}
+		}
+	]
+}

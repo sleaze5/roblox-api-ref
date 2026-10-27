@@ -1,0 +1,3849 @@
+{
+	"from": {
+		"version": "0.650.0.6500743",
+		"hash": "0fe66fbb77d84a42"
+	},
+	"to": {
+		"version": "0.651.1.6510840",
+		"hash": "37e454c88fa54769"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Annotation",
+			"member": "GetRequests",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRequests",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Annotation",
+			"member": "RequestCompleted",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "RequestCompleted",
+				"Parameters": [
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "requestType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AnnotationRequestType"
+						}
+					},
+					{
+						"Name": "result",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AnnotationRequestResult"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Annotation",
+			"member": "RequestInitiated",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "RequestInitiated",
+				"Parameters": [
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "requestType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AnnotationRequestType"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnnotationsService",
+			"member": "AnnotationAdded",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "annotation",
+							"Type": {
+								"Category": "Class",
+								"Name": "Annotation"
+							}
+						},
+						{
+							"Name": "parentId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "requestId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "annotation",
+							"Type": {
+								"Category": "Class",
+								"Name": "Annotation"
+							}
+						},
+						{
+							"Name": "parentId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "AnnotationAdded",
+				"Parameters": [
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "annotation",
+						"Type": {
+							"Category": "Class",
+							"Name": "Annotation"
+						}
+					},
+					{
+						"Name": "parentId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnnotationsService",
+			"member": "AnnotationDeleted",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "annotation",
+							"Type": {
+								"Category": "Class",
+								"Name": "Annotation"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "requestId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "annotation",
+							"Type": {
+								"Category": "Class",
+								"Name": "Annotation"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "AnnotationDeleted",
+				"Parameters": [
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "annotation",
+						"Type": {
+							"Category": "Class",
+							"Name": "Annotation"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnnotationsService",
+			"member": "AnnotationResolved",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "annotation",
+							"Type": {
+								"Category": "Class",
+								"Name": "Annotation"
+							}
+						},
+						{
+							"Name": "resolved",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "requestId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "annotation",
+							"Type": {
+								"Category": "Class",
+								"Name": "Annotation"
+							}
+						},
+						{
+							"Name": "resolved",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "AnnotationResolved",
+				"Parameters": [
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "annotation",
+						"Type": {
+							"Category": "Class",
+							"Name": "Annotation"
+						}
+					},
+					{
+						"Name": "resolved",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "PostToFeedAsync",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PostToFeedAsync",
+				"Parameters": [
+					{
+						"Name": "capturePath",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "feedCategory",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginGui",
+			"member": "InputBegan",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"UI"
+				],
+				"MemberType": "Event",
+				"Name": "InputBegan",
+				"Parameters": [
+					{
+						"Name": "input",
+						"Type": {
+							"Category": "Class",
+							"Name": "InputObject"
+						}
+					},
+					{
+						"Name": "gameProcessedEvent",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginGui",
+			"member": "InputChanged",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"UI"
+				],
+				"MemberType": "Event",
+				"Name": "InputChanged",
+				"Parameters": [
+					{
+						"Name": "input",
+						"Type": {
+							"Category": "Class",
+							"Name": "InputObject"
+						}
+					},
+					{
+						"Name": "gameProcessedEvent",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginGui",
+			"member": "InputEnded",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"UI"
+				],
+				"MemberType": "Event",
+				"Name": "InputEnded",
+				"Parameters": [
+					{
+						"Name": "input",
+						"Type": {
+							"Category": "Class",
+							"Name": "InputObject"
+						}
+					},
+					{
+						"Name": "gameProcessedEvent",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginGui",
+			"member": "MouseEnter",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"UI"
+				],
+				"MemberType": "Event",
+				"Name": "MouseEnter",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginGui",
+			"member": "MouseLeave",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"UI"
+				],
+				"MemberType": "Event",
+				"Name": "MouseLeave",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "GetRawScreenScale",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRawScreenScale",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "BanningEnabled",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "BanningEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "GetPluginComponent",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Group",
+						"Name": "Dictionary"
+					},
+					"after": {
+						"Category": "Group",
+						"Name": "Variant"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPluginComponent",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginAction",
+			"member": "Text",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "RobloxScriptSecurity"
+					}
+				},
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": false,
+						"CanSave": false
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": [
+						"ReadOnly",
+						"NotReplicated"
+					],
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "Text",
+				"Security": {
+					"Read": "None",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "SearchForAssets",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SearchForAssets",
+				"Parameters": [
+					{
+						"Name": "body",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChannel",
+			"member": "DirectChatRequester",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "DirectChatRequester",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Player"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChannel",
+			"member": "SetDirectChatRequester",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Chat"
+				],
+				"MemberType": "Function",
+				"Name": "SetDirectChatRequester",
+				"Parameters": [
+					{
+						"Name": "requester",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UGCValidationService",
+			"member": "CalculateAverageEditableCageMeshDistance",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CalculateAverageEditableCageMeshDistance",
+				"Parameters": [
+					{
+						"Name": "innerCage",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Object"
+						}
+					},
+					{
+						"Name": "outerCage",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Object"
+						}
+					},
+					{
+						"Name": "refMesh",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Object"
+						}
+					},
+					{
+						"Name": "innerTransform",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					},
+					{
+						"Name": "outerTransform",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UGCValidationService",
+			"member": "CalculateAverageCageMeshDistance",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CalculateAverageCageMeshDistance",
+				"Parameters": [
+					{
+						"Name": "innerCageMeshId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "outerCageMeshId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "refMeshId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "innerTransform",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					},
+					{
+						"Name": "outerTransform",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UGCValidationService",
+			"member": "ValidateFacialBounds",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ValidateFacialBounds",
+				"Parameters": [
+					{
+						"Name": "meshId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "boundsScale",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "partSize",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UGCValidationService",
+			"member": "ValidateFacialExpressiveness",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ValidateFacialExpressiveness",
+				"Parameters": [
+					{
+						"Name": "meshId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "minDelta",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "partSize",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TelemetryService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "TelemetryService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TelemetryService",
+			"member": "LogCounter",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LogCounter",
+				"Parameters": [
+					{
+						"Name": "config",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Name": "data",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary?"
+						}
+					},
+					{
+						"Default": "1",
+						"Name": "value",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TelemetryService",
+			"member": "LogDurationEvent",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LogDurationEvent",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TelemetryService",
+			"member": "LogDurationEventWithTimestamp",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LogDurationEventWithTimestamp",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "timestamp",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TelemetryService",
+			"member": "LogEvent",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LogEvent",
+				"Parameters": [
+					{
+						"Name": "config",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "data",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TelemetryService",
+			"member": "LogStat",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LogStat",
+				"Parameters": [
+					{
+						"Name": "config",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Name": "data",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary?"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemTag",
+			"item": "ElideLeftOverride",
+			"type": "Remove",
+			"value": {
+				"Name": "ElideLeftOverride",
+				"Value": 12
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemTag",
+			"item": "UseTextEditForAutocompleteScore",
+			"type": "Remove",
+			"value": {
+				"Name": "UseTextEditForAutocompleteScore",
+				"Value": 13
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TextChatMessageStatus",
+			"item": "ModerationTimeout",
+			"type": "Add",
+			"value": {
+				"Name": "ModerationTimeout",
+				"Value": 9
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AnnotationRequestResult",
+			"type": "Add",
+			"value": {
+				"Name": "AnnotationRequestResult"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnnotationRequestResult",
+			"item": "Success",
+			"type": "Add",
+			"value": {
+				"Name": "Success",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnnotationRequestResult",
+			"item": "ErrorInternalFailure",
+			"type": "Add",
+			"value": {
+				"Name": "ErrorInternalFailure",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnnotationRequestResult",
+			"item": "ErrorNotFound",
+			"type": "Add",
+			"value": {
+				"Name": "ErrorNotFound",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AnnotationRequestType",
+			"type": "Add",
+			"value": {
+				"Name": "AnnotationRequestType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnnotationRequestType",
+			"item": "Unknown",
+			"type": "Add",
+			"value": {
+				"Name": "Unknown",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnnotationRequestType",
+			"item": "Create",
+			"type": "Add",
+			"value": {
+				"Name": "Create",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnnotationRequestType",
+			"item": "Resolve",
+			"type": "Add",
+			"value": {
+				"Name": "Resolve",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnnotationRequestType",
+			"item": "Delete",
+			"type": "Add",
+			"value": {
+				"Name": "Delete",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnnotationRequestType",
+			"item": "Edit",
+			"type": "Add",
+			"value": {
+				"Name": "Edit",
+				"Value": 4
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "Object",
+			"member": "isA",
+			"part": "description",
+			"before": null,
+			"after": "<strong>Deprecated:</strong> This deprecated function is a variant of <code>Object:IsA()</code> which should be used instead.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "isA",
+				"Parameters": [
+					{
+						"Name": "className",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "IsA",
+						"ThreadSafety": "Safe"
+					},
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableImage",
+			"member": "DrawImageTransformed",
+			"part": "description",
+			"before": null,
+			"after": "Draws an image into this <code>EditableImage</code> with transformations including scaling and rotation, placing it at the specified position.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DrawImageTransformed",
+				"Parameters": [
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "scale",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "rotation",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "image",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Object"
+						}
+					},
+					{
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableImage",
+			"member": "DrawImageTransformed",
+			"part": "parameter",
+			"parameter": "position",
+			"before": null,
+			"after": "Position in pixels where the pivot point of the source image will be placed on this image.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DrawImageTransformed",
+				"Parameters": [
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "scale",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "rotation",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "image",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Object"
+						}
+					},
+					{
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableImage",
+			"member": "DrawImageTransformed",
+			"part": "parameter",
+			"parameter": "scale",
+			"before": null,
+			"after": "Scaling factors for the source image along the X and Y axes.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DrawImageTransformed",
+				"Parameters": [
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "scale",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "rotation",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "image",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Object"
+						}
+					},
+					{
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableImage",
+			"member": "DrawImageTransformed",
+			"part": "parameter",
+			"parameter": "rotation",
+			"before": null,
+			"after": "The rotation angle in degrees, applied around the pivot point of the source image.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DrawImageTransformed",
+				"Parameters": [
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "scale",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "rotation",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "image",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Object"
+						}
+					},
+					{
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableImage",
+			"member": "DrawImageTransformed",
+			"part": "parameter",
+			"parameter": "image",
+			"before": null,
+			"after": "The source <code>EditableImage</code> to be drawn into this image.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DrawImageTransformed",
+				"Parameters": [
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "scale",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "rotation",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "image",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Object"
+						}
+					},
+					{
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableImage",
+			"member": "DrawImageTransformed",
+			"part": "parameter",
+			"parameter": "options",
+			"before": null,
+			"after": "Optional dictionary for additional configuration: - <code>CombineType</code>: Specifies how the pixels of the source image blend   with those of the destination. Default is   <code>ImageCombineType.AlphaBlend</code>. - <code>SamplingMode</code>: Specifies the sampling method (e.g. <code>Default</code> for   bilinear or <code>Pixelated</code> for nearest neighbor). Default is   <code>ResamplerMode.Default</code>. - <code>PivotPoint</code>: Specifies the pivot point within the source image for   scaling and rotation. Default is the center of the source image   (i.e. <code>Size / 2</code>).",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DrawImageTransformed",
+				"Parameters": [
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "scale",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "rotation",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "image",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Object"
+						}
+					},
+					{
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "CreateEditableImage",
+			"part": "parameter",
+			"parameter": "editableImageOptions",
+			"before": null,
+			"after": "Options table containing controls for the method: <ul> <li><code>Size</code> – A <code>Vector2</code> that specifies the image's desired   width and height.</li> </ul>",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateEditableImage",
+				"Parameters": [
+					{
+						"Name": "editableImageOptions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Object"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "CreateEditableMeshAsync",
+			"part": "parameter",
+			"parameter": "editableMeshOptions",
+			"before": null,
+			"after": "Options table containing controls for the method: <ul> <li><code>FixedSize</code> – A <code>bool</code>. Default value is <code>true</code>, and the returned   <code>EditableMesh</code> will not allow you to add or remove vertices,   only modify their values. Set to <code>false</code> if the ability to change   the mesh topology is required, at the expense of using more memory.</li> </ul>",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateEditableMeshAsync",
+				"Parameters": [
+					{
+						"Name": "content",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					},
+					{
+						"Name": "editableMeshOptions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Object"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioPlayer",
+			"member": "Ended",
+			"part": "description",
+			"before": null,
+			"after": "Fires when the <code>AudioPlayer</code> has completed playback and stopped.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Event",
+				"Name": "Ended",
+				"Parameters": [],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioPlayer",
+			"member": "Looped",
+			"part": "description",
+			"before": null,
+			"after": "Fires when the <code>AudioPlayer</code> loops.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Event",
+				"Name": "Looped",
+				"Parameters": [],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "ViewportSize",
+			"part": "description",
+			"before": "Describes the dimensions, in pixels, of the client's viewport.",
+			"after": "The dimensions of the device safe area on a Roblox client.",
+			"value": {
+				"Category": "Data",
+				"Default": "1, 1",
+				"MemberType": "Property",
+				"Name": "ViewportSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "ViewportPointToRay",
+			"part": "description",
+			"before": "Creates a unit <code>Ray</code> from a position on the viewport (in pixels), at a given depth from the <code>Camera</code>, orientated in the camera's direction. Does not account for the GUI inset.",
+			"after": "Creates a unit <code>Ray</code> from a position on the viewport (in pixels), at a given depth from the <code>Camera</code>, orientated in the camera's direction. Does not account for the <code>CoreUISafeInsets</code> inset.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ViewportPointToRay",
+				"Parameters": [
+					{
+						"Name": "x",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "y",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "depth",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Ray"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "ViewportPointToRay",
+			"part": "parameter",
+			"parameter": "x",
+			"before": "The position on the X axis, in pixels, of the viewport point at which to originate the <code>Ray</code>. This position does not account for the GUI inset.",
+			"after": "The position on the <strong>X</strong> axis, in pixels, of the viewport point at which to originate the <code>Ray</code>, in device safe area coordinates.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ViewportPointToRay",
+				"Parameters": [
+					{
+						"Name": "x",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "y",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "depth",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Ray"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "ViewportPointToRay",
+			"part": "parameter",
+			"parameter": "y",
+			"before": "The position on the Y axis, in pixels, of the viewport point at which to originate the <code>Ray</code>. This position does not account for the GUI inset.",
+			"after": "The position on the <strong>Y</strong> axis, in pixels, of the viewport point at which to originate the <code>Ray</code>, in device safe area coordinates.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ViewportPointToRay",
+				"Parameters": [
+					{
+						"Name": "x",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "y",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "depth",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Ray"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationConstraint",
+			"member": "C0",
+			"part": "description",
+			"before": null,
+			"after": "<strong>Deprecated:</strong> ",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Physics",
+						"Animation"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "C0",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated",
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationConstraint",
+			"member": "C1",
+			"part": "description",
+			"before": null,
+			"after": "<strong>Deprecated:</strong> ",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Physics",
+						"Animation"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "C1",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated",
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationConstraint",
+			"member": "Part0",
+			"part": "description",
+			"before": null,
+			"after": "<strong>Deprecated:</strong> ",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Physics",
+						"Animation"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "Part0",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated",
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "BasePart"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationConstraint",
+			"member": "Part1",
+			"part": "description",
+			"before": null,
+			"after": "<strong>Deprecated:</strong> ",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Physics",
+						"Animation"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "Part1",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated",
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "BasePart"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Path2D",
+			"member": "Closed",
+			"part": "description",
+			"before": null,
+			"after": "Connects the first and last control points when enabled.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "Closed",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Path2D",
+			"member": "Color3",
+			"part": "description",
+			"before": null,
+			"after": "Determines the Color of the <code>Path2D</code>.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Data",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "Color3",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Path2D",
+			"member": "GetLength",
+			"part": "description",
+			"before": null,
+			"after": "Returns the length of the <code>Path2D</code>.",
+			"value": {
+				"Capabilities": [
+					"UI"
+				],
+				"MemberType": "Function",
+				"Name": "GetLength",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Path2D",
+			"member": "GetMaxControlPoints",
+			"part": "description",
+			"before": null,
+			"after": "Returns the maximum allowed number of control points.",
+			"value": {
+				"Capabilities": [
+					"UI"
+				],
+				"MemberType": "Function",
+				"Name": "GetMaxControlPoints",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Path2D",
+			"member": "ControlPointChanged",
+			"part": "description",
+			"before": null,
+			"after": "Fires any time control points change.",
+			"value": {
+				"Capabilities": [
+					"UI"
+				],
+				"MemberType": "Event",
+				"Name": "ControlPointChanged",
+				"Parameters": [],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ChannelTabsConfiguration",
+			"part": "description",
+			"before": null,
+			"after": "Configures properties of the optional channel tabs in the default chat window."
+		},
+		{
+			"element": "Member",
+			"class": "ChannelTabsConfiguration",
+			"member": "AbsolutePosition",
+			"part": "description",
+			"before": null,
+			"after": "Actual screen position of the channel tab bar, in pixels.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Data",
+				"Default": "0, 0",
+				"MemberType": "Property",
+				"Name": "AbsolutePosition",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChannelTabsConfiguration",
+			"member": "AbsoluteSize",
+			"part": "description",
+			"before": null,
+			"after": "Actual screen size of the channel tab bar, in pixels.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Data",
+				"Default": "0, 0",
+				"MemberType": "Property",
+				"Name": "AbsoluteSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChannelTabsConfiguration",
+			"member": "BackgroundColor3",
+			"part": "description",
+			"before": null,
+			"after": "Background color of the channel tabs.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "0.0980392, 0.105882, 0.113725",
+				"MemberType": "Property",
+				"Name": "BackgroundColor3",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChannelTabsConfiguration",
+			"member": "BackgroundTransparency",
+			"part": "description",
+			"before": null,
+			"after": "Background transparency of the channel tabs.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "BackgroundTransparency",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "double"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChannelTabsConfiguration",
+			"member": "Enabled",
+			"part": "description",
+			"before": null,
+			"after": "Whether to show the channel tabs.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Behavior",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "Enabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChannelTabsConfiguration",
+			"member": "FontFace",
+			"part": "description",
+			"before": null,
+			"after": "Font used to render text in the channel tabs.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "FontFace",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Font"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChannelTabsConfiguration",
+			"member": "HoverBackgroundColor3",
+			"part": "description",
+			"before": null,
+			"after": "Background color of a channel tab when hovering over it.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "0.490196, 0.490196, 0.490196",
+				"MemberType": "Property",
+				"Name": "HoverBackgroundColor3",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChannelTabsConfiguration",
+			"member": "SelectedTabTextColor3",
+			"part": "description",
+			"before": null,
+			"after": "Color of text in a selected tab.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "1, 1, 1",
+				"MemberType": "Property",
+				"Name": "SelectedTabTextColor3",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChannelTabsConfiguration",
+			"member": "TextColor3",
+			"part": "description",
+			"before": null,
+			"after": "Color of text in an unselected tab.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "0.686275, 0.686275, 0.686275",
+				"MemberType": "Property",
+				"Name": "TextColor3",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChannelTabsConfiguration",
+			"member": "TextSize",
+			"part": "description",
+			"before": null,
+			"after": "Size of the text in channel tabs.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "18",
+				"MemberType": "Property",
+				"Name": "TextSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChannelTabsConfiguration",
+			"member": "TextStrokeColor3",
+			"part": "description",
+			"before": null,
+			"after": "Color of the text stroke for text in channel tabs.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "TextStrokeColor3",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChannelTabsConfiguration",
+			"member": "TextStrokeTransparency",
+			"part": "description",
+			"before": null,
+			"after": "Transparency of the text stroke for text in channel tabs.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "TextStrokeTransparency",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "double"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatInputBarConfiguration",
+			"member": "AbsolutePosition",
+			"part": "description",
+			"before": "Describes the actual screen position of the default chat input bar in pixels.",
+			"after": "Actual screen position of the default chat input bar in pixels.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Data",
+				"Default": "0, 0",
+				"MemberType": "Property",
+				"Name": "AbsolutePosition",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "Unsafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatInputBarConfiguration",
+			"member": "AbsoluteSize",
+			"part": "description",
+			"before": "Describes the actual screen size of the default chat input bar in pixels.",
+			"after": "Actual screen size of the default chat input bar in pixels.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Data",
+				"Default": "0, 0",
+				"MemberType": "Property",
+				"Name": "AbsoluteSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "Unsafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatInputBarConfiguration",
+			"member": "AutocompleteEnabled",
+			"part": "description",
+			"before": "Determines whether to enable autocomplete for the chat input bar.",
+			"after": "Whether to enable autocomplete for the chat input bar.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Behavior",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "AutocompleteEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatInputBarConfiguration",
+			"member": "BackgroundColor3",
+			"part": "description",
+			"before": "Determines the background color of the default chat input bar.",
+			"after": "Background color of the default chat input bar.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "0.0980392, 0.105882, 0.113725",
+				"MemberType": "Property",
+				"Name": "BackgroundColor3",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatInputBarConfiguration",
+			"member": "BackgroundTransparency",
+			"part": "description",
+			"before": "Determines the background transparency of the default chat input bar.",
+			"after": "Background transparency of the default chat input bar.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "0.2000000000000000111",
+				"MemberType": "Property",
+				"Name": "BackgroundTransparency",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "double"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatInputBarConfiguration",
+			"member": "Enabled",
+			"part": "description",
+			"before": "Determines whether to show the default chat input bar.",
+			"after": "Whether to show the default chat input bar.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Behavior",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "Enabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatInputBarConfiguration",
+			"member": "FontFace",
+			"part": "description",
+			"before": "Determines the font used to render text in the default chat input bar.",
+			"after": "Font used to render text in the default chat input bar.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "FontFace",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Font"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatInputBarConfiguration",
+			"member": "IsFocused",
+			"part": "description",
+			"before": "Describes if the default chat input bar is focused or not.",
+			"after": "Whether the default chat input bar is focused or not.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "IsFocused",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "Unsafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatInputBarConfiguration",
+			"member": "KeyboardKeyCode",
+			"part": "description",
+			"before": "Determines an additional key users can press to trigger focusing on the default chat input bar.",
+			"after": "Additional key users can press to trigger focusing on the default chat input bar.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Behavior",
+				"Default": "Slash",
+				"MemberType": "Property",
+				"Name": "KeyboardKeyCode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "KeyCode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatInputBarConfiguration",
+			"member": "PlaceholderColor3",
+			"part": "description",
+			"before": "Determines the color of the text of the placeholder text in the default chat input bar.",
+			"after": "Color of the text of the placeholder text in the default chat input bar.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "0.698039, 0.698039, 0.698039",
+				"MemberType": "Property",
+				"Name": "PlaceholderColor3",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatInputBarConfiguration",
+			"member": "TextBox",
+			"part": "description",
+			"before": "A reference to a designated <code>TextBox</code> Instance that sends messages on behalf of the user. This property only accepts TextBox instances.",
+			"after": "Reference to a designated <code>TextBox</code> instance that sends messages on behalf of the user.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "TextBox",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "TextBox"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatInputBarConfiguration",
+			"member": "TextColor3",
+			"part": "description",
+			"before": "Determines the color of the text in default chat input bar.",
+			"after": "Color of the text in default chat input bar.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "1, 1, 1",
+				"MemberType": "Property",
+				"Name": "TextColor3",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatInputBarConfiguration",
+			"member": "TextSize",
+			"part": "description",
+			"before": "Determines the size of the text in default chat input bar.",
+			"after": "Size of the text in default chat input bar.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "14",
+				"MemberType": "Property",
+				"Name": "TextSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatInputBarConfiguration",
+			"member": "TextStrokeColor3",
+			"part": "description",
+			"before": "Determines the color of the text stroke of text in default chat input bar.",
+			"after": "Color of the text stroke for text in default chat input bar.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "TextStrokeColor3",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatInputBarConfiguration",
+			"member": "TextStrokeTransparency",
+			"part": "description",
+			"before": "Determines the transparency of the text stroke of text in default chat input bar.",
+			"after": "Transparency of the text stroke for text in default chat input bar.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "0.5",
+				"MemberType": "Property",
+				"Name": "TextStrokeTransparency",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "double"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatWindowConfiguration",
+			"member": "AbsolutePosition",
+			"part": "description",
+			"before": "Describes the actual screen position of the default chat window, in pixels.",
+			"after": "Actual screen position of the default chat window, in pixels.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Data",
+				"Default": "0, 0",
+				"MemberType": "Property",
+				"Name": "AbsolutePosition",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "Unsafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatWindowConfiguration",
+			"member": "AbsoluteSize",
+			"part": "description",
+			"before": "Describes the actual screen size of the default chat window, in pixels.",
+			"after": "Actual screen size of the default chat window, in pixels.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Data",
+				"Default": "0, 0",
+				"MemberType": "Property",
+				"Name": "AbsoluteSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "Unsafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatWindowConfiguration",
+			"member": "BackgroundColor3",
+			"part": "description",
+			"before": "Determines the background color of the default chat window.",
+			"after": "Background color of the default chat window.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "0.0980392, 0.105882, 0.113725",
+				"MemberType": "Property",
+				"Name": "BackgroundColor3",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatWindowConfiguration",
+			"member": "BackgroundTransparency",
+			"part": "description",
+			"before": "Determines the background transparency of the default chat window.",
+			"after": "Background transparency of the default chat window.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "0.2999999999999999889",
+				"MemberType": "Property",
+				"Name": "BackgroundTransparency",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "double"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatWindowConfiguration",
+			"member": "Enabled",
+			"part": "description",
+			"before": "Determines whether to show the default chat window.",
+			"after": "Whether to show the default chat window.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Behavior",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "Enabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatWindowConfiguration",
+			"member": "FontFace",
+			"part": "description",
+			"before": "Determines the font used to render text in the default chat window.",
+			"after": "Font used to render text in the default chat window.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "FontFace",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Font"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatWindowConfiguration",
+			"member": "HeightScale",
+			"part": "description",
+			"before": "Determines by what factor the height of the default chat window should be scaled.",
+			"after": "Factor by which the height of the default chat window should be scaled.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Behavior",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "HeightScale",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatWindowConfiguration",
+			"member": "HorizontalAlignment",
+			"part": "description",
+			"before": "Determines the horizontal alignment of the chat window.",
+			"after": "Horizontal alignment of the chat window.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Data",
+				"Default": "Left",
+				"MemberType": "Property",
+				"Name": "HorizontalAlignment",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "Unsafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "HorizontalAlignment"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatWindowConfiguration",
+			"member": "TextColor3",
+			"part": "description",
+			"before": "Determines the color of the text in default chat window.",
+			"after": "Color of the text in default chat window.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "1, 1, 1",
+				"MemberType": "Property",
+				"Name": "TextColor3",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatWindowConfiguration",
+			"member": "TextSize",
+			"part": "description",
+			"before": "Determines the size of the text in default chat window.",
+			"after": "Size of the text in default chat window.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "14",
+				"MemberType": "Property",
+				"Name": "TextSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatWindowConfiguration",
+			"member": "TextStrokeColor3",
+			"part": "description",
+			"before": "Determines the color of the text stroke of text in default chat window.",
+			"after": "Color of the text stroke for text in default chat window.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "TextStrokeColor3",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatWindowConfiguration",
+			"member": "TextStrokeTransparency",
+			"part": "description",
+			"before": "Determines the transparency of the text stroke of text in default chat window.",
+			"after": "Transparency of the text stroke for text in default chat window.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "0.5",
+				"MemberType": "Property",
+				"Name": "TextStrokeTransparency",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "double"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatWindowConfiguration",
+			"member": "VerticalAlignment",
+			"part": "description",
+			"before": "Determines the vertical alignment of the chat window.",
+			"after": "Vertical alignment of the chat window.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Data",
+				"Default": "Top",
+				"MemberType": "Property",
+				"Name": "VerticalAlignment",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "Unsafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "VerticalAlignment"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatWindowConfiguration",
+			"member": "WidthScale",
+			"part": "description",
+			"before": "Determines by what factor the width of the default chat window should be scaled.",
+			"after": "Factor by which the width of the default chat window should be scaled.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Behavior",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "WidthScale",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatWindowConfiguration",
+			"member": "DeriveNewMessageProperties",
+			"part": "description",
+			"before": null,
+			"after": "Creates a new <code>ChatWindowMessageProperties</code> instance that can be used to customize the appearance of messages in the chat window.",
+			"value": {
+				"Capabilities": [
+					"Chat"
+				],
+				"MemberType": "Function",
+				"Name": "DeriveNewMessageProperties",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "ChatWindowMessageProperties"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatMessageProperties",
+			"member": "Translation",
+			"part": "description",
+			"before": null,
+			"after": "The <code>TextChatMessage.Translation</code> to override.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "Translation",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatWindowMessageProperties",
+			"member": "FontFace",
+			"part": "description",
+			"before": null,
+			"after": "Font used to render text in the chat window.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "FontFace",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Font"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatWindowMessageProperties",
+			"member": "PrefixTextProperties",
+			"part": "description",
+			"before": null,
+			"after": "Determines the properties of the <code>PrefixText</code> preceding the chat message.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "PrefixTextProperties",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "ChatWindowMessageProperties"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatWindowMessageProperties",
+			"member": "TextColor3",
+			"part": "description",
+			"before": null,
+			"after": "Color of the text in the chat window.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "1, 1, 1",
+				"MemberType": "Property",
+				"Name": "TextColor3",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatWindowMessageProperties",
+			"member": "TextSize",
+			"part": "description",
+			"before": null,
+			"after": "Size of the text in the chat window.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "18",
+				"MemberType": "Property",
+				"Name": "TextSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatWindowMessageProperties",
+			"member": "TextStrokeColor3",
+			"part": "description",
+			"before": null,
+			"after": "Stroke color applied to text in the chat window.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "TextStrokeColor3",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChatWindowMessageProperties",
+			"member": "TextStrokeTransparency",
+			"part": "description",
+			"before": null,
+			"after": "Transparency of the stroke applied to text in the chat window.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Chat"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "0.5",
+				"MemberType": "Property",
+				"Name": "TextStrokeTransparency",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "double"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatService",
+			"member": "CanUsersDirectChatAsync",
+			"part": "description",
+			"before": null,
+			"after": "Determines whether a user has permission to chat directly with other users in experiences based on their parental control settings.",
+			"value": {
+				"Capabilities": [
+					"Chat"
+				],
+				"MemberType": "Function",
+				"Name": "CanUsersDirectChatAsync",
+				"Parameters": [
+					{
+						"Name": "requesterUserId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "userIds",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatService",
+			"member": "OnChatWindowAdded",
+			"part": "description",
+			"before": null,
+			"after": "Called when a new message is about to be displayed in the chat window. This can only be implemented on the client.",
+			"value": {
+				"Capabilities": [
+					"Chat"
+				],
+				"MemberType": "Callback",
+				"Name": "OnChatWindowAdded",
+				"Parameters": [
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Class",
+							"Name": "TextChatMessage"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatService",
+			"member": "OnChatWindowAdded",
+			"part": "parameter",
+			"parameter": "message",
+			"before": null,
+			"after": "The incoming <code>TextChatMessage</code>.",
+			"value": {
+				"Capabilities": [
+					"Chat"
+				],
+				"MemberType": "Callback",
+				"Name": "OnChatWindowAdded",
+				"Parameters": [
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Class",
+							"Name": "TextChatMessage"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatService",
+			"member": "OnChatWindowAdded",
+			"part": "return",
+			"before": null,
+			"after": "If a <code>TextChatMessage</code> is returned, those properties will be applied to the associated message, overriding <code>ChatWindowConfiguration</code> properties.",
+			"value": {
+				"Capabilities": [
+					"Chat"
+				],
+				"MemberType": "Callback",
+				"Name": "OnChatWindowAdded",
+				"Parameters": [
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Class",
+							"Name": "TextChatMessage"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		}
+	]
+}

@@ -1,0 +1,1217 @@
+{
+	"from": {
+		"version": "0.723.0.7230785",
+		"hash": "981c8a3157934eec"
+	},
+	"to": {
+		"version": "0.724.0.7240739",
+		"hash": "8ec813a8524f409b"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SkinningEnabled",
+			"type": "Remove",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"DynamicGeneration"
+					],
+					"Write": [
+						"DynamicGeneration"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_failed_to_create_class__",
+				"MemberType": "Property",
+				"Name": "SkinningEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "Clone",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "SimulationAccess",
+					"before": null,
+					"after": true
+				}
+			],
+			"value": {
+				"Capabilities": [
+					"CreateInstances"
+				],
+				"MemberType": "Function",
+				"Name": "Clone",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"SimulationAccess": true,
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "clone",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "SimulationAccess",
+					"before": null,
+					"after": true
+				}
+			],
+			"value": {
+				"Capabilities": [
+					"CreateInstances"
+				],
+				"MemberType": "Function",
+				"Name": "clone",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"SimulationAccess": true,
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "Clone",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioSpeechToText",
+			"member": "IsDictationEnabled",
+			"type": "Remove",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "State",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "IsDictationEnabled",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioSpeechToText",
+			"member": "DictationEnabled",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "State",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "DictationEnabled",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "NoPromptCreateOutfit",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "humanoidDescription",
+							"Type": {
+								"Category": "Class",
+								"Name": "HumanoidDescription"
+							}
+						},
+						{
+							"Name": "rigType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "HumanoidRigType"
+							}
+						},
+						{
+							"Name": "name",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "0",
+							"Name": "gearAssetId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "humanoidDescription",
+							"Type": {
+								"Category": "Class",
+								"Name": "HumanoidDescription"
+							}
+						},
+						{
+							"Name": "rigType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "HumanoidRigType"
+							}
+						},
+						{
+							"Name": "name",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "0",
+							"Name": "gearAssetId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Default": "nil",
+							"Name": "outfitOptions",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						},
+						{
+							"Name": "outfitType",
+							"Type": {
+								"Category": "Group",
+								"Name": "Variant"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "NoPromptCreateOutfit",
+				"Parameters": [
+					{
+						"Name": "humanoidDescription",
+						"Type": {
+							"Category": "Class",
+							"Name": "HumanoidDescription"
+						}
+					},
+					{
+						"Name": "rigType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "HumanoidRigType"
+						}
+					},
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "gearAssetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "outfitOptions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Name": "outfitType",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "PromptCreateOutfit",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "outfit",
+							"Type": {
+								"Category": "Class",
+								"Name": "HumanoidDescription"
+							}
+						},
+						{
+							"Name": "rigType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "HumanoidRigType"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "outfit",
+							"Type": {
+								"Category": "Class",
+								"Name": "HumanoidDescription"
+							}
+						},
+						{
+							"Name": "rigType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "HumanoidRigType"
+							}
+						},
+						{
+							"Default": "nil",
+							"Name": "outfitOptions",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						},
+						{
+							"Name": "outfitType",
+							"Type": {
+								"Category": "Group",
+								"Name": "Variant"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"Capabilities": [
+					"Players",
+					"PlatformAvatarEditing"
+				],
+				"MemberType": "Function",
+				"Name": "PromptCreateOutfit",
+				"Parameters": [
+					{
+						"Name": "outfit",
+						"Type": {
+							"Category": "Class",
+							"Name": "HumanoidDescription"
+						}
+					},
+					{
+						"Name": "rigType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "HumanoidRigType"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "outfitOptions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Name": "outfitType",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InsertService",
+			"member": "AllowClientInsertModels",
+			"type": "Remove",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"LoadUnownedAsset"
+					],
+					"Write": [
+						"LoadUnownedAsset"
+					]
+				},
+				"Category": "Behavior",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "AllowClientInsertModels",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LodDataEntity",
+			"member": "EntityModelSize",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "EntityModelSize",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PerformPurchase",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "infoType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "InfoType"
+							}
+						},
+						{
+							"Name": "productId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "expectedPrice",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "requestId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "isRobloxPurchase",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Default": "",
+							"Name": "collectibleItemId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "",
+							"Name": "collectibleProductId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "",
+							"Name": "idempotencyKey",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "",
+							"Name": "purchaseAuthToken",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "0",
+							"Name": "timedOptionsDays",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Default": "",
+							"Name": "purchasePayload",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "infoType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "InfoType"
+							}
+						},
+						{
+							"Name": "productId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "expectedPrice",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "requestId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "isRobloxPurchase",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Default": "",
+							"Name": "collectibleItemId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "",
+							"Name": "collectibleProductId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "",
+							"Name": "idempotencyKey",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "",
+							"Name": "purchaseAuthToken",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "0",
+							"Name": "timedOptionsDays",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Default": "",
+							"Name": "purchasePayload",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "nil",
+							"Name": "purchaseOptions",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "PerformPurchase",
+				"Parameters": [
+					{
+						"Name": "infoType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "InfoType"
+						}
+					},
+					{
+						"Name": "productId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "expectedPrice",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "isRobloxPurchase",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "collectibleItemId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "collectibleProductId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "idempotencyKey",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "purchaseAuthToken",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "timedOptionsDays",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "purchasePayload",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "purchaseOptions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptRobuxTransferSubscriptionUpsellRequested",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptRobuxTransferSubscriptionUpsellRequested",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "ImprovedPhysicsReplication",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "ImprovedPhysicsReplication",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "RolloutState"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "CreateThumbnailPlayer",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Players"
+				],
+				"MemberType": "Function",
+				"Name": "CreateThumbnailPlayer",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Player"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RunService",
+			"member": "IsResimulating",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "IsResimulating",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"SimulationAccess": true,
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "CameraAltLeftMouseToRotate",
+			"type": "Add",
+			"value": {
+				"Category": "Camera",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "CameraAltLeftMouseToRotate",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIShadow",
+			"member": "Enabled",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Data",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "Enabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DesignFoundationsService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "DesignFoundationsService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DesignFoundationsService",
+			"member": "ClearTokens",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ClearTokens",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DesignFoundationsService",
+			"member": "SetTokens",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetTokens",
+				"Parameters": [
+					{
+						"Name": "payload",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "GroupService",
+			"member": "GetRolesInGroupAsync",
+			"part": "description",
+			"before": null,
+			"after": "Returns all roles held by the specified user in the specified group, supporting multi-role group membership.",
+			"value": {
+				"Capabilities": [
+					"Groups"
+				],
+				"MemberType": "Function",
+				"Name": "GetRolesInGroupAsync",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "groupId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GroupService",
+			"member": "GetRolesInGroupAsync",
+			"part": "parameter",
+			"parameter": "userId",
+			"before": null,
+			"after": "The user's ID.",
+			"value": {
+				"Capabilities": [
+					"Groups"
+				],
+				"MemberType": "Function",
+				"Name": "GetRolesInGroupAsync",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "groupId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GroupService",
+			"member": "GetRolesInGroupAsync",
+			"part": "parameter",
+			"parameter": "groupId",
+			"before": null,
+			"after": "The group's ID.",
+			"value": {
+				"Capabilities": [
+					"Groups"
+				],
+				"MemberType": "Function",
+				"Name": "GetRolesInGroupAsync",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "groupId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GroupService",
+			"member": "GetRolesInGroupAsync",
+			"part": "return",
+			"before": null,
+			"after": "A table with two fields: <code>IsMember</code> (boolean) and <code>Roles</code> (array of public role tables). Each role table contains <code>Id</code> (int64), <code>Name</code> (string), and <code>Rank</code> (int). The array is ordered as returned by the backend.",
+			"value": {
+				"Capabilities": [
+					"Groups"
+				],
+				"MemberType": "Function",
+				"Name": "GetRolesInGroupAsync",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "groupId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "GetRankInGroupAsync",
+			"part": "description",
+			"before": "Returns the player's rank in the group as an integer.",
+			"after": "<strong>Deprecated:</strong> This method only returns a single role rank and may produce arbitrary results when a user holds multiple roles. Use <code>GroupService:GetRolesInGroupAsync()</code> instead, which returns all roles.<br>Returns the player's rank in the group as an integer.",
+			"value": {
+				"Capabilities": [
+					"Players",
+					"Groups"
+				],
+				"MemberType": "Function",
+				"Name": "GetRankInGroupAsync",
+				"Parameters": [
+					{
+						"Name": "groupId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields",
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "GetRolesInGroupAsync",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "GetRoleInGroupAsync",
+			"part": "description",
+			"before": "Returns the player's role in the group as a string, or <code>Guest</code> if the player isn't part of the group.",
+			"after": "<strong>Deprecated:</strong> This method only returns a single role name and may produce arbitrary results when a user holds multiple roles. Use <code>GroupService:GetRolesInGroupAsync()</code> instead, which returns all roles.<br>Returns the player's role in the group as a string, or <code>Guest</code> if the player isn't part of the group.",
+			"value": {
+				"Capabilities": [
+					"Players",
+					"Groups"
+				],
+				"MemberType": "Function",
+				"Name": "GetRoleInGroupAsync",
+				"Parameters": [
+					{
+						"Name": "groupId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields",
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "GetRolesInGroupAsync",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		}
+	]
+}

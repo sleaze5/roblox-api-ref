@@ -1,0 +1,2070 @@
+{
+	"from": {
+		"version": "0.624.0.6240521",
+		"hash": "9b24e74d4a7d4343"
+	},
+	"to": {
+		"version": "0.625.0.6250509",
+		"hash": "c5a2369e0d774f91"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AudioEmitter",
+			"member": "DistanceAttenuation",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Data",
+					"after": "Emission"
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "Emission",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "DistanceAttenuation",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "BinaryString"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "CaptureService",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotCreatable",
+						"Service",
+						"NotReplicated"
+					],
+					"after": [
+						"NotCreatable",
+						"Service"
+					]
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "CaptureService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "OnCaptureShared",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "OnCaptureShared",
+				"Parameters": [
+					{
+						"Name": "capturePath",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "SaveCapturesToExternalStorageAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SaveCapturesToExternalStorageAsync",
+				"Parameters": [
+					{
+						"Name": "pathArr",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "OnCaptureSignatureResult",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnCaptureSignatureResult",
+				"Parameters": [
+					{
+						"Name": "content",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "signature",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "signatureVersion",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "RequestCaptureSignature",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "RequestCaptureSignature",
+				"Parameters": [
+					{
+						"Name": "content",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptBulkPurchase",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptBulkPurchase",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "lineItems",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "SignalPromptBulkPurchaseFinished",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SignalPromptBulkPurchaseFinished",
+				"Parameters": [
+					{
+						"Name": "status",
+						"Type": {
+							"Category": "Enum",
+							"Name": "MarketplaceBulkPurchasePromptStatus"
+						}
+					},
+					{
+						"Name": "results",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PerformBulkPurchase",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PerformBulkPurchase",
+				"Parameters": [
+					{
+						"Name": "orderRequest",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptBulkPurchaseFinished",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptBulkPurchaseFinished",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "status",
+						"Type": {
+							"Category": "Enum",
+							"Name": "MarketplaceBulkPurchasePromptStatus"
+						}
+					},
+					{
+						"Name": "results",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptBulkPurchaseRequested",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptBulkPurchaseRequested",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "displayData",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "orderRequest",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Name": "purchaserRobuxBalance",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "orderTotalRobux",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialGenerationService",
+			"member": "DEPRECATED_GenerateMaterialVariantsAync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DEPRECATED_GenerateMaterialVariantsAync",
+				"Parameters": [
+					{
+						"Name": "prompt",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "samples",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "GetBanHistoryAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBanHistoryAsync",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "BanHistoryPages"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "RunSandboxedCode",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "requestId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "runCodeGuid",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "",
+							"Name": "defaultCode",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "runCodeGuid",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "requestId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "RunSandboxedCode",
+				"Parameters": [
+					{
+						"Name": "runCodeGuid",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StreamingService",
+			"member": "BindCodeToGuid",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "BindCodeToGuid",
+				"Parameters": [
+					{
+						"Name": "runCodeGuid",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "code",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "BanHistoryPages",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "BanHistoryPages",
+				"Superclass": "Pages",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "UIDragDetectorDragStyle",
+			"type": "Add",
+			"value": {
+				"Name": "UIDragDetectorDragStyle"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UIDragDetectorDragStyle",
+			"item": "TranslatePlane",
+			"type": "Add",
+			"value": {
+				"Name": "TranslatePlane",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UIDragDetectorDragStyle",
+			"item": "TranslateLine",
+			"type": "Add",
+			"value": {
+				"Name": "TranslateLine",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UIDragDetectorDragStyle",
+			"item": "Rotate",
+			"type": "Add",
+			"value": {
+				"Name": "Rotate",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UIDragDetectorDragStyle",
+			"item": "Scriptable",
+			"type": "Add",
+			"value": {
+				"Name": "Scriptable",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "UIDragDetectorResponseStyle",
+			"type": "Add",
+			"value": {
+				"Name": "UIDragDetectorResponseStyle"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UIDragDetectorResponseStyle",
+			"item": "Offset",
+			"type": "Add",
+			"value": {
+				"Name": "Offset",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UIDragDetectorResponseStyle",
+			"item": "Scale",
+			"type": "Add",
+			"value": {
+				"Name": "Scale",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UIDragDetectorResponseStyle",
+			"item": "CustomOffset",
+			"type": "Add",
+			"value": {
+				"Name": "CustomOffset",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UIDragDetectorResponseStyle",
+			"item": "CustomScale",
+			"type": "Add",
+			"value": {
+				"Name": "CustomScale",
+				"Value": 3
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "AudioEmitter",
+			"member": "DistanceAttenuation",
+			"part": "description",
+			"before": null,
+			"after": "Represents how the perceived volume of the emitted sound changes as the distance between a <code>AudioListener</code> and the <code>AudioEmitter</code> increases.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					]
+				},
+				"Category": "Emission",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "DistanceAttenuation",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "BinaryString"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioEmitter",
+			"member": "GetDistanceAttenuation",
+			"part": "description",
+			"before": null,
+			"after": "Gets the distance attenuation curve that the <code>AudioEmitter</code> is using, or an empty table if it's using the default curve.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "GetDistanceAttenuation",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioEmitter",
+			"member": "SetDistanceAttenuation",
+			"part": "description",
+			"before": null,
+			"after": "Sets the distance attenuation curve that the <code>AudioEmitter</code> should use, or uses an inverse rolloff curve if none is provided.",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "SetDistanceAttenuation",
+				"Parameters": [
+					{
+						"Name": "curve",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStore",
+			"member": "ListKeysAsync",
+			"part": "parameter",
+			"parameter": "pageSize",
+			"before": "<strong>(Optional)</strong> Maximum possible number of items that can be returned. The default is 50.",
+			"after": "<strong>(Optional)</strong> Maximum possible number of items that can be returned.",
+			"value": {
+				"Capabilities": [
+					"DataStore"
+				],
+				"MemberType": "Function",
+				"Name": "ListKeysAsync",
+				"Parameters": [
+					{
+						"Default": "",
+						"Name": "prefix",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "pageSize",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "cursor",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "false",
+						"Name": "excludeDeleted",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "DataStoreKeyPages"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStore",
+			"member": "ListVersionsAsync",
+			"part": "parameter",
+			"parameter": "pageSize",
+			"before": "Number of items to be returned in each page. By default is 1024.",
+			"after": "Number of items to be returned in each page.",
+			"value": {
+				"Capabilities": [
+					"DataStore"
+				],
+				"MemberType": "Function",
+				"Name": "ListVersionsAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "Ascending",
+						"Name": "sortDirection",
+						"Type": {
+							"Category": "Enum",
+							"Name": "SortDirection"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "minDate",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "maxDate",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "pageSize",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "DataStoreVersionPages"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "MemoryStoreHashMap",
+			"part": "description",
+			"before": null,
+			"after": "Provides access to a hash map within <code>MemoryStoreService</code>."
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreHashMap",
+			"member": "GetAsync",
+			"part": "description",
+			"before": null,
+			"after": "Retrieves the value of a key in the hash map.",
+			"value": {
+				"Capabilities": [
+					"DataStore"
+				],
+				"MemberType": "Function",
+				"Name": "GetAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreHashMap",
+			"member": "GetAsync",
+			"part": "parameter",
+			"parameter": "key",
+			"before": null,
+			"after": "The key whose value you want to retrieve.",
+			"value": {
+				"Capabilities": [
+					"DataStore"
+				],
+				"MemberType": "Function",
+				"Name": "GetAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreHashMap",
+			"member": "GetAsync",
+			"part": "return",
+			"before": null,
+			"after": "The value, or nil if the key doesn't exist.",
+			"value": {
+				"Capabilities": [
+					"DataStore"
+				],
+				"MemberType": "Function",
+				"Name": "GetAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreHashMap",
+			"member": "ListItemsAsync",
+			"part": "description",
+			"before": null,
+			"after": "Returns a <code>MemoryStoreHashMapPages</code> object for enumerating through items in the hash map.",
+			"value": {
+				"Capabilities": [
+					"DataStore"
+				],
+				"MemberType": "Function",
+				"Name": "ListItemsAsync",
+				"Parameters": [
+					{
+						"Name": "count",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "MemoryStoreHashMapPages"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreHashMap",
+			"member": "ListItemsAsync",
+			"part": "parameter",
+			"parameter": "count",
+			"before": null,
+			"after": "Maximum possible number of items that can be returned.",
+			"value": {
+				"Capabilities": [
+					"DataStore"
+				],
+				"MemberType": "Function",
+				"Name": "ListItemsAsync",
+				"Parameters": [
+					{
+						"Name": "count",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "MemoryStoreHashMapPages"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreHashMap",
+			"member": "ListItemsAsync",
+			"part": "return",
+			"before": null,
+			"after": "A <code>MemoryStoreHashMapPages</code> instance that enumerates the items as <code>MemoryStoreHashMapPages</code> instances.",
+			"value": {
+				"Capabilities": [
+					"DataStore"
+				],
+				"MemberType": "Function",
+				"Name": "ListItemsAsync",
+				"Parameters": [
+					{
+						"Name": "count",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "MemoryStoreHashMapPages"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreHashMap",
+			"member": "RemoveAsync",
+			"part": "description",
+			"before": null,
+			"after": "Removes an item from the hash map.",
+			"value": {
+				"Capabilities": [
+					"DataStore"
+				],
+				"MemberType": "Function",
+				"Name": "RemoveAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreHashMap",
+			"member": "RemoveAsync",
+			"part": "parameter",
+			"parameter": "key",
+			"before": null,
+			"after": "The key to remove.",
+			"value": {
+				"Capabilities": [
+					"DataStore"
+				],
+				"MemberType": "Function",
+				"Name": "RemoveAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreHashMap",
+			"member": "SetAsync",
+			"part": "description",
+			"before": null,
+			"after": "Sets the value of a key in the hash map.",
+			"value": {
+				"Capabilities": [
+					"DataStore"
+				],
+				"MemberType": "Function",
+				"Name": "SetAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "expiration",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreHashMap",
+			"member": "SetAsync",
+			"part": "parameter",
+			"parameter": "key",
+			"before": null,
+			"after": "The key whose value to set.",
+			"value": {
+				"Capabilities": [
+					"DataStore"
+				],
+				"MemberType": "Function",
+				"Name": "SetAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "expiration",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreHashMap",
+			"member": "SetAsync",
+			"part": "parameter",
+			"parameter": "value",
+			"before": null,
+			"after": "The value to set.",
+			"value": {
+				"Capabilities": [
+					"DataStore"
+				],
+				"MemberType": "Function",
+				"Name": "SetAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "expiration",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreHashMap",
+			"member": "SetAsync",
+			"part": "parameter",
+			"parameter": "expiration",
+			"before": null,
+			"after": "Item expiration in seconds, after which the item is automatically removed from the hash map. The maximum expiration time is 45 days (3,888,000 seconds).",
+			"value": {
+				"Capabilities": [
+					"DataStore"
+				],
+				"MemberType": "Function",
+				"Name": "SetAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "expiration",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreHashMap",
+			"member": "UpdateAsync",
+			"part": "description",
+			"before": null,
+			"after": "Retrieves the value of a key from a hash map and lets you update it to a new value.",
+			"value": {
+				"Capabilities": [
+					"DataStore"
+				],
+				"MemberType": "Function",
+				"Name": "UpdateAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "transformFunction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					},
+					{
+						"Name": "expiration",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreHashMap",
+			"member": "UpdateAsync",
+			"part": "parameter",
+			"parameter": "key",
+			"before": null,
+			"after": "The key whose value you want to update.",
+			"value": {
+				"Capabilities": [
+					"DataStore"
+				],
+				"MemberType": "Function",
+				"Name": "UpdateAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "transformFunction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					},
+					{
+						"Name": "expiration",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreHashMap",
+			"member": "UpdateAsync",
+			"part": "parameter",
+			"parameter": "transformFunction",
+			"before": null,
+			"after": "The transform function, which you provide. This function takes the old value as an input and returns the new value.",
+			"value": {
+				"Capabilities": [
+					"DataStore"
+				],
+				"MemberType": "Function",
+				"Name": "UpdateAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "transformFunction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					},
+					{
+						"Name": "expiration",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreHashMap",
+			"member": "UpdateAsync",
+			"part": "parameter",
+			"parameter": "expiration",
+			"before": null,
+			"after": "Item expiration in seconds, after which the item is automatically removed from the hash map. The maximum expiration time is 45 days (3,888,000 seconds).",
+			"value": {
+				"Capabilities": [
+					"DataStore"
+				],
+				"MemberType": "Function",
+				"Name": "UpdateAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "transformFunction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					},
+					{
+						"Name": "expiration",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreHashMap",
+			"member": "UpdateAsync",
+			"part": "return",
+			"before": null,
+			"after": "The last value returned by the transform function.",
+			"value": {
+				"Capabilities": [
+					"DataStore"
+				],
+				"MemberType": "Function",
+				"Name": "UpdateAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "transformFunction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					},
+					{
+						"Name": "expiration",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreService",
+			"member": "GetHashMap",
+			"part": "description",
+			"before": null,
+			"after": "Returns a <code>MemoryStoreHashMap</code> instance for the provided name.",
+			"value": {
+				"Capabilities": [
+					"DataStore"
+				],
+				"MemberType": "Function",
+				"Name": "GetHashMap",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "MemoryStoreHashMap"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreService",
+			"member": "GetHashMap",
+			"part": "parameter",
+			"parameter": "name",
+			"before": null,
+			"after": "The name of the hash map.",
+			"value": {
+				"Capabilities": [
+					"DataStore"
+				],
+				"MemberType": "Function",
+				"Name": "GetHashMap",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "MemoryStoreHashMap"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreService",
+			"member": "GetHashMap",
+			"part": "return",
+			"before": null,
+			"after": "A <code>MemoryStoreHashMap</code> instance for the provided name.",
+			"value": {
+				"Capabilities": [
+					"DataStore"
+				],
+				"MemberType": "Function",
+				"Name": "GetHashMap",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "MemoryStoreHashMap"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "MemoryStoreSortedMap",
+			"part": "description",
+			"before": "Provides access to a sorted map within MemoryStore.",
+			"after": "Provides access to a sorted map within <code>MemoryStoreService</code>."
+		},
+		{
+			"element": "Class",
+			"class": "MemoryStoreHashMapPages",
+			"part": "description",
+			"before": null,
+			"after": "A special type of <code>Pages</code> object whose pages contain key-value pairs from a <code>MemoryStoreHashMap</code>."
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "GetFriendsOnline",
+			"part": "parameter",
+			"parameter": "maxFriends",
+			"before": "The maximum number of online friends to return. The default is 200.",
+			"after": "The maximum number of online friends to return.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFriendsOnline",
+				"Parameters": [
+					{
+						"Default": "200",
+						"Name": "maxFriends",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "Idled",
+			"part": "description",
+			"before": "Usually fired two minutes after the game engine classes the player as idle. Time is the amount of seconds since this point.",
+			"after": "This event fires approximately two minutes after the game engine classifies the <code>player</code> as idle. Time is the number of seconds that have elapsed since that point.",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Idled",
+				"Parameters": [
+					{
+						"Name": "time",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "double"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextService",
+			"member": "FilterStringAsync",
+			"part": "parameter",
+			"parameter": "textContext",
+			"before": "The context that the filtered message will be used in. The default is PrivateChat.",
+			"after": "The context that the filtered message will be used in.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FilterStringAsync",
+				"Parameters": [
+					{
+						"Name": "stringToFilter",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "fromUserId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Default": "PrivateChat",
+						"Name": "textContext",
+						"Type": {
+							"Category": "Enum",
+							"Name": "TextFilterContext"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "TextFilterResult"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Rock",
+			"part": "description",
+			"before": "Applies to <code>Terrain</code> only.",
+			"after": "Applies to <code>BasePart</code> and <code>Terrain</code>.",
+			"value": {
+				"Name": "Rock",
+				"Value": 896
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Sandstone",
+			"part": "description",
+			"before": "Applies to <code>Terrain</code> only.",
+			"after": "Applies to <code>BasePart</code> and <code>Terrain</code>.",
+			"value": {
+				"Name": "Sandstone",
+				"Value": 912
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Basalt",
+			"part": "description",
+			"before": "Applies to <code>Terrain</code> only.",
+			"after": "Applies to <code>BasePart</code> and <code>Terrain</code>.",
+			"value": {
+				"Name": "Basalt",
+				"Value": 788
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "CrackedLava",
+			"part": "description",
+			"before": "Applies to <code>Terrain</code> only.",
+			"after": "Applies to <code>BasePart</code> and <code>Terrain</code>.",
+			"value": {
+				"Name": "CrackedLava",
+				"Value": 804
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Limestone",
+			"part": "description",
+			"before": "Applies to <code>Terrain</code> only.",
+			"after": "Applies to <code>BasePart</code> and <code>Terrain</code>.",
+			"value": {
+				"Name": "Limestone",
+				"Value": 820
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Pavement",
+			"part": "description",
+			"before": "Applies to <code>Terrain</code> only.",
+			"after": "Applies to <code>BasePart</code> and <code>Terrain</code>.",
+			"value": {
+				"Name": "Pavement",
+				"Value": 836
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "CorrodedMetal",
+			"part": "description",
+			"before": "Applies to <code>BasePart</code> only.",
+			"after": "Applies to <code>BasePart</code> and <code>Terrain</code>.",
+			"value": {
+				"LegacyNames": [
+					"Corroded Metal"
+				],
+				"Name": "CorrodedMetal",
+				"Value": 1040
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "LeafyGrass",
+			"part": "description",
+			"before": "Applies to <code>Terrain</code> only.",
+			"after": "Applies to <code>BasePart</code> and <code>Terrain</code>.",
+			"value": {
+				"Name": "LeafyGrass",
+				"Value": 1284
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Snow",
+			"part": "description",
+			"before": "Applies to <code>Terrain</code> only.",
+			"after": "Applies to <code>BasePart</code> and <code>Terrain</code>.",
+			"value": {
+				"Name": "Snow",
+				"Value": 1328
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Mud",
+			"part": "description",
+			"before": "Applies to <code>Terrain</code> only.",
+			"after": "Applies to <code>BasePart</code> and <code>Terrain</code>.",
+			"value": {
+				"Name": "Mud",
+				"Value": 1344
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Ground",
+			"part": "description",
+			"before": "Applies to <code>Terrain</code> only.",
+			"after": "Applies to <code>BasePart</code> and <code>Terrain</code>.",
+			"value": {
+				"Name": "Ground",
+				"Value": 1360
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Asphalt",
+			"part": "description",
+			"before": "Applies to <code>Terrain</code> only.",
+			"after": "Applies to <code>BasePart</code> and <code>Terrain</code>.",
+			"value": {
+				"Name": "Asphalt",
+				"Value": 1376
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Salt",
+			"part": "description",
+			"before": "Applies to <code>Terrain</code> only.",
+			"after": "Applies to <code>BasePart</code> and <code>Terrain</code>.",
+			"value": {
+				"Name": "Salt",
+				"Value": 1392
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Glacier",
+			"part": "description",
+			"before": "Applies to <code>Terrain</code> only.",
+			"after": "Applies to <code>BasePart</code> and <code>Terrain</code>.",
+			"value": {
+				"Name": "Glacier",
+				"Value": 1552
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Cardboard",
+			"part": "description",
+			"before": null,
+			"after": "Applies to <code>BasePart</code> only.",
+			"value": {
+				"Name": "Cardboard",
+				"Value": 2304
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Carpet",
+			"part": "description",
+			"before": null,
+			"after": "Applies to <code>BasePart</code> only.",
+			"value": {
+				"Name": "Carpet",
+				"Value": 2305
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "CeramicTiles",
+			"part": "description",
+			"before": null,
+			"after": "Applies to <code>BasePart</code> only.",
+			"value": {
+				"Name": "CeramicTiles",
+				"Value": 2306
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "ClayRoofTiles",
+			"part": "description",
+			"before": null,
+			"after": "Applies to <code>BasePart</code> only.",
+			"value": {
+				"Name": "ClayRoofTiles",
+				"Value": 2307
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "RoofShingles",
+			"part": "description",
+			"before": null,
+			"after": "Applies to <code>BasePart</code> only.",
+			"value": {
+				"Name": "RoofShingles",
+				"Value": 2308
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Leather",
+			"part": "description",
+			"before": null,
+			"after": "Applies to <code>BasePart</code> only.",
+			"value": {
+				"Name": "Leather",
+				"Value": 2309
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Plaster",
+			"part": "description",
+			"before": null,
+			"after": "Applies to <code>BasePart</code> only.",
+			"value": {
+				"Name": "Plaster",
+				"Value": 2310
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Rubber",
+			"part": "description",
+			"before": null,
+			"after": "Applies to <code>BasePart</code> only.",
+			"value": {
+				"Name": "Rubber",
+				"Value": 2311
+			}
+		}
+	]
+}

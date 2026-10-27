@@ -1,0 +1,5011 @@
+{
+	"from": {
+		"version": "0.661.0.6610708",
+		"hash": "0f776bc9fa9f4904"
+	},
+	"to": {
+		"version": "0.662.0.6620538",
+		"hash": "788254424be94b4c"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Annotation",
+			"member": "ChannelId",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "ChannelId",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Annotation",
+			"member": "MessageId",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "MessageId",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Annotation",
+			"member": "IsThreadParent",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsThreadParent",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnnotationsService",
+			"member": "AnnotationAdded",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "requestId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "annotation",
+							"Type": {
+								"Category": "Class",
+								"Name": "Annotation"
+							}
+						},
+						{
+							"Name": "parentId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "requestId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "annotation",
+							"Type": {
+								"Category": "Class",
+								"Name": "Annotation"
+							}
+						},
+						{
+							"Name": "channelId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "AnnotationAdded",
+				"Parameters": [
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "annotation",
+						"Type": {
+							"Category": "Class",
+							"Name": "Annotation"
+						}
+					},
+					{
+						"Name": "channelId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AppLifecycleObserverService",
+			"member": "TriggerOnLandingPageMount",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "TriggerOnLandingPageMount",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioChannelMixer",
+			"member": "GetInputPins",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "GetInputPins",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioChannelMixer",
+			"member": "GetOutputPins",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "GetOutputPins",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioChannelSplitter",
+			"member": "GetInputPins",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "GetInputPins",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioChannelSplitter",
+			"member": "GetOutputPins",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "GetOutputPins",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AuroraService",
+			"member": "Rollback",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [],
+					"after": [
+						{
+							"Name": "worldStepId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "Rollback",
+				"Parameters": [
+					{
+						"Name": "worldStepId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "OnSavePromptFinished",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"CustomLuaState"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "OnSavePromptFinished",
+				"Parameters": [
+					{
+						"Name": "promptId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "results",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "PromptSaveCapturesToGallery",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "contentIds",
+							"Type": {
+								"Category": "Group",
+								"Name": "Array"
+							}
+						},
+						{
+							"Name": "resultCallback",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Function"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "captures",
+							"Type": {
+								"Category": "Group",
+								"Name": "Array"
+							}
+						},
+						{
+							"Name": "resultCallback",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Function"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptSaveCapturesToGallery",
+				"Parameters": [
+					{
+						"Name": "captures",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "resultCallback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "PromptShareCapture",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "contentId",
+							"Type": {
+								"Category": "DataType",
+								"Name": "ContentId"
+							}
+						},
+						{
+							"Name": "launchData",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "onAcceptedCallback",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Function"
+							}
+						},
+						{
+							"Name": "onDeniedCallback",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Function"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "captureContent",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Content"
+							}
+						},
+						{
+							"Name": "launchData",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "onAcceptedCallback",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Function"
+							}
+						},
+						{
+							"Name": "onDeniedCallback",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Function"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptShareCapture",
+				"Parameters": [
+					{
+						"Name": "captureContent",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					},
+					{
+						"Name": "launchData",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "onAcceptedCallback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					},
+					{
+						"Name": "onDeniedCallback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "GetCaptureFilePathAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "captureContentId",
+							"Type": {
+								"Category": "DataType",
+								"Name": "ContentId"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "captureContent",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Content"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCaptureFilePathAsync",
+				"Parameters": [
+					{
+						"Name": "captureContent",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "GetCaptureSizeAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "captureContentId",
+							"Type": {
+								"Category": "DataType",
+								"Name": "ContentId"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "captureContent",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Content"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCaptureSizeAsync",
+				"Parameters": [
+					{
+						"Name": "captureContent",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "OpenSaveCapturesPrompt",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "promptId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "contentIds",
+							"Type": {
+								"Category": "Group",
+								"Name": "Array"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "promptId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "captures",
+							"Type": {
+								"Category": "Group",
+								"Name": "Array"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "OpenSaveCapturesPrompt",
+				"Parameters": [
+					{
+						"Name": "promptId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "captures",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "OpenShareCapturePrompt",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "promptId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "contentId",
+							"Type": {
+								"Category": "DataType",
+								"Name": "ContentId"
+							}
+						},
+						{
+							"Name": "launchData",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "promptId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "captureContent",
+							"Type": {
+								"Category": "Group",
+								"Name": "Variant"
+							}
+						},
+						{
+							"Name": "launchData",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "OpenShareCapturePrompt",
+				"Parameters": [
+					{
+						"Name": "promptId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "captureContent",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "launchData",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "TakeCapture",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "TakeCapture",
+				"Parameters": [
+					{
+						"Name": "onCaptureReady",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "captureParams",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GenerationService",
+			"member": "InternalGenerateMeshAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "InternalGenerateMeshAsync",
+				"Parameters": [
+					{
+						"Name": "inputs",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Name": "intermediateResultCallback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextBox",
+			"member": "ShouldEmitReturnEvents",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Data",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "ShouldEmitReturnEvents",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TriangleMeshPart",
+			"member": "ConvexDecompData",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "ConvexDecompData",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "NetAssetRef"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "PhysicsImprovedSleep",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "PhysicsImprovedSleep",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "RolloutState"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "AddReplicationFocusPosition",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddReplicationFocusPosition",
+				"Parameters": [
+					{
+						"Name": "center",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "radius",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "RemoveReplicationFocusPosition",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RemoveReplicationFocusPosition",
+				"Parameters": [
+					{
+						"Name": "center",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "radius",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "OnInvokeSuspendOverride",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "OnInvokeSuspendOverride",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "callback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "MatchmakingType",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "MatchmakingType",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "MatchmakingType"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ServiceVisibilityService",
+			"member": "ServiceVisibilityChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ServiceVisibilityChanged",
+				"Parameters": [
+					{
+						"Name": "serviceName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UGCValidationService",
+			"member": "DoesMeshHaveSkinningData",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DoesMeshHaveSkinningData",
+				"Parameters": [
+					{
+						"Name": "meshId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VirtualInputManager",
+			"member": "SendScroll",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SendScroll",
+				"Parameters": [
+					{
+						"Name": "x",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "y",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "deltaX",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "deltaY",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Name": "layerCollector",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Capture",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "Capture",
+				"Superclass": "Object",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ScreenshotCapture",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ScreenshotCapture",
+				"Superclass": "Capture",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AudioTextToSpeech",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Internal",
+				"Name": "AudioTextToSpeech",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "HumanoidRigDescription",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Animation",
+				"Name": "HumanoidRigDescription",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "Chest",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Mapping",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "Chest",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "ChestRangeMax",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "ChestRangeMax",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "ChestRangeMin",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "ChestRangeMin",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "ChestSize",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Size",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "ChestSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "ChestTposeAdjustment",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Tpose",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "ChestTposeAdjustment",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "Head",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Mapping",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "Head",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "HeadRangeMax",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "HeadRangeMax",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "HeadRangeMin",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "HeadRangeMin",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "HeadSize",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Size",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "HeadSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "HeadTposeAdjustment",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Tpose",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "HeadTposeAdjustment",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftAnkle",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Mapping",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "LeftAnkle",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftAnkleRangeMax",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "LeftAnkleRangeMax",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftAnkleRangeMin",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "LeftAnkleRangeMin",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftAnkleSize",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Size",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "LeftAnkleSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftAnkleTposeAdjustment",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Tpose",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "LeftAnkleTposeAdjustment",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftClavicle",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Mapping",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "LeftClavicle",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftClavicleRangeMax",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "LeftClavicleRangeMax",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftClavicleRangeMin",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "LeftClavicleRangeMin",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftClavicleSize",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Size",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "LeftClavicleSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftClavicleTposeAdjustment",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Tpose",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "LeftClavicleTposeAdjustment",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftElbow",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Mapping",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "LeftElbow",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftElbowRangeMax",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "LeftElbowRangeMax",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftElbowRangeMin",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "LeftElbowRangeMin",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftElbowSize",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Size",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "LeftElbowSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftElbowTposeAdjustment",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Tpose",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "LeftElbowTposeAdjustment",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftHip",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Mapping",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "LeftHip",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftHipRangeMax",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "LeftHipRangeMax",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftHipRangeMin",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "LeftHipRangeMin",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftHipSize",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Size",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "LeftHipSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftHipTposeAdjustment",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Tpose",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "LeftHipTposeAdjustment",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftKnee",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Mapping",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "LeftKnee",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftKneeRangeMax",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "LeftKneeRangeMax",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftKneeRangeMin",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "LeftKneeRangeMin",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftKneeSize",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Size",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "LeftKneeSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftKneeTposeAdjustment",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Tpose",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "LeftKneeTposeAdjustment",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftShoulder",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Mapping",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "LeftShoulder",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftShoulderRangeMax",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "LeftShoulderRangeMax",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftShoulderRangeMin",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "LeftShoulderRangeMin",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftShoulderSize",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Size",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "LeftShoulderSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftShoulderTposeAdjustment",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Tpose",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "LeftShoulderTposeAdjustment",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftToes",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Mapping",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "LeftToes",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftToesRangeMax",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "LeftToesRangeMax",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftToesRangeMin",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "LeftToesRangeMin",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftToesSize",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Size",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "LeftToesSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftToesTposeAdjustment",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Tpose",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "LeftToesTposeAdjustment",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftWrist",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Mapping",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "LeftWrist",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftWristRangeMax",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "LeftWristRangeMax",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftWristRangeMin",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "LeftWristRangeMin",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftWristSize",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Size",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "LeftWristSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "LeftWristTposeAdjustment",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Tpose",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "LeftWristTposeAdjustment",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "Neck",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Mapping",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "Neck",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "NeckRangeMax",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "NeckRangeMax",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "NeckRangeMin",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "NeckRangeMin",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "NeckSize",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Size",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "NeckSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "NeckTposeAdjustment",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Tpose",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "NeckTposeAdjustment",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "Pelvis",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Mapping",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "Pelvis",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "PelvisRangeMax",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "PelvisRangeMax",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "PelvisRangeMin",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "PelvisRangeMin",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "PelvisSize",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Size",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "PelvisSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "PelvisTposeAdjustment",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Tpose",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "PelvisTposeAdjustment",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightAnkle",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Mapping",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "RightAnkle",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightAnkleRangeMax",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "RightAnkleRangeMax",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightAnkleRangeMin",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "RightAnkleRangeMin",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightAnkleSize",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Size",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "RightAnkleSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightAnkleTposeAdjustment",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Tpose",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "RightAnkleTposeAdjustment",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightClavicle",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Mapping",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "RightClavicle",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightClavicleRangeMax",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "RightClavicleRangeMax",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightClavicleRangeMin",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "RightClavicleRangeMin",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightClavicleSize",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Size",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "RightClavicleSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightClavicleTposeAdjustment",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Tpose",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "RightClavicleTposeAdjustment",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightElbow",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Mapping",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "RightElbow",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightElbowRangeMax",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "RightElbowRangeMax",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightElbowRangeMin",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "RightElbowRangeMin",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightElbowSize",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Size",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "RightElbowSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightElbowTposeAdjustment",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Tpose",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "RightElbowTposeAdjustment",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightHip",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Mapping",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "RightHip",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightHipRangeMax",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "RightHipRangeMax",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightHipRangeMin",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "RightHipRangeMin",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightHipSize",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Size",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "RightHipSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightHipTposeAdjustment",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Tpose",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "RightHipTposeAdjustment",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightKnee",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Mapping",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "RightKnee",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightKneeRangeMax",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "RightKneeRangeMax",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightKneeRangeMin",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "RightKneeRangeMin",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightKneeSize",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Size",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "RightKneeSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightKneeTposeAdjustment",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Tpose",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "RightKneeTposeAdjustment",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightShoulder",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Mapping",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "RightShoulder",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightShoulderRangeMax",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "RightShoulderRangeMax",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightShoulderRangeMin",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "RightShoulderRangeMin",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightShoulderSize",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Size",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "RightShoulderSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightShoulderTposeAdjustment",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Tpose",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "RightShoulderTposeAdjustment",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightToes",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Mapping",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "RightToes",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightToesRangeMax",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "RightToesRangeMax",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightToesRangeMin",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "RightToesRangeMin",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightToesSize",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Size",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "RightToesSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightToesTposeAdjustment",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Tpose",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "RightToesTposeAdjustment",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightWrist",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Mapping",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "RightWrist",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightWristRangeMax",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "RightWristRangeMax",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightWristRangeMin",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "RightWristRangeMin",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightWristSize",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Size",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "RightWristSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RightWristTposeAdjustment",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Tpose",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "RightWristTposeAdjustment",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "Root",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Mapping",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "Root",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RootRangeMax",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "RootRangeMax",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RootRangeMin",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "RootRangeMin",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RootSize",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Size",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "RootSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "RootTposeAdjustment",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Tpose",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "RootTposeAdjustment",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "Waist",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Mapping",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "Waist",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "WaistRangeMax",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "WaistRangeMax",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "WaistRangeMin",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Range",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "WaistRangeMin",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "WaistSize",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Size",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "WaistSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "WaistTposeAdjustment",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation"
+					]
+				},
+				"Category": "Tpose",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "WaistTposeAdjustment",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "Automap",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Animation"
+				],
+				"MemberType": "Function",
+				"Name": "Automap",
+				"Parameters": [
+					{
+						"Name": "character",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "GetJointNames",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Animation"
+				],
+				"MemberType": "Function",
+				"Name": "GetJointNames",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "GetR15JointNames",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Animation"
+				],
+				"MemberType": "Function",
+				"Name": "GetR15JointNames",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "GetR6JointNames",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Animation"
+				],
+				"MemberType": "Function",
+				"Name": "GetR6JointNames",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "AndroidAnticheatKick",
+			"type": "Add",
+			"value": {
+				"Name": "AndroidAnticheatKick",
+				"Value": 304
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "AndroidEmulatorKick",
+			"type": "Add",
+			"value": {
+				"Name": "AndroidEmulatorKick",
+				"Value": 305
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "MouseLeftButton",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Name": "MouseLeftButton",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 1018
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "MouseRightButton",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Name": "MouseRightButton",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 1019
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "MouseMiddleButton",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Name": "MouseMiddleButton",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 1020
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "MouseBackButton",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Name": "MouseBackButton",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 1021
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "MouseNoButton",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Name": "MouseNoButton",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 1022
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "MouseX",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Name": "MouseX",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 1023
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "MouseY",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Name": "MouseY",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 1024
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "CaptureUIHideMode",
+			"type": "Add",
+			"value": {
+				"Name": "CaptureUIHideMode"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CaptureUIHideMode",
+			"item": "All",
+			"type": "Add",
+			"value": {
+				"Name": "All",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CaptureUIHideMode",
+			"item": "None",
+			"type": "Add",
+			"value": {
+				"Name": "None",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CaptureUIHideMode",
+			"item": "Core",
+			"type": "Add",
+			"value": {
+				"Name": "Core",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "MatchmakingType",
+			"type": "Add",
+			"value": {
+				"Name": "MatchmakingType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "MatchmakingType",
+			"item": "Default",
+			"type": "Add",
+			"value": {
+				"Name": "Default",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "MatchmakingType",
+			"item": "XboxOnly",
+			"type": "Add",
+			"value": {
+				"Name": "XboxOnly",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "MatchmakingType",
+			"item": "PlayStationOnly",
+			"type": "Add",
+			"value": {
+				"Name": "PlayStationOnly",
+				"Value": 3
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Class",
+			"class": "AnimationTrack",
+			"part": "description",
+			"before": "Controls the playback of an animation on an <code>AnimationController</code>.",
+			"after": "Controls the playback of an animation on an <code>Animator</code>."
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "ProcessReceipt",
+			"part": "parameter",
+			"parameter": "receiptInfo",
+			"before": "The <code>receiptInfo</code> table passed to this callback contains the following data: <ul> <li><code>PurchaseId</code> &mdash; A unique identifier for the specific purchase.</li> <li><code>PlayerId</code> &mdash; The user ID of the user who made the purchase.</li> <li><code>ProductId</code> &mdash; The ID of the purchased product.</li> <li><code>PlaceIdWherePurchased</code> &mdash; The place ID in which the purchase   was made. Depending on where the user is during gameplay, the   purchase place's ID can be the same as or different from the current   place's ID.</li> <li><code>CurrencySpent</code> &mdash; The amount of currency spent in the   transaction.</li> <li><code>CurrencyType</code> &mdash; The type of currency spent in the purchase;   always <code>CurrencyType.Robux</code>.</li> </ul>",
+			"after": "The <code>receiptInfo</code> table passed to this callback contains the following data: <ul> <li><code>PurchaseId</code> &mdash; A unique identifier for the specific purchase.</li> <li><code>PlayerId</code> &mdash; The user ID of the user who made the purchase.</li> <li><code>ProductId</code> &mdash; The ID of the purchased product.</li> <li><code>PlaceIdWherePurchased</code> &mdash; The place ID in which the purchase   was made. Depending on where the user is during gameplay, the   purchase place's ID can be the same as or different from the current   place's ID.</li> <li><code>CurrencySpent</code> &mdash; The amount of currency spent in the   transaction.</li> <li><code>CurrencyType</code> &mdash; The type of currency spent in the purchase;   always <code>CurrencyType.Robux</code>.</li> <li><code>ProductPurchaseChannel</code> &mdash; An enum that represents   how the user acquired the developer product.</li> </ul>",
+			"value": {
+				"MemberType": "Callback",
+				"Name": "ProcessReceipt",
+				"Parameters": [
+					{
+						"Name": "receiptInfo",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "ProductPurchaseDecision"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "Is30FpsThrottleEnabled",
+			"part": "description",
+			"before": "Sets whether or not the physics engine should be throttled to 30 FPS while the test is being ran.",
+			"after": "<strong>Deprecated:</strong> <br>Sets whether or not the physics engine should be throttled to 30 FPS while the test is being ran.",
+			"value": {
+				"Category": "Physics",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "Is30FpsThrottleEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "ThrottlePhysicsToRealtime",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ProductPurchaseChannel",
+			"part": "description",
+			"before": null,
+			"after": "Enum which works with <code>MarketplaceService</code> to represent how the  <br /> user acquired the developer product."
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ProductPurchaseChannel",
+			"item": "InExperience",
+			"part": "description",
+			"before": null,
+			"after": "The purchase was made inside of an experience.",
+			"value": {
+				"Name": "InExperience",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ProductPurchaseChannel",
+			"item": "ExperienceDetailsPage",
+			"part": "description",
+			"before": null,
+			"after": "The purchase was made outside of an experience, on the <strong>Store</strong> tab of the experience details page.",
+			"value": {
+				"Name": "ExperienceDetailsPage",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ProductPurchaseChannel",
+			"item": "AdReward",
+			"part": "description",
+			"before": null,
+			"after": "The product was rewarded to the user when they watched a video ad to completion.",
+			"value": {
+				"Name": "AdReward",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ProductPurchaseChannel",
+			"item": "CommerceProduct",
+			"part": "description",
+			"before": null,
+			"after": "The user acquired the product as a benefit of purchasing commerce merchandise from the developer of the experience.",
+			"value": {
+				"Name": "CommerceProduct",
+				"Value": 4
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ProductPurchaseDecision",
+			"part": "description",
+			"before": "The <code>ProductPurchaseDecisionEnum</code> is used to work with <code>MarketplaceService</code>, and the sale of developer products.",
+			"after": "The <code>ProductPurchaseDecisionEnum</code> works with <code>MarketplaceService</code> to indicate the status of the sale of developer products."
+		}
+	]
+}

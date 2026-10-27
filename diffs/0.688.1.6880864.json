@@ -1,0 +1,3702 @@
+{
+	"from": {
+		"version": "0.687.0.6870815",
+		"hash": "cbab48157b714899"
+	},
+	"to": {
+		"version": "0.688.1.6880864",
+		"hash": "e47680d9b22f419b"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AdPortal",
+			"member": "TeleportConfirmed",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "TeleportConfirmed",
+				"Parameters": [
+					{
+						"Name": "placeId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AdPortal",
+			"member": "TeleportRejected",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "TeleportRejected",
+				"Parameters": [
+					{
+						"Name": "shouldCooldown",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "rejectedByDistance",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AdService",
+			"member": "PortalPrompt",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PortalPrompt",
+				"Parameters": [
+					{
+						"Name": "destinationId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "portal",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "requiresNoButton",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "AllowInsertFreeAssets",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "RobloxScriptSecurity",
+						"Write": "RobloxScriptSecurity"
+					}
+				}
+			],
+			"value": {
+				"Category": "Behavior",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "AllowInsertFreeAssets",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "ComposeDecalAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ComposeDecalAsync",
+				"Parameters": [
+					{
+						"Name": "layers",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Decal"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AuroraScriptObject",
+			"member": "SetStateFieldValue",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetStateFieldValue",
+				"Parameters": [
+					{
+						"Name": "fieldName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WrapLayer",
+			"member": "MaxSize",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": false,
+						"CanSave": false
+					}
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Avatar"
+					]
+				},
+				"Category": "Data",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "MaxSize",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WrapLayer",
+			"member": "Offset",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": false,
+						"CanSave": false
+					}
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Avatar"
+					]
+				},
+				"Category": "Data",
+				"Default": "0, 0, 0",
+				"MemberType": "Property",
+				"Name": "Offset",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ClickDetector",
+			"member": "CursorIconContent",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Input"
+					]
+				},
+				"Category": "Image",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "CursorIconContent",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DragDetector",
+			"member": "ActivatedCursorIconContent",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Physics",
+						"Input"
+					]
+				},
+				"Category": "Image",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "ActivatedCursorIconContent",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FeatureRestrictionManager",
+			"member": "UpdateClientFeatureTimeout",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "UpdateClientFeatureTimeout",
+				"Parameters": [
+					{
+						"Name": "startTime",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "duration",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "featureRestrictionAbuseVector",
+						"Type": {
+							"Category": "Enum",
+							"Name": "FeatureRestrictionAbuseVector"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FeatureRestrictionManager",
+			"member": "UpdateFeatureTimeout",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "UpdateFeatureTimeout",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "startTime",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "duration",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "featureRestrictionAbuseVector",
+						"Type": {
+							"Category": "Enum",
+							"Name": "FeatureRestrictionAbuseVector"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "HapticEffect",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "HapticEffect",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IXPService",
+			"member": "ClearCreatorLayers",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ClearCreatorLayers",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "LocalUserSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IXPService",
+			"member": "GetCreatorLayerLoadingStatus",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCreatorLayerLoadingStatus",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "IXPLoadingStatus"
+				},
+				"Security": "LocalUserSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IXPService",
+			"member": "GetCreatorLayerVariables",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCreatorLayerVariables",
+				"Parameters": [
+					{
+						"Name": "layerName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "LocalUserSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IXPService",
+			"member": "GetCreatorStatusForLayer",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCreatorStatusForLayer",
+				"Parameters": [
+					{
+						"Name": "layerName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "IXPLoadingStatus?"
+				},
+				"Security": "LocalUserSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IXPService",
+			"member": "GetRegisteredCreatorLayersToStatus",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRegisteredCreatorLayersToStatus",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "LocalUserSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IXPService",
+			"member": "InitializeCreatorLayers",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "InitializeCreatorLayers",
+				"Parameters": [
+					{
+						"Name": "creatorId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "LocalUserSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IXPService",
+			"member": "LogCreatorLayerExposure",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LogCreatorLayerExposure",
+				"Parameters": [
+					{
+						"Name": "layerName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "LocalUserSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IXPService",
+			"member": "RegisterCreatorLayers",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterCreatorLayers",
+				"Parameters": [
+					{
+						"Name": "creatorLayers",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "LocalUserSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IXPService",
+			"member": "OnCreatorLayerLoadingStatusChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnCreatorLayerLoadingStatusChanged",
+				"Parameters": [
+					{
+						"Name": "status",
+						"Type": {
+							"Category": "Enum",
+							"Name": "IXPLoadingStatus"
+						}
+					}
+				],
+				"Security": "LocalUserSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AuroraScript",
+			"member": "ChangedThisFrame",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ChangedThisFrame",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Mouse",
+			"member": "IconContent",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Input"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "IconContent",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BackpackItem",
+			"member": "TextureContent",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "TextureContent",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "PromptRsvpToEventCompleted",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "eventId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "success",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "rsvpStatus",
+							"Type": {
+								"Category": "Enum",
+								"Name": "RsvpStatus"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "eventId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "success",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "rsvpStatus",
+							"Type": {
+								"Category": "Enum",
+								"Name": "RsvpStatus"
+							}
+						},
+						{
+							"Default": "None",
+							"Name": "previousRsvpStatus",
+							"Type": {
+								"Category": "Enum",
+								"Name": "RsvpStatus"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptRsvpToEventCompleted",
+				"Parameters": [
+					{
+						"Name": "eventId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "success",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "rsvpStatus",
+						"Type": {
+							"Category": "Enum",
+							"Name": "RsvpStatus"
+						}
+					},
+					{
+						"Default": "None",
+						"Name": "previousRsvpStatus",
+						"Type": {
+							"Category": "Enum",
+							"Name": "RsvpStatus"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatService",
+			"member": "SendExpChatLoadSuccess",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Chat"
+				],
+				"MemberType": "Function",
+				"Name": "SendExpChatLoadSuccess",
+				"Parameters": [
+					{
+						"Name": "loadingLatency",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatService",
+			"member": "SendExpChatMessageClientRendered",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Chat"
+				],
+				"MemberType": "Function",
+				"Name": "SendExpChatMessageClientRendered",
+				"Parameters": [
+					{
+						"Name": "textChatMessage",
+						"Type": {
+							"Category": "Class",
+							"Name": "TextChatMessage"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChatService",
+			"member": "SendExpChatWindowScroll",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Chat"
+				],
+				"MemberType": "Function",
+				"Name": "SendExpChatWindowScroll",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIDragDetector",
+			"member": "ActivatedCursorIconContent",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Image",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "ActivatedCursorIconContent",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIDragDetector",
+			"member": "CursorIconContent",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Image",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "CursorIconContent",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "MouseIconContent",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Input"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "MouseIconContent",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ExecutedRemoteCommand",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ExecutedRemoteCommand",
+				"Superclass": "Object",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ExecutedRemoteCommand",
+			"member": "RunMoreCode",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RunMoreCode",
+				"Parameters": [
+					{
+						"Name": "code",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "args",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ExecutedRemoteCommand",
+			"member": "SendUpdate",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SendUpdate",
+				"Parameters": [
+					{
+						"Name": "args",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ExecutedRemoteCommand",
+			"member": "Stop",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Stop",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ExecutedRemoteCommand",
+			"member": "ReceivedUpdate",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ReceivedUpdate",
+				"Parameters": [
+					{
+						"Name": "args",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "RemoteCommandService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "RemoteCommandService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RemoteCommandService",
+			"member": "ExecuteCommand",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ExecuteCommand",
+				"Parameters": [
+					{
+						"Name": "code",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "args",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "ExecutedRemoteCommand"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RemoteCommandService",
+			"member": "GetExecutingPlayer",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"RemoteCommand"
+				],
+				"MemberType": "Function",
+				"Name": "GetExecutingPlayer",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Player"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RemoteCommandService",
+			"member": "GetReceivedUpdateSignal",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"RemoteCommand"
+				],
+				"MemberType": "Function",
+				"Name": "GetReceivedUpdateSignal",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RBXScriptSignal"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RemoteCommandService",
+			"member": "GetStoppingSignal",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"RemoteCommand"
+				],
+				"MemberType": "Function",
+				"Name": "GetStoppingSignal",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RBXScriptSignal"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RemoteCommandService",
+			"member": "SendUpdate",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"RemoteCommand"
+				],
+				"MemberType": "Function",
+				"Name": "SendUpdate",
+				"Parameters": [
+					{
+						"Name": "args",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RemoteCommandService",
+			"member": "ExecuteCommandAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ExecuteCommandAsync",
+				"Parameters": [
+					{
+						"Name": "code",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "args",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RemoteCommandService",
+			"member": "CommandSentFromStudio",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "CommandSentFromStudio",
+				"Parameters": [
+					{
+						"Name": "commandId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "code",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "args",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RemoteCommandService",
+			"member": "OneshotCommandErrorFromRcc",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OneshotCommandErrorFromRcc",
+				"Parameters": [
+					{
+						"Name": "commandId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "error",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RemoteCommandService",
+			"member": "OneshotCommandResultFromRcc",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OneshotCommandResultFromRcc",
+				"Parameters": [
+					{
+						"Name": "commandId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "args",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RemoteCommandService",
+			"member": "OneshotCommandSentFromStudio",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OneshotCommandSentFromStudio",
+				"Parameters": [
+					{
+						"Name": "commandId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "code",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "args",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RemoteCommandService",
+			"member": "StandardOutMessageFromRcc",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "StandardOutMessageFromRcc",
+				"Parameters": [
+					{
+						"Name": "messageType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "MessageType"
+						}
+					},
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RemoteCommandService",
+			"member": "StopSentFromStudio",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "StopSentFromStudio",
+				"Parameters": [
+					{
+						"Name": "commandId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RemoteCommandService",
+			"member": "UpdateSentFromRcc",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "UpdateSentFromRcc",
+				"Parameters": [
+					{
+						"Name": "commandId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "args",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RemoteCommandService",
+			"member": "UpdateSentFromStudio",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "UpdateSentFromStudio",
+				"Parameters": [
+					{
+						"Name": "commandId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "args",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "SoundShimService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "SoundShimService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TextGenerator",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "TextGenerator",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextGenerator",
+			"member": "SystemPrompt",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "SystemPrompt",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextGenerator",
+			"member": "GenerateTextAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GenerateTextAsync",
+				"Parameters": [
+					{
+						"Name": "request",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "FeatureRestrictionAbuseVector",
+			"type": "Add",
+			"value": {
+				"Name": "FeatureRestrictionAbuseVector"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FeatureRestrictionAbuseVector",
+			"item": "ExperienceChat",
+			"type": "Add",
+			"value": {
+				"Name": "ExperienceChat",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FeatureRestrictionAbuseVector",
+			"item": "Communication",
+			"type": "Add",
+			"value": {
+				"Name": "Communication",
+				"Value": 1
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetFacesWithColor",
+			"part": "description",
+			"before": null,
+			"after": "Returns an array of face IDs that use the given color ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFacesWithColor",
+				"Parameters": [
+					{
+						"Name": "colorId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetFacesWithColor",
+			"part": "parameter",
+			"parameter": "colorId",
+			"before": null,
+			"after": "Color ID to find faces for.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFacesWithColor",
+				"Parameters": [
+					{
+						"Name": "colorId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetFacesWithColor",
+			"part": "return",
+			"before": null,
+			"after": "List of face IDs that use the provided color ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFacesWithColor",
+				"Parameters": [
+					{
+						"Name": "colorId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetFacesWithNormal",
+			"part": "description",
+			"before": null,
+			"after": "Returns an array of face IDs that use the given normal ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFacesWithNormal",
+				"Parameters": [
+					{
+						"Name": "normalId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetFacesWithNormal",
+			"part": "parameter",
+			"parameter": "normalId",
+			"before": null,
+			"after": "Normal ID to find faces for.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFacesWithNormal",
+				"Parameters": [
+					{
+						"Name": "normalId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetFacesWithNormal",
+			"part": "return",
+			"before": null,
+			"after": "List of face IDs that use the provided normal ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFacesWithNormal",
+				"Parameters": [
+					{
+						"Name": "normalId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetFacesWithUV",
+			"part": "description",
+			"before": null,
+			"after": "Returns an array of face IDs that use the given UV ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFacesWithUV",
+				"Parameters": [
+					{
+						"Name": "uvId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetFacesWithUV",
+			"part": "parameter",
+			"parameter": "uvId",
+			"before": null,
+			"after": "UV ID to find faces for.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFacesWithUV",
+				"Parameters": [
+					{
+						"Name": "uvId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetFacesWithUV",
+			"part": "return",
+			"before": null,
+			"after": "List of face IDs that use the provided UV ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFacesWithUV",
+				"Parameters": [
+					{
+						"Name": "uvId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexColors",
+			"part": "description",
+			"before": null,
+			"after": "Returns the color IDs of the faces attached to the given vertex.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexColors",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexColors",
+			"part": "parameter",
+			"parameter": "vertexId",
+			"before": null,
+			"after": "Stable vertex ID to find color IDs.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexColors",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexColors",
+			"part": "return",
+			"before": null,
+			"after": "Array of color IDs of faces attached to the given vertex.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexColors",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexFaceColor",
+			"part": "description",
+			"before": null,
+			"after": "Returns the color ID of a vertex/face pair.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexFaceColor",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "faceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexFaceColor",
+			"part": "parameter",
+			"parameter": "vertexId",
+			"before": null,
+			"after": "Stable vertex ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexFaceColor",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "faceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexFaceColor",
+			"part": "parameter",
+			"parameter": "faceId",
+			"before": null,
+			"after": "Stable face ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexFaceColor",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "faceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexFaceColor",
+			"part": "return",
+			"before": null,
+			"after": "Stable color ID of the vertex/face pair.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexFaceColor",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "faceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexFaceNormal",
+			"part": "description",
+			"before": null,
+			"after": "Returns the normal ID of a vertex/face pair.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexFaceNormal",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "faceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexFaceNormal",
+			"part": "parameter",
+			"parameter": "vertexId",
+			"before": null,
+			"after": "Stable vertex ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexFaceNormal",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "faceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexFaceNormal",
+			"part": "parameter",
+			"parameter": "faceId",
+			"before": null,
+			"after": "Stable face ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexFaceNormal",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "faceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexFaceNormal",
+			"part": "return",
+			"before": null,
+			"after": "Stable normal ID of the vertex/face pair.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexFaceNormal",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "faceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexFaceUV",
+			"part": "description",
+			"before": null,
+			"after": "Returns the UV ID of a vertex/face pair.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexFaceUV",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "faceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexFaceUV",
+			"part": "parameter",
+			"parameter": "vertexId",
+			"before": null,
+			"after": "Stable vertex ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexFaceUV",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "faceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexFaceUV",
+			"part": "parameter",
+			"parameter": "faceId",
+			"before": null,
+			"after": "Stable face ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexFaceUV",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "faceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexFaceUV",
+			"part": "return",
+			"before": null,
+			"after": "Stable UV ID of the vertex/face pair.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexFaceUV",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "faceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexFaces",
+			"part": "description",
+			"before": null,
+			"after": "Returns the face IDs of the faces attached to the given vertex.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexFaces",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexFaces",
+			"part": "parameter",
+			"parameter": "vertexId",
+			"before": null,
+			"after": "Stable vertex ID to find faces for.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexFaces",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexFaces",
+			"part": "return",
+			"before": null,
+			"after": "Array of face IDs attached to the given vertex.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexFaces",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexNormals",
+			"part": "description",
+			"before": null,
+			"after": "Returns the normal IDs of the faces attached to the given vertex.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexNormals",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexNormals",
+			"part": "parameter",
+			"parameter": "vertexId",
+			"before": null,
+			"after": "Stable vertex ID to find normal IDs.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexNormals",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexNormals",
+			"part": "return",
+			"before": null,
+			"after": "Array of normal IDs of faces attached to the given vertex.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexNormals",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexUVs",
+			"part": "description",
+			"before": null,
+			"after": "Returns the UV IDs of the faces attached to the given vertex.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexUVs",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexUVs",
+			"part": "parameter",
+			"parameter": "vertexId",
+			"before": null,
+			"after": "Stable vertex ID to find UV IDs.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexUVs",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVertexUVs",
+			"part": "return",
+			"before": null,
+			"after": "Array of UV IDs of faces attached to the given vertex.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertexUVs",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVerticesWithColor",
+			"part": "description",
+			"before": null,
+			"after": "Returns an array of face IDs that use the given color ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVerticesWithColor",
+				"Parameters": [
+					{
+						"Name": "colorId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVerticesWithColor",
+			"part": "parameter",
+			"parameter": "colorId",
+			"before": null,
+			"after": "Color ID to find faces for.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVerticesWithColor",
+				"Parameters": [
+					{
+						"Name": "colorId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVerticesWithColor",
+			"part": "return",
+			"before": null,
+			"after": "List of face IDs that use the provided color ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVerticesWithColor",
+				"Parameters": [
+					{
+						"Name": "colorId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVerticesWithNormal",
+			"part": "description",
+			"before": null,
+			"after": "Returns an array of vertex IDs that use the given normal ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVerticesWithNormal",
+				"Parameters": [
+					{
+						"Name": "normalId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVerticesWithNormal",
+			"part": "parameter",
+			"parameter": "normalId",
+			"before": null,
+			"after": "Normal ID to find vertices for.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVerticesWithNormal",
+				"Parameters": [
+					{
+						"Name": "normalId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVerticesWithNormal",
+			"part": "return",
+			"before": null,
+			"after": "List of vertex IDs that use the provided normal ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVerticesWithNormal",
+				"Parameters": [
+					{
+						"Name": "normalId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVerticesWithUV",
+			"part": "description",
+			"before": null,
+			"after": "Returns an array of vertex IDs that use the given UV ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVerticesWithUV",
+				"Parameters": [
+					{
+						"Name": "uvId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVerticesWithUV",
+			"part": "parameter",
+			"parameter": "uvId",
+			"before": null,
+			"after": "UV ID to find vertices for.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVerticesWithUV",
+				"Parameters": [
+					{
+						"Name": "uvId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "GetVerticesWithUV",
+			"part": "return",
+			"before": null,
+			"after": "List of vertex IDs that use the provided UV ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVerticesWithUV",
+				"Parameters": [
+					{
+						"Name": "uvId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetVertexFaceColor",
+			"part": "description",
+			"before": null,
+			"after": "Sets the color ID of a vertex/face pair.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetVertexFaceColor",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "faceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "colorId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetVertexFaceColor",
+			"part": "parameter",
+			"parameter": "vertexId",
+			"before": null,
+			"after": "Stable vertex ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetVertexFaceColor",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "faceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "colorId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetVertexFaceColor",
+			"part": "parameter",
+			"parameter": "faceId",
+			"before": null,
+			"after": "Stable face ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetVertexFaceColor",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "faceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "colorId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetVertexFaceColor",
+			"part": "parameter",
+			"parameter": "colorId",
+			"before": null,
+			"after": "Stable color ID to set for the vertex/face pair.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetVertexFaceColor",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "faceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "colorId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetVertexFaceNormal",
+			"part": "description",
+			"before": null,
+			"after": "Sets the normal ID of a vertex/face pair.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetVertexFaceNormal",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "faceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "normalId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetVertexFaceNormal",
+			"part": "parameter",
+			"parameter": "vertexId",
+			"before": null,
+			"after": "Stable vertex ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetVertexFaceNormal",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "faceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "normalId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetVertexFaceNormal",
+			"part": "parameter",
+			"parameter": "faceId",
+			"before": null,
+			"after": "Stable face ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetVertexFaceNormal",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "faceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "normalId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetVertexFaceNormal",
+			"part": "parameter",
+			"parameter": "normalId",
+			"before": null,
+			"after": "Stable normal ID to set for the vertex/face pair.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetVertexFaceNormal",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "faceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "normalId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetVertexFaceUV",
+			"part": "description",
+			"before": null,
+			"after": "Sets the UV ID of a vertex/face pair.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetVertexFaceUV",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "faceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "uvId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetVertexFaceUV",
+			"part": "parameter",
+			"parameter": "vertexId",
+			"before": null,
+			"after": "Stable vertex ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetVertexFaceUV",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "faceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "uvId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetVertexFaceUV",
+			"part": "parameter",
+			"parameter": "faceId",
+			"before": null,
+			"after": "Stable face ID.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetVertexFaceUV",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "faceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "uvId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableMesh",
+			"member": "SetVertexFaceUV",
+			"part": "parameter",
+			"parameter": "uvId",
+			"before": null,
+			"after": "Stable UV ID to set for the vertex/face pair.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetVertexFaceUV",
+				"Parameters": [
+					{
+						"Name": "vertexId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "faceId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "uvId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "CreateSurfaceAppearanceAsync",
+			"part": "parameter",
+			"parameter": "content",
+			"before": "Dictionary containing the following key-value pairs: <ul> <li><code>ColorMap</code> — A <code>Content</code> object that contains the color   map. Default is <code>nil</code>.</li> <li><code>MetalnessMap</code> — A <code>Content</code> object that contains the   metalness map. If more than one channel is present, only the red   channel is used. Default is <code>nil</code>.</li> <li><code>NormalMap</code> — A <code>Content</code> object that contains the   normal map. Default is <code>nil</code>.</li> <li><code>RoughnessMap</code> — A <code>Content</code> object that contains the   roughness map. If more than one channel is present, only the red   channel is used. Default is <code>nil</code>.</li> </ul>",
+			"after": "Dictionary containing the following key-value pairs: <ul> <li><code>ColorMap</code> — A <code>Content</code> object that contains the color   map. Default is <code>nil</code>.</li> <li><code>MetalnessMap</code> — A <code>Content</code> object that contains the   metalness map. If more than one channel is present, only the red   channel is used. Default is <code>nil</code>.</li> <li><code>NormalMap</code> — A <code>Content</code> object that contains the normal   map. Default is <code>nil</code>.</li> <li><code>RoughnessMap</code> — A <code>Content</code> object that contains the   roughness map. If more than one channel is present, only the red   channel is used. Default is <code>nil</code>.</li> </ul>",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateSurfaceAppearanceAsync",
+				"Parameters": [
+					{
+						"Name": "content",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "SurfaceAppearance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "SavePlaceAsync",
+			"part": "parameter",
+			"parameter": "requestParameters",
+			"before": null,
+			"after": "Optional dictionary that includes <code>SaveWithoutPublish</code>, a boolean indicating whether to save with publish or without publish, and <code>PlaceId</code>, the destination place ID to save over. An example usage would be: AssetService:SavePlaceAsync({PlaceId = 1, SaveWithoutPublish = true}). If PlaceId is not provided, the default behavior will save over the current original place which is calling SavePlaceAsync. If SaveWithoutPublish is not provided, the default behavior is SaveWithoutPublish=false.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SavePlaceAsync",
+				"Parameters": [
+					{
+						"Name": "requestParameters",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "ViewportDisplaySize",
+			"part": "description",
+			"before": null,
+			"after": "Read-only property which represents the physical rendering size of the viewport.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "ViewportDisplaySize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "DisplaySize"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Stats",
+			"member": "MemoryTrackingEnabled",
+			"part": "description",
+			"before": null,
+			"after": "An indication of whether memory tracking is enabled. This is guaranteed to be unchanged until the next time the Client is started.",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "MemoryTrackingEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Stats",
+			"member": "GetMemoryUsageMbAllCategories",
+			"part": "description",
+			"before": null,
+			"after": "Returns the number of megabytes that are being consumed by all available categories, or an empty array if <code>MemoryTrackingEnabled</code> is false.",
+			"value": {
+				"Capabilities": [
+					"InternalTest"
+				],
+				"MemberType": "Function",
+				"Name": "GetMemoryUsageMbAllCategories",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Stats",
+			"member": "GetMemoryUsageMbForTag",
+			"part": "description",
+			"before": "Returns the number of megabytes that are being consumed in the specified <code>DeveloperMemoryTag</code> category.",
+			"after": "Returns the number of megabytes that are being consumed in the specified <code>DeveloperMemoryTag</code> category, or 0 if <code>MemoryTrackingEnabled</code> is false.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetMemoryUsageMbForTag",
+				"Parameters": [
+					{
+						"Name": "tag",
+						"Type": {
+							"Category": "Enum",
+							"Name": "DeveloperMemoryTag"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Stats",
+			"member": "GetTotalMemoryUsageMb",
+			"part": "description",
+			"before": "Returns the total amount of memory being consumed by the current game session, in megabytes.",
+			"after": "Returns the total amount of memory being consumed by the current game session, in megabytes, or 0 if <code>MemoryTrackingEnabled</code> is false.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetTotalMemoryUsageMb",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "DisplaySize",
+			"part": "description",
+			"before": null,
+			"after": "This enum is used with <code>GuiService.ViewportDisplaySize</code> to indicate the internally-categorized rendering size of the viewport."
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DisplaySize",
+			"item": "Small",
+			"part": "description",
+			"before": null,
+			"after": "Viewport is categorized as small. Applies to most tablet/mobile/handheld devices.",
+			"value": {
+				"Name": "Small",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DisplaySize",
+			"item": "Medium",
+			"part": "description",
+			"before": null,
+			"after": "Viewport is categorized as medium. Applies to most laptops and monitors.",
+			"value": {
+				"Name": "Medium",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DisplaySize",
+			"item": "Large",
+			"part": "description",
+			"before": null,
+			"after": "Viewport is categorized as large. Applies to most TVs or larger.",
+			"value": {
+				"Name": "Large",
+				"Value": 2
+			}
+		}
+	]
+}

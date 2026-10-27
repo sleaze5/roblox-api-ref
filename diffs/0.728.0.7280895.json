@@ -1,0 +1,2434 @@
+{
+	"from": {
+		"version": "0.727.0.7271204",
+		"hash": "71452ee9293e4e08"
+	},
+	"to": {
+		"version": "0.728.0.7280895",
+		"hash": "8b44d8f2067642d8"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AnimationTrack",
+			"member": "ResetGraph",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Animation"
+				],
+				"MemberType": "Function",
+				"Name": "ResetGraph",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarAccessoryRules",
+			"member": "EnableEmissives",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "EnableEmissives",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "GenerateAvatar2DPreviewAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "avatarGeneration2dPreviewParams",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "avatarGeneration2dPreviewParams",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						},
+						{
+							"Name": "progressCallback",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Function?"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"Capabilities": [
+					"DynamicGeneration"
+				],
+				"MemberType": "Function",
+				"Name": "GenerateAvatar2DPreviewAsync",
+				"Parameters": [
+					{
+						"Name": "avatarGeneration2dPreviewParams",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Name": "progressCallback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "GenerateAvatarAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "avatarGenerationParams",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "avatarGenerationParams",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						},
+						{
+							"Name": "progressCallback",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Function?"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"Capabilities": [
+					"DynamicGeneration"
+				],
+				"MemberType": "Function",
+				"Name": "GenerateAvatarAsync",
+				"Parameters": [
+					{
+						"Name": "avatarGenerationParams",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Name": "progressCallback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "NoPromptUpdateOutfit",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "outfitId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "humanoidDescription",
+							"Type": {
+								"Category": "Class",
+								"Name": "HumanoidDescription"
+							}
+						},
+						{
+							"Name": "rigType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "HumanoidRigType"
+							}
+						},
+						{
+							"Default": "0",
+							"Name": "gearAssetId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "outfitId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "humanoidDescription",
+							"Type": {
+								"Category": "Class",
+								"Name": "HumanoidDescription"
+							}
+						},
+						{
+							"Name": "rigType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "HumanoidRigType"
+							}
+						},
+						{
+							"Default": "0",
+							"Name": "gearAssetId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Default": "nil",
+							"Name": "outfitOptions",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "NoPromptUpdateOutfit",
+				"Parameters": [
+					{
+						"Name": "outfitId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "humanoidDescription",
+						"Type": {
+							"Category": "Class",
+							"Name": "HumanoidDescription"
+						}
+					},
+					{
+						"Name": "rigType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "HumanoidRigType"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "gearAssetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "outfitOptions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "PerformCreateOutfitWithDescription",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "humanoidDescription",
+							"Type": {
+								"Category": "Class",
+								"Name": "HumanoidDescription"
+							}
+						},
+						{
+							"Name": "name",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "humanoidDescription",
+							"Type": {
+								"Category": "Class",
+								"Name": "HumanoidDescription"
+							}
+						},
+						{
+							"Name": "name",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "nil",
+							"Name": "profileConfiguration",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "PerformCreateOutfitWithDescription",
+				"Parameters": [
+					{
+						"Name": "humanoidDescription",
+						"Type": {
+							"Category": "Class",
+							"Name": "HumanoidDescription"
+						}
+					},
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "profileConfiguration",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "PerformUpdateOutfit",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "humanoidDescription",
+							"Type": {
+								"Category": "Class",
+								"Name": "HumanoidDescription"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "humanoidDescription",
+							"Type": {
+								"Category": "Class",
+								"Name": "HumanoidDescription"
+							}
+						},
+						{
+							"Default": "nil",
+							"Name": "profileConfiguration",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "PerformUpdateOutfit",
+				"Parameters": [
+					{
+						"Name": "humanoidDescription",
+						"Type": {
+							"Category": "Class",
+							"Name": "HumanoidDescription"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "profileConfiguration",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "NoPromptApplyProfileConfiguration",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "NoPromptApplyProfileConfiguration",
+				"Parameters": [
+					{
+						"Name": "profileConfiguration",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "PromptApplyProfileConfigurationCompleted",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptApplyProfileConfigurationCompleted",
+				"Parameters": [
+					{
+						"Name": "result",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AvatarPromptResult"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationConstraint",
+			"member": "EnableSkinning",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Physics",
+						"Animation"
+					]
+				},
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "EnableSkinning",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BallSocketConstraint",
+			"member": "EnableSkinning",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Physics"
+					]
+				},
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "EnableSkinning",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Decal",
+			"member": "AutoLocalize",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					]
+				},
+				"Category": "Localization",
+				"MemberType": "Property",
+				"Name": "AutoLocalize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChannelWindow",
+			"member": "IsRendering",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI",
+						"Chat"
+					]
+				},
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "IsRendering",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "Unsafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoFrame",
+			"member": "InternalVideoUsage",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden"
+					]
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio",
+						"UI",
+						"InternalTest"
+					],
+					"Write": [
+						"InternalTest"
+					]
+				},
+				"Category": "Video",
+				"MemberType": "Property",
+				"Name": "InternalVideoUsage",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "InternalVideoUsage"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoFrame",
+			"member": "MaximumResolution",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden"
+					]
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio",
+						"UI",
+						"InternalTest"
+					],
+					"Write": [
+						"InternalTest"
+					]
+				},
+				"Category": "Video",
+				"MemberType": "Property",
+				"Name": "MaximumResolution",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "VideoSampleSize"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Motor6D",
+			"member": "EnableSkinning",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Physics"
+					]
+				},
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "EnableSkinning",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MeshPart",
+			"member": "DoubleSided",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "PluginSecurity"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "None"
+					}
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					]
+				},
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "DoubleSided",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "PhysicsImprovedSleep",
+			"type": "Remove",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "PhysicsImprovedSleep",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "RolloutState"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "NotifyAgeCheckPassed",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Players"
+				],
+				"MemberType": "Function",
+				"Name": "NotifyAgeCheckPassed",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "GetProfileConfigurationFromUserIdAsync",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"AvatarAppearance",
+					"Players"
+				],
+				"MemberType": "Function",
+				"Name": "GetProfileConfigurationFromUserIdAsync",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "User"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "CameraZoomToMousePosition",
+			"type": "Add",
+			"value": {
+				"Category": "Camera",
+				"MemberType": "Property",
+				"Name": "CameraZoomToMousePosition",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "GetTestControlSchema",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"InternalTest"
+				],
+				"MemberType": "Function",
+				"Name": "GetTestControlSchema",
+				"Parameters": [
+					{
+						"Name": "providerName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "GetTestControls",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"InternalTest"
+				],
+				"MemberType": "Function",
+				"Name": "GetTestControls",
+				"Parameters": [
+					{
+						"Name": "providerName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "ResetTestControl",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"InternalTest"
+				],
+				"MemberType": "Function",
+				"Name": "ResetTestControl",
+				"Parameters": [
+					{
+						"Name": "providerName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "controlName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "SetTestControl",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"InternalTest"
+				],
+				"MemberType": "Function",
+				"Name": "SetTestControl",
+				"Parameters": [
+					{
+						"Name": "providerName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "controlName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "StartVideoCaptureAsync",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"InternalTest"
+				],
+				"MemberType": "Function",
+				"Name": "StartVideoCaptureAsync",
+				"Parameters": [
+					{
+						"Default": "",
+						"Name": "artifactName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "StopVideoCaptureAsync",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"InternalTest"
+				],
+				"MemberType": "Function",
+				"Name": "StopVideoCaptureAsync",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserGameSettings",
+			"member": "VoiceChatVolume",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "VoiceChatVolume",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoPlayer",
+			"member": "InternalVideoUsage",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden"
+					]
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio",
+						"UI",
+						"InternalTest"
+					],
+					"Write": [
+						"InternalTest"
+					]
+				},
+				"Category": "Playback",
+				"MemberType": "Property",
+				"Name": "InternalVideoUsage",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "InternalVideoUsage"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoPlayer",
+			"member": "MaximumResolution",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden"
+					]
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio",
+						"UI",
+						"InternalTest"
+					],
+					"Write": [
+						"InternalTest"
+					]
+				},
+				"Category": "Playback",
+				"MemberType": "Property",
+				"Name": "MaximumResolution",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "VideoSampleSize"
+				}
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "EditableImage",
+			"member": "DrawCircle",
+			"part": "parameter",
+			"parameter": "combineType",
+			"before": "How the pixels of the source image are blended with the pixels of the added image.",
+			"after": "How the drawn pixels (source) are combined with the existing pixels of this image (destination).",
+			"value": {
+				"Capabilities": [
+					"DynamicGeneration"
+				],
+				"MemberType": "Function",
+				"Name": "DrawCircle",
+				"Parameters": [
+					{
+						"Name": "center",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "radius",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "color",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Color3"
+						}
+					},
+					{
+						"Name": "transparency",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "combineType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ImageCombineType"
+						}
+					},
+					{
+						"Default": "Enabled",
+						"Name": "antiAliasing",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AntiAliasing"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableImage",
+			"member": "DrawImage",
+			"part": "parameter",
+			"parameter": "position",
+			"before": "Position at which the top-left corner of the added image will be drawn.",
+			"after": "Position at which the top-left corner of the source image will be drawn.",
+			"value": {
+				"Capabilities": [
+					"DynamicGeneration"
+				],
+				"MemberType": "Function",
+				"Name": "DrawImage",
+				"Parameters": [
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "image",
+						"Type": {
+							"Category": "Class",
+							"Name": "EditableImage"
+						}
+					},
+					{
+						"Name": "combineType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ImageCombineType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableImage",
+			"member": "DrawImage",
+			"part": "parameter",
+			"parameter": "image",
+			"before": "The <code>EditableImage</code> to draw into this <code>EditableImage</code>.",
+			"after": "The source <code>EditableImage</code> to draw into this <code>EditableImage</code>.",
+			"value": {
+				"Capabilities": [
+					"DynamicGeneration"
+				],
+				"MemberType": "Function",
+				"Name": "DrawImage",
+				"Parameters": [
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "image",
+						"Type": {
+							"Category": "Class",
+							"Name": "EditableImage"
+						}
+					},
+					{
+						"Name": "combineType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ImageCombineType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableImage",
+			"member": "DrawImage",
+			"part": "parameter",
+			"parameter": "combineType",
+			"before": "How the pixels of the source image should be blended with the pixels of the added image.",
+			"after": "How the pixels of the source image are combined with the existing pixels of this image (destination).",
+			"value": {
+				"Capabilities": [
+					"DynamicGeneration"
+				],
+				"MemberType": "Function",
+				"Name": "DrawImage",
+				"Parameters": [
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "image",
+						"Type": {
+							"Category": "Class",
+							"Name": "EditableImage"
+						}
+					},
+					{
+						"Name": "combineType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ImageCombineType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableImage",
+			"member": "DrawLine",
+			"part": "parameter",
+			"parameter": "combineType",
+			"before": "How the pixels of the source image are blended with the pixels of the added image.",
+			"after": "How the drawn pixels (source) are combined with the existing pixels of this image (destination).",
+			"value": {
+				"Capabilities": [
+					"DynamicGeneration"
+				],
+				"MemberType": "Function",
+				"Name": "DrawLine",
+				"Parameters": [
+					{
+						"Name": "p1",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "p2",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "color",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Color3"
+						}
+					},
+					{
+						"Name": "transparency",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "combineType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ImageCombineType"
+						}
+					},
+					{
+						"Default": "Enabled",
+						"Name": "antiAliasing",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AntiAliasing"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableImage",
+			"member": "DrawRectangle",
+			"part": "parameter",
+			"parameter": "combineType",
+			"before": "How the pixels of the source image are blended with the pixels of the added image.",
+			"after": "How the drawn pixels (source) are combined with the existing pixels of this image (destination).",
+			"value": {
+				"Capabilities": [
+					"DynamicGeneration"
+				],
+				"MemberType": "Function",
+				"Name": "DrawRectangle",
+				"Parameters": [
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "size",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "color",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Color3"
+						}
+					},
+					{
+						"Name": "transparency",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "combineType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ImageCombineType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AccessoryDescription",
+			"member": "Puffiness",
+			"part": "description",
+			"before": "The layered clothing puffiness, if the <code>Accessory</code> is layered.",
+			"after": "<strong>Deprecated:</strong> <br>The layered clothing puffiness, if the <code>Accessory</code> is layered.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"AvatarAppearance"
+					]
+				},
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Puffiness",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "GenerateAvatar2DPreviewAsync",
+			"part": "parameter",
+			"parameter": "progressCallback",
+			"before": null,
+			"after": "Optional callback function that will be invoked periodically with a progressInfo table with the overall progress (from 0 to 1). Type: <code>(progressInfo: { Progress: number }) -&gt; ()</code>",
+			"value": {
+				"Capabilities": [
+					"DynamicGeneration"
+				],
+				"MemberType": "Function",
+				"Name": "GenerateAvatar2DPreviewAsync",
+				"Parameters": [
+					{
+						"Name": "avatarGeneration2dPreviewParams",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Name": "progressCallback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarCreationService",
+			"member": "GenerateAvatarAsync",
+			"part": "parameter",
+			"parameter": "progressCallback",
+			"before": null,
+			"after": "Optional callback function that will be invoked periodically with a progressInfo table with the overall progress (from 0 to 1). Type: <code>(progressInfo: { Progress: number }) -&gt; ()</code>",
+			"value": {
+				"Capabilities": [
+					"DynamicGeneration"
+				],
+				"MemberType": "Function",
+				"Name": "GenerateAvatarAsync",
+				"Parameters": [
+					{
+						"Name": "avatarGenerationParams",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Name": "progressCallback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WrapLayer",
+			"member": "Puffiness",
+			"part": "description",
+			"before": "Controls how much underlying clothing items inflate the current clothing item.",
+			"after": "<strong>Deprecated:</strong> <br>Controls how much underlying clothing items inflate the current clothing item.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"AvatarAppearance"
+					]
+				},
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "Puffiness",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WrapLayer",
+			"member": "ShrinkFactor",
+			"part": "description",
+			"before": "Allows slight shrinking/expanding of the resulting render mesh, without affecting any other layers.",
+			"after": "<strong>Deprecated:</strong> <br>Allows slight shrinking/expanding of the resulting render mesh, without affecting any other layers.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"AvatarAppearance"
+					]
+				},
+				"Category": "Tuning",
+				"MemberType": "Property",
+				"Name": "ShrinkFactor",
+				"Security": {
+					"Read": "None",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WrapTarget",
+			"member": "Stiffness",
+			"part": "description",
+			"before": "Defines how much the body mesh can be compressed by clothing.",
+			"after": "<strong>Deprecated:</strong> <br>Defines how much the body mesh can be compressed by clothing.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"AvatarAppearance"
+					]
+				},
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "Stiffness",
+				"Security": {
+					"Read": "None",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AnimationConstraint",
+			"part": "description",
+			"before": "Aligns two <code>BaseParts</code> with an animate-able kinematic or force-based joint.",
+			"after": "Aligns two <code>BaseParts</code> with an animate-able kinematic or force-based joint that supports physical simulation (ragdoll, arm strength). The default joint type for R15 avatar rigs."
+		},
+		{
+			"element": "Class",
+			"class": "DigitsRigDescription",
+			"part": "description",
+			"before": null,
+			"after": "Maps the 15 phalanx joints of one hand (5 fingers, 3 joints each) and exposes forward- and inverse-kinematics helpers for controlling finger poses at runtime."
+		},
+		{
+			"element": "Member",
+			"class": "GuiButton",
+			"member": "SecondaryActivated",
+			"part": "description",
+			"before": null,
+			"after": "Fires when the button's \"secondary\" input is activated.",
+			"value": {
+				"Capabilities": [
+					"UI"
+				],
+				"MemberType": "Event",
+				"Name": "SecondaryActivated",
+				"Parameters": [
+					{
+						"Name": "inputObject",
+						"Type": {
+							"Category": "Class",
+							"Name": "InputObject"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "GetMoveVelocity",
+			"part": "description",
+			"before": null,
+			"after": "Returns the current intended movement velocity of the Humanoid.",
+			"value": {
+				"Capabilities": [
+					"AvatarBehavior"
+				],
+				"MemberType": "Function",
+				"Name": "GetMoveVelocity",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "GetMoveVelocity",
+			"part": "return",
+			"before": null,
+			"after": "A <code>Vector3</code> representing the Humanoid's intended movement velocity in world space.",
+			"value": {
+				"Capabilities": [
+					"AvatarBehavior"
+				],
+				"MemberType": "Function",
+				"Name": "GetMoveVelocity",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "HumanoidRigDescription",
+			"part": "description",
+			"before": null,
+			"after": "Stores the joint mapping, T-pose, and per-joint properties for a 22-joint bipedal character rig. Joints may be <code>AnimationConstraint</code>, <code>Motor6D</code>, or <code>Bone</code> instances."
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "AutoRig",
+			"part": "parameter",
+			"parameter": "character",
+			"before": "Instance?",
+			"after": null,
+			"value": {
+				"Capabilities": [
+					"Animation"
+				],
+				"MemberType": "Function",
+				"Name": "AutoRig",
+				"Parameters": [
+					{
+						"Name": "character",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputAction",
+			"member": "Fire",
+			"part": "description",
+			"before": "Updates the <code>InputAction</code> to the given state and fires the appropriate signals.",
+			"after": "<strong>Deprecated:</strong> Use <code>InputBinding:Fire()</code> with a <code>Scriptable</code> binding instead.<br>Updates the <code>InputAction</code> to the given state and fires the appropriate signals.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Function",
+				"Name": "Fire",
+				"Parameters": [
+					{
+						"Name": "state",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"SimulationAccess": true,
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputBinding",
+			"member": "Type",
+			"part": "description",
+			"before": null,
+			"after": "Determines whether this binding is triggered by hardware input or programmatically via <code>Fire()</code>.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Input"
+					],
+					"Write": [
+						"Input"
+					]
+				},
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "Type",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "InputBindingType"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Motor6D",
+			"part": "description",
+			"before": "Creates an animatable joint between two <code>BaseParts</code>.",
+			"after": "Creates an animatable joint between two <code>BaseParts</code>. Superseded by <code>AnimationConstraint</code> for avatar/character rigs. Motor6D is no longer used by default for player characters when <code>AvatarJointUpgrade</code> is enabled."
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "BreakJoints",
+			"part": "description",
+			"before": "<strong>Deprecated:</strong> <br>Breaks any surface connection with any adjacent part, including <code>Weld</code> and other <code>JointInstance</code>.",
+			"after": "<strong>Deprecated:</strong> This method is deprecated. To break specific joints, iterate over the part's connections using <code>BasePart:GetJoints()</code> and call <code>Instance:Destroy()</code> on the joints you want to remove.<br>Breaks any surface connection with any adjacent part, including <code>Weld</code> and other <code>JointInstance</code>.",
+			"value": {
+				"MemberType": "Function",
+				"Name": "BreakJoints",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"SimulationAccess": true,
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "ExperimentalSolverIsEnabled",
+			"part": "description",
+			"before": "Returns <code>true</code> if the experimental physics solver is enabled.",
+			"after": null,
+			"value": {
+				"MemberType": "Function",
+				"Name": "ExperimentalSolverIsEnabled",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "LocalUserSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "ExperimentalSolverIsEnabled",
+			"part": "return",
+			"before": "<code>true</code> if the experimental physics solver is enabled, <code>false</code> otherwise.",
+			"after": null,
+			"value": {
+				"MemberType": "Function",
+				"Name": "ExperimentalSolverIsEnabled",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "LocalUserSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "GetFriendsOnline",
+			"part": "description",
+			"before": "<strong>Deprecated:</strong> This method has been superseded by <code>GetFriendsOnlineAsync()</code>.<br>Returns a dictionary of online friends. Returns the product information of an asset using its asset ID.",
+			"after": "<strong>Deprecated:</strong> This method has been superseded by <code>GetFriendsOnlineAsync()</code>.<br>Returns a dictionary of online friends.",
+			"value": {
+				"Capabilities": [
+					"Players",
+					"Social"
+				],
+				"MemberType": "Function",
+				"Name": "GetFriendsOnline",
+				"Parameters": [
+					{
+						"Default": "200",
+						"Name": "maxFriends",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields",
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "GetRankInGroup",
+			"part": "description",
+			"before": "<strong>Deprecated:</strong> <br>Returns the player's rank in the group as an integer.",
+			"after": "<strong>Deprecated:</strong> This method has been superseded by <code>GetRankInGroupAsync()</code>.<br>Returns the player's rank in the group as an integer.",
+			"value": {
+				"Capabilities": [
+					"Players",
+					"Groups"
+				],
+				"MemberType": "Function",
+				"Name": "GetRankInGroup",
+				"Parameters": [
+					{
+						"Name": "groupId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields",
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "GetRankInGroupAsync",
+			"part": "description",
+			"before": "Returns the player's rank in the group as an integer.",
+			"after": "<strong>Deprecated:</strong> This method only returns a single role rank and may produce arbitrary results when a user holds multiple roles. Use <code>GroupService:GetRolesInGroupAsync()</code> instead, which returns all roles.<br>Returns the player's rank in the group as an integer.",
+			"value": {
+				"Capabilities": [
+					"Players",
+					"Groups"
+				],
+				"MemberType": "Function",
+				"Name": "GetRankInGroupAsync",
+				"Parameters": [
+					{
+						"Name": "groupId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields",
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "GetRoleInGroupAsync",
+			"part": "description",
+			"before": "Returns the player's role in the group as a string, or <code>Guest</code> if the player isn't part of the group.",
+			"after": "<strong>Deprecated:</strong> This method only returns a single role name and may produce arbitrary results when a user holds multiple roles. Use <code>GroupService:GetRolesInGroupAsync()</code> instead, which returns all roles.<br>Returns the player's role in the group as a string, or <code>Guest</code> if the player isn't part of the group.",
+			"value": {
+				"Capabilities": [
+					"Players",
+					"Groups"
+				],
+				"MemberType": "Function",
+				"Name": "GetRoleInGroupAsync",
+				"Parameters": [
+					{
+						"Name": "groupId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields",
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "ClassicDeath",
+			"part": "description",
+			"before": null,
+			"after": "Controls whether the character uses the classic death behavior when the Humanoid's health reaches zero.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Players"
+					]
+				},
+				"Category": "Character",
+				"MemberType": "Property",
+				"Name": "ClassicDeath",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "LuaCharacterController",
+			"part": "description",
+			"before": null,
+			"after": "Sets the character controller mode used by the player's character.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Players"
+					]
+				},
+				"Category": "Controls",
+				"MemberType": "Property",
+				"Name": "LuaCharacterController",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "CharacterControlMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "GetStringForKeyCode",
+			"part": "description",
+			"before": "Returns a string representing a key the user should press in order to input a given <code>KeyCode</code>.",
+			"after": "Returns a string representing a key the user should press in order to input a given <code>KeyCode</code>, optionally in an abbreviated format.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Function",
+				"Name": "GetStringForKeyCode",
+				"Parameters": [
+					{
+						"Name": "keyCode",
+						"Type": {
+							"Category": "Enum",
+							"Name": "KeyCode"
+						}
+					},
+					{
+						"Default": "Default",
+						"Name": "format",
+						"Type": {
+							"Category": "Enum",
+							"Name": "KeyCodeStringFormat"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "GetStringForKeyCode",
+			"part": "parameter",
+			"parameter": "keyCode",
+			"before": null,
+			"after": "The <code>KeyCode</code> to get the display string for.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Function",
+				"Name": "GetStringForKeyCode",
+				"Parameters": [
+					{
+						"Name": "keyCode",
+						"Type": {
+							"Category": "Enum",
+							"Name": "KeyCode"
+						}
+					},
+					{
+						"Default": "Default",
+						"Name": "format",
+						"Type": {
+							"Category": "Enum",
+							"Name": "KeyCodeStringFormat"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "GetStringForKeyCode",
+			"part": "parameter",
+			"parameter": "format",
+			"before": null,
+			"after": "An <code>KeyCodeStringFormat</code> value that controls the format of the returned string. Defaults to <code>KeyCodeStringFormat.Default</code>. Pass <code>KeyCodeStringFormat.Abbreviated</code> to get shortened labels suitable for compact UI such as <code>\"Bksp\"</code>, <code>\"LCtrl\"</code>, or <code>\"Esc\"</code>.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Function",
+				"Name": "GetStringForKeyCode",
+				"Parameters": [
+					{
+						"Name": "keyCode",
+						"Type": {
+							"Category": "Enum",
+							"Name": "KeyCode"
+						}
+					},
+					{
+						"Default": "Default",
+						"Name": "format",
+						"Type": {
+							"Category": "Enum",
+							"Name": "KeyCodeStringFormat"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "GetStringForKeyCode",
+			"part": "return",
+			"before": null,
+			"after": "A string representing the key the user should press for the given key code, formatted according to the specified <code>KeyCodeStringFormat</code>.",
+			"value": {
+				"Capabilities": [
+					"Input"
+				],
+				"MemberType": "Function",
+				"Name": "GetStringForKeyCode",
+				"Parameters": [
+					{
+						"Name": "keyCode",
+						"Type": {
+							"Category": "Enum",
+							"Name": "KeyCode"
+						}
+					},
+					{
+						"Default": "Default",
+						"Name": "format",
+						"Type": {
+							"Category": "Enum",
+							"Name": "KeyCodeStringFormat"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CatalogCategoryFilter",
+			"item": "Collectibles",
+			"part": "description",
+			"before": null,
+			"after": "<strong>Deprecated:</strong> ",
+			"value": {
+				"Name": "Collectibles",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "InputBindingType",
+			"part": "description",
+			"before": "This enum is used by <code>InputBinding.BindingType</code> to determine whether the binding responds to hardware input or is driven programmatically.",
+			"after": "This enum is used by <code>InputBinding.Type</code> to determine whether the binding responds to hardware input or is driven programmatically."
+		},
+		{
+			"element": "Enum",
+			"enum": "KeyCodeStringFormat",
+			"part": "description",
+			"before": null,
+			"after": "Determines the string format returned by <code>UserInputService:GetStringForKeyCode()</code>."
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCodeStringFormat",
+			"item": "Default",
+			"part": "description",
+			"before": null,
+			"after": "Default behavior which returns the full key string, for example <code>\"LeftControl\"</code>, <code>\"Backspace\"</code>, or <code>\"Escape\"</code>.",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCodeStringFormat",
+			"item": "Abbreviated",
+			"part": "description",
+			"before": null,
+			"after": "Returns a shortened key string when available, for example <code>\"LCtrl\"</code>, <code>\"Bksp\"</code>, or <code>\"Esc\"</code>.",
+			"value": {
+				"Name": "Abbreviated",
+				"Value": 1
+			}
+		}
+	]
+}
