@@ -1,0 +1,2012 @@
+{
+	"from": {
+		"version": "0.739.0.7390687",
+		"hash": "55808de4b1914919"
+	},
+	"to": {
+		"version": "0.740.19.7400003",
+		"hash": "6b0e880a1a144428"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "EditableImage",
+			"member": "DrawImageProjected",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "mesh",
+							"Type": {
+								"Category": "Class",
+								"Name": "EditableMesh"
+							}
+						},
+						{
+							"Name": "projection",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						},
+						{
+							"Name": "brushConfig",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "projectionSource",
+							"Type": {
+								"Category": "Class",
+								"Name": "Object"
+							}
+						},
+						{
+							"Name": "projection",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						},
+						{
+							"Name": "brushConfig",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"Capabilities": [
+					"DynamicGeneration"
+				],
+				"MemberType": "Function",
+				"Name": "DrawImageProjected",
+				"Parameters": [
+					{
+						"Name": "projectionSource",
+						"Type": {
+							"Category": "Class",
+							"Name": "Object"
+						}
+					},
+					{
+						"Name": "projection",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Name": "brushConfig",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EditableImage",
+			"member": "SampleImageProjected",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "sourceMesh",
+							"Type": {
+								"Category": "Class",
+								"Name": "EditableMesh"
+							}
+						},
+						{
+							"Name": "sourceTexture",
+							"Type": {
+								"Category": "Class",
+								"Name": "EditableImage"
+							}
+						},
+						{
+							"Name": "projectionConfig",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						},
+						{
+							"Name": "brushConfig",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "projectionSource",
+							"Type": {
+								"Category": "Class",
+								"Name": "Object"
+							}
+						},
+						{
+							"Name": "sourceTexture",
+							"Type": {
+								"Category": "Class",
+								"Name": "EditableImage"
+							}
+						},
+						{
+							"Name": "projectionConfig",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						},
+						{
+							"Name": "brushConfig",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"Capabilities": [
+					"DynamicGeneration"
+				],
+				"MemberType": "Function",
+				"Name": "SampleImageProjected",
+				"Parameters": [
+					{
+						"Name": "projectionSource",
+						"Type": {
+							"Category": "Class",
+							"Name": "Object"
+						}
+					},
+					{
+						"Name": "sourceTexture",
+						"Type": {
+							"Category": "Class",
+							"Name": "EditableImage"
+						}
+					},
+					{
+						"Name": "projectionConfig",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Name": "brushConfig",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetQualityService",
+			"member": "FetchAssetQualitySummaryFromJobIdV2Async",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FetchAssetQualitySummaryFromJobIdV2Async",
+				"Parameters": [
+					{
+						"Name": "jobId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "desiredQualityChecks",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioTextToSpeech",
+			"member": "AutoLocalize",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Audio"
+					],
+					"Write": [
+						"Audio"
+					]
+				},
+				"Category": "Asset",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "AutoLocalize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "StopVideoCaptureForMCP",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Capture"
+				],
+				"MemberType": "Function",
+				"Name": "StopVideoCaptureForMCP",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CaptureService",
+			"member": "StartVideoCaptureForMCPAsync",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Capture"
+				],
+				"MemberType": "Function",
+				"Name": "StartVideoCaptureForMCPAsync",
+				"Parameters": [
+					{
+						"Name": "onCaptureReady",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "VideoCaptureStartedResult"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputAction",
+			"member": "DisplayName",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Input"
+					],
+					"Write": [
+						"Input"
+					]
+				},
+				"Category": "Display",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "DisplayName",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"SimulationAccess": true,
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Lighting",
+			"member": "LightingStyle",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Capabilities",
+					"before": {
+						"Read": [
+							"Environment"
+						]
+					},
+					"after": {
+						"Read": [
+							"Environment"
+						],
+						"Write": [
+							"PluginOrOpenCloud"
+						]
+					}
+				},
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "RobloxScriptSecurity"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "None"
+					}
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Environment"
+					],
+					"Write": [
+						"PluginOrOpenCloud"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "Realistic",
+				"MemberType": "Property",
+				"Name": "LightingStyle",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "LightingStyle"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Lighting",
+			"member": "PrioritizeLightingQuality",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Capabilities",
+					"before": {
+						"Read": [
+							"Environment"
+						]
+					},
+					"after": {
+						"Read": [
+							"Environment"
+						],
+						"Write": [
+							"PluginOrOpenCloud"
+						]
+					}
+				},
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "RobloxScriptSecurity"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "None"
+					}
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Environment"
+					],
+					"Write": [
+						"PluginOrOpenCloud"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "PrioritizeLightingQuality",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LocalizationService",
+			"member": "GetTranslatorForPlayer",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated",
+						{
+							"PreferredDescriptorName": "GetTranslatorForPlayerAsync",
+							"ThreadSafety": "Unknown"
+						}
+					]
+				}
+			],
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "GetTranslatorForPlayer",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "GetTranslatorForPlayerAsync",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "RefreshBulkPurchase",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RefreshBulkPurchase",
+				"Parameters": [
+					{
+						"Name": "batchPurchaseAuthToken",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptBulkPurchaseRefreshed",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptBulkPurchaseRefreshed",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "status",
+						"Type": {
+							"Category": "Enum",
+							"Name": "MarketplaceBulkPurchasePromptStatus"
+						}
+					},
+					{
+						"Name": "response",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "RefreshBulkPurchaseRequested",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "RefreshBulkPurchaseRequested",
+				"Parameters": [
+					{
+						"Name": "playerId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "batchPurchaseAuthToken",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MomentsService",
+			"member": "FetchPostAsync",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Capture"
+				],
+				"MemberType": "Function",
+				"Name": "FetchPostAsync",
+				"Parameters": [
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "buffer"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TriangleMeshPart",
+			"member": "CollisionFidelity",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Capabilities",
+					"before": {
+						"Read": [
+							"Basic"
+						]
+					},
+					"after": {
+						"Read": [
+							"Basic"
+						],
+						"Write": [
+							"PluginOrOpenCloud"
+						]
+					}
+				},
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "PluginSecurity"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "None"
+					}
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					],
+					"Write": [
+						"PluginOrOpenCloud"
+					]
+				},
+				"Category": "Collision",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "CollisionFidelity",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "CollisionFidelity"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TriangleMeshPart",
+			"member": "FluidFidelity",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Capabilities",
+					"before": {
+						"Read": [
+							"Basic"
+						]
+					},
+					"after": {
+						"Read": [
+							"Basic"
+						],
+						"Write": [
+							"PluginOrOpenCloud"
+						]
+					}
+				},
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "PluginSecurity"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "None"
+					}
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					],
+					"Write": [
+						"PluginOrOpenCloud"
+					]
+				},
+				"Category": "Behavior",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "FluidFidelity",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "FluidFidelity"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PartOperation",
+			"member": "RenderFidelity",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Capabilities",
+					"before": {
+						"Read": [
+							"Basic",
+							"CSG"
+						]
+					},
+					"after": {
+						"Read": [
+							"Basic",
+							"CSG"
+						],
+						"Write": [
+							"PluginOrOpenCloud"
+						]
+					}
+				},
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "PluginSecurity"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "None"
+					}
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic",
+						"CSG"
+					],
+					"Write": [
+						"PluginOrOpenCloud"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "Automatic",
+				"MemberType": "Property",
+				"Name": "RenderFidelity",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "RenderFidelity"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PartOperation",
+			"member": "SmoothingAngle",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Capabilities",
+					"before": {
+						"Read": [
+							"Basic",
+							"CSG"
+						]
+					},
+					"after": {
+						"Read": [
+							"Basic",
+							"CSG"
+						],
+						"Write": [
+							"PluginOrOpenCloud"
+						]
+					}
+				},
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "PluginSecurity"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "None"
+					}
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic",
+						"CSG"
+					],
+					"Write": [
+						"PluginOrOpenCloud"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "SmoothingAngle",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "PhysicsStepTime",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Hidden",
+						"NotReplicated"
+					],
+					"after": [
+						"Hidden",
+						"ReadOnly",
+						"NotReplicated"
+					]
+				},
+				{
+					"field": "ThreadSafety",
+					"before": "Safe",
+					"after": "ReadSafe"
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "PhysicsStepTime",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "StreamingEnabledStorage",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "StreamingEnabledStorage",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PerformanceControlService",
+			"member": "SetUserActivity",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetUserActivity",
+				"Parameters": [
+					{
+						"Name": "state",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ScrollState"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "FinishFullLoading",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [],
+					"after": [
+						{
+							"Name": "payload",
+							"Type": {
+								"Category": "Group",
+								"Name": "Variant"
+							}
+						}
+					]
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"CustomLuaState"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "FinishFullLoading",
+				"Parameters": [
+					{
+						"Name": "payload",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "GetPreinitPayload",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPreinitPayload",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"CustomLuaState"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "SnippetService",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "SnippetService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TeleportOptions",
+			"member": "ReservedServerId",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Teleport"
+					],
+					"Write": [
+						"Teleport"
+					]
+				},
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "ReservedServerId",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TeleportOptions",
+			"member": "VipServerId",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Teleport"
+					],
+					"Write": [
+						"Teleport"
+					]
+				},
+				"Category": "Data",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "VipServerId",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TeleportService",
+			"member": "TeleportSwitchServer",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Teleport"
+				],
+				"MemberType": "Function",
+				"Name": "TeleportSwitchServer",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WrapTextureTransfer",
+			"member": "PrepareProjectionMeshDataAsync",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"AvatarAppearance",
+					"DynamicGeneration"
+				],
+				"MemberType": "Function",
+				"Name": "PrepareProjectionMeshDataAsync",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "Language",
+			"type": "Remove",
+			"value": {
+				"Name": "Language"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TeleportMethod",
+			"item": "TeleportSwitchServer",
+			"type": "Add",
+			"value": {
+				"Name": "TeleportSwitchServer",
+				"Value": 8
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "CreateDecalAsync",
+			"part": "description",
+			"before": null,
+			"after": "Creates a new <code>Decal</code> object using the provided <code>EditableImage</code> content maps.",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "CreateDecalAsync",
+				"Parameters": [
+					{
+						"Name": "content",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Decal"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "CreateDecalAsync",
+			"part": "parameter",
+			"parameter": "content",
+			"before": null,
+			"after": "Dictionary containing one or more of the following key-value pairs. Each value must be a <code>Content</code> object containing a <code>EditableImage</code>: <ul> <li><code>TextureContent</code> — The decal's color texture.</li> <li><code>NormalMapContent</code> — The decal's normal map.</li> <li><code>MetalnessMapContent</code> — The decal's metalness map.</li> <li><code>RoughnessMapContent</code> — The decal's roughness map.</li> </ul>",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "CreateDecalAsync",
+				"Parameters": [
+					{
+						"Name": "content",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Decal"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "CreateDecalAsync",
+			"part": "return",
+			"before": null,
+			"after": "A new <code>Decal</code> instance with the given maps from the <code>content</code> parameter.",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "CreateDecalAsync",
+				"Parameters": [
+					{
+						"Name": "content",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Decal"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WrapTarget",
+			"member": "CreateTextureInCageSpaceAsync",
+			"part": "description",
+			"before": null,
+			"after": "Creates a new <code>EditableImage</code> in cage UV space from a texture in the parent <code>MeshPart</code>'s UV space.",
+			"value": {
+				"Capabilities": [
+					"AvatarAppearance",
+					"DynamicGeneration"
+				],
+				"MemberType": "Function",
+				"Name": "CreateTextureInCageSpaceAsync",
+				"Parameters": [
+					{
+						"Name": "texture",
+						"Type": {
+							"Category": "Class",
+							"Name": "EditableImage"
+						}
+					},
+					{
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "EditableImage"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WrapTarget",
+			"member": "CreateTextureInCageSpaceAsync",
+			"part": "parameter",
+			"parameter": "texture",
+			"before": null,
+			"after": "The <code>EditableImage</code> in the UV space of this <code>WrapTarget</code>'s parent <code>MeshPart</code>.",
+			"value": {
+				"Capabilities": [
+					"AvatarAppearance",
+					"DynamicGeneration"
+				],
+				"MemberType": "Function",
+				"Name": "CreateTextureInCageSpaceAsync",
+				"Parameters": [
+					{
+						"Name": "texture",
+						"Type": {
+							"Category": "Class",
+							"Name": "EditableImage"
+						}
+					},
+					{
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "EditableImage"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WrapTarget",
+			"member": "CreateTextureInCageSpaceAsync",
+			"part": "parameter",
+			"parameter": "options",
+			"before": null,
+			"after": "Optional dictionary containing controls for the transfer: <ul> <li><code>MinUVBounds</code> – A <code>Vector2</code> specifying the minimum cage UV   bound.</li> <li><code>MaxUVBounds</code> – A <code>Vector2</code> specifying the maximum cage UV   bound.</li> </ul> Each omitted bound is calculated from the cage mesh. If neither is specified, the bounds include the entire cage.",
+			"value": {
+				"Capabilities": [
+					"AvatarAppearance",
+					"DynamicGeneration"
+				],
+				"MemberType": "Function",
+				"Name": "CreateTextureInCageSpaceAsync",
+				"Parameters": [
+					{
+						"Name": "texture",
+						"Type": {
+							"Category": "Class",
+							"Name": "EditableImage"
+						}
+					},
+					{
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "EditableImage"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WrapTarget",
+			"member": "CreateTextureInCageSpaceAsync",
+			"part": "return",
+			"before": null,
+			"after": "A new <code>EditableImage</code> in cage UV space, or <code>nil</code> if the device-specific editable memory budget is exhausted.",
+			"value": {
+				"Capabilities": [
+					"AvatarAppearance",
+					"DynamicGeneration"
+				],
+				"MemberType": "Function",
+				"Name": "CreateTextureInCageSpaceAsync",
+				"Parameters": [
+					{
+						"Name": "texture",
+						"Type": {
+							"Category": "Class",
+							"Name": "EditableImage"
+						}
+					},
+					{
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "EditableImage"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WrapTarget",
+			"member": "CreateTextureInTargetSpaceAsync",
+			"part": "description",
+			"before": null,
+			"after": "Creates a new <code>EditableImage</code> in the parent <code>MeshPart</code>'s UV space from a texture in cage UV space.",
+			"value": {
+				"Capabilities": [
+					"AvatarAppearance",
+					"DynamicGeneration"
+				],
+				"MemberType": "Function",
+				"Name": "CreateTextureInTargetSpaceAsync",
+				"Parameters": [
+					{
+						"Name": "texture",
+						"Type": {
+							"Category": "Class",
+							"Name": "EditableImage"
+						}
+					},
+					{
+						"Name": "wrapTextureTransfer",
+						"Type": {
+							"Category": "Class",
+							"Name": "WrapTextureTransfer"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "EditableImage"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WrapTarget",
+			"member": "CreateTextureInTargetSpaceAsync",
+			"part": "parameter",
+			"parameter": "texture",
+			"before": null,
+			"after": "The <code>EditableImage</code> in cage UV space.",
+			"value": {
+				"Capabilities": [
+					"AvatarAppearance",
+					"DynamicGeneration"
+				],
+				"MemberType": "Function",
+				"Name": "CreateTextureInTargetSpaceAsync",
+				"Parameters": [
+					{
+						"Name": "texture",
+						"Type": {
+							"Category": "Class",
+							"Name": "EditableImage"
+						}
+					},
+					{
+						"Name": "wrapTextureTransfer",
+						"Type": {
+							"Category": "Class",
+							"Name": "WrapTextureTransfer"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "EditableImage"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WrapTarget",
+			"member": "CreateTextureInTargetSpaceAsync",
+			"part": "parameter",
+			"parameter": "wrapTextureTransfer",
+			"before": null,
+			"after": "The <code>WrapTextureTransfer</code> associated with the same parent <code>MeshPart</code> as this <code>WrapTarget</code>.",
+			"value": {
+				"Capabilities": [
+					"AvatarAppearance",
+					"DynamicGeneration"
+				],
+				"MemberType": "Function",
+				"Name": "CreateTextureInTargetSpaceAsync",
+				"Parameters": [
+					{
+						"Name": "texture",
+						"Type": {
+							"Category": "Class",
+							"Name": "EditableImage"
+						}
+					},
+					{
+						"Name": "wrapTextureTransfer",
+						"Type": {
+							"Category": "Class",
+							"Name": "WrapTextureTransfer"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "EditableImage"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WrapTarget",
+			"member": "CreateTextureInTargetSpaceAsync",
+			"part": "return",
+			"before": null,
+			"after": "A new <code>EditableImage</code> in the parent <code>MeshPart</code>'s UV space, or <code>nil</code> if the device-specific editable memory budget is exhausted.",
+			"value": {
+				"Capabilities": [
+					"AvatarAppearance",
+					"DynamicGeneration"
+				],
+				"MemberType": "Function",
+				"Name": "CreateTextureInTargetSpaceAsync",
+				"Parameters": [
+					{
+						"Name": "texture",
+						"Type": {
+							"Category": "Class",
+							"Name": "EditableImage"
+						}
+					},
+					{
+						"Name": "wrapTextureTransfer",
+						"Type": {
+							"Category": "Class",
+							"Name": "WrapTextureTransfer"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "EditableImage"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "OpenShop",
+			"part": "description",
+			"before": null,
+			"after": "Opens a personalized in-game Shop for the given player.",
+			"value": {
+				"Capabilities": [
+					"PromptExternalPurchase"
+				],
+				"MemberType": "Function",
+				"Name": "OpenShop",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "OpenShop",
+			"part": "parameter",
+			"parameter": "player",
+			"before": null,
+			"after": "The <code>Player</code> for whom to open the shop. If called from a <code>LocalScript</code>, this must be the local player.",
+			"value": {
+				"Capabilities": [
+					"PromptExternalPurchase"
+				],
+				"MemberType": "Function",
+				"Name": "OpenShop",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "RegisterTest",
+			"part": "description",
+			"before": "Registers a test case with the service and returns the resulting <code>TestCase</code>.",
+			"after": null,
+			"value": {
+				"Capabilities": [
+					"InternalTest"
+				],
+				"MemberType": "Function",
+				"Name": "RegisterTest",
+				"Parameters": [
+					{
+						"Name": "testOptions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "TestCase"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "RegisterTest",
+			"part": "parameter",
+			"parameter": "testOptions",
+			"before": "A dictionary describing the test, requiring the string fields <code>SuiteName</code> and <code>TestCaseName</code> and optionally a numeric <code>Timeout</code> field.",
+			"after": null,
+			"value": {
+				"Capabilities": [
+					"InternalTest"
+				],
+				"MemberType": "Function",
+				"Name": "RegisterTest",
+				"Parameters": [
+					{
+						"Name": "testOptions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "TestCase"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "RegisterTest",
+			"part": "return",
+			"before": "The registered <code>TestCase</code>, or no value when registration isn't supported in the current context.",
+			"after": null,
+			"value": {
+				"Capabilities": [
+					"InternalTest"
+				],
+				"MemberType": "Function",
+				"Name": "RegisterTest",
+				"Parameters": [
+					{
+						"Name": "testOptions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "TestCase"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "TakeSnapshot",
+			"part": "description",
+			"before": "Captures a named screenshot snapshot during a test run.",
+			"after": null,
+			"value": {
+				"Capabilities": [
+					"InternalTest"
+				],
+				"MemberType": "Function",
+				"Name": "TakeSnapshot",
+				"Parameters": [
+					{
+						"Name": "snapshotname",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "source",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "TakeSnapshot",
+			"part": "parameter",
+			"parameter": "snapshotname",
+			"before": "The name to associate with the captured snapshot.",
+			"after": null,
+			"value": {
+				"Capabilities": [
+					"InternalTest"
+				],
+				"MemberType": "Function",
+				"Name": "TakeSnapshot",
+				"Parameters": [
+					{
+						"Name": "snapshotname",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "source",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "TakeSnapshot",
+			"part": "parameter",
+			"parameter": "source",
+			"before": "An optional script instance whose <code>Suite</code> and <code>TestName</code> attributes name the snapshot; defaults to <code>nil</code>.",
+			"after": null,
+			"value": {
+				"Capabilities": [
+					"InternalTest"
+				],
+				"MemberType": "Function",
+				"Name": "TakeSnapshot",
+				"Parameters": [
+					{
+						"Name": "snapshotname",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "source",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AnimationNodeBlendMode",
+			"part": "description",
+			"before": null,
+			"after": "Specifies how an <code>AnimationNodeType.OneShotNode</code> combines its one-shot pose with its base pose."
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnimationNodeBlendMode",
+			"item": "Over",
+			"part": "description",
+			"before": null,
+			"after": "Composites the one-shot pose on top of the base pose, replacing it by the current blend weight.",
+			"value": {
+				"Name": "Over",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnimationNodeBlendMode",
+			"item": "Add",
+			"part": "description",
+			"before": null,
+			"after": "Adds the one-shot pose to the base pose as an additive layer scaled by the current blend weight.",
+			"value": {
+				"Name": "Add",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnimationNodeBlendMode",
+			"item": "Subtract",
+			"part": "description",
+			"before": null,
+			"after": "Subtracts the one-shot pose from the base pose scaled by the current blend weight.",
+			"value": {
+				"Name": "Subtract",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnimationNodeType",
+			"item": "OneShotNode",
+			"part": "description",
+			"before": null,
+			"after": "A layering node that plays a one-shot pose over a looping base pose on trigger, blending it in and back out.",
+			"value": {
+				"Name": "OneShotNode",
+				"Value": 14
+			}
+		}
+	]
+}

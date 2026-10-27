@@ -1,0 +1,4471 @@
+{
+	"from": {
+		"version": "0.741.19.7411056",
+		"hash": "76e1a02649ad4f35"
+	},
+	"to": {
+		"version": "0.742.0.7421053",
+		"hash": "9b554450a0fc4e65"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "DataModelDiff",
+			"member": "GetAttributeNames",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"PluginOrOpenCloud"
+				],
+				"MemberType": "Function",
+				"Name": "GetAttributeNames",
+				"Parameters": [
+					{
+						"Name": "identity",
+						"Type": {
+							"Category": "DataType",
+							"Name": "ScopedInstanceIdentity"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AnimatedImageService",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotCreatable",
+						"Service"
+					],
+					"after": [
+						"NotCreatable",
+						"Service",
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"MemoryCategory": "Gui",
+				"Name": "AnimatedImageService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimatedImageService",
+			"member": "UserCreatedTracks",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "ANIM\u0001",
+				"MemberType": "Property",
+				"Name": "UserCreatedTracks",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "BinaryString"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimatedImageService",
+			"member": "CreateTrack",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateTrack",
+				"Parameters": [
+					{
+						"Name": "sourceContent",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					},
+					{
+						"Name": "trackName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "frameDefinitions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "AnimatedImageTrack"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimatedImageService",
+			"member": "DestroyTrack",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DestroyTrack",
+				"Parameters": [
+					{
+						"Name": "sourceContent",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					},
+					{
+						"Name": "trackName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationTrack",
+			"member": "UpdateGraphNodeDefinition",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Animation"
+				],
+				"MemberType": "Function",
+				"Name": "UpdateGraphNodeDefinition",
+				"Parameters": [
+					{
+						"Name": "nodeId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "nodeDefinition",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioEmitter",
+			"member": "GetWorldCFrame",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "GetWorldCFrame",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "CoordinateFrame?"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioListener",
+			"member": "GetWorldCFrame",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "GetWorldCFrame",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "CoordinateFrame?"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AudioPlayer",
+			"member": "GetPlaybackState",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "GetPlaybackState",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Decal",
+			"member": "ResampleMode",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "Default",
+				"MemberType": "Property",
+				"Name": "ResampleMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ResamplerMode"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AnimatedImage",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Gui",
+				"Name": "AnimatedImage",
+				"Superclass": "GuiBase",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidRigDescription",
+			"member": "OriginOffset",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Capabilities",
+					"before": {
+						"Read": [
+							"Animation"
+						]
+					},
+					"after": {
+						"Read": [
+							"Animation",
+							"PluginOrOpenCloud"
+						],
+						"Write": [
+							"PluginOrOpenCloud"
+						]
+					}
+				},
+				{
+					"field": "Security",
+					"before": {
+						"Read": "RobloxScriptSecurity",
+						"Write": "RobloxScriptSecurity"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "None"
+					}
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Animation",
+						"PluginOrOpenCloud"
+					],
+					"Write": [
+						"PluginOrOpenCloud"
+					]
+				},
+				"Category": "Data",
+				"Default": "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1",
+				"MemberType": "Property",
+				"Name": "OriginOffset",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PerformSubscriptionPurchaseV3Async",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "productType",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "productId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "paymentProvider",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "paymentSessionId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "productType",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "productId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "paymentProvider",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "paymentSessionId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "referrerId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64?"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "PerformSubscriptionPurchaseV3Async",
+				"Parameters": [
+					{
+						"Name": "productType",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "productId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "paymentProvider",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "paymentSessionId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "referrerId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptVIPServerPurchase",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"PromptExternalPurchase"
+				],
+				"MemberType": "Function",
+				"Name": "PromptVIPServerPurchase",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "CanUsersTransferRobuxAsync",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"PromptExternalPurchase"
+				],
+				"MemberType": "Function",
+				"Name": "CanUsersTransferRobuxAsync",
+				"Parameters": [
+					{
+						"Name": "sender",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "receiverUser",
+						"Type": {
+							"Category": "DataType",
+							"Name": "User"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "RobuxTransferEligibility"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptVIPServerPurchaseRequested",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptVIPServerPurchaseRequested",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ModerationService",
+			"member": "BindViolationProcessor",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Consequences"
+				],
+				"MemberType": "Function",
+				"Name": "BindViolationProcessor",
+				"Parameters": [
+					{
+						"Name": "priority",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "callback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RBXScriptConnection"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ModerationService",
+			"member": "MockViolationCallbackAsync",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Consequences"
+				],
+				"MemberType": "Function",
+				"Name": "MockViolationCallbackAsync",
+				"Parameters": [
+					{
+						"Name": "report",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MeshPart",
+			"member": "RenderFidelity",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Capabilities",
+					"before": {
+						"Read": [
+							"Basic"
+						]
+					},
+					"after": {
+						"Read": [
+							"Basic"
+						],
+						"Write": [
+							"PluginOrOpenCloud"
+						]
+					}
+				},
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "PluginSecurity"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "None"
+					}
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					],
+					"Write": [
+						"PluginOrOpenCloud"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "Automatic",
+				"MemberType": "Property",
+				"Name": "RenderFidelity",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "RenderFidelity"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MeshPart",
+			"member": "GetSurfaceSlotsAsync",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Basic"
+				],
+				"MemberType": "Function",
+				"Name": "GetSurfaceSlotsAsync",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "OrthographicMode",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					],
+					"Write": [
+						"Basic"
+					]
+				},
+				"Category": "Camera",
+				"Default": "Vertical",
+				"MemberType": "Property",
+				"Name": "OrthographicMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "OrthographicMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "OrthographicSize",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					],
+					"Write": [
+						"Basic"
+					]
+				},
+				"Category": "Camera",
+				"Default": "300",
+				"MemberType": "Property",
+				"Name": "OrthographicSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "ProjectionType",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					],
+					"Write": [
+						"Basic"
+					]
+				},
+				"Category": "Camera",
+				"Default": "Perspective",
+				"MemberType": "Property",
+				"Name": "ProjectionType",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ProjectionType"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "ViewStretch",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					],
+					"Write": [
+						"Basic"
+					]
+				},
+				"Category": "Camera",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "ViewStretch",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "LevelOfDetail",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "PluginSecurity",
+						"Write": "PluginSecurity"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "None"
+					}
+				},
+				{
+					"field": "Capabilities",
+					"before": null,
+					"after": {
+						"Read": [
+							"PluginOrOpenCloud"
+						],
+						"Write": [
+							"PluginOrOpenCloud"
+						]
+					}
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"PluginOrOpenCloud"
+					],
+					"Write": [
+						"PluginOrOpenCloud"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "Automatic",
+				"MemberType": "Property",
+				"Name": "LevelOfDetail",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ModelLevelOfDetail"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "FallHeightEnabled",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Capabilities",
+					"before": {
+						"Read": [
+							"Basic"
+						]
+					},
+					"after": {
+						"Read": [
+							"Basic"
+						],
+						"Write": [
+							"PluginOrOpenCloud"
+						]
+					}
+				},
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "PluginSecurity"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "None"
+					}
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					],
+					"Write": [
+						"PluginOrOpenCloud"
+					]
+				},
+				"Category": "Behavior",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "FallHeightEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "FallenPartsDestroyHeight",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Capabilities",
+					"before": {
+						"Read": [
+							"Basic"
+						]
+					},
+					"after": {
+						"Read": [
+							"Basic"
+						],
+						"Write": [
+							"PluginOrOpenCloud"
+						]
+					}
+				},
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "PluginSecurity"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "None"
+					}
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					],
+					"Write": [
+						"PluginOrOpenCloud"
+					]
+				},
+				"Category": "Behavior",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "FallenPartsDestroyHeight",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "LuauTypeCheckMode",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "PluginSecurity",
+						"Write": "PluginSecurity"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "None"
+					}
+				},
+				{
+					"field": "Capabilities",
+					"before": null,
+					"after": {
+						"Read": [
+							"PluginOrOpenCloud"
+						],
+						"Write": [
+							"PluginOrOpenCloud"
+						]
+					}
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"PluginOrOpenCloud"
+					],
+					"Write": [
+						"PluginOrOpenCloud"
+					]
+				},
+				"Category": "Scripting",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "LuauTypeCheckMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "LuauTypeCheckMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "StreamingEnabled",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "PluginSecurity"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "None"
+					}
+				},
+				{
+					"field": "Capabilities",
+					"before": null,
+					"after": {
+						"Write": [
+							"PluginOrOpenCloud"
+						]
+					}
+				}
+			],
+			"value": {
+				"Capabilities": {
+					"Write": [
+						"PluginOrOpenCloud"
+					]
+				},
+				"Category": "Streaming",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "StreamingEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "ReplicationFrequency",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"PluginOrOpenCloud"
+					],
+					"Write": [
+						"PluginOrOpenCloud"
+					]
+				},
+				"Category": "Behavior",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "ReplicationFrequency",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ReplicationMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "ReplicationThroughput",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"PluginOrOpenCloud"
+					],
+					"Write": [
+						"PluginOrOpenCloud"
+					]
+				},
+				"Category": "Behavior",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "ReplicationThroughput",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ReplicationMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PackageLink",
+			"member": "getOverrides",
+			"type": "Remove",
+			"value": {
+				"Capabilities": [
+					"AssetRead"
+				],
+				"MemberType": "Function",
+				"Name": "getOverrides",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "DataModelDiff"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PackageService",
+			"member": "RevertAttributeOverridesAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RevertAttributeOverridesAsync",
+				"Parameters": [
+					{
+						"Name": "scopeRoot",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "identities",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "attributeNames",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PackageService",
+			"member": "RevertInstanceOverridesAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RevertInstanceOverridesAsync",
+				"Parameters": [
+					{
+						"Name": "scopeRoot",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "identities",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PackageService",
+			"member": "RevertPropertyOverridesAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RevertPropertyOverridesAsync",
+				"Parameters": [
+					{
+						"Name": "scopeRoot",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "identities",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "propertyNames",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PopLatencyService",
+			"member": "GetForcedPop",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetForcedPop",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PopLatencyService",
+			"member": "SetForcedPop",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetForcedPop",
+				"Parameters": [
+					{
+						"Name": "popCode",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "GetPlaybackState",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"LegacySound"
+				],
+				"MemberType": "Function",
+				"Name": "GetPlaybackState",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "GetWorldCFrame",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"LegacySound"
+				],
+				"MemberType": "Function",
+				"Name": "GetWorldCFrame",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "CoordinateFrame?"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SoundService",
+			"member": "GetListenerWorldCFrame",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"Audio"
+				],
+				"MemberType": "Function",
+				"Name": "GetListenerWorldCFrame",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "CoordinateFrame?"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Stats",
+			"member": "GetMemoryUsageMbAllCategoriesFiltered",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"InternalTest"
+				],
+				"MemberType": "Function",
+				"Name": "GetMemoryUsageMbAllCategoriesFiltered",
+				"Parameters": [
+					{
+						"Name": "dmId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "vmClass",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Stats",
+			"member": "GetMemoryUsageMbFiltered",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"InternalTest"
+				],
+				"MemberType": "Function",
+				"Name": "GetMemoryUsageMbFiltered",
+				"Parameters": [
+					{
+						"Name": "dmId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "vmClass",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SurfaceAppearance",
+			"member": "SurfaceSlot",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Basic"
+					]
+				},
+				"Category": "Data",
+				"Default": "-1",
+				"MemberType": "Property",
+				"Name": "SurfaceSlot",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TeleportService",
+			"member": "TeleportSwitchServer",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [],
+					"after": [
+						{
+							"Default": "{}",
+							"Name": "gameIdsToExclude",
+							"Type": {
+								"Category": "Group",
+								"Name": "Array"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"Capabilities": [
+					"Teleport"
+				],
+				"MemberType": "Function",
+				"Name": "TeleportSwitchServer",
+				"Parameters": [
+					{
+						"Default": "{}",
+						"Name": "gameIdsToExclude",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TestCase",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Superclass",
+					"before": "Instance",
+					"after": "Object"
+				},
+				{
+					"field": "Tags",
+					"before": [
+						"NotCreatable"
+					],
+					"after": [
+						"NotCreatable",
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "TestCase",
+				"Superclass": "Object",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestCase",
+			"member": "SuiteName",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "SuiteName",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestCase",
+			"member": "TestId",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "TestId",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestCase",
+			"member": "TestName",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "TestName",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestCase",
+			"member": "TimeoutSec",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "TimeoutSec",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "double"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestCase",
+			"member": "GetTestTags",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetTestTags",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "RegisterTest",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Capabilities",
+					"before": [
+						"InternalTest"
+					],
+					"after": null
+				},
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "testOptions",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "testName",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "nil",
+							"Name": "options",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						},
+						{
+							"Default": "nil",
+							"Name": "callback",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Function"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterTest",
+				"Parameters": [
+					{
+						"Name": "testName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "callback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "TestCase"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "RegisterTestLegacy",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated",
+						{
+							"PreferredDescriptorName": "RegisterTest",
+							"ThreadSafety": "Unknown"
+						}
+					]
+				}
+			],
+			"value": {
+				"Capabilities": [
+					"InternalTest"
+				],
+				"MemberType": "Function",
+				"Name": "RegisterTestLegacy",
+				"Parameters": [
+					{
+						"Name": "testOptions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "TestCase"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated",
+					{
+						"PreferredDescriptorName": "RegisterTest",
+						"ThreadSafety": "Unknown"
+					}
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "ListTests",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ListTests",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "RegisterSuite",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterSuite",
+				"Parameters": [
+					{
+						"Name": "suiteName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "TestSuite"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "ResetTestRegistry",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ResetTestRegistry",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "RunTestsAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RunTestsAsync",
+				"Parameters": [
+					{
+						"Default": "nil",
+						"Name": "filter",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "TestRunResult"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "StartAudioCaptureAsync",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"InternalTest"
+				],
+				"MemberType": "Function",
+				"Name": "StartAudioCaptureAsync",
+				"Parameters": [
+					{
+						"Default": "",
+						"Name": "artifactName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "StopAudioCaptureAsync",
+			"type": "Add",
+			"value": {
+				"Capabilities": [
+					"InternalTest"
+				],
+				"MemberType": "Function",
+				"Name": "StopAudioCaptureAsync",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "TestRegistryChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "TestRegistryChanged",
+				"Parameters": [],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VRService",
+			"member": "PresentationMode",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Input"
+					]
+				},
+				"Category": "Data",
+				"Default": "Stereo",
+				"MemberType": "Property",
+				"Name": "PresentationMode",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "VRPresentationMode"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AnimationPlayer",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Gui",
+				"Name": "AnimationPlayer",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationPlayer",
+			"member": "AnimationContent",
+			"type": "Add",
+			"value": {
+				"Category": "Image",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "AnimationContent",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationPlayer",
+			"member": "AutoPlay",
+			"type": "Add",
+			"value": {
+				"Category": "Playback",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "AutoPlay",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationPlayer",
+			"member": "CurrentFrame",
+			"type": "Add",
+			"value": {
+				"Category": "Playback",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "CurrentFrame",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationPlayer",
+			"member": "Enabled",
+			"type": "Add",
+			"value": {
+				"Category": "Playback",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "Enabled",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationPlayer",
+			"member": "IsPlaying",
+			"type": "Add",
+			"value": {
+				"Category": "Playback",
+				"Default": "false",
+				"MemberType": "Property",
+				"Name": "IsPlaying",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationPlayer",
+			"member": "Loop",
+			"type": "Add",
+			"value": {
+				"Category": "Playback",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "Loop",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationPlayer",
+			"member": "Speed",
+			"type": "Add",
+			"value": {
+				"Category": "Playback",
+				"Default": "1",
+				"MemberType": "Property",
+				"Name": "Speed",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationPlayer",
+			"member": "TimePosition",
+			"type": "Add",
+			"value": {
+				"Category": "Playback",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "TimePosition",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "double"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationPlayer",
+			"member": "Track",
+			"type": "Add",
+			"value": {
+				"Category": "Playback",
+				"Default": "",
+				"MemberType": "Property",
+				"Name": "Track",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationPlayer",
+			"member": "Pause",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Pause",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationPlayer",
+			"member": "Play",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Play",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationPlayer",
+			"member": "Stop",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Stop",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "FriendsCallingService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "FriendsCallingService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FriendsCallingService",
+			"member": "EndCall",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "EndCall",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FriendsCallingService",
+			"member": "SetMuted",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetMuted",
+				"Parameters": [
+					{
+						"Name": "muted",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FriendsCallingService",
+			"member": "SetVolume",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetVolume",
+				"Parameters": [
+					{
+						"Name": "volume",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FriendsCallingService",
+			"member": "StartCall",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "StartCall",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "HiddenPlayerService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "HiddenPlayerService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HiddenPlayerService",
+			"member": "LocalHiddenPlayer",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_no_string_value__",
+				"MemberType": "Property",
+				"Name": "LocalHiddenPlayer",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Player"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "InstanceRegistryService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "InstanceRegistryService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InstanceRegistryService",
+			"member": "GetIdentity",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetIdentity",
+				"Parameters": [
+					{
+						"Name": "scopeRoot",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "ScopedInstanceIdentity?"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "UIBlur",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Gui",
+				"Name": "UIBlur",
+				"Superclass": "UIComponent"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIBlur",
+			"member": "Color",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "1, 1, 1",
+				"MemberType": "Property",
+				"Name": "Color",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIBlur",
+			"member": "Enabled",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Data",
+				"Default": "true",
+				"MemberType": "Property",
+				"Name": "Enabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIBlur",
+			"member": "Strength",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "Heavy",
+				"MemberType": "Property",
+				"Name": "Strength",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "UIBlurStrength"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIBlur",
+			"member": "Transparency",
+			"type": "Add",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"UI"
+					]
+				},
+				"Category": "Appearance",
+				"Default": "0",
+				"MemberType": "Property",
+				"Name": "Transparency",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TestExecutionContext",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "TestExecutionContext",
+				"Superclass": "Object",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TestFailure",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "TestFailure",
+				"Superclass": "Object",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestFailure",
+			"member": "Line",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Line",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestFailure",
+			"member": "Matcher",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Matcher",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestFailure",
+			"member": "Message",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Message",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestFailure",
+			"member": "StackTrace",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "StackTrace",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestFailure",
+			"member": "GetActual",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetActual",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestFailure",
+			"member": "GetContext",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetContext",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestFailure",
+			"member": "GetExpected",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetExpected",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestFailure",
+			"member": "GetSource",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetSource",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TestResult",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "TestResult",
+				"Superclass": "Object",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestResult",
+			"member": "Duration",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Duration",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "double"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestResult",
+			"member": "FailedChecks",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "FailedChecks",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestResult",
+			"member": "PassedChecks",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "PassedChecks",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestResult",
+			"member": "Status",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Status",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "TestCaseStatus"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestResult",
+			"member": "SuiteName",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "SuiteName",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestResult",
+			"member": "TestId",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "TestId",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestResult",
+			"member": "TestName",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "TestName",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestResult",
+			"member": "UncaughtError",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "UncaughtError",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestResult",
+			"member": "GetFailures",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFailures",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestResult",
+			"member": "GetTestTags",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetTestTags",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TestRunResult",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "TestRunResult",
+				"Superclass": "Object",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestRunResult",
+			"member": "Duration",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Duration",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "double"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestRunResult",
+			"member": "Failed",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Failed",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestRunResult",
+			"member": "Passed",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Passed",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestRunResult",
+			"member": "Skipped",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Skipped",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestRunResult",
+			"member": "Status",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Status",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "TestRunStatus"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestRunResult",
+			"member": "Summary",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Summary",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestRunResult",
+			"member": "Total",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "Total",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestRunResult",
+			"member": "GetTests",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetTests",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TestSuite",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "TestSuite",
+				"Superclass": "Object",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestSuite",
+			"member": "SuiteName",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "SuiteName",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestSuite",
+			"member": "TimeoutSec",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"Default": "__api_dump_class_not_creatable__",
+				"MemberType": "Property",
+				"Name": "TimeoutSec",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "double"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestSuite",
+			"member": "GetTestTags",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetTestTags",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestSuite",
+			"member": "RegisterTest",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterTest",
+				"Parameters": [
+					{
+						"Name": "testName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "callback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "TestCase"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AnimatedImagePlaybackState",
+			"type": "Remove",
+			"value": {
+				"Name": "AnimatedImagePlaybackState"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PioneerSource",
+			"item": "RobloxPioneerTest",
+			"type": "Add",
+			"value": {
+				"Name": "RobloxPioneerTest",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "OrthographicMode",
+			"type": "Add",
+			"value": {
+				"Name": "OrthographicMode"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "OrthographicMode",
+			"item": "Vertical",
+			"type": "Add",
+			"value": {
+				"Name": "Vertical",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "OrthographicMode",
+			"item": "Horizontal",
+			"type": "Add",
+			"value": {
+				"Name": "Horizontal",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "OrthographicMode",
+			"item": "Diagonal",
+			"type": "Add",
+			"value": {
+				"Name": "Diagonal",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "OrthographicMode",
+			"item": "MaxAxis",
+			"type": "Add",
+			"value": {
+				"Name": "MaxAxis",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ProjectionType",
+			"type": "Add",
+			"value": {
+				"Name": "ProjectionType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ProjectionType",
+			"item": "Perspective",
+			"type": "Add",
+			"value": {
+				"Name": "Perspective",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ProjectionType",
+			"item": "Orthographic",
+			"type": "Add",
+			"value": {
+				"Name": "Orthographic",
+				"Value": 1
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ReplicationMode",
+			"type": "Add",
+			"value": {
+				"Name": "ReplicationMode"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ReplicationMode",
+			"item": "Automatic",
+			"type": "Add",
+			"value": {
+				"Name": "Automatic",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ReplicationMode",
+			"item": "Low",
+			"type": "Add",
+			"value": {
+				"Name": "Low",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ReplicationMode",
+			"item": "Medium",
+			"type": "Add",
+			"value": {
+				"Name": "Medium",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ReplicationMode",
+			"item": "High",
+			"type": "Add",
+			"value": {
+				"Name": "High",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "RobuxTransferEligibility",
+			"type": "Add",
+			"value": {
+				"Name": "RobuxTransferEligibility"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RobuxTransferEligibility",
+			"item": "Unknown",
+			"type": "Add",
+			"value": {
+				"Name": "Unknown",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RobuxTransferEligibility",
+			"item": "Eligible",
+			"type": "Add",
+			"value": {
+				"Name": "Eligible",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RobuxTransferEligibility",
+			"item": "SenderNotEligible",
+			"type": "Add",
+			"value": {
+				"Name": "SenderNotEligible",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RobuxTransferEligibility",
+			"item": "ReceiverNotEligible",
+			"type": "Add",
+			"value": {
+				"Name": "ReceiverNotEligible",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "TestCaseStatus",
+			"type": "Add",
+			"value": {
+				"Name": "TestCaseStatus"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TestCaseStatus",
+			"item": "Pass",
+			"type": "Add",
+			"value": {
+				"Name": "Pass",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TestCaseStatus",
+			"item": "Fail",
+			"type": "Add",
+			"value": {
+				"Name": "Fail",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TestCaseStatus",
+			"item": "TimedOut",
+			"type": "Add",
+			"value": {
+				"Name": "TimedOut",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TestCaseStatus",
+			"item": "Skipped",
+			"type": "Add",
+			"value": {
+				"Name": "Skipped",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "TestRunStatus",
+			"type": "Add",
+			"value": {
+				"Name": "TestRunStatus"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TestRunStatus",
+			"item": "Pass",
+			"type": "Add",
+			"value": {
+				"Name": "Pass",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TestRunStatus",
+			"item": "Fail",
+			"type": "Add",
+			"value": {
+				"Name": "Fail",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TestRunStatus",
+			"item": "NoTests",
+			"type": "Add",
+			"value": {
+				"Name": "NoTests",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TestRunStatus",
+			"item": "Skipped",
+			"type": "Add",
+			"value": {
+				"Name": "Skipped",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "UIBlurStrength",
+			"type": "Add",
+			"value": {
+				"Name": "UIBlurStrength"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UIBlurStrength",
+			"item": "Light",
+			"type": "Add",
+			"value": {
+				"Name": "Light",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UIBlurStrength",
+			"item": "Medium",
+			"type": "Add",
+			"value": {
+				"Name": "Medium",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UIBlurStrength",
+			"item": "Heavy",
+			"type": "Add",
+			"value": {
+				"Name": "Heavy",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "VRPresentationMode",
+			"type": "Add",
+			"value": {
+				"Name": "VRPresentationMode"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "VRPresentationMode",
+			"item": "Stereo",
+			"type": "Add",
+			"value": {
+				"Name": "Stereo",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "VRPresentationMode",
+			"item": "Flat",
+			"type": "Add",
+			"value": {
+				"Name": "Flat",
+				"Value": 1
+			}
+		}
+	],
+	"descriptions": [
+		{
+			"element": "Class",
+			"class": "SlidingBallConstraint",
+			"part": "description",
+			"before": "The base class for constraints that allow their attachments to slide along an axis but not rotate.",
+			"after": "The base class for constraints that allow their attachments to slide along an axis."
+		},
+		{
+			"element": "Member",
+			"class": "PluginGui",
+			"member": "BindToClose",
+			"part": "description",
+			"before": "Binds a function to the <code>PluginGui</code> close button, overriding the default behavior.",
+			"after": "Binds a function that runs when the user closes the <code>PluginGui</code>.",
+			"value": {
+				"Capabilities": [
+					"UI"
+				],
+				"MemberType": "Function",
+				"Name": "BindToClose",
+				"Parameters": [
+					{
+						"Default": "nil",
+						"Name": "function",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "null"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "FrustumStreaming",
+			"part": "description",
+			"before": null,
+			"after": "Controls the engine's instance streaming behavior for the player's camera view.",
+			"value": {
+				"Capabilities": {
+					"Read": [
+						"Players"
+					]
+				},
+				"Category": "Data",
+				"Default": "__api_dump_skipped_class__",
+				"MemberType": "Property",
+				"Name": "FrustumStreaming",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "FrustumStreamingMode"
+				}
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "EngagementLevel",
+			"part": "description",
+			"before": null,
+			"after": "Describes how many days a player played the current experience in the last 7 days, represented as a bucket."
+		},
+		{
+			"element": "EnumItem",
+			"enum": "EngagementLevel",
+			"item": "Unknown",
+			"part": "description",
+			"before": null,
+			"after": "Segment data is unavailable.",
+			"value": {
+				"Name": "Unknown",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "EngagementLevel",
+			"item": "Inactive",
+			"part": "description",
+			"before": null,
+			"after": "The player did not play the experience in the last 7 days.",
+			"value": {
+				"Name": "Inactive",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "EngagementLevel",
+			"item": "Low",
+			"part": "description",
+			"before": null,
+			"after": "The player played the experience on 1 of the last 7 days.",
+			"value": {
+				"Name": "Low",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "EngagementLevel",
+			"item": "Medium",
+			"part": "description",
+			"before": null,
+			"after": "The player played the experience on 2 or 3 of the last 7 days.",
+			"value": {
+				"Name": "Medium",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "EngagementLevel",
+			"item": "High",
+			"part": "description",
+			"before": null,
+			"after": "The player played the experience on 4 to 7 of the last 7 days.",
+			"value": {
+				"Name": "High",
+				"Value": 4
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ExperienceActivationStatus",
+			"part": "description",
+			"before": null,
+			"after": "Describes whether a player is new, active, lapsed, or reactivated in the current experience."
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ExperienceActivationStatus",
+			"item": "Unknown",
+			"part": "description",
+			"before": null,
+			"after": "Segment data is unavailable.",
+			"value": {
+				"Name": "Unknown",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ExperienceActivationStatus",
+			"item": "New",
+			"part": "description",
+			"before": null,
+			"after": "The player first played the experience within the last 30 days.",
+			"value": {
+				"Name": "New",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ExperienceActivationStatus",
+			"item": "Active",
+			"part": "description",
+			"before": null,
+			"after": "The player played the experience in the last 30 days and is not <code>New</code> or <code>Reactivated</code>.",
+			"value": {
+				"Name": "Active",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ExperienceActivationStatus",
+			"item": "Lapsed",
+			"part": "description",
+			"before": null,
+			"after": "The player has not played the experience in the last 30 days.",
+			"value": {
+				"Name": "Lapsed",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ExperienceActivationStatus",
+			"item": "Reactivated",
+			"part": "description",
+			"before": null,
+			"after": "The player returned to the experience within the last 30 days after being <code>Lapsed</code>.",
+			"value": {
+				"Name": "Reactivated",
+				"Value": 4
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "FrustumStreamingMode",
+			"part": "description",
+			"before": null,
+			"after": "Used with <code>Player.FrustumStreaming</code> to control the engine's instance streaming behavior for their camera view"
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FrustumStreamingMode",
+			"item": "Default",
+			"part": "description",
+			"before": null,
+			"after": "Default behavior, currently equivalent to <code>Disabled</code>.",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FrustumStreamingMode",
+			"item": "Enabled",
+			"part": "description",
+			"before": null,
+			"after": "Always stream camera view.",
+			"value": {
+				"Name": "Enabled",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FrustumStreamingMode",
+			"item": "Disabled",
+			"part": "description",
+			"before": null,
+			"after": "Disable camera view streaming.",
+			"value": {
+				"Name": "Disabled",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FrustumStreamingMode",
+			"item": "Automatic",
+			"part": "description",
+			"before": null,
+			"after": "Allow the engine to decide when to stream the camera view based client ability and gameplay factors.",
+			"value": {
+				"Name": "Automatic",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "PlayerPlatformActivationStatus",
+			"part": "description",
+			"before": null,
+			"after": "Describes whether a player is new, active, lapsed, or reactivated on Roblox."
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PlayerPlatformActivationStatus",
+			"item": "Unknown",
+			"part": "description",
+			"before": null,
+			"after": "Segment data is unavailable.",
+			"value": {
+				"Name": "Unknown",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PlayerPlatformActivationStatus",
+			"item": "New",
+			"part": "description",
+			"before": null,
+			"after": "The player signed up for Roblox within the last 60 days.",
+			"value": {
+				"Name": "New",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PlayerPlatformActivationStatus",
+			"item": "Active",
+			"part": "description",
+			"before": null,
+			"after": "The player played on Roblox in the last 60 days and is not <code>New</code> or <code>Reactivated</code>.",
+			"value": {
+				"Name": "Active",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PlayerPlatformActivationStatus",
+			"item": "Lapsed",
+			"part": "description",
+			"before": null,
+			"after": "The player has not played on Roblox in the last 60 days.",
+			"value": {
+				"Name": "Lapsed",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PlayerPlatformActivationStatus",
+			"item": "Reactivated",
+			"part": "description",
+			"before": null,
+			"after": "The player returned to Roblox within the last 60 days after being <code>Lapsed</code>.",
+			"value": {
+				"Name": "Reactivated",
+				"Value": 4
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "UserAcquisitionSource",
+			"part": "description",
+			"before": null,
+			"after": "Describes how a player first found the current experience."
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UserAcquisitionSource",
+			"item": "Unknown",
+			"part": "description",
+			"before": null,
+			"after": "Segment data is unavailable.",
+			"value": {
+				"Name": "Unknown",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UserAcquisitionSource",
+			"item": "PendingAttribution",
+			"part": "description",
+			"before": null,
+			"after": "The player started playing recently, and their acquisition source is not available yet.",
+			"value": {
+				"Name": "PendingAttribution",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UserAcquisitionSource",
+			"item": "HomeRecommendation",
+			"part": "description",
+			"before": null,
+			"after": "The player first joined from a recommendation on the Home page.",
+			"value": {
+				"Name": "HomeRecommendation",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UserAcquisitionSource",
+			"item": "ContinueToPlay",
+			"part": "description",
+			"before": null,
+			"after": "The player first joined from the Continue section.",
+			"value": {
+				"Name": "ContinueToPlay",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UserAcquisitionSource",
+			"item": "Curation",
+			"part": "description",
+			"before": null,
+			"after": "The player first joined from content curated by Roblox, such as featured experiences or events.",
+			"value": {
+				"Name": "Curation",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UserAcquisitionSource",
+			"item": "Friends",
+			"part": "description",
+			"before": null,
+			"after": "The player first joined through a friend.",
+			"value": {
+				"Name": "Friends",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UserAcquisitionSource",
+			"item": "Search",
+			"part": "description",
+			"before": null,
+			"after": "The player first joined from search results.",
+			"value": {
+				"Name": "Search",
+				"Value": 6
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UserAcquisitionSource",
+			"item": "Teleport",
+			"part": "description",
+			"before": null,
+			"after": "The player first joined by teleporting from another experience.",
+			"value": {
+				"Name": "Teleport",
+				"Value": 7
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UserAcquisitionSource",
+			"item": "Ads",
+			"part": "description",
+			"before": null,
+			"after": "The player first joined from an ad, such as a sponsored ad, search ad, or portal ad.",
+			"value": {
+				"Name": "Ads",
+				"Value": 8
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UserAcquisitionSource",
+			"item": "HomeOther",
+			"part": "description",
+			"before": null,
+			"after": "The player first joined from a part of the Roblox app other than Home recommendations, such as Charts or Favorites.",
+			"value": {
+				"Name": "HomeOther",
+				"Value": 9
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UserAcquisitionSource",
+			"item": "Other",
+			"part": "description",
+			"before": null,
+			"after": "The player first joined from another source, such as a share link, chat, or a notification.",
+			"value": {
+				"Name": "Other",
+				"Value": 10
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "UserNewReturningStatus",
+			"part": "description",
+			"before": null,
+			"after": "Describes whether a player is new to the current experience or has played it before."
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UserNewReturningStatus",
+			"item": "Unknown",
+			"part": "description",
+			"before": null,
+			"after": "Segment data is unavailable.",
+			"value": {
+				"Name": "Unknown",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UserNewReturningStatus",
+			"item": "New",
+			"part": "description",
+			"before": null,
+			"after": "The player is playing the experience for the first time.",
+			"value": {
+				"Name": "New",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UserNewReturningStatus",
+			"item": "Returning",
+			"part": "description",
+			"before": null,
+			"after": "The player has played the experience before.",
+			"value": {
+				"Name": "Returning",
+				"Value": 2
+			}
+		}
+	]
+}
