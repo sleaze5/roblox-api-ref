@@ -1,10 +1,8 @@
-import { announce } from "../announce.ts"
 import { readParam } from "../url-state.ts"
+import { reportSearchUnavailable } from "./search-unavailable.ts"
+import { showOrRecover } from "./show-or-recover.ts"
 
 const loadSearch = () => import("./mount-search.tsx")
-
-const unavailable =
-	"Search could not load. Check your connection, then reload the page."
 
 function isTyping(target: EventTarget | null): boolean {
 	return (
@@ -20,15 +18,21 @@ function reloadWithSearch(query: string | undefined): void {
 	window.location.assign(url)
 }
 
-async function show(query?: string, reloadOnFailure = true): Promise<void> {
-	const search = await loadSearch().catch(() => undefined)
-	if (search !== undefined) {
-		search.showSearch(query)
-	} else if (reloadOnFailure && navigator.onLine) {
-		reloadWithSearch(query)
-	} else {
-		announce(unavailable)
-	}
+function headerTrigger(): HTMLElement | null {
+	return document.querySelector<HTMLElement>("header [data-search-open]")
+}
+
+function show(
+	query: string | undefined,
+	trigger: HTMLElement | null,
+	reloadOnFailure: boolean,
+): void {
+	void showOrRecover(query, {
+		load: loadSearch,
+		canReload: reloadOnFailure && navigator.onLine,
+		reload: reloadWithSearch,
+		report: () => reportSearchUnavailable(trigger ?? headerTrigger()),
+	})
 }
 
 export function initSearchTrigger(): void {
@@ -37,23 +41,23 @@ export function initSearchTrigger(): void {
 			(event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k"
 		if (shortcut || (event.key === "/" && !isTyping(event.target))) {
 			event.preventDefault()
-			void show()
+			show(undefined, null, true)
 		}
 	})
 
 	document.addEventListener("click", (event) => {
 		const trigger =
 			event.target instanceof Element
-				? event.target.closest("[data-search-open]")
+				? event.target.closest<HTMLElement>("[data-search-open]")
 				: null
 		if (trigger !== null) {
 			const preset = trigger.getAttribute("data-search-open") ?? ""
-			void show(preset === "" ? undefined : preset)
+			show(preset === "" ? undefined : preset, trigger, true)
 		}
 	})
 
 	const initial = readParam("search")
 	if (initial !== undefined) {
-		void show(initial, false)
+		show(initial, null, false)
 	}
 }

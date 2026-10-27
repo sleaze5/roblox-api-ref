@@ -354,6 +354,7 @@ The Updates section shows how the API changed from each version in `roblox-versi
 - The query syntax is `Class.member`, `Class:method`, `.member`, `Enum.Name`, `Enum.Name.Item`, `"exact"`, `is:kind`, `tag:name`, `!tag:name`, `type:Name`, `uses:Name`, and `access:game|plugin|command`. `type:` matches the type of a property or the return type of a method or callback. `uses:` also matches parameter types.
 - When a query names an enum, data type, or class exactly, show a "Used by" group after the other results. The group lists the members that use the type, and labels each one as a property type, a parameter, or a return value. The reader can search `uses:Name` for more.
 - Search loads its index when the dialog opens, not before. Until the index is ready, the results area shows a turning `circle-notch` and "Preparing the search index…". The status appears after `--delay-loading`, so a fast load shows nothing. Typing still works, and the results appear when the index is ready.
+- If the search code cannot load, the page reloads once with search open. If it still cannot load, the search button shows the error in its tooltip for 5 seconds, and `#announcer` announces it.
 - Search lives only in the dialog. There is no search page. `/?search=query` opens the dialog with the query, which is also the OpenSearch template.
 
 ## States
