@@ -32,11 +32,13 @@ export function HistoryFacts(props: {
 		<>
 			<Fact
 				label="Added"
-				hint={`The update that added this ${noun}, or the oldest tracked version when it is older.`}>
+				hint={
+					added === undefined
+						? `Not recorded: this ${noun} already existed in ${props.start ?? "the oldest version"}, the oldest version that this site tracks.`
+						: `The update that added this ${noun}.`
+				}>
 				{added === undefined ? (
-					<span>
-						<span class="font-mono text-fg">{props.start}</span> or earlier
-					</span>
+					"Not recorded"
 				) : (
 					<EventValue event={added} kind={props.kind} name={props.name} />
 				)}

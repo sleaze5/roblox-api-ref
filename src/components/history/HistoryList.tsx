@@ -28,6 +28,13 @@ export function HistoryList(props: {
 						<span class="text-fg-muted">{entryText(entry)}</span>
 					</li>
 				))}
+				{props.history.addedBefore === undefined ? null : (
+					<li class="text-fg-faint">
+						Added: not recorded (
+						<span class="font-mono">{props.history.addedBefore}</span> or
+						earlier)
+					</li>
+				)}
 			</ul>
 		</details>
 	)

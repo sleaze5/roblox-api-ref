@@ -23,5 +23,6 @@ export type HistoryEvent = {
 export type ItemHistory = {
 	entries: HistoryEntry[]
 	added?: HistoryEvent
+	addedBefore?: string
 	changed?: HistoryEvent
 }

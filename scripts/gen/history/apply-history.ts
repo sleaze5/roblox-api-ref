@@ -6,9 +6,13 @@ export function applyHistory(api: Api, table: HistoryTable, start: string): void
 	api.historyStart = start
 	const attach = (item: { history?: ItemHistory }, key: string) => {
 		const history = table.history(key)
-		if (history !== undefined) {
-			item.history = history
+		if (history === undefined) {
+			return
 		}
+		if (history.added === undefined) {
+			history.addedBefore = start
+		}
+		item.history = history
 	}
 	for (const item of Object.values(api.classes)) {
 		attach(item, ownerKey("Class", item.name))
