@@ -1,4 +1,4 @@
-import { isApiChange } from "../../../src/api/change-kind.ts"
+import { isApiChange } from "../../../src/api/api-change.ts"
 import type {
 	HistoryEntry,
 	HistoryEvent,
