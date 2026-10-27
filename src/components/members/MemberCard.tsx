@@ -4,6 +4,12 @@ import { signatureParts } from "../../api/signature.ts"
 import { memberTags } from "../../api/tags.ts"
 import type { Member } from "../../api/types.ts"
 import { DocText } from "../doc/DocText.tsx"
+import {
+	HistoryLine,
+	HoverHistory,
+	historyVariant,
+	RecentChip,
+} from "../history/MemberHistory.tsx"
 import { TagList } from "../TagList.tsx"
 import { MemberDetails } from "./details/MemberDetails.tsx"
 import { memberAttributes } from "./member-attributes.ts"
@@ -29,13 +35,34 @@ export function MemberCard(props: { member: Member; owner: string; own: boolean 
 			class="member-card">
 			<div class="member-head">
 				<Signature parts={parts} />
+				{historyVariant === "hover" ? (
+					<HoverHistory
+						history={props.member.history}
+						kind="Class"
+						owner={props.owner}
+					/>
+				) : null}
 				<div class="member-actions">
 					<CopyLink name={props.member.name} href={href} />
 					<DocsLink name={props.member.name} owner={props.owner} />
 				</div>
 			</div>
 			<DocText doc={props.member.description} class="member-description" />
-			<TagList tags={memberTags(props.member)} />
+			{historyVariant === "chip" ? (
+				<div class="flex flex-wrap items-center gap-1">
+					<RecentChip history={props.member.history} />
+					<TagList tags={memberTags(props.member)} />
+				</div>
+			) : (
+				<TagList tags={memberTags(props.member)} />
+			)}
+			{historyVariant === "line" ? (
+				<HistoryLine
+					history={props.member.history}
+					kind="Class"
+					owner={props.owner}
+				/>
+			) : null}
 			<MemberDetails member={props.member} />
 			<Preferred member={props.member} />
 		</li>

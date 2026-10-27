@@ -1,4 +1,5 @@
 import type { Doc } from "./doc-types.ts"
+import type { ItemHistory } from "./item-history.ts"
 
 export const securityLevels = [
 	"None",
@@ -37,6 +38,7 @@ export type Capabilities = {
 
 type MemberBase = {
 	name: string
+	history?: ItemHistory
 	tags: string[]
 	security: Security
 	threadSafety: string
@@ -81,6 +83,7 @@ export type Member = Property | Method | Event | Callback
 
 export type Class = {
 	name: string
+	history?: ItemHistory
 	superclass?: string
 	memoryCategory: string
 	tags: string[]
@@ -91,6 +94,7 @@ export type Class = {
 
 export type EnumItem = {
 	name: string
+	history?: ItemHistory
 	value: number
 	tags: string[]
 	legacyNames: string[]
@@ -116,6 +120,7 @@ export type DataType = {
 
 export type Enum = {
 	name: string
+	history?: ItemHistory
 	tags: string[]
 	items: EnumItem[]
 	usedBy: TypeUsage[]
@@ -157,4 +162,5 @@ export type Api = {
 	enums: Record<string, Enum>
 	dataTypes: Record<string, DataType>
 	facets: Record<FacetKind, Record<string, Facet>>
+	historyStart?: string
 }

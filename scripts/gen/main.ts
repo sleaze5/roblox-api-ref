@@ -10,7 +10,9 @@ import { buildIconSprite, readIcon } from "./icon-sprite.ts"
 import { normalizeApi } from "./normalize-api.ts"
 import { buildSearchIndex } from "./search-index.ts"
 import { subsetFonts } from "./subset-fonts.ts"
-import { readUpdates } from "./updates/read-updates.ts"
+import { applyHistory } from "./history/apply-history.ts"
+import { buildHistory } from "./history/history-table.ts"
+import { buildUpdates, readDiffs } from "./updates/read-updates.ts"
 
 const versions = await readVersions()
 const version = versions.at(-1)
@@ -23,7 +25,9 @@ if (version === undefined) {
 const dump = (await Bun.file(join(dataDir, dumpFileName(version))).json()) as Dump
 const docs = (await Bun.file(join(dataDir, apiDocsFileName(version))).json()) as ApiDocs
 const api = normalizeApi(dump, docs, version)
-const updates = await readUpdates(versions, api)
+const diffs = await readDiffs(versions)
+const updates = buildUpdates(diffs, api)
+applyHistory(api, buildHistory(diffs), versions[0]?.version ?? version.version)
 const searchIndex = buildSearchIndex(api, updates)
 
 await Promise.all([

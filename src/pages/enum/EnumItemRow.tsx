@@ -6,6 +6,12 @@ import { CodeTokens } from "../../components/code/CodeTokens.tsx"
 import { DocText } from "../../components/doc/DocText.tsx"
 import { CopyLink } from "../../components/members/MemberLink.tsx"
 import { TagList } from "../../components/TagList.tsx"
+import {
+	HistoryLine,
+	HoverHistory,
+	historyVariant,
+	RecentChip,
+} from "../../components/history/MemberHistory.tsx"
 
 export function EnumItemRow(props: { owner: Enum; item: EnumItem }) {
 	const anchor = enumItemAnchor(props.item.name)
@@ -24,12 +30,33 @@ export function EnumItemRow(props: { owner: Enum; item: EnumItem }) {
 						]}
 					/>
 				</code>
+				{historyVariant === "hover" ? (
+					<HoverHistory
+						history={props.item.history}
+						kind="Enum"
+						owner={props.owner.name}
+					/>
+				) : null}
 				<div class="member-actions">
 					<CopyLink name={props.item.name} href={`#${anchor}`} />
 				</div>
 			</div>
 			<DocText doc={props.item.description} class="member-description" />
-			<TagList tags={plainTags(props.item.tags)} />
+			{historyVariant === "chip" ? (
+				<div class="flex flex-wrap items-center gap-1">
+					<RecentChip history={props.item.history} />
+					<TagList tags={plainTags(props.item.tags)} />
+				</div>
+			) : (
+				<TagList tags={plainTags(props.item.tags)} />
+			)}
+			{historyVariant === "line" ? (
+				<HistoryLine
+					history={props.item.history}
+					kind="Enum"
+					owner={props.owner.name}
+				/>
+			) : null}
 			{props.item.legacyNames.length === 0 ? null : (
 				<p class="text-fg-muted">
 					Legacy names:{" "}

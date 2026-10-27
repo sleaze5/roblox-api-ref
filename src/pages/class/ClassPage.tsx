@@ -63,6 +63,7 @@ export function ClassPage(props: { api: Api; item: Class }) {
 					ancestors={ancestors}
 					memberCount={props.item.members.length}
 					siblingCount={siblingCount(props.api, props.item)}
+					historyStart={props.api.historyStart}
 					inheritedCount={ancestors.reduce(
 						(sum, ancestor) => sum + ancestor.members.length,
 						0,

@@ -5,6 +5,7 @@ import type { Class } from "../../api/types.ts"
 import { DocText } from "../../components/doc/DocText.tsx"
 import { Fact } from "../../components/facts/Fact.tsx"
 import { FactList } from "../../components/facts/FactList.tsx"
+import { HistoryFacts } from "../../components/history/HistoryFacts.tsx"
 import { classCrumbs } from "../../components/page/crumbs.ts"
 import { PageHeader } from "../../components/page/PageHeader.tsx"
 import { TagList } from "../../components/TagList.tsx"
@@ -15,6 +16,7 @@ export function ClassHeader(props: {
 	memberCount: number
 	inheritedCount: number
 	siblingCount: number
+	historyStart: string | undefined
 }) {
 	const path = [...props.ancestors].reverse().map((ancestor) => ancestor.name)
 	return (
@@ -63,6 +65,14 @@ export function ClassHeader(props: {
 					}>
 					{props.siblingCount}
 				</Fact>
+			</FactList>
+			<FactList>
+				<HistoryFacts
+					history={props.item.history}
+					kind="Class"
+					name={props.item.name}
+					start={props.historyStart}
+				/>
 			</FactList>
 		</PageHeader>
 	)

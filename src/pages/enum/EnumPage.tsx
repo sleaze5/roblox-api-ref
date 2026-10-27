@@ -4,6 +4,7 @@ import type { Api, Enum } from "../../api/types.ts"
 import { DocText } from "../../components/doc/DocText.tsx"
 import { Fact } from "../../components/facts/Fact.tsx"
 import { FactList } from "../../components/facts/FactList.tsx"
+import { HistoryFacts } from "../../components/history/HistoryFacts.tsx"
 import { ListFilter } from "../../components/filters/ListFilter.tsx"
 import { Icon } from "../../components/Icon.tsx"
 import { enumCrumbs } from "../../components/page/crumbs.ts"
@@ -69,6 +70,14 @@ export function EnumPage(props: { api: Api; item: Enum }) {
 							hint="Properties, parameters, and return values that use this enum.">
 							{props.item.usedBy.length}
 						</Fact>
+					</FactList>
+					<FactList>
+						<HistoryFacts
+							history={props.item.history}
+							kind="Enum"
+							name={props.item.name}
+							start={props.api.historyStart}
+						/>
 					</FactList>
 				</PageHeader>
 				<ListFilter
