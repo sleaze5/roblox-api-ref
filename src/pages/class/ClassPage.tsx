@@ -11,6 +11,7 @@ import { MemberFilterBar } from "../../components/members/MemberFilterBar.tsx"
 import { MemberSection, sectionId } from "../../components/members/MemberSection.tsx"
 import { PageRail } from "../../layout/PageRail.tsx"
 import { Shell } from "../../layout/Shell.tsx"
+import { RemovedSection } from "../updates/RemovedSection.tsx"
 import { ClassHeader } from "./ClassHeader.tsx"
 import { ClassSidebar } from "./ClassSidebar.tsx"
 
@@ -43,18 +44,29 @@ export function ClassPage(props: { api: Api; item: Class }) {
 			}
 			rail={
 				<PageRail
-					links={kinds.map((kind) => ({
-						id: sectionId(kind),
-						label: memberKindTitles[kind],
-						count: countOfKind([props.item], kind),
-						countHint: `${memberKindTitles[kind]} that this class defines itself.`,
-						entries: membersInPageOrder(props.item.members, kind).map(
-							(member) => ({
-								id: memberAnchor(kind, member.name),
-								label: member.name,
-							}),
-						),
-					}))}
+					links={[
+						...kinds.map((kind) => ({
+							id: sectionId(kind),
+							label: memberKindTitles[kind],
+							count: countOfKind([props.item], kind),
+							countHint: `${memberKindTitles[kind]} that this class defines itself.`,
+							entries: membersInPageOrder(props.item.members, kind).map(
+								(member) => ({
+									id: memberAnchor(kind, member.name),
+									label: member.name,
+								}),
+							),
+						})),
+						...(props.item.removedMembers === undefined
+							? []
+							: [
+									{
+										id: "removed-members",
+										label: "Removed members",
+										count: props.item.removedMembers.length,
+									},
+								]),
+					]}
 				/>
 			}>
 			<article class="flex flex-col gap-6">
@@ -88,6 +100,14 @@ export function ClassPage(props: { api: Api; item: Class }) {
 						))}
 					</>
 				)}
+				<RemovedSection
+					api={props.api}
+					id="removed-members"
+					title="Removed members"
+					kind="Class"
+					owner={props.item.name}
+					removed={props.item.removedMembers}
+				/>
 			</article>
 		</Shell>
 	)

@@ -2,24 +2,35 @@ import type { Api } from "../../api/types.ts"
 import { OwnerGroup } from "./OwnerGroup.tsx"
 import type { OwnerSubsection } from "./owner-sections.ts"
 
-export function OwnerSubsectionBlock(props: { api: Api; group: OwnerSubsection }) {
+export function OwnerSubsectionBlock(props: {
+	api: Api
+	group: OwnerSubsection
+	title?: string
+	idPrefix?: string
+}) {
+	const id = `${props.idPrefix ?? ""}${props.group.id}`
 	return (
 		<section
-			id={props.group.id}
+			id={id}
 			data-list-section=""
-			aria-labelledby={`${props.group.id}-title`}
+			aria-labelledby={`${id}-title`}
 			class="flex flex-col gap-4">
 			<h3
-				id={`${props.group.id}-title`}
+				id={`${id}-title`}
 				class="flex items-center gap-2 border-b border-line-subtle pb-2 text-base font-semibold">
-				{props.group.title}
+				{props.title ?? props.group.title}
 				<span class="text-sm font-normal text-fg-faint">
 					{props.group.owners.length}
 				</span>
 			</h3>
 			<div class="flex flex-col gap-6">
 				{props.group.owners.map((owner) => (
-					<OwnerGroup api={props.api} owner={owner} heading="h4" />
+					<OwnerGroup
+						api={props.api}
+						owner={owner}
+						heading="h4"
+						idPrefix={props.idPrefix}
+					/>
 				))}
 			</div>
 		</section>

@@ -1,5 +1,5 @@
 import type { Doc } from "./doc-types.ts"
-import type { ItemHistory } from "./item-history.ts"
+import type { ItemHistory, Removed } from "./item-history.ts"
 
 export const securityLevels = [
 	"None",
@@ -88,6 +88,7 @@ export type Class = {
 	memoryCategory: string
 	tags: string[]
 	members: Member[]
+	removedMembers?: Removed<Member>[]
 	subclasses: string[]
 	description?: Doc
 }
@@ -123,6 +124,7 @@ export type Enum = {
 	history?: ItemHistory
 	tags: string[]
 	items: EnumItem[]
+	removedItems?: Removed<EnumItem>[]
 	usedBy: TypeUsage[]
 	description?: Doc
 }

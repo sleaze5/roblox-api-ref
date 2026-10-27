@@ -6,6 +6,7 @@ import { CodeTokens } from "../../components/code/CodeTokens.tsx"
 import { DocText } from "../../components/doc/DocText.tsx"
 import { CopyLink } from "../../components/members/MemberLink.tsx"
 import { TagList } from "../../components/TagList.tsx"
+import { datedTags } from "../../components/history/deprecation.ts"
 import { HistoryList } from "../../components/history/HistoryList.tsx"
 import { changeAnchor } from "../../api/update-text.ts"
 
@@ -31,7 +32,7 @@ export function EnumItemRow(props: { owner: Enum; item: EnumItem }) {
 				</div>
 			</div>
 			<DocText doc={props.item.description} class="member-description" />
-			<TagList tags={plainTags(props.item.tags)} />
+			<TagList tags={datedTags(plainTags(props.item.tags), props.item.history)} />
 			{props.item.legacyNames.length === 0 ? null : (
 				<p class="text-fg-muted">
 					Legacy names:{" "}

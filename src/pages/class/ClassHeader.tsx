@@ -11,6 +11,7 @@ import { ownerAnchor } from "../../api/update-text.ts"
 import { classCrumbs } from "../../components/page/crumbs.ts"
 import { PageHeader } from "../../components/page/PageHeader.tsx"
 import { TagList } from "../../components/TagList.tsx"
+import { datedTags } from "../../components/history/deprecation.ts"
 
 export function ClassHeader(props: {
 	item: Class
@@ -32,7 +33,7 @@ export function ClassHeader(props: {
 				doc={props.item.description}
 				class="max-w-prose text-base text-fg"
 			/>
-			<TagList tags={plainTags(props.item.tags)} />
+			<TagList tags={datedTags(plainTags(props.item.tags), props.item.history)} />
 			<FactList>
 				<Fact
 					label="Memory category"

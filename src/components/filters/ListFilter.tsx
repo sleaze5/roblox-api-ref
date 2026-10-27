@@ -10,11 +10,13 @@ export function ListFilter(props: {
 	target: string
 	param: string
 	placement: keyof typeof placements
+	noun?: string
 }) {
 	return (
 		<form
 			data-list-filter={props.target}
 			data-param={props.param}
+			data-noun={props.noun}
 			role="search"
 			aria-label={props.label}
 			class={placements[props.placement]}>

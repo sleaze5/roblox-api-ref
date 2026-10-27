@@ -3,7 +3,8 @@ import { formatDate, updateAnchor } from "../../api/update-text.ts"
 import type { Api } from "../../api/types.ts"
 import type { Update } from "../../api/update-types.ts"
 import { Icon } from "../../components/Icon.tsx"
-import { OwnerGroup } from "./OwnerGroup.tsx"
+import { ownerSections } from "./owner-sections.ts"
+import { OwnerSubsectionBlock } from "./OwnerSubsectionBlock.tsx"
 import { UpdateFacts } from "./UpdateFacts.tsx"
 
 export function UpdateSection(props: { api: Api; updates: Update[]; update: Update }) {
@@ -35,14 +36,17 @@ export function UpdateSection(props: { api: Api; updates: Update[]; update: Upda
 					The API did not change between these versions.
 				</p>
 			) : (
-				<div class="flex flex-col gap-6">
-					{props.update.owners.map((owner) => (
-						<OwnerGroup
-							api={props.api}
-							owner={owner}
-							idPrefix={`${props.update.version}-`}
-						/>
-					))}
+				<div class="flex flex-col gap-8">
+					{ownerSections(props.update).flatMap((section) =>
+						section.groups.map((group) => (
+							<OwnerSubsectionBlock
+								api={props.api}
+								group={group}
+								title={group.railLabel}
+								idPrefix={`${props.update.version}-`}
+							/>
+						)),
+					)}
 				</div>
 			)}
 		</section>

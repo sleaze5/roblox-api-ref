@@ -1,11 +1,15 @@
 import { isApiChange } from "../../../src/api/change-kind.ts"
 import type {
 	HistoryEntry,
+	HistoryEvent,
 	HistoryKind,
 	ItemHistory,
 	MemberCounts,
+	Removed,
 } from "../../../src/api/item-history.ts"
+import type { EnumItem, Member } from "../../../src/api/types.ts"
 import type {
+	ChangeDetail,
 	ChangeEntry,
 	ChangeStatus,
 	OwnerChanges,
@@ -61,8 +65,65 @@ function memberCounts(owner: OwnerChanges): MemberCounts | undefined {
 	return counts.added + counts.removed + counts.changed === 0 ? undefined : counts
 }
 
+const deprecatedTag = "Deprecated"
+
+function tagDetail(details: ChangeDetail[], labels: string[]): boolean {
+	return details.some(
+		(detail) =>
+			detail.kind === "tags" &&
+			labels.includes(detail.label) &&
+			detail.tags.includes(deprecatedTag),
+	)
+}
+
+function entryDeprecation(entry: ChangeEntry): "set" | "clear" | undefined {
+	if (entry.status === "Removed" || tagDetail(entry.details, ["Removed tags"])) {
+		return "clear"
+	}
+	const born = entry.status === "Added" && entry.after?.tags.includes(deprecatedTag)
+	return born || tagDetail(entry.details, ["Added tags"]) ? "set" : undefined
+}
+
+function ownerDeprecation(owner: OwnerChanges): "set" | "clear" | undefined {
+	if (owner.status === "Removed" || tagDetail(owner.details, ["Removed tags"])) {
+		return "clear"
+	}
+	return tagDetail(owner.details, ["Tags", "Added tags"]) ? "set" : undefined
+}
+
 export class HistoryTable {
 	readonly entries = new Map<string, HistoryEntry[]>()
+	readonly deprecations = new Map<string, HistoryEvent>()
+	readonly removed = new Map<string, Map<string, Removed<Member | EnumItem>>>()
+
+	private deprecate(
+		key: string,
+		change: "set" | "clear" | undefined,
+		event: HistoryEvent,
+	): void {
+		if (change === "set") {
+			this.deprecations.set(key, event)
+		} else if (change === "clear") {
+			this.deprecations.delete(key)
+		}
+	}
+
+	private trackRemoval(owner: string, entry: ChangeEntry, event: HistoryEvent): void {
+		const removed =
+			this.removed.get(owner) ?? new Map<string, Removed<Member | EnumItem>>()
+		if (entry.status === "Removed" && entry.before !== undefined) {
+			removed.set(entry.name, { value: entry.before, removed: event })
+		} else if (entry.status === "Added") {
+			removed.delete(entry.name)
+		}
+		this.removed.set(owner, removed)
+	}
+
+	removedOf(owner: string): Removed<Member | EnumItem>[] {
+		return [...(this.removed.get(owner)?.values() ?? [])].sort((a, b) =>
+			b.removed.published.localeCompare(a.removed.published),
+		)
+	}
 
 	private push(key: string, entry: HistoryEntry): void {
 		if (entry.kinds.length === 0 && entry.members === undefined) {
@@ -77,12 +138,19 @@ export class HistoryTable {
 		const event = { version: update.version, published: update.published }
 		for (const owner of update.owners) {
 			const members = memberCounts(owner)
-			this.push(ownerKey(owner.kind, owner.name), {
+			const key = ownerKey(owner.kind, owner.name)
+			if (owner.status === "Added") {
+				this.removed.delete(key)
+			}
+			this.deprecate(key, ownerDeprecation(owner), event)
+			this.push(key, {
 				...event,
 				kinds: ownerKinds(owner),
 				...(members === undefined ? {} : { members }),
 			})
 			for (const entry of owner.entries) {
+				this.deprecate(entryKey(entry), entryDeprecation(entry), event)
+				this.trackRemoval(key, entry, event)
 				this.push(entryKey(entry), { ...event, kinds: entryKinds(entry) })
 			}
 		}
@@ -107,6 +175,10 @@ export class HistoryTable {
 		}
 		if (changed !== undefined) {
 			history.changed = { version: changed.version, published: changed.published }
+		}
+		const deprecated = this.deprecations.get(key)
+		if (deprecated !== undefined) {
+			history.deprecated = deprecated
 		}
 		return history
 	}

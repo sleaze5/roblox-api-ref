@@ -7,6 +7,7 @@ import { DocText } from "../doc/DocText.tsx"
 import { HistoryList } from "../history/HistoryList.tsx"
 import { changeAnchor } from "../../api/update-text.ts"
 import { TagList } from "../TagList.tsx"
+import { datedTags } from "../history/deprecation.ts"
 import { MemberDetails } from "./details/MemberDetails.tsx"
 import { memberAttributes } from "./member-attributes.ts"
 import { CopyLink, DocsLink } from "./MemberLink.tsx"
@@ -37,7 +38,7 @@ export function MemberCard(props: { member: Member; owner: string; own: boolean 
 				</div>
 			</div>
 			<DocText doc={props.member.description} class="member-description" />
-			<TagList tags={memberTags(props.member)} />
+			<TagList tags={datedTags(memberTags(props.member), props.member.history)} />
 			<MemberDetails member={props.member} />
 			<Preferred member={props.member} />
 			{props.own ? (

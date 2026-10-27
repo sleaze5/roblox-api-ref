@@ -1,5 +1,6 @@
 import { inlineTokens, signatureParts } from "../../api/signature.ts"
 import { memberTags } from "../../api/tags.ts"
+import { historyFacts } from "./history-markdown.ts"
 import type { Member, Parameter } from "../../api/types.ts"
 import { docMarkdown } from "./doc-markdown.ts"
 import { factList, joinBlocks } from "./document.ts"
@@ -52,6 +53,7 @@ export function memberMarkdown(member: Member, owner: string): string {
 		factList([
 			["Tags", tags.join(", ")],
 			["Use instead", preferred(member)],
+			...historyFacts(member.history, false),
 		]),
 		docMarkdown(member.description),
 		member.kind === "Property" ? undefined : parameterList(member.parameters),

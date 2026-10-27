@@ -25,4 +25,10 @@ export type ItemHistory = {
 	added?: HistoryEvent
 	addedBefore?: string
 	changed?: HistoryEvent
+	deprecated?: HistoryEvent
+}
+
+export type Removed<Value> = {
+	value: Value
+	removed: HistoryEvent
 }

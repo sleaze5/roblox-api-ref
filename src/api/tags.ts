@@ -6,6 +6,8 @@ export type TagTone = "neutral" | "warning" | "danger"
 export type DisplayTag = {
 	label: string
 	tone: TagTone
+	note?: string
+	hint?: string
 }
 
 const tagLabels: Record<string, string> = {

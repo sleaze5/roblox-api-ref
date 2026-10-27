@@ -11,6 +11,7 @@ import { plainTags } from "../../api/tags.ts"
 import type { Api, Class, MemberKind } from "../../api/types.ts"
 import { docMarkdown } from "./doc-markdown.ts"
 import { factList, joinBlocks } from "./document.ts"
+import { historyFacts } from "./history-markdown.ts"
 import { escapeText, inlineCode, link } from "./escape.ts"
 import { classMarkdownUrl } from "./markdown-href.ts"
 import { memberMarkdown } from "./member-markdown.ts"
@@ -63,6 +64,7 @@ export function classMarkdown(api: Api, item: Class): string {
 					.join(", "),
 			],
 			["Memory category", item.memoryCategory],
+			...historyFacts(item.history, true),
 			["HTML page", absoluteUrl(classHref(item.name))],
 			["Roblox documentation", classDocsHref(item.name)],
 		]),

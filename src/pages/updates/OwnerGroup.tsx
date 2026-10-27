@@ -21,7 +21,7 @@ function statusLabel(owner: OwnerChanges): string | undefined {
 export function OwnerGroup(props: {
 	api: Api
 	owner: OwnerChanges
-	idPrefix?: string
+	idPrefix?: string | undefined
 	heading?: "h3" | "h4"
 }) {
 	const id = `${props.idPrefix ?? ""}${ownerAnchor(props.owner)}`

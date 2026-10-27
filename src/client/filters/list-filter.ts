@@ -49,7 +49,10 @@ export function initListFilter(form: HTMLFormElement): void {
 		const matched = filter.apply(value.toLowerCase())
 		writeParams({ [param]: value === "" ? undefined : value })
 		if (summary !== null) {
-			summary.textContent = summaryText(matched, filter.total)
+			const noun = form.dataset["noun"]
+			const text = summaryText(matched, filter.total)
+			summary.textContent =
+				noun === undefined ? text : `${text.replace(/ total$/, "")} ${noun}`
 		}
 	}
 

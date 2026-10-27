@@ -113,4 +113,49 @@ describe("item history", () => {
 			],
 		})
 	})
+
+	test("remembers removed members until they come back", () => {
+		const removedOnce = buildHistory(
+			[
+				update("1", [
+					part(undefined, [
+						size({ status: "Removed", before: property("1") }),
+					]),
+				]),
+			].reverse(),
+		)
+		expect(
+			removedOnce
+				.removedOf(ownerKey("Class", "Part"))
+				.map((item) => item.removed.version),
+		).toEqual(["1"])
+		expect(table.removedOf(ownerKey("Class", "Part"))).toEqual([])
+	})
+
+	test("dates a deprecation by the update that added the tag", () => {
+		const deprecated = buildHistory(
+			[
+				update("1", [part("Added", [size({})])]),
+				update("2", [
+					part(undefined, [
+						size({
+							status: "Changed",
+							before: property("1"),
+							after: property("1"),
+							details: [
+								{
+									kind: "tags",
+									label: "Added tags",
+									tags: ["Deprecated"],
+								},
+							],
+						}),
+					]),
+				]),
+			].reverse(),
+		)
+		expect(
+			deprecated.history(itemKey("Member", "Part", "Size"))?.deprecated?.version,
+		).toBe("2")
+	})
 })

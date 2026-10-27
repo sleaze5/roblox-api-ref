@@ -40,10 +40,11 @@ function UpdateList(props: { api: Api; updates: Update[] }) {
 	return (
 		<>
 			<ListFilter
-				label="Filter changes"
+				label={`Filter the ${recentCount} newest updates`}
 				target="update-changes"
 				param="q"
 				placement="page"
+				noun="changes"
 			/>
 			<div id="update-changes" data-changes="" class="flex flex-col gap-12">
 				{recent.map((update) => (

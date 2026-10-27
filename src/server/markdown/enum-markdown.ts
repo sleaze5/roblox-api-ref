@@ -5,6 +5,7 @@ import { plainTags } from "../../api/tags.ts"
 import type { Api, Enum, EnumItem } from "../../api/types.ts"
 import { docMarkdown } from "./doc-markdown.ts"
 import { factList, joinBlocks } from "./document.ts"
+import { historyFacts } from "./history-markdown.ts"
 import { escapeText, inlineCode, tableCell } from "./escape.ts"
 import { absoluteUrl } from "../../site/origin.ts"
 import { usageMarkdown } from "./usage-markdown.ts"
@@ -39,6 +40,7 @@ export function enumMarkdown(api: Api, item: Enum): string {
 					.map((tag) => tag.label)
 					.join(", "),
 			],
+			...historyFacts(item.history, true),
 			["HTML page", absoluteUrl(enumHref(item.name))],
 			["Roblox documentation", enumDocsHref(item.name)],
 		]),

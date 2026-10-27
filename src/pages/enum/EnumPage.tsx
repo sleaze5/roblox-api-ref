@@ -12,6 +12,7 @@ import { Icon } from "../../components/Icon.tsx"
 import { enumCrumbs } from "../../components/page/crumbs.ts"
 import { PageHeader } from "../../components/page/PageHeader.tsx"
 import { TagList } from "../../components/TagList.tsx"
+import { datedTags } from "../../components/history/deprecation.ts"
 import {
 	roleSections,
 	usageCount,
@@ -19,6 +20,7 @@ import {
 } from "../../components/usage/UsageSections.tsx"
 import { PageRail } from "../../layout/PageRail.tsx"
 import { Shell } from "../../layout/Shell.tsx"
+import { RemovedSection } from "../updates/RemovedSection.tsx"
 import { EnumItemRow } from "./EnumItemRow.tsx"
 import { EnumSidebar } from "./EnumSidebar.tsx"
 
@@ -40,6 +42,15 @@ export function EnumPage(props: { api: Api; item: Enum }) {
 					links={[
 						{ id: "items", label: "Items", count: props.item.items.length },
 						...usageLinks,
+						...(props.item.removedItems === undefined
+							? []
+							: [
+									{
+										id: "removed-items",
+										label: "Removed items",
+										count: props.item.removedItems.length,
+									},
+								]),
 					]}
 				/>
 			}>
@@ -62,7 +73,9 @@ export function EnumPage(props: { api: Api; item: Enum }) {
 						doc={props.item.description}
 						class="max-w-prose text-base text-fg"
 					/>
-					<TagList tags={plainTags(props.item.tags)} />
+					<TagList
+						tags={datedTags(plainTags(props.item.tags), props.item.history)}
+					/>
 					<FactList>
 						<Fact label="Items" hint="Enum items that this enum defines.">
 							{props.item.items.length}
@@ -118,6 +131,14 @@ export function EnumPage(props: { api: Api; item: Enum }) {
 						name={`Enum.${props.item.name}`}
 					/>
 				</div>
+				<RemovedSection
+					api={props.api}
+					id="removed-items"
+					title="Removed items"
+					kind="Enum"
+					owner={props.item.name}
+					removed={props.item.removedItems}
+				/>
 			</article>
 		</Shell>
 	)
