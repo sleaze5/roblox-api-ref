@@ -17,6 +17,8 @@ export function statRefLabel(ref: StatRef): string {
 			return `${ref.owner}${memberSeparator(ref.memberKind)}${ref.member}(${ref.name})`
 		case "Update":
 			return ref.version
+		case "Removed":
+			return ref.label
 		default:
 			return `${ref.owner}${memberSeparator(ref.kind)}${ref.name}`
 	}

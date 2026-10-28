@@ -31,12 +31,14 @@ export type StatRef =
 			name: string
 	  }
 	| { kind: "Update"; version: string; published: string }
+	| { kind: "Removed"; label: string; version: string; anchor: string }
 
 export type StatRecord = {
 	id: string
 	label: string
 	hint: string
 	value: number
+	unit?: string
 	items: StatRef[]
 }
 
@@ -72,6 +74,74 @@ export type PeriodTrend = {
 	tallies: Tallies
 }
 
+export type UpdateEvent = {
+	version: string
+	published: string
+}
+
+export type ComebackBatch = {
+	removed: UpdateEvent
+	returned: UpdateEvent
+	count: number
+	days: number
+}
+
+export type AccessPeriod = {
+	period: string
+	addedOpen: number
+	addedRestricted: number
+	opened: number
+	restricted: number
+	madeSafe: number
+	madeUnsafe: number
+}
+
+export type AccessNow = {
+	members: number
+	scriptable: number
+	threadSafe: number
+}
+
+export type TagTrend = {
+	name: string
+	current: number
+	gained: number
+	lost: number
+	first?: UpdateEvent
+}
+
+export const coverageKinds = [
+	"Class",
+	"Property",
+	"Method",
+	"Event",
+	"Callback",
+	"Parameter",
+	"Return",
+	"Enum",
+	"EnumItem",
+] as const
+
+export type CoverageKind = (typeof coverageKinds)[number]
+
+export type CoverageRow = {
+	kind: CoverageKind
+	described: number
+	total: number
+}
+
+export type DocPeriod = {
+	period: string
+	added: number
+	changed: number
+	removed: number
+}
+
+export type GrowthPeriod = {
+	period: string
+	classes: { name: string; added: number }[]
+}
+
 export type Stats = {
 	historyStart: string
 	counts: CountRow[]
@@ -79,4 +149,10 @@ export type Stats = {
 	updates: UpdateTrend[]
 	years: PeriodTrend[]
 	months: PeriodTrend[]
+	comebacks: ComebackBatch[]
+	access: { now: AccessNow; years: AccessPeriod[] }
+	tags: TagTrend[]
+	capabilities: TagTrend[]
+	docs: { coverage: CoverageRow[]; years: DocPeriod[] }
+	growth: GrowthPeriod[]
 }

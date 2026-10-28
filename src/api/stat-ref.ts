@@ -24,6 +24,8 @@ export function statRefHref(ref: StatRef): string {
 			return memberHref(ref.owner, ref.memberKind, ref.member)
 		case "Update":
 			return updateHref(ref.version)
+		case "Removed":
+			return `${updateHref(ref.version)}#${ref.anchor}`
 		default:
 			return memberHref(ref.owner, ref.kind, ref.name)
 	}
@@ -60,6 +62,8 @@ function unlinkedTokens(ref: StatRef): CodeToken[] {
 			]
 		case "Update":
 			return [token(ref.version, "plain")]
+		case "Removed":
+			return [token(ref.label, "self")]
 		default:
 			return memberTokens(ref.owner, ref.kind, ref.name)
 	}

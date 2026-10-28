@@ -64,7 +64,12 @@ export function RecordTable(props: { records: StatRecord[] }) {
 									{record.label}
 								</span>
 							</th>
-							<td data-number="">{record.value}</td>
+							<td data-number="">
+								{record.value}
+								{record.unit === undefined ? null : (
+									<span class="text-fg-faint"> {record.unit}</span>
+								)}
+							</td>
 							<td data-wrap="">
 								<RecordItems items={record.items} />
 							</td>

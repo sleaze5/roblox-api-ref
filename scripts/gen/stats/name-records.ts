@@ -9,7 +9,10 @@ type NameKind = {
 }
 
 function nameOf(ref: StatRef): string {
-	return ref.kind === "Update" ? ref.version : ref.name
+	if (ref.kind === "Update") {
+		return ref.version
+	}
+	return ref.kind === "Removed" ? ref.label : ref.name
 }
 
 function membersOf(kind: MemberKind): NameKind["refs"] {

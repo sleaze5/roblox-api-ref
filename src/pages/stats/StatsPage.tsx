@@ -1,5 +1,5 @@
 import type { Api } from "../../api/types.ts"
-import { removedNote, statsLead } from "../../api/stats-text.ts"
+import { comebacksLead, removedNote, statsLead } from "../../api/stats-text.ts"
 import type { Stats } from "../../api/stats-types.ts"
 import { Fact } from "../../components/facts/Fact.tsx"
 import { FactList } from "../../components/facts/FactList.tsx"
@@ -12,6 +12,8 @@ import { CountTable } from "./CountTable.tsx"
 import { RecordTable } from "./RecordTable.tsx"
 import { StatsSection } from "./StatsSection.tsx"
 import { StatsTrends, trendSections } from "./StatsTrends.tsx"
+import { ComebackTable } from "./sections/ComebackTable.tsx"
+import { ExtraSections, extraSections } from "./sections/ExtraSections.tsx"
 
 export function StatsPage(props: { api: Api; stats: Stats }) {
 	const stats = props.stats
@@ -27,6 +29,7 @@ export function StatsPage(props: { api: Api; stats: Stats }) {
 							id: group.id,
 							label: group.title,
 						})),
+						...extraSections,
 						...trendSections,
 					]}
 				/>
@@ -57,10 +60,19 @@ export function StatsPage(props: { api: Api; stats: Stats }) {
 					<CountTable rows={stats.counts} historyStart={stats.historyStart} />
 				</StatsSection>
 				{stats.records.map((group) => (
-					<StatsSection id={group.id} title={group.title}>
+					<StatsSection
+						id={group.id}
+						title={group.title}
+						lead={
+							group.id === "comeback-records" ? comebacksLead : undefined
+						}>
 						<RecordTable records={group.records} />
+						{group.id === "comeback-records" ? (
+							<ComebackTable batches={stats.comebacks} />
+						) : null}
 					</StatsSection>
 				))}
+				<ExtraSections api={props.api} stats={stats} />
 				<StatsTrends stats={stats} />
 			</article>
 		</Shell>

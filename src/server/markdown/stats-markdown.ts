@@ -14,21 +14,18 @@ import type { ChangeTally, RecordGroup, Stats, Tallies } from "../../api/stats-t
 import type { Release } from "../../api/release.ts"
 import { formatDate } from "../../api/update-text.ts"
 import { factList, joinBlocks } from "./document.ts"
-import { inlineCode, link, tableCell } from "./escape.ts"
+import { inlineCode, link } from "./escape.ts"
+import {
+	comebackMarkdown,
+	extraMarkdown,
+	markdownTable,
+} from "./stats-extra-markdown.ts"
 import { markdownUrl } from "./markdown-href.ts"
-
-function table(headings: string[], rows: string[][]): string {
-	return [
-		`| ${headings.join(" | ")} |`,
-		`| ${headings.map(() => "---").join(" | ")} |`,
-		...rows.map((row) => `| ${row.map(tableCell).join(" | ")} |`),
-	].join("\n")
-}
 
 function countTable(stats: Stats): string {
 	const current = stats.counts.reduce((sum, row) => sum + row.current, 0)
 	const removed = stats.counts.reduce((sum, row) => sum + row.removed, 0)
-	return table(
+	return markdownTable(
 		["Kind", "Current", "Removed", "Total"],
 		[
 			...stats.counts.map((row) => [
@@ -42,17 +39,20 @@ function countTable(stats: Stats): string {
 	)
 }
 
-function recordBlocks(group: RecordGroup): string[] {
+function recordBlocks(group: RecordGroup, stats: Stats): string[] {
 	return [
 		`## ${group.title}`,
-		table(
+		markdownTable(
 			["Statistic", "Value", "Items"],
 			group.records.map((record) => [
 				record.label,
-				String(record.value),
+				record.unit === undefined
+					? String(record.value)
+					: `${record.value} ${record.unit}`,
 				record.items.map((item) => inlineCode(statRefLabel(item))).join(", "),
 			]),
 		),
+		...(group.id === "comeback-records" ? comebackMarkdown(stats) : []),
 	]
 }
 
@@ -89,9 +89,10 @@ export function statsMarkdown(release: Release, stats: Stats): string {
 		"## Counts",
 		removedNote(stats.historyStart),
 		countTable(stats),
-		...stats.records.flatMap(recordBlocks),
+		...stats.records.flatMap((group) => recordBlocks(group, stats)),
+		...extraMarkdown(stats),
 		"## API size",
-		table(
+		markdownTable(
 			["Update", "Published", "Classes", "Enums"],
 			stats.updates
 				.toReversed()
@@ -104,7 +105,7 @@ export function statsMarkdown(release: Release, stats: Stats): string {
 		),
 		"## Changes by year",
 		`${trendsNote} + means added, − removed, and ~ changed.`,
-		table(
+		markdownTable(
 			["Year", "Updates", ...tallyHeadings],
 			stats.years
 				.toReversed()
@@ -116,7 +117,7 @@ export function statsMarkdown(release: Release, stats: Stats): string {
 		),
 		"## Changes by month",
 		monthsNote,
-		table(
+		markdownTable(
 			["Month", "Updates", "Changes", ...tallyHeadings],
 			stats.months.map((month) =>
 				[
@@ -127,7 +128,7 @@ export function statsMarkdown(release: Release, stats: Stats): string {
 			),
 		),
 		"## Changes by update",
-		table(
+		markdownTable(
 			["Update", "Published", ...tallyHeadings],
 			stats.updates
 				.toReversed()

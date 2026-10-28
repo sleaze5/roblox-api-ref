@@ -88,4 +88,43 @@ describe("statistics", () => {
 		)
 		expect(stats.months.length).toBeLessThanOrEqual(12)
 	})
+
+	test("count every comeback once, in a batch of updates", () => {
+		expect(stats.comebacks.reduce((sum, batch) => sum + batch.count, 0)).toBe(
+			record("items-added-back").value,
+		)
+	})
+
+	test("split each year's added members by whether scripts can use them", () => {
+		for (const year of stats.access.years) {
+			const trend = stats.years.find((item) => item.period === year.period)
+			expect(year.addedOpen + year.addedRestricted).toBe(
+				trend?.tallies.Member.added,
+			)
+		}
+	})
+
+	test("count each tag as many times as the Index lists its uses", () => {
+		for (const [name, facet] of Object.entries(api.facets.tag)) {
+			expect(stats.tags.find((row) => row.name === name)?.current).toBe(
+				facet.uses.length,
+			)
+		}
+	})
+
+	test("measure description coverage against every current class and enum", () => {
+		const coverage = Object.fromEntries(
+			stats.docs.coverage.map((row) => [row.kind, row.total]),
+		)
+		expect(coverage["Class"]).toBe(Object.keys(api.classes).length)
+		expect(coverage["Enum"]).toBe(Object.keys(api.enums).length)
+	})
+
+	test("list only classes that grew, largest first", () => {
+		for (const year of stats.growth) {
+			const added = year.classes.map((item) => item.added)
+			expect(added.every((value) => value > 0)).toBe(true)
+			expect(added).toEqual(added.toSorted((a, b) => b - a))
+		}
+	})
 })

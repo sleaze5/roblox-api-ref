@@ -3,7 +3,7 @@ import type { JSX } from "@solidjs/web"
 export function StatsSection(props: {
 	id: string
 	title: string
-	lead?: string
+	lead?: string | undefined
 	children: JSX.Element
 }) {
 	return (

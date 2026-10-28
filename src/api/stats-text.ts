@@ -2,7 +2,9 @@ import { formatMonth } from "./update-text.ts"
 import { releaseName } from "./release.ts"
 import {
 	trendKinds,
+	type AccessNow,
 	type CountKind,
+	type CoverageKind,
 	type StatRef,
 	type Tallies,
 } from "./stats-types.ts"
@@ -22,6 +24,7 @@ const refNouns: Record<StatRef["kind"], string> = {
 	...countLabels,
 	Parameter: "Parameters",
 	Update: "Updates",
+	Removed: "Removed items",
 }
 
 export function refNoun(kind: StatRef["kind"]): string {
@@ -61,4 +64,39 @@ export function deprecatedTotal(tallies: Tallies): number {
 		tallies.Enum.deprecated +
 		tallies.EnumItem.deprecated
 	)
+}
+
+export function percentText(part: number, total: number): string {
+	return `${total === 0 ? 0 : Math.round((part / total) * 100)}%`
+}
+
+export function accessLead(now: AccessNow): string {
+	return `Game scripts can use ${now.scriptable} of the ${now.members} current members (${percentText(now.scriptable, now.members)}), and ${now.threadSafe} (${percentText(now.threadSafe, now.members)}) are safe to use in parallel. The table shows how each year changed that.`
+}
+
+export const tagsLead =
+	"How many classes, members, enums, and enum items have each tag now, and how often updates gave it or took it away."
+
+export const capabilitiesLead =
+	"How many members need each capability now, for reading or writing, and how often updates gave it or took it away."
+
+export const docsLead =
+	"How much of the current API the English API docs describe, and how many descriptions each year added, rewrote, or removed."
+
+export const growthLead =
+	"The classes that gained the most members each year, counting members added minus members removed."
+
+export const comebacksLead =
+	"Items that an update removed and a later update added back. The second table pairs each update that removed items with the update that restored them."
+
+export const coverageLabels: Record<CoverageKind, string> = {
+	Class: "Classes",
+	Property: "Properties",
+	Method: "Methods",
+	Event: "Events",
+	Callback: "Callbacks",
+	Parameter: "Parameters",
+	Return: "Return values",
+	Enum: "Enums",
+	EnumItem: "Enum items",
 }
