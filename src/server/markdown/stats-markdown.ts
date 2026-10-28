@@ -1,5 +1,5 @@
 import { updateHref } from "../../api/routes.ts"
-import { statRefLabel } from "../../api/stat-ref.ts"
+import { statRefLabel } from "../../api/stat-ref-label.ts"
 import {
 	countLabels,
 	deprecatedTotal,

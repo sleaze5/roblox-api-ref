@@ -1,5 +1,5 @@
 import { compareNames } from "../../../src/api/compare-names.ts"
-import { statRefLabel } from "../../../src/api/stat-ref.ts"
+import { statRefLabel } from "../../../src/api/stat-ref-label.ts"
 import type { RecordGroup, Stats } from "../../../src/api/stats-types.ts"
 import type { Api } from "../../../src/api/types.ts"
 import type { Update } from "../../../src/api/update-types.ts"
