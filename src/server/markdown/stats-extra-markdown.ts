@@ -1,3 +1,4 @@
+import { accessTierLabels } from "../../api/access-tiers.ts"
 import {
 	accessLead,
 	capabilitiesLead,
@@ -58,6 +59,22 @@ export function extraMarkdown(stats: Stats): string[] {
 	return [
 		"## Access",
 		accessLead(stats.access.now),
+		markdownTable(
+			["Who can use it", "Properties", "Methods", "Events", "Callbacks", "All"],
+			stats.access.tiers.map((row) => [
+				accessTierLabels[row.tier],
+				String(row.kinds.Property),
+				String(row.kinds.Method),
+				String(row.kinds.Event),
+				String(row.kinds.Callback),
+				String(
+					row.kinds.Property +
+						row.kinds.Method +
+						row.kinds.Event +
+						row.kinds.Callback,
+				),
+			]),
+		),
 		markdownTable(
 			[
 				"Year",

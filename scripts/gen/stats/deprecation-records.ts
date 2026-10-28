@@ -1,3 +1,4 @@
+import { accessTier } from "../../../src/api/access-tiers.ts"
 import type { HistoryEvent, ItemHistory } from "../../../src/api/item-history.ts"
 import type { RecordGroup, StatRef } from "../../../src/api/stats-types.ts"
 import type { Api } from "../../../src/api/types.ts"
@@ -33,7 +34,7 @@ function removals(updates: Update[]): Removal[] {
 						scriptable:
 							entry.kind === "EnumItem" ||
 							(entry.before !== undefined &&
-								entry.before.security === "None"),
+								accessTier(entry.before) === "game"),
 						...(since === undefined
 							? {}
 							: {

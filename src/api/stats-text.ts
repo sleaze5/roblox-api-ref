@@ -71,7 +71,7 @@ export function percentText(part: number, total: number): string {
 }
 
 export function accessLead(now: AccessNow): string {
-	return `Game scripts can use ${now.scriptable} of the ${now.members} current members (${percentText(now.scriptable, now.members)}), and ${now.threadSafe} (${percentText(now.threadSafe, now.members)}) are safe to use in parallel. The table shows how each year changed that.`
+	return `Game scripts can use ${now.scriptable} of the ${now.members} current members (${percentText(now.scriptable, now.members)}), and ${now.threadSafe} (${percentText(now.threadSafe, now.members)}) are safe to use in parallel. The first table splits the members by who can use them, and the second shows how each year changed that.`
 }
 
 export const tagsLead =

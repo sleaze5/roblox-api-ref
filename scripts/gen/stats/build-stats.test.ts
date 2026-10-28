@@ -127,4 +127,28 @@ describe("statistics", () => {
 			expect(added).toEqual(added.toSorted((a, b) => b - a))
 		}
 	})
+
+	test("put every current member in exactly one access group", () => {
+		const members = Object.values(api.classes).reduce(
+			(sum, item) => sum + item.members.length,
+			0,
+		)
+		const grouped = stats.access.tiers.reduce(
+			(sum, row) =>
+				sum +
+				row.kinds.Property +
+				row.kinds.Method +
+				row.kinds.Event +
+				row.kinds.Callback,
+			0,
+		)
+		expect(grouped).toBe(members)
+		expect(stats.access.tiers[0]?.tier).toBe("game")
+		expect(
+			Object.values(stats.access.tiers[0]?.kinds ?? {}).reduce(
+				(a, b) => a + b,
+				0,
+			),
+		).toBe(stats.access.now.scriptable)
+	})
 })

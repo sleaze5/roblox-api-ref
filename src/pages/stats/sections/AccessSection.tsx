@@ -1,3 +1,4 @@
+import { accessTierHints, accessTierLabels } from "../../../api/access-tiers.ts"
 import { accessLead } from "../../../api/stats-text.ts"
 import type { Stats } from "../../../api/stats-types.ts"
 import { DataTable } from "../DataTable.tsx"
@@ -6,6 +7,35 @@ import { StatsSection } from "../StatsSection.tsx"
 export function AccessSection(props: { access: Stats["access"] }) {
 	return (
 		<StatsSection id="access" title="Access" lead={accessLead(props.access.now)}>
+			<DataTable
+				caption="Access by audience"
+				columns={[
+					{ label: "Who can use it" },
+					{ label: "Properties", number: true },
+					{ label: "Methods", number: true },
+					{ label: "Events", number: true },
+					{ label: "Callbacks", number: true },
+					{ label: "All", number: true },
+				]}
+				rows={props.access.tiers.map((row) => ({
+					key: `access-${row.tier}`,
+					cells: [
+						<span
+							data-tooltip={accessTierHints[row.tier]}
+							class="cursor-help font-normal underline decoration-line-strong decoration-dotted underline-offset-4">
+							{accessTierLabels[row.tier]}
+						</span>,
+						row.kinds.Property,
+						row.kinds.Method,
+						row.kinds.Event,
+						row.kinds.Callback,
+						row.kinds.Property +
+							row.kinds.Method +
+							row.kinds.Event +
+							row.kinds.Callback,
+					],
+				}))}
+			/>
 			<DataTable
 				caption="Access by year"
 				columns={[

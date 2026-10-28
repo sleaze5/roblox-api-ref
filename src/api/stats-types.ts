@@ -1,3 +1,4 @@
+import type { TierRow } from "./access-tiers.ts"
 import type { Release } from "./release.ts"
 import type { MemberKind } from "./types.ts"
 
@@ -150,7 +151,7 @@ export type Stats = {
 	years: PeriodTrend[]
 	months: PeriodTrend[]
 	comebacks: ComebackBatch[]
-	access: { now: AccessNow; years: AccessPeriod[] }
+	access: { now: AccessNow; tiers: TierRow[]; years: AccessPeriod[] }
 	tags: TagTrend[]
 	capabilities: TagTrend[]
 	docs: { coverage: CoverageRow[]; years: DocPeriod[] }

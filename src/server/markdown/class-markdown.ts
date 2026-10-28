@@ -1,3 +1,4 @@
+import { accessTierLabels, accessTiers, tierCounts } from "../../api/access-tiers.ts"
 import { releaseText } from "../../api/release.ts"
 import { classDocsHref } from "../../api/docs-links.ts"
 import {
@@ -65,6 +66,17 @@ export function classMarkdown(api: Api, item: Class): string {
 					.join(", "),
 			],
 			["Memory category", item.memoryCategory],
+			[
+				"Access, by own members",
+				item.members.length === 0
+					? undefined
+					: accessTiers
+							.map(
+								(tier) =>
+									`${accessTierLabels[tier]}: ${tierCounts(item.members)[tier]}`,
+							)
+							.join(", "),
+			],
 			...historyFacts(item.history, true),
 			["HTML page", absoluteUrl(classHref(item.name))],
 			["Roblox documentation", classDocsHref(item.name)],

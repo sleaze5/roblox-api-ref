@@ -7,6 +7,7 @@ import { Fact } from "../../components/facts/Fact.tsx"
 import { FactList } from "../../components/facts/FactList.tsx"
 import { HistoryFacts } from "../../components/history/HistoryFacts.tsx"
 import { HistoryList } from "../../components/history/HistoryList.tsx"
+import { AccessFacts } from "./AccessFacts.tsx"
 import { ownerAnchor } from "../../api/update-text.ts"
 import { classCrumbs } from "../../components/page/crumbs.ts"
 import { PageHeader } from "../../components/page/PageHeader.tsx"
@@ -76,6 +77,7 @@ export function ClassHeader(props: {
 					{props.item.usedBy.length}
 				</Fact>
 			</FactList>
+			<AccessFacts members={props.item.members} />
 			<FactList>
 				<HistoryFacts
 					history={props.item.history}
