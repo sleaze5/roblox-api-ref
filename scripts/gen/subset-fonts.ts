@@ -54,7 +54,7 @@ function unicodeRange(): string {
 }
 
 function fontFace(font: FontSource): string {
-	return `@font-face{font-family:"${font.family}";src:url("./fonts/${font.output}") format("woff2");font-weight:${weights.min} ${weights.max};font-style:normal;font-display:swap;unicode-range:${unicodeRange()}}`
+	return `@font-face{font-family:"${font.family}";src:url("./fonts/${font.output}") format("woff2");font-weight:${weights.min} ${weights.max};font-style:normal;font-display:optional;unicode-range:${unicodeRange()}}`
 }
 
 export async function subsetFonts(): Promise<void> {

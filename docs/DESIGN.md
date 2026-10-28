@@ -98,7 +98,7 @@ Use semantic colors only for text, icons, 1px borders, and the thin bars and leg
 ## Typography
 
 - Use Geist for interface text and prose, and Geist Mono for code. Both are self-hosted variable WOFF2 files in `src/assets/fonts`, declared in `src/styles/fonts.css`. Do not load fonts from a CDN.
-- `src/styles/font-fallbacks.css` sizes a local fallback to each font's metrics, Arial for Geist and Courier New for Geist Mono, so text keeps its line breaks when the web fonts replace the fallback.
+- `src/styles/font-fallbacks.css` sizes a local fallback to each font's metrics, Arial for Geist and Courier New for Geist Mono, so a page that renders before the fonts arrive looks almost the same. The fonts use `font-display: optional`: they are preloaded, and when one misses the first paint, that page keeps the fallback instead of reflowing its text, and the next page uses the cached font. Do not size anything in `ch`, which changes with the font: `--container-prose` is 72 Geist zeros written in `em`.
 - Create hierarchy with size, weight, and color. Do not use all caps, letter-spaced labels, or italics for emphasis.
 
 Use this scale. Do not use other sizes.
