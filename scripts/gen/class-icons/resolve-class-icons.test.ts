@@ -9,6 +9,7 @@ function owner(name: string, superclass?: string): Class {
 		memoryCategory: "Instances",
 		tags: [],
 		subclasses: [],
+		usedBy: [],
 		...(superclass === undefined ? {} : { superclass }),
 	}
 }

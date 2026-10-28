@@ -37,6 +37,7 @@ function normalizeClasses(dump: Dump): Record<string, Class> {
 			tags: normalizeTags(dumpClass.Tags),
 			members: dumpClass.Members.map(normalizeMember).sort(byName),
 			subclasses: [],
+			usedBy: [],
 		}
 		if (dumpClass.Superclass !== rootSuperclass) {
 			normalized.superclass = dumpClass.Superclass
@@ -88,6 +89,9 @@ export function normalizeApi(dump: Dump, docs: ApiDocs, version: RobloxVersion):
 	const classes = normalizeClasses(dump)
 	resolvePreferredMembers(classes)
 	const usage = indexTypeUsage(Object.values(classes))
+	for (const item of Object.values(classes)) {
+		item.usedBy = usageOf(usage, "Class", item.name)
+	}
 	const enums = normalizeEnums(dump, usage)
 	const dataTypes = collectDataTypes(usage)
 	applyApiDocs({ classes, enums, dataTypes }, docs)

@@ -70,6 +70,11 @@ export function ClassHeader(props: {
 					}>
 					{props.siblingCount}
 				</Fact>
+				<Fact
+					label="Uses"
+					hint="Properties, parameters, and return values that use this class as their type.">
+					{props.item.usedBy.length}
+				</Fact>
 			</FactList>
 			<FactList>
 				<HistoryFacts

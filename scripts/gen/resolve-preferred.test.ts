@@ -22,6 +22,7 @@ function owner(name: string, members: Member[], superclass?: string): Class {
 		memoryCategory: "Instances",
 		tags: [],
 		subclasses: [],
+		usedBy: [],
 		...(superclass === undefined ? {} : { superclass }),
 	}
 }

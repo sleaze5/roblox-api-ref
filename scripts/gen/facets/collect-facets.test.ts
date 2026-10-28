@@ -26,6 +26,7 @@ describe("property category facets", () => {
 			memoryCategory: "Instances",
 			tags: [],
 			subclasses: ["Child"],
+			usedBy: [],
 			members: [
 				property("Enabled", "Behavior"),
 				property("Visible", "Appearance"),
@@ -46,6 +47,7 @@ describe("property category facets", () => {
 			memoryCategory: "Instances",
 			tags: [],
 			subclasses: [],
+			usedBy: [],
 			members: [property("Active", "Behavior"), property("Unnamed", "")],
 		}
 		const facets = collectFacets([parent, child], []).propertyCategory

@@ -11,6 +11,11 @@ import { MemberFilterBar } from "../../components/members/MemberFilterBar.tsx"
 import { MemberSection, sectionId } from "../../components/members/MemberSection.tsx"
 import { PageRail } from "../../layout/PageRail.tsx"
 import { Shell } from "../../layout/Shell.tsx"
+import {
+	roleSections,
+	usageCount,
+	UsageSections,
+} from "../../components/usage/UsageSections.tsx"
 import { RemovedSection } from "../updates/RemovedSection.tsx"
 import { ClassHeader } from "./ClassHeader.tsx"
 import { ClassSidebar } from "./ClassSidebar.tsx"
@@ -35,6 +40,13 @@ export function ClassPage(props: { api: Api; item: Class }) {
 	const ancestors = ancestorsOf(props.api, props.item)
 	const lineage = [props.item, ...ancestors]
 	const kinds = memberKinds.filter((kind) => countOfKind(lineage, kind) > 0)
+	const usageLinks = roleSections
+		.map((section) => ({
+			id: section.id,
+			label: section.title,
+			count: usageCount(props.item.usedBy, section.role),
+		}))
+		.filter((link) => link.count > 0)
 	return (
 		<Shell
 			section="classes"
@@ -57,6 +69,7 @@ export function ClassPage(props: { api: Api; item: Class }) {
 								}),
 							),
 						})),
+						...usageLinks,
 						...(props.item.removedMembers === undefined
 							? []
 							: [
@@ -99,6 +112,9 @@ export function ClassPage(props: { api: Api; item: Class }) {
 							/>
 						))}
 					</>
+				)}
+				{props.item.usedBy.length === 0 ? null : (
+					<UsageSections usages={props.item.usedBy} name={props.item.name} />
 				)}
 				<RemovedSection
 					api={props.api}

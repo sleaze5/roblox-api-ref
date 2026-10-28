@@ -221,7 +221,7 @@ Every page except the home page is built from the same parts, in the same order,
 1. Breadcrumbs: the pages above this one, starting with Home, as `--color-fg-muted` links separated by `›` in `--color-fg-faint`. Class pages list the Classes listing, then the inheritance path from the root class to the parent, in Geist Mono `--color-code-type`. The breadcrumbs do not repeat the current page.
 2. The page icon and page name, as described in [Typography](#typography). On classes, enums, and documented data types, the title row ends with the "Open on Creator Hub" icon action, the same 24px action that members use, aligned with the member actions on the right edge of the content column.
 3. A one-sentence lead, on listings and facet pages. Class and enum pages show their description in this place instead, when the API docs have one.
-4. Tags, then facts, as `--color-fg-faint` labels with `--color-fg-muted` values. Classes show memory category, own members, inherited members, subclasses, and siblings. Subclasses counts direct subclasses only. Siblings counts the classes that share the class's superclass, including the class itself; for a root class, it counts the root classes. Enums show items and uses. Data types show kind, Luau type, and uses. Facets show kind and uses.
+4. Tags, then facts, as `--color-fg-faint` labels with `--color-fg-muted` values. Classes show memory category, own members, inherited members, subclasses, siblings, and uses. Subclasses counts direct subclasses only. Siblings counts the classes that share the class's superclass, including the class itself; for a root class, it counts the root classes. Enums show items and uses. Data types show kind, Luau type, and uses. Facets show kind and uses.
 5. The sticky filter, right below the header. Every listing and detail page has one. Its field shows the number of rows inside its right edge: "205 total" or "12 of 205".
 6. Sections, each with an `h2` made of a 20px icon, the title, and the count in `--color-fg-faint`.
 
@@ -240,6 +240,7 @@ The Classes listing shows the whole class tree, fully expanded.
 ### Members
 
 - Group members into sections in this order: Properties, Methods, Events, Callbacks. Omit an empty section.
+- After the members, a class page lists the members that use the class as their type, in "Used by properties", "Used by parameters", and "Used by return values" sections, as on enum and data type pages. Omit them when no member uses the class. The member filter does not filter them.
 - Inside a section, group members by the class that defines them. Order the groups by inheritance, from the root class to the current class: "Inherited from Object", "Inherited from Instance", and so on, then "Defined by Part" last.
 - Collapse every inherited group by default, even when the class defines no members of that kind. Expand the group of the current class. The whole group header is a button that collapses and expands the group. The filter bar has a "Collapse all" button that changes to "Expand all". Opening an anchor inside a collapsed group expands it.
 - Do not write collapsed groups to the URL.

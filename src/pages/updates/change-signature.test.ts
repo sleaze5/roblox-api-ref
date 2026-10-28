@@ -35,6 +35,7 @@ const partClass: Class = {
 		property("Anchored", { category: "Primitive", name: "bool", optional: false }),
 	],
 	subclasses: [],
+	usedBy: [],
 }
 const material: Enum = {
 	name: "Material",

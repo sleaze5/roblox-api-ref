@@ -1,7 +1,6 @@
 import { ancestorsOf } from "../../../src/api/members.ts"
 import type { RecordGroup } from "../../../src/api/stats-types.ts"
 import type { Api, ApiType, Member } from "../../../src/api/types.ts"
-import { indexTypeUsage, usageOf } from "../type-usage.ts"
 import { highest, type Measured } from "./extremes.ts"
 
 function returnCount(type: ApiType): number {
@@ -114,7 +113,6 @@ function memberRecords(api: Api): RecordGroup {
 }
 
 function enumAndTypeRecords(api: Api): RecordGroup {
-	const usage = indexTypeUsage(Object.values(api.classes))
 	return {
 		id: "type-records",
 		title: "Enums and types",
@@ -160,7 +158,7 @@ function enumAndTypeRecords(api: Api): RecordGroup {
 				},
 				Object.values(api.classes).map((item) => ({
 					ref: { kind: "Class", name: item.name },
-					value: usageOf(usage, "Class", item.name).length,
+					value: item.usedBy.length,
 				})),
 			),
 		],

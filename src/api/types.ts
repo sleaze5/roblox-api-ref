@@ -91,6 +91,7 @@ export type Class = {
 	members: Member[]
 	removedMembers?: Removed<Member>[]
 	subclasses: string[]
+	usedBy: TypeUsage[]
 	description?: Doc
 }
 
