@@ -5,6 +5,7 @@ export const iconNames = [
 	"brackets-curly",
 	"caret-down",
 	"caret-right",
+	"chart-bar",
 	"check",
 	"check-circle",
 	"circle-notch",

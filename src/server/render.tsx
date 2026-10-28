@@ -12,6 +12,7 @@ import { TypeIndexPage } from "../pages/index/TypeIndexPage.tsx"
 import { FacetIndexPage } from "../pages/index/FacetIndexPage.tsx"
 import { NotFoundPage } from "../pages/NotFoundPage.tsx"
 import { SitePage } from "../pages/site/SitePage.tsx"
+import { StatsPage } from "../pages/stats/StatsPage.tsx"
 import { TypePage } from "../pages/type/TypePage.tsx"
 import { UpdatePage } from "../pages/updates/UpdatePage.tsx"
 import { UpdatesPage } from "../pages/updates/UpdatesPage.tsx"
@@ -19,9 +20,17 @@ import { sitePages } from "../site/site-pages.ts"
 import { breadcrumbs } from "./breadcrumbs.ts"
 import { updatesFeed } from "./feed.ts"
 import { loadApi } from "./load-api.ts"
+import { loadStats } from "./load-stats.ts"
 import { loadUpdates } from "./load-updates.ts"
 import { pageMarkdown } from "./markdown/page-markdown.ts"
-import { matchRoute, routePaths, type IndexList, type Route } from "./match-route.ts"
+import {
+	isItemRoute,
+	matchRoute,
+	routePaths,
+	type IndexList,
+	type ItemRoute,
+	type Route,
+} from "./match-route.ts"
 import type { RenderedPage } from "./page-module.ts"
 import { pageTitle } from "./page-title.ts"
 import { schemaType } from "./schema-type.ts"
@@ -31,9 +40,30 @@ const indexListPages: Record<IndexList, (api: Api) => JSX.Element> = {
 	removed: (api) => <RemovedIndexPage api={api} />,
 }
 
+function ItemPage(props: { route: ItemRoute }) {
+	const api = loadApi()
+	switch (props.route.page) {
+		case "class":
+			return <ClassPage api={api} item={props.route.item} />
+		case "enum":
+			return <EnumPage api={api} item={props.route.item} />
+		case "type":
+			return <TypePage api={api} item={props.route.item} />
+		case "facet":
+			return <FacetPage api={api} facet={props.route.facet} />
+		case "update":
+			return (
+				<UpdatePage api={api} updates={loadUpdates()} item={props.route.item} />
+			)
+	}
+}
+
 function Page(props: { route: Route }) {
 	const api = loadApi()
 	const updates = loadUpdates()
+	if (isItemRoute(props.route)) {
+		return <ItemPage route={props.route} />
+	}
 	switch (props.route.page) {
 		case "home":
 			return <HomePage api={api} updates={updates} />
@@ -47,18 +77,10 @@ function Page(props: { route: Route }) {
 			return indexListPages[props.route.list](api)
 		case "facet-index":
 			return <FacetIndexPage api={api} kind={props.route.kind} />
-		case "class":
-			return <ClassPage api={api} item={props.route.item} />
-		case "enum":
-			return <EnumPage api={api} item={props.route.item} />
-		case "type":
-			return <TypePage api={api} item={props.route.item} />
-		case "facet":
-			return <FacetPage api={api} facet={props.route.facet} />
 		case "updates":
 			return <UpdatesPage api={api} updates={updates} />
-		case "update":
-			return <UpdatePage api={api} updates={updates} item={props.route.item} />
+		case "stats":
+			return <StatsPage api={api} stats={loadStats()} />
 		case "site":
 			return <SitePage release={api} page={sitePages[props.route.name]} />
 		case "not-found":

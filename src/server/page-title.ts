@@ -1,9 +1,31 @@
 import { facetLabels, facetTitles } from "../api/facets/facet-info.ts"
 import { brandTitle } from "../site/brand.ts"
 import { sitePages } from "../site/site-pages.ts"
-import type { IndexList, Route } from "./match-route.ts"
+import {
+	isItemRoute,
+	type IndexList,
+	type ItemRoute,
+	type Route,
+} from "./match-route.ts"
+
+function itemName(route: ItemRoute): string {
+	switch (route.page) {
+		case "class":
+		case "type":
+			return route.item.name
+		case "enum":
+			return `Enum.${route.item.name}`
+		case "facet":
+			return `${facetLabels[route.facet.kind]}: ${route.facet.name}`
+		case "update":
+			return `Update ${route.item.version}`
+	}
+}
 
 function pageName(route: Route): string | undefined {
+	if (isItemRoute(route)) {
+		return itemName(route)
+	}
 	switch (route.page) {
 		case "home":
 			return undefined
@@ -17,17 +39,10 @@ function pageName(route: Route): string | undefined {
 			return indexListTitles[route.list]
 		case "facet-index":
 			return facetTitles[route.kind]
-		case "class":
-		case "type":
-			return route.item.name
-		case "enum":
-			return `Enum.${route.item.name}`
-		case "facet":
-			return `${facetLabels[route.facet.kind]}: ${route.facet.name}`
 		case "updates":
 			return "Updates"
-		case "update":
-			return `Update ${route.item.version}`
+		case "stats":
+			return "Statistics"
 		case "site":
 			return sitePages[route.name].title
 		case "not-found":

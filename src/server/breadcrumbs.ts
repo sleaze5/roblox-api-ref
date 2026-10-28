@@ -12,10 +12,16 @@ import {
 	typesHref,
 	updateHref,
 	updatesHref,
+	statsHref,
 } from "../api/routes.ts"
 import { facetTitles } from "../api/facets/facet-info.ts"
 import { sitePages } from "../site/site-pages.ts"
-import type { IndexList, Route } from "./match-route.ts"
+import {
+	isItemRoute,
+	type IndexList,
+	type ItemRoute,
+	type Route,
+} from "./match-route.ts"
 
 export type Breadcrumb = {
 	name: string
@@ -34,26 +40,8 @@ const indexLists: Record<IndexList, Breadcrumb> = {
 }
 const updates: Breadcrumb = { name: "Updates", href: updatesHref() }
 
-export function breadcrumbs(route: Route): Breadcrumb[] {
+function itemBreadcrumbs(route: ItemRoute): Breadcrumb[] {
 	switch (route.page) {
-		case "home":
-		case "not-found":
-			return []
-		case "classes":
-			return [home, classes]
-		case "enums":
-			return [home, enums]
-		case "index":
-			return [home, index]
-		case "index-list":
-			return [home, index, indexLists[route.list]]
-		case "updates":
-			return [home, updates]
-		case "site":
-			return [
-				home,
-				{ name: sitePages[route.name].title, href: sitePages[route.name].href },
-			]
 		case "update":
 			return [
 				home,
@@ -62,12 +50,6 @@ export function breadcrumbs(route: Route): Breadcrumb[] {
 					name: route.item.version,
 					href: updateHref(route.item.version),
 				},
-			]
-		case "facet-index":
-			return [
-				home,
-				index,
-				{ name: facetTitles[route.kind], href: facetIndexHref(route.kind) },
 			]
 		case "class":
 			return [
@@ -100,6 +82,40 @@ export function breadcrumbs(route: Route): Breadcrumb[] {
 					name: route.facet.name,
 					href: facetHref(route.facet.kind, route.facet.name),
 				},
+			]
+	}
+}
+
+export function breadcrumbs(route: Route): Breadcrumb[] {
+	if (isItemRoute(route)) {
+		return itemBreadcrumbs(route)
+	}
+	switch (route.page) {
+		case "home":
+		case "not-found":
+			return []
+		case "classes":
+			return [home, classes]
+		case "enums":
+			return [home, enums]
+		case "index":
+			return [home, index]
+		case "index-list":
+			return [home, index, indexLists[route.list]]
+		case "updates":
+			return [home, updates]
+		case "stats":
+			return [home, { name: "Statistics", href: statsHref() }]
+		case "site":
+			return [
+				home,
+				{ name: sitePages[route.name].title, href: sitePages[route.name].href },
+			]
+		case "facet-index":
+			return [
+				home,
+				index,
+				{ name: facetTitles[route.kind], href: facetIndexHref(route.kind) },
 			]
 	}
 }

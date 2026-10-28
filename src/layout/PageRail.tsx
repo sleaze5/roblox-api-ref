@@ -4,7 +4,7 @@ export type RailEntry = {
 }
 
 export type RailLink = RailEntry & {
-	count: number
+	count?: number
 	countHint?: string
 	entries?: RailEntry[]
 }
@@ -40,11 +40,13 @@ export function PageRail(props: { links: RailLink[] }) {
 						href={`#${link.id}`}
 						class="flex h-7 items-center justify-between rounded-sm px-2 text-fg-muted motion-colors group-data-active/rail:text-fg hover:bg-hover hover:text-fg">
 						<span>{link.label}</span>
-						<span
-							data-tooltip={link.countHint}
-							class="text-xs text-fg-faint">
-							{link.count}
-						</span>
+						{link.count === undefined ? null : (
+							<span
+								data-tooltip={link.countHint}
+								class="text-xs text-fg-faint">
+								{link.count}
+							</span>
+						)}
 					</a>
 					<RailEntries entries={link.entries} />
 				</div>

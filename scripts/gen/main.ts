@@ -16,6 +16,7 @@ import { buildFacetSlugs } from "./facets/facet-slugs.ts"
 import { buildIconSprite, readIcon } from "./icon-sprite.ts"
 import { normalizeApi } from "./normalize-api.ts"
 import { buildSearchIndex } from "./search-index.ts"
+import { buildStats } from "./stats/build-stats.ts"
 import { subsetFonts } from "./subset-fonts.ts"
 import { applyHistory } from "./history/apply-history.ts"
 import { buildHistory } from "./history/history-table.ts"
@@ -38,7 +39,8 @@ const api = normalizeApi(dump, docs, version)
 const classIcons = applyClassIcons(api, studioIcons)
 const diffs = await readDiffs(versions)
 const updates = buildUpdates(diffs, api)
-applyHistory(api, buildHistory(updates), versions[0]?.version ?? version.version)
+const historyStart = versions[0]?.version ?? version.version
+applyHistory(api, buildHistory(updates), historyStart)
 const searchIndex = buildSearchIndex(api, updates)
 
 await Promise.all([
@@ -49,6 +51,10 @@ await Promise.all([
 		JSON.stringify(buildFacetSlugs(api.facets)),
 	),
 	Bun.write(join(generatedDir, "search.json"), JSON.stringify(searchIndex)),
+	Bun.write(
+		join(generatedDir, "stats.json"),
+		JSON.stringify(buildStats(api, updates, historyStart)),
+	),
 	Bun.write(
 		join(generatedDir, "build.json"),
 		JSON.stringify({ lastModified: new Date().toUTCString() }),

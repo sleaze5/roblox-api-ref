@@ -77,7 +77,7 @@ function tagDetail(details: ChangeDetail[], labels: string[]): boolean {
 	)
 }
 
-function entryDeprecation(entry: ChangeEntry): "set" | "clear" | undefined {
+export function entryDeprecation(entry: ChangeEntry): "set" | "clear" | undefined {
 	if (entry.status === "Removed" || tagDetail(entry.details, ["Removed tags"])) {
 		return "clear"
 	}
@@ -85,7 +85,7 @@ function entryDeprecation(entry: ChangeEntry): "set" | "clear" | undefined {
 	return born || tagDetail(entry.details, ["Added tags"]) ? "set" : undefined
 }
 
-function ownerDeprecation(owner: OwnerChanges): "set" | "clear" | undefined {
+export function ownerDeprecation(owner: OwnerChanges): "set" | "clear" | undefined {
 	if (owner.status === "Removed" || tagDetail(owner.details, ["Removed tags"])) {
 		return "clear"
 	}

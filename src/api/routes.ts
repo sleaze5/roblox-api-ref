@@ -24,6 +24,10 @@ export function updatesHref(): string {
 	return `${base}updates/`
 }
 
+export function statsHref(): string {
+	return `${base}stats/`
+}
+
 export function aboutHref(): string {
 	return `${base}about/`
 }

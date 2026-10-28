@@ -11,6 +11,8 @@ export function schemaType(route: Route): SchemaType | undefined {
 		case "type":
 		case "update":
 			return "TechArticle"
+		case "stats":
+			return "WebPage"
 		case "site":
 			return sitePages[route.name].schemaType
 		case "not-found":

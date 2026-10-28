@@ -1,0 +1,83 @@
+@utility stat-table {
+	position: relative;
+	overflow-x: auto;
+	overscroll-behavior-x: contain;
+	font-size: var(--text-sm);
+	line-height: var(--text-sm--line-height);
+
+	& table {
+		width: 100%;
+		border-collapse: separate;
+		border-spacing: 0;
+		border: 1px solid var(--color-line);
+		border-radius: var(--radius-md);
+	}
+
+	& th,
+	& td {
+		padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 3);
+		text-align: left;
+		vertical-align: top;
+		white-space: nowrap;
+	}
+
+	& th {
+		color: var(--color-fg-faint);
+		font-weight: var(--font-weight-medium);
+	}
+
+	& tbody th {
+		color: var(--color-fg);
+	}
+
+	& td {
+		color: var(--color-fg-muted);
+	}
+
+	& tbody > tr > *,
+	& tfoot > tr > * {
+		border-top: 1px solid var(--color-line);
+	}
+
+	& tfoot th,
+	& tfoot td {
+		color: var(--color-fg);
+		font-weight: var(--font-weight-medium);
+	}
+
+	& [data-number] {
+		text-align: right;
+		font-variant-numeric: tabular-nums;
+	}
+
+	& table[data-records] {
+		table-layout: fixed;
+	}
+
+	& col[data-label] {
+		width: 34%;
+	}
+
+	& col[data-value] {
+		width: 12%;
+	}
+
+	& [data-wrap] {
+		white-space: normal;
+		overflow-wrap: anywhere;
+	}
+}
+
+@utility chart-plot {
+	position: relative;
+	width: 100%;
+	overflow: visible;
+
+	& [data-hit] {
+		fill: transparent;
+	}
+
+	& [data-hit]:hover {
+		fill: var(--color-hover);
+	}
+}

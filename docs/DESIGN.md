@@ -93,7 +93,7 @@ Semantic:
 - `--color-danger` (`#d9675e`): security tags for members that only Roblox can use, and the `−` mark of a removed line on Updates pages
 - `--color-success` (`#66a978`): confirmation, such as a copied link, and the `+` mark of an added line on Updates pages
 
-Use semantic colors only for text, icons, and 1px borders. Do not fill large areas with them.
+Use semantic colors only for text, icons, 1px borders, and the thin bars and legend swatches of a chart. Do not fill large areas with them.
 
 ## Typography
 
@@ -133,6 +133,7 @@ Use this scale. Do not use other sizes.
 - Callback: `arrow-u-up-left`
 - Index: `books`
 - Update: `git-diff`
+- Statistics: `chart-bar`
 - About: `info`
 - Contact: `envelope-simple`
 - Privacy policy: `lock-simple`
@@ -180,8 +181,8 @@ Keep nested curves concentric: the inner radius equals the outer radius minus th
 
 ## Layout
 
-- The header is 48px tall on `--color-surface`. The site name and the section links (Classes, Enums, Index, and Updates) sit on the left, the search trigger in the middle, and the build version on the right. From 1024px to 1279px, where the build version is hidden, the search trigger moves to the right edge so the section links have room. Member filters stay in the content column. Write the build version as `version-<hash> (<version>)`, such as `version-7aaa6838d36c4448 (0.744.0.7441077)`, in Geist Mono `--text-xs` and `--color-fg-faint`.
-- The sidebar is 264px wide on `--color-surface`. It holds a filter field and the full index of its section: the whole class tree on the Classes listing and class pages, every enum on the Enums listing and enum pages, and the whole index on every Index page. Listings and detail pages of a section share the same sidebar, so moving between them never shifts the content column. The current page is selected, its ancestors are open, and the sidebar starts scrolled to it. Only the home page, the site pages, and the not found page have no sidebar.
+- The header is 48px tall on `--color-surface`. The site name and the section links (Classes, Enums, Index, Updates, and Statistics) sit on the left, the search trigger in the middle, and the build version on the right. From 1024px to 1279px, where the build version is hidden, the search trigger moves to the right edge so the section links have room. Member filters stay in the content column. Write the build version as `version-<hash> (<version>)`, such as `version-7aaa6838d36c4448 (0.744.0.7441077)`, in Geist Mono `--text-xs` and `--color-fg-faint`.
+- The sidebar is 264px wide on `--color-surface`. It holds a filter field and the full index of its section: the whole class tree on the Classes listing and class pages, every enum on the Enums listing and enum pages, and the whole index on every Index page. Listings and detail pages of a section share the same sidebar, so moving between them never shifts the content column. The current page is selected, its ancestors are open, and the sidebar starts scrolled to it. Only the home page, the Statistics page, the site pages, and the not found page have no sidebar.
 - In the class tree of the sidebar, the row of each open class sticks below the filter field while its subclasses scroll, so the stuck rows show the inheritance path of the rows below them, like the sticky scroll of a code editor's file tree. A row sticks one row lower for each level of depth. Clicking a stuck row scrolls the tree to that class instead of opening its page or collapsing it.
 - The content column is on `--color-canvas`. Its maximum width is 760px. The page always reserves the scrollbar gutter, so short and long pages put the column in the same place.
 - The right rail is 208px wide. It lists the sections of the current page. On a class page, each section shows the number of members that the class defines, not the total that its section heading shows, and lists those members in Geist Mono and in the same order as the page, linking to their anchors. It does not list inherited members. The rail follows the reader: the section in view is active and shows its member list, the other sections collapse their lists, and the member at the top of the view is highlighted with a `--color-active` fill and `--color-fg-bright` text. Without JavaScript, every list is shown. Anchor jumps land below the sticky header and the sticky filter bar.
@@ -334,6 +335,24 @@ The Updates section shows how the API changed from each version in `roblox-versi
 - Description changes from the API docs sit under the line of their class, enum, member, or enum item, indented to the signature. A label in `--color-fg-faint` names what changed: "Description changed", "Description of `name` added", or "Return value description removed". The new description follows as member description prose. When there was a previous description, a "Previous description" disclosure with a `caret-right` icon shows it. A member or enum item whose only change is its description gets a `~` line. Description changes do not count as added, removed, or changed items. The update's "Descriptions" fact counts them.
 - Removed members, removed enum items, and old signatures are not links.
 - The filter uses `q`. It matches change names, such as `Part.Size`. A class or enum name shows its whole group. The count inside the filter field counts changes. On the Updates listing, the placeholder reads "Filter the 10 newest updates" and the count names its unit, such as "2624 changes", so it is not mistaken for the number of updates.
+
+### Statistics
+
+The Statistics page, at `/stats/`, shows numbers that the `gen` task computes from the API dump and the Updates history into `stats.json`. Pages only read them.
+
+- The header link is "Statistics". The page has breadcrumbs, the `chart-bar` icon, the page name in Geist, a one-sentence lead, and facts: the version, the oldest tracked version, and the number of updates. It has a right rail with one link per section and no sidebar or filter.
+- Each section has an `h2` in `--text-lg` with no icon or count, as on site pages, and an optional `--color-fg-muted` lead.
+- Counts is a table of current, removed, and total classes, properties, methods, events, callbacks, enums, enum items, and data types, with a total row. Removed counts what an update removed since the oldest tracked version and no later update added back, so it says so above the table.
+- Records are tables of Statistic, Value, and Items, grouped into Classes, Members, Enums and types, Names, and History. Every record lists every item that ties for it, as code linked like a signature. More than 8 items collapse into a disclosure that names their number, such as "80 parameters".
+- Statistics tables use the `stat-table` utility: `--text-sm`, a 1px `--color-line` border with `--radius-md`, `--color-fg-faint` column headings at weight 500, a rule between rows, 6px by 12px cells, and right-aligned tabular numbers. A table wider than the column scrolls inside its border, never the page.
+- Trends show the classes and enums after each update as line charts, the members each update added and removed as a bar chart, and tables of changes by year and by update. A change cell writes each nonzero count after its mark, as on Updates pages: `+` added, `−` removed, and `~` changed.
+
+### Charts
+
+- A chart is a prerendered SVG in a `figure` with its title in `--color-fg` at weight 500 and a summary in `--color-fg-muted` on the same row. It has `role="img"` and an `aria-label` with both, and the same numbers are always in a table on the page.
+- Lines are 2px `--color-fg-muted`. Bars are thin, with a gap as wide as the bar. A bar that adds uses `--color-success` and a bar that removes uses `--color-danger`, under a legend with a swatch for each. Axes and baselines use `--color-line` or `--color-line-strong`. Axis labels are `--text-xs` `--color-fg-faint`: the top, bottom, and zero values on the left, and each year on the bottom.
+- When one bar is more than twice the next tallest, the axis stops at the next tallest, the bar is cut at the axis, and its value sits at the end of the bar in `--text-xs` `--color-fg-muted`.
+- Each update is a column that shows a tooltip with its version, date, and values, and fills with `--color-hover` on hover.
 
 ### History
 

@@ -54,6 +54,7 @@ describe("page Markdown", () => {
 			"/index/security-levels/",
 			"/index/tags/Deprecated/",
 			"/updates/",
+			"/stats/",
 			"/404",
 		]) {
 			const content = markdownOf(path).content
@@ -71,6 +72,15 @@ describe("page Markdown", () => {
 		const text = llmsTxt(api)
 		expect(text).toContain("`Accept: text/markdown`")
 		expect(text).toContain(`(${absoluteUrl("/index.md")})`)
+	})
+
+	test("renders the statistics page with its counts and records", () => {
+		const content = markdownOf("/stats/").content
+		expect(markdownOf("/stats/").href).toBe("/stats.md")
+		expect(content).toMatch(/^# Statistics\n/)
+		expect(content).toContain(`| Classes | ${Object.keys(api.classes).length} |`)
+		expect(content).toContain("## Changes by update")
+		expect(llmsTxt(api)).toContain(`(${absoluteUrl("/stats.md")})`)
 	})
 
 	test("lists the site pages in llms.txt", () => {

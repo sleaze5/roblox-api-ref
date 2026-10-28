@@ -26,15 +26,28 @@ export type Route =
 	| { page: "type"; item: DataType }
 	| { page: "facet"; facet: Facet }
 	| { page: "updates" }
+	| { page: "stats" }
 	| { page: "update"; item: Update }
 	| { page: "site"; name: SitePageName }
 	| { page: "not-found" }
+
+const itemPages = new Set(["class", "enum", "type", "facet", "update"])
+
+export type ItemRoute = Extract<
+	Route,
+	{ page: "class" | "enum" | "type" | "facet" | "update" }
+>
+
+export function isItemRoute(route: Route): route is ItemRoute {
+	return itemPages.has(route.page)
+}
 
 const topPages = {
 	classes: { page: "classes" },
 	enums: { page: "enums" },
 	index: { page: "index" },
 	updates: { page: "updates" },
+	stats: { page: "stats" },
 	about: { page: "site", name: "about" },
 	contact: { page: "site", name: "contact" },
 	privacy: { page: "site", name: "privacy" },

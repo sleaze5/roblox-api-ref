@@ -10,6 +10,7 @@ import {
 	indexHref,
 	typesHref,
 	updatesHref,
+	statsHref,
 } from "../../api/routes.ts"
 import type { Api } from "../../api/types.ts"
 import { joinBlocks } from "./document.ts"
@@ -54,6 +55,7 @@ export function llmsTxt(api: Api): string {
 			`- ${link("Data types", absoluteUrl(markdownHref(typesHref())))}: Every data type, with its category`,
 			`- ${link("Index", absoluteUrl(markdownHref(indexHref())))}: Every tag, property category, security level, capability, thread safety level, and memory category, with links to what uses each one`,
 			`- ${link("Updates", absoluteUrl(markdownHref(updatesHref())))}: Every update, with the number of added, removed, and changed API items`,
+			`- ${link("Statistics", absoluteUrl(markdownHref(statsHref())))}: How many classes, members, enums, and data types exist and were removed, the largest and longest of each, and how much each update changed`,
 		].join("\n"),
 		"## Optional",
 		[
