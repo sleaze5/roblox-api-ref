@@ -71,7 +71,7 @@ export function MemberGroup(props: {
 				count={props.members.length}
 				id={id}
 			/>
-			<div id={id} data-group-body="" class="flex flex-col gap-4 auto-visibility">
+			<div id={id} data-group-body="" class="flex flex-col gap-4">
 				{categorized ? (
 					propertyGroups(props.members).map((category) => (
 						<div data-subgroup="" class="flex flex-col gap-2">

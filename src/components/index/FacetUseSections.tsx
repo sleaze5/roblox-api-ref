@@ -36,7 +36,7 @@ export function FacetUseSections(props: {
 								{section.uses.length}
 							</span>
 						</h2>
-						<ul class="grid grid-cols-1 gap-x-4 auto-visibility md:grid-cols-2">
+						<ul class="grid grid-cols-1 gap-x-4 md:grid-cols-2">
 							{section.uses.map((use) => (
 								<FacetUseRow api={props.api} use={use} />
 							))}

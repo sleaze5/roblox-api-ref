@@ -41,14 +41,18 @@ export function Shell(props: {
 					{props.sidebar}
 				</nav>
 				{hasSidebar ? <SidebarScroll /> : null}
-				<div class="flex min-h-below-header min-w-0 flex-1 flex-col">
+				<div
+					class={[
+						"flex min-h-below-header min-w-0 flex-1 flex-col",
+						props.rail === undefined ? undefined : "lg:rail-gutter",
+					]}>
 					<main id="main" class="flex-1 px-4 py-6 md:px-8 md:py-8">
 						<div class="mx-auto max-w-content">{props.children}</div>
 					</main>
 					<Footer />
 				</div>
 				{props.rail === undefined ? null : (
-					<aside class="sticky top-header hidden h-below-header w-rail shrink-0 overflow-y-auto overscroll-contain py-8 pr-4 lg:block">
+					<aside class="fixed top-header right-0 hidden h-below-header w-rail overflow-y-auto overscroll-contain py-8 pr-4 lg:block">
 						{props.rail}
 					</aside>
 				)}

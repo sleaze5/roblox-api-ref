@@ -99,7 +99,7 @@ export function UsageSections(props: { usages: TypeUsage[]; name: string }) {
 							{section.usages.length}
 						</span>
 					</h2>
-					<ul class="grid grid-cols-1 gap-x-4 auto-visibility md:grid-cols-2">
+					<ul class="grid grid-cols-1 gap-x-4 md:grid-cols-2">
 						{section.usages.map((usage) => (
 							<UsageLink usage={usage} />
 						))}

@@ -1,3 +1,10 @@
 html[data-js] [data-rail-section]:not([data-active]) > [data-rail-entries] {
 	display: none;
 }
+
+html[data-js]
+	[data-rail]:not(:has([data-rail-section][data-active]))
+	> [data-rail-section]:first-of-type
+	> [data-rail-entries] {
+	display: flex;
+}
