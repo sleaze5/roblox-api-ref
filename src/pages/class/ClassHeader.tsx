@@ -25,7 +25,9 @@ export function ClassHeader(props: {
 	return (
 		<PageHeader
 			crumbs={classCrumbs(path)}
-			icon="cube"
+			icon={
+				props.item.icon === undefined ? "cube" : { classIcon: props.item.icon }
+			}
 			title={props.item.name}
 			docs={{ href: classDocsHref(props.item.name), name: props.item.name }}
 			code>

@@ -35,6 +35,20 @@ function decompress(entry: ZipEntry, compressed: Uint8Array): Uint8Array {
 	}
 }
 
+export async function readEntryData(
+	reader: RangeReader,
+	entry: ZipEntry,
+): Promise<Uint8Array> {
+	if (entry.encrypted) {
+		throw new Error(`${entry.name} is encrypted.`)
+	}
+	const bytes = decompress(entry, await readCompressed(reader, entry))
+	if (bytes.length !== entry.size || Bun.hash.crc32(bytes) !== entry.crc32) {
+		throw new Error(`${entry.name} failed its zip integrity check.`)
+	}
+	return bytes
+}
+
 export async function extractEntry(
 	reader: RangeReader,
 	name: string,
@@ -43,12 +57,5 @@ export async function extractEntry(
 	if (entry === undefined) {
 		throw new Error(`The zip archive does not contain ${name}.`)
 	}
-	if (entry.encrypted) {
-		throw new Error(`${name} is encrypted.`)
-	}
-	const bytes = decompress(entry, await readCompressed(reader, entry))
-	if (bytes.length !== entry.size || Bun.hash.crc32(bytes) !== entry.crc32) {
-		throw new Error(`${name} failed its zip integrity check.`)
-	}
-	return bytes
+	return readEntryData(reader, entry)
 }

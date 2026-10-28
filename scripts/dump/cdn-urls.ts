@@ -9,3 +9,7 @@ export function apiDumpUrl({ hash }: Pick<RobloxVersion, "hash">): string {
 export function apiDocsUrl({ hash }: Pick<RobloxVersion, "hash">): string {
 	return `${cdn}/version-${hash}-content-api-docs.zip`
 }
+
+export function studioIconsUrl({ hash }: Pick<RobloxVersion, "hash">): string {
+	return `${cdn}/version-${hash}-content-studio_svg_textures.zip`
+}

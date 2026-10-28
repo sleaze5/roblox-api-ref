@@ -1,4 +1,5 @@
 import type { JSX } from "@solidjs/web"
+import { ClassIcon } from "../ClassIcon.tsx"
 import { CreatorHubLink } from "../CreatorHubLink.tsx"
 import type { IconName } from "../icon-names.ts"
 import { Icon } from "../Icon.tsx"
@@ -6,7 +7,7 @@ import { Breadcrumbs, type Crumb } from "./Breadcrumbs.tsx"
 
 export function PageHeader(props: {
 	crumbs: Crumb[]
-	icon: IconName
+	icon: IconName | { classIcon: number }
 	title: JSX.Element
 	code?: boolean
 	docs?: { href: string; name: string } | undefined
@@ -17,7 +18,11 @@ export function PageHeader(props: {
 			<div class="flex flex-col gap-2">
 				<Breadcrumbs crumbs={props.crumbs} />
 				<div class="flex items-center gap-3">
-					<Icon name={props.icon} size={28} class="text-fg-muted" />
+					{typeof props.icon === "string" ? (
+						<Icon name={props.icon} size={28} class="text-fg-muted" />
+					) : (
+						<ClassIcon icon={props.icon.classIcon} class="size-7" />
+					)}
 					<h1
 						class={[
 							"min-w-0 flex-1 text-2xl font-semibold text-fg-bright",

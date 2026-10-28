@@ -1,8 +1,15 @@
 import { join } from "node:path"
 import { iconNames, maskIconNames } from "../../src/components/icon-names.ts"
 import { dataDir, generatedDir } from "../paths.ts"
-import { apiDocsFileName, dumpFileName, readVersions } from "../roblox-version.ts"
+import {
+	apiDocsFileName,
+	dumpFileName,
+	readVersions,
+	studioIconsFileName,
+} from "../roblox-version.ts"
 import type { ApiDocs } from "./api-docs/api-docs-types.ts"
+import { applyClassIcons } from "./class-icons/class-icons.ts"
+import type { StudioIcons } from "./class-icons/studio-icons-types.ts"
 import type { Dump } from "./dump-types.ts"
 import { buildFavicon } from "./favicon.ts"
 import { buildFacetSlugs } from "./facets/facet-slugs.ts"
@@ -24,7 +31,11 @@ if (version === undefined) {
 
 const dump = (await Bun.file(join(dataDir, dumpFileName(version))).json()) as Dump
 const docs = (await Bun.file(join(dataDir, apiDocsFileName(version))).json()) as ApiDocs
+const studioIcons = (await Bun.file(
+	join(dataDir, studioIconsFileName(version)),
+).json()) as StudioIcons
 const api = normalizeApi(dump, docs, version)
+const classIcons = applyClassIcons(api, studioIcons)
 const diffs = await readDiffs(versions)
 const updates = buildUpdates(diffs, api)
 applyHistory(api, buildHistory(updates), versions[0]?.version ?? version.version)
@@ -43,6 +54,8 @@ await Promise.all([
 		JSON.stringify({ lastModified: new Date().toUTCString() }),
 	),
 	Bun.write(join(generatedDir, "icons.svg"), await buildIconSprite(iconNames)),
+	Bun.write(join(generatedDir, "class-icons.png"), classIcons.png),
+	Bun.write(join(generatedDir, "class-icons.css"), classIcons.css),
 	subsetFonts(),
 	Bun.write(join(generatedDir, "favicon.svg"), await buildFavicon()),
 	...maskIconNames.map(async (name) =>

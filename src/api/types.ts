@@ -84,6 +84,7 @@ export type Member = Property | Method | Event | Callback
 export type Class = {
 	name: string
 	history?: ItemHistory
+	icon?: number
 	superclass?: string
 	memoryCategory: string
 	tags: string[]

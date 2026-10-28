@@ -47,6 +47,7 @@ export function ResultOption(props: {
 			class="flex h-8 items-center gap-2 rounded-sm px-2 text-fg-muted aria-selected:bg-hover aria-selected:text-fg">
 			<KindIcon
 				kind={props.engine.kindOf(props.result.entry)}
+				classIcon={props.engine.classIconOf(props.result.entry)}
 				class="text-fg-faint"
 			/>
 			<span

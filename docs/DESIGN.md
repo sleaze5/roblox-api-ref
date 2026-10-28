@@ -8,7 +8,7 @@ When this file does not cover a case, copy the closest existing pattern on the s
 
 ## Principles
 
-1. Code is the only color. The interface is grayscale. Hue appears only in code (identifiers, types, values) and in the few semantic tags. A reader finds code by its color without reading.
+1. Code is the only color. The interface is grayscale. Hue appears only in code (identifiers, types, values), in the few semantic tags, and in Studio class icons. A reader finds code by its color without reading.
 2. Identifiers are monospace, prose is sans. Every API name, type, signature, and value uses Geist Mono, at every size. Every sentence, label, and control uses Geist. Do not use monospace for anything that is not code.
 3. Write members as Luau. Every member reads like a line of a Luau type definition, such as `Terrain.Decoration: boolean = false`. Use Roblox's own terms: class, data type, enum, property, method, event, callback.
 4. Instant. Pages are prerendered static HTML. Nothing waits for JavaScript, a fade, or a spinner before the reader can read. Motion only answers an action.
@@ -123,7 +123,7 @@ Use this scale. Do not use other sizes.
 - Use 16px icons by default, 14px icons next to 12px and 13px text, and 20px icons in section headings.
 - Use one icon for one meaning, in every place:
 
-- Class: `cube`
+- Class: the class's Studio icon (see [Class icons](#class-icons)), and `cube` for the Classes kind and for a class without an icon
 - Data type: `brackets-curly`
 - Enum: `list-bullets`
 - Enum item: `hash`
@@ -153,6 +153,13 @@ Use this scale. Do not use other sizes.
 - Close: `x`
 
 - Give decorative icons and separators such as `›` `aria-hidden="true"`. Give every icon-only control an accessible name.
+
+### Class icons
+
+- Every class that exists in the current build shows its Roblox Studio Explorer icon next to its name: on its page title, in the class tree, in Index rows, in search results, and in Updates headings. The icons keep their Studio colors; they are the only icons that are not white or gray.
+- The site has a single dark theme, so it uses Studio's dark icons.
+- A class without its own icon uses the icon of its nearest superclass that has one, then Studio's generic `Class` icon. Removed classes, which have no page, keep `cube`.
+- The `gen` task packs the icons into one sprite, `src/generated/class-icons.png`. An element shows a class icon with the `class-icon` utility and the class's sprite cell in an inline `--icon` style. A `kind-icon` with `data-kind="Class"` and an `--icon` style, and a class tree link with an `--icon` style, switch to the sprite on their own, so rows add no markup beyond the style.
 
 ## Spacing and geometry
 

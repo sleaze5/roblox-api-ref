@@ -2,6 +2,7 @@ import { Dynamic } from "@solidjs/web"
 import { ownerAnchor } from "../../api/update-text.ts"
 import type { Api } from "../../api/types.ts"
 import type { ChangeStatus, OwnerChanges } from "../../api/update-types.ts"
+import { classIconStyle } from "../../components/ClassIcon.tsx"
 import { ChangeDetails } from "./ChangeDetails.tsx"
 import { ChangeEntryRow } from "./ChangeEntryRow.tsx"
 import { ChangeMark } from "./ChangeMark.tsx"
@@ -46,6 +47,11 @@ export function OwnerGroup(props: {
 					<span
 						aria-hidden="true"
 						data-kind={props.owner.kind}
+						style={classIconStyle(
+							props.owner.kind === "Class"
+								? props.api.classes[props.owner.name]?.icon
+								: undefined,
+						)}
 						class="kind-icon text-fg-muted"
 					/>
 					<span class="sr-only">{label ?? kindNames[props.owner.kind]}</span>

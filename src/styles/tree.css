@@ -105,6 +105,12 @@
 	& a::before {
 		mask-image: url("../generated/icons/cube.svg");
 	}
+
+	& a[style]::before {
+		@apply class-icon;
+		background-color: transparent;
+		mask-image: none;
+	}
 }
 
 @utility tree-enum-icons {

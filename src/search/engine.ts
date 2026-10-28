@@ -102,6 +102,10 @@ export class SearchEngine {
 		return this.index.flags[entry] ?? 0
 	}
 
+	classIconOf(entry: number): number | undefined {
+		return this.index.classIcons[entry] ?? undefined
+	}
+
 	typeOf(entry: number): string | undefined {
 		const [first] = this.index.valueTypes[entry] ?? []
 		return first === undefined ? undefined : this.types.nameOf(first)

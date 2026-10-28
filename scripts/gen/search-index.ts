@@ -1,6 +1,6 @@
 import { compareNames } from "../../src/api/compare-names.ts"
 import { accessRank, isHidden, isInternal } from "../../src/api/members.ts"
-import type { Api } from "../../src/api/types.ts"
+import type { Api, Class } from "../../src/api/types.ts"
 import type { Update } from "../../src/api/update-types.ts"
 import {
 	entryFlags,
@@ -49,6 +49,7 @@ class IndexBuilder {
 		typeEntries: [],
 		updates: [],
 		removed: [],
+		classIcons: [],
 	}
 	readonly primaryEntries = new Map<string, number>()
 	private readonly typeIdsByKey = new Map<string, number>()
@@ -69,6 +70,13 @@ class IndexBuilder {
 		this.index.valueTypes.push([])
 		this.index.parameterTypes.push([])
 		return this.index.names.length - 1
+	}
+
+	addClass(item: Class): number {
+		const entry = this.add("Class", item.name, -1, item.tags)
+		this.index.classIcons[entry] = item.icon ?? null
+		this.primaryEntries.set(`Class:${item.name}`, entry)
+		return entry
 	}
 
 	typeIds(keys: TypeKey[]): number[] {
@@ -164,9 +172,7 @@ export function buildSearchIndex(api: Api, updates: Update[]): SearchIndex {
 	const classes = Object.values(api.classes).sort(byName)
 	const classEntries = new Map<string, number>()
 	for (const item of classes) {
-		const entry = builder.add("Class", item.name, -1, item.tags)
-		classEntries.set(item.name, entry)
-		builder.primaryEntries.set(`Class:${item.name}`, entry)
+		classEntries.set(item.name, builder.addClass(item))
 	}
 	for (const item of classes) {
 		const entry = classEntries.get(item.name) ?? -1

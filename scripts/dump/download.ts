@@ -2,9 +2,9 @@ import { readdir, rm } from "node:fs/promises"
 import { join } from "node:path"
 import { dataDir } from "../paths.ts"
 import { readCurrentVersion } from "../roblox-version.ts"
-import { apiDocsFile, apiDumpFile, ensureFile } from "./data-files.ts"
+import { apiDocsFile, apiDumpFile, ensureFile, studioIconsFile } from "./data-files.ts"
 
-const dataFiles = [apiDumpFile, apiDocsFile]
+const dataFiles = [apiDumpFile, apiDocsFile, studioIconsFile]
 const version = await readCurrentVersion()
 
 await Promise.all(dataFiles.map((file) => ensureFile(file, version)))

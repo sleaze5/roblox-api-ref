@@ -51,4 +51,5 @@ export type SearchIndex = {
 	typeEntries: number[]
 	updates: SearchUpdate[]
 	removed: RemovedEntry[]
+	classIcons: (number | null)[]
 }

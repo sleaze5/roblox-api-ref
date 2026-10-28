@@ -1,8 +1,14 @@
 import { join } from "node:path"
 import { dataDir } from "../paths.ts"
-import { apiDocsFileName, dumpFileName, type RobloxVersion } from "../roblox-version.ts"
+import {
+	apiDocsFileName,
+	dumpFileName,
+	studioIconsFileName,
+	type RobloxVersion,
+} from "../roblox-version.ts"
 import { downloadApiDocs } from "./api-docs.ts"
 import { downloadApiDump } from "./api-dump.ts"
+import { downloadStudioIcons } from "./studio-icons.ts"
 
 export type DataFile = {
 	prefix: string
@@ -20,6 +26,12 @@ export const apiDocsFile: DataFile = {
 	prefix: "Api-Docs-",
 	fileName: apiDocsFileName,
 	download: downloadApiDocs,
+}
+
+export const studioIconsFile: DataFile = {
+	prefix: "Studio-Icons-",
+	fileName: studioIconsFileName,
+	download: downloadStudioIcons,
 }
 
 export async function ensureFile(

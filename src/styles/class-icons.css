@@ -1,0 +1,14 @@
+@utility class-icon {
+	background-image: url("../generated/class-icons.png");
+	background-repeat: no-repeat;
+	background-size: calc(var(--class-icon-columns) * 100%)
+		calc(var(--class-icon-rows) * 100%);
+	background-position: calc(
+			mod(var(--icon), var(--class-icon-columns)) /
+				(var(--class-icon-columns) - 1) * 100%
+		)
+		calc(
+			round(down, var(--icon) / var(--class-icon-columns)) /
+				(var(--class-icon-rows) - 1) * 100%
+		);
+}

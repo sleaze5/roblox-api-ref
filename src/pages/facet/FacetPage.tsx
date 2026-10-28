@@ -48,7 +48,7 @@ export function FacetPage(props: { api: Api; facet: Facet }) {
 					param="q"
 					placement="page"
 				/>
-				<FacetUseSections id="facet-uses" sections={sections} />
+				<FacetUseSections api={props.api} id="facet-uses" sections={sections} />
 			</article>
 		</Shell>
 	)

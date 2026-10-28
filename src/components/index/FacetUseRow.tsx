@@ -1,5 +1,6 @@
 import { useHref, useParts, useText } from "../../api/facets/facet-use.ts"
-import type { FacetUse } from "../../api/types.ts"
+import type { Api, FacetUse } from "../../api/types.ts"
+import { classIconStyle } from "../ClassIcon.tsx"
 
 function nameTone(use: FacetUse): string {
 	switch (use.kind) {
@@ -13,7 +14,7 @@ function nameTone(use: FacetUse): string {
 	}
 }
 
-export function FacetUseRow(props: { use: FacetUse }) {
+export function FacetUseRow(props: { api: Api; use: FacetUse }) {
 	const parts = useParts(props.use)
 	const access = "access" in props.use ? props.use.access : undefined
 	return (
@@ -24,6 +25,11 @@ export function FacetUseRow(props: { use: FacetUse }) {
 				<span
 					aria-hidden="true"
 					data-kind={props.use.kind}
+					style={classIconStyle(
+						props.use.kind === "Class"
+							? props.api.classes[props.use.name]?.icon
+							: undefined,
+					)}
 					class="kind-icon text-fg-muted"
 				/>
 				<span class="truncate">

@@ -1,3 +1,4 @@
+import type { Api } from "../../api/types.ts"
 import {
 	useKindTitles,
 	useSectionId,
@@ -7,7 +8,11 @@ import { Icon } from "../Icon.tsx"
 import { useKindIcons } from "./facet-icons.ts"
 import { FacetUseRow } from "./FacetUseRow.tsx"
 
-export function FacetUseSections(props: { id: string; sections: UseSection[] }) {
+export function FacetUseSections(props: {
+	api: Api
+	id: string
+	sections: UseSection[]
+}) {
 	return (
 		<div id={props.id} class="flex flex-col gap-8">
 			{props.sections.map((section) => {
@@ -33,7 +38,7 @@ export function FacetUseSections(props: { id: string; sections: UseSection[] }) 
 						</h2>
 						<ul class="grid grid-cols-1 gap-x-4 auto-visibility md:grid-cols-2">
 							{section.uses.map((use) => (
-								<FacetUseRow use={use} />
+								<FacetUseRow api={props.api} use={use} />
 							))}
 						</ul>
 					</section>

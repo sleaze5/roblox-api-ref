@@ -36,3 +36,7 @@ export function dumpFileName({ hash, channel }: RobloxVersion): string {
 export function apiDocsFileName({ hash, channel }: RobloxVersion): string {
 	return `Api-Docs-en-us-${hash}-${channel}.json`
 }
+
+export function studioIconsFileName({ hash, channel }: RobloxVersion): string {
+	return `Studio-Icons-${hash}-${channel}.json`
+}

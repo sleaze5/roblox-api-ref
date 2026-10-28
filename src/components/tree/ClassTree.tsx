@@ -2,6 +2,7 @@ import { compareNames } from "../../api/compare-names.ts"
 import { isDeprecated } from "../../api/members.ts"
 import { classHref } from "../../api/routes.ts"
 import type { Api, Class } from "../../api/types.ts"
+import { classIconStyle } from "../ClassIcon.tsx"
 
 type TreeOptions = {
 	api: Api
@@ -21,6 +22,7 @@ function NodeLink(props: { item: Class; options: TreeOptions }) {
 	return (
 		<a
 			href={classHref(props.item.name)}
+			style={classIconStyle(props.item.icon)}
 			aria-current={
 				props.options.current === props.item.name ? "page" : undefined
 			}
