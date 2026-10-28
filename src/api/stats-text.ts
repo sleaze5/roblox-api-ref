@@ -1,5 +1,11 @@
+import { formatMonth } from "./update-text.ts"
 import { releaseName } from "./release.ts"
-import type { CountKind, StatRef, Tallies } from "./stats-types.ts"
+import {
+	trendKinds,
+	type CountKind,
+	type StatRef,
+	type Tallies,
+} from "./stats-types.ts"
 
 export const countLabels: Record<CountKind, string> = {
 	Class: "Classes",
@@ -32,6 +38,21 @@ export function removedNote(historyStart: string): string {
 
 export const trendsNote =
 	"Each update compares one Roblox Studio version with the one before it. The members and items of an added class or enum count as added. Changed counts the classes, members, enums, and enum items whose signature, tags, or other details changed."
+
+export function monthLabel(period: string): string {
+	return formatMonth(`2000-${period}-15T00:00:00Z`)
+}
+
+export function changeTotal(tallies: Tallies): number {
+	return trendKinds.reduce(
+		(sum, kind) =>
+			sum + tallies[kind].added + tallies[kind].removed + tallies[kind].changed,
+		0,
+	)
+}
+
+export const monthsNote =
+	"Every update, grouped by the month Roblox published it, across all tracked years. Changes counts the classes, members, enums, and enum items that the updates added, removed, or changed."
 
 export function deprecatedTotal(tallies: Tallies): number {
 	return (

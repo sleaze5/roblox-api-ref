@@ -4,6 +4,7 @@ import {
 	classHref,
 	enumsHref,
 	indexHref,
+	statsHref,
 	updatesHref,
 } from "../api/routes.ts"
 import { uploadName } from "../api/release.ts"
@@ -119,6 +120,11 @@ export function HomePage(props: { api: Api; updates: Update[] }) {
 							label="Updates"
 							count={props.updates.length}
 							icon="git-diff"
+						/>
+						<BrowseLink
+							href={statsHref()}
+							label="Statistics"
+							icon="chart-bar"
 						/>
 					</div>
 				</section>

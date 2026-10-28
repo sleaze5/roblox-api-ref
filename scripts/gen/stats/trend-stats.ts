@@ -4,7 +4,7 @@ import {
 	type ChangeTally,
 	type Tallies,
 	type UpdateTrend,
-	type YearTrend,
+	type PeriodTrend,
 } from "../../../src/api/stats-types.ts"
 import type { Api } from "../../../src/api/types.ts"
 import type {
@@ -76,11 +76,18 @@ export function updateTrends(api: Api, updates: Update[]): UpdateTrend[] {
 	return trends.reverse()
 }
 
-export function yearTrends(trends: UpdateTrend[]): YearTrend[] {
-	const years = new Map<string, YearTrend>()
+function groupTrends(
+	trends: UpdateTrend[],
+	periodOf: (trend: UpdateTrend) => string,
+): PeriodTrend[] {
+	const periods = new Map<string, PeriodTrend>()
 	for (const trend of trends) {
-		const year = trend.published.slice(0, 4)
-		const total = years.get(year) ?? { year, updates: 0, tallies: emptyTallies() }
+		const period = periodOf(trend)
+		const total = periods.get(period) ?? {
+			period,
+			updates: 0,
+			tallies: emptyTallies(),
+		}
 		total.updates++
 		for (const kind of trendKinds) {
 			for (const key of Object.keys(
@@ -89,7 +96,15 @@ export function yearTrends(trends: UpdateTrend[]): YearTrend[] {
 				total.tallies[kind][key] += trend.tallies[kind][key]
 			}
 		}
-		years.set(year, total)
+		periods.set(period, total)
 	}
-	return [...years.values()]
+	return [...periods.values()].sort((a, b) => a.period.localeCompare(b.period))
+}
+
+export function yearTrends(trends: UpdateTrend[]): PeriodTrend[] {
+	return groupTrends(trends, (trend) => trend.published.slice(0, 4))
+}
+
+export function monthTrends(trends: UpdateTrend[]): PeriodTrend[] {
+	return groupTrends(trends, (trend) => trend.published.slice(5, 7))
 }

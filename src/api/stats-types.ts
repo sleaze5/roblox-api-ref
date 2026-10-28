@@ -66,8 +66,8 @@ export type UpdateTrend = Release & {
 	enums: number
 }
 
-export type YearTrend = {
-	year: string
+export type PeriodTrend = {
+	period: string
 	updates: number
 	tallies: Tallies
 }
@@ -77,5 +77,6 @@ export type Stats = {
 	counts: CountRow[]
 	records: RecordGroup[]
 	updates: UpdateTrend[]
-	years: YearTrend[]
+	years: PeriodTrend[]
+	months: PeriodTrend[]
 }

@@ -5,6 +5,7 @@ import { DivergingBarChart } from "./charts/DivergingBarChart.tsx"
 import { LineChart } from "./charts/LineChart.tsx"
 import { yearTicks } from "./charts/chart-ticks.ts"
 import { trendsNote } from "../../api/stats-text.ts"
+import { MonthTrends } from "./MonthTrends.tsx"
 import { StatsSection } from "./StatsSection.tsx"
 import { TrendTable } from "./TrendTable.tsx"
 
@@ -12,6 +13,7 @@ export const trendSections = [
 	{ id: "api-size", label: "API size" },
 	{ id: "members-per-update", label: "Members per update" },
 	{ id: "changes-by-year", label: "Changes by year" },
+	{ id: "changes-by-month", label: "Changes by month" },
 	{ id: "changes-by-update", label: "Changes by update" },
 ] as const
 
@@ -84,13 +86,14 @@ export function StatsTrends(props: { stats: Stats }) {
 					headingLabel="Year"
 					detailLabel="Updates"
 					rows={props.stats.years.toReversed().map((year) => ({
-						key: `year-${year.year}`,
-						heading: year.year,
+						key: `year-${year.period}`,
+						heading: year.period,
 						detail: year.updates,
 						tallies: year.tallies,
 					}))}
 				/>
 			</StatsSection>
+			<MonthTrends months={props.stats.months} />
 			<StatsSection
 				id="changes-by-update"
 				title="Changes by update"

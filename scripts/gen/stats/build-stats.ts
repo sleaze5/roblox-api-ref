@@ -7,7 +7,7 @@ import { apiRecords } from "./api-records.ts"
 import { countStats } from "./count-stats.ts"
 import { historyRecords } from "./history-records.ts"
 import { nameRecords } from "./name-records.ts"
-import { updateTrends, yearTrends } from "./trend-stats.ts"
+import { monthTrends, updateTrends, yearTrends } from "./trend-stats.ts"
 
 function sortItems(group: RecordGroup): RecordGroup {
 	return {
@@ -33,5 +33,6 @@ export function buildStats(api: Api, updates: Update[], historyStart: string): S
 		].map(sortItems),
 		updates: trends,
 		years: yearTrends(trends),
+		months: monthTrends(trends),
 	}
 }

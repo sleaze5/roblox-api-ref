@@ -1,7 +1,10 @@
 import { updateHref } from "../../api/routes.ts"
 import { statRefLabel } from "../../api/stat-ref-label.ts"
 import {
+	changeTotal,
 	countLabels,
+	monthLabel,
+	monthsNote,
 	deprecatedTotal,
 	removedNote,
 	statsLead,
@@ -106,8 +109,22 @@ export function statsMarkdown(release: Release, stats: Stats): string {
 			stats.years
 				.toReversed()
 				.map((year) =>
-					[year.year, String(year.updates)].concat(tallyCells(year.tallies)),
+					[year.period, String(year.updates)].concat(
+						tallyCells(year.tallies),
+					),
 				),
+		),
+		"## Changes by month",
+		monthsNote,
+		table(
+			["Month", "Updates", "Changes", ...tallyHeadings],
+			stats.months.map((month) =>
+				[
+					monthLabel(month.period),
+					String(month.updates),
+					String(changeTotal(month.tallies)),
+				].concat(tallyCells(month.tallies)),
+			),
 		),
 		"## Changes by update",
 		table(

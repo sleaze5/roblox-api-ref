@@ -67,16 +67,25 @@ describe("statistics", () => {
 		expect(stats.updates.slice(1).map((trend) => trend.classes)).toEqual(expected)
 	})
 
-	test("sum the updates of each year", () => {
-		expect(stats.years.reduce((sum, year) => sum + year.updates, 0)).toBe(
-			updates.length,
-		)
+	test("sum the updates of each year and of each month", () => {
 		const added = stats.updates.reduce(
 			(sum, trend) => sum + trend.tallies.Member.added,
 			0,
 		)
-		expect(
-			stats.years.reduce((sum, year) => sum + year.tallies.Member.added, 0),
-		).toBe(added)
+		for (const periods of [stats.years, stats.months]) {
+			expect(periods.reduce((sum, period) => sum + period.updates, 0)).toBe(
+				updates.length,
+			)
+			expect(
+				periods.reduce((sum, period) => sum + period.tallies.Member.added, 0),
+			).toBe(added)
+		}
+	})
+
+	test("group months across years, from January to December", () => {
+		expect(stats.months.map((month) => month.period)).toEqual(
+			stats.months.map((month) => month.period).toSorted(),
+		)
+		expect(stats.months.length).toBeLessThanOrEqual(12)
 	})
 })
