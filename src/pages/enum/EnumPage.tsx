@@ -95,6 +95,7 @@ export function EnumPage(props: { api: Api; item: Enum }) {
 						/>
 					</FactList>
 					<HistoryList
+						noun="item"
 						history={props.item.history}
 						fragment={ownerAnchor({ kind: "Enum", name: props.item.name })}
 					/>

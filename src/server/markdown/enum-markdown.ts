@@ -40,7 +40,7 @@ export function enumMarkdown(api: Api, item: Enum): string {
 					.map((tag) => tag.label)
 					.join(", "),
 			],
-			...historyFacts(item.history, true),
+			...historyFacts(item.history, true, "item"),
 			["HTML page", absoluteUrl(enumHref(item.name))],
 			["Roblox documentation", enumDocsHref(item.name)],
 		]),

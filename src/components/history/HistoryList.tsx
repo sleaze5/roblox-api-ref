@@ -1,11 +1,12 @@
 import type { ItemHistory } from "../../api/item-history.ts"
 import { updateHref } from "../../api/routes.ts"
 import { formatDate } from "../../api/update-text.ts"
-import { entryText } from "./history-text.ts"
+import { entryText, type HistoryNoun } from "./history-text.ts"
 
 export function HistoryList(props: {
 	history: ItemHistory | undefined
 	fragment: string
+	noun?: HistoryNoun
 	class?: string
 }) {
 	return props.history === undefined ? null : (
@@ -25,7 +26,9 @@ export function HistoryList(props: {
 						<span class="text-xs text-fg-faint">
 							{formatDate(entry.published)}
 						</span>
-						<span class="text-fg-muted">{entryText(entry)}</span>
+						<span class="text-fg-muted">
+							{entryText(entry, props.noun)}
+						</span>
 					</li>
 				))}
 				{props.history.addedBefore === undefined ? null : (

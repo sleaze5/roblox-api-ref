@@ -1,4 +1,5 @@
 import { isApiChange } from "../../../src/api/api-change.ts"
+import { entryChanges, ownerChanges } from "./history-changes.ts"
 import type {
 	HistoryEntry,
 	HistoryEvent,
@@ -150,6 +151,7 @@ export class HistoryTable {
 		const event = { version: update.version, published: update.published }
 		for (const owner of update.owners) {
 			const members = memberCounts(owner)
+			const changes = ownerChanges(owner)
 			const key = ownerKey(owner.kind, owner.name)
 			if (owner.status === "Added") {
 				this.removed.delete(key)
@@ -166,11 +168,17 @@ export class HistoryTable {
 				...event,
 				kinds: ownerKinds(owner),
 				...(members === undefined ? {} : { members }),
+				...(changes === undefined ? {} : { changes }),
 			})
 			for (const entry of owner.entries) {
 				this.deprecate(entryKey(entry), entryDeprecation(entry), event)
 				this.trackRemoval(key, entry, event)
-				this.push(entryKey(entry), { ...event, kinds: entryKinds(entry) })
+				const summary = entryChanges(entry)
+				this.push(entryKey(entry), {
+					...event,
+					kinds: entryKinds(entry),
+					...(summary === undefined ? {} : { changes: summary }),
+				})
 			}
 		}
 	}

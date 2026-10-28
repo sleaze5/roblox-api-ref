@@ -6,7 +6,7 @@ import { changeAnchor, formatDate } from "../../api/update-text.ts"
 import type { OwnerKind } from "../../api/update-types.ts"
 import { absoluteUrl } from "../../site/origin.ts"
 import { inlineCode, link } from "./escape.ts"
-import { entryText } from "../../components/history/history-text.ts"
+import { entryText, type HistoryNoun } from "../../components/history/history-text.ts"
 
 type Fact = [string, string | undefined]
 
@@ -16,7 +16,11 @@ function eventText(event: HistoryEvent | undefined): string | undefined {
 		: `${event.version} (${formatDate(event.published)})`
 }
 
-export function historyFacts(history: ItemHistory | undefined, full: boolean): Fact[] {
+export function historyFacts(
+	history: ItemHistory | undefined,
+	full: boolean,
+	noun: HistoryNoun = "member",
+): Fact[] {
 	if (history === undefined) {
 		return []
 	}
@@ -31,7 +35,7 @@ export function historyFacts(history: ItemHistory | undefined, full: boolean): F
 		[
 			"History",
 			history.entries
-				.map((entry) => `${entry.version}: ${entryText(entry)}`)
+				.map((entry) => `${entry.version}: ${entryText(entry, noun)}`)
 				.join("; "),
 		],
 	]

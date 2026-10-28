@@ -8,11 +8,20 @@ export type MemberCounts = {
 	changed: number
 }
 
+export type HistoryChanges = {
+	fields: string[]
+	tagsAdded: number
+	tagsRemoved: number
+	deprecation?: "set" | "clear"
+	deprecated?: number
+}
+
 export type HistoryEntry = {
 	version: string
 	published: string
 	kinds: HistoryKind[]
 	members?: MemberCounts
+	changes?: HistoryChanges
 }
 
 export type HistoryEvent = {
