@@ -18,7 +18,8 @@ fn extreme(
 	let mut items: Vec<StatRef> = Vec::new();
 	for entry in measured {
 		match value {
-			Some(best) if !beats(entry.value, best) => {
+			Some(best) if !beats(entry.value, best) =>
+			{
 				#[expect(clippy::float_cmp, reason = "ties are exact integer counts")]
 				if entry.value == best {
 					items.push(entry.item);
@@ -80,7 +81,14 @@ mod tests {
 	fn class_measures(values: &[(&str, usize)]) -> Vec<Measured> {
 		values
 			.iter()
-			.map(|(name, value)| measured(StatRef::Class { name: (*name).to_owned() }, *value))
+			.map(|(name, value)| {
+				measured(
+					StatRef::Class {
+						name: (*name).to_owned(),
+					},
+					*value,
+				)
+			})
 			.collect()
 	}
 
@@ -94,8 +102,12 @@ mod tests {
 		assert_eq!(
 			record.items,
 			[
-				StatRef::Class { name: "B".to_owned() },
-				StatRef::Class { name: "C".to_owned() }
+				StatRef::Class {
+					name: "B".to_owned()
+				},
+				StatRef::Class {
+					name: "C".to_owned()
+				}
 			]
 		);
 	}

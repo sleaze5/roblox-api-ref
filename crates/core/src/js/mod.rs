@@ -11,4 +11,6 @@ pub use date::{
 };
 pub use json::json_string;
 pub use number::{js_number, js_round};
-pub use text::{collapse_spaces, is_js_space, js_trim, js_trim_end, js_trim_start, upper_first, JS_SPACE};
+pub use text::{
+	JS_SPACE, collapse_spaces, is_js_space, js_trim, js_trim_end, js_trim_start, upper_first,
+};

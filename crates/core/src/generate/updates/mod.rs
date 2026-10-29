@@ -12,8 +12,8 @@ use crate::dump::{ChangeElement, DescriptionChange, DumpChange, DumpDiff, Roblox
 use crate::generate::normalize::{normalize_enum_item, normalize_member};
 use crate::js::compare_names;
 use crate::model::{
-	ChangeCounts, ChangeEntry, ChangeStatus, DescriptionDetail, EntryValues, OwnerChanges,
-	Release, Update,
+	ChangeCounts, ChangeEntry, ChangeStatus, DescriptionDetail, EntryValues, OwnerChanges, Release,
+	Update,
 };
 
 #[derive(Default)]
@@ -49,12 +49,16 @@ impl OwnerTable {
 			}
 			ChangeElement::Member => {
 				if let Some(entry) = entries::member_entry(change) {
-					self.get(OwnerKind::Class, &entry.owner.clone()).entries.push(entry);
+					self.get(OwnerKind::Class, &entry.owner.clone())
+						.entries
+						.push(entry);
 				}
 			}
 			ChangeElement::EnumItem => {
 				if let Some(entry) = entries::enum_item_entry(change) {
-					self.get(OwnerKind::Enum, &entry.owner.clone()).entries.push(entry);
+					self.get(OwnerKind::Enum, &entry.owner.clone())
+						.entries
+						.push(entry);
 				}
 			}
 		}
@@ -80,10 +84,14 @@ impl OwnerTable {
 				else {
 					return;
 				};
-				described_entry(change, EntryValues::Member {
-					before: Some(member.clone()),
-					after: Some(member),
-				})
+				let member = Box::new(member);
+				described_entry(
+					change,
+					EntryValues::Member {
+						before: Some(member.clone()),
+						after: Some(member),
+					},
+				)
 			}
 			ChangeElement::EnumItem => {
 				let Some(item) = change
@@ -94,10 +102,14 @@ impl OwnerTable {
 				else {
 					return;
 				};
-				described_entry(change, EntryValues::EnumItem {
-					before: Some(item.clone()),
-					after: Some(item),
-				})
+				let item = Box::new(item);
+				described_entry(
+					change,
+					EntryValues::EnumItem {
+						before: Some(item.clone()),
+						after: Some(item),
+					},
+				)
 			}
 		};
 		let owner = self.get(entry.owner_kind(), &entry.owner.clone());
@@ -126,7 +138,10 @@ fn described_entry(change: &DescriptionChange, values: EntryValues) -> ChangeEnt
 	}
 }
 
-fn description_detail(names: &ApiNames<'_>, change: &DescriptionChange) -> Option<DescriptionDetail> {
+fn description_detail(
+	names: &ApiNames<'_>,
+	change: &DescriptionChange,
+) -> Option<DescriptionDetail> {
 	let context = match change.element {
 		ChangeElement::Class | ChangeElement::Member => CodeContext::Class(change.owner()),
 		ChangeElement::Enum | ChangeElement::EnumItem => CodeContext::Enum(change.owner()),
@@ -156,18 +171,21 @@ fn description_detail(names: &ApiNames<'_>, change: &DescriptionChange) -> Optio
 
 fn entry_rank(entry: &ChangeEntry) -> i64 {
 	match &entry.values {
-		EntryValues::EnumItem { before, after } => {
-			after.as_ref().or(before.as_ref()).map_or(0, |item| item.value)
+		EntryValues::EnumItem { before, after } => after
+			.as_ref()
+			.or(before.as_ref())
+			.map_or(0, |item| item.value),
+		EntryValues::Member { before, after } => {
+			after.as_ref().or(before.as_ref()).map_or(0, |member| {
+				i64::try_from(
+					MemberKind::ALL
+						.iter()
+						.position(|kind| *kind == member.kind())
+						.unwrap_or_default(),
+				)
+				.unwrap_or_default()
+			})
 		}
-		EntryValues::Member { before, after } => after.as_ref().or(before.as_ref()).map_or(0, |member| {
-			i64::try_from(
-				MemberKind::ALL
-					.iter()
-					.position(|kind| *kind == member.kind())
-					.unwrap_or_default(),
-			)
-			.unwrap_or_default()
-		}),
 	}
 }
 
@@ -204,7 +222,11 @@ pub fn build_update(diff: &DumpDiff, published: &str, names: &ApiNames<'_>) -> U
 			owner.status.is_some() || !owner.entries.is_empty() || !owner.descriptions.is_empty()
 		})
 		.collect();
-	owners.sort_by(|a, b| a.kind.cmp(&b.kind).then_with(|| compare_names(&a.name, &b.name)));
+	owners.sort_by(|a, b| {
+		a.kind
+			.cmp(&b.kind)
+			.then_with(|| compare_names(&a.name, &b.name))
+	});
 	for owner in &mut owners {
 		owner.entries.sort_by(|a, b| {
 			entry_rank(a)

@@ -52,12 +52,20 @@ fn field_name(label: &str) -> String {
 	.to_owned()
 }
 
-fn signature_key(member: &Member) -> (Vec<(&str, &crate::model::ApiType, Option<&str>)>, Option<&crate::model::ApiType>) {
+type ParameterKey<'a> = (&'a str, &'a crate::model::ApiType, Option<&'a str>);
+
+fn signature_key(member: &Member) -> (Vec<ParameterKey<'_>>, Option<&crate::model::ApiType>) {
 	(
 		member
 			.parameters()
 			.iter()
-			.map(|parameter| (parameter.name.as_str(), &parameter.ty, parameter.default.as_deref()))
+			.map(|parameter| {
+				(
+					parameter.name.as_str(),
+					&parameter.ty,
+					parameter.default.as_deref(),
+				)
+			})
 			.collect(),
 		member.returns(),
 	)
@@ -188,7 +196,10 @@ fn merge_entry(changes: &mut HistoryChanges, entry: &HistoryChanges) {
 }
 
 pub fn owner_changes(owner: &OwnerChanges) -> Option<HistoryChanges> {
-	if matches!(owner.status, Some(ChangeStatus::Added | ChangeStatus::Removed)) {
+	if matches!(
+		owner.status,
+		Some(ChangeStatus::Added | ChangeStatus::Removed)
+	) {
 		return None;
 	}
 	let mut changes = summarize(&owner.details, Vec::new()).unwrap_or_default();
@@ -253,8 +264,7 @@ pub fn entry_deprecation(entry: &ChangeEntry) -> Option<Deprecation> {
 }
 
 pub fn owner_deprecation(owner: &OwnerChanges) -> Option<Deprecation> {
-	if owner.status == Some(ChangeStatus::Removed)
-		|| tag_detail(&owner.details, &["Removed tags"])
+	if owner.status == Some(ChangeStatus::Removed) || tag_detail(&owner.details, &["Removed tags"])
 	{
 		return Some(Deprecation::Clear);
 	}
@@ -263,8 +273,8 @@ pub fn owner_deprecation(owner: &OwnerChanges) -> Option<Deprecation> {
 
 #[derive(Clone, Debug)]
 pub enum RemovedValue {
-	Member(Member),
-	EnumItem(EnumItem),
+	Member(Box<Member>),
+	EnumItem(Box<EnumItem>),
 }
 
 #[derive(Default)]
@@ -355,7 +365,8 @@ impl HistoryTable {
 						name: owner.name.clone(),
 						removed: event.clone(),
 					};
-					self.removed_owners.insert(key.clone(), (owner.kind, removed));
+					self.removed_owners
+						.insert(key.clone(), (owner.kind, removed));
 				}
 				_ => {}
 			}
@@ -453,7 +464,10 @@ pub fn apply_history(api: &mut Api, table: &HistoryTable, start: &str) {
 			.removed_of(&key)
 			.into_iter()
 			.filter_map(|(value, removed)| match value {
-				RemovedValue::Member(value) => Some(Removed { value, removed }),
+				RemovedValue::Member(value) => Some(Removed {
+					value: *value,
+					removed,
+				}),
 				RemovedValue::EnumItem(_) => None,
 			})
 			.collect();
@@ -475,7 +489,10 @@ pub fn apply_history(api: &mut Api, table: &HistoryTable, start: &str) {
 			.removed_of(&key)
 			.into_iter()
 			.filter_map(|(value, removed)| match value {
-				RemovedValue::EnumItem(value) => Some(Removed { value, removed }),
+				RemovedValue::EnumItem(value) => Some(Removed {
+					value: *value,
+					removed,
+				}),
 				RemovedValue::Member(_) => None,
 			})
 			.collect();

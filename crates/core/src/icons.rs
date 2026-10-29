@@ -1,3 +1,4 @@
+use std::fmt::Write as _;
 use std::path::Path;
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
@@ -173,10 +174,11 @@ pub fn build_icon_sprite(phosphor: &Path) -> std::io::Result<String> {
 		let (view_box, body) = svg_parts(&svg).ok_or_else(|| {
 			std::io::Error::other(format!("Unexpected SVG format in {}.svg", icon.name()))
 		})?;
-		sprite.push_str(&format!(
+		let _ = write!(
+			sprite,
 			"<symbol id=\"{}\" viewBox=\"{view_box}\">{body}</symbol>",
 			icon.name()
-		));
+		);
 	}
 	sprite.push_str("</svg>\n");
 	Ok(sprite)

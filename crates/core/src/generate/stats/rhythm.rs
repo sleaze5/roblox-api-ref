@@ -1,4 +1,4 @@
-use super::extremes::{count, highest, info, with_unit, Measured};
+use super::extremes::{Measured, count, highest, info, with_unit};
 use crate::js::{days_between, js_round};
 use crate::model::{RecordGroup, StatRecord, StatRef, Update};
 
@@ -19,7 +19,7 @@ fn median(values: &[f64]) -> f64 {
 	if sorted.len() % 2 == 1 {
 		sorted[middle]
 	} else {
-		(sorted[middle - 1] + sorted[middle]) / 2.0
+		f64::midpoint(sorted[middle - 1], sorted[middle])
 	}
 }
 
@@ -32,7 +32,12 @@ pub fn rhythm_records(updates: &[Update]) -> RecordGroup {
 	by_date.sort_by(|a, b| a.published.cmp(&b.published));
 	let gaps: Vec<(&Update, f64)> = by_date
 		.windows(2)
-		.map(|pair| (pair[1], days_between(&pair[0].published, &pair[1].published)))
+		.map(|pair| {
+			(
+				pair[1],
+				days_between(&pair[0].published, &pair[1].published),
+			)
+		})
 		.collect();
 	let quiet: Vec<StatRef> = updates
 		.iter()

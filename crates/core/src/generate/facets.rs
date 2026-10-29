@@ -12,7 +12,10 @@ impl FacetIndex {
 		if name.is_empty() {
 			return;
 		}
-		self.0[kind.index()].entry(name.to_owned()).or_default().push(item);
+		self.0[kind.index()]
+			.entry(name.to_owned())
+			.or_default()
+			.push(item);
 	}
 }
 
@@ -56,10 +59,24 @@ fn index_member(index: &mut FacetIndex, owner: &str, member: &Member) {
 	let read = [member.security.name().to_owned()];
 	let write = [member.write_security().name().to_owned()];
 	for (name, access) in split_access(&read, &write) {
-		index.add(FacetKind::Security, &name, FacetUse { access, ..target.clone() });
+		index.add(
+			FacetKind::Security,
+			&name,
+			FacetUse {
+				access,
+				..target.clone()
+			},
+		);
 	}
 	for (name, access) in split_access(&member.capabilities.read, &member.capabilities.write) {
-		index.add(FacetKind::Capability, &name, FacetUse { access, ..target.clone() });
+		index.add(
+			FacetKind::Capability,
+			&name,
+			FacetUse {
+				access,
+				..target.clone()
+			},
+		);
 	}
 	if member.thread_safety != "Unknown" {
 		index.add(FacetKind::ThreadSafety, &member.thread_safety, target);
@@ -91,7 +108,11 @@ pub fn collect_facets<'a>(
 		for tag in &item.tags {
 			index.add(FacetKind::Tag, tag, class_use(&item.name));
 		}
-		index.add(FacetKind::MemoryCategory, &item.memory_category, class_use(&item.name));
+		index.add(
+			FacetKind::MemoryCategory,
+			&item.memory_category,
+			class_use(&item.name),
+		);
 		for member in &item.members {
 			index_member(&mut index, &item.name, member);
 		}
@@ -134,14 +155,7 @@ pub fn collect_facets<'a>(
 		for name in names {
 			let mut uses = values.swap_remove(&name).unwrap_or_default();
 			uses.sort_by(compare_uses);
-			target.insert(
-				name.clone(),
-				Facet {
-					kind,
-					name,
-					uses,
-				},
-			);
+			target.insert(name.clone(), Facet { kind, name, uses });
 		}
 	}
 	facets
@@ -152,11 +166,17 @@ pub struct FacetSlugs([(IndexMap<String, String>, IndexMap<String, String>); 6])
 
 impl FacetSlugs {
 	pub fn slug<'a>(&'a self, kind: FacetKind, name: &'a str) -> &'a str {
-		self.0[kind.index()].0.get(name).map_or(name, String::as_str)
+		self.0[kind.index()]
+			.0
+			.get(name)
+			.map_or(name, String::as_str)
 	}
 
 	pub fn name<'a>(&'a self, kind: FacetKind, slug: &'a str) -> &'a str {
-		self.0[kind.index()].1.get(slug).map_or(slug, String::as_str)
+		self.0[kind.index()]
+			.1
+			.get(slug)
+			.map_or(slug, String::as_str)
 	}
 
 	pub fn to_json(&self) -> serde_json::Value {
@@ -252,7 +272,10 @@ mod tests {
 		let parent = class(
 			"Parent",
 			None,
-			vec![property("Enabled", "Behavior"), property("Visible", "Appearance")],
+			vec![
+				property("Enabled", "Behavior"),
+				property("Visible", "Appearance"),
+			],
 		);
 		let child = class(
 			"Child",
@@ -261,7 +284,10 @@ mod tests {
 		);
 		let facets = collect_facets([parent, child].iter(), std::iter::empty());
 		let categories = facets.of(FacetKind::PropertyCategory);
-		assert_eq!(categories.keys().collect::<Vec<_>>(), ["Appearance", "Behavior"]);
+		assert_eq!(
+			categories.keys().collect::<Vec<_>>(),
+			["Appearance", "Behavior"]
+		);
 		let behavior: Vec<_> = categories["Behavior"]
 			.uses
 			.iter()
@@ -279,9 +305,18 @@ mod tests {
 		);
 		let facets = collect_facets([parent].iter(), std::iter::empty());
 		let slugs = build_facet_slugs(&facets);
-		assert_eq!(slugs.slug(FacetKind::PropertyCategory, "animation"), "animation-2");
-		assert_eq!(slugs.name(FacetKind::PropertyCategory, "animation-2"), "animation");
-		assert_eq!(slugs.slug(FacetKind::PropertyCategory, "Animation"), "Animation");
+		assert_eq!(
+			slugs.slug(FacetKind::PropertyCategory, "animation"),
+			"animation-2"
+		);
+		assert_eq!(
+			slugs.name(FacetKind::PropertyCategory, "animation-2"),
+			"animation"
+		);
+		assert_eq!(
+			slugs.slug(FacetKind::PropertyCategory, "Animation"),
+			"Animation"
+		);
 	}
 
 	#[test]

@@ -2,7 +2,7 @@ use std::collections::HashMap;
 
 use indexmap::IndexMap;
 
-use super::extremes::{count, highest, info, with_unit, Measured};
+use super::extremes::{Measured, count, highest, info, with_unit};
 use super::refs::{oldest_first, removed_entry_ref};
 use crate::api::access::access_tier;
 use crate::generate::history::{entry_deprecation, item_key};

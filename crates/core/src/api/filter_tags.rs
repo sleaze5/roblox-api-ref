@@ -61,8 +61,10 @@ pub fn member_tag_keys(member: &Member) -> Vec<String> {
 }
 
 pub fn filter_tag_groups<'a>(members: impl Iterator<Item = &'a Member>) -> Vec<FilterTagGroup> {
-	let mut counts: Vec<IndexMap<String, FilterTag>> =
-		MemberTagGroup::ALL.iter().map(|_| IndexMap::new()).collect();
+	let mut counts: Vec<IndexMap<String, FilterTag>> = MemberTagGroup::ALL
+		.iter()
+		.map(|_| IndexMap::new())
+		.collect();
 	for member in members {
 		for (index, (group, tags)) in grouped_member_tags(member).into_iter().enumerate() {
 			for tag in tags {
@@ -101,8 +103,14 @@ mod tests {
 
 	#[test]
 	fn turns_labels_into_url_keys() {
-		assert_eq!(tag_key("Read: Roblox script security"), "read-roblox-script-security");
-		assert_eq!(tag_key("Capabilities: Basic + Network"), "capabilities-basic-network");
+		assert_eq!(
+			tag_key("Read: Roblox script security"),
+			"read-roblox-script-security"
+		);
+		assert_eq!(
+			tag_key("Capabilities: Basic + Network"),
+			"capabilities-basic-network"
+		);
 		assert_eq!(tag_key("  Not browsable!"), "not-browsable");
 	}
 }

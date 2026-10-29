@@ -80,9 +80,17 @@ pub const SECURITY_ACCESS: [(Security, &[u32], &[Security]); 5] = [
 	(
 		Security::LocalUserSecurity,
 		&[1, 4],
-		&[Security::None, Security::PluginSecurity, Security::LocalUserSecurity],
+		&[
+			Security::None,
+			Security::PluginSecurity,
+			Security::LocalUserSecurity,
+		],
 	),
-	(Security::PluginSecurity, &[5], &[Security::None, Security::PluginSecurity]),
+	(
+		Security::PluginSecurity,
+		&[5],
+		&[Security::None, Security::PluginSecurity],
+	),
 	(Security::None, &[2], &[Security::None]),
 ];
 

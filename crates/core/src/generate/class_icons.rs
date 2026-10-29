@@ -30,10 +30,14 @@ pub struct ClassIconFiles {
 
 pub fn decode_png(bytes: &[u8]) -> Result<Image, String> {
 	let mut decoder = png::Decoder::new(std::io::Cursor::new(bytes));
-	decoder.set_transformations(png::Transformations::normalize_to_color8() | png::Transformations::ALPHA);
+	decoder.set_transformations(
+		png::Transformations::normalize_to_color8() | png::Transformations::ALPHA,
+	);
 	let mut reader = decoder.read_info().map_err(|error| error.to_string())?;
 	let mut pixels = vec![0; reader.output_buffer_size().ok_or("The PNG is too large.")?];
-	let info = reader.next_frame(&mut pixels).map_err(|error| error.to_string())?;
+	let info = reader
+		.next_frame(&mut pixels)
+		.map_err(|error| error.to_string())?;
 	if info.color_type != png::ColorType::Rgba {
 		return Err("Only RGBA PNG images are supported.".to_owned());
 	}
@@ -45,11 +49,11 @@ pub fn decode_png(bytes: &[u8]) -> Result<Image, String> {
 	})
 }
 
-fn chunk(bytes: &mut Vec<u8>, kind: &[u8; 4], body: &[u8]) {
+fn chunk(bytes: &mut Vec<u8>, kind: [u8; 4], body: &[u8]) {
 	let length = u32::try_from(body.len()).expect("PNG chunks fit in 32 bits");
 	bytes.extend_from_slice(&length.to_be_bytes());
 	let start = bytes.len();
-	bytes.extend_from_slice(kind);
+	bytes.extend_from_slice(&kind);
 	bytes.extend_from_slice(body);
 	let mut crc = flate2::Crc::new();
 	crc.update(&bytes[start..]);
@@ -65,22 +69,26 @@ pub fn encode_png(image: &Image) -> Vec<u8> {
 		scanlines.extend_from_slice(row);
 	}
 	let mut encoder = flate2::write::ZlibEncoder::new(Vec::new(), flate2::Compression::best());
-	encoder.write_all(&scanlines).expect("in-memory compression succeeds");
+	encoder
+		.write_all(&scanlines)
+		.expect("in-memory compression succeeds");
 	let compressed = encoder.finish().expect("in-memory compression succeeds");
 	let mut header = Vec::with_capacity(13);
 	header.extend_from_slice(&image.width.to_be_bytes());
 	header.extend_from_slice(&image.height.to_be_bytes());
 	header.extend_from_slice(&[8, 6, 0, 0, 0]);
 	let mut bytes = vec![137, 80, 78, 71, 13, 10, 26, 10];
-	chunk(&mut bytes, b"IHDR", &header);
-	chunk(&mut bytes, b"IDAT", &compressed);
-	chunk(&mut bytes, b"IEND", &[]);
+	chunk(&mut bytes, *b"IHDR", &header);
+	chunk(&mut bytes, *b"IDAT", &compressed);
+	chunk(&mut bytes, *b"IEND", &[]);
 	bytes
 }
 
 fn draw(target: &mut Image, icon: &Image, cell: u32, columns: u32) -> Result<(), String> {
 	if icon.width > CELL_SIZE || icon.height > CELL_SIZE {
-		return Err(format!("Studio icons must fit in {CELL_SIZE}x{CELL_SIZE} pixels."));
+		return Err(format!(
+			"Studio icons must fit in {CELL_SIZE}x{CELL_SIZE} pixels."
+		));
 	}
 	let left = (cell % columns) * CELL_SIZE + (CELL_SIZE - icon.width) / 2;
 	let top = (cell / columns) * CELL_SIZE + (CELL_SIZE - icon.height) / 2;
@@ -120,7 +128,11 @@ pub fn build_sprite(icons: &HashMap<String, Image>) -> Result<Sprite, String> {
 	})
 }
 
-fn own_or_inherited(classes: &IndexMap<String, Class>, item: &Class, icons: &HashSet<&str>) -> Option<String> {
+fn own_or_inherited(
+	classes: &IndexMap<String, Class>,
+	item: &Class,
+	icons: &HashSet<&str>,
+) -> Option<String> {
 	let mut current = Some(item);
 	while let Some(class) = current {
 		if icons.contains(class.name.as_str()) {
@@ -128,7 +140,9 @@ fn own_or_inherited(classes: &IndexMap<String, Class>, item: &Class, icons: &Has
 		}
 		current = class.superclass.as_ref().and_then(|name| classes.get(name));
 	}
-	icons.contains(FALLBACK_ICON).then(|| FALLBACK_ICON.to_owned())
+	icons
+		.contains(FALLBACK_ICON)
+		.then(|| FALLBACK_ICON.to_owned())
 }
 
 pub fn resolve_class_icons(

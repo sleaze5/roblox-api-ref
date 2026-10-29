@@ -56,7 +56,10 @@ fn member_descriptions(
 			returns: None,
 		};
 	}
-	let entry = docs.get(&key).cloned().unwrap_or_else(ApiDocsEntry::default);
+	let entry = docs
+		.get(&key)
+		.cloned()
+		.unwrap_or_else(ApiDocsEntry::default);
 	let params: std::collections::HashMap<&str, &str> = entry
 		.params
 		.iter()
@@ -66,13 +69,24 @@ fn member_descriptions(
 	let parameters = member
 		.parameters()
 		.iter()
-		.map(|parameter| describe(names, docs, context, params.get(parameter.name.as_str()).copied()))
+		.map(|parameter| {
+			describe(
+				names,
+				docs,
+				context,
+				params.get(parameter.name.as_str()).copied(),
+			)
+		})
 		.collect();
 	let returns = describe(
 		names,
 		docs,
 		context,
-		entry.returns.as_ref().and_then(|returns| returns.first()).map(String::as_str),
+		entry
+			.returns
+			.as_ref()
+			.and_then(|returns| returns.first())
+			.map(String::as_str),
 	);
 	Descriptions {
 		description,
@@ -141,7 +155,8 @@ pub fn apply_api_docs(
 		item.description = description;
 		for (member, found) in item.members.iter_mut().zip(members) {
 			member.description = found.description;
-			for (parameter, description) in member.parameters_mut().iter_mut().zip(found.parameters) {
+			for (parameter, description) in member.parameters_mut().iter_mut().zip(found.parameters)
+			{
 				parameter.description = description;
 			}
 			match &mut member.detail {

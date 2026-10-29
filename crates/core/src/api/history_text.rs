@@ -46,7 +46,12 @@ fn change_parts(changes: &HistoryChanges) -> Vec<String> {
 		Some(Deprecation::Clear) => parts.push("no longer deprecated".to_owned()),
 		None => {}
 	}
-	parts.extend(changes.fields.iter().map(|field| format!("{field} updated")));
+	parts.extend(
+		changes
+			.fields
+			.iter()
+			.map(|field| format!("{field} updated")),
+	);
 	if changes.tags_added > 0 {
 		parts.push(format!("{} added", plural(changes.tags_added, "tag")));
 	}
@@ -150,7 +155,10 @@ mod tests {
 			removed: 3,
 			changed: 0,
 		});
-		assert_eq!(entry_text(&item, HistoryNoun::Item), "1 item added, 3 removed");
+		assert_eq!(
+			entry_text(&item, HistoryNoun::Item),
+			"1 item added, 3 removed"
+		);
 	}
 
 	#[test]
@@ -170,8 +178,14 @@ mod tests {
 
 	#[test]
 	fn says_added_removed_or_changed_when_nothing_more_is_known() {
-		assert_eq!(entry_text(&entry(vec![HistoryKind::Added]), HistoryNoun::Member), "Added");
-		assert_eq!(entry_text(&entry(vec![HistoryKind::Changed]), HistoryNoun::Member), "Changed");
+		assert_eq!(
+			entry_text(&entry(vec![HistoryKind::Added]), HistoryNoun::Member),
+			"Added"
+		);
+		assert_eq!(
+			entry_text(&entry(vec![HistoryKind::Changed]), HistoryNoun::Member),
+			"Changed"
+		);
 		assert_eq!(
 			entry_text(&entry(vec![HistoryKind::Described]), HistoryNoun::Member),
 			"Description updated"

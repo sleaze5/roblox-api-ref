@@ -49,7 +49,10 @@ pub fn linked(tokens: Vec<CodeToken>, href: &str, title: Option<&str>) -> Vec<Co
 }
 
 pub fn text_length(tokens: &[CodeToken]) -> usize {
-	tokens.iter().map(|part| part.text.encode_utf16().count()).sum()
+	tokens
+		.iter()
+		.map(|part| part.text.encode_utf16().count())
+		.sum()
 }
 
 pub fn unlinked(tokens: &[CodeToken]) -> Vec<CodeToken> {

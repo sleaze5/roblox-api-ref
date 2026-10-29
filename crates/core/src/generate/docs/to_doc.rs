@@ -55,7 +55,11 @@ fn is_blank(node: &DocNode) -> bool {
 
 fn trim_edge(mut nodes: Vec<DocNode>, edge: Edge) -> Vec<DocNode> {
 	while !nodes.is_empty() {
-		let index = if edge == Edge::Start { 0 } else { nodes.len() - 1 };
+		let index = if edge == Edge::Start {
+			0
+		} else {
+			nodes.len() - 1
+		};
 		let node = trim_node(&nodes[index], edge);
 		if !is_blank(&node) {
 			nodes[index] = node;
@@ -222,10 +226,10 @@ mod tests {
 		})
 	}
 
-	fn part() -> Option<DocLink> {
-		Some(DocLink::Class {
+	fn part() -> DocLink {
+		DocLink::Class {
 			name: "Part".to_owned(),
-		})
+		}
 	}
 
 	#[test]
@@ -247,7 +251,7 @@ mod tests {
 				"<code>Part</code> <a href=\"https://x.dev\"><code>Part</code></a> <pre><code>Part</code></pre>"
 			),
 			Some(vec![
-				element(DocTag::Code, vec![text("Part")], part()),
+				element(DocTag::Code, vec![text("Part")], Some(part())),
 				text(" "),
 				element(
 					DocTag::A,
@@ -328,7 +332,10 @@ mod tests {
 	#[test]
 	fn normalizes_text() {
 		assert_eq!(normalize_text("“It’s ‘on’” „low‟"), "\"It's 'on'\" \"low\"");
-		assert_eq!(normalize_text("a\r\nb\rc\n\n\n\nd\r\n\r\n\r\ne"), "a\nb\nc\n\nd\n\ne");
+		assert_eq!(
+			normalize_text("a\r\nb\rc\n\n\n\nd\r\n\r\n\r\ne"),
+			"a\nb\nc\n\nd\n\ne"
+		);
 		assert_eq!(normalize_text("x — y → z"), "x — y → z");
 	}
 }

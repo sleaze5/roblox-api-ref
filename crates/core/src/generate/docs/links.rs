@@ -16,14 +16,21 @@ impl ApiNames<'_> {
 	pub fn member_link(&self, class_name: &str, member_name: &str) -> Option<DocLink> {
 		let mut current = self.classes.get(class_name);
 		while let Some(item) = current {
-			if let Some(member) = item.members.iter().find(|member| member.name == member_name) {
+			if let Some(member) = item
+				.members
+				.iter()
+				.find(|member| member.name == member_name)
+			{
 				return Some(DocLink::Member {
 					owner: item.name.clone(),
 					member: member.kind(),
 					name: member.name.clone(),
 				});
 			}
-			current = item.superclass.as_ref().and_then(|name| self.classes.get(name));
+			current = item
+				.superclass
+				.as_ref()
+				.and_then(|name| self.classes.get(name));
 		}
 		None
 	}
@@ -63,7 +70,10 @@ pub enum CodeContext<'a> {
 }
 
 fn is_word(text: &str) -> bool {
-	!text.is_empty() && text.bytes().all(|byte| byte.is_ascii_alphanumeric() || byte == b'_')
+	!text.is_empty()
+		&& text
+			.bytes()
+			.all(|byte| byte.is_ascii_alphanumeric() || byte == b'_')
 }
 
 fn context_link(
@@ -103,7 +113,9 @@ pub fn resolve_code(
 	let call = trimmed.ends_with("()");
 	let name = trimmed.strip_suffix("()").unwrap_or(trimmed);
 	if let Some(rest) = name.strip_prefix("Enum.") {
-		let (enum_name, item) = rest.split_once('.').map_or((rest, None), |(a, b)| (a, Some(b)));
+		let (enum_name, item) = rest
+			.split_once('.')
+			.map_or((rest, None), |(a, b)| (a, Some(b)));
 		if is_word(enum_name) && item.is_none_or(is_word) {
 			return names.enum_link(enum_name, item);
 		}
@@ -144,7 +156,12 @@ fn docs_path(pathname: &str) -> String {
 	path.strip_suffix("/index").unwrap_or(path).to_owned()
 }
 
-fn reference_link(names: &ApiNames<'_>, section: &str, name: &str, anchor: &str) -> Option<DocLink> {
+fn reference_link(
+	names: &ApiNames<'_>,
+	section: &str,
+	name: &str,
+	anchor: &str,
+) -> Option<DocLink> {
 	match section {
 		"classes" => (!anchor.is_empty())
 			.then(|| names.member_link(name, anchor))
@@ -162,7 +179,8 @@ fn reference_link(names: &ApiNames<'_>, section: &str, name: &str, anchor: &str)
 fn reference_match(pathname: &str) -> Option<(&str, &str)> {
 	let rest = pathname.strip_prefix("/docs/reference/engine/")?;
 	let (section, name) = rest.split_once('/')?;
-	(matches!(section, "classes" | "enums" | "datatypes") && is_word(name)).then_some((section, name))
+	(matches!(section, "classes" | "enums" | "datatypes") && is_word(name))
+		.then_some((section, name))
 }
 
 pub fn resolve_href(names: &ApiNames<'_>, href: &str) -> Option<DocLink> {

@@ -157,8 +157,12 @@ pub fn normalize_member(member: &DumpMember) -> Member {
 				.clone()
 				.filter(|value| !value.starts_with("__api_dump")),
 			write_security: write,
-			can_load: member.serialization.is_some_and(|serialization| serialization.can_load),
-			can_save: member.serialization.is_some_and(|serialization| serialization.can_save),
+			can_load: member
+				.serialization
+				.is_some_and(|serialization| serialization.can_load),
+			can_save: member
+				.serialization
+				.is_some_and(|serialization| serialization.can_save),
 			simulation_access,
 		},
 		"Function" => MemberDetail::Method {
@@ -228,7 +232,11 @@ fn normalize_classes(dump: &Dump) -> IndexMap<String, Class> {
 	}
 	let links: Vec<(String, String)> = classes
 		.values()
-		.filter_map(|item| item.superclass.clone().map(|parent| (parent, item.name.clone())))
+		.filter_map(|item| {
+			item.superclass
+				.clone()
+				.map(|parent| (parent, item.name.clone()))
+		})
 		.collect();
 	for (parent, child) in links {
 		if let Some(parent) = classes.get_mut(&parent) {
@@ -254,7 +262,10 @@ fn preferred_target(
 				kind: member.kind(),
 			});
 		}
-		current = item.superclass.as_ref().and_then(|parent| classes.get(parent));
+		current = item
+			.superclass
+			.as_ref()
+			.and_then(|parent| classes.get(parent));
 	}
 	None
 }
@@ -295,7 +306,11 @@ fn flatten_uses(types: Vec<&ApiType>, role: TypeRole) -> Vec<(&ApiType, TypeRole
 }
 
 fn member_type_uses(member: &Member) -> Vec<(&ApiType, TypeRole)> {
-	let parameters: Vec<&ApiType> = member.parameters().iter().map(|parameter| &parameter.ty).collect();
+	let parameters: Vec<&ApiType> = member
+		.parameters()
+		.iter()
+		.map(|parameter| &parameter.ty)
+		.collect();
 	match &member.detail {
 		MemberDetail::Property { ty, .. } => flatten_uses(vec![ty], TypeRole::Value),
 		MemberDetail::Event { .. } => flatten_uses(parameters, TypeRole::Parameter),
@@ -374,7 +389,9 @@ fn data_type_category(category: TypeCategory) -> Option<DataTypeCategory> {
 fn collect_data_types(usage: &UsageIndex) -> IndexMap<String, DataType> {
 	let mut found: Vec<(DataTypeCategory, &str)> = usage
 		.keys()
-		.filter_map(|(category, name)| data_type_category(*category).map(|kind| (kind, name.as_str())))
+		.filter_map(|(category, name)| {
+			data_type_category(*category).map(|kind| (kind, name.as_str()))
+		})
 		.collect();
 	found.sort_by(|a, b| compare_names(a.1, b.1));
 	let mut data_types = IndexMap::new();

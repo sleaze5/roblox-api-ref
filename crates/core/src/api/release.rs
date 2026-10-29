@@ -14,7 +14,10 @@ mod tests {
 
 	#[test]
 	fn names_the_studio_version_and_its_upload_hash() {
-		assert_eq!(release_name("0.744.0.7441077"), "Roblox Studio 0.744.0.7441077");
+		assert_eq!(
+			release_name("0.744.0.7441077"),
+			"Roblox Studio 0.744.0.7441077"
+		);
 		assert_eq!(
 			release_text("0.744.0.7441077", "7aaa6838d36c4448"),
 			"Roblox Studio 0.744.0.7441077 (version-7aaa6838d36c4448)"

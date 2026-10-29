@@ -493,7 +493,9 @@ pub struct Api {
 
 impl Api {
 	pub fn removed_classes(&self) -> &[RemovedOwner] {
-		self.removed.as_ref().map_or(&[], |removed| &removed.classes)
+		self.removed
+			.as_ref()
+			.map_or(&[], |removed| &removed.classes)
 	}
 
 	pub fn removed_enums(&self) -> &[RemovedOwner] {
@@ -501,7 +503,9 @@ impl Api {
 	}
 
 	pub fn superclass_of(&self, item: &Class) -> Option<&Class> {
-		item.superclass.as_ref().and_then(|name| self.classes.get(name))
+		item.superclass
+			.as_ref()
+			.and_then(|name| self.classes.get(name))
 	}
 
 	pub fn ancestors_of(&self, item: &Class) -> Vec<&Class> {

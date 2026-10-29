@@ -2,7 +2,7 @@ use std::collections::HashMap;
 
 use indexmap::IndexMap;
 
-use super::extremes::{highest, info, measured, with_unit, Measured};
+use super::extremes::{Measured, highest, info, measured, with_unit};
 use super::refs::{
 	current_entry_ref, current_owner_ref, event_of, oldest_first, removed_entry_ref,
 	removed_owner_ref,
@@ -59,10 +59,15 @@ fn comebacks_of(api: &Api, updates: &[Update]) -> Vec<Comeback> {
 	let mut tracker = Tracker::default();
 	for update in oldest_first(updates) {
 		for owner in &update.owners {
-			tracker.track(owner_key(owner.kind, &owner.name), owner.status, update, || {
-				current_owner_ref(api, owner)
-					.unwrap_or_else(|| removed_owner_ref(owner, &update.version))
-			});
+			tracker.track(
+				owner_key(owner.kind, &owner.name),
+				owner.status,
+				update,
+				|| {
+					current_owner_ref(api, owner)
+						.unwrap_or_else(|| removed_owner_ref(owner, &update.version))
+				},
+			);
 			for entry in &owner.entries {
 				tracker.track(
 					item_key(owner.kind, &owner.name, &entry.name),
@@ -81,7 +86,10 @@ fn comebacks_of(api: &Api, updates: &[Update]) -> Vec<Comeback> {
 
 fn gone(comeback: &Comeback) -> i64 {
 	#[expect(clippy::cast_possible_truncation, reason = "day counts are small")]
-	let days = js_round(days_between(&comeback.removed.published, &comeback.returned.published)) as i64;
+	let days = js_round(days_between(
+		&comeback.removed.published,
+		&comeback.returned.published,
+	)) as i64;
 	days
 }
 

@@ -10,7 +10,11 @@ pub fn growth_stats(updates: &[Update]) -> Vec<GrowthPeriod> {
 	let mut years: IndexMap<String, IndexMap<String, i64>> = IndexMap::new();
 	for update in updates.iter().rev() {
 		let classes = years.entry(update.published[..4].to_owned()).or_default();
-		for owner in update.owners.iter().filter(|owner| owner.kind == OwnerKind::Class) {
+		for owner in update
+			.owners
+			.iter()
+			.filter(|owner| owner.kind == OwnerKind::Class)
+		{
 			let net: i64 = owner
 				.entries
 				.iter()
@@ -31,7 +35,11 @@ pub fn growth_stats(updates: &[Update]) -> Vec<GrowthPeriod> {
 				.filter(|(_, added)| *added > 0)
 				.map(|(name, added)| GrowthClass { name, added })
 				.collect();
-			grew.sort_by(|a, b| b.added.cmp(&a.added).then_with(|| compare_names(&a.name, &b.name)));
+			grew.sort_by(|a, b| {
+				b.added
+					.cmp(&a.added)
+					.then_with(|| compare_names(&a.name, &b.name))
+			});
 			grew.truncate(SHOWN);
 			GrowthPeriod {
 				period,

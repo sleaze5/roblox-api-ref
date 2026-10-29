@@ -59,17 +59,17 @@ pub fn facet_description(facet: &Facet) -> String {
 	let name = &facet.name;
 	match facet.kind {
 		FacetKind::PropertyCategory => format!("Every property in the {name} category."),
-		FacetKind::Tag => format!(
-			"Every class, member, enum, and enum item that the API dump tags {name}."
-		),
+		FacetKind::Tag => {
+			format!("Every class, member, enum, and enum item that the API dump tags {name}.")
+		}
 		FacetKind::Security => {
 			format!("Every member that needs {name} to read, write, or call it.")
 		}
 		FacetKind::Capability => format!("Every member that needs the {name} capability."),
 		FacetKind::ThreadSafety => format!("Every member whose thread safety is {name}."),
-		FacetKind::MemoryCategory => format!(
-			"Every class whose instances count toward the {name} memory category."
-		),
+		FacetKind::MemoryCategory => {
+			format!("Every class whose instances count toward the {name} memory category.")
+		}
 	}
 }
 
@@ -88,7 +88,14 @@ pub const fn use_kind_title(kind: UseKind) -> &'static str {
 pub fn use_sections(uses: &[FacetUse]) -> Vec<(UseKind, Vec<&FacetUse>)> {
 	UseKind::ALL
 		.into_iter()
-		.map(|kind| (kind, uses.iter().filter(|item| item.kind == kind).collect::<Vec<_>>()))
+		.map(|kind| {
+			(
+				kind,
+				uses.iter()
+					.filter(|item| item.kind == kind)
+					.collect::<Vec<_>>(),
+			)
+		})
 		.filter(|(_, list)| !list.is_empty())
 		.collect()
 }
@@ -151,7 +158,8 @@ pub fn use_href(item: &FacetUse) -> String {
 		UseKind::EnumItem => enum_item_href(&item.owner, &item.name),
 		kind => member_href(
 			&item.owner,
-			kind.member_kind().unwrap_or(rapi_routes::MemberKind::Property),
+			kind.member_kind()
+				.unwrap_or(rapi_routes::MemberKind::Property),
 			&item.name,
 		),
 	}

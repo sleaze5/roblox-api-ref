@@ -187,7 +187,10 @@ mod tests {
 			member_href("Part", MemberKind::Property, "Anchored"),
 			"/classes/Part/#Property-Anchored"
 		);
-		assert_eq!(enum_item_href("Material", "Grass"), "/enums/Material/#Item-Grass");
+		assert_eq!(
+			enum_item_href("Material", "Grass"),
+			"/enums/Material/#Item-Grass"
+		);
 		assert_eq!(
 			change_anchor(OwnerKind::Enum, "Material", "Old"),
 			"Enum-Material.Old"

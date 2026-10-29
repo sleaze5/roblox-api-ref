@@ -19,9 +19,20 @@ pub fn is_deprecated(tags: &[String]) -> bool {
 }
 
 pub fn is_hidden(member: &Member) -> bool {
-	member.tags.iter().any(|tag| tag == "Hidden" || tag == "NotBrowsable")
-		|| member.capabilities.read.iter().any(|name| name == "InternalTest")
-		|| member.capabilities.write.iter().any(|name| name == "InternalTest")
+	member
+		.tags
+		.iter()
+		.any(|tag| tag == "Hidden" || tag == "NotBrowsable")
+		|| member
+			.capabilities
+			.read
+			.iter()
+			.any(|name| name == "InternalTest")
+		|| member
+			.capabilities
+			.write
+			.iter()
+			.any(|name| name == "InternalTest")
 }
 
 pub const fn access_rank(member: &Member) -> usize {
@@ -59,7 +70,10 @@ pub fn compare_members(a: &Member, b: &Member) -> std::cmp::Ordering {
 }
 
 pub fn members_of_kind(members: &[Member], kind: MemberKind) -> Vec<&Member> {
-	let mut list: Vec<&Member> = members.iter().filter(|member| member.kind() == kind).collect();
+	let mut list: Vec<&Member> = members
+		.iter()
+		.filter(|member| member.kind() == kind)
+		.collect();
 	list.sort_by(|a, b| compare_members(a, b));
 	list
 }

@@ -1,6 +1,6 @@
 use rapi_routes::{class_href, type_href};
 
-use super::code::{CodeTone, CodeToken, linked, linked_token, token};
+use super::code::{CodeToken, CodeTone, linked, linked_token, token};
 use super::default_value::default_value_tokens;
 use super::luau::type_tokens;
 use crate::model::{ApiType, Member, MemberDetail, Parameter, TypeCategory};
@@ -14,6 +14,7 @@ pub struct SignatureParts {
 }
 
 impl SignatureParts {
+	#[must_use]
 	pub fn map(&self, map: impl Fn(&[CodeToken]) -> Vec<CodeToken>) -> Self {
 		Self {
 			owner: map(&self.owner),
@@ -127,7 +128,11 @@ pub fn signature_parts(member: &Member, owner: &str, name_href: Option<&str>) ->
 			head: vec![
 				named(&member.name, CodeTone::Name, name_href),
 				token(": ", CodeTone::Punctuation),
-				linked_token("RBXScriptSignal", CodeTone::Type, type_href("RBXScriptSignal")),
+				linked_token(
+					"RBXScriptSignal",
+					CodeTone::Type,
+					type_href("RBXScriptSignal"),
+				),
 				token("<(", CodeTone::Punctuation),
 			],
 			parameters: parameters(),

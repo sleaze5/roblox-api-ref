@@ -29,7 +29,11 @@ pub fn raw_text(raw: &Value) -> String {
 	}
 }
 
-fn value_detail(label: &str, before: Option<DetailValue>, after: Option<DetailValue>) -> Vec<ChangeDetail> {
+fn value_detail(
+	label: &str,
+	before: Option<DetailValue>,
+	after: Option<DetailValue>,
+) -> Vec<ChangeDetail> {
 	if before.as_ref().map(|value| &value.text) == after.as_ref().map(|value| &value.text) {
 		return Vec::new();
 	}
@@ -103,9 +107,8 @@ fn capabilities_of(raw: &Value) -> Capabilities {
 fn capability_details(change: &FieldChange) -> Vec<ChangeDetail> {
 	let before = capabilities_of(&change.before);
 	let after = capabilities_of(&change.after);
-	let shared = |capabilities: &Capabilities| {
-		capabilities.read.join(",") == capabilities.write.join(",")
-	};
+	let shared =
+		|capabilities: &Capabilities| capabilities.read.join(",") == capabilities.write.join(",");
 	if shared(&before) && shared(&after) {
 		return value_detail(
 			"Capabilities",
@@ -174,7 +177,11 @@ fn tag_details(before: &Value, after: &Value) -> Vec<ChangeDetail> {
 			tags: removed,
 		});
 	}
-	details.extend(value_detail("Use instead", preferred_value(before), preferred_value(after)));
+	details.extend(value_detail(
+		"Use instead",
+		preferred_value(before),
+		preferred_value(after),
+	));
 	details
 }
 
@@ -219,7 +226,13 @@ fn field_details(change: &FieldChange) -> Vec<ChangeDetail> {
 			Some(value(text_or(after, "Unknown"), DetailTone::Code)),
 		),
 		"SimulationAccess" => {
-			let yes = |raw: &Value| if raw == &Value::Bool(true) { "Yes" } else { "No" };
+			let yes = |raw: &Value| {
+				if raw == &Value::Bool(true) {
+					"Yes"
+				} else {
+					"No"
+				}
+			};
 			value_detail(
 				"Simulation access",
 				Some(value(yes(before), DetailTone::Text)),
@@ -241,7 +254,11 @@ fn field_details(change: &FieldChange) -> Vec<ChangeDetail> {
 			optional_value(before, DetailTone::Code),
 			optional_value(after, DetailTone::Code),
 		),
-		"LegacyNames" => value_detail("Legacy names", Some(list_value(before)), Some(list_value(after))),
+		"LegacyNames" => value_detail(
+			"Legacy names",
+			Some(list_value(before)),
+			Some(list_value(after)),
+		),
 		field => value_detail(
 			field,
 			optional_value(before, DetailTone::Code),

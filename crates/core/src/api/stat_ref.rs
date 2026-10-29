@@ -2,7 +2,7 @@ use rapi_routes::{
 	MemberKind, class_href, enum_href, enum_item_href, member_href, type_href, update_href,
 };
 
-use super::code::{CodeTone, CodeToken, linked, token};
+use super::code::{CodeToken, CodeTone, linked, token};
 use crate::model::StatRef;
 
 pub fn stat_ref_label(item: &StatRef) -> String {
@@ -61,7 +61,10 @@ fn unlinked_tokens(item: &StatRef) -> Vec<CodeToken> {
 	match item {
 		StatRef::Class { name } | StatRef::DataType { name } => vec![token(name, CodeTone::Type)],
 		StatRef::Enum { name } => {
-			vec![token("Enum.", CodeTone::Punctuation), token(name, CodeTone::Type)]
+			vec![
+				token("Enum.", CodeTone::Punctuation),
+				token(name, CodeTone::Type),
+			]
 		}
 		StatRef::EnumItem { owner, name } => vec![
 			token("Enum.", CodeTone::Punctuation),

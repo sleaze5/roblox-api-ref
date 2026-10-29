@@ -147,7 +147,8 @@ pub fn parse_html(source: &str) -> Vec<HtmlNode> {
 					open.truncate(index);
 				}
 			} else {
-				let attributes = parse_attributes(captures.get(3).map_or("", |value| value.as_str()));
+				let attributes =
+					parse_attributes(captures.get(3).map_or("", |value| value.as_str()));
 				let self_closing = captures.get(4).is_some_and(|slash| slash.as_str() == "/");
 				let children = children_mut(&mut root, &path);
 				children.push(HtmlNode::Element(HtmlElement {
@@ -186,7 +187,9 @@ mod tests {
 	#[test]
 	fn builds_elements_decodes_entities_and_keeps_void_elements_empty() {
 		assert_eq!(
-			parse_html(r#"A&mdash;<code class="language-lua">x &lt; 2</code><br />B<img src='/a.png'>"#),
+			parse_html(
+				r#"A&mdash;<code class="language-lua">x &lt; 2</code><br />B<img src='/a.png'>"#
+			),
 			vec![
 				text("A—"),
 				element("code", &[("class", "language-lua")], vec![text("x < 2")]),
@@ -201,7 +204,12 @@ mod tests {
 	fn tolerates_stray_closing_tags_unclosed_elements_and_a_lone_angle_bracket() {
 		assert_eq!(
 			parse_html("a < b</em><strong>c"),
-			vec![text("a "), text("<"), text(" b"), element("strong", &[], vec![text("c")])]
+			vec![
+				text("a "),
+				text("<"),
+				text(" b"),
+				element("strong", &[], vec![text("c")])
+			]
 		);
 	}
 
@@ -209,17 +217,23 @@ mod tests {
 	fn closes_the_innermost_matching_element_but_never_the_root() {
 		assert_eq!(
 			parse_html("<em>a<strong>b</em>c"),
-			vec![element(
-				"em",
-				&[],
-				vec![text("a"), element("strong", &[], vec![text("b")])]
-			), text("c")]
+			vec![
+				element(
+					"em",
+					&[],
+					vec![text("a"), element("strong", &[], vec![text("b")])]
+				),
+				text("c")
+			]
 		);
 		assert_eq!(parse_html("<!-- hi -->x<!-- open"), vec![text("x")]);
 	}
 
 	#[test]
 	fn decodes_numeric_and_named_entities_and_keeps_unknown_ones() {
-		assert_eq!(decode_entities("&#x41;&#66;&hellip;&bogus;&#0;&AMP;"), "AB…&bogus;&#0;&AMP;");
+		assert_eq!(
+			decode_entities("&#x41;&#66;&hellip;&bogus;&#0;&AMP;"),
+			"AB…&bogus;&#0;&AMP;"
+		);
 	}
 }

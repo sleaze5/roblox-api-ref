@@ -53,7 +53,11 @@ fn class_records(api: &Api) -> RecordGroup {
 				measure(&|item| item.subclasses.len()),
 			),
 			highest(
-				info("most-members", "Most members", "Members that the class defines itself."),
+				info(
+					"most-members",
+					"Most members",
+					"Members that the class defines itself.",
+				),
 				measure(&|item| item.members.len()),
 			),
 			highest(
@@ -77,7 +81,11 @@ fn member_records(api: &Api) -> RecordGroup {
 	let members: Vec<(&str, &Member)> = api
 		.classes
 		.values()
-		.flat_map(|item| item.members.iter().map(move |member| (item.name.as_str(), member)))
+		.flat_map(|item| {
+			item.members
+				.iter()
+				.map(move |member| (item.name.as_str(), member))
+		})
 		.collect();
 	RecordGroup {
 		id: "member-records".to_owned(),
@@ -92,7 +100,9 @@ fn member_records(api: &Api) -> RecordGroup {
 				members
 					.iter()
 					.filter(|(_, member)| member.value_type().is_none())
-					.map(|(owner, member)| measured(member_ref(owner, member), member.parameters().len()))
+					.map(|(owner, member)| {
+						measured(member_ref(owner, member), member.parameters().len())
+					})
 					.collect(),
 			),
 			highest(
@@ -104,9 +114,9 @@ fn member_records(api: &Api) -> RecordGroup {
 				members
 					.iter()
 					.filter_map(|(owner, member)| {
-						member
-							.returns()
-							.map(|returns| measured(member_ref(owner, member), return_count(returns)))
+						member.returns().map(|returns| {
+							measured(member_ref(owner, member), return_count(returns))
+						})
 					})
 					.collect(),
 			),
@@ -123,7 +133,11 @@ fn enum_and_type_records(api: &Api) -> RecordGroup {
 		title: "Enums and types".to_owned(),
 		records: vec![
 			highest(
-				info("most-enum-items", "Most enum items", "The enums with the most items."),
+				info(
+					"most-enum-items",
+					"Most enum items",
+					"The enums with the most items.",
+				),
 				api.enums
 					.values()
 					.map(|item| measured(enum_ref(&item.name), item.items.len()))
@@ -174,5 +188,9 @@ fn enum_and_type_records(api: &Api) -> RecordGroup {
 }
 
 pub fn api_records(api: &Api) -> Vec<RecordGroup> {
-	vec![class_records(api), member_records(api), enum_and_type_records(api)]
+	vec![
+		class_records(api),
+		member_records(api),
+		enum_and_type_records(api),
+	]
 }

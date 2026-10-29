@@ -22,7 +22,11 @@ fn civil_from_days(days: i64) -> (i64, i64, i64) {
 	let day_of_year = day_of_era - (365 * year_of_era + year_of_era / 4 - year_of_era / 100);
 	let month_index = (5 * day_of_year + 2) / 153;
 	let day = day_of_year - (153 * month_index + 2) / 5 + 1;
-	let month = if month_index < 10 { month_index + 3 } else { month_index - 9 };
+	let month = if month_index < 10 {
+		month_index + 3
+	} else {
+		month_index - 9
+	};
 	let year = year_of_era + era * 400 + i64::from(month <= 2);
 	(year, month, day)
 }
@@ -43,7 +47,10 @@ pub fn parse_iso(text: &str) -> Option<i64> {
 	let time = time.strip_suffix('Z').unwrap_or(time);
 	let (clock, fraction) = time.split_once('.').unwrap_or((time, ""));
 	let mut clock_parts = clock.split(':');
-	let hours = clock_parts.next().filter(|part| !part.is_empty()).map_or(Some(0), number)?;
+	let hours = clock_parts
+		.next()
+		.filter(|part| !part.is_empty())
+		.map_or(Some(0), number)?;
 	let minutes = clock_parts.next().map_or(Some(0), number)?;
 	let seconds = clock_parts.next().map_or(Some(0), number)?;
 	let millis = if fraction.is_empty() {
@@ -122,7 +129,9 @@ pub fn parse_http_date(text: &str) -> Option<i64> {
 	let minutes = number(clock.next()?)?;
 	let seconds = number(clock.next()?)?;
 	let month = i64::try_from(month).ok()? + 1;
-	Some(days_from_civil(year, month, day) * DAY_MS + ((hours * 60 + minutes) * 60 + seconds) * 1000)
+	Some(
+		days_from_civil(year, month, day) * DAY_MS + ((hours * 60 + minutes) * 60 + seconds) * 1000,
+	)
 }
 
 #[cfg(test)]

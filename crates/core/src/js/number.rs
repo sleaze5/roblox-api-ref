@@ -15,7 +15,10 @@ mod tests {
 	fn formats_numbers_like_javascript() {
 		assert_eq!(js_number(1.0), "1");
 		assert_eq!(js_number(87.333_333_333_333_33), "87.33333333333333");
-		assert_eq!(js_number(3.552_713_678_800_501e-15), "3.552713678800501e-15");
+		assert_eq!(
+			js_number(3.552_713_678_800_501e-15),
+			"3.552713678800501e-15"
+		);
 		assert_eq!(js_number(-0.0), "0");
 		assert_eq!(js_number(1e21), "1e+21");
 		assert_eq!(js_number(0.1 + 0.2), "0.30000000000000004");

@@ -2,7 +2,7 @@ use indexmap::IndexMap;
 
 use super::refs::{event_of, oldest_first};
 use crate::js::compare_names;
-use crate::model::{Api, ChangeDetail, Capabilities, EntryValues, TagTrend, Update, UpdateEvent};
+use crate::model::{Api, Capabilities, ChangeDetail, EntryValues, TagTrend, Update, UpdateEvent};
 
 #[derive(Default)]
 struct TagTable {
@@ -11,13 +11,15 @@ struct TagTable {
 
 impl TagTable {
 	fn row(&mut self, name: &str) -> &mut TagTrend {
-		self.rows.entry(name.to_owned()).or_insert_with(|| TagTrend {
-			name: name.to_owned(),
-			current: 0,
-			gained: 0,
-			lost: 0,
-			first: None,
-		})
+		self.rows
+			.entry(name.to_owned())
+			.or_insert_with(|| TagTrend {
+				name: name.to_owned(),
+				current: 0,
+				gained: 0,
+				lost: 0,
+				first: None,
+			})
 	}
 
 	fn count(&mut self, names: &[String]) {
@@ -44,7 +46,11 @@ impl TagTable {
 
 	fn sorted(self) -> Vec<TagTrend> {
 		let mut rows: Vec<TagTrend> = self.rows.into_values().collect();
-		rows.sort_by(|a, b| b.current.cmp(&a.current).then_with(|| compare_names(&a.name, &b.name)));
+		rows.sort_by(|a, b| {
+			b.current
+				.cmp(&a.current)
+				.then_with(|| compare_names(&a.name, &b.name))
+		});
 		rows
 	}
 }
@@ -81,18 +87,40 @@ enum Values {
 impl Values {
 	fn of_entry(&self, values: &EntryValues, before: bool) -> Vec<String> {
 		match (self, values) {
-			(Self::Tags, EntryValues::Member { before: b, after: a }) => {
-				(if before { b } else { a }).as_ref().map(|member| member.tags.clone())
-			}
-			(Self::Tags, EntryValues::EnumItem { before: b, after: a }) => {
-				(if before { b } else { a }).as_ref().map(|item| item.tags.clone())
-			}
-			(Self::Capabilities, EntryValues::Member { before: b, after: a }) => (if before { b } else { a })
+			(
+				Self::Tags,
+				EntryValues::Member {
+					before: b,
+					after: a,
+				},
+			) => (if before { b } else { a })
+				.as_ref()
+				.map(|member| member.tags.clone()),
+			(
+				Self::Tags,
+				EntryValues::EnumItem {
+					before: b,
+					after: a,
+				},
+			) => (if before { b } else { a })
+				.as_ref()
+				.map(|item| item.tags.clone()),
+			(
+				Self::Capabilities,
+				EntryValues::Member {
+					before: b,
+					after: a,
+				},
+			) => (if before { b } else { a })
 				.as_ref()
 				.map(|member| capabilities_of(&member.capabilities)),
-			(Self::Capabilities, EntryValues::EnumItem { before: b, after: a }) => {
-				(if before { b } else { a }).as_ref().map(|_| Vec::new())
-			}
+			(
+				Self::Capabilities,
+				EntryValues::EnumItem {
+					before: b,
+					after: a,
+				},
+			) => (if before { b } else { a }).as_ref().map(|_| Vec::new()),
 		}
 		.unwrap_or_default()
 	}
@@ -105,7 +133,10 @@ fn build(api: &Api, updates: &[Update], values: &Values) -> Vec<TagTrend> {
 		let event = event_of(update);
 		for owner in &update.owners {
 			if owners {
-				table.gain(&detail_tags(&owner.details, &["Tags", "Added tags"]), &event);
+				table.gain(
+					&detail_tags(&owner.details, &["Tags", "Added tags"]),
+					&event,
+				);
 				table.lose(&detail_tags(&owner.details, &["Removed tags"]));
 			}
 			for entry in &owner.entries {

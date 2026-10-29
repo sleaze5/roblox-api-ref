@@ -68,15 +68,20 @@ pub fn update_trends(api: &Api, updates: &[Update]) -> Vec<UpdateTrend> {
 	trends
 }
 
-fn group_trends(trends: &[UpdateTrend], period_of: impl Fn(&UpdateTrend) -> String) -> Vec<PeriodTrend> {
+fn group_trends(
+	trends: &[UpdateTrend],
+	period_of: impl Fn(&UpdateTrend) -> String,
+) -> Vec<PeriodTrend> {
 	let mut periods: IndexMap<String, PeriodTrend> = IndexMap::new();
 	for trend in trends {
 		let period = period_of(trend);
-		let total = periods.entry(period.clone()).or_insert_with(|| PeriodTrend {
-			period,
-			updates: 0,
-			tallies: Tallies::default(),
-		});
+		let total = periods
+			.entry(period.clone())
+			.or_insert_with(|| PeriodTrend {
+				period,
+				updates: 0,
+				tallies: Tallies::default(),
+			});
 		total.updates += 1;
 		total.tallies.add(&trend.tallies);
 	}

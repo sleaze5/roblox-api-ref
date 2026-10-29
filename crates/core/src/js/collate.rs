@@ -1,13 +1,15 @@
 use std::cmp::Ordering;
 use std::sync::LazyLock;
 
+use icu_collator::options::CollatorOptions;
 use icu_collator::preferences::CollationNumericOrdering;
 use icu_collator::{Collator, CollatorBorrowed, CollatorPreferences};
 
 static COLLATOR: LazyLock<CollatorBorrowed<'static>> = LazyLock::new(|| {
 	let mut preferences = CollatorPreferences::default();
 	preferences.numeric_ordering = Some(CollationNumericOrdering::True);
-	Collator::try_new(preferences, Default::default()).expect("the baked collation data loads")
+	Collator::try_new(preferences, CollatorOptions::default())
+		.expect("the baked collation data loads")
 });
 
 pub fn compare_names(a: &str, b: &str) -> Ordering {
@@ -27,11 +29,29 @@ mod tests {
 
 	#[test]
 	fn sorts_names_like_intl_collator_with_numeric_ordering() {
-		let mut names = vec!["Vector3int16", "vector2", "Vector2", "a10", "a2", "_Hidden", "Zed", "ab"];
+		let mut names = vec![
+			"Vector3int16",
+			"vector2",
+			"Vector2",
+			"a10",
+			"a2",
+			"_Hidden",
+			"Zed",
+			"ab",
+		];
 		names.sort_by(|a, b| compare_names(a, b));
 		assert_eq!(
 			names,
-			["_Hidden", "a2", "a10", "ab", "vector2", "Vector2", "Vector3int16", "Zed"]
+			[
+				"_Hidden",
+				"a2",
+				"a10",
+				"ab",
+				"vector2",
+				"Vector2",
+				"Vector3int16",
+				"Zed"
+			]
 		);
 	}
 

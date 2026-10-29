@@ -34,7 +34,11 @@ fn to_u32(value: usize) -> u32 {
 }
 
 pub fn count_stats(api: &Api, updates: &[Update]) -> Vec<CountRow> {
-	let members: Vec<&Member> = api.classes.values().flat_map(|item| &item.members).collect();
+	let members: Vec<&Member> = api
+		.classes
+		.values()
+		.flat_map(|item| &item.members)
+		.collect();
 	let removed_members: Vec<&Member> = api
 		.classes
 		.values()
@@ -48,7 +52,10 @@ pub fn count_stats(api: &Api, updates: &[Update]) -> Vec<CountRow> {
 		.into_iter()
 		.map(|kind| {
 			let (current, removed) = match kind {
-				CountKind::Class => (to_u32(api.classes.len()), to_u32(api.removed_classes().len())),
+				CountKind::Class => (
+					to_u32(api.classes.len()),
+					to_u32(api.removed_classes().len()),
+				),
 				CountKind::Enum => (to_u32(api.enums.len()), to_u32(api.removed_enums().len())),
 				CountKind::EnumItem => (
 					to_u32(api.enums.values().map(|item| item.items.len()).sum()),

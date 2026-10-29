@@ -42,10 +42,22 @@ fn kinds(api: &Api) -> Vec<(&'static str, &'static str, Vec<StatRef>)> {
 				.map(|name| StatRef::Class { name: name.clone() })
 				.collect(),
 		),
-		("property", "property names", members_of(api, MemberKind::Property)),
-		("method", "method names", members_of(api, MemberKind::Method)),
+		(
+			"property",
+			"property names",
+			members_of(api, MemberKind::Property),
+		),
+		(
+			"method",
+			"method names",
+			members_of(api, MemberKind::Method),
+		),
 		("event", "event names", members_of(api, MemberKind::Event)),
-		("callback", "callback names", members_of(api, MemberKind::Callback)),
+		(
+			"callback",
+			"callback names",
+			members_of(api, MemberKind::Callback),
+		),
 		(
 			"parameter",
 			"parameter names",
@@ -53,12 +65,15 @@ fn kinds(api: &Api) -> Vec<(&'static str, &'static str, Vec<StatRef>)> {
 				.values()
 				.flat_map(|item| {
 					item.members.iter().flat_map(move |member| {
-						member.parameters().iter().map(move |parameter| StatRef::Parameter {
-							owner: item.name.clone(),
-							member: member.name.clone(),
-							member_kind: member.kind(),
-							name: parameter.name.clone(),
-						})
+						member
+							.parameters()
+							.iter()
+							.map(move |parameter| StatRef::Parameter {
+								owner: item.name.clone(),
+								member: member.name.clone(),
+								member_kind: member.kind(),
+								name: parameter.name.clone(),
+							})
 					})
 				})
 				.collect(),

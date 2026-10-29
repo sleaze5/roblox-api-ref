@@ -36,14 +36,39 @@ pub struct CountRow {
 
 #[derive(Clone, Debug, PartialEq, Eq, Hash)]
 pub enum StatRef {
-	Class { name: String },
-	Enum { name: String },
-	DataType { name: String },
-	Member { kind: MemberKind, owner: String, name: String },
-	EnumItem { owner: String, name: String },
-	Parameter { owner: String, member: String, member_kind: MemberKind, name: String },
-	Update { version: String, published: String },
-	Removed { label: String, version: String, anchor: String },
+	Class {
+		name: String,
+	},
+	Enum {
+		name: String,
+	},
+	DataType {
+		name: String,
+	},
+	Member {
+		kind: MemberKind,
+		owner: String,
+		name: String,
+	},
+	EnumItem {
+		owner: String,
+		name: String,
+	},
+	Parameter {
+		owner: String,
+		member: String,
+		member_kind: MemberKind,
+		name: String,
+	},
+	Update {
+		version: String,
+		published: String,
+	},
+	Removed {
+		label: String,
+		version: String,
+		anchor: String,
+	},
 }
 
 impl StatRef {
@@ -114,10 +139,16 @@ pub struct StatRecord {
 	pub items: Vec<StatRef>,
 }
 
-#[expect(clippy::trivially_copy_pass_by_ref, reason = "serde passes fields by reference")]
+#[expect(
+	clippy::trivially_copy_pass_by_ref,
+	reason = "serde passes fields by reference"
+)]
 fn stat_value<S: Serializer>(value: &f64, serializer: S) -> Result<S::Ok, S::Error> {
 	if value.fract() == 0.0 && value.abs() < 1e15 {
-		#[expect(clippy::cast_possible_truncation, reason = "the value is a whole number")]
+		#[expect(
+			clippy::cast_possible_truncation,
+			reason = "the value is a whole number"
+		)]
 		let whole = *value as i64;
 		serializer.serialize_i64(whole)
 	} else {

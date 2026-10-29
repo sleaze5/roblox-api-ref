@@ -8,6 +8,7 @@ use super::docs::ApiNames;
 use super::facets::{FacetSlugs, build_facet_slugs};
 use super::history::{apply_history, build_history};
 use super::normalize::normalize_api;
+use super::search_index::build_search_index;
 use super::stats::build_stats;
 use super::updates::{DatedDiff, build_updates, check_diff};
 use crate::dump::{ApiDocs, Dump, DumpDiff, RobloxVersion, read_versions};
@@ -49,6 +50,7 @@ pub struct Site {
 	pub stats: Stats,
 	pub slugs: FacetSlugs,
 	pub class_icons: ClassIconFiles,
+	pub search: rapi_search::IndexData,
 	pub version: RobloxVersion,
 }
 
@@ -91,7 +93,11 @@ pub fn generate_site(paths: &Paths) -> Result<Site, String> {
 		},
 		|| {
 			rayon::join(
-				|| read_json::<HashMap<String, String>>(&data.join(version.studio_icons_file_name())),
+				|| {
+					read_json::<HashMap<String, String>>(
+						&data.join(version.studio_icons_file_name()),
+					)
+				},
 				|| read_diffs(paths, &versions),
 			)
 		},
@@ -114,12 +120,14 @@ pub fn generate_site(paths: &Paths) -> Result<Site, String> {
 	apply_history(&mut api, &table, &history_start);
 	let stats = build_stats(&api, &updates, &history_start);
 	let slugs = build_facet_slugs(&api.facets);
+	let search = build_search_index(&api, &updates);
 	Ok(Site {
 		api,
 		updates,
 		stats,
 		slugs,
 		class_icons,
+		search,
 		version,
 	})
 }

@@ -93,15 +93,15 @@ pub struct DescriptionDetail {
 pub enum EntryValues {
 	Member {
 		#[serde(skip_serializing_if = "Option::is_none")]
-		before: Option<Member>,
+		before: Option<Box<Member>>,
 		#[serde(skip_serializing_if = "Option::is_none")]
-		after: Option<Member>,
+		after: Option<Box<Member>>,
 	},
 	EnumItem {
 		#[serde(skip_serializing_if = "Option::is_none")]
-		before: Option<EnumItem>,
+		before: Option<Box<EnumItem>>,
 		#[serde(skip_serializing_if = "Option::is_none")]
-		after: Option<EnumItem>,
+		after: Option<Box<EnumItem>>,
 	},
 }
 
@@ -130,7 +130,9 @@ impl ChangeEntry {
 
 	pub fn after_tags(&self) -> Option<&[String]> {
 		match &self.values {
-			EntryValues::Member { after, .. } => after.as_ref().map(|member| member.tags.as_slice()),
+			EntryValues::Member { after, .. } => {
+				after.as_ref().map(|member| member.tags.as_slice())
+			}
 			EntryValues::EnumItem { after, .. } => after.as_ref().map(|item| item.tags.as_slice()),
 		}
 	}
@@ -140,7 +142,9 @@ impl ChangeEntry {
 			EntryValues::Member { before, .. } => {
 				before.as_ref().map(|member| member.tags.as_slice())
 			}
-			EntryValues::EnumItem { before, .. } => before.as_ref().map(|item| item.tags.as_slice()),
+			EntryValues::EnumItem { before, .. } => {
+				before.as_ref().map(|item| item.tags.as_slice())
+			}
 		}
 	}
 

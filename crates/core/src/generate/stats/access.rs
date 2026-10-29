@@ -35,7 +35,9 @@ pub fn access_stats(api: &Api, updates: &[Update]) -> AccessStats {
 	let mut years: IndexMap<String, AccessPeriod> = IndexMap::new();
 	for update in oldest_first(updates) {
 		let year = update.published[..4].to_owned();
-		let period = years.entry(year.clone()).or_insert_with(|| empty_period(&year));
+		let period = years
+			.entry(year.clone())
+			.or_insert_with(|| empty_period(&year));
 		for owner in &update.owners {
 			for entry in &owner.entries {
 				let EntryValues::Member { before, after } = &entry.values else {
@@ -70,7 +72,11 @@ pub fn access_stats(api: &Api, updates: &[Update]) -> AccessStats {
 			}
 		}
 	}
-	let members: Vec<&Member> = api.classes.values().flat_map(|item| &item.members).collect();
+	let members: Vec<&Member> = api
+		.classes
+		.values()
+		.flat_map(|item| &item.members)
+		.collect();
 	AccessStats {
 		now: AccessNow {
 			members: u32::try_from(members.len()).unwrap_or(u32::MAX),

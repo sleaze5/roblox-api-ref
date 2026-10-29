@@ -1,6 +1,6 @@
 use rapi_routes::{enum_href, enum_item_href, type_href};
 
-use super::code::{CodeTone, CodeToken, linked, token};
+use super::code::{CodeToken, CodeTone, linked, token};
 use super::luau::{is_boolean_type, is_number_type, is_string_type, luau_name};
 use crate::js::{js_number, js_round, json_string};
 use crate::model::{ApiType, TypeCategory};
@@ -43,7 +43,10 @@ pub fn js_parse_number(text: &str) -> Option<f64> {
 	if trimmed.is_empty() {
 		return Some(0.0);
 	}
-	if let Some(hex) = trimmed.strip_prefix("0x").or_else(|| trimmed.strip_prefix("0X")) {
+	if let Some(hex) = trimmed
+		.strip_prefix("0x")
+		.or_else(|| trimmed.strip_prefix("0X"))
+	{
 		#[expect(clippy::cast_precision_loss, reason = "matches Number()")]
 		return u64::from_str_radix(hex, 16).ok().map(|value| value as f64);
 	}
@@ -52,9 +55,9 @@ pub fn js_parse_number(text: &str) -> Option<f64> {
 		"-Infinity" => return Some(f64::NEG_INFINITY),
 		_ => {}
 	}
-	let valid = trimmed.bytes().all(|byte| {
-		byte.is_ascii_digit() || matches!(byte, b'.' | b'e' | b'E' | b'+' | b'-')
-	});
+	let valid = trimmed
+		.bytes()
+		.all(|byte| byte.is_ascii_digit() || matches!(byte, b'.' | b'e' | b'E' | b'+' | b'-'));
 	if !valid || trimmed.contains("inf") {
 		return None;
 	}
@@ -126,7 +129,10 @@ fn shorthand_tokens(type_name: &str, args: &[String]) -> Option<Vec<CodeToken>> 
 
 fn data_type_tokens(type_name: &str, raw: &str) -> Vec<CodeToken> {
 	let args = numbers_in(raw);
-	if args.iter().any(|arg| js_parse_number(arg).is_none_or(f64::is_nan)) {
+	if args
+		.iter()
+		.any(|arg| js_parse_number(arg).is_none_or(f64::is_nan))
+	{
 		return vec![token(raw, CodeTone::Plain)];
 	}
 	if let Some(shorthand) = shorthand_tokens(type_name, &args) {
@@ -141,12 +147,18 @@ fn data_type_tokens(type_name: &str, raw: &str) -> Vec<CodeToken> {
 
 fn enum_tokens(enum_name: &str, item: &str) -> Vec<CodeToken> {
 	let mut tokens = linked(
-		vec![token("Enum.", CodeTone::Punctuation), token(enum_name, CodeTone::Type)],
+		vec![
+			token("Enum.", CodeTone::Punctuation),
+			token(enum_name, CodeTone::Type),
+		],
 		&enum_href(enum_name),
 		None,
 	);
 	tokens.extend(linked(
-		vec![token(".", CodeTone::Punctuation), token(item, CodeTone::Constant)],
+		vec![
+			token(".", CodeTone::Punctuation),
+			token(item, CodeTone::Constant),
+		],
 		&enum_item_href(enum_name, item),
 		None,
 	));
@@ -196,7 +208,10 @@ mod tests {
 
 	#[test]
 	fn writes_enum_defaults_as_luau_enum_items() {
-		assert_eq!(text(TypeCategory::Enum, "PartType", "Block"), "Enum.PartType.Block");
+		assert_eq!(
+			text(TypeCategory::Enum, "PartType", "Block"),
+			"Enum.PartType.Block"
+		);
 	}
 
 	#[test]
@@ -207,9 +222,16 @@ mod tests {
 
 	#[test]
 	fn uses_luau_shorthands_for_common_data_type_values() {
-		assert_eq!(text(TypeCategory::DataType, "Vector3", "0, 0, 0"), "Vector3.zero");
 		assert_eq!(
-			text(TypeCategory::DataType, "CFrame", "0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1"),
+			text(TypeCategory::DataType, "Vector3", "0, 0, 0"),
+			"Vector3.zero"
+		);
+		assert_eq!(
+			text(
+				TypeCategory::DataType,
+				"CFrame",
+				"0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1"
+			),
 			"CFrame.identity"
 		);
 	}

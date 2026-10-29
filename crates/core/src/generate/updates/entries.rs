@@ -38,10 +38,12 @@ pub fn parse_enum_item(raw: &Value) -> Option<DumpEnumItem> {
 	serde_json::from_value(raw.clone()).ok()
 }
 
+type Sides<T> = (ChangeStatus, Vec<ChangeDetail>, Option<T>, Option<T>);
+
 fn sides<T: PartialEq>(
 	change: &DumpChange,
 	normalize: impl Fn(&Value) -> Option<T>,
-) -> Option<(ChangeStatus, Vec<ChangeDetail>, Option<T>, Option<T>)> {
+) -> Option<Sides<T>> {
 	let status = status_of(change.change);
 	match change.change {
 		ChangeType::Add => Some((status, Vec::new(), None, normalize(&change.value))),
@@ -60,28 +62,36 @@ fn sides<T: PartialEq>(
 }
 
 pub fn member_entry(change: &DumpChange) -> Option<ChangeEntry> {
-	let (status, details, before, after) =
-		sides(change, |raw| parse_member(raw).as_ref().map(normalize_member))?;
+	let (status, details, before, after) = sides(change, |raw| {
+		parse_member(raw).as_ref().map(normalize_member)
+	})?;
 	Some(ChangeEntry {
 		status,
 		owner: change.owner().to_owned(),
 		name: change.name().to_owned(),
 		details,
 		descriptions: Vec::new(),
-		values: EntryValues::Member { before, after },
+		values: EntryValues::Member {
+			before: before.map(Box::new),
+			after: after.map(Box::new),
+		},
 	})
 }
 
 pub fn enum_item_entry(change: &DumpChange) -> Option<ChangeEntry> {
-	let (status, details, before, after) =
-		sides(change, |raw| parse_enum_item(raw).as_ref().map(normalize_enum_item))?;
+	let (status, details, before, after) = sides(change, |raw| {
+		parse_enum_item(raw).as_ref().map(normalize_enum_item)
+	})?;
 	Some(ChangeEntry {
 		status,
 		owner: change.owner().to_owned(),
 		name: change.name().to_owned(),
 		details,
 		descriptions: Vec::new(),
-		values: EntryValues::EnumItem { before, after },
+		values: EntryValues::EnumItem {
+			before: before.map(Box::new),
+			after: after.map(Box::new),
+		},
 	})
 }
 

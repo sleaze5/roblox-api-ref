@@ -10,7 +10,10 @@ use crate::model::{
 #[derive(PartialEq)]
 enum Signature<'a> {
 	Property(&'a ApiType),
-	Parameters(Vec<(&'a str, &'a ApiType, Option<&'a str>)>, Option<&'a ApiType>),
+	Parameters(
+		Vec<(&'a str, &'a ApiType, Option<&'a str>)>,
+		Option<&'a ApiType>,
+	),
 }
 
 fn signature(member: &Member) -> Signature<'_> {
@@ -20,7 +23,13 @@ fn signature(member: &Member) -> Signature<'_> {
 			member
 				.parameters()
 				.iter()
-				.map(|parameter| (parameter.name.as_str(), &parameter.ty, parameter.default.as_deref()))
+				.map(|parameter| {
+					(
+						parameter.name.as_str(),
+						&parameter.ty,
+						parameter.default.as_deref(),
+					)
+				})
 				.collect(),
 			member.returns(),
 		),

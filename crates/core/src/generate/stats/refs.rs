@@ -80,8 +80,11 @@ pub fn current_owner_ref(api: &Api, owner: &OwnerChanges) -> Option<StatRef> {
 		OwnerKind::Enum => api.enums.contains_key(&owner.name).then(|| StatRef::Enum {
 			name: owner.name.clone(),
 		}),
-		OwnerKind::Class => api.classes.contains_key(&owner.name).then(|| StatRef::Class {
-			name: owner.name.clone(),
-		}),
+		OwnerKind::Class => api
+			.classes
+			.contains_key(&owner.name)
+			.then(|| StatRef::Class {
+				name: owner.name.clone(),
+			}),
 	}
 }

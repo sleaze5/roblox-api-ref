@@ -19,7 +19,10 @@ fn coverage(api: &Api) -> Vec<CoverageRow> {
 	for item in api.classes.values() {
 		add(CoverageKind::Class, item.description.is_some());
 		for member in &item.members {
-			add(CoverageKind::member(member.kind()), member.description.is_some());
+			add(
+				CoverageKind::member(member.kind()),
+				member.description.is_some(),
+			);
 			for parameter in member.parameters() {
 				add(CoverageKind::Parameter, parameter.description.is_some());
 			}

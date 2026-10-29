@@ -67,7 +67,9 @@ pub fn tag_label(tag: &str) -> String {
 	let mut label = String::with_capacity(tag.len() + 4);
 	let mut previous: Option<char> = None;
 	for character in tag.chars() {
-		if previous.is_some_and(|before| before.is_ascii_lowercase()) && character.is_ascii_uppercase() {
+		if previous.is_some_and(|before| before.is_ascii_lowercase())
+			&& character.is_ascii_uppercase()
+		{
 			label.push(' ');
 		}
 		label.push(character);
@@ -166,15 +168,24 @@ fn capability_tags(member: &Member) -> Vec<DisplayTag> {
 		return if read.is_empty() {
 			Vec::new()
 		} else {
-			vec![DisplayTag::new(format!("Capabilities: {read}"), TagTone::Neutral)]
+			vec![DisplayTag::new(
+				format!("Capabilities: {read}"),
+				TagTone::Neutral,
+			)]
 		};
 	}
 	let mut tags = Vec::new();
 	if !read.is_empty() {
-		tags.push(DisplayTag::new(format!("Read capabilities: {read}"), TagTone::Neutral));
+		tags.push(DisplayTag::new(
+			format!("Read capabilities: {read}"),
+			TagTone::Neutral,
+		));
 	}
 	if !write.is_empty() {
-		tags.push(DisplayTag::new(format!("Write capabilities: {write}"), TagTone::Neutral));
+		tags.push(DisplayTag::new(
+			format!("Write capabilities: {write}"),
+			TagTone::Neutral,
+		));
 	}
 	tags
 }

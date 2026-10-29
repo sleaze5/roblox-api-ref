@@ -1,6 +1,6 @@
 use rapi_routes::{class_href, enum_href, type_href};
 
-use super::code::{CodeTone, CodeToken, linked, linked_token, token};
+use super::code::{CodeToken, CodeTone, linked, linked_token, token};
 use crate::model::{ApiType, TypeCategory};
 
 pub fn luau_name(name: &str) -> &str {
@@ -15,7 +15,10 @@ pub fn luau_name(name: &str) -> &str {
 }
 
 pub fn is_number_type(ty: &ApiType) -> bool {
-	matches!(ty.name.as_str(), "int" | "int64" | "float" | "double" | "number")
+	matches!(
+		ty.name.as_str(),
+		"int" | "int64" | "float" | "double" | "number"
+	)
 }
 
 pub fn is_string_type(ty: &ApiType) -> bool {
@@ -33,10 +36,21 @@ fn group_tokens(name: &str) -> Option<Vec<CodeToken>> {
 	use CodeTone::{Punctuation, Type};
 	Some(match name {
 		"null" | "void" => vec![token("()", Punctuation)],
-		"Array" => vec![token("{ ", Punctuation), token("any", Type), token(" }", Punctuation)],
+		"Array" => vec![
+			token("{ ", Punctuation),
+			token("any", Type),
+			token(" }", Punctuation),
+		],
 		"Dictionary" | "Map" => vec![
 			token("{ [", Punctuation),
-			token(if name == "Dictionary" { "string" } else { "any" }, Type),
+			token(
+				if name == "Dictionary" {
+					"string"
+				} else {
+					"any"
+				},
+				Type,
+			),
 			token("]: ", Punctuation),
 			token("any", Type),
 			token(" }", Punctuation),
@@ -60,7 +74,10 @@ fn tuple_tokens(ty: &ApiType) -> Vec<CodeToken> {
 	let members = ty.members.as_deref().unwrap_or_default();
 	if members.is_empty() {
 		return linked(
-			vec![token("...", CodeTone::Punctuation), token("any", CodeTone::Type)],
+			vec![
+				token("...", CodeTone::Punctuation),
+				token("any", CodeTone::Type),
+			],
 			&type_href("Tuple"),
 			None,
 		);
@@ -86,7 +103,10 @@ fn body_tokens(ty: &ApiType) -> Vec<CodeToken> {
 		}
 		TypeCategory::Enum => {
 			return linked(
-				vec![token("Enum.", CodeTone::Punctuation), token(&ty.name, CodeTone::Type)],
+				vec![
+					token("Enum.", CodeTone::Punctuation),
+					token(&ty.name, CodeTone::Type),
+				],
 				&enum_href(&ty.name),
 				None,
 			);
@@ -98,7 +118,11 @@ fn body_tokens(ty: &ApiType) -> Vec<CodeToken> {
 	if let Some(group) = group_tokens(&ty.name) {
 		return linked(group, &type_href(&ty.name), Some(&ty.name));
 	}
-	linked(vec![token(luau, CodeTone::Type)], &type_href(&ty.name), title)
+	linked(
+		vec![token(luau, CodeTone::Type)],
+		&type_href(&ty.name),
+		title,
+	)
 }
 
 pub fn type_tokens(ty: &ApiType) -> Vec<CodeToken> {
