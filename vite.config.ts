@@ -143,7 +143,10 @@ export default defineConfig({
 				cache: false,
 			},
 			"test": {
-				command: ["cargo test --workspace --quiet", "bun vp test run"],
+				command: [
+					"cargo test --workspace --release --quiet",
+					"bun vp test run",
+				],
 				dependsOn: ["gen"],
 				cache: originCache,
 			},
@@ -154,7 +157,6 @@ export default defineConfig({
 			},
 			"test:browser": {
 				command: "bun test --timeout 60000 tests/browser",
-				dependsOn: ["build"],
 				cache: false,
 			},
 			"bench": {

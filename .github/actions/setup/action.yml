@@ -1,5 +1,5 @@
 name: Setup
-description: Install Bun and dependencies, and restore the downloaded Roblox API files.
+description: Install Bun, Rust, and dependencies, and restore the downloaded Roblox API files and the Cargo build cache.
 
 runs:
     using: composite
@@ -19,6 +19,27 @@ runs:
 
         - shell: bash
           run: bun install --frozen-lockfile
+
+        - shell: bash
+          run: |
+              if ! command -v rustup > /dev/null; then
+                  curl -fsSL https://sh.rustup.rs | sh -s -- -y --profile minimal --default-toolchain none
+                  echo "$HOME/.cargo/bin" >> "$GITHUB_PATH"
+                  export PATH="$HOME/.cargo/bin:$PATH"
+              fi
+              rustup toolchain install
+
+        - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+          with:
+              path: |
+                  ~/.cargo/registry/index
+                  ~/.cargo/registry/cache
+                  ~/.cargo/git/db
+                  target
+              key: cargo-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('rust-toolchain.toml', 'Cargo.lock') }}-${{ hashFiles('crates/**/*.rs') }}
+              restore-keys: |
+                  cargo-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('rust-toolchain.toml', 'Cargo.lock') }}-
+                  cargo-${{ runner.os }}-${{ runner.arch }}-
 
         - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
           with:

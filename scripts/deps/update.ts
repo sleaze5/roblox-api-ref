@@ -3,6 +3,12 @@ import { parseArgs } from "node:util"
 import { rootDir } from "../paths.ts"
 import { skippedPackages } from "./dependabot.ts"
 import { fetchVersions } from "./npm-versions.ts"
+import {
+	fetchStableRust,
+	setRustVersion,
+	setToolchainChannel,
+	toolchainChannel,
+} from "./rust-toolchain.ts"
 import { parseSpec } from "./package-spec.ts"
 import { safeUpgrade } from "./semver.ts"
 
@@ -40,7 +46,10 @@ const changes: Change[] = []
 function versionsOf(name: string): Promise<string[]> {
 	let versions = versionCache.get(name)
 	if (versions === undefined) {
-		versions = fetchVersions(name)
+		versions =
+			name === "rust"
+				? fetchStableRust().then((version) => [version])
+				: fetchVersions(name)
 		versionCache.set(name, versions)
 	}
 	return versions
@@ -96,12 +105,33 @@ async function upgradePackageManager(): Promise<void> {
 	})
 }
 
+async function upgradeRust(): Promise<void> {
+	const toolchainPath = join(rootDir, "rust-toolchain.toml")
+	const cargoPath = join(rootDir, "Cargo.toml")
+	const toolchain = await Bun.file(toolchainPath).text()
+	const current = toolchainChannel(toolchain)
+	if (current === undefined) {
+		throw new Error("rust-toolchain.toml does not pin a channel.")
+	}
+	const change = await upgrade("rust", "rust", current)
+	if (change === undefined) {
+		return
+	}
+	changes.push(change)
+	await Bun.write(toolchainPath, setToolchainChannel(toolchain, change.to))
+	await Bun.write(
+		cargoPath,
+		setRustVersion(await Bun.file(cargoPath).text(), change.to),
+	)
+}
+
 await upgradeSection(manifest.dependencies)
 await upgradeSection(manifest.devDependencies)
 await upgradeSection(manifest.overrides)
 await upgradePackageManager()
+await upgradeRust()
 
-if (changes.length > 0) {
+if (changes.some((change) => change.label !== "rust")) {
 	await Bun.write(packagePath, `${JSON.stringify(manifest, null, "\t")}\n`)
 }
 

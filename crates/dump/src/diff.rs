@@ -460,7 +460,10 @@ pub fn diff_descriptions(
 }
 
 #[cfg(test)]
-#[expect(clippy::needless_pass_by_value, reason = "the helpers take dumps the way they read")]
+#[expect(
+	clippy::needless_pass_by_value,
+	reason = "the helpers take dumps the way they read"
+)]
 mod tests {
 	use serde_json::json;
 

@@ -29,3 +29,16 @@ updates:
           packages:
               patterns:
                   - "*"
+
+    - package-ecosystem: cargo
+      directory: /
+      schedule:
+          interval: weekly
+      ignore:
+          - dependency-name: "*"
+            update-types:
+                - version-update:semver-major
+      groups:
+          crates:
+              patterns:
+                  - "*"

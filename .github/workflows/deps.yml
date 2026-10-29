@@ -46,14 +46,17 @@ jobs:
             - id: update
               run: |
                   bun install
-                  if git diff --quiet -- package.json bun.lock; then changed=false; else changed=true; fi
+                  if [ "$SCOPE" = all ]; then cargo update --quiet; fi
+                  if git diff --quiet -- package.json bun.lock rust-toolchain.toml Cargo.toml Cargo.lock; then changed=false; else changed=true; fi
                   echo "changed=$changed" >> "$GITHUB_OUTPUT"
+              env:
+                  SCOPE: ${{ inputs.scope || 'uncovered' }}
 
             - if: steps.update.outputs.changed == 'true'
               run: |
                   git config user.name "github-actions[bot]"
                   git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-                  git commit -m "Update dependencies" -m "$(cat "$RUNNER_TEMP/deps.md")" -- package.json bun.lock
+                  git commit -m "Update dependencies" -m "$(cat "$RUNNER_TEMP/deps.md")" -- package.json bun.lock rust-toolchain.toml Cargo.toml Cargo.lock
 
             - if: steps.update.outputs.changed == 'true'
               uses: ./.github/actions/land
