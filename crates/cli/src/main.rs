@@ -56,8 +56,8 @@ fn generate(paths: &Paths) -> Result<(), String> {
 	write(&out.join("class-icons.css"), &site.class_icons.css)?;
 	write(&out.join("class-icons.png"), &site.class_icons.png)?;
 	write(&out.join("search.bin"), site.search.encode())?;
-	println!(
-		"Generated {} classes, {} enums, {} data types, {} search entries, and {} updates for {} {} in {}ms.",
+	let summary = format!(
+		"Generated {} classes, {} enums, {} data types, {} search entries, and {} updates for {} {}",
 		site.api.classes.len(),
 		site.api.enums.len(),
 		site.api.data_types.len(),
@@ -65,8 +65,19 @@ fn generate(paths: &Paths) -> Result<(), String> {
 		site.updates.len(),
 		site.version.channel,
 		site.version.version,
-		start.elapsed().as_millis(),
 	);
+	let cx = rapi_site::Context::new(
+		site.api,
+		site.updates,
+		site.stats,
+		site.slugs,
+		String::new(),
+		String::new(),
+	);
+	let pages =
+		serde_json::to_string(&rapi_site::page_index(&cx)).map_err(|error| error.to_string())?;
+	write(&out.join("pages.json"), pages)?;
+	println!("{summary} in {}ms.", start.elapsed().as_millis());
 	Ok(())
 }
 
@@ -121,6 +132,32 @@ fn render(paths: &Paths, args: &[String]) -> Result<(), String> {
 		"Prerendered and minified {count} pages in {}ms.",
 		start.elapsed().as_millis()
 	);
+	Ok(())
+}
+
+/// Serves pages to the Vite dev server: one JSON request per line on stdin,
+/// `{"path", "template"}`, and one JSON response per line on stdout,
+/// `{"status", "html"}`.
+fn dev(paths: &Paths) -> Result<(), String> {
+	use std::io::{BufRead, Write};
+
+	let start = Instant::now();
+	let cx = site_context(paths, rapi_site::build::DEV_SPRITE.to_owned())?;
+	eprintln!("Loaded the site data in {}ms.", start.elapsed().as_millis());
+	let stdin = std::io::stdin();
+	let mut stdout = std::io::stdout().lock();
+	for line in stdin.lock().lines() {
+		let line = line.map_err(|error| error.to_string())?;
+		let request: serde_json::Value =
+			serde_json::from_str(&line).map_err(|error| error.to_string())?;
+		let path = request["path"].as_str().unwrap_or("/");
+		let template = request["template"].as_str().unwrap_or_default();
+		let page = rapi_site::render_page(&cx, path);
+		let html = rapi_site::template::fill_template(&cx, template, &page, path);
+		let response = serde_json::json!({ "status": page.status, "html": html });
+		writeln!(stdout, "{response}").map_err(|error| error.to_string())?;
+		stdout.flush().map_err(|error| error.to_string())?;
+	}
 	Ok(())
 }
 
@@ -241,6 +278,12 @@ fn search_oracle(bytes: &[u8], oracle: &Path, out: &Path) -> Result<(), String> 
 		.map(|pair| {
 			let query = pair[0].as_str().unwrap_or_default();
 			let name = pair[1].as_str().unwrap_or_default();
+			let matched = rapi_search::Matcher::new(name).matches(query) == [1];
+			assert_eq!(
+				matched,
+				rapi_search::score_name(query, name, &name.to_ascii_lowercase()) > 0,
+				"{query} {name}"
+			);
 			serde_json::json!([
 				query,
 				name,
@@ -272,6 +315,7 @@ fn run(args: &[String]) -> Result<(), String> {
 	match args.first().map(String::as_str) {
 		Some("gen") => generate(&paths),
 		Some("render") => render(&paths, &args[1..]),
+		Some("dev") => dev(&paths),
 		Some("emit-json") => {
 			let out = args
 				.get(1)

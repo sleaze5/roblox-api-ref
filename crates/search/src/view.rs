@@ -211,7 +211,14 @@ fn write_result(json: &mut Json, engine: &Engine, result: &SearchResult, word: &
 		.raw(",")
 		.string(name)
 		.raw(",");
-	marks(json, &match_positions(word, name));
+	let positions: Vec<usize> = match_positions(word, name)
+		.into_iter()
+		.map(|byte| {
+			name.get(..byte)
+				.map_or(byte, |prefix| prefix.encode_utf16().count())
+		})
+		.collect();
+	marks(json, &positions);
 	json.raw(",")
 		.string(&context(engine, result))
 		.raw(",")

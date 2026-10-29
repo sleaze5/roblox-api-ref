@@ -1,4 +1,4 @@
-import { matchesName } from "./name-match.ts"
+import type { NameMatch } from "./name-match.ts"
 import type { TreeFilter } from "./tree-filter.ts"
 
 type ChangeGroup = {
@@ -19,11 +19,11 @@ function changeGroups(list: HTMLElement): ChangeGroup[] {
 	)
 }
 
-function filterGroup(group: ChangeGroup, text: string): number {
-	const whole = matchesName(text, group.name)
+function filterGroup(group: ChangeGroup, match: NameMatch): number {
+	const whole = match(group.name)
 	let shown = 0
 	for (const row of group.rows) {
-		row.hidden = !whole && !matchesName(text, row.dataset["name"] ?? "")
+		row.hidden = !whole && !match(row.dataset["name"] ?? "")
 		shown += row.hidden ? 0 : 1
 	}
 	group.element.hidden = !whole && shown === 0
@@ -35,10 +35,14 @@ export function createChangeFilter(list: HTMLElement): TreeFilter {
 	const sections = [...list.querySelectorAll<HTMLElement>("[data-list-section]")]
 	return {
 		total: list.querySelectorAll("[data-change]").length,
-		apply(text) {
+		names: groups.flatMap((group) => [
+			group.name,
+			...group.rows.map((row) => row.dataset["name"] ?? ""),
+		]),
+		apply(match, text) {
 			let matched = 0
 			for (const group of groups) {
-				matched += filterGroup(group, text)
+				matched += filterGroup(group, match)
 			}
 			for (const section of sections) {
 				section.hidden =

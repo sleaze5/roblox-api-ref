@@ -1,27 +1,22 @@
-import { readFile } from "node:fs/promises"
-import { resolve } from "node:path"
-import { isRunnableDevEnvironment, type Plugin, type ViteDevServer } from "vite-plus"
-import type { PageModule } from "../src/server/page-module.ts"
-import { prerender } from "./prerender.ts"
+import { readFile, rm } from "node:fs/promises"
+import { join, resolve } from "node:path"
+import type { Plugin } from "vite-plus"
 import { servePages } from "./preview.ts"
-import { fillTemplate } from "./template.ts"
-
-const serverEntry = "src/server/render.tsx"
-const serverOutDir = "node_modules/.cache/pages-server"
-
-async function loadDevModule(server: ViteDevServer): Promise<PageModule> {
-	const environment = server.environments["ssr"]
-	if (environment === undefined || !isRunnableDevEnvironment(environment)) {
-		throw new Error("The ssr environment is not runnable.")
-	}
-	return environment.runner.import<PageModule>(`/${serverEntry}`)
-}
+import { DevRenderer, runRapi } from "./rapi.ts"
 
 function isPageRequest(url: string, accept: string | undefined): boolean {
 	const path = url.split("?")[0] ?? ""
 	return (accept?.includes("text/html") ?? false) && !/\.[a-z0-9]+$/i.test(path)
 }
 
+/** Files whose change means the dev server must reload the site data or renderer. */
+const rendererInputs =
+	/(^|[\\/])(crates[\\/].*\.rs|roblox-versions\.json|data[\\/]|diffs[\\/])/
+
+/**
+ * Prerenders every page with the Rust renderer after the client build, and
+ * renders pages on request on the dev server.
+ */
 export function pages(): Plugin {
 	let root = process.cwd()
 	return {
@@ -29,31 +24,19 @@ export function pages(): Plugin {
 		config() {
 			return {
 				appType: "custom",
-				environments: {
-					ssr: {
-						build: {
-							outDir: serverOutDir,
-							emptyOutDir: true,
-							copyPublicDir: false,
-							rollupOptions: { input: serverEntry },
-						},
-					},
-				},
+				build: { manifest: true },
 				builder: {
 					async buildApp(builder) {
 						const client = builder.environments["client"]
-						const ssr = builder.environments["ssr"]
-						if (client === undefined || ssr === undefined) {
-							throw new Error(
-								"The client and ssr environments are required.",
-							)
+						if (client === undefined) {
+							throw new Error("The client environment is required.")
 						}
 						await builder.build(client)
-						await builder.build(ssr)
-						await prerender({
-							outDir: resolve(root, client.config.build.outDir),
-							serverEntry: resolve(root, serverOutDir, "render.js"),
-							workerFile: resolve(root, "vite", "output-worker.ts"),
+						const outDir = resolve(root, client.config.build.outDir)
+						await runRapi(root, ["render", "--dist", outDir])
+						await rm(join(outDir, ".vite"), {
+							recursive: true,
+							force: true,
 						})
 					},
 				},
@@ -66,6 +49,15 @@ export function pages(): Plugin {
 			servePages(server, resolve(root, server.config.build.outDir))
 		},
 		configureServer(server) {
+			const renderer = new DevRenderer(root)
+			server.watcher.add(["crates", "data", "diffs", "roblox-versions.json"])
+			server.watcher.on("change", (file) => {
+				if (rendererInputs.test(file.slice(root.length))) {
+					renderer.restart()
+					server.ws.send({ type: "full-reload" })
+				}
+			})
+			server.httpServer?.on("close", () => renderer.restart())
 			return () => {
 				server.middlewares.use((request, response, next) => {
 					const url = request.originalUrl ?? request.url ?? "/"
@@ -76,28 +68,21 @@ export function pages(): Plugin {
 						next()
 						return
 					}
-					renderDevPage(server, url).then((page) => {
-						response.statusCode = page.status
-						response.setHeader("Content-Type", "text/html; charset=utf-8")
-						response.end(page.html)
-						return undefined
-					}, next)
+					const path = url.split("?")[0] ?? "/"
+					readFile(resolve(root, "index.html"), "utf8")
+						.then((html) => server.transformIndexHtml(url, html))
+						.then((template) => renderer.render(path, template))
+						.then((page) => {
+							response.statusCode = page.status
+							response.setHeader(
+								"Content-Type",
+								"text/html; charset=utf-8",
+							)
+							response.end(page.html)
+							return undefined
+						}, next)
 				})
 			}
 		},
-	}
-
-	async function renderDevPage(
-		server: ViteDevServer,
-		url: string,
-	): Promise<{ status: number; html: string }> {
-		const module = await loadDevModule(server)
-		const path = url.split("?")[0] ?? "/"
-		const page = module.renderPage(path)
-		const template = await server.transformIndexHtml(
-			url,
-			await readFile(resolve(root, "index.html"), "utf8"),
-		)
-		return { status: page.status, html: fillTemplate(template, page, path) }
 	}
 }

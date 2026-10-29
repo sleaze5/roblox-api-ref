@@ -69,3 +69,14 @@ pub fn render_page(cx: &Context, path: &str) -> RenderedPage {
 		modified: cx.api.published.clone(),
 	}
 }
+
+/// Every page path with the path of its Markdown version, for the edge tests.
+pub fn page_index(cx: &Context) -> Vec<(String, String)> {
+	routes::route_paths(cx)
+		.into_iter()
+		.map(|path| {
+			let markdown = markdown::markdown_path(cx, &match_route(cx, &path));
+			(path, markdown)
+		})
+		.collect()
+}

@@ -1,4 +1,4 @@
-import { matchesName } from "../filters/name-match.ts"
+import { NameMatcher, type NameMatch } from "../filters/name-match.ts"
 import {
 	activeTagFilters,
 	applyFilterState,
@@ -20,11 +20,12 @@ const toggles: Record<string, HideOption> = {
 	"inherited": "inherited",
 }
 
-function isRowShown(row: HTMLElement, state: MemberFilterState): boolean {
-	return (
-		matchesName(state.text.toLowerCase(), row.dataset["name"] ?? "") &&
-		matchesTags(row, state)
-	)
+function isRowShown(
+	row: HTMLElement,
+	state: MemberFilterState,
+	match: NameMatch,
+): boolean {
+	return match(row.dataset["name"] ?? "") && matchesTags(row, state)
 }
 
 function setCount(target: Element | null, count: number): void {
@@ -135,11 +136,18 @@ export function initMemberFilter(form: HTMLFormElement): void {
 	const summary = form.querySelector("[data-filter-summary]")
 	const badge = form.querySelector<HTMLElement>("[data-tag-filter-count]")
 	const state = readFilterState()
+	const matcher = new NameMatcher(rows.map((row) => row.dataset["name"] ?? ""))
+	let latest = 0
 
-	const refresh = () => {
+	const refresh = async () => {
 		applyFilterState(state)
+		const run = ++latest
+		const match = await matcher.match(state.text.toLowerCase())
+		if (run !== latest) {
+			return
+		}
 		for (const row of rows) {
-			row.hidden = !isRowShown(row, state)
+			row.hidden = !isRowShown(row, state, match)
 		}
 		const shown = sections.reduce(
 			(sum, section) => sum + refreshSection(section, state),
@@ -161,7 +169,7 @@ export function initMemberFilter(form: HTMLFormElement): void {
 		if (event.target instanceof HTMLInputElement && event.target.name !== "text") {
 			syncControls(form, state)
 		}
-		refresh()
+		void refresh()
 	})
 	form.querySelector("[data-tag-filter-reset]")?.addEventListener("click", () => {
 		state.require.clear()
@@ -169,7 +177,7 @@ export function initMemberFilter(form: HTMLFormElement): void {
 		state.match = "any"
 		state.hide.delete("inherited")
 		syncControls(form, state)
-		refresh()
+		void refresh()
 	})
 	const menu = form.querySelector<HTMLElement>("[popover]")
 	if (menu !== null) {
@@ -178,5 +186,10 @@ export function initMemberFilter(form: HTMLFormElement): void {
 	trackFilterHeight(form)
 	initGroupCollapse(article)
 	syncControls(form, state)
-	refresh()
+	form.querySelector("input[name=text]")?.addEventListener(
+		"focus",
+		() => matcher.preload(),
+		{ once: true },
+	)
+	void refresh()
 }

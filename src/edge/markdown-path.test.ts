@@ -1,13 +1,15 @@
+import { readFileSync } from "node:fs"
 import { describe, expect, test } from "vite-plus/test"
-import { loadApi } from "../server/load-api.ts"
-import { loadUpdates } from "../server/load-updates.ts"
-import { pageMarkdown } from "../server/markdown/page-markdown.ts"
-import { matchRoute, routePaths } from "../server/match-route.ts"
 import {
 	homeMarkdownPath,
 	markdownPath,
 	notFoundMarkdownPath,
 } from "./markdown-path.ts"
+
+/** Every page path and its Markdown path, as `cargo rapi gen` writes them. */
+const pages = JSON.parse(
+	readFileSync(new URL("../generated/pages.json", import.meta.url), "utf8"),
+) as [path: string, markdown: string][]
 
 describe("markdownPath", () => {
 	test("maps a page URL to its Markdown version", () => {
@@ -29,13 +31,12 @@ describe("markdownPath", () => {
 	})
 
 	test("finds the Markdown version that the build writes for every page", () => {
-		const api = loadApi()
-		const updates = loadUpdates()
-		const href = (path: string) =>
-			pageMarkdown(api, updates, matchRoute(api, updates, path)).href
-		const pages = routePaths(api, updates).filter((path) => path !== "/404")
-		expect(pages.map(markdownPath)).toEqual(pages.map(href))
-		expect(href("/")).toBe(homeMarkdownPath)
-		expect(href("/404")).toBe(notFoundMarkdownPath)
+		const routes = pages.filter(([path]) => path !== "/404")
+		expect(routes.length).toBeGreaterThan(1000)
+		expect(routes.map(([path]) => markdownPath(path))).toEqual(
+			routes.map(([, markdown]) => markdown),
+		)
+		expect(new Map(pages).get("/")).toBe(homeMarkdownPath)
+		expect(new Map(pages).get("/404")).toBe(notFoundMarkdownPath)
 	})
 })

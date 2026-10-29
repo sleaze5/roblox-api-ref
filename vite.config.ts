@@ -1,4 +1,3 @@
-import solid from "@solidjs/vite-plugin"
 import tailwindcss from "@tailwindcss/vite"
 import { defineConfig } from "vite-plus"
 import { pages } from "./vite/pages.ts"
@@ -10,6 +9,7 @@ const ignorePatterns = [
 	"diffs/**",
 	"src/generated/**",
 	"AGENTS_EXPLORE/**",
+	"target/**",
 ]
 const stylesheet = "src/styles/app.css"
 const sourceInput = [
@@ -19,15 +19,12 @@ const sourceInput = [
 	"!node_modules/**",
 	"!dist/**",
 	"!data/**",
+	"!target/**",
 ]
 const originCache = { env: ["SITE_ORIGIN", "CF_PAGES_URL"], input: sourceInput }
 
 export default defineConfig({
-	plugins: [
-		solid({ compiler: "native", ssr: true, solid: { hydratable: false } }),
-		tailwindcss(),
-		pages(),
-	],
+	plugins: [tailwindcss(), pages()],
 	css: { transformer: "lightningcss" },
 	build: {
 		target: "esnext",
@@ -77,14 +74,7 @@ export default defineConfig({
 			suspicious: "error",
 		},
 		plugins: ["eslint", "typescript", "oxc", "import", "promise", "vitest"],
-		jsPlugins: [
-			{ name: "vite-plus", specifier: "vite-plus/oxlint-plugin" },
-			{
-				name: "better-tailwindcss",
-				specifier: "eslint-plugin-better-tailwindcss",
-			},
-		],
-		settings: { "better-tailwindcss": { entryPoint: stylesheet } },
+		jsPlugins: [{ name: "vite-plus", specifier: "vite-plus/oxlint-plugin" }],
 		env: { browser: true, builtin: true },
 		ignorePatterns,
 		options: { typeAware: true, typeCheck: true },
@@ -94,21 +84,6 @@ export default defineConfig({
 			"typescript/no-unsafe-type-assertion": "off",
 			"typescript/consistent-return": "off",
 			"vite-plus/prefer-vite-plus-imports": "error",
-			"better-tailwindcss/no-unknown-classes": "error",
-			"better-tailwindcss/no-conflicting-classes": "error",
-			"better-tailwindcss/no-duplicate-classes": "error",
-			"better-tailwindcss/no-restricted-classes": [
-				"error",
-				{
-					restrict: [
-						{
-							pattern: "\\[.+\\]",
-							message:
-								"Use a design token from src/styles/theme.css instead of an arbitrary value.",
-						},
-					],
-				},
-			],
 			"no-restricted-imports": [
 				"error",
 				{
@@ -117,10 +92,6 @@ export default defineConfig({
 							name: "@phosphor-icons/core",
 							message:
 								"Import icons directly from @phosphor-icons/core/<weight>/<name>.svg.",
-						},
-						{
-							name: "solid-js/web",
-							message: "Solid 2 moved the DOM renderer to @solidjs/web.",
 						},
 					],
 				},
@@ -136,8 +107,12 @@ export default defineConfig({
 
 	run: {
 		tasks: {
+			"setup": {
+				command: ["bun install", "vp run gen"],
+				cache: false,
+			},
 			"dump:update": {
-				command: "bun scripts/dump/update.ts",
+				command: "cargo rapi dump-update",
 				cache: false,
 			},
 			"deps:update": {
@@ -145,11 +120,11 @@ export default defineConfig({
 				cache: false,
 			},
 			"dump": {
-				command: "bun scripts/dump/download.ts",
+				command: "cargo rapi dump",
 				cache: false,
 			},
 			"gen": {
-				command: "bun scripts/gen/main.ts",
+				command: ["cargo rapi gen", "bun scripts/fonts.ts"],
 				dependsOn: ["dump"],
 				cache: false,
 			},
@@ -168,7 +143,7 @@ export default defineConfig({
 				cache: false,
 			},
 			"test": {
-				command: "bun vp test run",
+				command: ["cargo test --workspace --quiet", "bun vp test run"],
 				dependsOn: ["gen"],
 				cache: originCache,
 			},
@@ -177,17 +152,34 @@ export default defineConfig({
 				dependsOn: ["gen"],
 				cache: false,
 			},
+			"test:browser": {
+				command: "bun test --timeout 60000 tests/browser",
+				dependsOn: ["build"],
+				cache: false,
+			},
+			"bench": {
+				command: "bun scripts/bench.ts",
+				dependsOn: ["gen"],
+				cache: false,
+			},
 			"format:check": {
-				command: "bun fmt --check",
+				command: ["cargo fmt --all --check", "bun fmt --check"],
 				cache: { input: sourceInput },
 			},
 			"format:fix": {
-				command: "bun fmt",
+				command: ["cargo fmt --all", "bun fmt"],
 				cache: false,
 			},
-			"lint:check": "bun vp lint --deny-warnings",
+			"clippy":
+				"cargo clippy --workspace --all-targets --quiet -- --deny warnings",
+			"lint:check": {
+				command: ["vp run clippy", "bun vp lint --deny-warnings"],
+			},
 			"lint:fix": {
-				command: "bun vp lint --fix --deny-warnings",
+				command: [
+					"cargo clippy --workspace --all-targets --quiet --fix --allow-dirty --allow-staged -- --deny warnings",
+					"bun vp lint --fix --deny-warnings",
+				],
 				cache: false,
 			},
 			"fix": {
@@ -199,7 +191,11 @@ export default defineConfig({
 				dependsOn: ["gen"],
 			},
 			"check": {
-				command: ["vp run format:check", "bun vp check --no-fmt"],
+				command: [
+					"vp run format:check",
+					"vp run clippy",
+					"bun vp check --no-fmt",
+				],
 				dependsOn: ["gen"],
 			},
 			"ci": {

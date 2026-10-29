@@ -1,7 +1,7 @@
 import { createChangeFilter } from "./change-filter.ts"
 import { trackFilterHeight } from "./sticky-offset.ts"
 import { readParam, writeParams } from "../url-state.ts"
-import { matchesName } from "./name-match.ts"
+import { NameMatcher } from "./name-match.ts"
 import { summaryText } from "./summary-text.ts"
 import { createTreeFilter, type TreeFilter } from "./tree-filter.ts"
 
@@ -10,10 +10,11 @@ function createRowFilter(list: HTMLElement): TreeFilter {
 	const sections = [...list.querySelectorAll<HTMLElement>("[data-list-section]")]
 	return {
 		total: rows.length,
-		apply(text) {
+		names: rows.map((row) => row.dataset["name"] ?? ""),
+		apply(match) {
 			let matched = 0
 			for (const row of rows) {
-				row.hidden = !matchesName(text, row.dataset["name"] ?? "")
+				row.hidden = !match(row.dataset["name"] ?? "")
 				matched += row.hidden ? 0 : 1
 			}
 			for (const section of sections) {
@@ -43,16 +44,24 @@ export function initListFilter(form: HTMLFormElement): void {
 		return
 	}
 	const filter = createFilter(list)
+	const matcher = new NameMatcher(filter.names)
+	let latest = 0
 
-	const refresh = () => {
+	const refresh = async () => {
 		const value = input.value.trim()
-		const matched = filter.apply(value.toLowerCase())
+		const run = ++latest
 		writeParams({ [param]: value === "" ? undefined : value })
+		const text = value.toLowerCase()
+		const match = await matcher.match(text)
+		if (run !== latest) {
+			return
+		}
+		const matched = filter.apply(match, text)
 		if (summary !== null) {
 			const noun = form.dataset["noun"]
-			const text = summaryText(matched, filter.total)
+			const counts = summaryText(matched, filter.total)
 			summary.textContent =
-				noun === undefined ? text : `${text.replace(/ total$/, "")} ${noun}`
+				noun === undefined ? counts : `${counts.replace(/ total$/, "")} ${noun}`
 		}
 	}
 
@@ -61,6 +70,7 @@ export function initListFilter(form: HTMLFormElement): void {
 	}
 	input.value = readParam(param) ?? ""
 	form.addEventListener("submit", (event) => event.preventDefault())
-	input.addEventListener("input", refresh)
-	refresh()
+	input.addEventListener("focus", () => matcher.preload(), { once: true })
+	input.addEventListener("input", () => void refresh())
+	void refresh()
 }

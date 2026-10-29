@@ -1,4 +1,4 @@
-import { matchesName } from "./name-match.ts"
+import type { NameMatch } from "./name-match.ts"
 
 type TreeNode = {
 	element: HTMLElement
@@ -22,22 +22,33 @@ function readNode(element: HTMLElement): TreeNode {
 	}
 }
 
-function filterNode(node: TreeNode, text: string): number {
+function filterNode(node: TreeNode, match: NameMatch, filtering: boolean): number {
 	let matches = 0
 	for (const child of node.children) {
-		matches += filterNode(child, text)
+		matches += filterNode(child, match, filtering)
 	}
-	const selfMatch = node.names.some((name) => matchesName(text, name))
+	const selfMatch = node.names.some(match)
 	node.element.hidden = !selfMatch && matches === 0
-	if (node.details !== null && text !== "") {
+	if (node.details !== null && filtering) {
 		node.details.open = matches > 0
 	}
 	return matches + (selfMatch ? 1 : 0)
 }
 
+function collectNames(node: TreeNode, names: string[]): string[] {
+	names.push(...node.names)
+	for (const child of node.children) {
+		collectNames(child, names)
+	}
+	return names
+}
+
 export type TreeFilter = {
 	total: number
-	apply: (text: string) => number
+	/** Every name that {@link TreeFilter.apply} tests. */
+	names: string[]
+	/** Shows the rows that match, and returns how many match. */
+	apply: (match: NameMatch, text: string) => number
 }
 
 export function createTreeFilter(tree: HTMLElement): TreeFilter {
@@ -47,9 +58,14 @@ export function createTreeFilter(tree: HTMLElement): TreeFilter {
 	)
 	return {
 		total: tree.querySelectorAll("li").length,
-		apply(text) {
-			const matched = roots.reduce((sum, root) => sum + filterNode(root, text), 0)
-			if (text === "") {
+		names: roots.flatMap((root) => collectNames(root, [])),
+		apply(match, text) {
+			const filtering = text !== ""
+			const matched = roots.reduce(
+				(sum, root) => sum + filterNode(root, match, filtering),
+				0,
+			)
+			if (!filtering) {
 				for (const [details, open] of initiallyOpen) {
 					details.open = open
 				}

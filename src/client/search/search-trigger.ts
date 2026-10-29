@@ -1,6 +1,6 @@
 import { readParam } from "../url-state.ts"
 
-const loadSearch = () => import("./mount-search.tsx")
+const loadSearch = () => import("./search-dialog.ts")
 
 function isTyping(target: EventTarget | null): boolean {
 	return (

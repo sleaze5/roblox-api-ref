@@ -15,6 +15,9 @@ use crate::template::{fill_template, minify, prepare_template};
 /// The source path of the icon sprite, as Vite's manifest names it.
 pub const SPRITE_SOURCE: &str = "src/generated/icons.svg";
 
+/// The URL of the icon sprite on the Vite dev server.
+pub const DEV_SPRITE: &str = "/src/generated/icons.svg";
+
 /// The public URL of the icon sprite in a Vite manifest.
 pub fn sprite_url(manifest: &serde_json::Value) -> Option<String> {
 	let file = manifest.get(SPRITE_SOURCE)?.get("file")?.as_str()?;

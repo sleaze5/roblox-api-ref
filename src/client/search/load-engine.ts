@@ -1,19 +1,21 @@
-import searchIndexUrl from "../../generated/search.json?url"
-import { SearchEngine } from "../../search/engine.ts"
-import type { SearchIndex } from "../../search/index-format.ts"
+import indexUrl from "../../generated/search.bin?url"
+import type { Search } from "../../generated/search.js"
 
-let pending: Promise<SearchEngine> | undefined
+let pending: Promise<Search> | undefined
 
-export function loadEngine(): Promise<SearchEngine> {
-	pending ??= fetch(searchIndexUrl)
-		.then((response) => {
-			if (!response.ok) {
-				throw new Error(
-					`Failed to load the search index: HTTP ${response.status}`,
-				)
-			}
-			return response.json() as Promise<SearchIndex>
-		})
-		.then((index) => new SearchEngine(index))
+async function fetchIndex(): Promise<Uint8Array> {
+	const response = await fetch(indexUrl)
+	if (!response.ok) {
+		throw new Error(`Failed to load the search index: HTTP ${response.status}`)
+	}
+	return new Uint8Array(await response.arrayBuffer())
+}
+
+/** Downloads the search index and the engine in parallel, once. */
+export function loadEngine(): Promise<Search> {
+	pending ??= Promise.all([
+		import("./search-module.ts").then((module) => module.loadSearchModule()),
+		fetchIndex(),
+	]).then(([module, index]) => new module.Search(index))
 	return pending
 }
