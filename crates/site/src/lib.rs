@@ -36,7 +36,20 @@ fn page_body(cx: &Context, route: &Route) -> Markup {
 	match route {
 		Route::Site(name) => pages::site::site_page_body(cx, *name),
 		Route::Class(item) => pages::class::class_page(cx, item),
-		_ => maud::html! {},
+		Route::Enum(item) => pages::enum_page::enum_page(cx, item),
+		Route::Type(item) => pages::type_page::type_page(cx, item),
+		Route::Facet(facet) => pages::facet::facet_page(cx, facet),
+		Route::Home => pages::home::home_page(cx),
+		Route::Updates => pages::updates::updates_page(cx),
+		Route::Stats => pages::stats::stats_page(cx),
+		Route::Update(update) => pages::updates::update_page(cx, update),
+		Route::NotFound => pages::home::not_found_page(cx),
+		Route::Classes => pages::index_pages::class_index_page(cx),
+		Route::Enums => pages::index_pages::enum_index_page(cx),
+		Route::Index => pages::index_pages::index_page(cx),
+		Route::FacetIndex(kind) => pages::index_pages::facet_index_page(cx, *kind),
+		Route::IndexList(routes::IndexList::Types) => pages::index_pages::type_index_page(cx),
+		Route::IndexList(routes::IndexList::Removed) => pages::index_pages::removed_index_page(cx),
 	}
 }
 

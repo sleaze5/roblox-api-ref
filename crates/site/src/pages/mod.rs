@@ -1,2 +1,10 @@
+pub mod charts;
 pub mod class;
+pub mod enum_page;
+pub mod facet;
+pub mod home;
+pub mod index_pages;
 pub mod site;
+pub mod stats;
+pub mod type_page;
+pub mod updates;
