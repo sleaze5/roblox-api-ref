@@ -1,5 +1,10 @@
 import { spawn, type ChildProcess } from "node:child_process"
-import { chromium, type Browser, type Page } from "playwright"
+import {
+	chromium,
+	type Browser,
+	type BrowserContextOptions,
+	type Page,
+} from "playwright"
 
 const port = 4317
 
@@ -46,11 +51,14 @@ export async function stopPreview(): Promise<void> {
 
 export type CheckedPage = Page & { problems: string[] }
 
-export async function openPage(path: string): Promise<CheckedPage> {
+export async function openPage(
+	path: string,
+	options?: BrowserContextOptions,
+): Promise<CheckedPage> {
 	if (browser === undefined) {
 		throw new Error("Call startPreview first.")
 	}
-	const page = (await browser.newPage()) as CheckedPage
+	const page = (await browser.newPage(options)) as CheckedPage
 	page.problems = []
 	page.on("console", (message) => {
 		if (message.type() === "error" || message.type() === "warning") {

@@ -67,6 +67,34 @@ describe("search dialog", () => {
 		])
 	})
 
+	test("lines the completion up with the query on touch screens", async () => {
+		const page = await openPage("/", {
+			hasTouch: true,
+			isMobile: true,
+			viewport: { width: 390, height: 844 },
+		})
+		expect(await page.evaluate(() => matchMedia("(pointer: coarse)").matches)).toBe(
+			true,
+		)
+		await openSearch(page)
+		await page.fill("dialog input", "Part.Anc")
+		await page.waitForSelector("#search-results")
+		expect(await page.locator("[data-search-ghost]").innerText()).toBe("hored")
+		const [echo, ghost, input] = await Promise.all([
+			page.locator("[data-search-echo]").evaluate((node) => {
+				const box = node.getBoundingClientRect()
+				return { right: box.right, size: getComputedStyle(node).fontSize }
+			}),
+			page.locator("[data-search-ghost]").boundingBox(),
+			page
+				.locator("dialog input")
+				.evaluate((node) => getComputedStyle(node).fontSize),
+		])
+		expect(echo.size).toBe(input)
+		expect(Math.abs((ghost?.x ?? 0) - echo.right)).toBeLessThan(1)
+		expect(page.problems).toEqual([])
+	})
+
 	test("lists updates by hash and removed items", async () => {
 		const page = await openPage("/")
 		await openSearch(page)
