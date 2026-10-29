@@ -5,7 +5,7 @@ use rapi_core::api::stats_text::{
 	removed_note, stats_lead,
 };
 use rapi_core::js::format_date;
-use rapi_core::model::{ChangeTally, RecordGroup, TagTrend, Tallies, UpdateEvent};
+use rapi_core::model::{ChangeTally, RecordGroup, TagTrend, Tallies, UpdateEvent, has_items};
 use rapi_routes::update_href;
 
 use super::stat_shapes::{kind_table, record_items, record_value, shape_blocks};
@@ -63,22 +63,28 @@ const TALLY_HEADINGS: [&str; 8] = [
 ];
 
 fn record_blocks(cx: &Context, group: &RecordGroup) -> Vec<String> {
+	let listed = group.records.iter().any(has_items);
 	let rows: Vec<Vec<String>> = group
 		.records
 		.iter()
 		.map(|record| {
-			vec![
-				record.label.clone(),
-				record_value(record),
-				record_items(record),
-			]
+			let mut cells = vec![record.label.clone(), record_value(record)];
+			if listed {
+				cells.push(record_items(record));
+			}
+			cells
 		})
 		.collect();
 	let mut blocks = vec![format!("## {}", group.title)];
 	if let Some(table) = &group.table {
 		blocks.push(kind_table(table));
 	}
-	blocks.push(markdown_table(&["Statistic", "Value", "Items"], &rows));
+	let headings: &[&str] = if listed {
+		&["Statistic", "Value", "Items"]
+	} else {
+		&["Statistic", "Value"]
+	};
+	blocks.push(markdown_table(headings, &rows));
 	if group.id == "comeback-records" {
 		blocks.push(COMEBACKS_LEAD.to_owned());
 		let rows: Vec<Vec<String>> = cx

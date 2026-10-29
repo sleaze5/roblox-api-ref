@@ -135,6 +135,10 @@ pub struct StatRecord {
 	pub ties: Option<Ties>,
 }
 
+pub const fn has_items(record: &StatRecord) -> bool {
+	!record.items.is_empty() || record.ties.is_some()
+}
+
 #[derive(Clone, Debug, PartialEq, Eq, Serialize)]
 pub struct Ties {
 	pub count: u32,

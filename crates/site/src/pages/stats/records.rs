@@ -2,7 +2,7 @@ use maud::{Markup, html};
 use rapi_core::api::stat_ref::stat_ref_tokens;
 use rapi_core::api::stats_text::{count_label, ref_noun, unit_text};
 use rapi_core::js::js_number;
-use rapi_core::model::{KindTable, StatRecord, StatRef};
+use rapi_core::model::{KindTable, StatRecord, StatRef, has_items};
 
 use super::tables::{ROW_HINT_CLASS, column, data_table, number, text, update_cell};
 use crate::components::code::code_tokens;
@@ -19,15 +19,16 @@ pub fn item_list(items: &[StatRef]) -> Markup {
 }
 
 pub fn record_table(records: &[StatRecord]) -> Markup {
+	let listed = records.iter().any(has_items);
 	html! {
 		div class="stat-table" {
-			table data-records="" {
-				colgroup { col data-label=""; col data-value=""; col; }
+			table data-records=[listed.then_some("")] {
+				@if listed { colgroup { col data-label=""; col data-value=""; col; } }
 				thead {
 					tr {
 						th scope="col" { "Statistic" }
 						th scope="col" data-number="" { "Value" }
-						th scope="col" { "Items" }
+						@if listed { th scope="col" { "Items" } }
 					}
 				}
 				tbody {
@@ -38,7 +39,7 @@ pub fn record_table(records: &[StatRecord]) -> Markup {
 								(js_number(record.value))
 								@if let Some(unit) = &record.unit { span class="text-fg-faint" { " " (unit_text(record.value, unit)) } }
 							}
-							td data-wrap="" {
+							@if listed { td data-wrap="" {
 								@if let Some(ties) = &record.ties {
 									span class="text-fg-muted" { (ties.count) " " (ref_noun(&ties.kind)) }
 								} @else if let Some(first) = record.items.first() {
@@ -51,7 +52,7 @@ pub fn record_table(records: &[StatRecord]) -> Markup {
 										}
 									}
 								}
-							}
+							} }
 						}
 					}
 				}
