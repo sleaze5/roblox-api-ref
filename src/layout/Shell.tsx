@@ -41,6 +41,11 @@ export function Shell(props: {
 					{props.sidebar}
 				</nav>
 				{hasSidebar ? <SidebarScroll /> : null}
+				{props.rail === undefined ? null : (
+					<aside class="fixed top-header right-0 hidden h-below-header w-rail overflow-y-auto overscroll-contain py-8 pr-4 lg:block">
+						{props.rail}
+					</aside>
+				)}
 				<div
 					class={[
 						"flex min-h-below-header min-w-0 flex-1 flex-col",
@@ -51,11 +56,6 @@ export function Shell(props: {
 					</main>
 					<Footer />
 				</div>
-				{props.rail === undefined ? null : (
-					<aside class="fixed top-header right-0 hidden h-below-header w-rail overflow-y-auto overscroll-contain py-8 pr-4 lg:block">
-						{props.rail}
-					</aside>
-				)}
 			</div>
 			<div data-search-root="" />
 			<div id="tooltip" popover="manual" aria-hidden="true" class="tooltip" />

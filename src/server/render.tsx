@@ -19,6 +19,7 @@ import { UpdatesPage } from "../pages/updates/UpdatesPage.tsx"
 import { sitePages } from "../site/site-pages.ts"
 import { breadcrumbs } from "./breadcrumbs.ts"
 import { updatesFeed } from "./feed.ts"
+import { fillFilterSummaries } from "./filter-summary.ts"
 import { loadApi } from "./load-api.ts"
 import { loadStats } from "./load-stats.ts"
 import { loadUpdates } from "./load-updates.ts"
@@ -99,7 +100,7 @@ export function renderPage(path: string): RenderedPage {
 	return {
 		status: route.page === "not-found" ? 404 : 200,
 		title: pageTitle(route),
-		body: renderToString(() => <Page route={route} />),
+		body: fillFilterSummaries(renderToString(() => <Page route={route} />)),
 		schemaType: schemaType(route),
 		breadcrumbs: breadcrumbs(route),
 		markdown: pageMarkdown(api, updates, route),
