@@ -1,0 +1,48 @@
+[workspace]
+resolver = "3"
+members = ["crates/*"]
+default-members = ["crates/cli"]
+
+[workspace.package]
+version = "0.0.0"
+edition = "2024"
+rust-version = "1.97"
+license = "MIT"
+publish = false
+
+[workspace.dependencies]
+rapi-core = { path = "crates/core" }
+rapi-dump = { path = "crates/dump" }
+rapi-routes = { path = "crates/routes" }
+rapi-search = { path = "crates/search" }
+rapi-site = { path = "crates/site" }
+
+[workspace.lints.rust]
+unsafe_code = "deny"
+unused_qualifications = "warn"
+unused_lifetimes = "warn"
+unreachable_pub = "warn"
+
+[workspace.lints.clippy]
+all = { level = "deny", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
+module_name_repetitions = "allow"
+must_use_candidate = "allow"
+missing_errors_doc = "allow"
+missing_panics_doc = "allow"
+too_many_lines = "allow"
+
+[profile.dev.package."*"]
+opt-level = 3
+
+[profile.release]
+debug = false
+codegen-units = 16
+
+[profile.wasm]
+inherits = "release"
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
