@@ -188,7 +188,7 @@ pub fn to_doc(nodes: &[HtmlNode], links: &dyn LinkResolver) -> Option<Doc> {
 #[cfg(test)]
 mod tests {
 	use super::*;
-	use crate::gen::docs::html::parse_html;
+	use crate::generate::docs::html::parse_html;
 
 	struct TestLinks;
 

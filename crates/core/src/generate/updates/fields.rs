@@ -2,7 +2,7 @@ use serde_json::Value;
 
 use crate::api::tags::security_label;
 use crate::dump::{DumpCapabilities, DumpTag, FieldChange};
-use crate::gen::normalize::{normalize_capabilities, normalize_security};
+use crate::generate::normalize::{normalize_capabilities, normalize_security};
 use crate::js::compare_code_units;
 use crate::model::{Capabilities, ChangeDetail, DetailTone, DetailValue};
 
@@ -137,11 +137,11 @@ fn dump_tags(raw: &Value) -> Vec<DumpTag> {
 }
 
 pub fn string_tags(raw: &Value) -> Vec<String> {
-	crate::gen::normalize::string_tags(Some(&dump_tags(raw)))
+	crate::generate::normalize::string_tags(Some(&dump_tags(raw)))
 }
 
 fn preferred_value(raw: &Value) -> Option<DetailValue> {
-	crate::gen::normalize::preferred_name(Some(&dump_tags(raw)))
+	crate::generate::normalize::preferred_name(Some(&dump_tags(raw)))
 		.map(|name| value(name, DetailTone::Code))
 }
 

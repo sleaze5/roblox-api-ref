@@ -1,6 +1,6 @@
 use indexmap::IndexMap;
 
-use crate::gen::history::{entry_deprecation, owner_deprecation};
+use crate::generate::history::{entry_deprecation, owner_deprecation};
 use crate::model::{
 	Api, ChangeStatus, Deprecation, EntryValues, OwnerChanges, PeriodTrend, Tallies, TrendKind,
 	Update, UpdateTrend,

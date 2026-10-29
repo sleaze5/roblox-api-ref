@@ -45,18 +45,36 @@ pub fn decode_png(bytes: &[u8]) -> Result<Image, String> {
 	})
 }
 
+fn chunk(bytes: &mut Vec<u8>, kind: &[u8; 4], body: &[u8]) {
+	let length = u32::try_from(body.len()).expect("PNG chunks fit in 32 bits");
+	bytes.extend_from_slice(&length.to_be_bytes());
+	let start = bytes.len();
+	bytes.extend_from_slice(kind);
+	bytes.extend_from_slice(body);
+	let mut crc = flate2::Crc::new();
+	crc.update(&bytes[start..]);
+	bytes.extend_from_slice(&crc.sum().to_be_bytes());
+}
+
 pub fn encode_png(image: &Image) -> Vec<u8> {
-	let mut bytes = Vec::new();
-	let mut encoder = png::Encoder::new(&mut bytes, image.width, image.height);
-	encoder.set_color(png::ColorType::Rgba);
-	encoder.set_depth(png::BitDepth::Eight);
-	encoder.set_compression(png::Compression::High);
-	encoder.set_filter(png::Filter::Adaptive);
-	let mut writer = encoder.write_header().expect("an in-memory PNG header writes");
-	writer
-		.write_image_data(&image.pixels)
-		.expect("the sprite matches its declared size");
-	writer.finish().expect("an in-memory PNG finishes");
+	use std::io::Write;
+	let stride = (image.width * 4) as usize;
+	let mut scanlines = Vec::with_capacity((stride + 1) * image.height as usize);
+	for row in image.pixels.chunks_exact(stride) {
+		scanlines.push(0);
+		scanlines.extend_from_slice(row);
+	}
+	let mut encoder = flate2::write::ZlibEncoder::new(Vec::new(), flate2::Compression::best());
+	encoder.write_all(&scanlines).expect("in-memory compression succeeds");
+	let compressed = encoder.finish().expect("in-memory compression succeeds");
+	let mut header = Vec::with_capacity(13);
+	header.extend_from_slice(&image.width.to_be_bytes());
+	header.extend_from_slice(&image.height.to_be_bytes());
+	header.extend_from_slice(&[8, 6, 0, 0, 0]);
+	let mut bytes = vec![137, 80, 78, 71, 13, 10, 26, 10];
+	chunk(&mut bytes, b"IHDR", &header);
+	chunk(&mut bytes, b"IDAT", &compressed);
+	chunk(&mut bytes, b"IEND", &[]);
 	bytes
 }
 

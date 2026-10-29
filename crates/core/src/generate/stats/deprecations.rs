@@ -5,7 +5,7 @@ use indexmap::IndexMap;
 use super::extremes::{count, highest, info, with_unit, Measured};
 use super::refs::{oldest_first, removed_entry_ref};
 use crate::api::access::access_tier;
-use crate::gen::history::{entry_deprecation, item_key};
+use crate::generate::history::{entry_deprecation, item_key};
 use crate::js::{days_between, js_round};
 use crate::model::{
 	AccessTier, Api, ChangeStatus, Deprecation, EntryValues, HistoryEvent, ItemHistory,

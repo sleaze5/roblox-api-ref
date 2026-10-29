@@ -2,7 +2,7 @@ use serde_json::Value;
 
 use super::fields::{change_details, string_tags};
 use crate::dump::{ChangeElement, ChangeType, DumpChange, DumpEnumItem, DumpMember, FieldChange};
-use crate::gen::normalize::{normalize_enum_item, normalize_member};
+use crate::generate::normalize::{normalize_enum_item, normalize_member};
 use crate::js::compare_code_units;
 use crate::model::{ChangeDetail, ChangeEntry, ChangeStatus, DetailTone, DetailValue, EntryValues};
 

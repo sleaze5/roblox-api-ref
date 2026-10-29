@@ -2,7 +2,7 @@ use indexmap::IndexMap;
 
 use super::extremes::{count, highest, info, measured};
 use super::refs::{current_entry_ref, oldest_first, removed_entry_ref};
-use crate::gen::history::item_key;
+use crate::generate::history::item_key;
 use crate::model::{
 	ApiType, ChangeStatus, EntryValues, Member, MemberDetail, RecordGroup, StatRef, Update,
 };

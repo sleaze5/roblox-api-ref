@@ -9,7 +9,7 @@ use rapi_routes::{MemberKind, OwnerKind};
 
 use super::docs::{ApiNames, CodeContext, describe_html};
 use crate::dump::{ChangeElement, DescriptionChange, DumpChange, DumpDiff, RobloxVersion};
-use crate::gen::normalize::{normalize_enum_item, normalize_member};
+use crate::generate::normalize::{normalize_enum_item, normalize_member};
 use crate::js::compare_names;
 use crate::model::{
 	ChangeCounts, ChangeEntry, ChangeStatus, DescriptionDetail, EntryValues, OwnerChanges,
@@ -242,8 +242,9 @@ pub fn check_diff(diff: &DumpDiff, from: &RobloxVersion, to: &RobloxVersion) -> 
 }
 
 pub fn build_updates(diffs: &[DatedDiff], names: &ApiNames<'_>) -> Vec<Update> {
+	use rayon::prelude::*;
 	let mut updates: Vec<Update> = diffs
-		.iter()
+		.par_iter()
 		.map(|dated| build_update(&dated.diff, &dated.published, names))
 		.collect();
 	updates.reverse();

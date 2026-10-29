@@ -286,21 +286,22 @@ pub fn resolve_preferred_members(classes: &mut IndexMap<String, Class>) {
 
 type UsageIndex = IndexMap<(TypeCategory, String), Vec<TypeUsage>>;
 
+fn flatten_uses(types: Vec<&ApiType>, role: TypeRole) -> Vec<(&ApiType, TypeRole)> {
+	types
+		.into_iter()
+		.flat_map(ApiType::flatten)
+		.map(|ty| (ty, role))
+		.collect()
+}
+
 fn member_type_uses(member: &Member) -> Vec<(&ApiType, TypeRole)> {
-	let flatten = |types: Vec<&ApiType>, role: TypeRole| -> Vec<(&ApiType, TypeRole)> {
-		types
-			.into_iter()
-			.flat_map(ApiType::flatten)
-			.map(|ty| (ty, role))
-			.collect()
-	};
 	let parameters: Vec<&ApiType> = member.parameters().iter().map(|parameter| &parameter.ty).collect();
 	match &member.detail {
-		MemberDetail::Property { ty, .. } => flatten(vec![ty], TypeRole::Value),
-		MemberDetail::Event { .. } => flatten(parameters, TypeRole::Parameter),
+		MemberDetail::Property { ty, .. } => flatten_uses(vec![ty], TypeRole::Value),
+		MemberDetail::Event { .. } => flatten_uses(parameters, TypeRole::Parameter),
 		MemberDetail::Method { returns, .. } | MemberDetail::Callback { returns, .. } => {
-			let mut uses = flatten(parameters, TypeRole::Parameter);
-			uses.extend(flatten(vec![returns], TypeRole::Return));
+			let mut uses = flatten_uses(parameters, TypeRole::Parameter);
+			uses.extend(flatten_uses(vec![returns], TypeRole::Return));
 			uses
 		}
 	}

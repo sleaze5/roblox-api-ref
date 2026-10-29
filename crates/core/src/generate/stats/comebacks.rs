@@ -7,7 +7,7 @@ use super::refs::{
 	current_entry_ref, current_owner_ref, event_of, oldest_first, removed_entry_ref,
 	removed_owner_ref,
 };
-use crate::gen::history::{item_key, owner_key};
+use crate::generate::history::{item_key, owner_key};
 use crate::js::{days_between, js_round};
 use crate::model::{
 	Api, ChangeStatus, ComebackBatch, RecordGroup, StatRecord, StatRef, Update, UpdateEvent,

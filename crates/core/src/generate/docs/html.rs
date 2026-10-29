@@ -138,7 +138,7 @@ pub fn parse_html(source: &str) -> Vec<HtmlNode> {
 		let whole = captures.get(0).map_or(0, |token| token.end());
 		position += whole.max(1);
 		let path: Vec<usize> = open.iter().map(|(_, index)| *index).collect();
-		if let Some(text) = captures.get(6) {
+		if let Some(text) = captures.get(5) {
 			children_mut(&mut root, &path).push(HtmlNode::Text(decode_entities(text.as_str())));
 		} else if let Some(raw_name) = captures.get(2) {
 			let name = raw_name.as_str().to_lowercase();
