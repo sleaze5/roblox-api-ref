@@ -2,15 +2,17 @@ use std::collections::HashMap;
 
 use indexmap::IndexMap;
 
-use super::extremes::{Measured, highest, info, measured, with_unit};
+use super::extremes::{Measured, Pair, count, info, kind_row, pair_by_kind};
 use super::refs::{
 	current_entry_ref, current_owner_ref, event_of, oldest_first, removed_entry_ref,
 	removed_owner_ref,
 };
+use crate::api::stats_text::{kind_plural, kind_singular, kind_slug};
 use crate::generate::history::{item_key, owner_key};
 use crate::js::{days_between, js_round};
 use crate::model::{
-	Api, ChangeStatus, ComebackBatch, RecordGroup, StatRecord, StatRef, Update, UpdateEvent,
+	Api, ChangeStatus, ComebackBatch, CountKind, KindTable, RecordGroup, StatRecord, StatRef,
+	Update, UpdateEvent,
 };
 
 struct Comeback {
@@ -128,48 +130,88 @@ pub fn comeback_stats(api: &Api, updates: &[Update]) -> ComebackStats {
 		.filter(|comeback| matches!(comeback.item, StatRef::Class { .. } | StatRef::Enum { .. }))
 		.map(|comeback| comeback.item.clone())
 		.collect();
-	#[expect(clippy::cast_precision_loss, reason = "counts are small")]
-	let records = vec![
-		StatRecord {
-			id: "items-added-back".to_owned(),
-			label: "Items added back".to_owned(),
-			hint: "Classes, members, enums, and enum items that an update removed and a later update added back.".to_owned(),
-			value: comebacks.len() as f64,
-			unit: None,
-			items: Vec::new(),
-		},
-		StatRecord {
-			id: "owners-added-back".to_owned(),
-			label: "Classes and enums added back".to_owned(),
-			hint: "Classes and enums that an update removed and a later update added back.".to_owned(),
-			value: owners.len() as f64,
-			unit: None,
-			items: owners,
-		},
-		with_unit(
-			highest(
-				info(
-					"longest-gone",
-					"Longest gone",
-					"The items that stayed removed the longest before an update added them back.",
-				),
-				comebacks
-					.iter()
-					.map(|comeback| Measured {
-						item: comeback.item.clone(),
-						#[expect(clippy::cast_precision_loss, reason = "day counts are small")]
-						value: gone(comeback) as f64,
-					})
-					.collect(),
+	let gone_days: Vec<Measured> = comebacks
+		.iter()
+		.map(|comeback| Measured {
+			item: comeback.item.clone(),
+			#[expect(clippy::cast_precision_loss, reason = "day counts are small")]
+			value: gone(comeback) as f64,
+		})
+		.collect();
+	let mut records = vec![
+		count(
+			info(
+				"items-added-back",
+				"Items added back",
+				"Classes, members, enums, and enum items that an update removed and a later update added back.",
 			),
-			"days",
+			comebacks.len(),
+			None,
 		),
+		StatRecord {
+			items: owners.clone(),
+			..count(
+				info(
+					"owners-added-back",
+					"Classes and enums added back",
+					"Classes and enums that an update removed and a later update added back.",
+				),
+				owners.len(),
+				None,
+			)
+		},
 	];
-	let _ = measured;
+	records.extend(pair_by_kind(
+		&CountKind::ITEMS,
+		&gone_days,
+		&Pair {
+			high: &|kind| {
+				info(
+					&format!("longest-gone-{}", kind_slug(kind)),
+					&format!("Longest-gone {}", kind_singular(kind)),
+					&format!(
+						"The {} that stayed removed the longest before an update added them back.",
+						kind_plural(kind)
+					),
+				)
+			},
+			low: Some(&|kind| {
+				info(
+					&format!("shortest-gone-{}", kind_slug(kind)),
+					&format!("Shortest-gone {}", kind_singular(kind)),
+					&format!(
+						"The {} that stayed removed the shortest time before an update added them back.",
+						kind_plural(kind)
+					),
+				)
+			}),
+			unit: Some("days"),
+		},
+	));
+	let table = KindTable {
+		kinds: CountKind::ITEMS.to_vec(),
+		rows: vec![kind_row(
+			info(
+				"added-back-by-kind",
+				"Added back",
+				"Items that an update removed and a later update added back.",
+			),
+			None,
+			CountKind::ITEMS.map(|kind| {
+				Some(
+					comebacks
+						.iter()
+						.filter(|comeback| comeback.item.count_kind() == Some(kind))
+						.count(),
+				)
+			}),
+		)],
+	};
 	ComebackStats {
 		records: RecordGroup {
 			id: "comeback-records".to_owned(),
 			title: "Comebacks".to_owned(),
+			table: Some(table),
 			records,
 		},
 		batches: batches(&comebacks),

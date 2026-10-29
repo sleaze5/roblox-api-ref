@@ -126,6 +126,10 @@ fn added_details(change: &DumpChange) -> Vec<ChangeDetail> {
 	details
 }
 
+pub fn owner_tags(change: &DumpChange) -> Vec<String> {
+	string_tags(change.value.get("Tags").unwrap_or(&Value::Null))
+}
+
 pub fn owner_details(change: &DumpChange) -> Vec<ChangeDetail> {
 	match change.change {
 		ChangeType::Add => added_details(change),

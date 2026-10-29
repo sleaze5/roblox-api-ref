@@ -32,6 +32,7 @@ impl OwnerTable {
 				details: Vec::new(),
 				descriptions: Vec::new(),
 				entries: Vec::new(),
+				tags: Vec::new(),
 			})
 	}
 
@@ -46,6 +47,7 @@ impl OwnerTable {
 				let owner = self.get(kind, change.owner());
 				owner.status = Some(entries::status_of(change.change));
 				owner.details = entries::owner_details(change);
+				owner.tags = entries::owner_tags(change);
 			}
 			ChangeElement::Member => {
 				if let Some(entry) = entries::member_entry(change) {

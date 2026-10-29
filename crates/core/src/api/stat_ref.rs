@@ -3,11 +3,13 @@ use rapi_routes::{
 };
 
 use super::code::{CodeToken, CodeTone, linked, token};
-use crate::model::StatRef;
+use crate::model::{CountKind, StatRef};
 
 pub fn stat_ref_label(item: &StatRef) -> String {
 	match item {
-		StatRef::Class { name } | StatRef::DataType { name } => name.clone(),
+		StatRef::Class { name } | StatRef::DataType { name } | StatRef::Name { name, .. } => {
+			name.clone()
+		}
 		StatRef::Enum { name } => format!("Enum.{name}"),
 		StatRef::EnumItem { owner, name } => format!("Enum.{owner}.{name}"),
 		StatRef::Parameter {
@@ -22,8 +24,9 @@ pub fn stat_ref_label(item: &StatRef) -> String {
 	}
 }
 
-pub fn stat_ref_href(item: &StatRef) -> String {
-	match item {
+fn stat_ref_href(item: &StatRef) -> Option<String> {
+	Some(match item {
+		StatRef::Name { .. } => return None,
 		StatRef::Class { name } => class_href(name),
 		StatRef::DataType { name } => type_href(name),
 		StatRef::Enum { name } => enum_href(name),
@@ -39,6 +42,17 @@ pub fn stat_ref_href(item: &StatRef) -> String {
 			version, anchor, ..
 		} => format!("{}#{anchor}", update_href(version)),
 		StatRef::Member { kind, owner, name } => member_href(owner, *kind, name),
+	})
+}
+
+const fn name_tone(kind: CountKind) -> CodeTone {
+	match kind {
+		CountKind::Method => CodeTone::Function,
+		CountKind::EnumItem => CodeTone::Constant,
+		CountKind::Class | CountKind::Service | CountKind::Enum | CountKind::DataType => {
+			CodeTone::Type
+		}
+		_ => CodeTone::Name,
 	}
 }
 
@@ -84,6 +98,7 @@ fn unlinked_tokens(item: &StatRef) -> Vec<CodeToken> {
 			tokens.push(token(")", CodeTone::Punctuation));
 			tokens
 		}
+		StatRef::Name { of, name } => vec![token(name, name_tone(*of))],
 		StatRef::Update { version, .. } => vec![token(version, CodeTone::Plain)],
 		StatRef::Removed { label, .. } => vec![token(label, CodeTone::SelfName)],
 		StatRef::Member { kind, owner, name } => member_tokens(owner, *kind, name),
@@ -91,5 +106,9 @@ fn unlinked_tokens(item: &StatRef) -> Vec<CodeToken> {
 }
 
 pub fn stat_ref_tokens(item: &StatRef) -> Vec<CodeToken> {
-	linked(unlinked_tokens(item), &stat_ref_href(item), None)
+	let tokens = unlinked_tokens(item);
+	match stat_ref_href(item) {
+		Some(href) => linked(tokens, &href, None),
+		None => tokens,
+	}
 }

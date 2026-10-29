@@ -1,13 +1,14 @@
 use rapi_core::api::access::access_tier_label;
-use rapi_core::api::stat_ref::stat_ref_label;
 use rapi_core::api::stats_text::{
-	CAPABILITIES_LEAD, COMEBACKS_LEAD, DOCS_LEAD, GROWTH_LEAD, MONTHS_NOTE, TAGS_LEAD, TRENDS_NOTE,
-	access_lead, count_label, coverage_label, month_label, percent_text, removed_note, stats_lead,
+	CAPABILITIES_LEAD, COMEBACKS_LEAD, DOCS_LEAD, GROWTH_LEAD, MONTHS_NOTE, SERVICES_HINT,
+	TAGS_LEAD, TRENDS_NOTE, access_lead, count_label, coverage_label, month_label, percent_text,
+	removed_note, stats_lead,
 };
-use rapi_core::js::{format_date, js_number};
+use rapi_core::js::format_date;
 use rapi_core::model::{ChangeTally, RecordGroup, TagTrend, Tallies, UpdateEvent};
 use rapi_routes::update_href;
 
+use super::stat_shapes::{kind_table, record_items, record_value, shape_blocks};
 use super::text::{fact_list, inline_code, join_blocks, link, markdown_table};
 use super::urls::markdown_url;
 use crate::context::Context;
@@ -40,40 +41,44 @@ fn tally_text(tally: &ChangeTally, changes: bool) -> String {
 fn tally_cells(tallies: &Tallies) -> Vec<String> {
 	vec![
 		tally_text(&tallies.class, false),
-		tally_text(&tallies.member, true),
+		tally_text(&tallies.property, true),
+		tally_text(&tallies.method, true),
+		tally_text(&tallies.event, true),
+		tally_text(&tallies.callback, true),
 		tally_text(&tallies.enumeration, false),
 		tally_text(&tallies.enum_item, true),
 		tallies.deprecated_total().to_string(),
 	]
 }
 
-const TALLY_HEADINGS: [&str; 5] = ["Classes", "Members", "Enums", "Enum items", "Deprecated"];
+const TALLY_HEADINGS: [&str; 8] = [
+	"Classes",
+	"Properties",
+	"Methods",
+	"Events",
+	"Callbacks",
+	"Enums",
+	"Enum items",
+	"Deprecated",
+];
 
 fn record_blocks(cx: &Context, group: &RecordGroup) -> Vec<String> {
 	let rows: Vec<Vec<String>> = group
 		.records
 		.iter()
 		.map(|record| {
-			let value = js_number(record.value);
 			vec![
 				record.label.clone(),
-				record
-					.unit
-					.as_ref()
-					.map_or_else(|| value.clone(), |unit| format!("{value} {unit}")),
-				record
-					.items
-					.iter()
-					.map(|item| inline_code(&stat_ref_label(item)))
-					.collect::<Vec<_>>()
-					.join(", "),
+				record_value(record),
+				record_items(record),
 			]
 		})
 		.collect();
-	let mut blocks = vec![
-		format!("## {}", group.title),
-		markdown_table(&["Statistic", "Value", "Items"], &rows),
-	];
+	let mut blocks = vec![format!("## {}", group.title)];
+	if let Some(table) = &group.table {
+		blocks.push(kind_table(table));
+	}
+	blocks.push(markdown_table(&["Statistic", "Value", "Items"], &rows));
 	if group.id == "comeback-records" {
 		blocks.push(COMEBACKS_LEAD.to_owned());
 		let rows: Vec<Vec<String>> = cx
@@ -230,6 +235,9 @@ fn extra_blocks(cx: &Context) -> Vec<String> {
 		GROWTH_LEAD.to_owned(),
 		markdown_table(&["Year", "Classes that grew the most"], &growth),
 	]
+	.into_iter()
+	.chain(shape_blocks(cx))
+	.collect()
 }
 
 fn headings<'a>(first: &[&'a str]) -> Vec<&'a str> {
@@ -238,8 +246,9 @@ fn headings<'a>(first: &[&'a str]) -> Vec<&'a str> {
 
 pub fn stats_markdown(cx: &Context) -> String {
 	let stats = &cx.stats;
-	let current: u32 = stats.counts.iter().map(|row| row.current).sum();
-	let removed: u32 = stats.counts.iter().map(|row| row.removed).sum();
+	let totals = stats.counts.iter().filter(|row| !row.kind.is_subset());
+	let current: u32 = totals.clone().map(|row| row.current).sum();
+	let removed: u32 = totals.map(|row| row.removed).sum();
 	let mut counts: Vec<Vec<String>> = stats
 		.counts
 		.iter()
@@ -325,7 +334,7 @@ pub fn stats_markdown(cx: &Context) -> String {
 			("Updates", Some(stats.updates.len().to_string())),
 		]),
 		"## Counts".to_owned(),
-		removed_note(&stats.history_start),
+		format!("{} {SERVICES_HINT}", removed_note(&stats.history_start)),
 		markdown_table(&["Kind", "Current", "Removed", "Total"], &counts),
 	];
 	for group in &stats.records {

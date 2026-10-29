@@ -1,8 +1,34 @@
 use std::collections::HashSet;
 
-use rapi_routes::MemberKind;
+use rapi_routes::{MemberKind, OwnerKind};
 
-use crate::model::{Api, CountKind, CountRow, EntryValues, Member, TypeCategory, Update};
+use crate::model::{
+	Api, ChangeStatus, CountKind, CountRow, EntryValues, Member, TypeCategory, Update,
+};
+
+const SERVICE: &str = "Service";
+
+fn is_service(tags: &[String]) -> bool {
+	tags.iter().any(|tag| tag == SERVICE)
+}
+
+fn removed_services(api: &Api, updates: &[Update]) -> usize {
+	api.removed_classes()
+		.iter()
+		.filter(|removed| {
+			updates
+				.iter()
+				.filter(|update| update.version == removed.removed.version)
+				.flat_map(|update| &update.owners)
+				.any(|owner| {
+					owner.kind == OwnerKind::Class
+						&& owner.name == removed.name
+						&& owner.status == Some(ChangeStatus::Removed)
+						&& is_service(&owner.tags)
+				})
+		})
+		.count()
+}
 
 fn removed_data_types(api: &Api, updates: &[Update]) -> usize {
 	let mut names: HashSet<&str> = HashSet::new();
@@ -55,6 +81,15 @@ pub fn count_stats(api: &Api, updates: &[Update]) -> Vec<CountRow> {
 				CountKind::Class => (
 					to_u32(api.classes.len()),
 					to_u32(api.removed_classes().len()),
+				),
+				CountKind::Service => (
+					to_u32(
+						api.classes
+							.values()
+							.filter(|item| is_service(&item.tags))
+							.count(),
+					),
+					to_u32(removed_services(api, updates)),
 				),
 				CountKind::Enum => (to_u32(api.enums.len()), to_u32(api.removed_enums().len())),
 				CountKind::EnumItem => (

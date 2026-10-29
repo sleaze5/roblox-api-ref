@@ -647,6 +647,7 @@ mod tests {
 			details,
 			descriptions: Vec::new(),
 			entries,
+			tags: Vec::new(),
 		}
 	}
 

@@ -1,10 +1,12 @@
 use indexmap::IndexMap;
 
-use super::extremes::{count, highest, info, measured};
+use super::extremes::{Measured, Pair, highest, info, kind_row, measured, nonzero, pair_by_kind};
 use super::refs::{current_entry_ref, oldest_first, removed_entry_ref};
+use crate::api::stats_text::{kind_plural, kind_singular, kind_slug};
 use crate::generate::history::item_key;
 use crate::model::{
-	ApiType, ChangeStatus, EntryValues, Member, MemberDetail, RecordGroup, StatRef, Update,
+	ApiType, ChangeStatus, CountKind, EntryValues, KindTable, Member, MemberDetail, RecordGroup,
+	StatRef, Update,
 };
 
 #[derive(PartialEq)]
@@ -44,7 +46,6 @@ struct Tally {
 
 pub fn signature_records(api: &crate::model::Api, updates: &[Update]) -> RecordGroup {
 	let mut tallies: IndexMap<String, Tally> = IndexMap::new();
-	let mut total = 0;
 	for update in oldest_first(updates) {
 		for owner in &update.owners {
 			for entry in &owner.entries {
@@ -73,53 +74,95 @@ pub fn signature_records(api: &crate::model::Api, updates: &[Update]) -> RecordG
 					});
 				tally.signature += usize::from(changed_signature);
 				tally.defaults += usize::from(changed_default);
-				total += usize::from(changed_signature);
 			}
 		}
 	}
 	let all: Vec<Tally> = tallies.into_values().collect();
-	RecordGroup {
-		id: "signature-records".to_owned(),
-		title: "Signature changes".to_owned(),
-		records: vec![
-			count(
+	let kinds = CountKind::MEMBERS.to_vec();
+	let per_kind = |value: &dyn Fn(&Tally) -> usize| {
+		kinds
+			.iter()
+			.map(|kind| {
+				Some(
+					all.iter()
+						.filter(|tally| tally.item.count_kind() == Some(*kind))
+						.map(value)
+						.sum(),
+				)
+			})
+			.collect::<Vec<_>>()
+	};
+	let table = KindTable {
+		rows: vec![
+			kind_row(
 				info(
 					"signature-changes",
 					"Signature changes",
 					"Times an update changed the type, parameters, or return type of a member.",
 				),
-				total,
 				None,
+				per_kind(&|tally| tally.signature),
 			),
-			count(
+			kind_row(
 				info(
 					"members-with-signature-changes",
 					"Members with a changed signature",
 					"Members whose type, parameters, or return type changed at least once.",
 				),
-				all.iter().filter(|tally| tally.signature > 0).count(),
 				None,
+				per_kind(&|tally| usize::from(tally.signature > 0)),
 			),
-			highest(
+			kind_row(
 				info(
-					"most-signature-changes",
-					"Most signature changes",
-					"The members whose type, parameters, or return type changed in the most updates.",
+					"default-changes",
+					"Default value changes",
+					"Times an update changed the default value of a property.",
 				),
-				all.iter()
-					.map(|tally| measured(tally.item.clone(), tally.signature))
-					.collect(),
-			),
-			highest(
-				info(
-					"most-default-changes",
-					"Most default value changes",
-					"The properties whose default value changed in the most updates.",
-				),
-				all.iter()
-					.map(|tally| measured(tally.item.clone(), tally.defaults))
-					.collect(),
+				None,
+				per_kind(&|tally| tally.defaults)
+					.into_iter()
+					.zip(&kinds)
+					.map(|(value, kind)| value.filter(|_| *kind == CountKind::Property)),
 			),
 		],
+		kinds,
+	};
+	let signature: Vec<Measured> = all
+		.iter()
+		.map(|tally| measured(tally.item.clone(), tally.signature))
+		.collect();
+	let mut records = pair_by_kind(
+		&CountKind::MEMBERS,
+		&nonzero(signature),
+		&Pair {
+			high: &|kind| {
+				info(
+					&format!("most-signature-changes-{}", kind_slug(kind)),
+					&format!("Most-changed {} signature", kind_singular(kind)),
+					&format!(
+						"The {} whose type, parameters, or return type changed in the most updates.",
+						kind_plural(kind)
+					),
+				)
+			},
+			low: None,
+			unit: None,
+		},
+	);
+	records.push(highest(
+		info(
+			"most-default-changes",
+			"Most default value changes",
+			"The properties whose default value changed in the most updates.",
+		),
+		all.iter()
+			.map(|tally| measured(tally.item.clone(), tally.defaults))
+			.collect(),
+	));
+	RecordGroup {
+		id: "signature-records".to_owned(),
+		title: "Signature changes".to_owned(),
+		table: Some(table),
+		records,
 	}
 }

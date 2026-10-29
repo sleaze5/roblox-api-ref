@@ -133,7 +133,7 @@ pub fn column_chart(title: &str, summary: &str, columns: &[Column]) -> Markup {
 						}
 					}
 					@for (index, column) in columns.iter().enumerate() {
-						@if column.value.total_cmp(&max).is_eq() || column.value.total_cmp(&min).is_eq() {
+						@if column.value > 0.0 && (column.value.total_cmp(&max).is_eq() || column.value.total_cmp(&min).is_eq()) {
 							span aria-hidden="true" class="absolute -translate-x-1/2 -translate-y-full pb-1 text-xs text-fg-muted"
 								style={ "left:" (percent((index as f64 + 0.5) / count as f64)) ";top:" (percent(1.0 - (column.value * scale).min(PLOT_HEIGHT) / PLOT_HEIGHT)) } {
 								(num(column.value))
@@ -145,7 +145,7 @@ pub fn column_chart(title: &str, summary: &str, columns: &[Column]) -> Markup {
 			div class="h-1" {}
 			(chart_row(&html! {
 				div aria-hidden="true" class="flex text-xs text-fg-faint" {
-					@for column in columns { span class="min-w-0 flex-1 text-center" { (column.label) } }
+					@for column in columns { span class="min-w-0 flex-1 text-center whitespace-nowrap" { (column.label) } }
 				}
 			}))
 		}
@@ -280,6 +280,30 @@ pub fn line_chart(title: &str, summary: &str, points: &[LinePoint], ticks: &[Cha
 			}
 			div class="h-2" {}
 			(chart_row(&chart_ticks(ticks, count)))
+		}
+	};
+	chart_frame(title, summary, None, &content)
+}
+
+pub struct Share {
+	pub label: String,
+	pub part: f64,
+	pub total: f64,
+}
+
+pub fn share_chart(title: &str, summary: &str, rows: &[Share]) -> Markup {
+	let content = html! {
+		ul role="img" aria-label={ (title) ". " (summary) } class="flex flex-col gap-2" {
+			@for row in rows {
+				@let ratio = if row.total > 0.0 { row.part / row.total } else { 0.0 };
+				li data-tooltip={ (row.label) ": " (num(row.part)) " of " (num(row.total)) } class="grid grid-cols-[8rem_1fr_3.5rem] items-center gap-3" {
+					span class="truncate text-fg-muted" { (row.label) }
+					span aria-hidden="true" class="relative h-1.5 overflow-hidden rounded-xs bg-line" {
+						span class="absolute inset-y-0 left-0 bg-fg-muted" style={ "width:" (percent(ratio)) } {}
+					}
+					span class="text-right font-mono text-xs text-fg-muted tabular-nums" { (num(js_round(ratio * 100.0))) "%" }
+				}
+			}
 		}
 	};
 	chart_frame(title, summary, None, &content)

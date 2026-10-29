@@ -1,6 +1,7 @@
 mod doc;
 pub mod items;
 pub mod lists;
+mod stat_shapes;
 pub mod stats;
 pub mod text;
 pub mod updates;

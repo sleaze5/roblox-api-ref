@@ -1,11 +1,12 @@
 use super::release::release_name;
 use super::text::format_month_period;
 use crate::js::js_round;
-use crate::model::{AccessNow, CountKind, CoverageKind};
+use crate::model::{AccessNow, BUCKET_STARTS, CountKind, CoverageKind, GAP_DAYS};
 
 pub const fn count_label(kind: CountKind) -> &'static str {
 	match kind {
 		CountKind::Class => "Classes",
+		CountKind::Service => "Services",
 		CountKind::Property => "Properties",
 		CountKind::Method => "Methods",
 		CountKind::Event => "Events",
@@ -15,6 +16,50 @@ pub const fn count_label(kind: CountKind) -> &'static str {
 		CountKind::DataType => "Data types",
 	}
 }
+
+pub const fn kind_singular(kind: CountKind) -> &'static str {
+	match kind {
+		CountKind::Class => "class",
+		CountKind::Service => "service",
+		CountKind::Property => "property",
+		CountKind::Method => "method",
+		CountKind::Event => "event",
+		CountKind::Callback => "callback",
+		CountKind::Enum => "enum",
+		CountKind::EnumItem => "enum item",
+		CountKind::DataType => "data type",
+	}
+}
+
+pub const fn kind_plural(kind: CountKind) -> &'static str {
+	match kind {
+		CountKind::Class => "classes",
+		CountKind::Service => "services",
+		CountKind::Property => "properties",
+		CountKind::Method => "methods",
+		CountKind::Event => "events",
+		CountKind::Callback => "callbacks",
+		CountKind::Enum => "enums",
+		CountKind::EnumItem => "enum items",
+		CountKind::DataType => "data types",
+	}
+}
+
+pub const fn kind_slug(kind: CountKind) -> &'static str {
+	match kind {
+		CountKind::Class => "class",
+		CountKind::Service => "service",
+		CountKind::Property => "property",
+		CountKind::Method => "method",
+		CountKind::Event => "event",
+		CountKind::Callback => "callback",
+		CountKind::Enum => "enum",
+		CountKind::EnumItem => "enum-item",
+		CountKind::DataType => "data-type",
+	}
+}
+
+pub const SERVICES_HINT: &str = "Classes tagged Service. The Classes row includes them.";
 
 pub fn ref_noun(kind: &str) -> String {
 	let noun = match kind {
@@ -27,6 +72,7 @@ pub fn ref_noun(kind: &str) -> String {
 		"EnumItem" => "Enum items",
 		"DataType" => "Data types",
 		"Parameter" => "Parameters",
+		"Name" => "Names",
 		"Update" => "Updates",
 		_ => "Removed items",
 	};
@@ -94,5 +140,74 @@ pub const fn coverage_label(kind: CoverageKind) -> &'static str {
 		CoverageKind::Return => "Return values",
 		CoverageKind::Enum => "Enums",
 		CoverageKind::EnumItem => "Enum items",
+	}
+}
+
+pub fn capitalized(text: &str) -> String {
+	let mut chars = text.chars();
+	chars.next().map_or_else(String::new, |first| {
+		first.to_uppercase().chain(chars).collect()
+	})
+}
+
+pub const PER_UPDATE_NOTE: &str = "The classes, members, and enum items that each update added and removed. A number marks a bar that runs past the axis.";
+
+pub const DISTRIBUTIONS_LEAD: &str = "How the current API spreads by size: how many classes define each number of properties, methods, events, and callbacks themselves, how many members take each number of parameters, and how many enums have each number of items.";
+
+pub const RELEASE_DAYS_LEAD: &str = "The weekday, in UTC, that Roblox published each tracked update on, and the days from each update to the next.";
+
+pub const WEEKDAYS: [&str; 7] = [
+	"Monday",
+	"Tuesday",
+	"Wednesday",
+	"Thursday",
+	"Friday",
+	"Saturday",
+	"Sunday",
+];
+
+pub fn bucket_label(index: usize) -> String {
+	let start = BUCKET_STARTS[index];
+	match BUCKET_STARTS.get(index + 1) {
+		None => format!("{start}+"),
+		Some(next) if *next == start + 1 => start.to_string(),
+		Some(next) => format!("{start}–{}", next - 1),
+	}
+}
+
+pub fn gap_label(days: u32) -> String {
+	if days >= GAP_DAYS {
+		format!("{days}+")
+	} else {
+		days.to_string()
+	}
+}
+
+pub fn unit_text(value: f64, unit: &str) -> String {
+	if value.total_cmp(&1.0).is_eq() {
+		unit.strip_suffix('s').unwrap_or(unit).to_owned()
+	} else {
+		unit.to_owned()
+	}
+}
+
+#[cfg(test)]
+mod tests {
+	use super::*;
+
+	#[test]
+	fn labels_each_bucket_by_its_range() {
+		let labels: Vec<String> = (0..BUCKET_STARTS.len()).map(bucket_label).collect();
+		assert_eq!(
+			labels,
+			["0", "1", "2", "3", "4", "5–9", "10–19", "20–49", "50+"]
+		);
+		assert_eq!(gap_label(GAP_DAYS), format!("{GAP_DAYS}+"));
+	}
+
+	#[test]
+	fn writes_a_singular_unit_for_one() {
+		assert_eq!(unit_text(1.0, "days"), "day");
+		assert_eq!(unit_text(2.0, "days"), "days");
 	}
 }

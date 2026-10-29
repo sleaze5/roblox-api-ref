@@ -92,6 +92,11 @@ pub fn days_between(from: &str, to: &str) -> f64 {
 	days
 }
 
+pub fn weekday(iso: &str) -> usize {
+	let days = parse_iso(iso).unwrap_or_default().div_euclid(DAY_MS);
+	usize::try_from((days + 3).rem_euclid(7)).unwrap_or_default()
+}
+
 pub fn iso_string(millis: i64) -> String {
 	let (year, month, day) = civil_from_days(millis.div_euclid(DAY_MS));
 	let time = millis.rem_euclid(DAY_MS);
@@ -143,6 +148,13 @@ mod tests {
 		assert_eq!(format_date("2026-10-05T23:59:59.000Z"), "Oct 05, 2026");
 		assert_eq!(format_short_date("2024-02-29T00:00:00.000Z"), "Feb 29");
 		assert_eq!(format_month("2000-12-15T00:00:00Z"), "Dec");
+	}
+
+	#[test]
+	fn numbers_weekdays_from_monday() {
+		assert_eq!(weekday("2026-10-26T12:00:00.000Z"), 0);
+		assert_eq!(weekday("2026-10-29T00:00:00.000Z"), 3);
+		assert_eq!(weekday("2026-11-01T23:59:59.000Z"), 6);
 	}
 
 	#[test]

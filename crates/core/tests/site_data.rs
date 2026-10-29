@@ -5,7 +5,7 @@ use rapi_core::generate::pipeline::{Paths, Site, generate_site};
 use rapi_core::model::{
 	AccessTier, ApiType, CountKind, CoverageKind, MemberDetail, StatRecord, StatRef,
 };
-use rapi_routes::FacetKind;
+use rapi_routes::{FacetKind, MemberKind};
 
 static SITE: LazyLock<Site> = LazyLock::new(|| {
 	let root = Path::new(env!("CARGO_MANIFEST_DIR")).join("../..");
@@ -133,7 +133,7 @@ fn sums_the_updates_of_each_year_and_of_each_month() {
 		.stats
 		.updates
 		.iter()
-		.map(|trend| trend.tallies.member.added)
+		.map(|trend| trend.tallies.member().added)
 		.sum();
 	for periods in [&SITE.stats.years, &SITE.stats.months] {
 		assert_eq!(
@@ -143,7 +143,7 @@ fn sums_the_updates_of_each_year_and_of_each_month() {
 		assert_eq!(
 			periods
 				.iter()
-				.map(|period| period.tallies.member.added)
+				.map(|period| period.tallies.member().added)
 				.sum::<u32>(),
 			added
 		);
@@ -181,7 +181,7 @@ fn splits_each_years_added_members_by_whether_scripts_can_use_them() {
 			.expect("a matching year");
 		assert_eq!(
 			year.added_open + year.added_restricted,
-			trend.tallies.member.added,
+			trend.tallies.member().added,
 			"{}",
 			year.period
 		);
@@ -321,4 +321,63 @@ fn builds_a_search_index_that_decodes_to_the_same_data() {
 		SITE.search
 	);
 	assert_eq!(SITE.search.names.len(), SITE.search.kinds.len());
+}
+
+#[test]
+fn counts_the_services_among_the_classes() {
+	let services = SITE
+		.api
+		.classes
+		.values()
+		.filter(|item| item.tags.iter().any(|tag| tag == "Service"))
+		.count();
+	assert_eq!(count(CountKind::Service).0, len(services));
+	assert!(count(CountKind::Service).1 <= count(CountKind::Class).1);
+}
+
+#[test]
+fn spreads_every_class_member_and_enum_over_the_distributions() {
+	for distribution in &SITE.stats.distributions {
+		let total: u32 = distribution.counts.iter().sum();
+		let expected = if distribution.id.ends_with("-per-class") {
+			len(SITE.api.classes.len())
+		} else if distribution.id == "items-per-enum" {
+			len(SITE.api.enums.len())
+		} else {
+			total
+		};
+		assert_eq!(total, expected, "{}", distribution.id);
+	}
+}
+
+#[test]
+fn places_every_update_on_a_weekday_and_every_gap_in_a_bucket() {
+	let updates = len(SITE.updates.len());
+	let weekdays: u32 = SITE.stats.weekdays.iter().map(|day| day.updates).sum();
+	let gaps: u32 = SITE.stats.gaps.iter().map(|gap| gap.updates).sum();
+	assert_eq!(weekdays, updates);
+	assert_eq!(gaps, updates - 1);
+}
+
+#[test]
+fn splits_the_member_records_by_kind() {
+	let most = SITE
+		.api
+		.classes
+		.values()
+		.map(|item| {
+			item.members
+				.iter()
+				.filter(|member| member.kind() == MemberKind::Property)
+				.count()
+		})
+		.max()
+		.unwrap_or_default();
+	#[expect(clippy::cast_precision_loss, reason = "a property count")]
+	let expected = most as f64;
+	assert!((record("most-property-members").value - expected).abs() < f64::EPSILON);
+	assert!(record("fewest-method-parameters").ties.is_some());
+	for kind in ["method", "event", "callback"] {
+		record(&format!("longest-{kind}-parameter-name"));
+	}
 }

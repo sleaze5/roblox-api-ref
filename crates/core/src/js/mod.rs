@@ -7,7 +7,7 @@ mod text;
 pub use collate::{compare_code_units, compare_names};
 pub use date::{
 	days_between, format_date, format_month, format_short_date, iso_string, parse_http_date,
-	parse_iso, utc_string,
+	parse_iso, utc_string, weekday,
 };
 pub use json::json_string;
 pub use number::{js_number, js_round};

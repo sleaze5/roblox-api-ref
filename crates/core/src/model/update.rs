@@ -175,6 +175,8 @@ pub struct OwnerChanges {
 	pub details: Vec<ChangeDetail>,
 	pub descriptions: Vec<DescriptionDetail>,
 	pub entries: Vec<ChangeEntry>,
+	#[serde(skip)]
+	pub tags: Vec<String>,
 }
 
 pub fn owner_kind<S: Serializer>(kind: &OwnerKind, serializer: S) -> Result<S::Ok, S::Error> {

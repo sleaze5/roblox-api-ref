@@ -1,6 +1,8 @@
-use rapi_routes::{OwnerKind, change_anchor, owner_anchor};
+use rapi_routes::{MemberKind, OwnerKind, change_anchor, owner_anchor};
 
-use crate::model::{Api, ChangeEntry, EntryValues, OwnerChanges, StatRef, Update, UpdateEvent};
+use crate::model::{
+	Api, ChangeEntry, CountKind, EntryValues, OwnerChanges, StatRef, Update, UpdateEvent,
+};
 
 pub fn oldest_first(updates: &[Update]) -> impl Iterator<Item = &Update> {
 	updates.iter().rev()
@@ -13,14 +15,34 @@ pub fn event_of(update: &Update) -> UpdateEvent {
 	}
 }
 
-fn entry_separator(entry: &ChangeEntry) -> char {
+fn entry_member_kind(entry: &ChangeEntry) -> Option<MemberKind> {
 	match &entry.values {
 		EntryValues::Member { before, after } => after
 			.as_ref()
 			.or(before.as_ref())
-			.map_or('.', |member| member.kind().separator()),
-		EntryValues::EnumItem { .. } => '.',
+			.map(|member| member.kind()),
+		EntryValues::EnumItem { .. } => None,
 	}
+}
+
+pub fn entry_kind(entry: &ChangeEntry) -> CountKind {
+	match &entry.values {
+		EntryValues::Member { .. } => {
+			entry_member_kind(entry).map_or(CountKind::Property, CountKind::member)
+		}
+		EntryValues::EnumItem { .. } => CountKind::EnumItem,
+	}
+}
+
+pub const fn owner_count_kind(kind: OwnerKind) -> CountKind {
+	match kind {
+		OwnerKind::Class => CountKind::Class,
+		OwnerKind::Enum => CountKind::Enum,
+	}
+}
+
+fn entry_separator(entry: &ChangeEntry) -> char {
+	entry_member_kind(entry).map_or('.', MemberKind::separator)
 }
 
 pub fn entry_label(owner: &OwnerChanges, entry: &ChangeEntry) -> String {
@@ -39,6 +61,7 @@ pub fn owner_label(kind: OwnerKind, name: &str) -> String {
 
 pub fn removed_entry_ref(owner: &OwnerChanges, entry: &ChangeEntry, version: &str) -> StatRef {
 	StatRef::Removed {
+		of: entry_kind(entry),
 		label: entry_label(owner, entry),
 		version: version.to_owned(),
 		anchor: change_anchor(owner.kind, &owner.name, &entry.name),
@@ -47,6 +70,7 @@ pub fn removed_entry_ref(owner: &OwnerChanges, entry: &ChangeEntry, version: &st
 
 pub fn removed_owner_ref(owner: &OwnerChanges, version: &str) -> StatRef {
 	StatRef::Removed {
+		of: owner_count_kind(owner.kind),
 		label: owner_label(owner.kind, &owner.name),
 		version: version.to_owned(),
 		anchor: owner_anchor(owner.kind, &owner.name),

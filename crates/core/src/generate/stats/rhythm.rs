@@ -1,4 +1,4 @@
-use super::extremes::{Measured, count, highest, info, with_unit};
+use super::extremes::{Measured, count, highest, info, lowest, with_unit};
 use crate::js::{days_between, js_round};
 use crate::model::{RecordGroup, StatRecord, StatRef, Update};
 
@@ -27,6 +27,15 @@ fn one_decimal(value: f64) -> f64 {
 	js_round(value * 10.0) / 10.0
 }
 
+fn gap_measures(gaps: &[(&Update, f64)]) -> Vec<Measured> {
+	gaps.iter()
+		.map(|(update, days)| Measured {
+			item: update_ref(update),
+			value: js_round(*days),
+		})
+		.collect()
+}
+
 pub fn rhythm_records(updates: &[Update]) -> RecordGroup {
 	let mut by_date: Vec<&Update> = updates.iter().collect();
 	by_date.sort_by(|a, b| a.published.cmp(&b.published));
@@ -51,6 +60,7 @@ pub fn rhythm_records(updates: &[Update]) -> RecordGroup {
 	RecordGroup {
 		id: "rhythm-records".to_owned(),
 		title: "Release rhythm".to_owned(),
+		table: None,
 		records: vec![
 			StatRecord {
 				id: "average-gap".to_owned(),
@@ -59,6 +69,7 @@ pub fn rhythm_records(updates: &[Update]) -> RecordGroup {
 				value: one_decimal(average),
 				unit: Some("days".to_owned()),
 				items: Vec::new(),
+				ties: None,
 			},
 			StatRecord {
 				id: "median-gap".to_owned(),
@@ -67,6 +78,7 @@ pub fn rhythm_records(updates: &[Update]) -> RecordGroup {
 				value: one_decimal(median(&days)),
 				unit: Some("days".to_owned()),
 				items: Vec::new(),
+				ties: None,
 			},
 			with_unit(
 				highest(
@@ -75,12 +87,18 @@ pub fn rhythm_records(updates: &[Update]) -> RecordGroup {
 						"Longest wait for an update",
 						"The updates that came the longest after the one before them.",
 					),
-					gaps.iter()
-						.map(|(update, days)| Measured {
-							item: update_ref(update),
-							value: js_round(*days),
-						})
-						.collect(),
+					gap_measures(&gaps),
+				),
+				"days",
+			),
+			with_unit(
+				lowest(
+					info(
+						"shortest-gap",
+						"Shortest wait for an update",
+						"The updates that came the soonest after the one before them.",
+					),
+					gap_measures(&gaps),
 				),
 				"days",
 			),

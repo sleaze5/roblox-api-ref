@@ -1,8 +1,9 @@
 use indexmap::IndexMap;
 
+use super::refs::entry_kind;
 use crate::generate::history::{entry_deprecation, owner_deprecation};
 use crate::model::{
-	Api, ChangeStatus, Deprecation, EntryValues, OwnerChanges, PeriodTrend, Tallies, TrendKind,
+	Api, ChangeStatus, CountKind, Deprecation, OwnerChanges, PeriodTrend, Tallies, TrendKind,
 	Update, UpdateTrend,
 };
 
@@ -26,9 +27,12 @@ fn tally_owner(tallies: &mut Tallies, owner: &OwnerChanges) {
 		tallies.get_mut(kind).deprecated += 1;
 	}
 	for entry in &owner.entries {
-		let entry_kind = match entry.values {
-			EntryValues::Member { .. } => TrendKind::Member,
-			EntryValues::EnumItem { .. } => TrendKind::EnumItem,
+		let entry_kind = match entry_kind(entry) {
+			CountKind::Method => TrendKind::Method,
+			CountKind::Event => TrendKind::Event,
+			CountKind::Callback => TrendKind::Callback,
+			CountKind::EnumItem => TrendKind::EnumItem,
+			_ => TrendKind::Property,
 		};
 		if entry.is_api_change() {
 			bump(tallies.get_mut(entry_kind), entry.status);
