@@ -2,6 +2,7 @@ use std::collections::HashSet;
 use std::fmt::Write as _;
 use std::sync::OnceLock;
 
+use rapi_core::api::filter_tags::{FilterTagGroup, filter_tag_groups};
 use rapi_core::generate::facets::FacetSlugs;
 use rapi_core::model::{Api, Release, Stats, Update};
 use rapi_routes::{FacetKind, class_href, enum_href, enum_item_href, member_href, type_href};
@@ -14,6 +15,7 @@ pub struct Context {
 	pub sprite: String,
 	pub origin: String,
 	links: OnceLock<HashSet<String>>,
+	filter_tags: OnceLock<Vec<FilterTagGroup>>,
 }
 
 impl Context {
@@ -33,7 +35,19 @@ impl Context {
 			sprite,
 			origin,
 			links: OnceLock::new(),
+			filter_tags: OnceLock::new(),
 		}
+	}
+
+	pub fn all_filter_tags(&self) -> &[FilterTagGroup] {
+		self.filter_tags.get_or_init(|| {
+			filter_tag_groups(
+				self.api
+					.classes
+					.values()
+					.flat_map(|item| item.members.iter()),
+			)
+		})
 	}
 
 	pub fn site_links(&self) -> &HashSet<String> {

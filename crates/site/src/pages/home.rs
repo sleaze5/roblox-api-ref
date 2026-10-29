@@ -8,7 +8,7 @@ use rapi_routes::{CLASSES, ENUMS, INDEX, STATS, UPDATES, class_href, upload_name
 use crate::components::page::{HeaderIcon, PageHeader, page_lead, root_crumbs};
 use crate::context::Context;
 use crate::html::{IconSize, icon};
-use crate::layout::Shell;
+use crate::layout::{Section, Shell};
 use crate::meta::SITE_SUMMARY;
 
 const EXAMPLES: [&str; 5] = [
@@ -99,7 +99,7 @@ pub fn home_page(cx: &Context) -> Markup {
 			}
 		}
 	};
-	Shell::new(None).render(cx, &body)
+	Shell::new(Some(Section::Home)).render(cx, &body)
 }
 
 pub fn not_found_page(cx: &Context) -> Markup {

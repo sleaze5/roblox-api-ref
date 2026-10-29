@@ -3,7 +3,7 @@ use std::collections::HashSet;
 use maud::{Markup, html};
 use rapi_core::api::access::{access_tier_hint, access_tier_label, tier_counts};
 use rapi_core::api::docs_links::class_docs_href;
-use rapi_core::api::filter_tags::filter_tag_groups;
+use rapi_core::api::filter_tags::{filter_tag_groups, with_all_tags};
 use rapi_core::api::history_text::HistoryNoun;
 use rapi_core::api::members::{member_kind_title, members_in_page_order};
 use rapi_core::api::tags::plain_tags;
@@ -173,7 +173,7 @@ pub fn class_page(cx: &Context, item: &Class) -> Markup {
 			@if kinds.is_empty() {
 				p class="text-fg-muted" { "This class has no members." }
 			} @else {
-				(member_filter_bar(cx, &kinds, &filter_tag_groups(lineage.iter().flat_map(|item| item.members.iter()))))
+				(member_filter_bar(cx, &kinds, &with_all_tags(&filter_tag_groups(lineage.iter().flat_map(|item| item.members.iter())), cx.all_filter_tags())))
 				@for kind in &kinds { (member_section(cx, *kind, item, &ancestors)) }
 			}
 			@if !item.used_by.is_empty() {

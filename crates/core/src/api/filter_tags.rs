@@ -97,6 +97,31 @@ pub fn filter_tag_groups<'a>(members: impl Iterator<Item = &'a Member>) -> Vec<F
 		.collect()
 }
 
+pub fn with_all_tags(page: &[FilterTagGroup], all: &[FilterTagGroup]) -> Vec<FilterTagGroup> {
+	all.iter()
+		.filter_map(|group| {
+			let own = page.iter().find(|item| item.group == group.group);
+			if group.group == MemberTagGroup::Capability {
+				return own.cloned();
+			}
+			let tags = group
+				.tags
+				.iter()
+				.map(|tag| FilterTag {
+					count: own
+						.and_then(|own| own.tags.iter().find(|item| item.key == tag.key))
+						.map_or(0, |item| item.count),
+					..tag.clone()
+				})
+				.collect();
+			Some(FilterTagGroup {
+				tags,
+				..group.clone()
+			})
+		})
+		.collect()
+}
+
 #[cfg(test)]
 mod tests {
 	use super::*;
@@ -112,5 +137,49 @@ mod tests {
 			"capabilities-basic-network"
 		);
 		assert_eq!(tag_key("  Not browsable!"), "not-browsable");
+	}
+
+	fn group(group: MemberTagGroup, tags: &[(&str, u32)]) -> FilterTagGroup {
+		FilterTagGroup {
+			group,
+			title: group.title(),
+			tags: tags
+				.iter()
+				.map(|(key, count)| FilterTag {
+					key: (*key).to_owned(),
+					label: (*key).to_owned(),
+					short_label: (*key).to_owned(),
+					count: *count,
+				})
+				.collect(),
+		}
+	}
+
+	#[test]
+	fn lists_every_tag_but_keeps_page_capabilities() {
+		let all = [
+			group(MemberTagGroup::Tag, &[("deprecated", 50), ("hidden", 40)]),
+			group(MemberTagGroup::Capability, &[("basic", 9), ("ui", 3)]),
+			group(MemberTagGroup::Other, &[("load-only", 2)]),
+		];
+		let page = [
+			group(MemberTagGroup::Tag, &[("hidden", 4)]),
+			group(MemberTagGroup::Capability, &[("ui", 1)]),
+		];
+		assert_eq!(
+			with_all_tags(&page, &all),
+			[
+				group(MemberTagGroup::Tag, &[("deprecated", 0), ("hidden", 4)]),
+				group(MemberTagGroup::Capability, &[("ui", 1)]),
+				group(MemberTagGroup::Other, &[("load-only", 0)]),
+			]
+		);
+		assert_eq!(
+			with_all_tags(&[], &all),
+			[
+				group(MemberTagGroup::Tag, &[("deprecated", 0), ("hidden", 0)]),
+				group(MemberTagGroup::Other, &[("load-only", 0)]),
+			]
+		);
 	}
 }

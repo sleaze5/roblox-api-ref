@@ -311,7 +311,7 @@ fn filter_menu(cx: &Context, groups: &[FilterTagGroup]) -> Markup {
 					}
 				}
 			}
-			div class="flex max-h-80 flex-col gap-2 overflow-y-auto overscroll-contain p-1" {
+			div class="relative flex max-h-80 flex-col gap-2 overflow-y-auto overscroll-contain p-1" {
 				@for group in groups {
 					fieldset {
 						legend class="menu-label" { (group.title) }
@@ -321,12 +321,12 @@ fn filter_menu(cx: &Context, groups: &[FilterTagGroup]) -> Markup {
 									span aria-hidden="true" class="min-w-0 flex-1 truncate" { (tag.short_label) }
 									span class="text-xs text-fg-faint" { (tag.count) }
 									label data-tooltip="Require" class="tag-toggle" {
-										input type="checkbox" name="require" value=(tag.key) class="sr-only";
+										input type="checkbox" name="require" value=(tag.key) disabled[tag.count == 0] class="sr-only";
 										span class="sr-only" { "Require " (tag.label) }
 										(icon(cx, Icon::CheckCircle, IconSize::S16, ""))
 									}
 									label data-tooltip="Exclude" class="tag-toggle tag-toggle-exclude" {
-										input type="checkbox" name="exclude" value=(tag.key) class="sr-only";
+										input type="checkbox" name="exclude" value=(tag.key) disabled[tag.count == 0] class="sr-only";
 										span class="sr-only" { "Exclude " (tag.label) }
 										(icon(cx, Icon::Prohibit, IconSize::S16, ""))
 									}

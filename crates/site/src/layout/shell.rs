@@ -27,6 +27,8 @@ const SECTION_LINKS: [(Section, &str, &str); 5] = [
 	(Section::Stats, "Statistics", STATS),
 ];
 
+const HOME_LINK: (Section, &str, &str) = (Section::Home, "Home", HOME);
+
 const DRAWER_CLASS: &str = "fixed inset-y-0 left-0 m-0 motion-drawer h-dvh w-sidebar max-w-drawer overflow-x-hidden overflow-y-auto overscroll-contain border-r border-line bg-surface p-3 text-sm text-fg";
 
 const SCROLL_TO_CURRENT: &str = "{const n=document.getElementById('sidebar'),c=n&&n.querySelector('[data-tree] [aria-current=page]');if(c)n.scrollTop=c.getBoundingClientRect().top-n.getBoundingClientRect().top-n.clientHeight/3}";
@@ -127,7 +129,7 @@ fn header(cx: &Context, section: Option<Section>) -> Markup {
 fn drawer_sections(section: Option<Section>) -> Markup {
 	html! {
 		ul aria-label="Sections" class="mb-3 flex flex-col border-b border-line pb-3 md:hidden" {
-			@for (link, label, href) in SECTION_LINKS {
+			@for (link, label, href) in std::iter::once(HOME_LINK).chain(SECTION_LINKS) {
 				li {
 					a href=(href) aria-current=[current(section, link)]
 						class=(classes(&["flex h-10 items-center rounded-sm px-2 font-medium motion-colors hover:bg-hover hover:text-fg", if section == Some(link) { "bg-active text-fg-bright" } else { "text-fg-muted" }])) {
