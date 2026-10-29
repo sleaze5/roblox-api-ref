@@ -79,8 +79,13 @@ pub fn members_of_kind(members: &[Member], kind: MemberKind) -> Vec<&Member> {
 }
 
 pub fn property_groups(members: &[Member]) -> Vec<(String, Vec<&Member>)> {
+	category_groups(members_of_kind(members, MemberKind::Property))
+}
+
+/// Groups sorted properties by category, with the categories sorted by name.
+pub fn category_groups<'a>(properties: Vec<&'a Member>) -> Vec<(String, Vec<&'a Member>)> {
 	let mut groups: IndexMap<String, Vec<&Member>> = IndexMap::new();
-	for member in members_of_kind(members, MemberKind::Property) {
+	for member in properties {
 		let category = match &member.detail {
 			MemberDetail::Property { category, .. } => category.clone(),
 			_ => String::new(),

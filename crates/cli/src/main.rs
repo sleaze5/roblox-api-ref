@@ -70,6 +70,60 @@ fn generate(paths: &Paths) -> Result<(), String> {
 	Ok(())
 }
 
+fn site_context(paths: &Paths, sprite: String) -> Result<rapi_site::Context, String> {
+	let site = generate_site(paths)?;
+	Ok(rapi_site::Context::new(
+		site.api,
+		site.updates,
+		site.stats,
+		site.slugs,
+		sprite,
+		rapi_site::context::site_origin(),
+	))
+}
+
+/// Prerenders every page into Vite's output directory.
+fn render(paths: &Paths, args: &[String]) -> Result<(), String> {
+	let start = Instant::now();
+	let mut dist = paths.root.join("dist");
+	let mut routes = Vec::new();
+	let mut args = args.iter();
+	while let Some(arg) = args.next() {
+		if arg == "--dist" {
+			dist = args
+				.next()
+				.map(PathBuf::from)
+				.ok_or("--dist needs a directory")?;
+		} else {
+			routes.push(arg.clone());
+		}
+	}
+	let manifest_file = dist.join(".vite").join("manifest.json");
+	let manifest: serde_json::Value = serde_json::from_slice(
+		&std::fs::read(&manifest_file)
+			.map_err(|error| format!("{}: {error}", manifest_file.display()))?,
+	)
+	.map_err(|error| format!("{}: {error}", manifest_file.display()))?;
+	let sprite = rapi_site::build::sprite_url(&manifest).ok_or_else(|| {
+		format!(
+			"{} does not list {}.",
+			manifest_file.display(),
+			rapi_site::build::SPRITE_SOURCE
+		)
+	})?;
+	let cx = site_context(paths, sprite)?;
+	let count = rapi_site::build::write_site(
+		&cx,
+		&dist,
+		(!routes.is_empty()).then_some(routes.as_slice()),
+	)?;
+	println!(
+		"Prerendered and minified {count} pages in {}ms.",
+		start.elapsed().as_millis()
+	);
+	Ok(())
+}
+
 fn emit_json(paths: &Paths, out: &Path) -> Result<(), String> {
 	let start = Instant::now();
 	let site = generate_site(paths)?;
@@ -217,6 +271,7 @@ fn run(args: &[String]) -> Result<(), String> {
 	let paths = Paths::new(std::env::current_dir().map_err(|error| error.to_string())?);
 	match args.first().map(String::as_str) {
 		Some("gen") => generate(&paths),
+		Some("render") => render(&paths, &args[1..]),
 		Some("emit-json") => {
 			let out = args
 				.get(1)
