@@ -27,6 +27,9 @@ export function pages(): Plugin {
 							throw new Error("The client environment is required.")
 						}
 						await builder.build(client)
+						if (process.env["RAPI_RENDER"] === "0") {
+							return
+						}
 						const outDir = resolve(root, client.config.build.outDir)
 						await runRapi(root, ["render", "--dist", outDir])
 						await rm(join(outDir, ".vite"), {

@@ -40,7 +40,7 @@ Tasks are defined in `run.tasks` in `vite.config.ts`. Vite+ runs the tasks in `d
 - `format:check` and `format:fix` run `cargo fmt` and `bun fmt` with the `fmt` options in `vite.config.ts`. `clippy` runs Clippy with every warning as an error. `check` runs `format:check`, `clippy`, then `vp check --no-fmt`.
 - `test` runs the Rust tests in the release profile, then Vitest. The Rust integration tests in `crates/core/tests` and `crates/site/tests` generate and render the site from `data/` and `diffs/`.
 - `test:browser` runs the Playwright tests in `tests/browser` against `dist/` through the preview server. Build first. It also checks that every class in the built pages and the client scripts has CSS rules, which replaces a Tailwind class lint.
-- `bench` measures generation, rendering, search, sizes, and memory.
+- `bench` runs `scripts/bench.ts`, which measures generation, the client build, prerendering, search and filter latency in WebAssembly, payload sizes, and peak memory. It builds the client into `node_modules/.cache/bench-dist` with `RAPI_RENDER=0`, which makes the `pages` plugin skip prerendering, then times `cargo rapi render` on its own.
 - `fix` runs `lint:fix`, `format:fix`, and `check`, in that order.
 - `ci` runs `check`, `test`, and a build. It never changes files.
 
