@@ -9,14 +9,9 @@ function isPageRequest(url: string, accept: string | undefined): boolean {
 	return (accept?.includes("text/html") ?? false) && !/\.[a-z0-9]+$/i.test(path)
 }
 
-/** Files whose change means the dev server must reload the site data or renderer. */
 const rendererInputs =
 	/(^|[\\/])(crates[\\/].*\.rs|roblox-versions\.json|data[\\/]|diffs[\\/])/
 
-/**
- * Prerenders every page with the Rust renderer after the client build, and
- * renders pages on request on the dev server.
- */
 export function pages(): Plugin {
 	let root = process.cwd()
 	return {

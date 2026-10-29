@@ -1,5 +1,3 @@
-//! The Classes, Enums, and Index pages and their lists.
-
 use std::collections::HashSet;
 
 use maud::{Markup, html};

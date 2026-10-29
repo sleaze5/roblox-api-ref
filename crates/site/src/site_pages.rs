@@ -1,5 +1,3 @@
-//! The About, Contact, and Privacy pages.
-
 use rapi_core::api::release::release_text;
 use rapi_core::icons::Icon;
 use rapi_routes::{ABOUT, CLASSES, CONTACT, ENUMS, LLMS_TXT, PRIVACY, UPDATES};

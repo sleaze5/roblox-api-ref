@@ -1,5 +1,3 @@
-//! Signatures and marks for added, removed, and changed items.
-
 use maud::{Markup, html};
 use rapi_core::api::code::{CodeToken, CodeTone, linked_token, token, unlinked};
 use rapi_core::api::signature::{SignatureParts, inline_tokens, signature_parts};
@@ -28,7 +26,6 @@ pub fn change_mark(status: Option<ChangeStatus>, label: Option<&str>) -> Markup 
 	}
 }
 
-/// An item whose signature can show in a change list.
 #[derive(Clone, Copy)]
 pub enum ChangedValue<'a> {
 	Member(&'a Member),
@@ -64,7 +61,6 @@ fn enum_item_parts(owner: &str, item: &EnumItem) -> SignatureParts {
 	}
 }
 
-/// Drops the links to pages that no longer exist.
 fn live_tokens(cx: &Context, tokens: &[CodeToken]) -> Vec<CodeToken> {
 	let links = cx.site_links();
 	tokens

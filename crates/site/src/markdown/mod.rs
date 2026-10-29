@@ -1,5 +1,3 @@
-//! The Markdown version of every page.
-
 mod doc;
 pub mod items;
 pub mod lists;

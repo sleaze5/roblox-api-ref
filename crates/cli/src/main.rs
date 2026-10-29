@@ -22,8 +22,6 @@ fn now_millis() -> i64 {
 		})
 }
 
-/// Writes everything the client bundle and the edge middleware import from
-/// `src/generated`.
 fn generate(paths: &Paths) -> Result<(), String> {
 	let start = Instant::now();
 	let out = paths.generated();
@@ -93,7 +91,6 @@ fn site_context(paths: &Paths, sprite: String) -> Result<rapi_site::Context, Str
 	))
 }
 
-/// Prerenders every page into Vite's output directory.
 fn render(paths: &Paths, args: &[String]) -> Result<(), String> {
 	let start = Instant::now();
 	let mut dist = paths.root.join("dist");
@@ -135,9 +132,6 @@ fn render(paths: &Paths, args: &[String]) -> Result<(), String> {
 	Ok(())
 }
 
-/// Serves pages to the Vite dev server: one JSON request per line on stdin,
-/// `{"path", "template"}`, and one JSON response per line on stdout,
-/// `{"status", "html"}`.
 fn dev(paths: &Paths) -> Result<(), String> {
 	use std::io::{BufRead, Write};
 
@@ -172,7 +166,6 @@ Commands:
                        Prerender pages into Vite's output directory
   dev                  Serve pages to the Vite dev server over stdin and stdout";
 
-/// The project root: the nearest directory, from here up, with `roblox-versions.json`.
 fn project_root() -> Result<PathBuf, String> {
 	let current = std::env::current_dir().map_err(|error| error.to_string())?;
 	current

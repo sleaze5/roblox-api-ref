@@ -1,5 +1,3 @@
-//! Syntax-colored code, with links.
-
 use maud::{Markup, html};
 use rapi_core::api::code::{CodeToken, CodeTone};
 
@@ -21,7 +19,6 @@ struct Run<'a> {
 	tokens: Vec<CodeToken>,
 }
 
-/// Joins neighbors that look the same, unless the next one has a swatch.
 fn merge_tones(tokens: Vec<CodeToken>) -> Vec<CodeToken> {
 	let mut merged: Vec<CodeToken> = Vec::with_capacity(tokens.len());
 	for part in tokens {
@@ -37,7 +34,6 @@ fn merge_tones(tokens: Vec<CodeToken>) -> Vec<CodeToken> {
 	merged
 }
 
-/// Groups neighbors that link to the same place.
 fn runs_of(tokens: &[CodeToken]) -> Vec<Run<'_>> {
 	let mut runs: Vec<Run> = Vec::new();
 	for part in tokens {

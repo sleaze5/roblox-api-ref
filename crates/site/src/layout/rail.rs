@@ -43,7 +43,6 @@ impl RailLink {
 	}
 }
 
-/// The "On this page" navigation.
 pub fn page_rail(links: &[RailLink]) -> Markup {
 	html! {
 		nav data-rail="" aria-labelledby="rail-title" class="flex flex-col gap-1" {

@@ -4,7 +4,6 @@ import type { Readable, Writable } from "node:stream"
 
 type DevProcess = ChildProcessByStdio<Writable, Readable, null>
 
-/** Runs a command of the `rapi` binary through Cargo, and fails when it fails. */
 export function runRapi(root: string, args: string[]): Promise<void> {
 	return new Promise((resolve, reject) => {
 		const child = spawn("cargo", ["rapi", ...args], { cwd: root, stdio: "inherit" })
@@ -24,10 +23,6 @@ export type DevPage = {
 	html: string
 }
 
-/**
- * A long-lived `rapi dev` process that renders pages for the dev server, so
- * the site data loads once rather than on every request.
- */
 export class DevRenderer {
 	readonly #root: string
 	#child: DevProcess | undefined
@@ -57,7 +52,6 @@ export class DevRenderer {
 		return child
 	}
 
-	/** Renders one page; requests run one at a time, in order. */
 	render(path: string, template: string): Promise<DevPage> {
 		const next = this.#queue.then(
 			() =>
@@ -71,7 +65,6 @@ export class DevRenderer {
 		return next
 	}
 
-	/** Stops the process, so that the next request loads fresh code and data. */
 	restart(): void {
 		this.#child?.kill()
 		this.#child = undefined

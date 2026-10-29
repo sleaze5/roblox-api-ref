@@ -1,5 +1,3 @@
-//! Renders every page of the site, with its Markdown version and site files.
-
 pub mod build;
 pub mod components;
 pub mod context;
@@ -70,7 +68,6 @@ pub fn render_page(cx: &Context, path: &str) -> RenderedPage {
 	}
 }
 
-/// Every page path with the path of its Markdown version, for the edge tests.
 pub fn page_index(cx: &Context) -> Vec<(String, String)> {
 	routes::route_paths(cx)
 		.into_iter()

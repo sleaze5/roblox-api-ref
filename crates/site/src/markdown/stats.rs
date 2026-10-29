@@ -1,5 +1,3 @@
-//! The Markdown page of statistics.
-
 use rapi_core::api::access::access_tier_label;
 use rapi_core::api::stat_ref::stat_ref_label;
 use rapi_core::api::stats_text::{

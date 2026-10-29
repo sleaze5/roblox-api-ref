@@ -1,5 +1,3 @@
-//! Builds the search engine for the browser with Cargo and wasm-bindgen.
-
 use std::path::Path;
 use std::process::Command;
 

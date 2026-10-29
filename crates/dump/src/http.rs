@@ -1,5 +1,3 @@
-//! HTTP requests to Roblox's CDN and APIs.
-
 use reqwest::header::{ACCEPT_RANGES, CONTENT_LENGTH, LAST_MODIFIED, RANGE};
 use reqwest::{Client, StatusCode};
 
@@ -36,7 +34,6 @@ pub async fn get_json(client: &Client, url: &str) -> Result<serde_json::Value> {
 		.map_err(|error| format!("{url}: {error}"))
 }
 
-/// When the server last changed `url`, in milliseconds since the epoch.
 pub async fn last_modified(client: &Client, url: &str) -> Option<i64> {
 	let response = client.head(url).send().await.ok()?;
 	if !response.status().is_success() {

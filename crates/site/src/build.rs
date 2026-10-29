@@ -1,5 +1,3 @@
-//! Writes the prerendered site into Vite's output directory.
-
 use std::path::{Path, PathBuf};
 
 use rapi_routes::decode_uri_component;
@@ -12,13 +10,10 @@ use crate::render_page;
 use crate::routes::route_paths;
 use crate::template::{fill_template, minify, prepare_template};
 
-/// The source path of the icon sprite, as Vite's manifest names it.
 pub const SPRITE_SOURCE: &str = "src/generated/icons.svg";
 
-/// The URL of the icon sprite on the Vite dev server.
 pub const DEV_SPRITE: &str = "/src/generated/icons.svg";
 
-/// The public URL of the icon sprite in a Vite manifest.
 pub fn sprite_url(manifest: &serde_json::Value) -> Option<String> {
 	let file = manifest.get(SPRITE_SOURCE)?.get("file")?.as_str()?;
 	Some(format!("/{file}"))
@@ -76,7 +71,6 @@ pub fn opensearch_xml(cx: &Context) -> String {
 	)
 }
 
-/// Renders every route into `out_dir`, replacing the template at `out_dir/index.html`.
 pub fn write_site(
 	cx: &Context,
 	out_dir: &Path,

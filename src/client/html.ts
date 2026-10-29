@@ -5,7 +5,6 @@ const entities: Record<string, string> = {
 	'"': "&quot;",
 }
 
-/** Escapes text for HTML content and double-quoted attribute values. */
 export function escapeHtml(text: string): string {
 	return text.replaceAll(/[&<>"]/g, (character) => entities[character] ?? character)
 }

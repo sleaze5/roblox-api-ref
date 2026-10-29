@@ -1,6 +1,3 @@
-//! Renders the site from the downloaded API files and checks its pages, head
-//! tags, Markdown, and feeds. Run `bun vp run dump` first.
-
 use std::collections::HashSet;
 use std::path::Path;
 use std::sync::LazyLock;

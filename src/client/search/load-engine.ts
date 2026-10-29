@@ -11,7 +11,6 @@ async function fetchIndex(): Promise<Uint8Array> {
 	return new Uint8Array(await response.arrayBuffer())
 }
 
-/** Downloads the search index and the engine in parallel, once. */
 export function loadEngine(): Promise<Search> {
 	pending ??= Promise.all([
 		import("./search-module.ts").then((module) => module.loadSearchModule()),

@@ -1,5 +1,3 @@
-//! Descriptions as Markdown.
-
 use rapi_core::js::js_trim;
 use rapi_core::model::{Doc, DocElement, DocLink, DocNode, DocTag, doc_text};
 
@@ -69,7 +67,6 @@ fn nodes_markdown(cx: &Context, nodes: &[DocNode]) -> String {
 		.collect()
 }
 
-/// Drops spaces and tabs before each line break, and keeps at most one blank line.
 fn tidy(text: &str) -> String {
 	let mut lines: Vec<&str> = Vec::new();
 	for line in text.split('\n') {

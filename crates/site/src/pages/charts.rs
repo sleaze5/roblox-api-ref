@@ -1,5 +1,3 @@
-//! SVG charts for the Statistics page.
-
 use maud::{Markup, html};
 use rapi_core::js::{js_number, js_round};
 

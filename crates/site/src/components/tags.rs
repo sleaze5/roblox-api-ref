@@ -30,7 +30,6 @@ pub fn tag_list(tags: &[DisplayTag], class: &str) -> Markup {
 	}
 }
 
-/// Adds when the item was deprecated to its Deprecated tag.
 pub fn dated_tags(tags: Vec<DisplayTag>, history: Option<&ItemHistory>) -> Vec<DisplayTag> {
 	let deprecated = history.and_then(|history| history.deprecated.as_ref());
 	tags.into_iter()

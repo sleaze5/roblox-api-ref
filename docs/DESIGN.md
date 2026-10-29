@@ -119,8 +119,8 @@ Use this scale. Do not use other sizes.
 ## Icons
 
 - Use Phosphor icons in the `regular` weight. Icons are white or gray: they take the text color of their element through `currentColor`.
-- Add an icon name to `src/components/icon-names.ts`. The `gen` task builds `src/generated/icons.svg`, a sprite that `Icon` and `SpriteIcon` reference with `<use>`.
-- For an icon that repeats on many rows, such as tree nodes and member actions, add the name to `maskIconNames` and draw it as a CSS mask. A mask adds no markup to each row.
+- Add an icon to the `Icon` enum and to `Icon::ALL` in `crates/core/src/icons.rs`. The `gen` task builds `src/generated/icons.svg`, a sprite that the `icon` and `sprite_icon` helpers in `crates/site/src/html.rs` reference with `<use>`. The search dialog references the same sprite.
+- For an icon that repeats on many rows, such as tree nodes and member actions, also add it to `Icon::MASKS` and draw it as a CSS mask. A mask adds no markup to each row.
 - Use 16px icons by default, 14px icons next to 12px and 13px text, and 20px icons in section headings.
 - Use one icon for one meaning, in every place:
 

@@ -1,14 +1,9 @@
-//! Reads selected entries of a remote zip archive with HTTP range requests,
-//! so that a 100 MB archive costs only the bytes of the files it needs.
-
 use std::io::Read;
 
 pub type Result<T> = std::result::Result<T, String>;
 
-/// Reads byte ranges of a file that is too big to download whole.
 pub trait RangeReader: Sync {
 	fn size(&self) -> u64;
-	/// Reads `start..end`.
 	fn read(&self, start: u64, end: u64) -> impl Future<Output = Result<Vec<u8>>> + Send;
 }
 
@@ -29,7 +24,6 @@ impl RangeReader for MemoryReader {
 	}
 }
 
-/// A range that was read once and serves the reads inside it.
 struct Window<'a, R: RangeReader> {
 	reader: &'a R,
 	start: u64,
@@ -81,7 +75,6 @@ fn u32_at(bytes: &[u8], at: usize) -> u32 {
 	u32::from_le_bytes([bytes[at], bytes[at + 1], bytes[at + 2], bytes[at + 3]])
 }
 
-/// Every entry in the archive's central directory.
 pub async fn read_entries(reader: &impl RangeReader) -> Result<Vec<ZipEntry>> {
 	let size = reader.size();
 	let tail_size = size.min(END_RECORD_SIZE as u64 + MAX_COMMENT_SIZE);
@@ -129,7 +122,6 @@ pub async fn read_entries(reader: &impl RangeReader) -> Result<Vec<ZipEntry>> {
 	Ok(entries)
 }
 
-/// The uncompressed bytes of an entry, checked against its size and CRC.
 pub async fn read_entry_data(reader: &impl RangeReader, entry: &ZipEntry) -> Result<Vec<u8>> {
 	if entry.encrypted {
 		return Err(format!("{} is encrypted.", entry.name));
@@ -168,7 +160,6 @@ pub async fn read_entry_data(reader: &impl RangeReader, entry: &ZipEntry) -> Res
 	Ok(bytes)
 }
 
-/// The bytes of the entry called `name`.
 pub async fn extract_entry(reader: &impl RangeReader, name: &str) -> Result<Vec<u8>> {
 	let entries = read_entries(reader).await?;
 	let entry = entries
@@ -178,8 +169,6 @@ pub async fn extract_entry(reader: &impl RangeReader, name: &str) -> Result<Vec<
 	read_entry_data(reader, entry).await
 }
 
-/// The bytes of every selected entry. Entries that sit close together come
-/// from one range request.
 pub async fn extract_entries<R: RangeReader>(
 	reader: &R,
 	select: impl Fn(&str) -> bool,
@@ -229,7 +218,6 @@ pub mod tests {
 
 	use super::*;
 
-	/// Builds a zip archive with stored or deflated entries.
 	pub fn build_zip(files: &[(&str, &str, bool)], comment: &str) -> Vec<u8> {
 		let mut locals = Vec::new();
 		let mut central = Vec::new();

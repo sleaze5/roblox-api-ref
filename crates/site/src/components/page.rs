@@ -46,7 +46,6 @@ pub fn index_crumbs() -> Vec<Crumb> {
 	vec![crumb("Home", HOME), crumb("Index", INDEX)]
 }
 
-/// The crumbs of a page in an index group: data types or one kind of facet.
 pub fn index_group_crumbs(group: Option<rapi_routes::FacetKind>) -> Vec<Crumb> {
 	let mut crumbs = index_crumbs();
 	crumbs.push(match group {

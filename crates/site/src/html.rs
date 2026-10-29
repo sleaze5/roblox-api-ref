@@ -1,11 +1,8 @@
-//! Small helpers shared by the page templates.
-
 use maud::{Markup, html};
 use rapi_core::icons::Icon;
 
 use crate::context::Context;
 
-/// Joins the non-empty class names with spaces, like a Solid class array.
 pub fn classes(parts: &[&str]) -> String {
 	let mut joined = String::new();
 	for part in parts.iter().filter(|part| !part.is_empty()) {
@@ -20,7 +17,6 @@ pub fn classes(parts: &[&str]) -> String {
 pub const EXTERNAL_TARGET: &str = "_blank";
 pub const EXTERNAL_REL: &str = "external noopener noreferrer";
 
-/// The icon sizes that the design uses, in pixels.
 #[derive(Clone, Copy)]
 pub enum IconSize {
 	S14,
@@ -40,7 +36,6 @@ impl IconSize {
 	}
 }
 
-/// An icon from the sprite, sized with a design token.
 pub fn icon(cx: &Context, name: Icon, size: IconSize, class: &str) -> Markup {
 	html! {
 		svg class=(classes(&["shrink-0", size.class(), class])) aria-hidden="true" {
@@ -49,7 +44,6 @@ pub fn icon(cx: &Context, name: Icon, size: IconSize, class: &str) -> Markup {
 	}
 }
 
-/// An icon from the sprite whose size comes from `class`.
 pub fn sprite_icon(cx: &Context, name: Icon, class: &str) -> Markup {
 	html! {
 		svg class=(class) aria-hidden="true" {

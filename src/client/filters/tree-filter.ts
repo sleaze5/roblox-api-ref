@@ -45,9 +45,7 @@ function collectNames(node: TreeNode, names: string[]): string[] {
 
 export type TreeFilter = {
 	total: number
-	/** Every name that {@link TreeFilter.apply} tests. */
 	names: string[]
-	/** Shows the rows that match, and returns how many match. */
 	apply: (match: NameMatch, text: string) => number
 }
 

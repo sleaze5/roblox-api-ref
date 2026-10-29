@@ -5,7 +5,6 @@ import { describe, expect, test } from "bun:test"
 const root = join(import.meta.dir, "..", "..")
 const dist = join(root, "dist")
 
-/** Classes that mark a group for Tailwind variants and have no rules of their own. */
 const markers = new Set(["group/rail"])
 
 function files(dir: string, extension: string): string[] {

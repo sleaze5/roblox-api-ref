@@ -23,7 +23,6 @@ export type ViewRemoved = [
 	href: string,
 ]
 
-/** What the engine returns for a query; see `render_view` in crates/search. */
 export type SearchView = {
 	u: ViewUpdate[]
 	g: ViewGroup[]
@@ -54,7 +53,6 @@ export function optionId(index: number): string {
 	return `${optionPrefix}${index}`
 }
 
-/** The index of an option from its id, or -1. */
 export function optionIndex(id: string): number {
 	const index = id.startsWith(optionPrefix)
 		? Number(id.slice(optionPrefix.length))
@@ -62,7 +60,6 @@ export function optionIndex(id: string): number {
 	return Number.isInteger(index) ? index : -1
 }
 
-/** The link of every option, in the order the dialog numbers them. */
 export function optionHrefs(view: SearchView): string[] {
 	return [
 		...view.u.map((update) => update[3]),
@@ -71,7 +68,6 @@ export function optionHrefs(view: SearchView): string[] {
 	]
 }
 
-/** The completion text that follows what the user typed, if any. */
 export function ghostText(view: SearchView, query: string): string {
 	const completion = view.c
 	return completion !== null &&
@@ -153,7 +149,6 @@ function removedOption(entry: ViewRemoved, index: number): string {
 	)
 }
 
-/** The listbox of results, numbered updates first, then API items, then removed items. */
 export function resultsHtml(view: SearchView, sprite: string): string {
 	let index = 0
 	let html = ""
@@ -199,7 +194,6 @@ const examples: [query: string, description: string][] = [
 	['"Name"', "Exact names only"],
 ]
 
-/** The search syntax examples, each a button that fills in its query. */
 export function helpHtml(latestUpload: string | undefined): string {
 	const all =
 		latestUpload === undefined

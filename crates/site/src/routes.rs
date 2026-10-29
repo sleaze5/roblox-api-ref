@@ -1,5 +1,3 @@
-//! The site's URLs and the pages they show.
-
 use rapi_core::model::{Class, DataType, Enum, Facet, Update};
 use rapi_routes::{FACET_KINDS, FacetKind, decode_uri_component, encode_uri_component};
 
@@ -48,7 +46,6 @@ const TOP_PAGES: [(&str, Route<'static>); 8] = [
 	("privacy", Route::Site(SitePageName::Privacy)),
 ];
 
-/// Every page path that the build writes, in the order the old build used.
 pub fn route_paths(cx: &Context) -> Vec<String> {
 	let api = &cx.api;
 	let mut paths = vec!["/".to_owned()];

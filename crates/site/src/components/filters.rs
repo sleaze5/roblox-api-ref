@@ -4,7 +4,6 @@ use rapi_core::icons::Icon;
 use crate::context::Context;
 use crate::html::{IconSize, classes, icon};
 
-/// A search field for a filter form, with an optional match count.
 pub fn filter_field(
 	cx: &Context,
 	label: &str,
@@ -42,7 +41,6 @@ impl ListFilterPlacement {
 	}
 }
 
-/// A form that filters the list with id `target` by name.
 pub fn list_filter(
 	cx: &Context,
 	label: &str,

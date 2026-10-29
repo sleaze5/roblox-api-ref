@@ -1,5 +1,3 @@
-//! Member cards, grouped by kind and owner, with their filters.
-
 use maud::{Markup, html};
 use rapi_core::api::code::{text_length, unlinked};
 use rapi_core::api::docs_links::class_docs_href;

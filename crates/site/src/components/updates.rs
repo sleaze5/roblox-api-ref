@@ -1,5 +1,3 @@
-//! The change lists of an update.
-
 use maud::{Markup, html};
 use rapi_core::api::signature::SignatureParts;
 use rapi_core::api::tags::{DisplayTag, member_tags, plain_tags};

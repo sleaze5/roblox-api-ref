@@ -8,7 +8,6 @@ export type SearchModule = {
 
 let pending: Promise<SearchModule> | undefined
 
-/** Loads and instantiates the search engine's WebAssembly module once. */
 export function loadSearchModule(): Promise<SearchModule> {
 	pending ??= init({ module_or_path: wasmUrl }).then(() => ({ Matcher, Search }))
 	return pending

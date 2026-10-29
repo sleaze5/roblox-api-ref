@@ -1,5 +1,3 @@
-//! Titles, breadcrumbs, and schema.org types for each route.
-
 use rapi_core::api::facets::{facet_label, facet_title};
 use rapi_routes::{
 	CLASSES, ENUMS, HOME, INDEX, REMOVED, STATS, TYPES, UPDATES, class_href, enum_href,

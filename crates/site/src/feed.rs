@@ -1,5 +1,3 @@
-//! The Atom feed of the newest updates.
-
 use std::fmt::Write as _;
 
 use rapi_core::api::release::release_name;

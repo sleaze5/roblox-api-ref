@@ -1,5 +1,3 @@
-//! The members that use a class, enum, or data type.
-
 use maud::{Markup, html};
 use rapi_core::icons::Icon;
 use rapi_core::js::compare_names;

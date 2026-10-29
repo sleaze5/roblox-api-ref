@@ -1,5 +1,3 @@
-//! The Markdown lists, the site pages, `llms.txt`, and the 404 page.
-
 use rapi_core::api::facets::{
 	INDEX_DESCRIPTION, facet_index_description, facet_title, sorted_facets,
 };

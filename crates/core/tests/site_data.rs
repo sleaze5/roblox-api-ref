@@ -1,6 +1,3 @@
-//! Checks the generated site data against the downloaded API files and the
-//! recorded diffs. Run `bun vp run dump` first.
-
 use std::path::Path;
 use std::sync::LazyLock;
 

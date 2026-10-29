@@ -1,5 +1,3 @@
-//! The Index sidebar and the lists of what uses a facet.
-
 use maud::{Markup, html};
 use rapi_core::api::facets::{
 	facet_title, sorted_facets, use_href, use_kind_title, use_parts, use_section_id, use_text,
@@ -54,7 +52,6 @@ pub const fn use_kind_icon(kind: UseKind) -> Icon {
 	}
 }
 
-/// A group of the Index sidebar: data types, one kind of facet, or removed items.
 #[derive(Clone, Copy, PartialEq, Eq)]
 pub enum IndexGroup {
 	Type,

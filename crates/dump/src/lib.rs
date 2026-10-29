@@ -1,5 +1,3 @@
-//! Downloads Roblox's API files and records what each new Studio build changed.
-
 pub mod diff;
 mod http;
 pub mod zip;
@@ -35,14 +33,12 @@ pub fn studio_icons_url(hash: &str) -> String {
 	format!("{CDN}/version-{hash}-content-studio_svg_textures.zip")
 }
 
-/// A Studio build: its version and upload hash.
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub struct StudioBuild {
 	pub version: String,
 	pub hash: String,
 }
 
-/// The 16 hex digits of an upload name such as `version-0123456789abcdef`.
 pub fn upload_hash(upload: &str) -> Option<&str> {
 	upload.strip_prefix("version-").filter(|hash| {
 		hash.len() == 16
@@ -52,7 +48,6 @@ pub fn upload_hash(upload: &str) -> Option<&str> {
 	})
 }
 
-/// The builds in a version history, oldest first.
 pub fn parse_studio_builds(history: &Value) -> Vec<StudioBuild> {
 	let mut builds: Vec<StudioBuild> = history
 		.as_object()
@@ -70,7 +65,6 @@ pub fn parse_studio_builds(history: &Value) -> Vec<StudioBuild> {
 	builds
 }
 
-/// The newest build older than `build`.
 pub fn build_before<'a>(builds: &'a [StudioBuild], build: &StudioBuild) -> Option<&'a StudioBuild> {
 	builds
 		.iter()
@@ -116,7 +110,6 @@ impl DataFile {
 	}
 }
 
-/// The class name of a dark, triple-resolution Studio class icon.
 fn icon_class(name: &str) -> Option<&str> {
 	let class = name
 		.strip_prefix("Shared\\InsertableObjects\\Dark\\Standard\\")?
@@ -141,7 +134,6 @@ async fn download_studio_icons(client: &Client, hash: &str) -> Result<Vec<u8>> {
 	Ok(Value::Object(icons).to_string().into_bytes())
 }
 
-/// Writes a file so that it never exists half-written.
 async fn save_file(path: &Path, bytes: &[u8]) -> Result<()> {
 	let partial = path.with_extension("partial");
 	tokio::fs::write(&partial, bytes)
@@ -188,7 +180,6 @@ fn runtime() -> Result<tokio::runtime::Runtime> {
 		.map_err(|error| error.to_string())
 }
 
-/// Downloads the API files of the current version, and deletes older ones.
 pub fn download(paths: &Paths) -> Result<()> {
 	let version = current_version(paths)?;
 	let data_dir = paths.data();
@@ -245,7 +236,6 @@ async fn fetch_live_version(client: &Client) -> Result<StudioBuild> {
 	})
 }
 
-/// When Roblox published a build's API files: the later of their two dates.
 async fn published_date(client: &Client, hash: &str) -> Option<String> {
 	let (dump_url, docs_url) = (api_dump_url(hash), api_docs_url(hash));
 	let (dump, docs) = tokio::join!(
@@ -281,7 +271,6 @@ async fn read_documented(
 	Ok((dump, docs))
 }
 
-/// The diff between two versions, as the update pages read it.
 pub fn build_diff(
 	from: &RobloxVersion,
 	to: &RobloxVersion,
@@ -377,7 +366,6 @@ async fn update_to(
 	Ok(())
 }
 
-/// Moves to the newest LIVE Studio build when it is newer, and records its diff.
 pub fn update(paths: &Paths) -> Result<()> {
 	runtime()?.block_on(async {
 		let client = client()?;
@@ -403,7 +391,6 @@ pub fn update(paths: &Paths) -> Result<()> {
 	})
 }
 
-/// Rewrites the diff between two tracked versions from their API files.
 pub fn rediff(paths: &Paths, from: &str, to: &str) -> Result<()> {
 	let versions = read_versions(&paths.versions()).map_err(|error| error.to_string())?;
 	let find = |version: &str| {

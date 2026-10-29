@@ -1,5 +1,3 @@
-//! The Markdown pages of updates.
-
 use rapi_core::api::release::release_text;
 use rapi_core::api::tags::{member_tags, plain_tags};
 use rapi_core::api::text::{UPDATES_LEAD, update_summary};

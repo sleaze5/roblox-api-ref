@@ -1,5 +1,3 @@
-//! Everything a page needs to render.
-
 use std::collections::HashSet;
 use std::fmt::Write as _;
 use std::sync::OnceLock;
@@ -13,9 +11,7 @@ pub struct Context {
 	pub updates: Vec<Update>,
 	pub stats: Stats,
 	pub slugs: FacetSlugs,
-	/// The URL of the icon sprite, without a fragment.
 	pub sprite: String,
-	/// The origin that absolute URLs use, such as `https://example.com`.
 	pub origin: String,
 	links: OnceLock<HashSet<String>>,
 }
@@ -40,7 +36,6 @@ impl Context {
 		}
 	}
 
-	/// Every page and member link that exists in the current API.
 	pub fn site_links(&self) -> &HashSet<String> {
 		self.links.get_or_init(|| {
 			let mut links = HashSet::new();
@@ -79,8 +74,6 @@ impl Context {
 	}
 }
 
-/// Resolves a root-relative path against the origin, percent-encoding it like
-/// `new URL(path, origin).href`.
 pub fn absolute_url(origin: &str, path: &str) -> String {
 	let (path, fragment) = path
 		.split_once('#')
@@ -117,7 +110,6 @@ fn encode_into(url: &mut String, part: &str, encode: impl Fn(u8) -> bool) {
 	}
 }
 
-/// The origin from `SITE_ORIGIN` or `CF_PAGES_URL`, or the dev server's.
 pub fn site_origin() -> String {
 	let configured = ["SITE_ORIGIN", "CF_PAGES_URL"]
 		.iter()

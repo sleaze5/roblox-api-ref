@@ -1,5 +1,3 @@
-//! Navigation trees of classes and of flat lists.
-
 use std::collections::HashSet;
 
 use maud::{Markup, html};

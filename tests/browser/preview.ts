@@ -27,7 +27,6 @@ async function waitForServer(attempts = 100): Promise<void> {
 	await waitForServer(attempts - 1)
 }
 
-/** Serves the built site with the same Markdown negotiation as Cloudflare. */
 export async function startPreview(): Promise<void> {
 	server = spawn("bun", ["vp", "preview", "--port", String(port), "--strictPort"], {
 		stdio: "ignore",
@@ -47,7 +46,6 @@ export async function stopPreview(): Promise<void> {
 
 export type CheckedPage = Page & { problems: string[] }
 
-/** A new page that records console errors, warnings, and uncaught exceptions. */
 export async function openPage(path: string): Promise<CheckedPage> {
 	if (browser === undefined) {
 		throw new Error("Call startPreview first.")

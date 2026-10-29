@@ -1,5 +1,3 @@
-//! Fills and minifies the HTML template that Vite builds from `index.html`.
-
 use crate::RenderedPage;
 use crate::context::Context;
 use crate::head::{escape_html, head_tags};
@@ -18,8 +16,6 @@ pub fn minify(html: &str) -> Vec<u8> {
 	minify_html::minify(html.as_bytes(), &minify_config())
 }
 
-/// Compresses and mangles a classic script, or returns it unchanged when it
-/// does not parse.
 pub fn minify_script(source: &str) -> String {
 	use oxc_minifier::{CompressOptions, MangleOptions, Minifier, MinifierOptions};
 
@@ -41,7 +37,6 @@ pub fn minify_script(source: &str) -> String {
 		.code
 }
 
-/// Minifies the template's classic inline scripts and compacts its speculation rules.
 pub fn prepare_template(template: &str) -> String {
 	let mut out = String::with_capacity(template.len());
 	let mut rest = template;

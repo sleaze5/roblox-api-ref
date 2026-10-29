@@ -1,8 +1,3 @@
-//! The changes between two API dumps, and between their descriptions.
-//!
-//! Dumps stay raw JSON so that each change keeps the dump's own fields and
-//! their order.
-
 use indexmap::{IndexMap, IndexSet};
 use rapi_core::dump::{
 	ApiDocs, ChangeElement, ChangeType, DescriptionChange, DumpChange, FieldChange,
@@ -20,7 +15,6 @@ fn list<'a>(item: &'a Value, field: &str) -> &'a [Value] {
 	item[field].as_array().map_or(&[], Vec::as_slice)
 }
 
-/// A value with its object keys sorted, so that key order does not count.
 fn canonical(value: &Value) -> Value {
 	match value {
 		Value::Array(items) => Value::Array(items.iter().map(canonical).collect()),
@@ -74,14 +68,12 @@ fn object(value: &Value) -> Map<String, Value> {
 	value.as_object().cloned().unwrap_or_default()
 }
 
-/// The item without its list of children.
 fn without(value: &Value, field: &str) -> Value {
 	let mut fields = object(value);
 	fields.shift_remove(field);
 	Value::Object(fields)
 }
 
-/// Pairs items by name: every item before, then the items that are new.
 fn pairs<'a>(
 	before: &'a [Value],
 	after: &'a [Value],
@@ -253,7 +245,6 @@ fn diff_owner(level: Level, before: Option<&Value>, after: Option<&Value>) -> Ve
 	}
 }
 
-/// Every class, member, enum, and enum item that `after` adds, removes, or changes.
 pub fn diff_dump(before: &Value, after: &Value) -> Vec<DumpChange> {
 	let mut changes = Vec::new();
 	for (previous, next) in pairs(list(before, "Classes"), list(after, "Classes")) {
@@ -423,7 +414,6 @@ impl Descriptions {
 	}
 }
 
-/// Every description that changed between two documented dumps, for the items in `after`.
 pub fn diff_descriptions(
 	before: (&Value, &ApiDocs),
 	after: (&Value, &ApiDocs),

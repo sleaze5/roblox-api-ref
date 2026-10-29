@@ -1,6 +1,3 @@
-//! Fills each filter's match count, so the count shows before scripts run.
-
-/// Counts the places where ` {name}` appears as a whole attribute name.
 fn count_attribute(html: &str, name: &str) -> usize {
 	let needle = format!(" {name}");
 	html.match_indices(&needle)
@@ -13,7 +10,6 @@ fn count_attribute(html: &str, name: &str) -> usize {
 		.count()
 }
 
-/// The value of attribute `name` in an opening tag.
 fn attribute<'a>(open: &'a str, name: &str) -> Option<&'a str> {
 	let needle = format!(" {name}=\"");
 	let start = open.find(&needle)? + needle.len();
@@ -25,7 +21,6 @@ fn has_attribute(open: &str, name: &str) -> bool {
 	count_attribute(open, name) > 0
 }
 
-/// The element with `id`, from its opening tag up to its closing tag.
 fn element_by_id<'a>(html: &'a str, id: &str) -> Option<&'a str> {
 	let needle = format!(" id=\"{id}\"");
 	let at = html.find(&needle)?;
@@ -89,7 +84,6 @@ pub fn summary_text(shown: usize, total: usize) -> String {
 	}
 }
 
-/// Puts `text` into the first empty summary output of a form.
 fn fill_summary(form: &str, text: &str) -> String {
 	let mut cursor = 0;
 	while let Some(found) = form[cursor..].find("<output") {

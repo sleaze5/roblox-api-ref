@@ -1,5 +1,3 @@
-//! The tags that each page adds to the template's `<head>`.
-
 use std::fmt::Write as _;
 
 use serde_json::{Value, json};

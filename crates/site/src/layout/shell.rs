@@ -31,7 +31,6 @@ const DRAWER_CLASS: &str = "fixed inset-y-0 left-0 m-0 motion-drawer h-dvh w-sid
 
 const SCROLL_TO_CURRENT: &str = "{const n=document.getElementById('sidebar'),c=n&&n.querySelector('[data-tree] [aria-current=page]');if(c)n.scrollTop=c.getBoundingClientRect().top-n.getBoundingClientRect().top-n.clientHeight/3}";
 
-/// The page frame: header, navigation drawer, optional sidebar and rail, and footer.
 pub struct Shell {
 	pub section: Option<Section>,
 	pub sidebar: Option<Markup>,
@@ -165,7 +164,6 @@ fn footer() -> Markup {
 	}
 }
 
-/// A sidebar with a filter above its tree.
 pub fn section_sidebar(cx: &Context, label: &str, target: &str, children: &Markup) -> Markup {
 	html! {
 		(list_filter(cx, label, target, "nav", ListFilterPlacement::Sidebar, None))

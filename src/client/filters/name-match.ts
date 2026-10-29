@@ -4,11 +4,6 @@ export type NameMatch = (name: string) => boolean
 
 const matchAll: NameMatch = () => true
 
-/**
- * Matches the names on a page against filter text with the search engine's
- * scoring, in WebAssembly. The module loads on first use, or earlier with
- * {@link NameMatcher.preload}.
- */
 export class NameMatcher {
 	readonly #indexes = new Map<string, number>()
 	#matcher: Promise<Matcher> | undefined
@@ -27,7 +22,6 @@ export class NameMatcher {
 			.then((module) => new module.Matcher([...this.#indexes.keys()].join("\n")))
 	}
 
-	/** A test for each known name; an empty query matches every name. */
 	async match(query: string): Promise<NameMatch> {
 		if (query === "") {
 			return matchAll

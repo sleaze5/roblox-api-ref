@@ -31,7 +31,6 @@ function part(root: Element, selector: string): HTMLElement {
 	return element
 }
 
-/** The search dialog: one input, and results that the WebAssembly engine computes. */
 class SearchDialog {
 	readonly dialog: HTMLDialogElement
 	readonly input: HTMLInputElement

@@ -1,5 +1,3 @@
-//! The Markdown pages of classes, enums, data types, and facets.
-
 use indexmap::IndexMap;
 use rapi_core::api::access::identities_allowing;
 use rapi_core::api::access::{access_tier_label, tier_counts};

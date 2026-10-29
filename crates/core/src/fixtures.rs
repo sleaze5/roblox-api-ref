@@ -1,5 +1,3 @@
-//! Small API values for unit tests.
-
 use crate::model::{
 	ApiType, Capabilities, Class, Member, MemberDetail, Parameter, Security, TypeCategory,
 };

@@ -1,5 +1,3 @@
-//! Descriptions from the API docs.
-
 use maud::{Markup, html};
 use rapi_core::model::{Doc, DocElement, DocLink, DocNode, DocTag};
 use rapi_routes::{MemberKind, class_href, enum_href, enum_item_href, member_href, type_href};

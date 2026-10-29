@@ -1,8 +1,5 @@
-//! Markdown building blocks.
-
 use rapi_core::js::is_js_space;
 
-/// Escapes the characters that would start Markdown syntax in plain text.
 pub fn escape_text(text: &str) -> String {
 	let mut escaped = String::with_capacity(text.len());
 	for character in text.chars() {
@@ -14,7 +11,6 @@ pub fn escape_text(text: &str) -> String {
 	escaped
 }
 
-/// A code span, fenced with more backticks than the text holds in a row.
 pub fn inline_code(text: &str) -> String {
 	let longest = text
 		.split(|character| character != '`')
@@ -33,7 +29,6 @@ pub fn link(text: &str, url: &str) -> String {
 	format!("[{text}]({})", url.replace(' ', "%20"))
 }
 
-/// Replaces each run of whitespace that holds a line break with one space.
 pub fn join_lines(text: &str) -> String {
 	let mut joined = String::with_capacity(text.len());
 	let mut chars = text.chars().peekable();
@@ -56,7 +51,6 @@ pub fn join_lines(text: &str) -> String {
 	joined
 }
 
-/// Puts Markdown on one line, and escapes the pipes that would end the cell.
 pub fn table_cell(markdown: &str) -> String {
 	join_lines(markdown).replace('|', "\\|")
 }
