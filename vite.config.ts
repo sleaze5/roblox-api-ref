@@ -172,8 +172,11 @@ export default defineConfig({
 				command: ["cargo fmt --all", "bun fmt"],
 				cache: false,
 			},
-			"clippy":
-				"cargo clippy --workspace --all-targets --quiet -- --deny warnings",
+			"clippy": {
+				command:
+					"cargo clippy --workspace --all-targets --quiet -- --deny warnings",
+				cache: false,
+			},
 			"lint:check": {
 				command: ["vp run clippy", "bun vp lint --deny-warnings"],
 			},
