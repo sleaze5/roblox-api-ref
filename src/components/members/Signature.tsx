@@ -34,7 +34,7 @@ export function Signature(props: { parts: SignatureParts }) {
 				))
 			) : (
 				<>
-					<wbr />
+					{props.parts.parameters === undefined ? null : <wbr />}
 					<InlineParameters parameters={props.parts.parameters} />
 				</>
 			)}

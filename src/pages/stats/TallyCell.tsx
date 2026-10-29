@@ -1,32 +1,17 @@
 import type { ChangeTally } from "../../api/stats-types.ts"
-
-const parts = [
-	{ key: "added", mark: "+", label: "Added", class: "text-success" },
-	{ key: "removed", mark: "−", label: "Removed", class: "text-danger" },
-	{ key: "changed", mark: "~", label: "Changed", class: "text-fg-faint" },
-] as const
+import { ChangeCounts } from "../../components/ChangeCounts.tsx"
 
 export function TallyCell(props: { tally: ChangeTally; changes?: boolean }) {
-	const shown = parts.filter(
-		(part) =>
-			props.tally[part.key] > 0 && (props.changes || part.key !== "changed"),
-	)
+	const empty =
+		props.tally.added === 0 &&
+		props.tally.removed === 0 &&
+		(!props.changes || props.tally.changed === 0)
 	return (
 		<td>
-			{shown.length === 0 ? (
+			{empty ? (
 				<span class="text-fg-faint">0</span>
 			) : (
-				<span class="flex gap-2 tabular-nums">
-					{shown.map((part) => (
-						<span>
-							<span aria-hidden="true" class={["font-mono", part.class]}>
-								{part.mark}
-							</span>
-							<span class="sr-only">{part.label} </span>
-							{props.tally[part.key]}
-						</span>
-					))}
-				</span>
+				<ChangeCounts counts={props.tally} changes={props.changes ?? false} />
 			)}
 		</td>
 	)

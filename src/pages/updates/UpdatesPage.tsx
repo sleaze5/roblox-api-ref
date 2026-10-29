@@ -10,7 +10,7 @@ import { PageRail, type RailLink } from "../../layout/PageRail.tsx"
 import { Shell } from "../../layout/Shell.tsx"
 import { IndexRow } from "../index/IndexRow.tsx"
 import { IndexSection, indexGridClass } from "../index/IndexSection.tsx"
-import { UpdateSection } from "./UpdateSection.tsx"
+import { UpdateSummary } from "./UpdateSummary.tsx"
 import { UpdateSidebar } from "./UpdateSidebar.tsx"
 
 const recentCount = 10
@@ -44,11 +44,11 @@ function UpdateList(props: { api: Api; updates: Update[] }) {
 				target="update-changes"
 				param="q"
 				placement="page"
-				noun="changes"
+				noun="classes and enums"
 			/>
-			<div id="update-changes" data-changes="" class="flex flex-col gap-12">
+			<div id="update-changes" class="flex flex-col gap-12">
 				{recent.map((update) => (
-					<UpdateSection
+					<UpdateSummary
 						api={props.api}
 						updates={props.updates}
 						update={update}

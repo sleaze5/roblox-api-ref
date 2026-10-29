@@ -24,6 +24,18 @@
 	&[data-status="Removed"] {
 		color: var(--color-danger);
 	}
+
+	&[data-status="Added"]::before {
+		content: "+" / "";
+	}
+
+	&[data-status="Removed"]::before {
+		content: "−" / "";
+	}
+
+	&[data-status="Changed"]::before {
+		content: "~"/ "";
+	}
 }
 
 @utility change-previous {
