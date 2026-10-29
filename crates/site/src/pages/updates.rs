@@ -197,9 +197,10 @@ fn owner_note(owner: &OwnerChanges) -> Markup {
 	if !owner.details.is_empty() {
 		return html! { span { "Details changed" } };
 	}
-	match owner.status {
-		None => html! { span { "Description changed" } },
-		Some(_) => html! {},
+	if owner.status.is_none() {
+		html! { span { "Description changed" } }
+	} else {
+		html! {}
 	}
 }
 

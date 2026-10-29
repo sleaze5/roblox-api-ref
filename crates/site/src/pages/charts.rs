@@ -135,7 +135,7 @@ pub fn column_chart(title: &str, summary: &str, columns: &[Column]) -> Markup {
 						}
 					}
 					@for (index, column) in columns.iter().enumerate() {
-						@if column.value == max || column.value == min {
+						@if column.value.total_cmp(&max).is_eq() || column.value.total_cmp(&min).is_eq() {
 							span aria-hidden="true" class="absolute -translate-x-1/2 -translate-y-full pb-1 text-xs text-fg-muted"
 								style={ "left:" (percent((index as f64 + 0.5) / count as f64)) ";top:" (percent(1.0 - (column.value * scale).min(PLOT_HEIGHT) / PLOT_HEIGHT)) } {
 								(num(column.value))

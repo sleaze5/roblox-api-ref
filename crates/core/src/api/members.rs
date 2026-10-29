@@ -83,7 +83,7 @@ pub fn property_groups(members: &[Member]) -> Vec<(String, Vec<&Member>)> {
 }
 
 /// Groups sorted properties by category, with the categories sorted by name.
-pub fn category_groups<'a>(properties: Vec<&'a Member>) -> Vec<(String, Vec<&'a Member>)> {
+pub fn category_groups(properties: Vec<&Member>) -> Vec<(String, Vec<&Member>)> {
 	let mut groups: IndexMap<String, Vec<&Member>> = IndexMap::new();
 	for member in properties {
 		let category = match &member.detail {

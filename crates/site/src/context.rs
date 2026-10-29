@@ -1,6 +1,7 @@
 //! Everything a page needs to render.
 
 use std::collections::HashSet;
+use std::fmt::Write as _;
 use std::sync::OnceLock;
 
 use rapi_core::generate::facets::FacetSlugs;
@@ -78,9 +79,42 @@ impl Context {
 	}
 }
 
-/// Resolves a root-relative path against the origin, like `new URL(path, origin)`.
+/// Resolves a root-relative path against the origin, percent-encoding it like
+/// `new URL(path, origin).href`.
 pub fn absolute_url(origin: &str, path: &str) -> String {
-	format!("{origin}{path}")
+	let (path, fragment) = path
+		.split_once('#')
+		.map_or((path, None), |(path, fragment)| (path, Some(fragment)));
+	let (path, query) = path
+		.split_once('?')
+		.map_or((path, None), |(path, query)| (path, Some(query)));
+	let mut url = String::from(origin);
+	encode_into(&mut url, path, |byte| {
+		matches!(byte, b' ' | b'"' | b'<' | b'>' | b'`' | b'{' | b'}')
+	});
+	if let Some(query) = query {
+		url.push('?');
+		encode_into(&mut url, query, |byte| {
+			matches!(byte, b' ' | b'"' | b'<' | b'>' | b'\'')
+		});
+	}
+	if let Some(fragment) = fragment {
+		url.push('#');
+		encode_into(&mut url, fragment, |byte| {
+			matches!(byte, b' ' | b'"' | b'<' | b'>' | b'`')
+		});
+	}
+	url
+}
+
+fn encode_into(url: &mut String, part: &str, encode: impl Fn(u8) -> bool) {
+	for &byte in part.as_bytes() {
+		if !(0x20..=0x7e).contains(&byte) || encode(byte) {
+			let _ = write!(url, "%{byte:02X}");
+		} else {
+			url.push(char::from(byte));
+		}
+	}
 }
 
 /// The origin from `SITE_ORIGIN` or `CF_PAGES_URL`, or the dev server's.
@@ -116,6 +150,18 @@ fn origin_of(url: &str) -> String {
 #[cfg(test)]
 mod tests {
 	use super::*;
+
+	#[test]
+	fn percent_encodes_paths_and_fragments_like_the_url_parser() {
+		assert_eq!(
+			absolute_url("https://x.dev", "/updates/1/#Class-Studio.File > New"),
+			"https://x.dev/updates/1/#Class-Studio.File%20%3E%20New"
+		);
+		assert_eq!(
+			absolute_url("https://x.dev", "/a b/é"),
+			"https://x.dev/a%20b/%C3%A9"
+		);
+	}
 
 	#[test]
 	fn keeps_only_the_origin_of_a_configured_url() {

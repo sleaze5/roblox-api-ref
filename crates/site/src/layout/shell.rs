@@ -47,11 +47,13 @@ impl Shell {
 		}
 	}
 
+	#[must_use]
 	pub fn sidebar(mut self, sidebar: Markup) -> Self {
 		self.sidebar = Some(sidebar);
 		self
 	}
 
+	#[must_use]
 	pub fn rail(mut self, rail: Markup) -> Self {
 		self.rail = Some(rail);
 		self

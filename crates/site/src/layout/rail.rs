@@ -24,16 +24,19 @@ impl RailLink {
 		}
 	}
 
+	#[must_use]
 	pub const fn count(mut self, count: usize) -> Self {
 		self.count = Some(count);
 		self
 	}
 
+	#[must_use]
 	pub fn count_hint(mut self, hint: impl Into<String>) -> Self {
 		self.count_hint = Some(hint.into());
 		self
 	}
 
+	#[must_use]
 	pub fn entries(mut self, entries: Vec<RailEntry>) -> Self {
 		self.entries = entries;
 		self

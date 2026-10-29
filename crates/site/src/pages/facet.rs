@@ -24,20 +24,20 @@ fn kind_facts(facet: &Facet) -> Markup {
 			Some("How this tag appears on this site."),
 			&tag_list(&plain_tags(std::slice::from_ref(&facet.name)), ""),
 		),
-		FacetKind::Security => match Security::parse(&facet.name) {
-			Some(security) => {
-				let identities: Vec<String> = identities_allowing(security)
-					.iter()
-					.map(ToString::to_string)
-					.collect();
-				fact(
-					"Usable by identities",
-					Some("Script identities that can use members with this security level."),
-					&html! { (identities.join(", ")) },
-				)
-			}
-			None => html! {},
-		},
+		FacetKind::Security => {
+			let Some(security) = Security::parse(&facet.name) else {
+				return html! {};
+			};
+			let identities: Vec<String> = identities_allowing(security)
+				.iter()
+				.map(ToString::to_string)
+				.collect();
+			fact(
+				"Usable by identities",
+				Some("Script identities that can use members with this security level."),
+				&html! { (identities.join(", ")) },
+			)
+		}
 		_ => html! {},
 	}
 }
