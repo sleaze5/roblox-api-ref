@@ -15,6 +15,8 @@ const contentTypes: Record<string, string> = {
 	".md": "text/markdown; charset=utf-8",
 	".png": "image/png",
 	".woff2": "font/woff2",
+	".wasm": "application/wasm",
+	".bin": "application/octet-stream",
 }
 
 type StaticFile = {
