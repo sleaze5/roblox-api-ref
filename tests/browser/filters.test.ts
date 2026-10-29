@@ -64,6 +64,42 @@ describe("member filters", () => {
 		expect(shown.length).toBeGreaterThan(0)
 		expect(shown.every((tags) => tags.split(" ").includes("deprecated"))).toBe(true)
 	})
+
+	test("lists every tag and disables the ones the class lacks", async () => {
+		const page = await openPage("/classes/Folder/")
+		await page.locator(`${form} [popovertarget]`).click()
+		const menu = page.locator("#member-filter-menu")
+		const unused = menu.locator("[data-tag-row]:has(input:disabled)")
+		expect(await unused.count()).toBeGreaterThan(0)
+		expect(await unused.locator("text=/^0$/").count()).toBe(await unused.count())
+		expect(
+			await menu.locator("input[name=require][value=save-only]").isDisabled(),
+		).toBe(true)
+		const overflow = await menu.evaluate(
+			(node) => node.scrollHeight - node.clientHeight,
+		)
+		expect(overflow).toBeLessThanOrEqual(2)
+		expect(page.problems).toEqual([])
+	})
+
+	test("grows the filter menu back when scrolling gives it room", async () => {
+		const page = await openPage("/classes/Folder/", {
+			viewport: { width: 1000, height: 800 },
+		})
+		await page.locator(`${form} [popovertarget]`).click()
+		const height = () =>
+			page.evaluate(async () => {
+				await new Promise((resolve) => requestAnimationFrame(resolve))
+				await new Promise((resolve) => requestAnimationFrame(resolve))
+				return document.getElementById("member-filter-menu")?.offsetHeight ?? 0
+			})
+		const cramped = await height()
+		await page.evaluate(() => scrollBy(0, 300))
+		const roomy = await height()
+		expect(roomy).toBeGreaterThan(cramped)
+		await page.evaluate(() => scrollBy(0, -300))
+		expect(await height()).toBe(cramped)
+	})
 })
 
 describe("list filters", () => {

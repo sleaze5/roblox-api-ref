@@ -10,6 +10,7 @@ import { initGroupCollapse } from "./group-collapse.ts"
 import { holdScrollWhileOpen } from "./hold-scroll.ts"
 import { trackFilterHeight } from "../filters/sticky-offset.ts"
 import { summaryText } from "../filters/summary-text.ts"
+import { refitWhileOpen } from "./refit-menu.ts"
 import { matchesTags } from "./tag-match.ts"
 
 const toggles: Record<string, HideOption> = {
@@ -182,6 +183,7 @@ export function initMemberFilter(form: HTMLFormElement): void {
 	const menu = form.querySelector<HTMLElement>("[popover]")
 	if (menu !== null) {
 		holdScrollWhileOpen(menu, article)
+		refitWhileOpen(menu)
 	}
 	trackFilterHeight(form)
 	initGroupCollapse(article)
