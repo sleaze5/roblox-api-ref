@@ -506,3 +506,371 @@ pub fn apply_history(api: &mut Api, table: &HistoryTable, start: &str) {
 		}
 	}
 }
+
+#[cfg(test)]
+mod tests {
+	use rapi_routes::OwnerKind;
+
+	use super::*;
+	use crate::model::{
+		ApiType, Capabilities, ChangeCounts, ChangeDetail, ChangeEntry, ChangeStatus,
+		DescriptionDetail, DescriptionPart, EntryValues, HistoryKind, Member, MemberCounts,
+		MemberDetail, OwnerChanges, Release, Security, TypeCategory, Update,
+	};
+
+	fn property(ty: &str, default: &str) -> Member {
+		Member {
+			name: "Size".to_owned(),
+			history: None,
+			tags: Vec::new(),
+			security: Security::None,
+			thread_safety: "ReadSafe".to_owned(),
+			capabilities: Capabilities::default(),
+			preferred: None,
+			preferred_target: None,
+			description: None,
+			detail: MemberDetail::Property {
+				ty: ApiType {
+					category: TypeCategory::Primitive,
+					name: ty.to_owned(),
+					optional: false,
+					members: None,
+				},
+				category: "Data".to_owned(),
+				default: Some(default.to_owned()),
+				write_security: Security::None,
+				can_load: true,
+				can_save: true,
+				simulation_access: false,
+			},
+		}
+	}
+
+	fn entry(
+		status: ChangeStatus,
+		before: Option<Member>,
+		after: Option<Member>,
+		details: Vec<ChangeDetail>,
+	) -> ChangeEntry {
+		ChangeEntry {
+			status,
+			owner: "Part".to_owned(),
+			name: "Size".to_owned(),
+			details,
+			descriptions: Vec::new(),
+			values: EntryValues::Member {
+				before: before.map(Box::new),
+				after: after.map(Box::new),
+			},
+		}
+	}
+
+	fn changed(details: Vec<ChangeDetail>) -> ChangeEntry {
+		entry(
+			ChangeStatus::Changed,
+			Some(property("int", "1")),
+			Some(property("int", "1")),
+			details,
+		)
+	}
+
+	fn value(label: &str) -> ChangeDetail {
+		ChangeDetail::Value {
+			label: label.to_owned(),
+			before: None,
+			after: None,
+		}
+	}
+
+	fn added_tags(tags: &[&str]) -> ChangeDetail {
+		ChangeDetail::Tags {
+			label: "Added tags".to_owned(),
+			tags: tags.iter().map(|tag| (*tag).to_owned()).collect(),
+		}
+	}
+
+	fn changes(fields: &[&str], tags_added: u32) -> HistoryChanges {
+		HistoryChanges {
+			fields: fields.iter().map(|field| (*field).to_owned()).collect(),
+			tags_added,
+			..HistoryChanges::default()
+		}
+	}
+
+	#[test]
+	fn names_the_signature_parts_that_changed() {
+		let resized = entry(
+			ChangeStatus::Changed,
+			Some(property("int", "1")),
+			Some(property("float", "2")),
+			Vec::new(),
+		);
+		assert_eq!(
+			entry_changes(&resized),
+			Some(changes(&["type", "default value"], 0))
+		);
+	}
+
+	#[test]
+	fn groups_read_and_write_security_and_counts_tags_apart_from_deprecated() {
+		let entry = changed(vec![
+			value("Read security"),
+			value("Write security"),
+			added_tags(&["Deprecated", "Hidden"]),
+		]);
+		assert_eq!(
+			entry_changes(&entry),
+			Some(HistoryChanges {
+				deprecation: Some(Deprecation::Set),
+				..changes(&["security"], 1)
+			})
+		);
+	}
+
+	#[test]
+	fn leaves_added_members_and_description_only_changes_without_a_summary() {
+		let mut added = changed(Vec::new());
+		added.status = ChangeStatus::Added;
+		assert_eq!(entry_changes(&added), None);
+		assert_eq!(entry_changes(&changed(Vec::new())), None);
+	}
+
+	fn part(
+		status: Option<ChangeStatus>,
+		details: Vec<ChangeDetail>,
+		entries: Vec<ChangeEntry>,
+	) -> OwnerChanges {
+		OwnerChanges {
+			kind: OwnerKind::Class,
+			name: "Part".to_owned(),
+			status,
+			details,
+			descriptions: Vec::new(),
+			entries,
+		}
+	}
+
+	#[test]
+	fn summarizes_the_class_details_but_not_when_it_is_added() {
+		let owner = part(
+			Some(ChangeStatus::Changed),
+			vec![value("Memory category")],
+			Vec::new(),
+		);
+		assert_eq!(
+			owner_changes(&owner),
+			Some(changes(&["memory category"], 0))
+		);
+		let added = part(
+			Some(ChangeStatus::Added),
+			vec![value("Memory category")],
+			Vec::new(),
+		);
+		assert_eq!(owner_changes(&added), None);
+	}
+
+	#[test]
+	fn rolls_up_what_changed_on_the_class_members() {
+		let owner = part(
+			None,
+			Vec::new(),
+			vec![
+				changed(vec![value("Security")]),
+				changed(vec![
+					value("Read security"),
+					added_tags(&["Deprecated", "Yields"]),
+				]),
+			],
+		);
+		assert_eq!(
+			owner_changes(&owner),
+			Some(HistoryChanges {
+				deprecated: Some(1),
+				..changes(&["security"], 1)
+			})
+		);
+	}
+
+	fn update(version: &str, owners: Vec<OwnerChanges>) -> Update {
+		Update {
+			version: version.to_owned(),
+			hash: String::new(),
+			published: format!("{version}-date"),
+			previous: Release {
+				version: String::new(),
+				hash: String::new(),
+			},
+			counts: ChangeCounts::default(),
+			description_count: 0,
+			owners,
+		}
+	}
+
+	type Line = (String, Vec<HistoryKind>, Option<MemberCounts>);
+
+	fn summary(history: Option<ItemHistory>) -> (Option<String>, Option<String>, Vec<Line>) {
+		let history = history.expect("a history");
+		(
+			history.added.map(|event| event.version),
+			history.changed.map(|event| event.version),
+			history
+				.entries
+				.into_iter()
+				.map(|entry| (entry.version, entry.kinds, entry.members))
+				.collect(),
+		)
+	}
+
+	fn table() -> HistoryTable {
+		let added = entry(
+			ChangeStatus::Added,
+			None,
+			Some(property("int", "1")),
+			Vec::new(),
+		);
+		let resized = entry(
+			ChangeStatus::Changed,
+			Some(property("int", "1")),
+			Some(property("int", "2")),
+			Vec::new(),
+		);
+		let mut described = entry(
+			ChangeStatus::Changed,
+			Some(property("int", "2")),
+			Some(property("int", "2")),
+			Vec::new(),
+		);
+		described.descriptions.push(DescriptionDetail {
+			part: DescriptionPart::Description,
+			parameter: None,
+			status: ChangeStatus::Added,
+			before: None,
+			after: None,
+		});
+		let removed = entry(
+			ChangeStatus::Removed,
+			Some(property("int", "2")),
+			None,
+			Vec::new(),
+		);
+		let mut updates = vec![
+			update(
+				"1",
+				vec![part(
+					Some(ChangeStatus::Added),
+					Vec::new(),
+					vec![added.clone()],
+				)],
+			),
+			update("2", vec![part(None, Vec::new(), vec![resized])]),
+			update("3", vec![part(None, Vec::new(), vec![described])]),
+			update("4", vec![part(None, Vec::new(), vec![removed])]),
+			update("5", vec![part(None, Vec::new(), vec![added])]),
+		];
+		updates.reverse();
+		build_history(&updates)
+	}
+
+	fn kinds(version: &str, kinds: &[HistoryKind], members: Option<(u32, u32, u32)>) -> Line {
+		let members = members.map(|(added, removed, changed)| MemberCounts {
+			added,
+			removed,
+			changed,
+		});
+		(version.to_owned(), kinds.to_vec(), members)
+	}
+
+	#[test]
+	fn lists_every_change_to_a_member_newest_first() {
+		assert_eq!(
+			summary(table().history(&item_key(OwnerKind::Class, "Part", "Size"))),
+			(
+				Some("5".to_owned()),
+				None,
+				vec![
+					kinds("5", &[HistoryKind::Added], None),
+					kinds("4", &[HistoryKind::Removed], None),
+					kinds("3", &[HistoryKind::Described], None),
+					kinds("2", &[HistoryKind::Changed], None),
+					kinds("1", &[HistoryKind::Added], None),
+				]
+			)
+		);
+	}
+
+	#[test]
+	fn counts_member_changes_on_the_class_but_not_members_of_a_new_class() {
+		assert_eq!(
+			summary(table().history(&owner_key(OwnerKind::Class, "Part"))),
+			(
+				Some("1".to_owned()),
+				Some("5".to_owned()),
+				vec![
+					kinds("5", &[], Some((1, 0, 0))),
+					kinds("4", &[], Some((0, 1, 0))),
+					kinds("2", &[], Some((0, 0, 1))),
+					kinds("1", &[HistoryKind::Added], None),
+				]
+			)
+		);
+	}
+
+	#[test]
+	fn remembers_removed_members_until_they_come_back() {
+		let removed = entry(
+			ChangeStatus::Removed,
+			Some(property("int", "1")),
+			None,
+			Vec::new(),
+		);
+		let once = build_history(&[update("1", vec![part(None, Vec::new(), vec![removed])])]);
+		let versions: Vec<String> = once
+			.removed_of(&owner_key(OwnerKind::Class, "Part"))
+			.into_iter()
+			.map(|(_, event)| event.version)
+			.collect();
+		assert_eq!(versions, ["1"]);
+		assert!(
+			table()
+				.removed_of(&owner_key(OwnerKind::Class, "Part"))
+				.is_empty()
+		);
+	}
+
+	#[test]
+	fn dates_a_deprecation_by_the_update_that_added_the_tag() {
+		let added = entry(
+			ChangeStatus::Added,
+			None,
+			Some(property("int", "1")),
+			Vec::new(),
+		);
+		let deprecated = changed(vec![added_tags(&["Deprecated"])]);
+		let table = build_history(&[
+			update("2", vec![part(None, Vec::new(), vec![deprecated])]),
+			update(
+				"1",
+				vec![part(Some(ChangeStatus::Added), Vec::new(), vec![added])],
+			),
+		]);
+		let history = table
+			.history(&item_key(OwnerKind::Class, "Part", "Size"))
+			.expect("a history");
+		assert_eq!(
+			history.deprecated.map(|event| event.version).as_deref(),
+			Some("2")
+		);
+	}
+
+	#[test]
+	fn marks_the_addition_as_not_recorded_when_the_class_predates_the_history() {
+		let table = build_history(&[update(
+			"2",
+			vec![part(Some(ChangeStatus::Changed), Vec::new(), Vec::new())],
+		)]);
+		let history = table
+			.history(&owner_key(OwnerKind::Class, "Part"))
+			.expect("a history");
+		assert_eq!(history.added, None);
+	}
+}

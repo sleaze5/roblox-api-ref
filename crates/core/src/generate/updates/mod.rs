@@ -272,3 +272,201 @@ pub fn build_updates(diffs: &[DatedDiff], names: &ApiNames<'_>) -> Vec<Update> {
 	updates.reverse();
 	updates
 }
+
+#[cfg(test)]
+mod tests {
+	use indexmap::IndexMap;
+	use serde_json::{Value, json};
+
+	use super::*;
+
+	fn update(changes: &Value, descriptions: &Value) -> Value {
+		let diff: DumpDiff = serde_json::from_value(json!({
+			"from": { "version": "0.1.0.1", "hash": "aaaaaaaaaaaaaaaa" },
+			"to": { "version": "0.2.0.1", "hash": "bbbbbbbbbbbbbbbb" },
+			"changes": changes,
+			"descriptions": descriptions,
+		}))
+		.expect("a valid diff");
+		let (classes, enums, data_types) = (IndexMap::new(), IndexMap::new(), IndexMap::new());
+		let names = ApiNames {
+			classes: &classes,
+			enums: &enums,
+			data_types: &data_types,
+		};
+		serde_json::to_value(build_update(&diff, "2026-10-19T23:04:06.000Z", &names))
+			.expect("an update serializes")
+	}
+
+	fn owners(update: &Value) -> Vec<(String, String)> {
+		update["owners"]
+			.as_array()
+			.into_iter()
+			.flatten()
+			.map(|owner| {
+				(
+					owner["kind"].as_str().unwrap_or_default().to_owned(),
+					owner["name"].as_str().unwrap_or_default().to_owned(),
+				)
+			})
+			.collect()
+	}
+
+	#[test]
+	fn groups_changes_by_class_and_enum_classes_first() {
+		let result = update(
+			&json!([
+				{ "element": "EnumItem", "enum": "Material", "item": "Sand", "type": "Add", "value": { "Name": "Sand", "Value": 3 } },
+				{
+					"element": "Member", "class": "Part", "member": "Touch", "type": "Remove",
+					"value": { "MemberType": "Event", "Name": "Touch", "Parameters": [], "Security": "None" },
+				},
+			]),
+			&json!([]),
+		);
+		assert_eq!(
+			owners(&result),
+			[
+				("Class".to_owned(), "Part".to_owned()),
+				("Enum".to_owned(), "Material".to_owned())
+			]
+		);
+		assert_eq!(
+			result["counts"],
+			json!({ "Added": 1, "Removed": 1, "Changed": 0 })
+		);
+		assert_eq!(
+			result["previous"],
+			json!({ "version": "0.1.0.1", "hash": "aaaaaaaaaaaaaaaa" })
+		);
+	}
+
+	#[test]
+	fn restores_the_previous_value_of_a_changed_member_and_describes_its_details() {
+		let result = update(
+			&json!([{
+				"element": "Member", "class": "Part", "member": "Size", "type": "Change",
+				"changes": [
+					{ "field": "Default", "before": "1", "after": "2" },
+					{ "field": "Security", "before": "None", "after": "PluginSecurity" },
+					{ "field": "Tags", "before": ["Hidden"], "after": ["Deprecated"] },
+				],
+				"value": {
+					"MemberType": "Function", "Name": "Size", "Parameters": [],
+					"ReturnType": { "Category": "Primitive", "Name": "int" },
+					"Security": "PluginSecurity", "Tags": ["Deprecated"],
+				},
+			}]),
+			&json!([]),
+		);
+		let entry = &result["owners"][0]["entries"][0];
+		assert_eq!(
+			(&entry["before"]["security"], &entry["before"]["tags"]),
+			(&json!("None"), &json!(["Hidden"]))
+		);
+		assert_eq!(
+			(&entry["after"]["security"], &entry["after"]["tags"]),
+			(&json!("PluginSecurity"), &json!(["Deprecated"]))
+		);
+		assert_eq!(
+			entry["details"],
+			json!([
+				{ "kind": "value", "label": "Security", "before": { "text": "No security", "tone": "text" }, "after": { "text": "Plugin security", "tone": "text" } },
+				{ "kind": "tags", "label": "Added tags", "tags": ["Deprecated"] },
+				{ "kind": "tags", "label": "Removed tags", "tags": ["Hidden"] },
+			])
+		);
+	}
+
+	#[test]
+	fn skips_changes_that_the_site_does_not_show() {
+		let result = update(
+			&json!([{
+				"element": "Member", "class": "Part", "member": "Name", "type": "Change",
+				"changes": [{ "field": "Default", "before": "__api_dump_a__", "after": "__api_dump_b__" }],
+				"value": {
+					"MemberType": "Property", "Name": "Name", "Category": "Data", "Default": "__api_dump_b__",
+					"ValueType": { "Category": "Primitive", "Name": "string" },
+					"Security": { "Read": "None", "Write": "None" },
+					"Serialization": { "CanLoad": true, "CanSave": true },
+				},
+			}]),
+			&json!([]),
+		);
+		assert_eq!(result["owners"], json!([]));
+		assert_eq!(
+			result["counts"],
+			json!({ "Added": 0, "Removed": 0, "Changed": 0 })
+		);
+	}
+
+	#[test]
+	fn sorts_enum_items_by_value() {
+		let changes: Vec<Value> = [5, 1, 3]
+			.iter()
+			.map(|value| json!({ "element": "EnumItem", "enum": "Material", "item": format!("Item{value}"), "type": "Add", "value": { "Name": format!("Item{value}"), "Value": value } }))
+			.collect();
+		let result = update(&Value::Array(changes), &json!([]));
+		let names: Vec<&str> = result["owners"][0]["entries"]
+			.as_array()
+			.unwrap()
+			.iter()
+			.map(|entry| entry["name"].as_str().unwrap())
+			.collect();
+		assert_eq!(names, ["Item1", "Item3", "Item5"]);
+	}
+
+	#[test]
+	fn adds_description_changes_without_counting_them_as_api_changes() {
+		let anchored = json!({
+			"MemberType": "Property", "Name": "Anchored", "Category": "Behavior",
+			"ValueType": { "Category": "Primitive", "Name": "bool" },
+			"Security": { "Read": "None", "Write": "None" },
+			"Serialization": { "CanLoad": true, "CanSave": true },
+		});
+		let result = update(
+			&json!([]),
+			&json!([
+				{ "element": "Member", "class": "Part", "member": "Anchored", "part": "description", "before": "Old text.", "after": "New text.", "value": anchored },
+				{ "element": "Class", "class": "Part", "part": "description", "before": null, "after": "A <code>Part</code>." },
+				{ "element": "Member", "class": "Part", "member": "Anchored", "part": "return", "before": "Same.", "after": "<p>Same.</p>", "value": anchored },
+			]),
+		);
+		assert_eq!(
+			result["counts"],
+			json!({ "Added": 0, "Removed": 0, "Changed": 0 })
+		);
+		assert_eq!(result["descriptionCount"], 2);
+		let owner = &result["owners"][0];
+		assert_eq!(
+			owner["descriptions"],
+			json!([{ "part": "description", "status": "Added", "after": ["A ", { "tag": "code", "children": ["Part"] }, "."] }])
+		);
+		let entries = owner["entries"].as_array().unwrap();
+		assert_eq!(entries.len(), 1);
+		assert_eq!(
+			(&entries[0]["name"], &entries[0]["status"]),
+			(&json!("Anchored"), &json!("Changed"))
+		);
+		assert_eq!(
+			entries[0]["descriptions"],
+			json!([{ "part": "description", "status": "Changed", "before": ["Old text."], "after": ["New text."] }])
+		);
+	}
+
+	#[test]
+	fn attaches_a_description_change_to_the_api_change_of_the_same_item() {
+		let result = update(
+			&json!([{ "element": "EnumItem", "enum": "Material", "item": "Sand", "type": "Add", "value": { "Name": "Sand", "Value": 3 } }]),
+			&json!([{ "element": "EnumItem", "enum": "Material", "item": "Sand", "part": "description", "before": null, "after": "Grainy.", "value": { "Name": "Sand", "Value": 3 } }]),
+		);
+		let entries = result["owners"][0]["entries"].as_array().unwrap();
+		assert_eq!(entries.len(), 1);
+		assert_eq!(entries[0]["status"], "Added");
+		assert_eq!(
+			entries[0]["descriptions"],
+			json!([{ "part": "description", "status": "Added", "after": ["Grainy."] }])
+		);
+		assert_eq!(result["counts"]["Added"], 1);
+	}
+}

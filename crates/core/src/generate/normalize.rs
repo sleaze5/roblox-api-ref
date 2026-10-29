@@ -436,3 +436,99 @@ pub fn normalize_api(dump: &Dump, docs: &ApiDocs, version: &RobloxVersion) -> Ap
 pub const fn member_kind_name(kind: MemberKind) -> &'static str {
 	kind.name()
 }
+
+#[cfg(test)]
+mod tests {
+	use indexmap::IndexMap;
+	use rapi_routes::MemberKind;
+
+	use super::*;
+	use crate::fixtures::{class, event, method, ty};
+
+	fn preferring(name: &str, preferred: &str) -> Member {
+		let mut member = event(name, Vec::new());
+		member.preferred = Some(preferred.to_owned());
+		member
+	}
+
+	fn target(
+		classes: &IndexMap<String, Class>,
+		owner: &str,
+		member: &str,
+	) -> Option<PreferredTarget> {
+		classes[owner]
+			.members
+			.iter()
+			.find(|item| item.name == member)?
+			.preferred_target
+			.clone()
+	}
+
+	fn expected(owner: &str, kind: MemberKind) -> PreferredTarget {
+		PreferredTarget {
+			owner: owner.to_owned(),
+			kind,
+		}
+	}
+
+	#[test]
+	fn uses_the_replacements_kind_and_declaring_class_including_inherited_members() {
+		let replacement = method(
+			"Bind",
+			Vec::new(),
+			ty(TypeCategory::Primitive, "null", false),
+		);
+		let mut classes: IndexMap<String, Class> = [
+			class(
+				"Parent",
+				vec![replacement, preferring("OldParent", "Bind")],
+				None,
+			),
+			class(
+				"Child",
+				vec![preferring("OldChild", "Bind")],
+				Some("Parent"),
+			),
+		]
+		.into_iter()
+		.map(|item| (item.name.clone(), item))
+		.collect();
+		resolve_preferred_members(&mut classes);
+		assert_eq!(
+			target(&classes, "Parent", "OldParent"),
+			Some(expected("Parent", MemberKind::Method))
+		);
+		assert_eq!(
+			target(&classes, "Child", "OldChild"),
+			Some(expected("Parent", MemberKind::Method))
+		);
+	}
+
+	#[test]
+	fn prefers_local_overrides_and_leaves_missing_or_unrelated_replacements_unlinked() {
+		let mut classes: IndexMap<String, Class> = [
+			class("Parent", vec![event("New", Vec::new())], None),
+			class(
+				"Child",
+				vec![
+					event("New", Vec::new()),
+					preferring("Old", "New"),
+					preferring("Missing", "Gone"),
+					preferring("Unrelated", "Elsewhere"),
+				],
+				Some("Parent"),
+			),
+			class("Other", vec![event("Elsewhere", Vec::new())], None),
+		]
+		.into_iter()
+		.map(|item| (item.name.clone(), item))
+		.collect();
+		resolve_preferred_members(&mut classes);
+		assert_eq!(
+			target(&classes, "Child", "Old"),
+			Some(expected("Child", MemberKind::Event))
+		);
+		assert_eq!(target(&classes, "Child", "Missing"), None);
+		assert_eq!(target(&classes, "Child", "Unrelated"), None);
+	}
+}

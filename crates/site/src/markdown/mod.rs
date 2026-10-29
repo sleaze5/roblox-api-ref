@@ -1,11 +1,11 @@
 //! The Markdown version of every page.
 
 mod doc;
-mod items;
-mod lists;
-mod stats;
+pub mod items;
+pub mod lists;
+pub mod stats;
 pub mod text;
-mod updates;
+pub mod updates;
 mod urls;
 
 use rapi_routes::{

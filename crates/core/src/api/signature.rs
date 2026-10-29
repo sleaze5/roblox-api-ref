@@ -170,3 +170,69 @@ pub fn inline_tokens(parts: &SignatureParts) -> Vec<CodeToken> {
 pub fn parts_text(parts: &SignatureParts) -> String {
 	super::code::tokens_text(&inline_tokens(parts))
 }
+
+#[cfg(test)]
+mod tests {
+	use super::*;
+	use crate::fixtures::{event, method, parameter, property, ty};
+	use crate::model::TypeCategory;
+
+	fn signature(member: &Member) -> String {
+		inline_tokens(&signature_parts(member, "Part", Some("#anchor")))
+			.iter()
+			.map(|part| part.text.as_str())
+			.collect()
+	}
+
+	#[test]
+	fn writes_a_property_with_its_default_value() {
+		let member = property(
+			"Anchored",
+			ty(TypeCategory::Primitive, "bool", false),
+			Some("false"),
+		);
+		assert_eq!(signature(&member), "Part.Anchored: boolean = false");
+	}
+
+	#[test]
+	fn omits_the_default_when_the_dump_has_none() {
+		let member = property("Size", ty(TypeCategory::DataType, "Vector3", false), None);
+		assert_eq!(signature(&member), "Part.Size: Vector3");
+	}
+
+	#[test]
+	fn writes_a_method_with_a_colon_and_an_optional_parameter() {
+		let member = method(
+			"FindFirstChild",
+			vec![
+				parameter("name", ty(TypeCategory::Primitive, "string", false), None),
+				parameter(
+					"recursive",
+					ty(TypeCategory::Primitive, "bool", false),
+					Some("false"),
+				),
+			],
+			ty(TypeCategory::Class, "Instance", true),
+		);
+		assert_eq!(
+			signature(&member),
+			"Part:FindFirstChild(name: string, recursive: boolean? = false): Instance?"
+		);
+	}
+
+	#[test]
+	fn writes_an_event_as_an_rbx_script_signal() {
+		let member = event(
+			"Touched",
+			vec![parameter(
+				"otherPart",
+				ty(TypeCategory::Class, "BasePart", false),
+				None,
+			)],
+		);
+		assert_eq!(
+			signature(&member),
+			"Part.Touched: RBXScriptSignal<(otherPart: BasePart)>"
+		);
+	}
+}
