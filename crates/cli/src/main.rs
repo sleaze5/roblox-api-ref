@@ -3,12 +3,71 @@ use std::process::ExitCode;
 use std::time::Instant;
 
 use rapi_core::generate::pipeline::{Paths, generate_site};
+use rapi_core::icons::{Icon, build_favicon, build_icon_sprite, read_icon};
+
+mod wasm;
 
 fn write(path: &Path, contents: impl AsRef<[u8]>) -> Result<(), String> {
 	if let Some(parent) = path.parent() {
 		std::fs::create_dir_all(parent).map_err(|error| error.to_string())?;
 	}
 	std::fs::write(path, contents).map_err(|error| format!("{}: {error}", path.display()))
+}
+
+fn now_millis() -> i64 {
+	std::time::SystemTime::now()
+		.duration_since(std::time::UNIX_EPOCH)
+		.map_or(0, |elapsed| {
+			i64::try_from(elapsed.as_millis()).unwrap_or(i64::MAX)
+		})
+}
+
+/// Writes everything the client bundle and the edge middleware import from
+/// `src/generated`.
+fn generate(paths: &Paths) -> Result<(), String> {
+	let start = Instant::now();
+	let out = paths.generated();
+	let phosphor = paths
+		.root
+		.join("node_modules/@phosphor-icons/core/assets/regular");
+	let (site, wasm) = rayon::join(
+		|| generate_site(paths),
+		|| wasm::build_search_wasm(&paths.root, &out),
+	);
+	let site = site?;
+	wasm?;
+	let io = |error: std::io::Error| error.to_string();
+	let build = serde_json::json!({ "lastModified": rapi_core::js::utc_string(now_millis()) });
+	write(&out.join("build.json"), build.to_string())?;
+	write(
+		&out.join("icons.svg"),
+		build_icon_sprite(&phosphor).map_err(io)?,
+	)?;
+	write(
+		&out.join("favicon.svg"),
+		build_favicon(&phosphor).map_err(io)?,
+	)?;
+	for icon in Icon::MASKS {
+		write(
+			&out.join("icons").join(format!("{}.svg", icon.name())),
+			read_icon(&phosphor, icon).map_err(io)?,
+		)?;
+	}
+	write(&out.join("class-icons.css"), &site.class_icons.css)?;
+	write(&out.join("class-icons.png"), &site.class_icons.png)?;
+	write(&out.join("search.bin"), site.search.encode())?;
+	println!(
+		"Generated {} classes, {} enums, {} data types, {} search entries, and {} updates for {} {} in {}ms.",
+		site.api.classes.len(),
+		site.api.enums.len(),
+		site.api.data_types.len(),
+		site.search.names.len(),
+		site.updates.len(),
+		site.version.channel,
+		site.version.version,
+		start.elapsed().as_millis(),
+	);
+	Ok(())
 }
 
 fn emit_json(paths: &Paths, out: &Path) -> Result<(), String> {
@@ -157,13 +216,14 @@ mod erased {
 fn run(args: &[String]) -> Result<(), String> {
 	let paths = Paths::new(std::env::current_dir().map_err(|error| error.to_string())?);
 	match args.first().map(String::as_str) {
+		Some("gen") => generate(&paths),
 		Some("emit-json") => {
 			let out = args
 				.get(1)
 				.map_or_else(|| PathBuf::from("json"), PathBuf::from);
 			emit_json(&paths, &out)
 		}
-		_ => Err("Usage: rapi <command>".to_owned()),
+		_ => Err("Usage: rapi <gen|render|dev|dump|dump-update>".to_owned()),
 	}
 }
 
