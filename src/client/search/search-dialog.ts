@@ -23,6 +23,9 @@ const dialogClass =
 
 const dialogHtml = `<div class="flex h-12 items-center gap-3 border-b border-line px-4">${iconHtml(sprite, "magnifying-glass", "size-4", "text-fg-faint")}<div class="relative flex-1"><div aria-hidden="true" data-input-mirror class="pointer-events-none absolute inset-0 flex items-center overflow-hidden font-mono whitespace-pre text-fg-faint"><span class="invisible" data-search-echo></span><span data-search-ghost></span></div><input type="text" role="combobox" aria-label="Search the API" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list" autofocus autocomplete="off" spellcheck="false" placeholder="Search the API, or paste a version hash" class="relative h-12 w-full bg-transparent font-mono text-fg placeholder:font-sans placeholder:text-fg-faint focus:outline-none"></div><button type="button" aria-label="Close search" data-search-close class="grid size-9 shrink-0 place-items-center rounded-sm text-fg-muted motion-colors hover:bg-hover hover:text-fg md:size-auto md:hover:bg-transparent">${iconHtml(sprite, "x", "size-4", "md:hidden")}<kbd class="hidden kbd md:block">Esc</kbd></button></div><div class="max-h-results overflow-y-auto overscroll-contain p-1" data-search-body></div><div class="hidden h-10 items-center gap-4 border-t border-line px-4 text-xs text-fg-muted md:flex"><span class="flex items-center gap-1.5"><kbd class="kbd">↑↓</kbd>Move</span><span class="flex items-center gap-1.5"><kbd class="kbd">Enter</kbd>Open</span><span class="flex items-center gap-1.5"><kbd class="kbd">Tab</kbd>Complete</span></div>`
 
+const loadFailedMessage =
+	"The search index could not load. Check your connection, then close search and open it again."
+
 function part(root: Element, selector: string): HTMLElement {
 	const element = root.querySelector(selector)
 	if (!(element instanceof HTMLElement)) {
@@ -39,6 +42,7 @@ class SearchDialog {
 	readonly body: HTMLElement
 	engine: Search | undefined
 	error: string | undefined
+	loading = false
 	view: SearchView = emptyView
 	hrefs: string[] = []
 	active = 0
@@ -115,12 +119,28 @@ class SearchDialog {
 		writeParams({ search: this.query })
 	}
 
+	load(): void {
+		if (this.engine !== undefined || this.loading) {
+			return
+		}
+		this.loading = true
+		this.error = undefined
+		this.render()
+		loadEngine().then(
+			(engine) => this.setEngine(engine),
+			() => this.setError(loadFailedMessage),
+		)
+	}
+
 	setEngine(engine: Search): void {
+		this.loading = false
 		this.engine = engine
+		this.error = undefined
 		this.render()
 	}
 
 	setError(message: string): void {
+		this.loading = false
 		this.error = message
 		this.render()
 	}
@@ -233,18 +253,7 @@ export function showSearch(query?: string): void {
 	if (root === null) {
 		return
 	}
-	if (dialog === undefined) {
-		const created = new SearchDialog(root)
-		dialog = created
-		loadEngine().then(
-			(engine) => created.setEngine(engine),
-			(error: unknown) =>
-				created.setError(
-					error instanceof Error
-						? error.message
-						: "The search index could not be loaded.",
-				),
-		)
-	}
+	dialog ??= new SearchDialog(root)
+	dialog.load()
 	dialog.open(query)
 }

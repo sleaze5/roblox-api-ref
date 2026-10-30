@@ -1,8 +1,9 @@
 import { readFile, stat } from "node:fs/promises"
 import type { IncomingMessage, ServerResponse } from "node:http"
-import { extname, join, normalize } from "node:path"
+import { extname, join } from "node:path"
 import type { PreviewServer } from "vite-plus"
 import { negotiate, type Assets } from "../src/edge/negotiate.ts"
+import { servedPath } from "./served-path.ts"
 
 const contentTypes: Record<string, string> = {
 	".html": "text/html; charset=utf-8",
@@ -34,25 +35,20 @@ async function isFile(path: string): Promise<boolean> {
 
 async function resolveFile(
 	outDir: string,
-	urlPath: string,
+	pathname: string,
 ): Promise<StaticFile | undefined> {
-	const target = normalize(
-		join(outDir, urlPath.endsWith("/") ? `${urlPath}index.html` : urlPath),
-	)
-	if (target.startsWith(outDir) && (await isFile(target))) {
+	const target = servedPath(outDir, pathname)
+	if (target !== undefined && (await isFile(target))) {
 		return { status: 200, path: target }
 	}
-	if (urlPath.endsWith("/") || extname(urlPath) === "") {
+	if (pathname.endsWith("/") || extname(pathname) === "") {
 		return { status: 404, path: join(outDir, "404.html") }
 	}
 	return undefined
 }
 
 async function staticResponse(outDir: string, request: Request): Promise<Response> {
-	const file = await resolveFile(
-		outDir,
-		decodeURIComponent(new URL(request.url).pathname),
-	)
+	const file = await resolveFile(outDir, new URL(request.url).pathname)
 	if (file === undefined) {
 		return new Response("Not Found\n", { status: 404 })
 	}

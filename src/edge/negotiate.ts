@@ -64,8 +64,16 @@ async function markdownResponse(
 	return notFound
 }
 
+function current(page: Response, request: Request, lastModified: string): Response {
+	if (isUnchanged(request, lastModified)) {
+		void page.body?.cancel()
+		return notModified(lastModified)
+	}
+	return stampLastModified(page, lastModified)
+}
+
 export async function negotiate(context: NegotiationContext): Promise<Response> {
-	const { request } = context
+	const { request, lastModified } = context
 	const path = markdownPath(new URL(request.url).pathname)
 	if (path === undefined || (request.method !== "GET" && request.method !== "HEAD")) {
 		return context.next()
@@ -74,19 +82,14 @@ export async function negotiate(context: NegotiationContext): Promise<Response> 
 	if (type === undefined) {
 		return varyOnAccept(notAcceptable())
 	}
-	if (isUnchanged(request, context.lastModified)) {
-		return varyOnAccept(notModified(context.lastModified))
-	}
 	if (type === "text/markdown") {
 		const markdown = await markdownResponse(context, path)
 		return varyOnAccept(
-			markdown.ok ? stampLastModified(markdown, context.lastModified) : markdown,
+			markdown.ok ? current(markdown, request, lastModified) : markdown,
 		)
 	}
 	const page = mutable(await context.next())
 	return varyOnAccept(
-		page.ok
-			? stampLastModified(linkMarkdown(page, path), context.lastModified)
-			: page,
+		page.ok ? current(linkMarkdown(page, path), request, lastModified) : page,
 	)
 }
