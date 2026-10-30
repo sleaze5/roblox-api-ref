@@ -5,7 +5,7 @@ use rapi_core::js::js_number;
 use rapi_core::model::{KindTable, StatRecord, StatRef, has_items};
 
 use super::tables::{ROW_HINT_CLASS, column, data_table, number, text, update_cell};
-use crate::components::code::code_tokens;
+use crate::components::code::breakable_code_tokens;
 use crate::context::Context;
 
 pub const SHOWN_ITEMS: usize = 8;
@@ -13,7 +13,7 @@ pub const SHOWN_ITEMS: usize = 8;
 pub fn item_list(items: &[StatRef]) -> Markup {
 	html! {
 		ul class="flex flex-wrap gap-x-4 gap-y-1" {
-			@for item in items { li class="min-w-0 break-all" { code { (code_tokens(&stat_ref_tokens(item))) } } }
+			@for item in items { li class="min-w-0" { code { (breakable_code_tokens(&stat_ref_tokens(item))) } } }
 		}
 	}
 }
@@ -22,24 +22,24 @@ pub fn record_table(records: &[StatRecord]) -> Markup {
 	let listed = records.iter().any(has_items);
 	html! {
 		div class="stat-table" {
-			table data-records=[listed.then_some("")] {
+			table role="table" data-records=[listed.then_some("")] {
 				@if listed { colgroup { col data-label=""; col data-value=""; col; } }
-				thead {
-					tr {
-						th scope="col" { "Statistic" }
-						th scope="col" data-number="" { "Value" }
-						@if listed { th scope="col" { "Items" } }
+				thead role="rowgroup" {
+					tr role="row" {
+						th role="columnheader" scope="col" { "Statistic" }
+						th role="columnheader" scope="col" data-number="" { "Value" }
+						@if listed { th role="columnheader" scope="col" { "Items" } }
 					}
 				}
-				tbody {
+				tbody role="rowgroup" {
 					@for record in records {
-						tr id=(record.id) {
-							th scope="row" data-wrap="" { span data-tooltip=(record.hint) class=(ROW_HINT_CLASS) { (record.label) } }
-							td data-number="" {
+						tr role="row" id=(record.id) {
+							th role="rowheader" scope="row" data-wrap="" { span data-tooltip=(record.hint) class=(ROW_HINT_CLASS) { (record.label) } }
+							td role="cell" data-number="" {
 								(js_number(record.value))
 								@if let Some(unit) = &record.unit { span class="text-fg-faint" { " " (unit_text(record.value, unit)) } }
 							}
-							@if listed { td data-wrap="" {
+							@if listed { td role="cell" data-wrap="" {
 								@if let Some(ties) = &record.ties {
 									span class="text-fg-muted" { (ties.count) " " (ref_noun(&ties.kind)) }
 								} @else if let Some(first) = record.items.first() {

@@ -34,3 +34,11 @@ export function tooltipTarget(target: EventTarget | null): TooltipTarget | undef
 	}
 	return hintTarget(target) ?? clippedTarget(target)
 }
+
+export function tapTarget(target: EventTarget | null): TooltipTarget | undefined {
+	if (!(target instanceof Element)) {
+		return undefined
+	}
+	const hinted = hintTarget(target)
+	return hinted?.element.closest("a, button") === null ? hinted : undefined
+}

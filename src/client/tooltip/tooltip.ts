@@ -1,5 +1,10 @@
 import { placeTooltip } from "./place-tooltip.ts"
-import { hintTarget, tooltipTarget, type TooltipTarget } from "./tooltip-target.ts"
+import {
+	hintTarget,
+	tapTarget,
+	tooltipTarget,
+	type TooltipTarget,
+} from "./tooltip-target.ts"
 
 const showDelay = 500
 const warmWindow = 300
@@ -8,6 +13,7 @@ let tip: HTMLElement | null = null
 let anchor: HTMLElement | undefined
 let timer: ReturnType<typeof setTimeout> | undefined
 let lastHidden = 0
+let pressed: HTMLElement | undefined
 
 function show(target: TooltipTarget | undefined): void {
 	if (tip === null || target === undefined) {
@@ -68,6 +74,7 @@ export function initTooltips(): void {
 	document.addEventListener("pointerout", (event) => {
 		const target = tooltipTarget(event.target)
 		if (
+			event.pointerType === "mouse" &&
 			target !== undefined &&
 			!(
 				event.relatedTarget instanceof Node &&
@@ -84,7 +91,21 @@ export function initTooltips(): void {
 		}
 	})
 	document.addEventListener("focusout", hide)
-	document.addEventListener("pointerdown", hide)
+	document.addEventListener("pointerdown", () => {
+		pressed = anchor
+		hide()
+	})
+	document.addEventListener("pointerup", (event) => {
+		const target = tapTarget(event.target)
+		if (
+			event.pointerType !== "mouse" &&
+			target !== undefined &&
+			target.element !== pressed
+		) {
+			show(target)
+		}
+		pressed = undefined
+	})
 	document.addEventListener("keydown", (event) => {
 		if (event.key === "Escape") {
 			hide()

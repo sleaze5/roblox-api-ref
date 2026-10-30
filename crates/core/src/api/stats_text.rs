@@ -1,7 +1,10 @@
 use super::release::release_name;
 use super::text::format_month_period;
-use crate::js::js_round;
-use crate::model::{AccessNow, BUCKET_STARTS, CountKind, CoverageKind, GAP_DAYS};
+use crate::js::{js_number, js_round};
+use crate::model::{
+	AccessNow, BUCKET_STARTS, ChangeTally, CountKind, CoverageKind, GAP_DAYS, Tallies, TrendKind,
+	UpdateTrend,
+};
 
 pub const fn count_label(kind: CountKind) -> &'static str {
 	match kind {
@@ -105,7 +108,7 @@ pub fn percent_text(part: u32, total: u32) -> String {
 		return "0%".to_owned();
 	}
 	let ratio = f64::from(part) / f64::from(total) * 100.0;
-	format!("{}%", crate::js::js_number(js_round(ratio)))
+	format!("{}%", js_number(js_round(ratio)))
 }
 
 pub fn access_lead(now: AccessNow) -> String {
@@ -151,6 +154,59 @@ pub fn capitalized(text: &str) -> String {
 }
 
 pub const PER_UPDATE_NOTE: &str = "The classes, members, and enum items that each update added and removed. A number marks a bar that runs past the axis.";
+
+pub const PER_UPDATE_TABLE_NOTE: &str = "The classes, members, and enum items that the tracked updates added and removed, in all and on average per update.";
+
+pub const PER_UPDATE_KINDS: [(&str, Option<TrendKind>); 7] = [
+	("Members", None),
+	("Classes", Some(TrendKind::Class)),
+	("Properties", Some(TrendKind::Property)),
+	("Methods", Some(TrendKind::Method)),
+	("Events", Some(TrendKind::Event)),
+	("Callbacks", Some(TrendKind::Callback)),
+	("Enum items", Some(TrendKind::EnumItem)),
+];
+
+pub fn kind_tally(tallies: &Tallies, kind: Option<TrendKind>) -> ChangeTally {
+	kind.map_or_else(|| tallies.member(), |kind| *tallies.get(kind))
+}
+
+pub struct PerUpdate {
+	pub label: &'static str,
+	pub added: u32,
+	pub removed: u32,
+	pub average_added: String,
+	pub average_removed: String,
+}
+
+pub fn average_text(value: f64) -> String {
+	js_number(js_round(value * 10.0) / 10.0)
+}
+
+#[expect(clippy::cast_precision_loss, reason = "update counts are small")]
+pub fn per_update_totals(updates: &[UpdateTrend]) -> Vec<PerUpdate> {
+	let count = updates.len().max(1) as f64;
+	PER_UPDATE_KINDS
+		.into_iter()
+		.map(|(label, kind)| {
+			let added: u32 = updates
+				.iter()
+				.map(|trend| kind_tally(&trend.tallies, kind).added)
+				.sum();
+			let removed: u32 = updates
+				.iter()
+				.map(|trend| kind_tally(&trend.tallies, kind).removed)
+				.sum();
+			PerUpdate {
+				label,
+				added,
+				removed,
+				average_added: average_text(f64::from(added) / count),
+				average_removed: average_text(f64::from(removed) / count),
+			}
+		})
+		.collect()
+}
 
 pub const DISTRIBUTIONS_LEAD: &str = "How the current API spreads by size: how many classes define each number of properties, methods, events, and callbacks themselves, how many members take each number of parameters, and how many enums have each number of items.";
 

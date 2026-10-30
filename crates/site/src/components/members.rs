@@ -17,7 +17,7 @@ use rapi_routes::{
 
 use crate::components::code::code_tokens;
 use crate::components::doc::doc_text;
-use crate::components::filters::filter_field;
+use crate::components::filters::{FieldCount, filter_field};
 use crate::components::history::history_list;
 use crate::components::tags::{dated_tags, tag_list};
 use crate::context::Context;
@@ -348,7 +348,7 @@ pub fn member_filter_bar(cx: &Context, kinds: &[MemberKind], tags: &[FilterTagGr
 	html! {
 		form data-member-filter="" role="search" aria-label="Filter members" class="z-10 -mx-3 flex flex-col gap-2 border-b border-line bg-canvas px-3 py-2 md:sticky md:top-header" {
 			div class="flex flex-wrap items-center gap-2" {
-				(filter_field(cx, "Filter members by name", "Filter members", true, "min-w-48 flex-1"))
+				(filter_field(cx, "Filter members by name", "Filter members", FieldCount::Total, "min-w-48 flex-1"))
 				(filter_menu(cx, tags))
 			}
 			div class="flex flex-wrap items-center gap-2" {

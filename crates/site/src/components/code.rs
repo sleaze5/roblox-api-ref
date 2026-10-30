@@ -58,33 +58,54 @@ fn swatch(color: &str) -> Markup {
 	}
 }
 
-fn plain_tokens(tokens: &[CodeToken]) -> Markup {
+fn token_text(text: &str, breaks: bool) -> Markup {
+	html! {
+		@if breaks {
+			@for part in text.split_inclusive(['.', ':', '(']) {
+				(part)
+				@if part.ends_with(['.', ':', '(']) { wbr; }
+			}
+		} @else {
+			(text)
+		}
+	}
+}
+
+fn plain_tokens(tokens: &[CodeToken], breaks: bool) -> Markup {
 	html! {
 		@for part in tokens {
 			@match (tone_class(part.tone), &part.swatch) {
-				(None, None) => (part.text),
+				(None, None) => (token_text(&part.text, breaks)),
 				(tone, color) => span class=[tone] {
 					@if let Some(color) = color { (swatch(color)) }
-					(part.text)
+					(token_text(&part.text, breaks))
 				},
 			}
 		}
 	}
 }
 
-pub fn code_tokens(tokens: &[CodeToken]) -> Markup {
+fn render_tokens(tokens: &[CodeToken], breaks: bool) -> Markup {
 	html! {
 		@for run in runs_of(tokens) {
 			@match run.href {
-				None => (plain_tokens(&run.tokens)),
+				None => (plain_tokens(&run.tokens, breaks)),
 				Some(href) => {
 					@if let [only] = run.tokens.as_slice() && only.swatch.is_none() {
-						a href=(href) data-tooltip=[run.title] class=[tone_class(only.tone)] { (only.text) }
+						a href=(href) data-tooltip=[run.title] class=[tone_class(only.tone)] { (token_text(&only.text, breaks)) }
 					} @else {
-						a href=(href) data-tooltip=[run.title] { (plain_tokens(&run.tokens)) }
+						a href=(href) data-tooltip=[run.title] { (plain_tokens(&run.tokens, breaks)) }
 					}
 				}
 			}
 		}
 	}
+}
+
+pub fn code_tokens(tokens: &[CodeToken]) -> Markup {
+	render_tokens(tokens, false)
+}
+
+pub fn breakable_code_tokens(tokens: &[CodeToken]) -> Markup {
+	render_tokens(tokens, true)
 }

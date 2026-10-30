@@ -4,11 +4,28 @@ use rapi_core::icons::Icon;
 use crate::context::Context;
 use crate::html::{IconSize, classes, icon};
 
+#[derive(Clone, Copy, PartialEq, Eq)]
+pub enum FieldCount {
+	Hidden,
+	Total,
+	Named,
+}
+
+impl FieldCount {
+	const fn class(self) -> &'static str {
+		match self {
+			Self::Hidden => "",
+			Self::Total => "field-count",
+			Self::Named => "field-count-wide",
+		}
+	}
+}
+
 pub fn filter_field(
 	cx: &Context,
 	label: &str,
 	placeholder: &str,
-	count: bool,
+	count: FieldCount,
 	class: &str,
 ) -> Markup {
 	html! {
@@ -17,9 +34,9 @@ pub fn filter_field(
 				span class="sr-only" { (label) }
 				(icon(cx, Icon::MagnifyingGlass, IconSize::S14, "pointer-events-none absolute left-3 text-fg-muted"))
 				input type="search" name="text" placeholder=(placeholder) autocomplete="off" spellcheck="false"
-					class=(classes(&["field field-icon", if count { "field-count" } else { "" }]));
+					class=(classes(&["field field-icon", count.class()]));
 			}
-			@if count {
+			@if count != FieldCount::Hidden {
 				output data-filter-summary="" aria-live="polite" class="pointer-events-none absolute right-3 text-xs text-fg-faint" {}
 			}
 		}
@@ -41,6 +58,14 @@ impl ListFilterPlacement {
 	}
 }
 
+const fn list_count(placement: ListFilterPlacement, noun: Option<&str>) -> FieldCount {
+	match (placement, noun) {
+		(ListFilterPlacement::Sidebar, _) => FieldCount::Hidden,
+		(ListFilterPlacement::Page, None) => FieldCount::Total,
+		(ListFilterPlacement::Page, Some(_)) => FieldCount::Named,
+	}
+}
+
 pub fn list_filter(
 	cx: &Context,
 	label: &str,
@@ -51,7 +76,7 @@ pub fn list_filter(
 ) -> Markup {
 	html! {
 		form data-list-filter=(target) data-param=(param) data-noun=[noun] role="search" aria-label=(label) class=(placement.class()) {
-			(filter_field(cx, label, label, placement == ListFilterPlacement::Page, ""))
+			(filter_field(cx, label, label, list_count(placement, noun), ""))
 		}
 	}
 }

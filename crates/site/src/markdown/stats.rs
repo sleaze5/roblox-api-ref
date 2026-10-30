@@ -1,8 +1,8 @@
 use rapi_core::api::access::access_tier_label;
 use rapi_core::api::stats_text::{
-	CAPABILITIES_LEAD, COMEBACKS_LEAD, DOCS_LEAD, GROWTH_LEAD, MONTHS_NOTE, SERVICES_HINT,
-	TAGS_LEAD, TRENDS_NOTE, access_lead, count_label, coverage_label, month_label, percent_text,
-	removed_note, stats_lead,
+	CAPABILITIES_LEAD, COMEBACKS_LEAD, DOCS_LEAD, GROWTH_LEAD, MONTHS_NOTE, PER_UPDATE_TABLE_NOTE,
+	SERVICES_HINT, TAGS_LEAD, TRENDS_NOTE, access_lead, count_label, coverage_label, month_label,
+	per_update_totals, percent_text, removed_note, stats_lead,
 };
 use rapi_core::js::format_date;
 use rapi_core::model::{ChangeTally, RecordGroup, TagTrend, Tallies, UpdateEvent, has_items};
@@ -286,6 +286,18 @@ pub fn stats_markdown(cx: &Context) -> String {
 			]
 		})
 		.collect();
+	let per_update: Vec<Vec<String>> = per_update_totals(&stats.updates)
+		.into_iter()
+		.map(|row| {
+			vec![
+				row.label.to_owned(),
+				row.added.to_string(),
+				row.removed.to_string(),
+				row.average_added,
+				row.average_removed,
+			]
+		})
+		.collect();
 	let years: Vec<Vec<String>> = stats
 		.years
 		.iter()
@@ -350,6 +362,18 @@ pub fn stats_markdown(cx: &Context) -> String {
 	blocks.extend([
 		"## API size".to_owned(),
 		markdown_table(&["Update", "Published", "Classes", "Enums"], &sizes),
+		"## Added and removed per update".to_owned(),
+		PER_UPDATE_TABLE_NOTE.to_owned(),
+		markdown_table(
+			&[
+				"Kind",
+				"Added",
+				"Removed",
+				"Average added",
+				"Average removed",
+			],
+			&per_update,
+		),
 		"## Changes by year".to_owned(),
 		format!("{TRENDS_NOTE} + means added, − removed, and ~ changed."),
 		markdown_table(&headings(&["Year", "Updates"]), &years),

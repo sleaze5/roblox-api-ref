@@ -1,10 +1,13 @@
 use maud::{Markup, html};
-use rapi_core::api::stats_text::{MONTHS_NOTE, PER_UPDATE_NOTE, TRENDS_NOTE, month_label};
+use rapi_core::api::stats_text::{
+	MONTHS_NOTE, PER_UPDATE_KINDS, PER_UPDATE_NOTE, TRENDS_NOTE, kind_tally, month_label,
+	per_update_totals,
+};
 use rapi_core::js::{format_date, js_number, js_round};
 use rapi_core::model::{ChangeCounts, ChangeTally, PeriodTrend, Tallies, TrendKind, UpdateTrend};
 use rapi_routes::update_href;
 
-use super::tables::{stats_section, text};
+use super::tables::{column, data_table, number, stats_section, text};
 use crate::context::Context;
 use crate::pages::charts::{
 	BarColumn, Column, LinePoint, column_chart, diverging_bar_chart, line_chart, year_ticks,
@@ -175,11 +178,8 @@ pub fn month_trends(months: &[PeriodTrend]) -> Markup {
 	)
 }
 
-fn added_removed_chart(
-	title: &str,
-	updates: &[UpdateTrend],
-	tally: &dyn Fn(&Tallies) -> ChangeTally,
-) -> Markup {
+fn added_removed_chart(title: &str, updates: &[UpdateTrend], kind: Option<TrendKind>) -> Markup {
+	let tally = |tallies: &Tallies| kind_tally(tallies, kind);
 	let added: u32 = updates
 		.iter()
 		.map(|trend| tally(&trend.tallies).added)
@@ -214,14 +214,34 @@ fn added_removed_chart(
 	)
 }
 
-const KIND_CHARTS: [(&str, TrendKind); 6] = [
-	("Classes", TrendKind::Class),
-	("Properties", TrendKind::Property),
-	("Methods", TrendKind::Method),
-	("Events", TrendKind::Event),
-	("Callbacks", TrendKind::Callback),
-	("Enum items", TrendKind::EnumItem),
-];
+fn per_update_table(updates: &[UpdateTrend]) -> Markup {
+	let rows: Vec<(String, Vec<Markup>)> = per_update_totals(updates)
+		.into_iter()
+		.map(|row| {
+			(
+				format!("per-update-{}", row.label.to_lowercase().replace(' ', "-")),
+				vec![
+					text(row.label),
+					text(row.added),
+					text(row.removed),
+					text(row.average_added),
+					text(row.average_removed),
+				],
+			)
+		})
+		.collect();
+	data_table(
+		"Added and removed per update",
+		&[
+			column("Kind"),
+			number("Added"),
+			number("Removed"),
+			number("Average added"),
+			number("Average removed"),
+		],
+		&rows,
+	)
+}
 
 fn period_charts(
 	periods: &[PeriodTrend],
@@ -285,12 +305,14 @@ pub fn stats_trends(cx: &Context) -> Markup {
 			}
 		}))
 		(stats_section("members-per-update", "Added and removed per update", Some(PER_UPDATE_NOTE), &html! {
-			(added_removed_chart("Members", updates, &Tallies::member))
+			@let (title, kind) = PER_UPDATE_KINDS[0];
+			(added_removed_chart(title, updates, kind))
 			div class="grid grid-cols-1 gap-6 lg:grid-cols-2" {
-				@for (title, kind) in KIND_CHARTS {
-					(added_removed_chart(title, updates, &|tallies: &Tallies| *tallies.get(kind)))
+				@for (title, kind) in &PER_UPDATE_KINDS[1..] {
+					(added_removed_chart(title, updates, *kind))
 				}
 			}
+			(per_update_table(updates))
 		}))
 		(stats_section("changes-by-year", "Changes by year", Some(TRENDS_NOTE), &html! {
 			(period_charts(&stats.years, &year_label, &year_label))

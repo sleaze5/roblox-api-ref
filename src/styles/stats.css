@@ -1,5 +1,6 @@
 @utility stat-table {
 	position: relative;
+	container-type: inline-size;
 	overflow-x: auto;
 	overscroll-behavior-x: contain;
 	font-size: var(--text-sm);
@@ -50,21 +51,90 @@
 		font-variant-numeric: tabular-nums;
 	}
 
-	& table[data-records] {
-		table-layout: fixed;
-	}
-
 	& col[data-label] {
 		width: 34%;
 	}
 
 	& col[data-value] {
-		width: 12%;
+		width: 1%;
 	}
 
 	& [data-wrap] {
 		white-space: normal;
 		overflow-wrap: anywhere;
+	}
+
+	@container (width < 512px) {
+		& table[data-records],
+		& table[data-records] > tbody {
+			display: block;
+		}
+
+		& table[data-records] > thead {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+			clip-path: inset(50%);
+			white-space: nowrap;
+		}
+
+		& table[data-records] > tbody > tr {
+			display: grid;
+			grid-template-columns: minmax(0, 1fr) auto;
+			gap: var(--spacing) calc(var(--spacing) * 3);
+			padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 3);
+			border-top: 1px solid var(--color-line);
+		}
+
+		& table[data-records] > tbody > tr:first-child {
+			border-top: 0;
+		}
+
+		& table[data-records] > tbody > tr > * {
+			padding: 0;
+			border-top: 0;
+		}
+
+		& table[data-records] > tbody > tr > :nth-child(3) {
+			grid-column: 1 / -1;
+		}
+
+		& table[data-records] > tbody > tr > :nth-child(3):empty {
+			display: none;
+		}
+	}
+}
+
+@utility chart {
+	container-type: inline-size;
+
+	& [data-fit] {
+		display: none;
+	}
+
+	@container (width >= 368px) {
+		& [data-fit="1"] {
+			display: block;
+		}
+	}
+
+	@container (width >= 440px) {
+		& [data-fit="2"] {
+			display: block;
+		}
+	}
+
+	@container (width >= 560px) {
+		& [data-fit="3"] {
+			display: block;
+		}
+	}
+
+	@container (width >= 680px) {
+		& [data-fit="4"] {
+			display: block;
+		}
 	}
 }
 
