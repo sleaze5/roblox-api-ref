@@ -1,7 +1,6 @@
 import indexUrl from "../../generated/search.bin?url"
 import type { Search } from "../../generated/search.js"
-
-let pending: Promise<Search> | undefined
+import { cacheUntilFailure } from "./cache-until-failure.ts"
 
 async function fetchIndex(): Promise<Uint8Array> {
 	const response = await fetch(indexUrl)
@@ -11,10 +10,9 @@ async function fetchIndex(): Promise<Uint8Array> {
 	return new Uint8Array(await response.arrayBuffer())
 }
 
-export function loadEngine(): Promise<Search> {
-	pending ??= Promise.all([
+export const loadEngine: () => Promise<Search> = cacheUntilFailure(() =>
+	Promise.all([
 		import("./search-module.ts").then((module) => module.loadSearchModule()),
 		fetchIndex(),
-	]).then(([module, index]) => new module.Search(index))
-	return pending
-}
+	]).then(([module, index]) => new module.Search(index)),
+)
