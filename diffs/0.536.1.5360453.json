@@ -1,0 +1,922 @@
+{
+	"from": {
+		"version": "0.535.0.5350277",
+		"hash": "932401185ca04a2d"
+	},
+	"to": {
+		"version": "0.536.1.5360453",
+		"hash": "18eb4ffee0ee433f"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AnimationFromVideoCreatorStudioService",
+			"member": "IsAgeRestricted",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsAgeRestricted",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportSession",
+			"member": "GetInstance",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetInstance",
+				"Parameters": [
+					{
+						"Name": "nodeId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "CoreGuiNavigationEnabled",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": false,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden",
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "CoreGuiNavigationEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImporterMeshSettings",
+			"member": "CageManifoldPreview",
+			"type": "Remove",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "CageManifoldPreview",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImporterMeshSettings",
+			"member": "CageNoOverlappingVerticesPreview",
+			"type": "Remove",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "CageNoOverlappingVerticesPreview",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImporterMeshSettings",
+			"member": "CageUVMatchedPreview",
+			"type": "Remove",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "CageUVMatchedPreview",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImporterMeshSettings",
+			"member": "CageMeshIntersectedPreview",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "CageMeshIntersectedPreview",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImporterMeshSettings",
+			"member": "CageMeshNotIntersected",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "CageMeshNotIntersected",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImporterMeshSettings",
+			"member": "CageNonManifoldPreview",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "CageNonManifoldPreview",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImporterMeshSettings",
+			"member": "CageOverlappingVerticesPreview",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "CageOverlappingVerticesPreview",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImporterMeshSettings",
+			"member": "CageUVMisMatchedPreview",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "CageUVMisMatchedPreview",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImporterMeshSettings",
+			"member": "IrrelevantCageModifiedPreview",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "IrrelevantCageModifiedPreview",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImporterMeshSettings",
+			"member": "MeshHoleDetectedPreview",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "MeshHoleDetectedPreview",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImporterMeshSettings",
+			"member": "MeshNoHoleDetected",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "MeshNoHoleDetected",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImporterMeshSettings",
+			"member": "NoIrrelevantCageModified",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "NoIrrelevantCageModified",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "CollisionGroupId",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Collision",
+				"MemberType": "Property",
+				"Name": "CollisionGroupId",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MeshPart",
+			"member": "MeshID",
+			"type": "Remove",
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "MeshID",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable",
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDocument",
+			"member": "GetLine",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Default": "-1234567",
+							"Name": "lineIndex",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					],
+					"after": [
+						{
+							"Default": "nil",
+							"Name": "lineIndex",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int?"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetLine",
+				"Parameters": [
+					{
+						"Default": "nil",
+						"Name": "lineIndex",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDocument",
+			"member": "GetText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Default": "-1234567",
+							"Name": "startLine",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Default": "-1234567",
+							"Name": "startCharacter",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Default": "-1234567",
+							"Name": "endLine",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Default": "-1234567",
+							"Name": "endCharacter",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					],
+					"after": [
+						{
+							"Default": "nil",
+							"Name": "startLine",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int?"
+							}
+						},
+						{
+							"Default": "nil",
+							"Name": "startCharacter",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int?"
+							}
+						},
+						{
+							"Default": "nil",
+							"Name": "endLine",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int?"
+							}
+						},
+						{
+							"Default": "nil",
+							"Name": "endCharacter",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int?"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetText",
+				"Parameters": [
+					{
+						"Default": "nil",
+						"Name": "startLine",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int?"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "startCharacter",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int?"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "endLine",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int?"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "endCharacter",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int?"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SoundService",
+			"member": "VolumetricAudio",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "VolumetricAudio",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable",
+					"NotBrowsable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "VolumetricAudio"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VoiceChatInternal",
+			"member": "StateChanged",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "None"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "StateChanged",
+				"Parameters": [
+					{
+						"Name": "old",
+						"Type": {
+							"Category": "Enum",
+							"Name": "VoiceChatState"
+						}
+					},
+					{
+						"Name": "new",
+						"Type": {
+							"Category": "Enum",
+							"Name": "VoiceChatState"
+						}
+					}
+				],
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PatchMapping",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "PatchMapping",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PatchMapping",
+			"member": "FlattenTree",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "FlattenTree",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PatchMapping",
+			"member": "PatchId",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "PatchId",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PatchMapping",
+			"member": "TargetPath",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "TargetPath",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "RomarkSoundEffect",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "RomarkSoundEffect",
+				"Superclass": "SoundEffect",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "MeshPartDetailLevel",
+			"item": "Level01",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 1,
+					"after": 2
+				}
+			],
+			"value": {
+				"Name": "Level01",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "MeshPartDetailLevel",
+			"item": "Level02",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 2,
+					"after": 3
+				}
+			],
+			"value": {
+				"Name": "Level02",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "MeshPartDetailLevel",
+			"item": "Level03",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 3,
+					"after": 4
+				}
+			],
+			"value": {
+				"Name": "Level03",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "MeshPartDetailLevel",
+			"item": "Level04",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 4,
+					"after": 5
+				}
+			],
+			"value": {
+				"Name": "Level04",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "MeshPartDetailLevel",
+			"item": "Level00",
+			"type": "Add",
+			"value": {
+				"Name": "Level00",
+				"Value": 1
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "VolumetricAudio",
+			"type": "Add",
+			"value": {
+				"Name": "VolumetricAudio"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "VolumetricAudio",
+			"item": "Disabled",
+			"type": "Add",
+			"value": {
+				"Name": "Disabled",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "VolumetricAudio",
+			"item": "Automatic",
+			"type": "Add",
+			"value": {
+				"Name": "Automatic",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "VolumetricAudio",
+			"item": "Enabled",
+			"type": "Add",
+			"value": {
+				"Name": "Enabled",
+				"Value": 2
+			}
+		}
+	]
+}

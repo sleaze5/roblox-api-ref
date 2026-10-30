@@ -1,0 +1,855 @@
+{
+	"from": {
+		"version": "0.383.0.299732",
+		"hash": "bce966398c894c42"
+	},
+	"to": {
+		"version": "0.384.0.300680",
+		"hash": "f7cc9a5caaee4015"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "IsA",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"CustomLuaState"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsA",
+				"Parameters": [
+					{
+						"Name": "className",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"CustomLuaState"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "isA",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Deprecated"
+					],
+					"after": [
+						"Deprecated",
+						"CustomLuaState"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "isA",
+				"Parameters": [
+					{
+						"Name": "className",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated",
+					"CustomLuaState"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ViewportFrame",
+			"member": "Ambient",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "Ambient",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ViewportFrame",
+			"member": "LightColor",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "LightColor",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ViewportFrame",
+			"member": "LightDirection",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "LightDirection",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "CloseInspectMenu",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CloseInspectMenu",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "GetInspectMenuEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetInspectMenuEnabled",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "InspectPlayerFromHumanoidDescription",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "InspectPlayerFromHumanoidDescription",
+				"Parameters": [
+					{
+						"Name": "humanoidDescription",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "InspectPlayerFromUserId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "InspectPlayerFromUserId",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "SetInspectMenuEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetInspectMenuEnabled",
+				"Parameters": [
+					{
+						"Name": "enabled",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "CloseInspectMenuRequest",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "CloseInspectMenuRequest",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "InspectMenuEnabledChangedSignal",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "InspectMenuEnabledChangedSignal",
+				"Parameters": [
+					{
+						"Name": "enabled",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "InspectPlayerFromHumanoidDescriptionRequest",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "InspectPlayerFromHumanoidDescriptionRequest",
+				"Parameters": [
+					{
+						"Name": "humanoidDescription",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "InspectPlayerFromUserIdRequest",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "InspectPlayerFromUserIdRequest",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "PlayEmote",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PlayEmote",
+				"Parameters": [
+					{
+						"Name": "emoteName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "AddEmote",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddEmote",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "GetEmotes",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetEmotes",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "GetEquippedEmotes",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetEquippedEmotes",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "RemoveEmote",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RemoveEmote",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "SetEmotes",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetEmotes",
+				"Parameters": [
+					{
+						"Name": "emotes",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "SetEquippedEmotes",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetEquippedEmotes",
+				"Parameters": [
+					{
+						"Name": "equippedEmotes",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "EmotesChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "EmotesChanged",
+				"Parameters": [
+					{
+						"Name": "newEmotes",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "EquippedEmotesChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "EquippedEmotesChanged",
+				"Parameters": [
+					{
+						"Name": "newEquippedEmotes",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptBundlePurchase",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptBundlePurchase",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "bundleId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "SignalAssetTypePurchased",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SignalAssetTypePurchased",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "assetType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AssetType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptBundlePurchaseRequested",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptBundlePurchaseRequested",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "bundleId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "StreamingPauseMode",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "StreamingPauseMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "StreamingPauseMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "GameplayPaused",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "GameplayPaused",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "UserEmotesEnabled",
+			"type": "Add",
+			"value": {
+				"Category": "Character",
+				"MemberType": "Property",
+				"Name": "UserEmotesEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "EmotesPages",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "EmotesPages",
+				"Superclass": "InventoryPages",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "StudioData",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "StudioData",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioData",
+			"member": "SrcPlaceId",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "SrcPlaceId",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioData",
+			"member": "SrcUniverseId",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "SrcUniverseId",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetType",
+			"item": "EmoteAnimation",
+			"type": "Add",
+			"value": {
+				"Name": "EmoteAnimation",
+				"Value": 61
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarContextMenuOption",
+			"item": "InspectMenu",
+			"type": "Add",
+			"value": {
+				"Name": "InspectMenu",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "StreamingPauseMode",
+			"type": "Add",
+			"value": {
+				"Name": "StreamingPauseMode"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StreamingPauseMode",
+			"item": "Default",
+			"type": "Add",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StreamingPauseMode",
+			"item": "Disabled",
+			"type": "Add",
+			"value": {
+				"Name": "Disabled",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StreamingPauseMode",
+			"item": "ClientPhysicsPause",
+			"type": "Add",
+			"value": {
+				"Name": "ClientPhysicsPause",
+				"Value": 2
+			}
+		}
+	]
+}

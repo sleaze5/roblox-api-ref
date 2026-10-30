@@ -1,0 +1,781 @@
+{
+	"from": {
+		"version": "0.456.1.414231",
+		"hash": "e61f8c4425364eb9"
+	},
+	"to": {
+		"version": "0.457.0.414557",
+		"hash": "f12392bbeb5e460b"
+	},
+	"changes": [
+		{
+			"element": "Class",
+			"class": "AnalyticsService",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotCreatable",
+						"Service"
+					],
+					"after": [
+						"Service"
+					]
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AnalyticsService",
+				"Superclass": "Instance",
+				"Tags": [
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnalyticsService",
+			"member": "FireCustomEvent",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FireCustomEvent",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "eventCategory",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "customData",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnalyticsService",
+			"member": "FireInGameEconomyEvent",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FireInGameEconomyEvent",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "itemName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "economyAction",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AnalyticsEconomyAction"
+						}
+					},
+					{
+						"Name": "itemCategory",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "amount",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "currency",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "location",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "customData",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnalyticsService",
+			"member": "FireLogEvent",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FireLogEvent",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "logLevel",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AnalyticsLogLevel"
+						}
+					},
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "debugInfo",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "customData",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnalyticsService",
+			"member": "FirePlayerProgressionEvent",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FirePlayerProgressionEvent",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "category",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "progressionStatus",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AnalyticsProgressionStatus"
+						}
+					},
+					{
+						"Name": "location",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "statistics",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Name": "customData",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "CancelImportHeightmap",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CancelImportHeightmap",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "SetImportHeightmapPaused",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetImportHeightmapPaused",
+				"Parameters": [
+					{
+						"Name": "paused",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "ImportHeightmap",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ImportHeightmap",
+				"Parameters": [
+					{
+						"Name": "region",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Region3"
+						}
+					},
+					{
+						"Name": "heightmapAssetId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					},
+					{
+						"Name": "colormapAssetId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					},
+					{
+						"Name": "defaultMaterial",
+						"Type": {
+							"Category": "Enum",
+							"Name": "Material"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PlayerEmulatorService",
+			"member": "EmulatedCountryCode",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "RobloxScriptSecurity",
+						"Write": "RobloxScriptSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden"
+					]
+				}
+			],
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "EmulatedCountryCode",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PlayerEmulatorService",
+			"member": "EmulatedGameLocale",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "RobloxScriptSecurity",
+						"Write": "RobloxScriptSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden"
+					]
+				}
+			],
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "EmulatedGameLocale",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PlayerEmulatorService",
+			"member": "PlayerEmulationEnabled",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "RobloxScriptSecurity",
+						"Write": "RobloxScriptSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden"
+					]
+				}
+			],
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "PlayerEmulationEnabled",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PlayerEmulatorService",
+			"member": "SerializedEmulatedPolicyInfo",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "RobloxScriptSecurity",
+						"Write": "RobloxScriptSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden"
+					]
+				}
+			],
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "SerializedEmulatedPolicyInfo",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "GameNameUpdated",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "GameNameUpdated",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Clouds",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "Clouds",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Clouds",
+			"member": "Cover",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "Cover",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Clouds",
+			"member": "Density",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "Density",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "AttributeCog",
+			"type": "Add",
+			"value": {
+				"Name": "AttributeCog",
+				"Value": 108
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AnalyticsEconomyAction",
+			"type": "Add",
+			"value": {
+				"Name": "AnalyticsEconomyAction"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnalyticsEconomyAction",
+			"item": "Default",
+			"type": "Add",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnalyticsEconomyAction",
+			"item": "Acquire",
+			"type": "Add",
+			"value": {
+				"Name": "Acquire",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnalyticsEconomyAction",
+			"item": "Spend",
+			"type": "Add",
+			"value": {
+				"Name": "Spend",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AnalyticsLogLevel",
+			"type": "Add",
+			"value": {
+				"Name": "AnalyticsLogLevel"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnalyticsLogLevel",
+			"item": "Trace",
+			"type": "Add",
+			"value": {
+				"Name": "Trace",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnalyticsLogLevel",
+			"item": "Debug",
+			"type": "Add",
+			"value": {
+				"Name": "Debug",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnalyticsLogLevel",
+			"item": "Infomation",
+			"type": "Add",
+			"value": {
+				"Name": "Infomation",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnalyticsLogLevel",
+			"item": "Warning",
+			"type": "Add",
+			"value": {
+				"Name": "Warning",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnalyticsLogLevel",
+			"item": "Error",
+			"type": "Add",
+			"value": {
+				"Name": "Error",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnalyticsLogLevel",
+			"item": "Fatal",
+			"type": "Add",
+			"value": {
+				"Name": "Fatal",
+				"Value": 5
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AnalyticsProgressionStatus",
+			"type": "Add",
+			"value": {
+				"Name": "AnalyticsProgressionStatus"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnalyticsProgressionStatus",
+			"item": "Default",
+			"type": "Add",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnalyticsProgressionStatus",
+			"item": "Begin",
+			"type": "Add",
+			"value": {
+				"Name": "Begin",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnalyticsProgressionStatus",
+			"item": "Complete",
+			"type": "Add",
+			"value": {
+				"Name": "Complete",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnalyticsProgressionStatus",
+			"item": "Abandon",
+			"type": "Add",
+			"value": {
+				"Name": "Abandon",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnalyticsProgressionStatus",
+			"item": "Fail",
+			"type": "Add",
+			"value": {
+				"Name": "Fail",
+				"Value": 4
+			}
+		}
+	]
+}

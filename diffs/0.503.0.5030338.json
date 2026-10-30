@@ -1,0 +1,397 @@
+{
+	"from": {
+		"version": "0.502.0.5020362",
+		"hash": "dcc93c78b1634a97"
+	},
+	"to": {
+		"version": "0.503.0.5030338",
+		"hash": "9a5c76acd9104c33"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AssetManagerService",
+			"member": "AssetImportedSignal",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "assetType",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "assetId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "assetName",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "assetType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "AssetType"
+							}
+						},
+						{
+							"Name": "assetId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "assetName",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "AssetImportedSignal",
+				"Parameters": [
+					{
+						"Name": "assetType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AssetType"
+						}
+					},
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "assetName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetManagerService",
+			"member": "ImportSessionFinished",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ImportSessionFinished",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetManagerService",
+			"member": "ImportSessionStarted",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ImportSessionStarted",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "PerformSaveAvatar",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PerformSaveAvatar",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Breakpoint",
+			"member": "ContinueExecution",
+			"type": "Add",
+			"value": {
+				"Category": "State",
+				"MemberType": "Property",
+				"Name": "ContinueExecution",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerConnection",
+			"member": "Step",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Step",
+				"Parameters": [
+					{
+						"Name": "thread",
+						"Type": {
+							"Category": "Class",
+							"Name": "ThreadState"
+						}
+					},
+					{
+						"Name": "callback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerConnection",
+			"member": "StepIn",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "StepIn",
+				"Parameters": [
+					{
+						"Name": "thread",
+						"Type": {
+							"Category": "Class",
+							"Name": "ThreadState"
+						}
+					},
+					{
+						"Name": "callback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerConnection",
+			"member": "StepOut",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "StepOut",
+				"Parameters": [
+					{
+						"Name": "thread",
+						"Type": {
+							"Category": "Class",
+							"Name": "ThreadState"
+						}
+					},
+					{
+						"Name": "callback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImporterGroupSettings",
+			"member": "Anchored",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Anchored",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImporterRootSettings",
+			"member": "Anchored",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Anchored",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImporterTextureSettings",
+			"member": "FilePath",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "FilePath",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "LodDataEntity",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "LodDataEntity",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LodDataEntity",
+			"member": "EntityLodEnabled",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "EntityLodEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "LodDataService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "LodDataService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		}
+	]
+}

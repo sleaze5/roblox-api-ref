@@ -1,0 +1,153 @@
+{
+	"from": {
+		"version": "0.403.1.344866",
+		"hash": "7c55369ebc4040a0"
+	},
+	"to": {
+		"version": "0.404.0.346082",
+		"hash": "b41d7078bead4847"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "DebuggerWatch",
+			"member": "CheckSyntax",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CheckSyntax",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GlobalDataStore",
+			"member": "OnUpdate",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "OnUpdate",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "callback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RBXScriptConnection"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "GetInstalledPluginData",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetInstalledPluginData",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "InstalledPluginData",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "InstalledPluginData",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "GetStartupPluginId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetStartupPluginId",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "OnPluginInstalledFromWeb",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnPluginInstalledFromWeb",
+				"Parameters": [
+					{
+						"Name": "pluginId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		}
+	]
+}

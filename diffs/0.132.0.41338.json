@@ -1,0 +1,156 @@
+{
+	"from": {
+		"version": "0.131.0.41087",
+		"hash": "bce30591d031432c"
+	},
+	"to": {
+		"version": "0.132.0.41338",
+		"hash": "28a069d7dccb4f92"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "StreamingEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "StreamingEnabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Behavior",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RunService",
+			"member": "Heartbeat",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Deprecated"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "Heartbeat",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "double"
+						},
+						"Name": "step"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RunService",
+			"member": "Stepped",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Deprecated"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "Stepped",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "double"
+						},
+						"Name": "time"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "double"
+						},
+						"Name": "step"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RunService",
+			"member": "RenderStepped",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "RenderStepped",
+				"Parameters": [],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "UniverseService",
+			"type": "Remove",
+			"value": {
+				"Name": "UniverseService",
+				"Superclass": "Instance",
+				"MemoryCategory": ""
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DataStoreService",
+			"type": "Add",
+			"value": {
+				"Name": "DataStoreService",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStoreService",
+			"member": "GetGlobalDataStore",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetGlobalDataStore",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None"
+			}
+		}
+	]
+}

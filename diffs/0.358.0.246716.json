@@ -1,0 +1,159 @@
+{
+	"from": {
+		"version": "0.357.0.244916",
+		"hash": "08edfeeed2494a60"
+	},
+	"to": {
+		"version": "0.358.0.246716",
+		"hash": "c7c6d55ab4ee460a"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "BadgeService",
+			"member": "IsDisabled",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Yields"
+					],
+					"after": [
+						"Yields",
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsDisabled",
+				"Parameters": [
+					{
+						"Name": "badgeId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields",
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BadgeService",
+			"member": "IsLegal",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Yields"
+					],
+					"after": [
+						"Yields",
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsLegal",
+				"Parameters": [
+					{
+						"Name": "badgeId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields",
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "FindTheme",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindTheme",
+				"Parameters": [
+					{
+						"Name": "themeName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Debug Client In APS Mode",
+			"type": "Add",
+			"value": {
+				"Category": "Advanced",
+				"MemberType": "Property",
+				"Name": "Debug Client In APS Mode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectRaknetErrors",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectRaknetErrors",
+				"Value": 279
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectWrongVersion",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectWrongVersion",
+				"Value": 280
+			}
+		}
+	]
+}

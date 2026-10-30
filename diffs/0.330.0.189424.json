@@ -1,0 +1,233 @@
+{
+	"from": {
+		"version": "0.329.1.188854",
+		"hash": "11f4d59dbcca499a"
+	},
+	"to": {
+		"version": "0.330.0.189424",
+		"hash": "0bb91d28bcd0467c"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "GuiBase2d",
+			"member": "RootLocalizationTable",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ValueType",
+					"before": {
+						"Category": "Class",
+						"Name": "Instance"
+					},
+					"after": {
+						"Category": "Class",
+						"Name": "LocalizationTable"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Property",
+				"Name": "RootLocalizationTable",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "LocalizationTable"
+				},
+				"Category": "Localization",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiObject",
+			"member": "Draggable",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Property",
+				"Name": "Draggable",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Behavior",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiObject",
+			"member": "DragBegin",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "DragBegin",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "UDim2"
+						},
+						"Name": "initialPosition"
+					}
+				],
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiObject",
+			"member": "DragStopped",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "DragStopped",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "x"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "y"
+					}
+				],
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "Deactivate",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Deactivate",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "IsActivated",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsActivated",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "IsActivatedWithExclusiveMouse",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsActivatedWithExclusiveMouse",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "IsGamepadButtonDown",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsGamepadButtonDown",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserInputType"
+						},
+						"Name": "gamepadNum"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "KeyCode"
+						},
+						"Name": "gamepadKeyCode"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None"
+			}
+		}
+	]
+}

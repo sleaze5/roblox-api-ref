@@ -1,0 +1,210 @@
+{
+	"from": {
+		"version": "0.170.0.52322",
+		"hash": "b155910bba974e13"
+	},
+	"to": {
+		"version": "0.171.0.52407",
+		"hash": "e66ffbb509ce4483"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Tool",
+			"member": "ManualActivationOnly",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ManualActivationOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Behavior",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "RemoveSpecialKey",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RemoveSpecialKey",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "SpecialKey"
+						},
+						"Name": "key"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PathfindingService",
+			"member": "ComputeSmoothPathAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ComputeSmoothPathAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						},
+						"Name": "start"
+					},
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						},
+						"Name": "finish"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						},
+						"Name": "maxDistance"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RenderSettings",
+			"member": "graphicsMode",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "graphicsMode",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "GraphicsMode"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RenderSettings",
+			"member": "ExportMergeByMaterial",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ExportMergeByMaterial",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "General",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RenderSettings",
+			"member": "GraphicsMode",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "GraphicsMode",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "GraphicsMode"
+				},
+				"Category": "General",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "IsStudioTouchEmulationEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsStudioTouchEmulationEnabled",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "SolidModelContentProvider",
+			"type": "Add",
+			"value": {
+				"Name": "SolidModelContentProvider",
+				"Superclass": "CacheableContentProvider",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PartOperationAsset",
+			"type": "Add",
+			"value": {
+				"Name": "PartOperationAsset",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances"
+			}
+		}
+	]
+}

@@ -1,0 +1,198 @@
+{
+	"from": {
+		"version": "0.126.0.39503",
+		"hash": "22d46fdc522044b7"
+	},
+	"to": {
+		"version": "0.127.0.39583",
+		"hash": "97c0e76356f746a6"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "TextBox",
+			"member": "CaptureFocus",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "None"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "CaptureFocus",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginManager",
+			"member": "GetStudioUserId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetStudioUserId",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TeleportService",
+			"member": "Teleport",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "placeId"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "placeId"
+						},
+						{
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							},
+							"Name": "player",
+							"Default": "nil"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "Teleport",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "placeId"
+					},
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "player",
+						"Default": "nil"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TeleportService",
+			"member": "TeleportToSpawnByName",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "placeId"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "spawnName"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "placeId"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "spawnName"
+						},
+						{
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							},
+							"Name": "player",
+							"Default": "nil"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "TeleportToSpawnByName",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "placeId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "spawnName"
+					},
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "player",
+						"Default": "nil"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		}
+	]
+}

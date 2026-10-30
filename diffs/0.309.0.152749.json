@@ -1,0 +1,916 @@
+{
+	"from": {
+		"version": "0.308.0.150864",
+		"hash": "d640a62aa8e946de"
+	},
+	"to": {
+		"version": "0.309.0.152749",
+		"hash": "26137d116c3d42cb"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "BallSocketConstraint",
+			"member": "TwistLimitsEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "TwistLimitsEnabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Limits",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BallSocketConstraint",
+			"member": "TwistLowerAngle",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "TwistLowerAngle",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "TwistLimits",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BallSocketConstraint",
+			"member": "TwistUpperAngle",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "TwistUpperAngle",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "TwistLimits",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiBase2d",
+			"member": "Localize",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Localize",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Localization",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextButton",
+			"member": "LocalizedText",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "LocalizedText",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextLabel",
+			"member": "Localize",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Localize",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextLabel",
+			"member": "LocalizedText",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "LocalizedText",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "NavigationPath",
+			"type": "Remove",
+			"value": {
+				"Name": "NavigationPath",
+				"Superclass": "Instance",
+				"MemoryCategory": ""
+			}
+		},
+		{
+			"element": "Class",
+			"class": "NavigationService",
+			"type": "Remove",
+			"value": {
+				"Name": "NavigationService",
+				"Superclass": "Instance",
+				"MemoryCategory": ""
+			}
+		},
+		{
+			"element": "Class",
+			"class": "NavigationWaypoint",
+			"type": "Remove",
+			"value": {
+				"Name": "NavigationWaypoint",
+				"Superclass": "Instance",
+				"MemoryCategory": ""
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "VelocitySpread",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotReplicated"
+					],
+					"after": [
+						"NotReplicated",
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Property",
+				"Name": "VelocitySpread",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Emission",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Path",
+			"member": "GetPointCoordinates",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPointCoordinates",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Path",
+			"member": "GetWaypoints",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetWaypoints",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PathfindingService",
+			"member": "EmptyCutoff",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotReplicated"
+					],
+					"after": [
+						"NotReplicated",
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Property",
+				"Name": "EmptyCutoff",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PathfindingService",
+			"member": "ComputeRawPathAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Yields"
+					],
+					"after": [
+						"Yields",
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "ComputeRawPathAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						},
+						"Name": "start"
+					},
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						},
+						"Name": "finish"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						},
+						"Name": "maxDistance"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields",
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PathfindingService",
+			"member": "ComputeSmoothPathAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Yields"
+					],
+					"after": [
+						"Yields",
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "ComputeSmoothPathAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						},
+						"Name": "start"
+					},
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						},
+						"Name": "finish"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						},
+						"Name": "maxDistance"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields",
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PathfindingService",
+			"member": "FindPathAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindPathAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						},
+						"Name": "start"
+					},
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						},
+						"Name": "finish"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PlayerScripts",
+			"member": "ComputerCameraMovementModeRegistered",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "ComputerCameraMovementMode"
+							},
+							"Name": "movementMode"
+						}
+					],
+					"after": []
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "ComputerCameraMovementModeRegistered",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PlayerScripts",
+			"member": "ComputerMovementModeRegistered",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "ComputerMovementMode"
+							},
+							"Name": "movementMode"
+						}
+					],
+					"after": []
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "ComputerMovementModeRegistered",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PlayerScripts",
+			"member": "TouchCameraMovementModeRegistered",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "TouchCameraMovementMode"
+							},
+							"Name": "movementMode"
+						}
+					],
+					"after": []
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "TouchCameraMovementModeRegistered",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PlayerScripts",
+			"member": "TouchMovementModeRegistered",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "TouchMovementMode"
+							},
+							"Name": "movementMode"
+						}
+					],
+					"after": []
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "TouchMovementModeRegistered",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PlayerScripts",
+			"member": "ClearComputerCameraMovementModes",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ClearComputerCameraMovementModes",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PlayerScripts",
+			"member": "ClearComputerMovementModes",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ClearComputerMovementModes",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PlayerScripts",
+			"member": "ClearTouchCameraMovementModes",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ClearTouchCameraMovementModes",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PlayerScripts",
+			"member": "ClearTouchMovementModes",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ClearTouchMovementModes",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "RenderHooksService",
+			"type": "Remove",
+			"value": {
+				"Name": "RenderHooksService",
+				"Superclass": "Instance",
+				"MemoryCategory": ""
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserGameSettings",
+			"member": "HasEverUsedVR",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "HasEverUsedVR",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserGameSettings",
+			"member": "VREnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "VREnabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PathWaypoint",
+			"type": "Add",
+			"value": {
+				"Name": "PathWaypoint",
+				"Superclass": "Instance",
+				"MemoryCategory": ""
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PathWaypoint",
+			"member": "Action",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Action",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "PathWaypointAction"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PathWaypoint",
+			"member": "Position",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Position",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly"
+				]
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "NavigationStatus",
+			"type": "Remove",
+			"value": {
+				"Name": "NavigationStatus"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "NavigationWaypointAction",
+			"type": "Remove",
+			"value": {
+				"Name": "NavigationWaypointAction"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PathStatus",
+			"item": "ClosestNoPath",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Name": "ClosestNoPath",
+				"Value": 1,
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PathStatus",
+			"item": "ClosestOutOfRange",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Name": "ClosestOutOfRange",
+				"Value": 2,
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PathStatus",
+			"item": "FailStartNotEmpty",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Name": "FailStartNotEmpty",
+				"Value": 3,
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PathStatus",
+			"item": "FailFinishNotEmpty",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Name": "FailFinishNotEmpty",
+				"Value": 4,
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PathStatus",
+			"item": "NoPath",
+			"type": "Add",
+			"value": {
+				"Name": "NoPath",
+				"Value": 5
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "PathWaypointAction",
+			"type": "Add",
+			"value": {
+				"Name": "PathWaypointAction"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PathWaypointAction",
+			"item": "Walk",
+			"type": "Add",
+			"value": {
+				"Name": "Walk",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PathWaypointAction",
+			"item": "Jump",
+			"type": "Add",
+			"value": {
+				"Name": "Jump",
+				"Value": 1
+			}
+		}
+	]
+}

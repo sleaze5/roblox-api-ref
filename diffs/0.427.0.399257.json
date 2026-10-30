@@ -1,0 +1,476 @@
+{
+	"from": {
+		"version": "0.426.0.397632",
+		"hash": "96aad58e4dca458a"
+	},
+	"to": {
+		"version": "0.427.0.399257",
+		"hash": "d0bf986508c743d6"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "GameSettings",
+			"member": "VideoRecording",
+			"type": "Add",
+			"value": {
+				"Category": "Video",
+				"MemberType": "Property",
+				"Name": "VideoRecording",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Motor6D",
+			"member": "ChildName",
+			"type": "Add",
+			"value": {
+				"Category": "Animatable",
+				"MemberType": "Property",
+				"Name": "ChildName",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Motor6D",
+			"member": "ParentName",
+			"type": "Add",
+			"value": {
+				"Category": "Animatable",
+				"MemberType": "Property",
+				"Name": "ParentName",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "IkMoveTo",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IkMoveTo",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "target",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					},
+					{
+						"Default": "1",
+						"Name": "translateStiffness",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Default": "1",
+						"Name": "rotateStiffness",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Default": "OtherMechanismsAnchored",
+						"Name": "collisionsMode",
+						"Type": {
+							"Category": "Enum",
+							"Name": "CollisionsMode"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "IKMoveTo",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IKMoveTo",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "target",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					},
+					{
+						"Default": "0.5",
+						"Name": "translateStiffness",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Default": "0.5",
+						"Name": "rotateStiffness",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Default": "OtherMechanismsAnchored",
+						"Name": "collisionsMode",
+						"Type": {
+							"Category": "Enum",
+							"Name": "IKCollisionsMode"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "SetLocalPlayerInfo",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "userId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "userName",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "membershipType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "MembershipType"
+							}
+						},
+						{
+							"Name": "isUnder13",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "userId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "userName",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "displayName",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "membershipType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "MembershipType"
+							}
+						},
+						{
+							"Name": "isUnder13",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetLocalPlayerInfo",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "userName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "displayName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "membershipType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "MembershipType"
+						}
+					},
+					{
+						"Name": "isUnder13",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DepthOfFieldEffect",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "DepthOfFieldEffect",
+				"Superclass": "PostEffect"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DepthOfFieldEffect",
+			"member": "FarIntensity",
+			"type": "Add",
+			"value": {
+				"Category": "State",
+				"MemberType": "Property",
+				"Name": "FarIntensity",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DepthOfFieldEffect",
+			"member": "FocusDistance",
+			"type": "Add",
+			"value": {
+				"Category": "State",
+				"MemberType": "Property",
+				"Name": "FocusDistance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DepthOfFieldEffect",
+			"member": "InFocusRadius",
+			"type": "Add",
+			"value": {
+				"Category": "State",
+				"MemberType": "Property",
+				"Name": "InFocusRadius",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DepthOfFieldEffect",
+			"member": "NearIntensity",
+			"type": "Add",
+			"value": {
+				"Category": "State",
+				"MemberType": "Property",
+				"Name": "NearIntensity",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "CollisionsMode",
+			"type": "Remove",
+			"value": {
+				"Name": "CollisionsMode"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "IKCollisionsMode",
+			"type": "Add",
+			"value": {
+				"Name": "IKCollisionsMode"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "IKCollisionsMode",
+			"item": "NoCollisions",
+			"type": "Add",
+			"value": {
+				"Name": "NoCollisions",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "IKCollisionsMode",
+			"item": "OtherMechanismsAnchored",
+			"type": "Add",
+			"value": {
+				"Name": "OtherMechanismsAnchored",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "IKCollisionsMode",
+			"item": "IncludeContactedMechanisms",
+			"type": "Add",
+			"value": {
+				"Name": "IncludeContactedMechanisms",
+				"Value": 2
+			}
+		}
+	]
+}

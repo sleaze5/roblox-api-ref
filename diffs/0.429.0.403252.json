@@ -1,0 +1,939 @@
+{
+	"from": {
+		"version": "0.428.3.403826",
+		"hash": "df5d8cc226974ffb"
+	},
+	"to": {
+		"version": "0.429.0.403252",
+		"hash": "bb87f719312c4bb4"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "DebuggerBreakpoint",
+			"member": "IsLocal",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "IsLocal",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Lighting",
+			"member": "LightingChanged",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "skyboxChanged",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "skyChanged",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "LightingChanged",
+				"Parameters": [
+					{
+						"Name": "skyChanged",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "RequestStreamAroundAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RequestStreamAroundAsync",
+				"Parameters": [
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "timeOut",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "double"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDebugger",
+			"member": "SetBreakpoint",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "line",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "line",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "isLocalBreakpoint",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetBreakpoint",
+				"Parameters": [
+					{
+						"Name": "line",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "isLocalBreakpoint",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Show Whitespace",
+			"type": "Add",
+			"value": {
+				"Category": "Script Editor",
+				"MemberType": "Property",
+				"Name": "Show Whitespace",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Whitespace Color",
+			"type": "Add",
+			"value": {
+				"Category": "Script Editor Colors",
+				"MemberType": "Property",
+				"Name": "Whitespace Color",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Atmosphere",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "Atmosphere",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Atmosphere",
+			"member": "Color",
+			"type": "Add",
+			"value": {
+				"Category": "State",
+				"MemberType": "Property",
+				"Name": "Color",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Atmosphere",
+			"member": "Decay",
+			"type": "Add",
+			"value": {
+				"Category": "State",
+				"MemberType": "Property",
+				"Name": "Decay",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Atmosphere",
+			"member": "Density",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "Density",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Atmosphere",
+			"member": "Glare",
+			"type": "Add",
+			"value": {
+				"Category": "State",
+				"MemberType": "Property",
+				"Name": "Glare",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Atmosphere",
+			"member": "Haze",
+			"type": "Add",
+			"value": {
+				"Category": "State",
+				"MemberType": "Property",
+				"Name": "Haze",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Atmosphere",
+			"member": "Offset",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "Offset",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DebuggerCurrentLine",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 56,
+					"after": 57
+				}
+			],
+			"value": {
+				"Name": "DebuggerCurrentLine",
+				"Value": 57
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DebuggerErrorLine",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 57,
+					"after": 58
+				}
+			],
+			"value": {
+				"Name": "DebuggerErrorLine",
+				"Value": 58
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffFilePathText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 58,
+					"after": 59
+				}
+			],
+			"value": {
+				"Name": "DiffFilePathText",
+				"Value": 59
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextHunkInfo",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 59,
+					"after": 60
+				}
+			],
+			"value": {
+				"Name": "DiffTextHunkInfo",
+				"Value": 60
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextNoChange",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 60,
+					"after": 61
+				}
+			],
+			"value": {
+				"Name": "DiffTextNoChange",
+				"Value": 61
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextAddition",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 61,
+					"after": 62
+				}
+			],
+			"value": {
+				"Name": "DiffTextAddition",
+				"Value": 62
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextDeletion",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 62,
+					"after": 63
+				}
+			],
+			"value": {
+				"Name": "DiffTextDeletion",
+				"Value": 63
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextSeparatorBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 63,
+					"after": 64
+				}
+			],
+			"value": {
+				"Name": "DiffTextSeparatorBackground",
+				"Value": 64
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextNoChangeBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 64,
+					"after": 65
+				}
+			],
+			"value": {
+				"Name": "DiffTextNoChangeBackground",
+				"Value": 65
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextAdditionBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 65,
+					"after": 66
+				}
+			],
+			"value": {
+				"Name": "DiffTextAdditionBackground",
+				"Value": 66
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextDeletionBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 66,
+					"after": 67
+				}
+			],
+			"value": {
+				"Name": "DiffTextDeletionBackground",
+				"Value": 67
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffLineNum",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 67,
+					"after": 68
+				}
+			],
+			"value": {
+				"Name": "DiffLineNum",
+				"Value": 68
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffLineNumSeparatorBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 68,
+					"after": 69
+				}
+			],
+			"value": {
+				"Name": "DiffLineNumSeparatorBackground",
+				"Value": 69
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffLineNumNoChangeBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 69,
+					"after": 70
+				}
+			],
+			"value": {
+				"Name": "DiffLineNumNoChangeBackground",
+				"Value": 70
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffLineNumAdditionBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 70,
+					"after": 71
+				}
+			],
+			"value": {
+				"Name": "DiffLineNumAdditionBackground",
+				"Value": 71
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffLineNumDeletionBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 71,
+					"after": 72
+				}
+			],
+			"value": {
+				"Name": "DiffLineNumDeletionBackground",
+				"Value": 72
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffFilePathBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 72,
+					"after": 73
+				}
+			],
+			"value": {
+				"Name": "DiffFilePathBackground",
+				"Value": 73
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffFilePathBorder",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 73,
+					"after": 74
+				}
+			],
+			"value": {
+				"Name": "DiffFilePathBorder",
+				"Value": 74
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "Separator",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 74,
+					"after": 75
+				}
+			],
+			"value": {
+				"Name": "Separator",
+				"Value": 75
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ButtonBorder",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 75,
+					"after": 76
+				}
+			],
+			"value": {
+				"Name": "ButtonBorder",
+				"Value": 76
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ButtonText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 76,
+					"after": 77
+				}
+			],
+			"value": {
+				"Name": "ButtonText",
+				"Value": 77
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "InputFieldBorder",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 77,
+					"after": 78
+				}
+			],
+			"value": {
+				"Name": "InputFieldBorder",
+				"Value": 78
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "CheckedFieldBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 78,
+					"after": 79
+				}
+			],
+			"value": {
+				"Name": "CheckedFieldBackground",
+				"Value": 79
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "CheckedFieldBorder",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 79,
+					"after": 80
+				}
+			],
+			"value": {
+				"Name": "CheckedFieldBorder",
+				"Value": 80
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "CheckedFieldIndicator",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 80,
+					"after": 81
+				}
+			],
+			"value": {
+				"Name": "CheckedFieldIndicator",
+				"Value": 81
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "HeaderSection",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 81,
+					"after": 82
+				}
+			],
+			"value": {
+				"Name": "HeaderSection",
+				"Value": 82
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "Midlight",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 82,
+					"after": 83
+				}
+			],
+			"value": {
+				"Name": "Midlight",
+				"Value": 83
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "StatusBar",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 83,
+					"after": 84
+				}
+			],
+			"value": {
+				"Name": "StatusBar",
+				"Value": 84
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DialogButton",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 84,
+					"after": 85
+				}
+			],
+			"value": {
+				"Name": "DialogButton",
+				"Value": 85
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DialogButtonText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 85,
+					"after": 86
+				}
+			],
+			"value": {
+				"Name": "DialogButtonText",
+				"Value": 86
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DialogButtonBorder",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 86,
+					"after": 87
+				}
+			],
+			"value": {
+				"Name": "DialogButtonBorder",
+				"Value": 87
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DialogMainButton",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 87,
+					"after": 88
+				}
+			],
+			"value": {
+				"Name": "DialogMainButton",
+				"Value": 88
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DialogMainButtonText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 88,
+					"after": 89
+				}
+			],
+			"value": {
+				"Name": "DialogMainButtonText",
+				"Value": 89
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptWhitespace",
+			"type": "Add",
+			"value": {
+				"Name": "ScriptWhitespace",
+				"Value": 56
+			}
+		}
+	]
+}

@@ -1,0 +1,369 @@
+{
+	"from": {
+		"version": "0.58.0.560",
+		"hash": "d2e4e6e567c64738"
+	},
+	"to": {
+		"version": "0.59.0.567",
+		"hash": "d8a5144abfd24923"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "RagdollCriteria",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "RagdollCriteria",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkServer",
+			"member": "DataBasicFiltered",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "DataBasicFiltered",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "peer"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "FilterResult"
+						},
+						"Name": "result"
+					},
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "instance"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "member"
+					}
+				],
+				"Security": "LocalUserSecurity",
+				"Tags": [
+					"preliminary"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkServer",
+			"member": "DataCustomFiltered",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "DataCustomFiltered",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "peer"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "FilterResult"
+						},
+						"Name": "result"
+					},
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "instance"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "member"
+					}
+				],
+				"Security": "LocalUserSecurity",
+				"Tags": [
+					"preliminary"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RenderSettings",
+			"member": "DebugDisableInterpolation",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "DebugDisableInterpolation",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ServiceProvider",
+			"member": "FindService",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindService",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "className"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ServerReplicator",
+			"type": "Add",
+			"value": {
+				"Name": "ServerReplicator",
+				"Superclass": "NetworkReplicator",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ServerReplicator",
+			"member": "PreventTerrainChanges",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PreventTerrainChanges",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxPlaceSecurity",
+				"Tags": [
+					"preliminary"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ServerReplicator",
+			"member": "SetBasicFilteringEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetBasicFilteringEnabled",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "value"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxPlaceSecurity",
+				"Tags": [
+					"preliminary"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ServerReplicator",
+			"member": "DeleteFilter",
+			"type": "Add",
+			"value": {
+				"MemberType": "Callback",
+				"Name": "DeleteFilter",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "deletingItem"
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "FilterResult"
+				},
+				"Security": "RobloxPlaceSecurity",
+				"Tags": [
+					"preliminary"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ServerReplicator",
+			"member": "EventFilter",
+			"type": "Add",
+			"value": {
+				"MemberType": "Callback",
+				"Name": "EventFilter",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "firingItem"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "event"
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "FilterResult"
+				},
+				"Security": "RobloxPlaceSecurity",
+				"Tags": [
+					"preliminary"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ServerReplicator",
+			"member": "NewFilter",
+			"type": "Add",
+			"value": {
+				"MemberType": "Callback",
+				"Name": "NewFilter",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "newItem"
+					},
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "parent"
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "FilterResult"
+				},
+				"Security": "RobloxPlaceSecurity",
+				"Tags": [
+					"preliminary"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ServerReplicator",
+			"member": "PropertyFilter",
+			"type": "Add",
+			"value": {
+				"MemberType": "Callback",
+				"Name": "PropertyFilter",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "changingItem"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "member"
+					},
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						},
+						"Name": "value"
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "FilterResult"
+				},
+				"Security": "RobloxPlaceSecurity",
+				"Tags": [
+					"preliminary"
+				]
+			}
+		}
+	]
+}

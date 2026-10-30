@@ -1,0 +1,461 @@
+{
+	"from": {
+		"version": "0.487.1.426995",
+		"hash": "5184b4416fb845da"
+	},
+	"to": {
+		"version": "0.488.0.427188",
+		"hash": "51e3d105ccbd4d35"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AssetImportService",
+			"member": "GetInstanceMap",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetInstanceMap",
+				"Parameters": [
+					{
+						"Name": "fileName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportSettings",
+			"member": "Import",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Import",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Bone",
+			"member": "IsCFrameDriven",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "IsCFrameDriven",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarImportService",
+			"member": "ImportFBXAnimationUserMayChooseModel",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ImportFBXAnimationUserMayChooseModel",
+				"Parameters": [
+					{
+						"Name": "selectedRig",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "userChooseModelThenImportCB",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarImportService",
+			"member": "ImportLoadedFBXAnimation",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ImportLoadedFBXAnimation",
+				"Parameters": [
+					{
+						"Name": "useFBXModel",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerConnection",
+			"member": "GetSource",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetSource",
+				"Parameters": [
+					{
+						"Name": "scriptRef",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "status",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "GetServerTimeNow",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetServerTimeNow",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "double"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "GetNetworkPing",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Primitive",
+						"Name": "int"
+					},
+					"after": {
+						"Category": "Primitive",
+						"Name": "float"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetNetworkPing",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptRef",
+			"member": "Find",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Find",
+				"Parameters": [
+					{
+						"Name": "dataModel",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptRef",
+			"member": "FindAll",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindAll",
+				"Parameters": [
+					{
+						"Name": "dataModel",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Selection",
+			"member": "SelectionThickness",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "SelectionThickness",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Enable Linting",
+			"type": "Remove",
+			"value": {
+				"Category": "Script Editor",
+				"MemberType": "Property",
+				"Name": "Enable Linting",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Enable Script Analysis",
+			"type": "Add",
+			"value": {
+				"Category": "Script Editor",
+				"MemberType": "Property",
+				"Name": "Enable Script Analysis",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "ScriptEditorMenuBorderColor",
+			"type": "Add",
+			"value": {
+				"Category": "Script Editor Colors",
+				"MemberType": "Property",
+				"Name": "ScriptEditorMenuBorderColor",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Selection Highlight Thickness",
+			"type": "Add",
+			"value": {
+				"Category": "Tools",
+				"MemberType": "Property",
+				"Name": "Selection Highlight Thickness",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ScriptRefId",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ScriptRefId",
+				"Superclass": "ScriptRef",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ScriptRefPath",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ScriptRefPath",
+				"Superclass": "ScriptRef",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DebuggerStatus",
+			"item": "InvalidArgument",
+			"type": "Add",
+			"value": {
+				"Name": "InvalidArgument",
+				"Value": 7
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioScriptEditorColorCategories",
+			"item": "MenuBorder",
+			"type": "Add",
+			"value": {
+				"Name": "MenuBorder",
+				"Value": 37
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "WrapLayerDebugMode",
+			"item": "OuterCage",
+			"type": "Add",
+			"value": {
+				"Name": "OuterCage",
+				"Value": 6
+			}
+		}
+	]
+}

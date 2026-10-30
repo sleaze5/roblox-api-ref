@@ -1,0 +1,450 @@
+{
+	"from": {
+		"version": "0.415.0.373700",
+		"hash": "6f0d3c844a16492b"
+	},
+	"to": {
+		"version": "0.416.0.375788",
+		"hash": "342a6b5d7f614868"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "GameSettings",
+			"member": "AdditionalCoreIncludeDirs",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "RobloxScriptSecurity"
+					}
+				}
+			],
+			"value": {
+				"Category": "Directories",
+				"MemberType": "Property",
+				"Name": "AdditionalCoreIncludeDirs",
+				"Security": {
+					"Read": "None",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GameSettings",
+			"member": "OverrideStarterScript",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "RobloxScriptSecurity"
+					}
+				}
+			],
+			"value": {
+				"Category": "Script",
+				"MemberType": "Property",
+				"Name": "OverrideStarterScript",
+				"Security": {
+					"Read": "None",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "ForceTenFootInterface",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ForceTenFootInterface",
+				"Parameters": [
+					{
+						"Name": "isForced",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptPremiumPurchase",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptPremiumPurchase",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "SignalMockPurchasePremium",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SignalMockPurchasePremium",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "SignalPromptPremiumPurchaseFinished",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SignalPromptPremiumPurchaseFinished",
+				"Parameters": [
+					{
+						"Name": "didTryPurchasing",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptPremiumPurchaseFinished",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptPremiumPurchaseFinished",
+				"Parameters": [],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptPremiumPurchaseRequested",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptPremiumPurchaseRequested",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "PlayerMembershipChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PlayerMembershipChanged",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "GetFastFlag",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "LocalUserSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFastFlag",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "GetFastInt",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "LocalUserSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFastInt",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "GetFastString",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "LocalUserSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFastString",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "OverrideCoreScripts",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "RobloxScriptSecurity"
+					}
+				}
+			],
+			"value": {
+				"Category": "Directories",
+				"MemberType": "Property",
+				"Name": "OverrideCoreScripts",
+				"Security": {
+					"Read": "None",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "OverrideCoreScriptsDir",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "RobloxScriptSecurity"
+					}
+				}
+			],
+			"value": {
+				"Category": "Directories",
+				"MemberType": "Property",
+				"Name": "OverrideCoreScriptsDir",
+				"Security": {
+					"Read": "None",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "QDir"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "ConvertToPackageUpload",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "PluginSecurity",
+					"after": "RobloxScriptSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "ConvertToPackageUpload",
+				"Parameters": [
+					{
+						"Name": "uploadUrl",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "Merge3HighlightOriginal",
+			"type": "Remove",
+			"value": {
+				"Name": "Merge3HighlightOriginal",
+				"Value": 89
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "Merge3HighlightMine",
+			"type": "Remove",
+			"value": {
+				"Name": "Merge3HighlightMine",
+				"Value": 90
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "Merge3HighlightTheirs",
+			"type": "Remove",
+			"value": {
+				"Name": "Merge3HighlightTheirs",
+				"Value": 91
+			}
+		}
+	]
+}

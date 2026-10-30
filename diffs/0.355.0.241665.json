@@ -1,0 +1,905 @@
+{
+	"from": {
+		"version": "0.354.0.238636",
+		"hash": "27e1f99ce5974d2b"
+	},
+	"to": {
+		"version": "0.355.0.241665",
+		"hash": "e38d206cc79e47c1"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Chat",
+			"member": "InvokeChatCallback",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "InvokeChatCallback",
+				"Parameters": [
+					{
+						"Name": "callbackType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ChatCallbackType"
+						}
+					},
+					{
+						"Name": "callbackArguments",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Chat",
+			"member": "RegisterChatCallback",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterChatCallback",
+				"Parameters": [
+					{
+						"Name": "callbackType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ChatCallbackType"
+						}
+					},
+					{
+						"Name": "callbackFunction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Lighting",
+			"member": "ExposureCompensation",
+			"type": "Add",
+			"value": {
+				"Category": "Exposure",
+				"MemberType": "Property",
+				"Name": "ExposureCompensation",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Lighting",
+			"member": "Technology",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "Technology",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "Technology"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MeshPart",
+			"member": "CollisionFidelity",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": false,
+						"CanSave": false
+					}
+				}
+			],
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "CollisionFidelity",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "CollisionFidelity"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PartOperation",
+			"member": "CollisionFidelity",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": false,
+						"CanSave": false
+					}
+				}
+			],
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "CollisionFidelity",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "CollisionFidelity"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsService",
+			"member": "IkSolve",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IkSolve",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "target",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					},
+					{
+						"Name": "translateStiffness",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "rotateStiffness",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsService",
+			"member": "LocalIkSolve",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LocalIkSolve",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "target",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					},
+					{
+						"Name": "translateStiffness",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "rotateStiffness",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "StartDecalDrag",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "StartDecalDrag",
+				"Parameters": [
+					{
+						"Name": "decal",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VirtualInputManager",
+			"member": "SendKeyEvent",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "isPressed",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "keyCode",
+							"Type": {
+								"Category": "Enum",
+								"Name": "KeyCode"
+							}
+						},
+						{
+							"Name": "isRepeatedKey",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "isPressed",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "keyCode",
+							"Type": {
+								"Category": "Enum",
+								"Name": "KeyCode"
+							}
+						},
+						{
+							"Name": "isRepeatedKey",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "pluginGui",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SendKeyEvent",
+				"Parameters": [
+					{
+						"Name": "isPressed",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "keyCode",
+						"Type": {
+							"Category": "Enum",
+							"Name": "KeyCode"
+						}
+					},
+					{
+						"Name": "isRepeatedKey",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "pluginGui",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VirtualInputManager",
+			"member": "SendMouseButtonEvent",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "x",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "y",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "mouseButton",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "isDown",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "x",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "y",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "mouseButton",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "isDown",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "pluginGui",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SendMouseButtonEvent",
+				"Parameters": [
+					{
+						"Name": "x",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "y",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "mouseButton",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "isDown",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "pluginGui",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VirtualInputManager",
+			"member": "SendMouseMoveEvent",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "x",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						},
+						{
+							"Name": "y",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "x",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						},
+						{
+							"Name": "y",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						},
+						{
+							"Name": "pluginGui",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SendMouseMoveEvent",
+				"Parameters": [
+					{
+						"Name": "x",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "y",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "pluginGui",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VirtualInputManager",
+			"member": "SendMouseWheelEvent",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "x",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						},
+						{
+							"Name": "y",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						},
+						{
+							"Name": "isForwardScroll",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "x",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						},
+						{
+							"Name": "y",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						},
+						{
+							"Name": "isForwardScroll",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "pluginGui",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SendMouseWheelEvent",
+				"Parameters": [
+					{
+						"Name": "x",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "y",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "isForwardScroll",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "pluginGui",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VirtualInputManager",
+			"member": "SendTextInputCharacterEvent",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "str",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "str",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "pluginGui",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SendTextInputCharacterEvent",
+				"Parameters": [
+					{
+						"Name": "str",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "pluginGui",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VirtualInputManager",
+			"member": "sendRobloxEvent",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "sendRobloxEvent",
+				"Parameters": [
+					{
+						"Name": "namespace",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "detail",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "detailType",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ChatCallbackType",
+			"type": "Add",
+			"value": {
+				"Name": "ChatCallbackType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ChatCallbackType",
+			"item": "OnCreatingChatWindow",
+			"type": "Add",
+			"value": {
+				"Name": "OnCreatingChatWindow",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ChatCallbackType",
+			"item": "OnClientSendingMessage",
+			"type": "Add",
+			"value": {
+				"Name": "OnClientSendingMessage",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ChatCallbackType",
+			"item": "OnClientFormattingMessage",
+			"type": "Add",
+			"value": {
+				"Name": "OnClientFormattingMessage",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ChatCallbackType",
+			"item": "OnServerReceivingMessage",
+			"type": "Add",
+			"value": {
+				"Name": "OnServerReceivingMessage",
+				"Value": 17
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "Technology",
+			"type": "Add",
+			"value": {
+				"Name": "Technology"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Technology",
+			"item": "Legacy",
+			"type": "Add",
+			"value": {
+				"Name": "Legacy",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Technology",
+			"item": "Voxel",
+			"type": "Add",
+			"value": {
+				"Name": "Voxel",
+				"Value": 1
+			}
+		}
+	]
+}

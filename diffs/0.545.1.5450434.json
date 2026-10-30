@@ -1,0 +1,974 @@
+{
+	"from": {
+		"version": "0.544.0.5440300",
+		"hash": "72bd4f59f4604203"
+	},
+	"to": {
+		"version": "0.545.1.5450434",
+		"hash": "083442416b5d4b80"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AdPortal",
+			"member": "PortalVersion",
+			"type": "Add",
+			"value": {
+				"Category": "State",
+				"MemberType": "Property",
+				"Name": "PortalVersion",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceAnimatorService",
+			"member": "TrackerMode",
+			"type": "Remove",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "TrackerMode",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "TrackerMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceAnimatorService",
+			"member": "GetTrackerLodController",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetTrackerLodController",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "TrackerLodController"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceAnimatorService",
+			"member": "Step",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Step",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FacialAnimationStreamingService",
+			"member": "EnableFlags",
+			"type": "Add",
+			"value": {
+				"Category": "State",
+				"MemberType": "Property",
+				"Name": "EnableFlags",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "FacialAnimationFlags"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AdGui",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotCreatable",
+						"NotBrowsable"
+					],
+					"after": [
+						"NotBrowsable"
+					]
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AdGui",
+				"Superclass": "SurfaceGuiBase",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NotificationService",
+			"member": "IsConnected",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "IsConnected",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "CurrentPhysicalProperties",
+			"type": "Add",
+			"value": {
+				"Category": "Part",
+				"MemberType": "Property",
+				"Name": "CurrentPhysicalProperties",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "PhysicalProperties"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptEditorService",
+			"member": "RegisterLSPCallback",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterLSPCallback",
+				"Parameters": [
+					{
+						"Name": "methodToOverride",
+						"Type": {
+							"Category": "Enum",
+							"Name": "LSPMethodType"
+						}
+					},
+					{
+						"Name": "callbackFunction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptEditorService",
+			"member": "RegisterAutocompleteCallback",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterAutocompleteCallback",
+				"Parameters": [
+					{
+						"Name": "callbackFunction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TrackerLodController",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "TrackerLodController",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TrackerLodController",
+			"member": "AudioMode",
+			"type": "Add",
+			"value": {
+				"Category": "Control",
+				"MemberType": "Property",
+				"Name": "AudioMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "TrackerLodFlagMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TrackerLodController",
+			"member": "VideoLodMode",
+			"type": "Add",
+			"value": {
+				"Category": "Control",
+				"MemberType": "Property",
+				"Name": "VideoLodMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "TrackerLodValueMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TrackerLodController",
+			"member": "VideoMode",
+			"type": "Add",
+			"value": {
+				"Category": "Control",
+				"MemberType": "Property",
+				"Name": "VideoMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "TrackerLodFlagMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TrackerLodController",
+			"member": "getVideoLod",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "getVideoLod",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TrackerLodController",
+			"member": "isAudioEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "isAudioEnabled",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TrackerLodController",
+			"member": "isVideoEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "isVideoEnabled",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TrackerLodController",
+			"member": "UpdateState",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "UpdateState",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "LSPMethodType",
+			"type": "Remove",
+			"value": {
+				"Name": "LSPMethodType"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "CompletionItemKind",
+			"type": "Add",
+			"value": {
+				"Name": "CompletionItemKind"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemKind",
+			"item": "Text",
+			"type": "Add",
+			"value": {
+				"Name": "Text",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemKind",
+			"item": "Method",
+			"type": "Add",
+			"value": {
+				"Name": "Method",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemKind",
+			"item": "Function",
+			"type": "Add",
+			"value": {
+				"Name": "Function",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemKind",
+			"item": "Constructor",
+			"type": "Add",
+			"value": {
+				"Name": "Constructor",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemKind",
+			"item": "Field",
+			"type": "Add",
+			"value": {
+				"Name": "Field",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemKind",
+			"item": "Variable",
+			"type": "Add",
+			"value": {
+				"Name": "Variable",
+				"Value": 6
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemKind",
+			"item": "Class",
+			"type": "Add",
+			"value": {
+				"Name": "Class",
+				"Value": 7
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemKind",
+			"item": "Interface",
+			"type": "Add",
+			"value": {
+				"Name": "Interface",
+				"Value": 8
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemKind",
+			"item": "Module",
+			"type": "Add",
+			"value": {
+				"Name": "Module",
+				"Value": 9
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemKind",
+			"item": "Property",
+			"type": "Add",
+			"value": {
+				"Name": "Property",
+				"Value": 10
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemKind",
+			"item": "Unit",
+			"type": "Add",
+			"value": {
+				"Name": "Unit",
+				"Value": 11
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemKind",
+			"item": "Value",
+			"type": "Add",
+			"value": {
+				"Name": "Value",
+				"Value": 12
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemKind",
+			"item": "Enum",
+			"type": "Add",
+			"value": {
+				"Name": "Enum",
+				"Value": 13
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemKind",
+			"item": "Keyword",
+			"type": "Add",
+			"value": {
+				"Name": "Keyword",
+				"Value": 14
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemKind",
+			"item": "Snippet",
+			"type": "Add",
+			"value": {
+				"Name": "Snippet",
+				"Value": 15
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemKind",
+			"item": "Color",
+			"type": "Add",
+			"value": {
+				"Name": "Color",
+				"Value": 16
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemKind",
+			"item": "File",
+			"type": "Add",
+			"value": {
+				"Name": "File",
+				"Value": 17
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemKind",
+			"item": "Reference",
+			"type": "Add",
+			"value": {
+				"Name": "Reference",
+				"Value": 18
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemKind",
+			"item": "Folder",
+			"type": "Add",
+			"value": {
+				"Name": "Folder",
+				"Value": 19
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemKind",
+			"item": "EnumMember",
+			"type": "Add",
+			"value": {
+				"Name": "EnumMember",
+				"Value": 20
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemKind",
+			"item": "Constant",
+			"type": "Add",
+			"value": {
+				"Name": "Constant",
+				"Value": 21
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemKind",
+			"item": "Struct",
+			"type": "Add",
+			"value": {
+				"Name": "Struct",
+				"Value": 22
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemKind",
+			"item": "Event",
+			"type": "Add",
+			"value": {
+				"Name": "Event",
+				"Value": 23
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemKind",
+			"item": "Operator",
+			"type": "Add",
+			"value": {
+				"Name": "Operator",
+				"Value": 24
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemKind",
+			"item": "TypeParameter",
+			"type": "Add",
+			"value": {
+				"Name": "TypeParameter",
+				"Value": 25
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "CompletionItemTag",
+			"type": "Add",
+			"value": {
+				"Name": "CompletionItemTag"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemTag",
+			"item": "Deprecated",
+			"type": "Add",
+			"value": {
+				"Name": "Deprecated",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemTag",
+			"item": "IncorrectIndexType",
+			"type": "Add",
+			"value": {
+				"Name": "IncorrectIndexType",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemTag",
+			"item": "PluginPermissions",
+			"type": "Add",
+			"value": {
+				"Name": "PluginPermissions",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemTag",
+			"item": "CommandLinePermissions",
+			"type": "Add",
+			"value": {
+				"Name": "CommandLinePermissions",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemTag",
+			"item": "RobloxPermissions",
+			"type": "Add",
+			"value": {
+				"Name": "RobloxPermissions",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemTag",
+			"item": "AddParens",
+			"type": "Add",
+			"value": {
+				"Name": "AddParens",
+				"Value": 6
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemTag",
+			"item": "PutCursorInParens",
+			"type": "Add",
+			"value": {
+				"Name": "PutCursorInParens",
+				"Value": 7
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemTag",
+			"item": "TypeCorrect",
+			"type": "Add",
+			"value": {
+				"Name": "TypeCorrect",
+				"Value": 8
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionItemTag",
+			"item": "ClientServerBoundaryViolation",
+			"type": "Add",
+			"value": {
+				"Name": "ClientServerBoundaryViolation",
+				"Value": 9
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "CompletionTriggerKind",
+			"type": "Add",
+			"value": {
+				"Name": "CompletionTriggerKind"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionTriggerKind",
+			"item": "Invoked",
+			"type": "Add",
+			"value": {
+				"Name": "Invoked",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionTriggerKind",
+			"item": "TriggerCharacter",
+			"type": "Add",
+			"value": {
+				"Name": "TriggerCharacter",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CompletionTriggerKind",
+			"item": "TriggerForIncompleteCompletions",
+			"type": "Add",
+			"value": {
+				"Name": "TriggerForIncompleteCompletions",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "FacialAnimationFlags",
+			"type": "Add",
+			"value": {
+				"Name": "FacialAnimationFlags"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FacialAnimationFlags",
+			"item": "None",
+			"type": "Add",
+			"value": {
+				"Name": "None",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FacialAnimationFlags",
+			"item": "Place",
+			"type": "Add",
+			"value": {
+				"Name": "Place",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FacialAnimationFlags",
+			"item": "Server",
+			"type": "Add",
+			"value": {
+				"Name": "Server",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FacialAnimationFlags",
+			"item": "PlaceServer",
+			"type": "Add",
+			"value": {
+				"Name": "PlaceServer",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "MarkupKind",
+			"type": "Add",
+			"value": {
+				"Name": "MarkupKind"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "MarkupKind",
+			"item": "PlainText",
+			"type": "Add",
+			"value": {
+				"Name": "PlainText",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "MarkupKind",
+			"item": "Markdown",
+			"type": "Add",
+			"value": {
+				"Name": "Markdown",
+				"Value": 1
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "TrackerLodFlagMode",
+			"type": "Add",
+			"value": {
+				"Name": "TrackerLodFlagMode"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TrackerLodFlagMode",
+			"item": "Auto",
+			"type": "Add",
+			"value": {
+				"Name": "Auto",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TrackerLodFlagMode",
+			"item": "ForceFalse",
+			"type": "Add",
+			"value": {
+				"Name": "ForceFalse",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TrackerLodFlagMode",
+			"item": "ForceTrue",
+			"type": "Add",
+			"value": {
+				"Name": "ForceTrue",
+				"Value": 1
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "TrackerLodValueMode",
+			"type": "Add",
+			"value": {
+				"Name": "TrackerLodValueMode"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TrackerLodValueMode",
+			"item": "Auto",
+			"type": "Add",
+			"value": {
+				"Name": "Auto",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TrackerLodValueMode",
+			"item": "Force0",
+			"type": "Add",
+			"value": {
+				"Name": "Force0",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TrackerLodValueMode",
+			"item": "Force1",
+			"type": "Add",
+			"value": {
+				"Name": "Force1",
+				"Value": 1
+			}
+		}
+	]
+}

@@ -1,0 +1,691 @@
+{
+	"from": {
+		"version": "0.420.0.383960",
+		"hash": "6395f6a06de84d3d"
+	},
+	"to": {
+		"version": "0.421.0.385201",
+		"hash": "ecd9f4b89d284f7e"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "DataModelSession",
+			"member": "CurrentDataModelType",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "RobloxScriptSecurity",
+						"Write": "RobloxScriptSecurity"
+					},
+					"after": {
+						"Read": "PluginSecurity",
+						"Write": "PluginSecurity"
+					}
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "CurrentDataModelType",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "StudioDataModelType"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModelSession",
+			"member": "SessionId",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "RobloxScriptSecurity",
+						"Write": "RobloxScriptSecurity"
+					},
+					"after": {
+						"Read": "PluginSecurity",
+						"Write": "PluginSecurity"
+					}
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "SessionId",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModelSession",
+			"member": "CurrentDataModelTypeAboutToChange",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "CurrentDataModelTypeAboutToChange",
+				"Parameters": [
+					{
+						"Name": "dataModelType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "StudioDataModelType"
+						}
+					}
+				],
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModelSession",
+			"member": "CurrentDataModelTypeChanged",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "CurrentDataModelTypeChanged",
+				"Parameters": [],
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModelSession",
+			"member": "DataModelCreated",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "DataModelCreated",
+				"Parameters": [
+					{
+						"Name": "gameStateType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "StudioDataModelType"
+						}
+					}
+				],
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModelSession",
+			"member": "DataModelWillBeDestroyed",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "DataModelWillBeDestroyed",
+				"Parameters": [
+					{
+						"Name": "gameStateType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "StudioDataModelType"
+						}
+					}
+				],
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HttpRbxApiService",
+			"member": "RequestLimitedAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RequestLimitedAsync",
+				"Parameters": [
+					{
+						"Name": "requestOptions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Default": "Default",
+						"Name": "priority",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ThrottlingPriority"
+						}
+					},
+					{
+						"Default": "ApplicationJson",
+						"Name": "content_type",
+						"Type": {
+							"Category": "Enum",
+							"Name": "HttpContentType"
+						}
+					},
+					{
+						"Default": "Default",
+						"Name": "httpRequestType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "HttpRequestType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MultipleDocumentInterfaceInstance",
+			"member": "FocusedDataModelSession",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "RobloxScriptSecurity",
+						"Write": "RobloxScriptSecurity"
+					},
+					"after": {
+						"Read": "PluginSecurity",
+						"Write": "PluginSecurity"
+					}
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "FocusedDataModelSession",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MultipleDocumentInterfaceInstance",
+			"member": "DataModelSessionEnded",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "DataModelSessionEnded",
+				"Parameters": [
+					{
+						"Name": "dataModelSession",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MultipleDocumentInterfaceInstance",
+			"member": "DataModelSessionStarted",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "DataModelSessionStarted",
+				"Parameters": [
+					{
+						"Name": "dataModelSession",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "StreamingEnabled",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "PluginSecurity"
+					}
+				}
+			],
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "StreamingEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "HostDataModelType",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "RobloxScriptSecurity",
+						"Write": "RobloxScriptSecurity"
+					},
+					"after": {
+						"Read": "PluginSecurity",
+						"Write": "PluginSecurity"
+					}
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "HostDataModelType",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "StudioDataModelType"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "HostDataModelTypeIsCurrent",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "RobloxScriptSecurity",
+						"Write": "RobloxScriptSecurity"
+					},
+					"after": {
+						"Read": "PluginSecurity",
+						"Write": "PluginSecurity"
+					}
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "HostDataModelTypeIsCurrent",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "MultipleDocumentInterfaceInstance",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "RobloxScriptSecurity",
+						"Write": "RobloxScriptSecurity"
+					},
+					"after": {
+						"Read": "PluginSecurity",
+						"Write": "PluginSecurity"
+					}
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "MultipleDocumentInterfaceInstance",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MultipleDocumentInterfaceInstance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "GetItem",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetItem",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "defaultValue",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "Invoke",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "Invoke",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "arguments",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "OnInvoke",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "OnInvoke",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "callback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "OnSetItem",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "OnSetItem",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "callback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "SetItem",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetItem",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "DateTimeKind",
+			"type": "Remove",
+			"value": {
+				"Name": "DateTimeKind"
+			}
+		}
+	]
+}

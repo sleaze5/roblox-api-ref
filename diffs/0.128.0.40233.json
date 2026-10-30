@@ -1,0 +1,839 @@
+{
+	"from": {
+		"version": "0.127.0.39583",
+		"hash": "97c0e76356f746a6"
+	},
+	"to": {
+		"version": "0.128.0.40233",
+		"hash": "e6e28771c8004032"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "HttpService",
+			"member": "GetAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "url"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "url"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "nocache",
+							"Default": "false"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "url"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "nocache",
+						"Default": "false"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HttpService",
+			"member": "UrlEncode",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UrlEncode",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "input"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "GetSetting",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetSetting",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "key"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "GetStudioUserId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetStudioUserId",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "SaveSelectedToRoblox",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SaveSelectedToRoblox",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "SetSetting",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetSetting",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "key"
+					},
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						},
+						"Name": "value"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginManager",
+			"member": "GetStudioUserId",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetStudioUserId",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "ActivateExperimentalFeatures",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ActivateExperimentalFeatures",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchEnded",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxSecurity",
+					"after": "RobloxScriptSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "TouchEnded",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "InputObject"
+						},
+						"Name": "touch"
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchLongPress",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector2"
+							},
+							"Name": "position"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector2"
+							},
+							"Name": "position"
+						},
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "UserInputState"
+							},
+							"Name": "state"
+						}
+					]
+				},
+				{
+					"field": "Security",
+					"before": "RobloxSecurity",
+					"after": "RobloxScriptSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "TouchLongPress",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						},
+						"Name": "position"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserInputState"
+						},
+						"Name": "state"
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchMoved",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxSecurity",
+					"after": "RobloxScriptSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "TouchMoved",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "InputObject"
+						},
+						"Name": "touch"
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchPinch",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxSecurity",
+					"after": "RobloxScriptSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "TouchPinch",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						},
+						"Name": "scale"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						},
+						"Name": "velocity"
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchRotate",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxSecurity",
+					"after": "RobloxScriptSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "TouchRotate",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						},
+						"Name": "rotation"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						},
+						"Name": "velocity"
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchStarted",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxSecurity",
+					"after": "RobloxScriptSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "TouchStarted",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "InputObject"
+						},
+						"Name": "touch"
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchSwipe",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "SwipeDirection"
+							},
+							"Name": "swipeDirection"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "SwipeDirection"
+							},
+							"Name": "swipeDirection"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "numberOfTouches"
+						}
+					]
+				},
+				{
+					"field": "Security",
+					"before": "RobloxSecurity",
+					"after": "RobloxScriptSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "TouchSwipe",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "SwipeDirection"
+						},
+						"Name": "swipeDirection"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "numberOfTouches"
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchTap",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxSecurity",
+					"after": "RobloxScriptSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "TouchTap",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						},
+						"Name": "position"
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "InputBegan",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "InputBegan",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "InputObject"
+						},
+						"Name": "input"
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "InputChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "InputChanged",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "InputObject"
+						},
+						"Name": "input"
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "InputEnded",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "InputEnded",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "InputObject"
+						},
+						"Name": "input"
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "GlobalDataStore",
+			"type": "Add",
+			"value": {
+				"Name": "GlobalDataStore",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GlobalDataStore",
+			"member": "OnUpdate",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "OnUpdate",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "key"
+					},
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						},
+						"Name": "callback"
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RBXScriptConnection"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GlobalDataStore",
+			"member": "GetAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "key"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GlobalDataStore",
+			"member": "IncrementAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IncrementAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "key"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "delta",
+						"Default": "1"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GlobalDataStore",
+			"member": "SetAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "key"
+					},
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						},
+						"Name": "value"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GlobalDataStore",
+			"member": "UpdateAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UpdateAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "key"
+					},
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						},
+						"Name": "transformFunction"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "UniverseService",
+			"type": "Add",
+			"value": {
+				"Name": "UniverseService",
+				"Superclass": "Instance",
+				"MemoryCategory": ""
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UniverseService",
+			"member": "GetGlobalDataStore",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetGlobalDataStore",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SwipeDirection",
+			"item": "None",
+			"type": "Add",
+			"value": {
+				"Name": "None",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HttpContentType",
+			"item": "TextPlain",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 2,
+					"after": 3
+				}
+			],
+			"value": {
+				"Name": "TextPlain",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HttpContentType",
+			"item": "ApplicationXml",
+			"type": "Add",
+			"value": {
+				"Name": "ApplicationXml",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HttpContentType",
+			"item": "ApplicationUrlEncoded",
+			"type": "Add",
+			"value": {
+				"Name": "ApplicationUrlEncoded",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HttpContentType",
+			"item": "TextXml",
+			"type": "Add",
+			"value": {
+				"Name": "TextXml",
+				"Value": 4
+			}
+		}
+	]
+}

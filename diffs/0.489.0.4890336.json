@@ -1,0 +1,2380 @@
+{
+	"from": {
+		"version": "0.488.0.4880289",
+		"hash": "abb9132033624414"
+	},
+	"to": {
+		"version": "0.489.0.4890336",
+		"hash": "7ff1d252ca9748e3"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "DataStoreKeyInfo",
+			"member": "KeyName",
+			"type": "Remove",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "KeyName",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStoreKeyInfo",
+			"member": "CreatedTime",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "CreatedTime",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStoreKeyInfo",
+			"member": "UpdatedTime",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "UpdatedTime",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStoreKeyInfo",
+			"member": "Version",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Version",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStoreKeyInfo",
+			"member": "GetMetadata",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetMetadata",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStoreKeyInfo",
+			"member": "GetUserIds",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetUserIds",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DataStoreKeyVersionInfo",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "DataStoreKeyVersionInfo",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStoreService",
+			"member": "ListDataStoresAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Class",
+						"Name": "DataStoreEnumerationPages"
+					},
+					"after": {
+						"Category": "Class",
+						"Name": "DataStoreListingPages"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "ListDataStoresAsync",
+				"Parameters": [
+					{
+						"Default": "",
+						"Name": "prefix",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "pageSize",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "DataStoreListingPages"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "FaceControls",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotBrowsable"
+					]
+				}
+			],
+			"value": {
+				"MemoryCategory": "Animation",
+				"Name": "FaceControls",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "ChinRaiser",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Mouth"
+				}
+			],
+			"value": {
+				"Category": "Mouth",
+				"MemberType": "Property",
+				"Name": "ChinRaiser",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "ChinRaiserUpperLip",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Mouth"
+				}
+			],
+			"value": {
+				"Category": "Mouth",
+				"MemberType": "Property",
+				"Name": "ChinRaiserUpperLip",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "Corrugator",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Brows"
+				}
+			],
+			"value": {
+				"Category": "Brows",
+				"MemberType": "Property",
+				"Name": "Corrugator",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "EyesLookDown",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Eyes"
+				}
+			],
+			"value": {
+				"Category": "Eyes",
+				"MemberType": "Property",
+				"Name": "EyesLookDown",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "EyesLookLeft",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Eyes"
+				}
+			],
+			"value": {
+				"Category": "Eyes",
+				"MemberType": "Property",
+				"Name": "EyesLookLeft",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "EyesLookRight",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Eyes"
+				}
+			],
+			"value": {
+				"Category": "Eyes",
+				"MemberType": "Property",
+				"Name": "EyesLookRight",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "EyesLookUp",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Eyes"
+				}
+			],
+			"value": {
+				"Category": "Eyes",
+				"MemberType": "Property",
+				"Name": "EyesLookUp",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "FlatPucker",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Mouth"
+				}
+			],
+			"value": {
+				"Category": "Mouth",
+				"MemberType": "Property",
+				"Name": "FlatPucker",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "Funneler",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Mouth"
+				}
+			],
+			"value": {
+				"Category": "Mouth",
+				"MemberType": "Property",
+				"Name": "Funneler",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "JawDrop",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Jaw"
+				}
+			],
+			"value": {
+				"Category": "Jaw",
+				"MemberType": "Property",
+				"Name": "JawDrop",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "JawLeft",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Jaw"
+				}
+			],
+			"value": {
+				"Category": "Jaw",
+				"MemberType": "Property",
+				"Name": "JawLeft",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "JawRight",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Jaw"
+				}
+			],
+			"value": {
+				"Category": "Jaw",
+				"MemberType": "Property",
+				"Name": "JawRight",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "LeftBrowLowerer",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Brows"
+				}
+			],
+			"value": {
+				"Category": "Brows",
+				"MemberType": "Property",
+				"Name": "LeftBrowLowerer",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "LeftCheekPuff",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Mouth"
+				}
+			],
+			"value": {
+				"Category": "Mouth",
+				"MemberType": "Property",
+				"Name": "LeftCheekPuff",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "LeftCheekRaiser",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Eyes"
+				}
+			],
+			"value": {
+				"Category": "Eyes",
+				"MemberType": "Property",
+				"Name": "LeftCheekRaiser",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "LeftDimpler",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Mouth"
+				}
+			],
+			"value": {
+				"Category": "Mouth",
+				"MemberType": "Property",
+				"Name": "LeftDimpler",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "LeftEyeClosed",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Eyes"
+				}
+			],
+			"value": {
+				"Category": "Eyes",
+				"MemberType": "Property",
+				"Name": "LeftEyeClosed",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "LeftEyeUpperLidRaiser",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Eyes"
+				}
+			],
+			"value": {
+				"Category": "Eyes",
+				"MemberType": "Property",
+				"Name": "LeftEyeUpperLidRaiser",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "LeftInnerBrowRaiser",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Brows"
+				}
+			],
+			"value": {
+				"Category": "Brows",
+				"MemberType": "Property",
+				"Name": "LeftInnerBrowRaiser",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "LeftLipCornerDown",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Mouth"
+				}
+			],
+			"value": {
+				"Category": "Mouth",
+				"MemberType": "Property",
+				"Name": "LeftLipCornerDown",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "LeftLipCornerPuller",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Mouth"
+				}
+			],
+			"value": {
+				"Category": "Mouth",
+				"MemberType": "Property",
+				"Name": "LeftLipCornerPuller",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "LeftLipStretcher",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Mouth"
+				}
+			],
+			"value": {
+				"Category": "Mouth",
+				"MemberType": "Property",
+				"Name": "LeftLipStretcher",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "LeftLowerLipDepressor",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Mouth"
+				}
+			],
+			"value": {
+				"Category": "Mouth",
+				"MemberType": "Property",
+				"Name": "LeftLowerLipDepressor",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "LeftNoseWrinkler",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Brows"
+				}
+			],
+			"value": {
+				"Category": "Brows",
+				"MemberType": "Property",
+				"Name": "LeftNoseWrinkler",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "LeftOuterBrowRaiser",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Brows"
+				}
+			],
+			"value": {
+				"Category": "Brows",
+				"MemberType": "Property",
+				"Name": "LeftOuterBrowRaiser",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "LeftUpperLipRaiser",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Mouth"
+				}
+			],
+			"value": {
+				"Category": "Mouth",
+				"MemberType": "Property",
+				"Name": "LeftUpperLipRaiser",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "LipPresser",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Mouth"
+				}
+			],
+			"value": {
+				"Category": "Mouth",
+				"MemberType": "Property",
+				"Name": "LipPresser",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "LipsTogether",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Mouth"
+				}
+			],
+			"value": {
+				"Category": "Mouth",
+				"MemberType": "Property",
+				"Name": "LipsTogether",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "LowerLipSuck",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Mouth"
+				}
+			],
+			"value": {
+				"Category": "Mouth",
+				"MemberType": "Property",
+				"Name": "LowerLipSuck",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "MouthLeft",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Mouth"
+				}
+			],
+			"value": {
+				"Category": "Mouth",
+				"MemberType": "Property",
+				"Name": "MouthLeft",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "MouthRight",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Mouth"
+				}
+			],
+			"value": {
+				"Category": "Mouth",
+				"MemberType": "Property",
+				"Name": "MouthRight",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "Pucker",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Mouth"
+				}
+			],
+			"value": {
+				"Category": "Mouth",
+				"MemberType": "Property",
+				"Name": "Pucker",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "RightBrowLowerer",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Brows"
+				}
+			],
+			"value": {
+				"Category": "Brows",
+				"MemberType": "Property",
+				"Name": "RightBrowLowerer",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "RightCheekPuff",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Mouth"
+				}
+			],
+			"value": {
+				"Category": "Mouth",
+				"MemberType": "Property",
+				"Name": "RightCheekPuff",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "RightCheekRaiser",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Eyes"
+				}
+			],
+			"value": {
+				"Category": "Eyes",
+				"MemberType": "Property",
+				"Name": "RightCheekRaiser",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "RightDimpler",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Mouth"
+				}
+			],
+			"value": {
+				"Category": "Mouth",
+				"MemberType": "Property",
+				"Name": "RightDimpler",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "RightEyeClosed",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Eyes"
+				}
+			],
+			"value": {
+				"Category": "Eyes",
+				"MemberType": "Property",
+				"Name": "RightEyeClosed",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "RightEyeUpperLidRaiser",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Eyes"
+				}
+			],
+			"value": {
+				"Category": "Eyes",
+				"MemberType": "Property",
+				"Name": "RightEyeUpperLidRaiser",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "RightInnerBrowRaiser",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Brows"
+				}
+			],
+			"value": {
+				"Category": "Brows",
+				"MemberType": "Property",
+				"Name": "RightInnerBrowRaiser",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "RightLipCornerDown",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Mouth"
+				}
+			],
+			"value": {
+				"Category": "Mouth",
+				"MemberType": "Property",
+				"Name": "RightLipCornerDown",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "RightLipCornerPuller",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Mouth"
+				}
+			],
+			"value": {
+				"Category": "Mouth",
+				"MemberType": "Property",
+				"Name": "RightLipCornerPuller",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "RightLipStretcher",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Mouth"
+				}
+			],
+			"value": {
+				"Category": "Mouth",
+				"MemberType": "Property",
+				"Name": "RightLipStretcher",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "RightLowerLipDepressor",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Mouth"
+				}
+			],
+			"value": {
+				"Category": "Mouth",
+				"MemberType": "Property",
+				"Name": "RightLowerLipDepressor",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "RightNoseWrinkler",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Brows"
+				}
+			],
+			"value": {
+				"Category": "Brows",
+				"MemberType": "Property",
+				"Name": "RightNoseWrinkler",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "RightOuterBrowRaiser",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Brows"
+				}
+			],
+			"value": {
+				"Category": "Brows",
+				"MemberType": "Property",
+				"Name": "RightOuterBrowRaiser",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "RightUpperLipRaiser",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Mouth"
+				}
+			],
+			"value": {
+				"Category": "Mouth",
+				"MemberType": "Property",
+				"Name": "RightUpperLipRaiser",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "TongueDown",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Tongue"
+				}
+			],
+			"value": {
+				"Category": "Tongue",
+				"MemberType": "Property",
+				"Name": "TongueDown",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "TongueOut",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Tongue"
+				}
+			],
+			"value": {
+				"Category": "Tongue",
+				"MemberType": "Property",
+				"Name": "TongueOut",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "TongueUp",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Tongue"
+				}
+			],
+			"value": {
+				"Category": "Tongue",
+				"MemberType": "Property",
+				"Name": "TongueUp",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceControls",
+			"member": "UpperLipSuck",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Mouth"
+				}
+			],
+			"value": {
+				"Category": "Mouth",
+				"MemberType": "Property",
+				"Name": "UpperLipSuck",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "GetDataStoreOptions",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "GetDataStoreOptions",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "CoreGuiRenderOverflowed",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "CoreGuiRenderOverflowed",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ObjectVersionInfo",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ObjectVersionInfo",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DataStoreEnumerationPages",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "DataStoreEnumerationPages",
+				"Superclass": "Pages",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Disable Accurate Play Solo",
+			"type": "Remove",
+			"value": {
+				"Category": "Advanced",
+				"MemberType": "Property",
+				"Name": "Disable Accurate Play Solo",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "DEPRECATED_DisableAccuratePlaySolo",
+			"type": "Add",
+			"value": {
+				"Category": "Advanced",
+				"MemberType": "Property",
+				"Name": "DEPRECATED_DisableAccuratePlaySolo",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Show Navigation Areas",
+			"type": "Add",
+			"value": {
+				"Category": "Visualization",
+				"MemberType": "Property",
+				"Name": "Show Navigation Areas",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DataStoreKey",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "DataStoreKey",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStoreKey",
+			"member": "KeyName",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "KeyName",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DataStoreObjectVersionInfo",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "DataStoreObjectVersionInfo",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStoreObjectVersionInfo",
+			"member": "CreatedTime",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "CreatedTime",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStoreObjectVersionInfo",
+			"member": "IsDeleted",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "IsDeleted",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStoreObjectVersionInfo",
+			"member": "Version",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Version",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DataStoreOptions",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "DataStoreOptions",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStoreOptions",
+			"member": "AllScopes",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "AllScopes",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStoreOptions",
+			"member": "SetExperimentalFeatures",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetExperimentalFeatures",
+				"Parameters": [
+					{
+						"Name": "experimentalFeatures",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DataStoreListingPages",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "DataStoreListingPages",
+				"Superclass": "Pages",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PathfindingModifier",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "PathfindingModifier",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PathfindingModifier",
+			"member": "ModifierId",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "ModifierId",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectClientFailure",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectClientFailure",
+				"Value": 284
+			}
+		}
+	]
+}

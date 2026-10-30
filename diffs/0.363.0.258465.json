@@ -1,0 +1,1032 @@
+{
+	"from": {
+		"version": "0.362.1.257620",
+		"hash": "e305fbe9e6d44f2e"
+	},
+	"to": {
+		"version": "0.363.0.258465",
+		"hash": "611b181e41fb4b47"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Chat",
+			"member": "BubbleChatEnabled",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "BubbleChatEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ViewportFrame",
+			"member": "CurrentCamera",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "CurrentCamera",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Camera"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "LoadCharacterWithHumanoidDescription",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LoadCharacterWithHumanoidDescription",
+				"Parameters": [
+					{
+						"Name": "humanoidDescription",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ABTestService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ABTestService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ABTestService",
+			"member": "GetVariant",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVariant",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ABTestService",
+			"member": "InitializeForUserId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "InitializeForUserId",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "HumanoidDescription",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "HumanoidDescription",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "BackAccessory",
+			"type": "Add",
+			"value": {
+				"Category": "Accessories",
+				"MemberType": "Property",
+				"Name": "BackAccessory",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "BodyTypeScale",
+			"type": "Add",
+			"value": {
+				"Category": "Scale",
+				"MemberType": "Property",
+				"Name": "BodyTypeScale",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "ClimbAnimation",
+			"type": "Add",
+			"value": {
+				"Category": "Animation",
+				"MemberType": "Property",
+				"Name": "ClimbAnimation",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "DepthScale",
+			"type": "Add",
+			"value": {
+				"Category": "Scale",
+				"MemberType": "Property",
+				"Name": "DepthScale",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "Face",
+			"type": "Add",
+			"value": {
+				"Category": "Body Parts",
+				"MemberType": "Property",
+				"Name": "Face",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "FaceAccessory",
+			"type": "Add",
+			"value": {
+				"Category": "Accessories",
+				"MemberType": "Property",
+				"Name": "FaceAccessory",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "FallAnimation",
+			"type": "Add",
+			"value": {
+				"Category": "Animation",
+				"MemberType": "Property",
+				"Name": "FallAnimation",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "FrontAccessory",
+			"type": "Add",
+			"value": {
+				"Category": "Accessories",
+				"MemberType": "Property",
+				"Name": "FrontAccessory",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "GraphicTShirt",
+			"type": "Add",
+			"value": {
+				"Category": "Clothes",
+				"MemberType": "Property",
+				"Name": "GraphicTShirt",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "HairAccessory",
+			"type": "Add",
+			"value": {
+				"Category": "Accessories",
+				"MemberType": "Property",
+				"Name": "HairAccessory",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "HatAccessory",
+			"type": "Add",
+			"value": {
+				"Category": "Accessories",
+				"MemberType": "Property",
+				"Name": "HatAccessory",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "Head",
+			"type": "Add",
+			"value": {
+				"Category": "Body Parts",
+				"MemberType": "Property",
+				"Name": "Head",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "HeadColor",
+			"type": "Add",
+			"value": {
+				"Category": "Body Colors",
+				"MemberType": "Property",
+				"Name": "HeadColor",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "HeadScale",
+			"type": "Add",
+			"value": {
+				"Category": "Scale",
+				"MemberType": "Property",
+				"Name": "HeadScale",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "HeightScale",
+			"type": "Add",
+			"value": {
+				"Category": "Scale",
+				"MemberType": "Property",
+				"Name": "HeightScale",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "IdleAnimation",
+			"type": "Add",
+			"value": {
+				"Category": "Animation",
+				"MemberType": "Property",
+				"Name": "IdleAnimation",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "JumpAnimation",
+			"type": "Add",
+			"value": {
+				"Category": "Animation",
+				"MemberType": "Property",
+				"Name": "JumpAnimation",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "LeftArm",
+			"type": "Add",
+			"value": {
+				"Category": "Body Parts",
+				"MemberType": "Property",
+				"Name": "LeftArm",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "LeftArmColor",
+			"type": "Add",
+			"value": {
+				"Category": "Body Colors",
+				"MemberType": "Property",
+				"Name": "LeftArmColor",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "LeftLeg",
+			"type": "Add",
+			"value": {
+				"Category": "Body Parts",
+				"MemberType": "Property",
+				"Name": "LeftLeg",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "LeftLegColor",
+			"type": "Add",
+			"value": {
+				"Category": "Body Colors",
+				"MemberType": "Property",
+				"Name": "LeftLegColor",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "NeckAccessory",
+			"type": "Add",
+			"value": {
+				"Category": "Accessories",
+				"MemberType": "Property",
+				"Name": "NeckAccessory",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "Pants",
+			"type": "Add",
+			"value": {
+				"Category": "Clothes",
+				"MemberType": "Property",
+				"Name": "Pants",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "ProportionScale",
+			"type": "Add",
+			"value": {
+				"Category": "Scale",
+				"MemberType": "Property",
+				"Name": "ProportionScale",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "RightArm",
+			"type": "Add",
+			"value": {
+				"Category": "Body Parts",
+				"MemberType": "Property",
+				"Name": "RightArm",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "RightArmColor",
+			"type": "Add",
+			"value": {
+				"Category": "Body Colors",
+				"MemberType": "Property",
+				"Name": "RightArmColor",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "RightLeg",
+			"type": "Add",
+			"value": {
+				"Category": "Body Parts",
+				"MemberType": "Property",
+				"Name": "RightLeg",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "RightLegColor",
+			"type": "Add",
+			"value": {
+				"Category": "Body Colors",
+				"MemberType": "Property",
+				"Name": "RightLegColor",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "RunAnimation",
+			"type": "Add",
+			"value": {
+				"Category": "Animation",
+				"MemberType": "Property",
+				"Name": "RunAnimation",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "Shirt",
+			"type": "Add",
+			"value": {
+				"Category": "Clothes",
+				"MemberType": "Property",
+				"Name": "Shirt",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "ShouldersAccessory",
+			"type": "Add",
+			"value": {
+				"Category": "Accessories",
+				"MemberType": "Property",
+				"Name": "ShouldersAccessory",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "SwimAnimation",
+			"type": "Add",
+			"value": {
+				"Category": "Animation",
+				"MemberType": "Property",
+				"Name": "SwimAnimation",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "Torso",
+			"type": "Add",
+			"value": {
+				"Category": "Body Parts",
+				"MemberType": "Property",
+				"Name": "Torso",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "TorsoColor",
+			"type": "Add",
+			"value": {
+				"Category": "Body Colors",
+				"MemberType": "Property",
+				"Name": "TorsoColor",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "WaistAccessory",
+			"type": "Add",
+			"value": {
+				"Category": "Accessories",
+				"MemberType": "Property",
+				"Name": "WaistAccessory",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "WalkAnimation",
+			"type": "Add",
+			"value": {
+				"Category": "Animation",
+				"MemberType": "Property",
+				"Name": "WalkAnimation",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "WidthScale",
+			"type": "Add",
+			"value": {
+				"Category": "Scale",
+				"MemberType": "Property",
+				"Name": "WidthScale",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		}
+	]
+}

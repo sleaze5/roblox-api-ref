@@ -1,0 +1,98 @@
+{
+	"from": {
+		"version": "0.76.0.694",
+		"hash": "846fbff471af4207"
+	},
+	"to": {
+		"version": "0.76.0.695",
+		"hash": "92268008d775409f"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "RunService",
+			"member": "Reset",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "Reset",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RunService",
+			"member": "Stop",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Stop",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptContext",
+			"member": "NonScriptableAccess",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "NonScriptableAccess",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "property"
+					},
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "script"
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "RuntimeScriptService",
+			"type": "Add",
+			"value": {
+				"Name": "RuntimeScriptService",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		}
+	]
+}

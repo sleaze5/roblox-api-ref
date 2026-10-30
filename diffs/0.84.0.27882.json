@@ -1,0 +1,208 @@
+{
+	"from": {
+		"version": "0.83.0.754",
+		"hash": "fbaf58bbbe84491d"
+	},
+	"to": {
+		"version": "0.84.0.27882",
+		"hash": "5e6923568ada47d7"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "RobloxLocked",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "LocalUserSecurity",
+						"Write": "LocalUserSecurity"
+					},
+					"after": {
+						"Read": "RobloxScriptSecurity",
+						"Write": "RobloxScriptSecurity"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Property",
+				"Name": "RobloxLocked",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "HttpGet",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "RobloxSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "HttpGet",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "url"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "synchronous",
+						"Default": "false"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "HttpPost",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "RobloxSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "HttpPost",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "url"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "data"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "synchronous",
+						"Default": "false"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "HttpGetAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "RobloxSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "HttpGetAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "url"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "HttpPostAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "RobloxSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "HttpPostAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "url"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "data"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		}
+	]
+}

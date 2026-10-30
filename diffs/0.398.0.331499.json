@@ -1,0 +1,832 @@
+{
+	"from": {
+		"version": "0.397.0.329146",
+		"hash": "431cf85077324f34"
+	},
+	"to": {
+		"version": "0.398.0.331499",
+		"hash": "18d44d41d6e943b6"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "ContentProvider",
+			"member": "GetFailedRequests",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFailedRequests",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DraftsService",
+			"member": "OpenDrafts",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "OpenDrafts",
+				"Parameters": [
+					{
+						"Name": "scripts",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DraftsService",
+			"member": "ScriptRemoved",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ScriptRemoved",
+				"Parameters": [
+					{
+						"Name": "script",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DraftsService",
+			"member": "ScriptServerVersionChanged",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ScriptServerVersionChanged",
+				"Parameters": [
+					{
+						"Name": "script",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DraftsService",
+			"member": "DraftOutdatedStateChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "DraftOutdatedStateChanged",
+				"Parameters": [
+					{
+						"Name": "script",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "outdated",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextBox",
+			"member": "TextInputType",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "TextInputType",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "TextInputType"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "GetGameplayPausedNotificationEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetGameplayPausedNotificationEnabled",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "SetGameplayPausedNotificationEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetGameplayPausedNotificationEnabled",
+				"Parameters": [
+					{
+						"Name": "enabled",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "NetworkPausedEnabledChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "NetworkPausedEnabledChanged",
+				"Parameters": [
+					{
+						"Name": "enabled",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemStorageConnection",
+			"member": "Disconnect",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "Disconnect",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemStorageService",
+			"member": "Fire",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Fire",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "value",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkSettings",
+			"member": "PrintJoinSizeBreakdown",
+			"type": "Add",
+			"value": {
+				"Category": "Diagnostics",
+				"MemberType": "Property",
+				"Name": "PrintJoinSizeBreakdown",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TriangleMeshPart",
+			"member": "CollisionFidelity",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "PluginSecurity"
+					}
+				},
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": false,
+						"CanSave": false
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": [
+						"NotReplicated",
+						"NotScriptable"
+					],
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "CollisionFidelity",
+				"Security": {
+					"Read": "None",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "CollisionFidelity"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "HostDataModelType",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "HostDataModelType",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "StudioDataModelType"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "Bind",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Bind",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "callback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "BindAndFire",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "BindAndFire",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "callback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "Fire",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Fire",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "value",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "GetItem",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetItem",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "defaultValue",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "HasItem",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "HasItem",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "RemoveItem",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RemoveItem",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "SetItem",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetItem",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "value",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "IsPluginInstalled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsPluginInstalled",
+				"Parameters": [
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "IsPluginUpToDate",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsPluginUpToDate",
+				"Parameters": [
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "currentAssetVersion",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "TryInstallPlugin",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "TryInstallPlugin",
+				"Parameters": [
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "assetVersionId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "PointerAction",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PointerAction",
+				"Parameters": [
+					{
+						"Name": "wheel",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "pan",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "pinch",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "gameProcessedEvent",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "StudioDataModelType",
+			"type": "Add",
+			"value": {
+				"Name": "StudioDataModelType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioDataModelType",
+			"item": "Edit",
+			"type": "Add",
+			"value": {
+				"Name": "Edit",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioDataModelType",
+			"item": "PlayClient",
+			"type": "Add",
+			"value": {
+				"Name": "PlayClient",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioDataModelType",
+			"item": "PlayServer",
+			"type": "Add",
+			"value": {
+				"Name": "PlayServer",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioDataModelType",
+			"item": "RobloxPlugin",
+			"type": "Add",
+			"value": {
+				"Name": "RobloxPlugin",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioDataModelType",
+			"item": "UserPlugin",
+			"type": "Add",
+			"value": {
+				"Name": "UserPlugin",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioDataModelType",
+			"item": "Null",
+			"type": "Add",
+			"value": {
+				"Name": "Null",
+				"Value": 6
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "TextInputType",
+			"type": "Add",
+			"value": {
+				"Name": "TextInputType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TextInputType",
+			"item": "Default",
+			"type": "Add",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TextInputType",
+			"item": "NoSuggestions",
+			"type": "Add",
+			"value": {
+				"Name": "NoSuggestions",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TextInputType",
+			"item": "Number",
+			"type": "Add",
+			"value": {
+				"Name": "Number",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TextInputType",
+			"item": "Email",
+			"type": "Add",
+			"value": {
+				"Name": "Email",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TextInputType",
+			"item": "Phone",
+			"type": "Add",
+			"value": {
+				"Name": "Phone",
+				"Value": 4
+			}
+		}
+	]
+}

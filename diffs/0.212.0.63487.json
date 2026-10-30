@@ -1,0 +1,97 @@
+{
+	"from": {
+		"version": "0.211.0.63319",
+		"hash": "59f5d380c5e14856"
+	},
+	"to": {
+		"version": "0.212.0.63487",
+		"hash": "80d6e12d52f3422b"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AdService",
+			"member": "VideoAdClosed",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "adShown"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "VideoAdClosed",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "adShown"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "LocalBackpack",
+			"type": "Remove",
+			"value": {
+				"Name": "LocalBackpack",
+				"Superclass": "GuiItem",
+				"MemoryCategory": "",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PlayerHUD",
+			"type": "Remove",
+			"value": {
+				"Name": "PlayerHUD",
+				"Superclass": "GuiItem",
+				"MemoryCategory": ""
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "GetCharacterAppearanceAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCharacterAppearanceAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		}
+	]
+}

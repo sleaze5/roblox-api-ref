@@ -1,0 +1,294 @@
+{
+	"from": {
+		"version": "0.134.1.42400",
+		"hash": "4d86019d16fc4ea5"
+	},
+	"to": {
+		"version": "0.135.0.42435",
+		"hash": "2c68f7c30e1b4888"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "GameSettings",
+			"member": "ImageUploadPromptBehavior",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ImageUploadPromptBehavior",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "UploadSetting"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptContext",
+			"member": "Error",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxPlaceSecurity",
+					"after": "None"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "Error",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "message"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "stackTrace"
+					},
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "script"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "HttpPost",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "url"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "data"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "synchronous",
+							"Default": "false"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "url"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "data"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "synchronous",
+							"Default": "false"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "contentType",
+							"Default": "*/*"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "HttpPost",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "url"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "data"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "synchronous",
+						"Default": "false"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "contentType",
+						"Default": "*/*"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "HttpPostAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "url"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "data"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "url"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "data"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "contentType",
+							"Default": "*/*"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "HttpPostAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "url"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "data"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "contentType",
+						"Default": "*/*"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserGameSettings",
+			"member": "ImageUploadPromptBehavior",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ImageUploadPromptBehavior",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "UploadSetting"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		}
+	]
+}

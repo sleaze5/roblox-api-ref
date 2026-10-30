@@ -1,0 +1,1127 @@
+{
+	"from": {
+		"version": "0.149.0.46203",
+		"hash": "187659e292024b9d"
+	},
+	"to": {
+		"version": "0.150.0.46522",
+		"hash": "266c1c454a3c46ab"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Script",
+			"member": "Source",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "LocalUserSecurity",
+						"Write": "LocalUserSecurity"
+					},
+					"after": {
+						"Read": "security1",
+						"Write": "security1"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Property",
+				"Name": "Source",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "ProtectedString"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "security1",
+					"Write": "security1"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Button",
+			"member": "SetActive",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "security1"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetActive",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "active"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "security1"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Button",
+			"member": "Click",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "None",
+					"after": "security1"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "Click",
+				"Parameters": [],
+				"Security": "security1"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChangeHistoryService",
+			"member": "GetCanRedo",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "security1"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCanRedo",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "security1"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChangeHistoryService",
+			"member": "GetCanUndo",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "security1"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCanUndo",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "security1"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChangeHistoryService",
+			"member": "Redo",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "security1"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "Redo",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "security1"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChangeHistoryService",
+			"member": "ResetWaypoints",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "security1"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "ResetWaypoints",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "security1"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChangeHistoryService",
+			"member": "SetEnabled",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "security1"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetEnabled",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "state"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "security1"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChangeHistoryService",
+			"member": "SetWaypoint",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "security1"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetWaypoint",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "name"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "security1"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChangeHistoryService",
+			"member": "Undo",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "security1"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "Undo",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "security1"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptThirdPartyPurchase",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptThirdPartyPurchase",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "player"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "productId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxPlaceSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "ThirdPartyPurchaseFinished",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ThirdPartyPurchaseFinished",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "player"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "productId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "receipt"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "wasPurchased"
+					}
+				],
+				"Security": "RobloxPlaceSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ModuleScript",
+			"member": "Source",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "LocalUserSecurity",
+						"Write": "LocalUserSecurity"
+					},
+					"after": {
+						"Read": "security1",
+						"Write": "security1"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Property",
+				"Name": "Source",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "ProtectedString"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "security1",
+					"Write": "security1"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkClient",
+			"member": "PlayerConnect",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "security1"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "PlayerConnect",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "server"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "serverPort"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "clientPort",
+						"Default": "0"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "threadSleepTime",
+						"Default": "30"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "security1"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkServer",
+			"member": "Start",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "security1"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "Start",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "port",
+						"Default": "0"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "threadSleepTime",
+						"Default": "20"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "security1"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "Activate",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "security1"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "Activate",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "exclusiveMouse"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "security1"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "CreateToolbar",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "security1"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateToolbar",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "name"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "security1"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "GetMouse",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "security1"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetMouse",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "security1"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "GetSetting",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "security1"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetSetting",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "key"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "security1"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "GetStudioUserId",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "security1"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetStudioUserId",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "security1"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "OpenScript",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "security1"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "OpenScript",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "script"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "lineNumber",
+						"Default": "0"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "security1"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "SaveSelectedToRoblox",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "security1"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SaveSelectedToRoblox",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "security1"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "SetSetting",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "security1"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetSetting",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "key"
+					},
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						},
+						"Name": "value"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "security1"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "Deactivation",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "None",
+					"after": "security1"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "Deactivation",
+				"Parameters": [],
+				"Security": "security1"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginManager",
+			"member": "CreatePlugin",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "security1"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreatePlugin",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "security1"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginManager",
+			"member": "ExportPlace",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "security1"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "ExportPlace",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "filePath",
+						"Default": ""
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "security1"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginManager",
+			"member": "ExportSelection",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "security1"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "ExportSelection",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "filePath",
+						"Default": ""
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "security1"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RunService",
+			"member": "Pause",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "security1"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "Pause",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "security1"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RunService",
+			"member": "Reset",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "security1"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "Reset",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "security1",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RunService",
+			"member": "Run",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "security1"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "Run",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "security1"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RunService",
+			"member": "Stop",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "security1"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "Stop",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "security1"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Selection",
+			"member": "Get",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "security1"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "Get",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "security1"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Selection",
+			"member": "Set",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "security1"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "Set",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						},
+						"Name": "selection"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "security1"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "SetPlaceID",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "security1"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetPlaceID",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "placeID"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "robloxPlace",
+						"Default": "false"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "security1",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "SetPlaceId",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "security1"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetPlaceId",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "placeId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "robloxPlace",
+						"Default": "false"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "security1"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Toolbar",
+			"member": "CreateButton",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "security1"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateButton",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "text"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "tooltip"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "iconname"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "security1"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "InCameraGesture",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "InCameraGesture",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		}
+	]
+}

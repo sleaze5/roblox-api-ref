@@ -1,0 +1,709 @@
+{
+	"from": {
+		"version": "0.385.0.303034",
+		"hash": "9bfdcfdb3c774e96"
+	},
+	"to": {
+		"version": "0.386.0.304821",
+		"hash": "0c983a75d0754f4c"
+	},
+	"changes": [
+		{
+			"element": "Class",
+			"class": "AnalyticsService",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AnalyticsService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContentProvider",
+			"member": "PreloadAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "contentIdList",
+							"Type": {
+								"Category": "Group",
+								"Name": "Array"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "contentIdList",
+							"Type": {
+								"Category": "Group",
+								"Name": "Array"
+							}
+						},
+						{
+							"Default": "nil",
+							"Name": "callbackFunction",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Function"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "PreloadAsync",
+				"Parameters": [
+					{
+						"Name": "contentIdList",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "callbackFunction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MeshPart",
+			"member": "RenderFidelity",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Behavior",
+					"after": "Appearance"
+				}
+			],
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "RenderFidelity",
+				"Security": {
+					"Read": "None",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "RenderFidelity"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PartOperation",
+			"member": "RenderFidelity",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Behavior",
+					"after": "Appearance"
+				}
+			],
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "RenderFidelity",
+				"Security": {
+					"Read": "None",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "RenderFidelity"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "GameplayPaused",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "NotAccessibleSecurity"
+					}
+				},
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": false,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": true
+					}
+				},
+				{
+					"field": "Tags",
+					"before": [
+						"ReadOnly",
+						"NotReplicated"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "GameplayPaused",
+				"Security": {
+					"Read": "None",
+					"Write": "NotAccessibleSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "RbxAnalyticsService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "RbxAnalyticsService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RbxAnalyticsService",
+			"member": "GetClientId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetClientId",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RbxAnalyticsService",
+			"member": "GetSessionId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetSessionId",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RbxAnalyticsService",
+			"member": "ReleaseRBXEventStream",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ReleaseRBXEventStream",
+				"Parameters": [
+					{
+						"Name": "target",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RbxAnalyticsService",
+			"member": "ReportCounter",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ReportCounter",
+				"Parameters": [
+					{
+						"Name": "counterName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "1",
+						"Name": "amount",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RbxAnalyticsService",
+			"member": "ReportInfluxSeries",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ReportInfluxSeries",
+				"Parameters": [
+					{
+						"Name": "seriesName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "points",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Name": "throttlingPercentage",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RbxAnalyticsService",
+			"member": "ReportStats",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ReportStats",
+				"Parameters": [
+					{
+						"Name": "category",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RbxAnalyticsService",
+			"member": "SendEventDeferred",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SendEventDeferred",
+				"Parameters": [
+					{
+						"Name": "target",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "eventContext",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "eventName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "additionalArgs",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RbxAnalyticsService",
+			"member": "SendEventImmediately",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SendEventImmediately",
+				"Parameters": [
+					{
+						"Name": "target",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "eventContext",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "eventName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "additionalArgs",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RbxAnalyticsService",
+			"member": "SetRBXEvent",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetRBXEvent",
+				"Parameters": [
+					{
+						"Name": "target",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "eventContext",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "eventName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "additionalArgs",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RbxAnalyticsService",
+			"member": "SetRBXEventStream",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetRBXEventStream",
+				"Parameters": [
+					{
+						"Name": "target",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "eventContext",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "eventName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "additionalArgs",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RbxAnalyticsService",
+			"member": "TrackEvent",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "TrackEvent",
+				"Parameters": [
+					{
+						"Name": "category",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "action",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "label",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "value",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RbxAnalyticsService",
+			"member": "TrackEventWithArgs",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "TrackEventWithArgs",
+				"Parameters": [
+					{
+						"Name": "category",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "action",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "label",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "args",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "value",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RbxAnalyticsService",
+			"member": "UpdateHeartbeatObject",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UpdateHeartbeatObject",
+				"Parameters": [
+					{
+						"Name": "args",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AssetFetchStatus",
+			"type": "Add",
+			"value": {
+				"Name": "AssetFetchStatus"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetFetchStatus",
+			"item": "Success",
+			"type": "Add",
+			"value": {
+				"Name": "Success",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetFetchStatus",
+			"item": "Failure",
+			"type": "Add",
+			"value": {
+				"Name": "Failure",
+				"Value": 1
+			}
+		}
+	]
+}

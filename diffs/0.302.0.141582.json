@@ -1,0 +1,505 @@
+{
+	"from": {
+		"version": "0.301.1.141504",
+		"hash": "37e44e0df2a441c5"
+	},
+	"to": {
+		"version": "0.302.0.141582",
+		"hash": "8e8f2693b7a04b37"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "FindFirstAncestor",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "className"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "name"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindFirstAncestor",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "name"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptGamePassPurchase",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptGamePassPurchase",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "player"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "gamePassId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "SignalPromptGamePassPurchaseFinished",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SignalPromptGamePassPurchaseFinished",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "player"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "gamePassId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "success"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptGamePassPurchaseFinished",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptGamePassPurchaseFinished",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "player"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "gamePassId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "wasPurchased"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptGamePassPurchaseRequested",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptGamePassPurchaseRequested",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "player"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "gamePassId"
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkClient",
+			"member": "PlayerConnect",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "userId"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "server"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "serverPort"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "clientPort",
+							"Default": "0"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "threadSleepTime",
+							"Default": "30"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "dataCenterId",
+							"Default": "-1"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "userId"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "server"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "serverPort"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "clientPort",
+							"Default": "0"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "threadSleepTime",
+							"Default": "30"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "dataCenterId",
+							"Default": "-1"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "userName",
+							"Default": ""
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "PlayerConnect",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "server"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "serverPort"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "clientPort",
+						"Default": "0"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "threadSleepTime",
+						"Default": "30"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "dataCenterId",
+						"Default": "-1"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "userName",
+						"Default": ""
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkSettings",
+			"member": "ShowPartMovementWayPoint",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ShowPartMovementWayPoint",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkSettings",
+			"member": "TotalNumMovementWayPoint",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "TotalNumMovementWayPoint",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RunService",
+			"member": "GetRobloxVersion",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRobloxVersion",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserGameSettings",
+			"member": "GamepadCameraSensitivity",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "GamepadCameraSensitivity",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserGameSettings",
+			"member": "IsUsingGamepadCameraSensitivity",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "IsUsingGamepadCameraSensitivity",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserGameSettings",
+			"member": "SetGamepadCameraSensitivityVisible",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetGamepadCameraSensitivityVisible",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "InfoType",
+			"item": "GamePass",
+			"type": "Add",
+			"value": {
+				"Name": "GamePass",
+				"Value": 2
+			}
+		}
+	]
+}

@@ -1,0 +1,258 @@
+{
+	"from": {
+		"version": "0.373.0.280591",
+		"hash": "5adfd9a350914cdd"
+	},
+	"to": {
+		"version": "0.374.0.282500",
+		"hash": "e4a80b37c18d4bbb"
+	},
+	"changes": [
+		{
+			"element": "Class",
+			"class": "AntiAddictionService",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AntiAddictionService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BrowserService",
+			"member": "CopyAuthCookieFromBrowserToEngine",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CopyAuthCookieFromBrowserToEngine",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BrowserService",
+			"member": "OpenWeChatAuthWindow",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "OpenWeChatAuthWindow",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BrowserService",
+			"member": "AuthCookieCopiedToEngine",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "AuthCookieCopiedToEngine",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LocalizationService",
+			"member": "GetTableEntries",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Yields"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetTableEntries",
+				"Parameters": [
+					{
+						"Default": "nil",
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PackageLink",
+			"member": "AutoUpdate",
+			"type": "Add",
+			"value": {
+				"Category": "Link",
+				"MemberType": "Property",
+				"Name": "AutoUpdate",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "SetLocalPlayerInfo",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetLocalPlayerInfo",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "userName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "membershipType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "MembershipType"
+						}
+					},
+					{
+						"Name": "isUnder13",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Auto-Recovery Enabled",
+			"type": "Add",
+			"value": {
+				"Category": "Auto-Recovery",
+				"MemberType": "Property",
+				"Name": "Auto-Recovery Enabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Auto-Recovery Interval (Minutes)",
+			"type": "Add",
+			"value": {
+				"Category": "Auto-Recovery",
+				"MemberType": "Property",
+				"Name": "Auto-Recovery Interval (Minutes)",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Auto-Recovery Path",
+			"type": "Add",
+			"value": {
+				"Category": "Auto-Recovery",
+				"MemberType": "Property",
+				"Name": "Auto-Recovery Path",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "QDir"
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "ForceField",
+			"type": "Add",
+			"value": {
+				"Name": "ForceField",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 1584
+			}
+		}
+	]
+}

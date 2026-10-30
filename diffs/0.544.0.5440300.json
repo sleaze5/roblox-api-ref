@@ -1,0 +1,339 @@
+{
+	"from": {
+		"version": "0.543.0.5430566",
+		"hash": "deae04885fd34b9b"
+	},
+	"to": {
+		"version": "0.544.0.5440300",
+		"hash": "72bd4f59f4604203"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AdPortal",
+			"member": "PortalType",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ValueType",
+					"before": {
+						"Category": "Enum",
+						"Name": "PortalType"
+					},
+					"after": {
+						"Category": "Enum",
+						"Name": "AdPortalType"
+					}
+				}
+			],
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "PortalType",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AdPortalType"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AdPortal",
+			"member": "PortalStatus",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "PortalStatus",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AdPortalStatus"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "GetAccessoryType",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAccessoryType",
+				"Parameters": [
+					{
+						"Name": "avatarAssetType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AvatarAssetType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "AccessoryType"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PackageLink",
+			"member": "Package Id",
+			"type": "Remove",
+			"value": {
+				"Category": "Link",
+				"MemberType": "Property",
+				"Name": "Package Id",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PackageLink",
+			"member": "PackageId",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Hidden",
+						"ReadOnly",
+						"NotReplicated"
+					],
+					"after": [
+						"ReadOnly",
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Link",
+				"MemberType": "Property",
+				"Name": "PackageId",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PackageLink",
+			"member": "Version Number",
+			"type": "Remove",
+			"value": {
+				"Category": "Link",
+				"MemberType": "Property",
+				"Name": "Version Number",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PackageLink",
+			"member": "VersionNumber",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": false,
+						"CanSave": false
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": [
+						"Hidden",
+						"NotReplicated"
+					],
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Link",
+				"MemberType": "Property",
+				"Name": "VersionNumber",
+				"Security": {
+					"Read": "None",
+					"Write": "NotAccessibleSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VoiceChatInternal",
+			"member": "LocalPlayerModerated",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "LocalPlayerModerated",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "PortalType",
+			"type": "Remove",
+			"value": {
+				"Name": "PortalType"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AdPortalStatus",
+			"type": "Add",
+			"value": {
+				"Name": "AdPortalStatus"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AdPortalStatus",
+			"item": "Invalid",
+			"type": "Add",
+			"value": {
+				"Name": "Invalid",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AdPortalStatus",
+			"item": "Inactive",
+			"type": "Add",
+			"value": {
+				"Name": "Inactive",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AdPortalStatus",
+			"item": "Active",
+			"type": "Add",
+			"value": {
+				"Name": "Active",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AdPortalType",
+			"type": "Add",
+			"value": {
+				"Name": "AdPortalType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AdPortalType",
+			"item": "Forward",
+			"type": "Add",
+			"value": {
+				"Name": "Forward",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AdPortalType",
+			"item": "Return",
+			"type": "Add",
+			"value": {
+				"Name": "Return",
+				"Value": 1
+			}
+		}
+	]
+}

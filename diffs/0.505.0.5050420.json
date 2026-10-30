@@ -1,0 +1,2480 @@
+{
+	"from": {
+		"version": "0.504.0.5040410",
+		"hash": "c5f45f330c3b462c"
+	},
+	"to": {
+		"version": "0.505.0.5050420",
+		"hash": "029ee4d623fb42d5"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AssetImportService",
+			"member": "UploadFinished",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "succeeded",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "succeeded",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "errorMap",
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "UploadFinished",
+				"Parameters": [
+					{
+						"Name": "succeeded",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "errorMap",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RigidConstraint",
+			"member": "Broken",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": false,
+						"CanSave": true
+					}
+				},
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": [
+						"ReadOnly",
+						"NotReplicated",
+						"NotBrowsable"
+					]
+				}
+			],
+			"value": {
+				"Category": "Destruction",
+				"MemberType": "Property",
+				"Name": "Broken",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated",
+					"NotBrowsable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "CanvasGroup",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotBrowsable"
+					]
+				}
+			],
+			"value": {
+				"MemoryCategory": "Gui",
+				"Name": "CanvasGroup",
+				"Superclass": "GuiObject",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CanvasGroup",
+			"member": "Transparency",
+			"type": "Remove",
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "Transparency",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CanvasGroup",
+			"member": "GroupTransparency",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "GroupTransparency",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "TerrainAsphalt",
+			"type": "Add",
+			"value": {
+				"Category": "Terrain Overrides",
+				"MemberType": "Property",
+				"Name": "TerrainAsphalt",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "TerrainBasalt",
+			"type": "Add",
+			"value": {
+				"Category": "Terrain Overrides",
+				"MemberType": "Property",
+				"Name": "TerrainBasalt",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "TerrainBrick",
+			"type": "Add",
+			"value": {
+				"Category": "Terrain Overrides",
+				"MemberType": "Property",
+				"Name": "TerrainBrick",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "TerrainCobblestone",
+			"type": "Add",
+			"value": {
+				"Category": "Terrain Overrides",
+				"MemberType": "Property",
+				"Name": "TerrainCobblestone",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "TerrainConcrete",
+			"type": "Add",
+			"value": {
+				"Category": "Terrain Overrides",
+				"MemberType": "Property",
+				"Name": "TerrainConcrete",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "TerrainCrackedLava",
+			"type": "Add",
+			"value": {
+				"Category": "Terrain Overrides",
+				"MemberType": "Property",
+				"Name": "TerrainCrackedLava",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "TerrainGlacier",
+			"type": "Add",
+			"value": {
+				"Category": "Terrain Overrides",
+				"MemberType": "Property",
+				"Name": "TerrainGlacier",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "TerrainGrass",
+			"type": "Add",
+			"value": {
+				"Category": "Terrain Overrides",
+				"MemberType": "Property",
+				"Name": "TerrainGrass",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "TerrainGround",
+			"type": "Add",
+			"value": {
+				"Category": "Terrain Overrides",
+				"MemberType": "Property",
+				"Name": "TerrainGround",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "TerrainIce",
+			"type": "Add",
+			"value": {
+				"Category": "Terrain Overrides",
+				"MemberType": "Property",
+				"Name": "TerrainIce",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "TerrainLeafyGrass",
+			"type": "Add",
+			"value": {
+				"Category": "Terrain Overrides",
+				"MemberType": "Property",
+				"Name": "TerrainLeafyGrass",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "TerrainLimestone",
+			"type": "Add",
+			"value": {
+				"Category": "Terrain Overrides",
+				"MemberType": "Property",
+				"Name": "TerrainLimestone",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "TerrainMud",
+			"type": "Add",
+			"value": {
+				"Category": "Terrain Overrides",
+				"MemberType": "Property",
+				"Name": "TerrainMud",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "TerrainPavement",
+			"type": "Add",
+			"value": {
+				"Category": "Terrain Overrides",
+				"MemberType": "Property",
+				"Name": "TerrainPavement",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "TerrainRock",
+			"type": "Add",
+			"value": {
+				"Category": "Terrain Overrides",
+				"MemberType": "Property",
+				"Name": "TerrainRock",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "TerrainSalt",
+			"type": "Add",
+			"value": {
+				"Category": "Terrain Overrides",
+				"MemberType": "Property",
+				"Name": "TerrainSalt",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "TerrainSand",
+			"type": "Add",
+			"value": {
+				"Category": "Terrain Overrides",
+				"MemberType": "Property",
+				"Name": "TerrainSand",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "TerrainSandstone",
+			"type": "Add",
+			"value": {
+				"Category": "Terrain Overrides",
+				"MemberType": "Property",
+				"Name": "TerrainSandstone",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "TerrainSnow",
+			"type": "Add",
+			"value": {
+				"Category": "Terrain Overrides",
+				"MemberType": "Property",
+				"Name": "TerrainSnow",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "hasPropertyWarningInStudio",
+			"type": "Add",
+			"value": {
+				"Category": "Material Overrides",
+				"MemberType": "Property",
+				"Name": "hasPropertyWarningInStudio",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "ClearOverrideTerrainMaterial",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ClearOverrideTerrainMaterial",
+				"Parameters": [
+					{
+						"Name": "material",
+						"Type": {
+							"Category": "Enum",
+							"Name": "Material"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "GetOverrideTerrainMaterial",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetOverrideTerrainMaterial",
+				"Parameters": [
+					{
+						"Name": "material",
+						"Type": {
+							"Category": "Enum",
+							"Name": "Material"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "SetOverrideTerrainMaterial",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetOverrideTerrainMaterial",
+				"Parameters": [
+					{
+						"Name": "materialVariant",
+						"Type": {
+							"Category": "Class",
+							"Name": "MaterialVariant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialVariant",
+			"member": "StudsPerTile",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Appearance",
+					"after": "Appearance For Part"
+				}
+			],
+			"value": {
+				"Category": "Appearance For Part",
+				"MemberType": "Property",
+				"Name": "StudsPerTile",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialVariant",
+			"member": "MaterialPattern",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance For Terrain",
+				"MemberType": "Property",
+				"Name": "MaterialPattern",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "MaterialPattern"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "PromptForLocalSave",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptForLocalSave",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "SetDocumentDisplayName",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetDocumentDisplayName",
+				"Parameters": [
+					{
+						"Name": "newName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "FirstPublishOfCloudPlace",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "FirstPublishOfCloudPlace",
+				"Parameters": [
+					{
+						"Name": "universeId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "placeId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "DEPRECATED_SetDocumentDisplayName",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DEPRECATED_SetDocumentDisplayName",
+				"Parameters": [
+					{
+						"Name": "newName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VoiceChatService",
+			"member": "GenerateDefaultChannel",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "GenerateDefaultChannel",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotBrowsable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PathWaypointAction",
+			"item": "Custom",
+			"type": "Add",
+			"value": {
+				"Name": "Custom",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "Shadow",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 32,
+					"after": 33
+				}
+			],
+			"value": {
+				"Name": "Shadow",
+				"Value": 33
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "Light",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 33,
+					"after": 34
+				}
+			],
+			"value": {
+				"Name": "Light",
+				"Value": 34
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "Dark",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 34,
+					"after": 35
+				}
+			],
+			"value": {
+				"Name": "Dark",
+				"Value": 35
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "Mid",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 35,
+					"after": 36
+				}
+			],
+			"value": {
+				"Name": "Mid",
+				"Value": 36
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "MainText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 36,
+					"after": 37
+				}
+			],
+			"value": {
+				"Name": "MainText",
+				"Value": 37
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "SubText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 37,
+					"after": 38
+				}
+			],
+			"value": {
+				"Name": "SubText",
+				"Value": 38
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "TitlebarText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 38,
+					"after": 39
+				}
+			],
+			"value": {
+				"Name": "TitlebarText",
+				"Value": 39
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "BrightText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 39,
+					"after": 40
+				}
+			],
+			"value": {
+				"Name": "BrightText",
+				"Value": 40
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DimmedText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 40,
+					"after": 41
+				}
+			],
+			"value": {
+				"Name": "DimmedText",
+				"Value": 41
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "LinkText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 41,
+					"after": 42
+				}
+			],
+			"value": {
+				"Name": "LinkText",
+				"Value": 42
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "WarningText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 42,
+					"after": 43
+				}
+			],
+			"value": {
+				"Name": "WarningText",
+				"Value": 43
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ErrorText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 43,
+					"after": 44
+				}
+			],
+			"value": {
+				"Name": "ErrorText",
+				"Value": 44
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "InfoText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 44,
+					"after": 45
+				}
+			],
+			"value": {
+				"Name": "InfoText",
+				"Value": 45
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "SensitiveText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 45,
+					"after": 46
+				}
+			],
+			"value": {
+				"Name": "SensitiveText",
+				"Value": 46
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptSideWidget",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 46,
+					"after": 47
+				}
+			],
+			"value": {
+				"Name": "ScriptSideWidget",
+				"Value": 47
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 47,
+					"after": 48
+				}
+			],
+			"value": {
+				"Name": "ScriptBackground",
+				"Value": 48
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 48,
+					"after": 49
+				}
+			],
+			"value": {
+				"Name": "ScriptText",
+				"Value": 49
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptSelectionText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 49,
+					"after": 50
+				}
+			],
+			"value": {
+				"Name": "ScriptSelectionText",
+				"Value": 50
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptSelectionBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 50,
+					"after": 51
+				}
+			],
+			"value": {
+				"Name": "ScriptSelectionBackground",
+				"Value": 51
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptFindSelectionBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 51,
+					"after": 52
+				}
+			],
+			"value": {
+				"Name": "ScriptFindSelectionBackground",
+				"Value": 52
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptMatchingWordSelectionBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 52,
+					"after": 53
+				}
+			],
+			"value": {
+				"Name": "ScriptMatchingWordSelectionBackground",
+				"Value": 53
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptOperator",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 53,
+					"after": 54
+				}
+			],
+			"value": {
+				"Name": "ScriptOperator",
+				"Value": 54
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptNumber",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 54,
+					"after": 55
+				}
+			],
+			"value": {
+				"Name": "ScriptNumber",
+				"Value": 55
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptString",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 55,
+					"after": 56
+				}
+			],
+			"value": {
+				"Name": "ScriptString",
+				"Value": 56
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptComment",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 56,
+					"after": 57
+				}
+			],
+			"value": {
+				"Name": "ScriptComment",
+				"Value": 57
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptKeyword",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 57,
+					"after": 58
+				}
+			],
+			"value": {
+				"Name": "ScriptKeyword",
+				"Value": 58
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptBuiltInFunction",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 58,
+					"after": 59
+				}
+			],
+			"value": {
+				"Name": "ScriptBuiltInFunction",
+				"Value": 59
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptWarning",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 59,
+					"after": 60
+				}
+			],
+			"value": {
+				"Name": "ScriptWarning",
+				"Value": 60
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptError",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 60,
+					"after": 61
+				}
+			],
+			"value": {
+				"Name": "ScriptError",
+				"Value": 61
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptWhitespace",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 61,
+					"after": 62
+				}
+			],
+			"value": {
+				"Name": "ScriptWhitespace",
+				"Value": 62
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptRuler",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 62,
+					"after": 63
+				}
+			],
+			"value": {
+				"Name": "ScriptRuler",
+				"Value": 63
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DocViewCodeBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 63,
+					"after": 64
+				}
+			],
+			"value": {
+				"Name": "DocViewCodeBackground",
+				"Value": 64
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DebuggerCurrentLine",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 64,
+					"after": 65
+				}
+			],
+			"value": {
+				"Name": "DebuggerCurrentLine",
+				"Value": 65
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DebuggerErrorLine",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 65,
+					"after": 66
+				}
+			],
+			"value": {
+				"Name": "DebuggerErrorLine",
+				"Value": 66
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptEditorCurrentLine",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 104,
+					"after": 105
+				}
+			],
+			"value": {
+				"Name": "ScriptEditorCurrentLine",
+				"Value": 105
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffFilePathText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 66,
+					"after": 67
+				}
+			],
+			"value": {
+				"Name": "DiffFilePathText",
+				"Value": 67
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextHunkInfo",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 67,
+					"after": 68
+				}
+			],
+			"value": {
+				"Name": "DiffTextHunkInfo",
+				"Value": 68
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextNoChange",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 68,
+					"after": 69
+				}
+			],
+			"value": {
+				"Name": "DiffTextNoChange",
+				"Value": 69
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextAddition",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 69,
+					"after": 70
+				}
+			],
+			"value": {
+				"Name": "DiffTextAddition",
+				"Value": 70
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextDeletion",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 70,
+					"after": 71
+				}
+			],
+			"value": {
+				"Name": "DiffTextDeletion",
+				"Value": 71
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextSeparatorBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 71,
+					"after": 72
+				}
+			],
+			"value": {
+				"Name": "DiffTextSeparatorBackground",
+				"Value": 72
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextNoChangeBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 72,
+					"after": 73
+				}
+			],
+			"value": {
+				"Name": "DiffTextNoChangeBackground",
+				"Value": 73
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextAdditionBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 73,
+					"after": 74
+				}
+			],
+			"value": {
+				"Name": "DiffTextAdditionBackground",
+				"Value": 74
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextDeletionBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 74,
+					"after": 75
+				}
+			],
+			"value": {
+				"Name": "DiffTextDeletionBackground",
+				"Value": 75
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffLineNum",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 75,
+					"after": 76
+				}
+			],
+			"value": {
+				"Name": "DiffLineNum",
+				"Value": 76
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffLineNumSeparatorBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 76,
+					"after": 77
+				}
+			],
+			"value": {
+				"Name": "DiffLineNumSeparatorBackground",
+				"Value": 77
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffLineNumNoChangeBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 77,
+					"after": 78
+				}
+			],
+			"value": {
+				"Name": "DiffLineNumNoChangeBackground",
+				"Value": 78
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffLineNumAdditionBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 78,
+					"after": 79
+				}
+			],
+			"value": {
+				"Name": "DiffLineNumAdditionBackground",
+				"Value": 79
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffLineNumDeletionBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 79,
+					"after": 80
+				}
+			],
+			"value": {
+				"Name": "DiffLineNumDeletionBackground",
+				"Value": 80
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffFilePathBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 80,
+					"after": 81
+				}
+			],
+			"value": {
+				"Name": "DiffFilePathBackground",
+				"Value": 81
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffFilePathBorder",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 81,
+					"after": 82
+				}
+			],
+			"value": {
+				"Name": "DiffFilePathBorder",
+				"Value": 82
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ChatIncomingBgColor",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 82,
+					"after": 83
+				}
+			],
+			"value": {
+				"Name": "ChatIncomingBgColor",
+				"Value": 83
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ChatIncomingTextColor",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 83,
+					"after": 84
+				}
+			],
+			"value": {
+				"Name": "ChatIncomingTextColor",
+				"Value": 84
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ChatOutgoingBgColor",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 84,
+					"after": 85
+				}
+			],
+			"value": {
+				"Name": "ChatOutgoingBgColor",
+				"Value": 85
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ChatOutgoingTextColor",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 85,
+					"after": 86
+				}
+			],
+			"value": {
+				"Name": "ChatOutgoingTextColor",
+				"Value": 86
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ChatModeratedMessageColor",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 86,
+					"after": 87
+				}
+			],
+			"value": {
+				"Name": "ChatModeratedMessageColor",
+				"Value": 87
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "Separator",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 87,
+					"after": 88
+				}
+			],
+			"value": {
+				"Name": "Separator",
+				"Value": 88
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ButtonBorder",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 88,
+					"after": 89
+				}
+			],
+			"value": {
+				"Name": "ButtonBorder",
+				"Value": 89
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ButtonText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 89,
+					"after": 90
+				}
+			],
+			"value": {
+				"Name": "ButtonText",
+				"Value": 90
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "InputFieldBorder",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 90,
+					"after": 91
+				}
+			],
+			"value": {
+				"Name": "InputFieldBorder",
+				"Value": 91
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "CheckedFieldBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 91,
+					"after": 92
+				}
+			],
+			"value": {
+				"Name": "CheckedFieldBackground",
+				"Value": 92
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "CheckedFieldBorder",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 92,
+					"after": 93
+				}
+			],
+			"value": {
+				"Name": "CheckedFieldBorder",
+				"Value": 93
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "CheckedFieldIndicator",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 93,
+					"after": 94
+				}
+			],
+			"value": {
+				"Name": "CheckedFieldIndicator",
+				"Value": 94
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "HeaderSection",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 94,
+					"after": 95
+				}
+			],
+			"value": {
+				"Name": "HeaderSection",
+				"Value": 95
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "Midlight",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 95,
+					"after": 96
+				}
+			],
+			"value": {
+				"Name": "Midlight",
+				"Value": 96
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "StatusBar",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 96,
+					"after": 97
+				}
+			],
+			"value": {
+				"Name": "StatusBar",
+				"Value": 97
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DialogButton",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 97,
+					"after": 98
+				}
+			],
+			"value": {
+				"Name": "DialogButton",
+				"Value": 98
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DialogButtonText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 98,
+					"after": 99
+				}
+			],
+			"value": {
+				"Name": "DialogButtonText",
+				"Value": 99
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DialogButtonBorder",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 99,
+					"after": 100
+				}
+			],
+			"value": {
+				"Name": "DialogButtonBorder",
+				"Value": 100
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DialogMainButton",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 100,
+					"after": 101
+				}
+			],
+			"value": {
+				"Name": "DialogMainButton",
+				"Value": 101
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DialogMainButtonText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 101,
+					"after": 102
+				}
+			],
+			"value": {
+				"Name": "DialogMainButtonText",
+				"Value": 102
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "InfoBarWarningBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 102,
+					"after": 103
+				}
+			],
+			"value": {
+				"Name": "InfoBarWarningBackground",
+				"Value": 103
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "InfoBarWarningText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 103,
+					"after": 104
+				}
+			],
+			"value": {
+				"Name": "InfoBarWarningText",
+				"Value": 104
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptMethod",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 105,
+					"after": 106
+				}
+			],
+			"value": {
+				"Name": "ScriptMethod",
+				"Value": 106
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptProperty",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 106,
+					"after": 107
+				}
+			],
+			"value": {
+				"Name": "ScriptProperty",
+				"Value": 107
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptNil",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 107,
+					"after": 108
+				}
+			],
+			"value": {
+				"Name": "ScriptNil",
+				"Value": 108
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptBool",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 108,
+					"after": 109
+				}
+			],
+			"value": {
+				"Name": "ScriptBool",
+				"Value": 109
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptFunction",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 109,
+					"after": 110
+				}
+			],
+			"value": {
+				"Name": "ScriptFunction",
+				"Value": 110
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptLocal",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 110,
+					"after": 111
+				}
+			],
+			"value": {
+				"Name": "ScriptLocal",
+				"Value": 111
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptSelf",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 111,
+					"after": 112
+				}
+			],
+			"value": {
+				"Name": "ScriptSelf",
+				"Value": 112
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptLuauKeyword",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 112,
+					"after": 113
+				}
+			],
+			"value": {
+				"Name": "ScriptLuauKeyword",
+				"Value": 113
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptFunctionName",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 113,
+					"after": 114
+				}
+			],
+			"value": {
+				"Name": "ScriptFunctionName",
+				"Value": 114
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptTodo",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 114,
+					"after": 115
+				}
+			],
+			"value": {
+				"Name": "ScriptTodo",
+				"Value": 115
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptBracket",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 115,
+					"after": 116
+				}
+			],
+			"value": {
+				"Name": "ScriptBracket",
+				"Value": 116
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "AttributeCog",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 116,
+					"after": 117
+				}
+			],
+			"value": {
+				"Name": "AttributeCog",
+				"Value": 117
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DropShadow",
+			"type": "Add",
+			"value": {
+				"Name": "DropShadow",
+				"Value": 32
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "MaterialPattern",
+			"type": "Add",
+			"value": {
+				"Name": "MaterialPattern"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "MaterialPattern",
+			"item": "Regular",
+			"type": "Add",
+			"value": {
+				"Name": "Regular",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "MaterialPattern",
+			"item": "Organic",
+			"type": "Add",
+			"value": {
+				"Name": "Organic",
+				"Value": 1
+			}
+		}
+	]
+}

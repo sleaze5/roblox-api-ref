@@ -1,0 +1,1015 @@
+{
+	"from": {
+		"version": "0.51.0.523",
+		"hash": "21cdb2fff9fb4df2"
+	},
+	"to": {
+		"version": "0.52.0.533",
+		"hash": "59ef45ad660c45f5"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "destroy",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "destroy",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FunctionalTest",
+			"member": "AllowSleep",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "AllowSleep",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FunctionalTest",
+			"member": "Is30FpsThrottleEnabled",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Is30FpsThrottleEnabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FunctionalTest",
+			"member": "PhysicsEnvironmentalThrottle",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "PhysicsEnvironmentalThrottle",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FunctionalTest",
+			"member": "Timeout",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Timeout",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "double"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FunctionalTest",
+			"member": "Ended",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Ended",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "FunctionalTestResult"
+						},
+						"Name": "result"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "message"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "findPartOnRay",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "findPartOnRay",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Ray"
+						},
+						"Name": "ray"
+					},
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "ignoreDescendentsInstance",
+						"Default": "nil"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "terrainCellsAreCubes",
+						"Default": "false"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "HasBuildPermission",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "HasBuildPermission",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "BuildPermission"
+						},
+						"Name": "role"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptContext",
+			"member": "LibraryRegistrationComplete",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "RobloxScriptSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "LibraryRegistrationComplete",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptContext",
+			"member": "RegisterDevelopmentLibrary",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "RobloxScriptSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterDevelopmentLibrary",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "libraryName"
+					},
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "scriptInstance"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptContext",
+			"member": "RegisterLibrary",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "RobloxScriptSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterLibrary",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "libraryName"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "assetId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptContext",
+			"member": "RegisterRobloxLibrary",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "RobloxScriptSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterRobloxLibrary",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "libraryName"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "assetId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "Check",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "condition"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "description"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "condition"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "description"
+						},
+						{
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							},
+							"Name": "source",
+							"Default": "nil"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "line",
+							"Default": "0"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "Check",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "condition"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "description"
+					},
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "source",
+						"Default": "nil"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "line",
+						"Default": "0"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "Checkpoint",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "text"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "text"
+						},
+						{
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							},
+							"Name": "source",
+							"Default": "nil"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "line",
+							"Default": "0"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "Checkpoint",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "text"
+					},
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "source",
+						"Default": "nil"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "line",
+						"Default": "0"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "Message",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "text"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "text"
+						},
+						{
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							},
+							"Name": "source",
+							"Default": "nil"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "line",
+							"Default": "0"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "Message",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "text"
+					},
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "source",
+						"Default": "nil"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "line",
+						"Default": "0"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "Require",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "condition"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "description"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "condition"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "description"
+						},
+						{
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							},
+							"Name": "source",
+							"Default": "nil"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "line",
+							"Default": "0"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "Require",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "condition"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "description"
+					},
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "source",
+						"Default": "nil"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "line",
+						"Default": "0"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "Warn",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "condition"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "description"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "condition"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "description"
+						},
+						{
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							},
+							"Name": "source",
+							"Default": "nil"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "line",
+							"Default": "0"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "Warn",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "condition"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "description"
+					},
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "source",
+						"Default": "nil"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "line",
+						"Default": "0"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "AutoRuns",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "AutoRuns",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Physics",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "ErrorCount",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ErrorCount",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Category": "Results",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "TestCount",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "TestCount",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Category": "Results",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "WarnCount",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "WarnCount",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Category": "Results",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "Error",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Error",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "description"
+					},
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "source",
+						"Default": "nil"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "line",
+						"Default": "0"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "Fail",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Fail",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "description"
+					},
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "source",
+						"Default": "nil"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "line",
+						"Default": "0"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TestService",
+			"member": "Run",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Run",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		}
+	]
+}

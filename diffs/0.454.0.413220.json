@@ -1,0 +1,3430 @@
+{
+	"from": {
+		"version": "0.453.0.412965",
+		"hash": "8915d12824864be1"
+	},
+	"to": {
+		"version": "0.454.0.413220",
+		"hash": "26619aaa08494401"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "PerformSaveAvatarNew",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PerformSaveAvatarNew",
+				"Parameters": [
+					{
+						"Name": "addedAssets",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "removedAssets",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DataStoreInfo",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "DataStoreInfo",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DataStoreKeyInfo",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "DataStoreKeyInfo",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DataStoreKeyVersionInfo",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "DataStoreKeyVersionInfo",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStoreService",
+			"member": "GetDataStore",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "name",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "scope",
+							"Type": {
+								"Category": "Group",
+								"Name": "Variant"
+							}
+						},
+						{
+							"Default": "nil",
+							"Name": "options",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "name",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "global",
+							"Name": "scope",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					]
+				},
+				{
+					"field": "Tags",
+					"before": [
+						"Yields"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetDataStore",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "global",
+						"Name": "scope",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStoreService",
+			"member": "ListDataStoresAsync",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ListDataStoresAsync",
+				"Parameters": [
+					{
+						"Default": "",
+						"Name": "prefix",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "pageSize",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStoreService",
+			"member": "GetDataFromEmptyScopeDataStoreAsyncTemporary",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetDataFromEmptyScopeDataStoreAsyncTemporary",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields",
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DataStoreSetOptions",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "DataStoreSetOptions",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "GetDataStoreOptions",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "GetDataStoreOptions",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GlobalDataStore",
+			"member": "GetAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Group",
+						"Name": "Tuple"
+					},
+					"after": {
+						"Category": "Group",
+						"Name": "Variant"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GlobalDataStore",
+			"member": "GetVersionAsync",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVersionAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "version",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GlobalDataStore",
+			"member": "IncrementAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Group",
+						"Name": "Tuple"
+					},
+					"after": {
+						"Category": "Group",
+						"Name": "Variant"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "IncrementAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "1",
+						"Name": "delta",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GlobalDataStore",
+			"member": "ListKeysAsync",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ListKeysAsync",
+				"Parameters": [
+					{
+						"Default": "",
+						"Name": "prefix",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "pageSize",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GlobalDataStore",
+			"member": "ListVersionsAsync",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ListVersionsAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "Ascending",
+						"Name": "sortDirection",
+						"Type": {
+							"Category": "Enum",
+							"Name": "SortDirection"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "minDate",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "maxDate",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "pageSize",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GlobalDataStore",
+			"member": "RemoveAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Group",
+						"Name": "Tuple"
+					},
+					"after": {
+						"Category": "Group",
+						"Name": "Variant"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "RemoveAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GlobalDataStore",
+			"member": "RemoveVersionAsync",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RemoveVersionAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "version",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GlobalDataStore",
+			"member": "SetAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "key",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "value",
+							"Type": {
+								"Category": "Group",
+								"Name": "Variant"
+							}
+						},
+						{
+							"Name": "userid",
+							"Type": {
+								"Category": "Group",
+								"Name": "Variant"
+							}
+						},
+						{
+							"Default": "nil",
+							"Name": "options",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "key",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "value",
+							"Type": {
+								"Category": "Group",
+								"Name": "Variant"
+							}
+						}
+					]
+				},
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Primitive",
+						"Name": "string"
+					},
+					"after": {
+						"Category": "Primitive",
+						"Name": "void"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ObjectVersionInfo",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ObjectVersionInfo",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DataStoreEnumerationPages",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "DataStoreEnumerationPages",
+				"Superclass": "Pages",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DataStoreKeyPages",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "DataStoreKeyPages",
+				"Superclass": "Pages",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DataStoreVersionPages",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "DataStoreVersionPages",
+				"Superclass": "Pages",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "GetJobIntervalPeakFraction",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetJobIntervalPeakFraction",
+				"Parameters": [
+					{
+						"Name": "jobname",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "greaterThan",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "double"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "double"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "GetJobTimePeakFraction",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetJobTimePeakFraction",
+				"Parameters": [
+					{
+						"Name": "jobname",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "greaterThan",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "double"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "double"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "GetJobsExtendedStats",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetJobsExtendedStats",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "\"export\" Color",
+			"type": "Remove",
+			"value": {
+				"Category": "Script Editor Colors",
+				"MemberType": "Property",
+				"Name": "\"export\" Color",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "\"type\" Color",
+			"type": "Remove",
+			"value": {
+				"Category": "Script Editor Colors",
+				"MemberType": "Property",
+				"Name": "\"type\" Color",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Preprocessor Color",
+			"type": "Remove",
+			"value": {
+				"Category": "Script Editor Colors",
+				"MemberType": "Property",
+				"Name": "Preprocessor Color",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Luau Keyword Color",
+			"type": "Add",
+			"value": {
+				"Category": "Script Editor Colors",
+				"MemberType": "Property",
+				"Name": "Luau Keyword Color",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Ruler Color",
+			"type": "Add",
+			"value": {
+				"Category": "Script Editor Colors",
+				"MemberType": "Property",
+				"Name": "Ruler Color",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VirtualInputManager",
+			"member": "SendKeyEvent",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "isPressed",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "keyCode",
+							"Type": {
+								"Category": "Enum",
+								"Name": "KeyCode"
+							}
+						},
+						{
+							"Name": "isRepeatedKey",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "pluginGui",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "isPressed",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "keyCode",
+							"Type": {
+								"Category": "Enum",
+								"Name": "KeyCode"
+							}
+						},
+						{
+							"Name": "isRepeatedKey",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "layerCollector",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SendKeyEvent",
+				"Parameters": [
+					{
+						"Name": "isPressed",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "keyCode",
+						"Type": {
+							"Category": "Enum",
+							"Name": "KeyCode"
+						}
+					},
+					{
+						"Name": "isRepeatedKey",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "layerCollector",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VirtualInputManager",
+			"member": "SendMouseButtonEvent",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "x",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "y",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "mouseButton",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "isDown",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "pluginGui",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Name": "repeatCount",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "x",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "y",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "mouseButton",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "isDown",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "layerCollector",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Name": "repeatCount",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SendMouseButtonEvent",
+				"Parameters": [
+					{
+						"Name": "x",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "y",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "mouseButton",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "isDown",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "layerCollector",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "repeatCount",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VirtualInputManager",
+			"member": "SendMouseMoveEvent",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "x",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						},
+						{
+							"Name": "y",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						},
+						{
+							"Name": "pluginGui",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "x",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						},
+						{
+							"Name": "y",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						},
+						{
+							"Name": "layerCollector",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SendMouseMoveEvent",
+				"Parameters": [
+					{
+						"Name": "x",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "y",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "layerCollector",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VirtualInputManager",
+			"member": "SendMouseWheelEvent",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "x",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						},
+						{
+							"Name": "y",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						},
+						{
+							"Name": "isForwardScroll",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "pluginGui",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "x",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						},
+						{
+							"Name": "y",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						},
+						{
+							"Name": "isForwardScroll",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "layerCollector",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SendMouseWheelEvent",
+				"Parameters": [
+					{
+						"Name": "x",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "y",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "isForwardScroll",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "layerCollector",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VirtualInputManager",
+			"member": "SendTextInputCharacterEvent",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "str",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "pluginGui",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "str",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "layerCollector",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SendTextInputCharacterEvent",
+				"Parameters": [
+					{
+						"Name": "str",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "layerCollector",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ProximityPrompt",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ProximityPrompt",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ProximityPrompt",
+			"member": "ActionText",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "ActionText",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ProximityPrompt",
+			"member": "ClickablePrompt",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "ClickablePrompt",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ProximityPrompt",
+			"member": "Enabled",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Enabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ProximityPrompt",
+			"member": "Exclusivity",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Exclusivity",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ProximityPromptExclusivity"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ProximityPrompt",
+			"member": "GamepadKeyCode",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "GamepadKeyCode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "KeyCode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ProximityPrompt",
+			"member": "HoldDuration",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "HoldDuration",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ProximityPrompt",
+			"member": "KeyboardKeyCode",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "KeyboardKeyCode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "KeyCode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ProximityPrompt",
+			"member": "MaxActivationDistance",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "MaxActivationDistance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ProximityPrompt",
+			"member": "ObjectText",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "ObjectText",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ProximityPrompt",
+			"member": "RequiresLineOfSight",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "RequiresLineOfSight",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ProximityPrompt",
+			"member": "Style",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Style",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ProximityPromptStyle"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ProximityPrompt",
+			"member": "UIOffset",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "UIOffset",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ProximityPrompt",
+			"member": "InputHoldBegin",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "InputHoldBegin",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ProximityPrompt",
+			"member": "InputHoldEnd",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "InputHoldEnd",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ProximityPrompt",
+			"member": "PromptButtonHoldBegan",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptButtonHoldBegan",
+				"Parameters": [],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ProximityPrompt",
+			"member": "PromptButtonHoldEnded",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptButtonHoldEnded",
+				"Parameters": [],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ProximityPrompt",
+			"member": "PromptHidden",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptHidden",
+				"Parameters": [],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ProximityPrompt",
+			"member": "PromptShown",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptShown",
+				"Parameters": [
+					{
+						"Name": "inputType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ProximityPromptInputType"
+						}
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ProximityPrompt",
+			"member": "TriggerEnded",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "TriggerEnded",
+				"Parameters": [
+					{
+						"Name": "playerWhoTriggered",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ProximityPrompt",
+			"member": "Triggered",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Triggered",
+				"Parameters": [
+					{
+						"Name": "playerWhoTriggered",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ProximityPromptService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ProximityPromptService",
+				"Superclass": "Instance",
+				"Tags": [
+					"Service",
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ProximityPromptService",
+			"member": "Enabled",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Enabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ProximityPromptService",
+			"member": "MaxPromptsVisible",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "MaxPromptsVisible",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ProximityPromptService",
+			"member": "PromptButtonHoldBegan",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptButtonHoldBegan",
+				"Parameters": [
+					{
+						"Name": "prompt",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ProximityPromptService",
+			"member": "PromptButtonHoldEnded",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptButtonHoldEnded",
+				"Parameters": [
+					{
+						"Name": "prompt",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ProximityPromptService",
+			"member": "PromptHidden",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptHidden",
+				"Parameters": [
+					{
+						"Name": "prompt",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ProximityPromptService",
+			"member": "PromptShown",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptShown",
+				"Parameters": [
+					{
+						"Name": "prompt",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "inputType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ProximityPromptInputType"
+						}
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ProximityPromptService",
+			"member": "PromptTriggerEnded",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptTriggerEnded",
+				"Parameters": [
+					{
+						"Name": "prompt",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "playerWhoTriggered",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ProximityPromptService",
+			"member": "PromptTriggered",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptTriggered",
+				"Parameters": [
+					{
+						"Name": "prompt",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "playerWhoTriggered",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TracerService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "TracerService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TracerService",
+			"member": "FinishSpan",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FinishSpan",
+				"Parameters": [
+					{
+						"Name": "spanId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TracerService",
+			"member": "StartSpan",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "StartSpan",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "parentId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ScopeOptions",
+			"type": "Remove",
+			"value": {
+				"Name": "ScopeOptions"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "SortDirection",
+			"type": "Remove",
+			"value": {
+				"Name": "SortDirection"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioScriptEditorColorCategories",
+			"item": "Export",
+			"type": "Remove",
+			"value": {
+				"Name": "Export",
+				"Value": 14
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioScriptEditorColorCategories",
+			"item": "Type",
+			"type": "Remove",
+			"value": {
+				"Name": "Type",
+				"Value": 15
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioScriptEditorColorCategories",
+			"item": "FunctionName",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 16,
+					"after": 15
+				}
+			],
+			"value": {
+				"Name": "FunctionName",
+				"Value": 15
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioScriptEditorColorCategories",
+			"item": "TODO",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 17,
+					"after": 16
+				}
+			],
+			"value": {
+				"Name": "TODO",
+				"Value": 16
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioScriptEditorColorCategories",
+			"item": "LuauKeyword",
+			"type": "Add",
+			"value": {
+				"Name": "LuauKeyword",
+				"Value": 14
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioScriptEditorColorCategories",
+			"item": "Background",
+			"type": "Add",
+			"value": {
+				"Name": "Background",
+				"Value": 17
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioScriptEditorColorCategories",
+			"item": "SelectionText",
+			"type": "Add",
+			"value": {
+				"Name": "SelectionText",
+				"Value": 18
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioScriptEditorColorCategories",
+			"item": "SelectionBackground",
+			"type": "Add",
+			"value": {
+				"Name": "SelectionBackground",
+				"Value": 19
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioScriptEditorColorCategories",
+			"item": "FindSelectionBackground",
+			"type": "Add",
+			"value": {
+				"Name": "FindSelectionBackground",
+				"Value": 20
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioScriptEditorColorCategories",
+			"item": "MatchingWordBackground",
+			"type": "Add",
+			"value": {
+				"Name": "MatchingWordBackground",
+				"Value": 21
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioScriptEditorColorCategories",
+			"item": "Warning",
+			"type": "Add",
+			"value": {
+				"Name": "Warning",
+				"Value": 22
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioScriptEditorColorCategories",
+			"item": "Error",
+			"type": "Add",
+			"value": {
+				"Name": "Error",
+				"Value": 23
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioScriptEditorColorCategories",
+			"item": "Whitespace",
+			"type": "Add",
+			"value": {
+				"Name": "Whitespace",
+				"Value": 24
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioScriptEditorColorCategories",
+			"item": "ActiveLine",
+			"type": "Add",
+			"value": {
+				"Name": "ActiveLine",
+				"Value": 25
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioScriptEditorColorCategories",
+			"item": "DebuggerCurrentLine",
+			"type": "Add",
+			"value": {
+				"Name": "DebuggerCurrentLine",
+				"Value": 26
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioScriptEditorColorCategories",
+			"item": "DebuggerErrorLine",
+			"type": "Add",
+			"value": {
+				"Name": "DebuggerErrorLine",
+				"Value": 27
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioScriptEditorColorCategories",
+			"item": "Ruler",
+			"type": "Add",
+			"value": {
+				"Name": "Ruler",
+				"Value": 28
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptPreprocessor",
+			"type": "Remove",
+			"value": {
+				"Name": "ScriptPreprocessor",
+				"Value": 51
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptKeyword",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 52,
+					"after": 51
+				}
+			],
+			"value": {
+				"Name": "ScriptKeyword",
+				"Value": 51
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptBuiltInFunction",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 53,
+					"after": 52
+				}
+			],
+			"value": {
+				"Name": "ScriptBuiltInFunction",
+				"Value": 52
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptWarning",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 54,
+					"after": 53
+				}
+			],
+			"value": {
+				"Name": "ScriptWarning",
+				"Value": 53
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptError",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 55,
+					"after": 54
+				}
+			],
+			"value": {
+				"Name": "ScriptError",
+				"Value": 54
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptWhitespace",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 56,
+					"after": 55
+				}
+			],
+			"value": {
+				"Name": "ScriptWhitespace",
+				"Value": 55
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptRuler",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 57,
+					"after": 56
+				}
+			],
+			"value": {
+				"Name": "ScriptRuler",
+				"Value": 56
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DebuggerCurrentLine",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 58,
+					"after": 57
+				}
+			],
+			"value": {
+				"Name": "DebuggerCurrentLine",
+				"Value": 57
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DebuggerErrorLine",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 59,
+					"after": 58
+				}
+			],
+			"value": {
+				"Name": "DebuggerErrorLine",
+				"Value": 58
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptEditorCurrentLine",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 98,
+					"after": 97
+				}
+			],
+			"value": {
+				"Name": "ScriptEditorCurrentLine",
+				"Value": 97
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffFilePathText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 60,
+					"after": 59
+				}
+			],
+			"value": {
+				"Name": "DiffFilePathText",
+				"Value": 59
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextHunkInfo",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 61,
+					"after": 60
+				}
+			],
+			"value": {
+				"Name": "DiffTextHunkInfo",
+				"Value": 60
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextNoChange",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 62,
+					"after": 61
+				}
+			],
+			"value": {
+				"Name": "DiffTextNoChange",
+				"Value": 61
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextAddition",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 63,
+					"after": 62
+				}
+			],
+			"value": {
+				"Name": "DiffTextAddition",
+				"Value": 62
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextDeletion",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 64,
+					"after": 63
+				}
+			],
+			"value": {
+				"Name": "DiffTextDeletion",
+				"Value": 63
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextSeparatorBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 65,
+					"after": 64
+				}
+			],
+			"value": {
+				"Name": "DiffTextSeparatorBackground",
+				"Value": 64
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextNoChangeBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 66,
+					"after": 65
+				}
+			],
+			"value": {
+				"Name": "DiffTextNoChangeBackground",
+				"Value": 65
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextAdditionBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 67,
+					"after": 66
+				}
+			],
+			"value": {
+				"Name": "DiffTextAdditionBackground",
+				"Value": 66
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextDeletionBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 68,
+					"after": 67
+				}
+			],
+			"value": {
+				"Name": "DiffTextDeletionBackground",
+				"Value": 67
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffLineNum",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 69,
+					"after": 68
+				}
+			],
+			"value": {
+				"Name": "DiffLineNum",
+				"Value": 68
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffLineNumSeparatorBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 70,
+					"after": 69
+				}
+			],
+			"value": {
+				"Name": "DiffLineNumSeparatorBackground",
+				"Value": 69
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffLineNumNoChangeBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 71,
+					"after": 70
+				}
+			],
+			"value": {
+				"Name": "DiffLineNumNoChangeBackground",
+				"Value": 70
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffLineNumAdditionBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 72,
+					"after": 71
+				}
+			],
+			"value": {
+				"Name": "DiffLineNumAdditionBackground",
+				"Value": 71
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffLineNumDeletionBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 73,
+					"after": 72
+				}
+			],
+			"value": {
+				"Name": "DiffLineNumDeletionBackground",
+				"Value": 72
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffFilePathBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 74,
+					"after": 73
+				}
+			],
+			"value": {
+				"Name": "DiffFilePathBackground",
+				"Value": 73
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffFilePathBorder",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 75,
+					"after": 74
+				}
+			],
+			"value": {
+				"Name": "DiffFilePathBorder",
+				"Value": 74
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ChatIncomingBgColor",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 76,
+					"after": 75
+				}
+			],
+			"value": {
+				"Name": "ChatIncomingBgColor",
+				"Value": 75
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ChatIncomingTextColor",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 77,
+					"after": 76
+				}
+			],
+			"value": {
+				"Name": "ChatIncomingTextColor",
+				"Value": 76
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ChatOutgoingBgColor",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 78,
+					"after": 77
+				}
+			],
+			"value": {
+				"Name": "ChatOutgoingBgColor",
+				"Value": 77
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ChatOutgoingTextColor",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 79,
+					"after": 78
+				}
+			],
+			"value": {
+				"Name": "ChatOutgoingTextColor",
+				"Value": 78
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ChatModeratedMessageColor",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 80,
+					"after": 79
+				}
+			],
+			"value": {
+				"Name": "ChatModeratedMessageColor",
+				"Value": 79
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "Separator",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 81,
+					"after": 80
+				}
+			],
+			"value": {
+				"Name": "Separator",
+				"Value": 80
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ButtonBorder",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 82,
+					"after": 81
+				}
+			],
+			"value": {
+				"Name": "ButtonBorder",
+				"Value": 81
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ButtonText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 83,
+					"after": 82
+				}
+			],
+			"value": {
+				"Name": "ButtonText",
+				"Value": 82
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "InputFieldBorder",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 84,
+					"after": 83
+				}
+			],
+			"value": {
+				"Name": "InputFieldBorder",
+				"Value": 83
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "CheckedFieldBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 85,
+					"after": 84
+				}
+			],
+			"value": {
+				"Name": "CheckedFieldBackground",
+				"Value": 84
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "CheckedFieldBorder",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 86,
+					"after": 85
+				}
+			],
+			"value": {
+				"Name": "CheckedFieldBorder",
+				"Value": 85
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "CheckedFieldIndicator",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 87,
+					"after": 86
+				}
+			],
+			"value": {
+				"Name": "CheckedFieldIndicator",
+				"Value": 86
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "HeaderSection",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 88,
+					"after": 87
+				}
+			],
+			"value": {
+				"Name": "HeaderSection",
+				"Value": 87
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "Midlight",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 89,
+					"after": 88
+				}
+			],
+			"value": {
+				"Name": "Midlight",
+				"Value": 88
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "StatusBar",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 90,
+					"after": 89
+				}
+			],
+			"value": {
+				"Name": "StatusBar",
+				"Value": 89
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DialogButton",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 91,
+					"after": 90
+				}
+			],
+			"value": {
+				"Name": "DialogButton",
+				"Value": 90
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DialogButtonText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 92,
+					"after": 91
+				}
+			],
+			"value": {
+				"Name": "DialogButtonText",
+				"Value": 91
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DialogButtonBorder",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 93,
+					"after": 92
+				}
+			],
+			"value": {
+				"Name": "DialogButtonBorder",
+				"Value": 92
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DialogMainButton",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 94,
+					"after": 93
+				}
+			],
+			"value": {
+				"Name": "DialogMainButton",
+				"Value": 93
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DialogMainButtonText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 95,
+					"after": 94
+				}
+			],
+			"value": {
+				"Name": "DialogMainButtonText",
+				"Value": 94
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "InfoBarWarningBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 96,
+					"after": 95
+				}
+			],
+			"value": {
+				"Name": "InfoBarWarningBackground",
+				"Value": 95
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "InfoBarWarningText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 97,
+					"after": 96
+				}
+			],
+			"value": {
+				"Name": "InfoBarWarningText",
+				"Value": 96
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptMethod",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 99,
+					"after": 98
+				}
+			],
+			"value": {
+				"Name": "ScriptMethod",
+				"Value": 98
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptProperty",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 100,
+					"after": 99
+				}
+			],
+			"value": {
+				"Name": "ScriptProperty",
+				"Value": 99
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptNil",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 101,
+					"after": 100
+				}
+			],
+			"value": {
+				"Name": "ScriptNil",
+				"Value": 100
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptBool",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 102,
+					"after": 101
+				}
+			],
+			"value": {
+				"Name": "ScriptBool",
+				"Value": 101
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptFunction",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 103,
+					"after": 102
+				}
+			],
+			"value": {
+				"Name": "ScriptFunction",
+				"Value": 102
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptLocal",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 104,
+					"after": 103
+				}
+			],
+			"value": {
+				"Name": "ScriptLocal",
+				"Value": 103
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptSelf",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 105,
+					"after": 104
+				}
+			],
+			"value": {
+				"Name": "ScriptSelf",
+				"Value": 104
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptExport",
+			"type": "Remove",
+			"value": {
+				"Name": "ScriptExport",
+				"Value": 106
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptType",
+			"type": "Remove",
+			"value": {
+				"Name": "ScriptType",
+				"Value": 107
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptFunctionName",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 108,
+					"after": 106
+				}
+			],
+			"value": {
+				"Name": "ScriptFunctionName",
+				"Value": 106
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptTodo",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 109,
+					"after": 107
+				}
+			],
+			"value": {
+				"Name": "ScriptTodo",
+				"Value": 107
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptLuauKeyword",
+			"type": "Add",
+			"value": {
+				"Name": "ScriptLuauKeyword",
+				"Value": 105
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ProximityPromptExclusivity",
+			"type": "Add",
+			"value": {
+				"Name": "ProximityPromptExclusivity"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ProximityPromptExclusivity",
+			"item": "OnePerButton",
+			"type": "Add",
+			"value": {
+				"Name": "OnePerButton",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ProximityPromptExclusivity",
+			"item": "OneGlobally",
+			"type": "Add",
+			"value": {
+				"Name": "OneGlobally",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ProximityPromptExclusivity",
+			"item": "AlwaysShow",
+			"type": "Add",
+			"value": {
+				"Name": "AlwaysShow",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ProximityPromptInputType",
+			"type": "Add",
+			"value": {
+				"Name": "ProximityPromptInputType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ProximityPromptInputType",
+			"item": "Keyboard",
+			"type": "Add",
+			"value": {
+				"Name": "Keyboard",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ProximityPromptInputType",
+			"item": "Gamepad",
+			"type": "Add",
+			"value": {
+				"Name": "Gamepad",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ProximityPromptInputType",
+			"item": "Touch",
+			"type": "Add",
+			"value": {
+				"Name": "Touch",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ProximityPromptStyle",
+			"type": "Add",
+			"value": {
+				"Name": "ProximityPromptStyle"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ProximityPromptStyle",
+			"item": "Default",
+			"type": "Add",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ProximityPromptStyle",
+			"item": "Custom",
+			"type": "Add",
+			"value": {
+				"Name": "Custom",
+				"Value": 1
+			}
+		}
+	]
+}

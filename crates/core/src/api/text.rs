@@ -6,7 +6,17 @@ pub const UPDATES_LEAD: &str = "Every change to the Roblox Engine API between th
 
 pub const REMOVED_LEAD: &str = "Classes and enums that Roblox removed from the API since the oldest version that this site tracks, newest first.";
 
+pub const REBUILD_TEXT: &str =
+	"Rebuild: nothing changed. This version has the same API as the one before it.";
+
 pub fn update_summary(update: &Update) -> String {
+	if update.owners.is_empty() {
+		return format!(
+			"A rebuild of the Roblox Engine API from {} to {}, with nothing changed.",
+			release_name(&update.previous.version),
+			release_name(&update.version)
+		);
+	}
 	format!(
 		"Changes to the Roblox Engine API from {} to {}.",
 		release_name(&update.previous.version),

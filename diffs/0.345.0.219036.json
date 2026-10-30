@@ -1,0 +1,927 @@
+{
+	"from": {
+		"version": "0.344.1.217637",
+		"hash": "3131b9dde23e4df9"
+	},
+	"to": {
+		"version": "0.345.0.219036",
+		"hash": "418137ce542940cc"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "BadgeService",
+			"member": "UserHasBadge",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Yields"
+					],
+					"after": [
+						"Yields",
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "UserHasBadge",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "userId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "badgeId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields",
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScreenGui",
+			"member": "OnTopOfCoreBlur",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "OnTopOfCoreBlur",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Behavior",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NotificationService",
+			"member": "IsLuaGamesPageEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsLuaGamesPageEnabled",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NotificationService",
+			"member": "IsLuaHomePageEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsLuaHomePageEnabled",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "CreatePluginAction",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "actionId"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "text"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "statusTip"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "actionId"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "text"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "statusTip"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "iconName",
+							"Default": ""
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreatePluginAction",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "actionId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "text"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "statusTip"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "iconName",
+						"Default": ""
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "PauseSound",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PauseSound",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "soundChannel"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "PlaySound",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PlaySound",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "soundChannel"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "ResumeSound",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ResumeSound",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "soundChannel"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "StopAllSounds",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "StopAllSounds",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RunService",
+			"member": "SetRobloxGuiFocused",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetRobloxGuiFocused",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "focus"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IntConstrainedValue",
+			"member": "ConstrainedValue",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ValueType",
+					"before": {
+						"Category": "Primitive",
+						"Name": "int"
+					},
+					"after": {
+						"Category": "Primitive",
+						"Name": "int64"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Property",
+				"Name": "ConstrainedValue",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IntConstrainedValue",
+			"member": "MaxValue",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ValueType",
+					"before": {
+						"Category": "Primitive",
+						"Name": "int"
+					},
+					"after": {
+						"Category": "Primitive",
+						"Name": "int64"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Property",
+				"Name": "MaxValue",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IntConstrainedValue",
+			"member": "MinValue",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ValueType",
+					"before": {
+						"Category": "Primitive",
+						"Name": "int"
+					},
+					"after": {
+						"Category": "Primitive",
+						"Name": "int64"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Property",
+				"Name": "MinValue",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IntConstrainedValue",
+			"member": "Value",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ValueType",
+					"before": {
+						"Category": "Primitive",
+						"Name": "int"
+					},
+					"after": {
+						"Category": "Primitive",
+						"Name": "int64"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Property",
+				"Name": "Value",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IntConstrainedValue",
+			"member": "Changed",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "value"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "value"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "Changed",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "value"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IntConstrainedValue",
+			"member": "changed",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "value"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "value"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "changed",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "value"
+					}
+				],
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IntValue",
+			"member": "Value",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ValueType",
+					"before": {
+						"Category": "Primitive",
+						"Name": "int"
+					},
+					"after": {
+						"Category": "Primitive",
+						"Name": "int64"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Property",
+				"Name": "Value",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IntValue",
+			"member": "Changed",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "value"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "value"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "Changed",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "value"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IntValue",
+			"member": "changed",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "value"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "value"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "changed",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "value"
+					}
+				],
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "RenderingTest",
+			"type": "Add",
+			"value": {
+				"Name": "RenderingTest",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RenderingTest",
+			"member": "CFrame",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "CFrame",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				},
+				"Category": "RenderingTest",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RenderingTest",
+			"member": "ComparisonDiffThreshold",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ComparisonDiffThreshold",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Category": "RenderingTest",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RenderingTest",
+			"member": "ComparisonMethod",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ComparisonMethod",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "RenderingTestComparisonMethod"
+				},
+				"Category": "RenderingTest",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RenderingTest",
+			"member": "ComparisonPsnrThreshold",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ComparisonPsnrThreshold",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "RenderingTest",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RenderingTest",
+			"member": "FieldOfView",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "FieldOfView",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "RenderingTest",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RenderingTest",
+			"member": "Orientation",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Orientation",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				},
+				"Category": "RenderingTest",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RenderingTest",
+			"member": "Position",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Position",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				},
+				"Category": "RenderingTest",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RenderingTest",
+			"member": "QualityLevel",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "QualityLevel",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Category": "RenderingTest",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "RenderingTestComparisonMethod",
+			"type": "Add",
+			"value": {
+				"Name": "RenderingTestComparisonMethod"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RenderingTestComparisonMethod",
+			"item": "psnr",
+			"type": "Add",
+			"value": {
+				"Name": "psnr",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RenderingTestComparisonMethod",
+			"item": "diff",
+			"type": "Add",
+			"value": {
+				"Name": "diff",
+				"Value": 1
+			}
+		}
+	]
+}

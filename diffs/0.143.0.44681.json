@@ -1,0 +1,210 @@
+{
+	"from": {
+		"version": "0.142.0.44506",
+		"hash": "a70065f9195a4a76"
+	},
+	"to": {
+		"version": "0.143.0.44681",
+		"hash": "bd188fd437234e9b"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "OnClose",
+			"type": "Add",
+			"value": {
+				"MemberType": "Callback",
+				"Name": "OnClose",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "ProcessedEvent",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ProcessedEvent",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "inputObject"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "processed"
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PointsService",
+			"type": "Add",
+			"value": {
+				"Name": "PointsService",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PointsService",
+			"member": "AwardPoints",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AwardPoints",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "amount"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PointsService",
+			"member": "GetAwardablePoints",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAwardablePoints",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PointsService",
+			"member": "GetGamePointBalance",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetGamePointBalance",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PointsService",
+			"member": "GetPointBalance",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPointBalance",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PointsService",
+			"member": "PointsAwarded",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PointsAwarded",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userBalanceInGame"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userTotalBalance"
+					}
+				],
+				"Security": "None"
+			}
+		}
+	]
+}

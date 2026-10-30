@@ -1,0 +1,445 @@
+{
+	"from": {
+		"version": "0.350.0.231118",
+		"hash": "28296a2ecd2d4d99"
+	},
+	"to": {
+		"version": "0.351.0.232950",
+		"hash": "a008d56721da4eb2"
+	},
+	"changes": [
+		{
+			"element": "Class",
+			"class": "Scale9Frame",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "Scale9Frame",
+				"Superclass": "GuiObject",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HttpRbxApiService",
+			"member": "RequestAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RequestAsync",
+				"Parameters": [
+					{
+						"Name": "requestOptions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Default": "Default",
+						"Name": "priority",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ThrottlingPriority"
+						}
+					},
+					{
+						"Default": "ApplicationJson",
+						"Name": "content_type",
+						"Type": {
+							"Category": "Enum",
+							"Name": "HttpContentType"
+						}
+					},
+					{
+						"Default": "Default",
+						"Name": "httpRequestType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "HttpRequestType"
+						}
+					},
+					{
+						"Default": "false",
+						"Name": "doNotAllowDiabolicalMode",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HttpService",
+			"member": "GetHttpEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetHttpEnabled",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HttpService",
+			"member": "SetHttpEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetHttpEnabled",
+				"Parameters": [
+					{
+						"Name": "enabled",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "Elasticity",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": false
+					}
+				}
+			],
+			"value": {
+				"Category": "Part ",
+				"MemberType": "Property",
+				"Name": "Elasticity",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated",
+					"Deprecated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "Friction",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": false
+					}
+				}
+			],
+			"value": {
+				"Category": "Part ",
+				"MemberType": "Property",
+				"Name": "Friction",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated",
+					"Deprecated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "RootInstance",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "RootInstance",
+				"Superclass": "Model",
+				"Tags": [
+					"NotCreatable",
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Workspace",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Superclass",
+					"before": "RootInstance",
+					"after": "Model"
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "Workspace",
+				"Superclass": "Model",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "CreateQWidgetPluginGui",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateQWidgetPluginGui",
+				"Parameters": [
+					{
+						"Name": "pluginGuiId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "pluginGuiOptions",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RenderingTest",
+			"member": "Description",
+			"type": "Add",
+			"value": {
+				"Category": "RenderingTest",
+				"MemberType": "Property",
+				"Name": "Description",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RenderingTest",
+			"member": "ShouldSkip",
+			"type": "Add",
+			"value": {
+				"Category": "RenderingTest",
+				"MemberType": "Property",
+				"Name": "ShouldSkip",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RenderingTest",
+			"member": "Ticket",
+			"type": "Add",
+			"value": {
+				"Category": "RenderingTest",
+				"MemberType": "Property",
+				"Name": "Ticket",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "QWidgetPluginGui",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "QWidgetPluginGui",
+				"Superclass": "PluginGui",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PackageLink",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "PackageLink",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PackageLink",
+			"member": "PackageId",
+			"type": "Add",
+			"value": {
+				"Category": "Link",
+				"MemberType": "Property",
+				"Name": "PackageId",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PackageLink",
+			"member": "VersionId",
+			"type": "Add",
+			"value": {
+				"Category": "Link",
+				"MemberType": "Property",
+				"Name": "VersionId",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptMachtingWordSelectionBackground",
+			"type": "Remove",
+			"value": {
+				"Name": "ScriptMachtingWordSelectionBackground",
+				"Value": 45
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptMatchingWordSelectionBackground",
+			"type": "Add",
+			"value": {
+				"Name": "ScriptMatchingWordSelectionBackground",
+				"Value": 45
+			}
+		}
+	]
+}

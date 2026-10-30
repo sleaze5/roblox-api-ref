@@ -1,0 +1,160 @@
+{
+	"from": {
+		"version": "0.135.0.42435",
+		"hash": "2c68f7c30e1b4888"
+	},
+	"to": {
+		"version": "0.136.0.43052",
+		"hash": "afc74353f06542bd"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "NetworkSettings",
+			"member": "MovementHistoryRate",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "MovementHistoryRate",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "FilteringEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "FilteringEnabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Behavior",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "App",
+			"type": "Remove",
+			"value": {
+				"Name": "App",
+				"Superclass": "DataModel",
+				"MemoryCategory": ""
+			}
+		},
+		{
+			"element": "Class",
+			"class": "LogService",
+			"type": "Add",
+			"value": {
+				"Name": "LogService",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LogService",
+			"member": "MessageOut",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "MessageOut",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "message"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "MessageType"
+						},
+						"Name": "messageType"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "MessageType",
+			"type": "Add",
+			"value": {
+				"Name": "MessageType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "MessageType",
+			"item": "MessageOutput",
+			"type": "Add",
+			"value": {
+				"Name": "MessageOutput",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "MessageType",
+			"item": "MessageInfo",
+			"type": "Add",
+			"value": {
+				"Name": "MessageInfo",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "MessageType",
+			"item": "MessageWarning",
+			"type": "Add",
+			"value": {
+				"Name": "MessageWarning",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "MessageType",
+			"item": "MessageError",
+			"type": "Add",
+			"value": {
+				"Name": "MessageError",
+				"Value": 3
+			}
+		}
+	]
+}

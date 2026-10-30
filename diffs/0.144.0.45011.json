@@ -1,0 +1,133 @@
+{
+	"from": {
+		"version": "0.143.0.44681",
+		"hash": "bd188fd437234e9b"
+	},
+	"to": {
+		"version": "0.144.0.45011",
+		"hash": "53c562c888894ea7"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "LogService",
+			"member": "GetLogHistory",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetLogHistory",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LogService",
+			"member": "RequestServerOutput",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RequestServerOutput",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LogService",
+			"member": "ServerMessageOut",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ServerMessageOut",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "message"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "MessageType"
+						},
+						"Name": "messageType"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "timestamp"
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "OpenScript",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "OpenScript",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "script"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "lineNumber",
+						"Default": "0"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RenderSettings",
+			"member": "ShowInterpolationpath",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ShowInterpolationpath",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		}
+	]
+}

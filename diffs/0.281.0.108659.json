@@ -1,0 +1,1082 @@
+{
+	"from": {
+		"version": "0.280.0.107037",
+		"hash": "ca61db0aa1b8462c"
+	},
+	"to": {
+		"version": "0.281.0.108659",
+		"hash": "638183e929e84807"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "GetLargestCutoffDistance",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetLargestCutoffDistance",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						},
+						"Name": "ignoreList"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "GetPartsObscuringTarget",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPartsObscuringTarget",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						},
+						"Name": "castPoints"
+					},
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						},
+						"Name": "ignoreList"
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Chat",
+			"member": "ChatLocal",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ChatLocal",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "partOrCharacter"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "message"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "ChatColor"
+						},
+						"Name": "color",
+						"Default": "Blue"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "MoveToConstraint",
+			"type": "Remove",
+			"value": {
+				"Name": "MoveToConstraint",
+				"Superclass": "Constraint",
+				"MemoryCategory": ""
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Dialog",
+			"member": "BehaviorType",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "BehaviorType",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "DialogBehaviorType"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Dialog",
+			"member": "GetCurrentPlayers",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCurrentPlayers",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Dialog",
+			"member": "SetPlayerIsUsing",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetPlayerIsUsing",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "player"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "isUsing"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BillboardGui",
+			"member": "ExtentsOffsetWorldSpace",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ExtentsOffsetWorldSpace",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BillboardGui",
+			"member": "StudsOffsetWorldSpace",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "StudsOffsetWorldSpace",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "FilteringEnabled",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "PluginSecurity"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Property",
+				"Name": "FilteringEnabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Behavior",
+				"Security": {
+					"Read": "None",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Stats",
+			"member": "GetPaginatedMemoryByTexture",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "pageIndex"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "pageSize"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "TextureQueryType"
+							},
+							"Name": "queryType"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "pageIndex"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "pageSize"
+						}
+					]
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Yields"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPaginatedMemoryByTexture",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "TextureQueryType"
+						},
+						"Name": "queryType"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "pageIndex"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "pageSize"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "OnScreenKeyboardPosition",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "OnScreenKeyboardPosition",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "OnScreenKeyboardSize",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "OnScreenKeyboardSize",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "OnScreenKeyboardVisible",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "OnScreenKeyboardVisible",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AlignOrientation",
+			"type": "Add",
+			"value": {
+				"Name": "AlignOrientation",
+				"Superclass": "Constraint",
+				"MemoryCategory": "Instances"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AlignOrientation",
+			"member": "MaxAngularVelocity",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "MaxAngularVelocity",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Compliance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AlignOrientation",
+			"member": "MaxTorque",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "MaxTorque",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Compliance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AlignOrientation",
+			"member": "PrimaryAxisOnly",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "PrimaryAxisOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "AlignOrientation",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AlignOrientation",
+			"member": "ReactionTorqueEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ReactionTorqueEnabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "AlignOrientation",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AlignOrientation",
+			"member": "Responsiveness",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Responsiveness",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Compliance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AlignOrientation",
+			"member": "RigidityEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "RigidityEnabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "AlignOrientation",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AlignPosition",
+			"type": "Add",
+			"value": {
+				"Name": "AlignPosition",
+				"Superclass": "Constraint",
+				"MemoryCategory": "Instances"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AlignPosition",
+			"member": "ApplyAtCenterOfMass",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ApplyAtCenterOfMass",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "AlignPosition",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AlignPosition",
+			"member": "MaxForce",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "MaxForce",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Compliance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AlignPosition",
+			"member": "MaxVelocity",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "MaxVelocity",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Compliance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AlignPosition",
+			"member": "ReactionForceEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ReactionForceEnabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "AlignPosition",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AlignPosition",
+			"member": "Responsiveness",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Responsiveness",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Compliance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AlignPosition",
+			"member": "RigidityEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "RigidityEnabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "AlignPosition",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "LineForce",
+			"type": "Add",
+			"value": {
+				"Name": "LineForce",
+				"Superclass": "Constraint",
+				"MemoryCategory": "Instances"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LineForce",
+			"member": "ApplyAtCenterOfMass",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ApplyAtCenterOfMass",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "LineForce",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LineForce",
+			"member": "InverseSquareLaw",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "InverseSquareLaw",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "LineForce",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LineForce",
+			"member": "Magnitude",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Magnitude",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "LineForce",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Torque",
+			"type": "Add",
+			"value": {
+				"Name": "Torque",
+				"Superclass": "Constraint",
+				"MemoryCategory": "Instances"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Torque",
+			"member": "RelativeTo",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "RelativeTo",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ActuatorRelativeTo"
+				},
+				"Category": "Torque",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Torque",
+			"member": "Torque",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Torque",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				},
+				"Category": "Torque",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "VectorForce",
+			"type": "Add",
+			"value": {
+				"Name": "VectorForce",
+				"Superclass": "Constraint",
+				"MemoryCategory": "Instances"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VectorForce",
+			"member": "ApplyAtCenterOfMass",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ApplyAtCenterOfMass",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "VectorForce",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VectorForce",
+			"member": "Force",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Force",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				},
+				"Category": "VectorForce",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VectorForce",
+			"member": "RelativeTo",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "RelativeTo",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ActuatorRelativeTo"
+				},
+				"Category": "VectorForce",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "JointType",
+			"item": "None",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 22,
+					"after": 27
+				}
+			],
+			"value": {
+				"Name": "None",
+				"Value": 27
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ActuatorRelativeTo",
+			"type": "Add",
+			"value": {
+				"Name": "ActuatorRelativeTo"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ActuatorRelativeTo",
+			"item": "Attachment0",
+			"type": "Add",
+			"value": {
+				"Name": "Attachment0",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ActuatorRelativeTo",
+			"item": "Attachment1",
+			"type": "Add",
+			"value": {
+				"Name": "Attachment1",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ActuatorRelativeTo",
+			"item": "World",
+			"type": "Add",
+			"value": {
+				"Name": "World",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "DialogBehaviorType",
+			"type": "Add",
+			"value": {
+				"Name": "DialogBehaviorType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DialogBehaviorType",
+			"item": "SinglePlayer",
+			"type": "Add",
+			"value": {
+				"Name": "SinglePlayer",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DialogBehaviorType",
+			"item": "MultiplePlayers",
+			"type": "Add",
+			"value": {
+				"Name": "MultiplePlayers",
+				"Value": 1
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "TextureQueryType",
+			"type": "Add",
+			"value": {
+				"Name": "TextureQueryType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TextureQueryType",
+			"item": "NonHumanoid",
+			"type": "Add",
+			"value": {
+				"Name": "NonHumanoid",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TextureQueryType",
+			"item": "NonHumanoidOrphaned",
+			"type": "Add",
+			"value": {
+				"Name": "NonHumanoidOrphaned",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TextureQueryType",
+			"item": "Humanoid",
+			"type": "Add",
+			"value": {
+				"Name": "Humanoid",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TextureQueryType",
+			"item": "HumanoidOrphaned",
+			"type": "Add",
+			"value": {
+				"Name": "HumanoidOrphaned",
+				"Value": 3
+			}
+		}
+	]
+}

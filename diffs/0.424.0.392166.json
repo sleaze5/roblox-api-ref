@@ -1,0 +1,796 @@
+{
+	"from": {
+		"version": "0.423.0.391560",
+		"hash": "dd2522c019fd49e8"
+	},
+	"to": {
+		"version": "0.424.0.392166",
+		"hash": "86599c7df60047ab"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PerformPurchase",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "infoType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "InfoType"
+							}
+						},
+						{
+							"Name": "productId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "expectedPrice",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "requestId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "infoType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "InfoType"
+							}
+						},
+						{
+							"Name": "productId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "expectedPrice",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "requestId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "isRobloxPurchase",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "PerformPurchase",
+				"Parameters": [
+					{
+						"Name": "infoType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "InfoType"
+						}
+					},
+					{
+						"Name": "productId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "expectedPrice",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "requestId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "isRobloxPurchase",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptRobloxPurchase",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptRobloxPurchase",
+				"Parameters": [
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "equipIfPurchased",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptRobloxPurchaseRequested",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptRobloxPurchaseRequested",
+				"Parameters": [
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "equipIfPurchased",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "GetMass",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"CustomLuaState"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetMass",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "getMass",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Deprecated",
+						"CustomLuaState"
+					],
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "getMass",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "Mass",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Mass",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SessionService",
+			"member": "SessionExists",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SessionExists",
+				"Parameters": [
+					{
+						"Name": "sid",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "LaunchBulkImport",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LaunchBulkImport",
+				"Parameters": [
+					{
+						"Name": "assetTypeToImport",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "ShowBulkImportView",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ShowBulkImportView",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "BulkImportFinished",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "BulkImportFinished",
+				"Parameters": [
+					{
+						"Name": "state",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AssetManagerService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AssetManagerService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetManagerService",
+			"member": "GetMeshId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetMeshId",
+				"Parameters": [
+					{
+						"Name": "aliasName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetManagerService",
+			"member": "GetTextureId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetTextureId",
+				"Parameters": [
+					{
+						"Name": "aliasName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetManagerService",
+			"member": "InsertImage",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "InsertImage",
+				"Parameters": [
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetManagerService",
+			"member": "InsertMesh",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "InsertMesh",
+				"Parameters": [
+					{
+						"Name": "aliasName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "insertWithLocation",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetManagerService",
+			"member": "InsertPackage",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "InsertPackage",
+				"Parameters": [
+					{
+						"Name": "packageId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetManagerService",
+			"member": "OpenPlace",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "OpenPlace",
+				"Parameters": [
+					{
+						"Name": "placeId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetManagerService",
+			"member": "ShowPackageDetails",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ShowPackageDetails",
+				"Parameters": [
+					{
+						"Name": "packageId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetManagerService",
+			"member": "UpdateAllPackages",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UpdateAllPackages",
+				"Parameters": [
+					{
+						"Name": "packageId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetManagerService",
+			"member": "ViewPackageOnWebsite",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ViewPackageOnWebsite",
+				"Parameters": [
+					{
+						"Name": "packageId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetManagerService",
+			"member": "AddNewPlace",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddNewPlace",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetManagerService",
+			"member": "DeleteAlias",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DeleteAlias",
+				"Parameters": [
+					{
+						"Name": "aliasName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetManagerService",
+			"member": "RemovePlace",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RemovePlace",
+				"Parameters": [
+					{
+						"Name": "placeId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetManagerService",
+			"member": "RenamePlace",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RenamePlace",
+				"Parameters": [
+					{
+						"Name": "placeId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "newName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "BulkImportService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "BulkImportService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BulkImportService",
+			"member": "LaunchBulkImport",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LaunchBulkImport",
+				"Parameters": [
+					{
+						"Name": "assetTypeToImport",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BulkImportService",
+			"member": "ShowBulkImportView",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ShowBulkImportView",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BulkImportService",
+			"member": "BulkImportFinished",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "BulkImportFinished",
+				"Parameters": [
+					{
+						"Name": "state",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BulkImportService",
+			"member": "BulkImportStarted",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "BulkImportStarted",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity"
+			}
+		}
+	]
+}

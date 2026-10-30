@@ -1,0 +1,803 @@
+{
+	"from": {
+		"version": "0.431.0.404520",
+		"hash": "91ea04daf15f4386"
+	},
+	"to": {
+		"version": "0.432.0.404738",
+		"hash": "5b63d17aed334d83"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Format On Type",
+			"type": "Add",
+			"value": {
+				"Category": "Script Editor",
+				"MemberType": "Property",
+				"Name": "Format On Type",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Rulers",
+			"type": "Add",
+			"value": {
+				"Category": "Script Editor",
+				"MemberType": "Property",
+				"Name": "Rulers",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SurfaceAppearance",
+			"member": "AlphaMode",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "RobloxSecurity",
+						"Write": "RobloxSecurity"
+					}
+				}
+			],
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "AlphaMode",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AlphaMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SurfaceAppearance",
+			"member": "TexturePack",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "TexturePack",
+				"Security": {
+					"Read": "LocalUserSecurity",
+					"Write": "LocalUserSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Bone",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "Bone",
+				"Superclass": "Attachment"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Bone",
+			"member": "Transform",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Transform",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Bone",
+			"member": "TransformedCFrame",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "TransformedCFrame",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Bone",
+			"member": "TransformedWorldCFrame",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "TransformedWorldCFrame",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "InternalContainer",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "InternalContainer",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetType",
+			"item": "Video",
+			"type": "Add",
+			"value": {
+				"Name": "Video",
+				"Value": 62
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DebuggerCurrentLine",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 57,
+					"after": 58
+				}
+			],
+			"value": {
+				"Name": "DebuggerCurrentLine",
+				"Value": 58
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DebuggerErrorLine",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 58,
+					"after": 59
+				}
+			],
+			"value": {
+				"Name": "DebuggerErrorLine",
+				"Value": 59
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffFilePathText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 59,
+					"after": 60
+				}
+			],
+			"value": {
+				"Name": "DiffFilePathText",
+				"Value": 60
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextHunkInfo",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 60,
+					"after": 61
+				}
+			],
+			"value": {
+				"Name": "DiffTextHunkInfo",
+				"Value": 61
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextNoChange",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 61,
+					"after": 62
+				}
+			],
+			"value": {
+				"Name": "DiffTextNoChange",
+				"Value": 62
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextAddition",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 62,
+					"after": 63
+				}
+			],
+			"value": {
+				"Name": "DiffTextAddition",
+				"Value": 63
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextDeletion",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 63,
+					"after": 64
+				}
+			],
+			"value": {
+				"Name": "DiffTextDeletion",
+				"Value": 64
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextSeparatorBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 64,
+					"after": 65
+				}
+			],
+			"value": {
+				"Name": "DiffTextSeparatorBackground",
+				"Value": 65
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextNoChangeBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 65,
+					"after": 66
+				}
+			],
+			"value": {
+				"Name": "DiffTextNoChangeBackground",
+				"Value": 66
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextAdditionBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 66,
+					"after": 67
+				}
+			],
+			"value": {
+				"Name": "DiffTextAdditionBackground",
+				"Value": 67
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextDeletionBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 67,
+					"after": 68
+				}
+			],
+			"value": {
+				"Name": "DiffTextDeletionBackground",
+				"Value": 68
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffLineNum",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 68,
+					"after": 69
+				}
+			],
+			"value": {
+				"Name": "DiffLineNum",
+				"Value": 69
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffLineNumSeparatorBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 69,
+					"after": 70
+				}
+			],
+			"value": {
+				"Name": "DiffLineNumSeparatorBackground",
+				"Value": 70
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffLineNumNoChangeBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 70,
+					"after": 71
+				}
+			],
+			"value": {
+				"Name": "DiffLineNumNoChangeBackground",
+				"Value": 71
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffLineNumAdditionBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 71,
+					"after": 72
+				}
+			],
+			"value": {
+				"Name": "DiffLineNumAdditionBackground",
+				"Value": 72
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffLineNumDeletionBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 72,
+					"after": 73
+				}
+			],
+			"value": {
+				"Name": "DiffLineNumDeletionBackground",
+				"Value": 73
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffFilePathBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 73,
+					"after": 74
+				}
+			],
+			"value": {
+				"Name": "DiffFilePathBackground",
+				"Value": 74
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffFilePathBorder",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 74,
+					"after": 75
+				}
+			],
+			"value": {
+				"Name": "DiffFilePathBorder",
+				"Value": 75
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "Separator",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 75,
+					"after": 76
+				}
+			],
+			"value": {
+				"Name": "Separator",
+				"Value": 76
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ButtonBorder",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 76,
+					"after": 77
+				}
+			],
+			"value": {
+				"Name": "ButtonBorder",
+				"Value": 77
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ButtonText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 77,
+					"after": 78
+				}
+			],
+			"value": {
+				"Name": "ButtonText",
+				"Value": 78
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "InputFieldBorder",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 78,
+					"after": 79
+				}
+			],
+			"value": {
+				"Name": "InputFieldBorder",
+				"Value": 79
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "CheckedFieldBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 79,
+					"after": 80
+				}
+			],
+			"value": {
+				"Name": "CheckedFieldBackground",
+				"Value": 80
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "CheckedFieldBorder",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 80,
+					"after": 81
+				}
+			],
+			"value": {
+				"Name": "CheckedFieldBorder",
+				"Value": 81
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "CheckedFieldIndicator",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 81,
+					"after": 82
+				}
+			],
+			"value": {
+				"Name": "CheckedFieldIndicator",
+				"Value": 82
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "HeaderSection",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 82,
+					"after": 83
+				}
+			],
+			"value": {
+				"Name": "HeaderSection",
+				"Value": 83
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "Midlight",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 83,
+					"after": 84
+				}
+			],
+			"value": {
+				"Name": "Midlight",
+				"Value": 84
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "StatusBar",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 84,
+					"after": 85
+				}
+			],
+			"value": {
+				"Name": "StatusBar",
+				"Value": 85
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DialogButton",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 85,
+					"after": 86
+				}
+			],
+			"value": {
+				"Name": "DialogButton",
+				"Value": 86
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DialogButtonText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 86,
+					"after": 87
+				}
+			],
+			"value": {
+				"Name": "DialogButtonText",
+				"Value": 87
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DialogButtonBorder",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 87,
+					"after": 88
+				}
+			],
+			"value": {
+				"Name": "DialogButtonBorder",
+				"Value": 88
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DialogMainButton",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 88,
+					"after": 89
+				}
+			],
+			"value": {
+				"Name": "DialogMainButton",
+				"Value": 89
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DialogMainButtonText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 89,
+					"after": 90
+				}
+			],
+			"value": {
+				"Name": "DialogMainButtonText",
+				"Value": 90
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptRuler",
+			"type": "Add",
+			"value": {
+				"Name": "ScriptRuler",
+				"Value": 57
+			}
+		}
+	]
+}

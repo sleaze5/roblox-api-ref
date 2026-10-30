@@ -1,0 +1,457 @@
+{
+	"from": {
+		"version": "0.516.0.5160305",
+		"hash": "783faacc5c2b4b9a"
+	},
+	"to": {
+		"version": "0.517.0.5170357",
+		"hash": "80a9d0413bef4c64"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "TextButton",
+			"member": "FontFace",
+			"type": "Add",
+			"value": {
+				"Category": "Text",
+				"MemberType": "Property",
+				"Name": "FontFace",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Font"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextLabel",
+			"member": "FontFace",
+			"type": "Add",
+			"value": {
+				"Category": "Text",
+				"MemberType": "Property",
+				"Name": "FontFace",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Font"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextBox",
+			"member": "FontFace",
+			"type": "Add",
+			"value": {
+				"Category": "Text",
+				"MemberType": "Property",
+				"Name": "FontFace",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Font"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LSPService",
+			"member": "RegisterLSPCallback",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterLSPCallback",
+				"Parameters": [
+					{
+						"Name": "methodToOverride",
+						"Type": {
+							"Category": "Enum",
+							"Name": "LSPMethodType"
+						}
+					},
+					{
+						"Name": "callbackFunction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "MaterialVariant",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "MaterialVariant",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextService",
+			"member": "GetFamilyInfoAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFamilyInfoAsync",
+				"Parameters": [
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Unknown",
+			"type": "Add",
+			"value": {
+				"Name": "Unknown",
+				"Value": 100
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "PacketPriority",
+			"type": "Remove",
+			"value": {
+				"Name": "PacketPriority"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "LSPMethodType",
+			"type": "Add",
+			"value": {
+				"Name": "LSPMethodType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LSPMethodType",
+			"item": "Initialize",
+			"type": "Add",
+			"value": {
+				"Name": "Initialize",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LSPMethodType",
+			"item": "Initialized",
+			"type": "Add",
+			"value": {
+				"Name": "Initialized",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LSPMethodType",
+			"item": "CancelRequest",
+			"type": "Add",
+			"value": {
+				"Name": "CancelRequest",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LSPMethodType",
+			"item": "TextDocument_didOpen",
+			"type": "Add",
+			"value": {
+				"Name": "TextDocument_didOpen",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LSPMethodType",
+			"item": "TextDocument_didChange",
+			"type": "Add",
+			"value": {
+				"Name": "TextDocument_didChange",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LSPMethodType",
+			"item": "TextDocument_didClose",
+			"type": "Add",
+			"value": {
+				"Name": "TextDocument_didClose",
+				"Value": 6
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LSPMethodType",
+			"item": "TextDocument_foldingRange",
+			"type": "Add",
+			"value": {
+				"Name": "TextDocument_foldingRange",
+				"Value": 7
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LSPMethodType",
+			"item": "TextDocument_onTypeFormatting",
+			"type": "Add",
+			"value": {
+				"Name": "TextDocument_onTypeFormatting",
+				"Value": 8
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LSPMethodType",
+			"item": "TextDocument_formatting",
+			"type": "Add",
+			"value": {
+				"Name": "TextDocument_formatting",
+				"Value": 9
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LSPMethodType",
+			"item": "TextDocument_rangeFormatting",
+			"type": "Add",
+			"value": {
+				"Name": "TextDocument_rangeFormatting",
+				"Value": 10
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LSPMethodType",
+			"item": "TextDocument_hover",
+			"type": "Add",
+			"value": {
+				"Name": "TextDocument_hover",
+				"Value": 11
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LSPMethodType",
+			"item": "TextDocument_signatureHelp",
+			"type": "Add",
+			"value": {
+				"Name": "TextDocument_signatureHelp",
+				"Value": 12
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LSPMethodType",
+			"item": "Workspace_DidChangeConfiguration",
+			"type": "Add",
+			"value": {
+				"Name": "Workspace_DidChangeConfiguration",
+				"Value": 13
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LSPMethodType",
+			"item": "ShutdownRequest",
+			"type": "Add",
+			"value": {
+				"Name": "ShutdownRequest",
+				"Value": 14
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LSPMethodType",
+			"item": "Completion",
+			"type": "Add",
+			"value": {
+				"Name": "Completion",
+				"Value": 15
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LSPMethodType",
+			"item": "Declaration",
+			"type": "Add",
+			"value": {
+				"Name": "Declaration",
+				"Value": 16
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LSPMethodType",
+			"item": "DocumentSymbols",
+			"type": "Add",
+			"value": {
+				"Name": "DocumentSymbols",
+				"Value": 17
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LSPMethodType",
+			"item": "TextDocument_publishDiagnostics",
+			"type": "Add",
+			"value": {
+				"Name": "TextDocument_publishDiagnostics",
+				"Value": 18
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LSPMethodType",
+			"item": "Window_showMessage",
+			"type": "Add",
+			"value": {
+				"Name": "Window_showMessage",
+				"Value": 19
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LSPMethodType",
+			"item": "Window_showMessageRequest",
+			"type": "Add",
+			"value": {
+				"Name": "Window_showMessageRequest",
+				"Value": 20
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LSPMethodType",
+			"item": "Roblox_registerSyntaxCategories",
+			"type": "Add",
+			"value": {
+				"Name": "Roblox_registerSyntaxCategories",
+				"Value": 21
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LSPMethodType",
+			"item": "Roblox_signalQuiescence",
+			"type": "Add",
+			"value": {
+				"Name": "Roblox_signalQuiescence",
+				"Value": 22
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LSPMethodType",
+			"item": "Roblox_syntaxHighlight",
+			"type": "Add",
+			"value": {
+				"Name": "Roblox_syntaxHighlight",
+				"Value": 23
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LSPMethodType",
+			"item": "Roblox_suggestExtraSelections",
+			"type": "Add",
+			"value": {
+				"Name": "Roblox_suggestExtraSelections",
+				"Value": 24
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LSPMethodType",
+			"item": "Roblox_findExecutablePosition",
+			"type": "Add",
+			"value": {
+				"Name": "Roblox_findExecutablePosition",
+				"Value": 25
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LSPMethodType",
+			"item": "Roblox_findColor3",
+			"type": "Add",
+			"value": {
+				"Name": "Roblox_findColor3",
+				"Value": 26
+			}
+		}
+	]
+}

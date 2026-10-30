@@ -1,0 +1,128 @@
+{
+	"from": {
+		"version": "0.481.1.423973",
+		"hash": "6a089dcca5644f8e"
+	},
+	"to": {
+		"version": "0.482.0.424268",
+		"hash": "c2037653e0a446ac"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "PromptCreateOutfitCompleted",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "result",
+							"Type": {
+								"Category": "Enum",
+								"Name": "AvatarPromptResult"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "result",
+							"Type": {
+								"Category": "Enum",
+								"Name": "AvatarPromptResult"
+							}
+						},
+						{
+							"Name": "failureType",
+							"Type": {
+								"Category": "Group",
+								"Name": "Variant"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptCreateOutfitCompleted",
+				"Parameters": [
+					{
+						"Name": "result",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AvatarPromptResult"
+						}
+					},
+					{
+						"Name": "failureType",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DraggerCoordinateSpace",
+			"item": "Constant",
+			"type": "Remove",
+			"value": {
+				"Name": "Constant",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DraggerCoordinateSpace",
+			"item": "World",
+			"type": "Add",
+			"value": {
+				"Name": "World",
+				"Value": 1
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "CreateOutfitFailure",
+			"type": "Add",
+			"value": {
+				"Name": "CreateOutfitFailure"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CreateOutfitFailure",
+			"item": "InvalidName",
+			"type": "Add",
+			"value": {
+				"Name": "InvalidName",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CreateOutfitFailure",
+			"item": "OutfitLimitReached",
+			"type": "Add",
+			"value": {
+				"Name": "OutfitLimitReached",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CreateOutfitFailure",
+			"item": "Other",
+			"type": "Add",
+			"value": {
+				"Name": "Other",
+				"Value": 3
+			}
+		}
+	]
+}

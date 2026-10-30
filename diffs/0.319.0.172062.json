@@ -1,0 +1,1352 @@
+{
+	"from": {
+		"version": "0.318.0.168780",
+		"hash": "45cc144b134647ea"
+	},
+	"to": {
+		"version": "0.319.0.172062",
+		"hash": "62384ee365424ad9"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "GetAssetVersions",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAssetVersions",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "placeId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "pageNum",
+						"Default": "1"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "GetCreatorAssetID",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "creationID"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "creationID"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCreatorAssetID",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "creationID"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields",
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "GetPlacePermissions",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPlacePermissions",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "placeId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "RevertAsset",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RevertAsset",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "placeId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "versionNumber"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "SetPlacePermissions",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetPlacePermissions",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "placeId"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "AccessType"
+						},
+						"Name": "accessType",
+						"Default": "Everyone"
+					},
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						},
+						"Name": "inviteList",
+						"Default": "{}"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BadgeService",
+			"member": "AwardBadge",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "userId"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "badgeId"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "userId"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "badgeId"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "AwardBadge",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "userId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "badgeId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BadgeService",
+			"member": "IsDisabled",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "badgeId"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "badgeId"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsDisabled",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "badgeId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BadgeService",
+			"member": "IsLegal",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "badgeId"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "badgeId"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsLegal",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "badgeId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BadgeService",
+			"member": "UserHasBadge",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "userId"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "badgeId"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "userId"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "badgeId"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "UserHasBadge",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "userId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "badgeId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BadgeService",
+			"member": "BadgeAwarded",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "message"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "userId"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "badgeId"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "message"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "userId"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "badgeId"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "BadgeAwarded",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "message"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "userId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "badgeId"
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Beam",
+			"member": "SetTextureOffset",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetTextureOffset",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						},
+						"Name": "offset",
+						"Default": "0"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InsertService",
+			"member": "ApproveAssetId",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "assetId"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "assetId"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "ApproveAssetId",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "assetId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InsertService",
+			"member": "ApproveAssetVersionId",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "assetVersionId"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "assetVersionId"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "ApproveAssetVersionId",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "assetVersionId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InsertService",
+			"member": "GetCollection",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "categoryId"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "categoryId"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCollection",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "categoryId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InsertService",
+			"member": "GetLatestAssetVersionAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "assetId"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "assetId"
+						}
+					]
+				},
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Primitive",
+						"Name": "int"
+					},
+					"after": {
+						"Category": "Primitive",
+						"Name": "int64"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetLatestAssetVersionAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "assetId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InsertService",
+			"member": "GetUserCategories",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "userId"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "userId"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetUserCategories",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "userId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields",
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InsertService",
+			"member": "GetUserSets",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "userId"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "userId"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetUserSets",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "userId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InsertService",
+			"member": "LoadAsset",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "assetId"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "assetId"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "LoadAsset",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "assetId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InsertService",
+			"member": "LoadAssetVersion",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "assetVersionId"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "assetVersionId"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "LoadAssetVersion",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "assetVersionId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InsertService",
+			"member": "loadAsset",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "assetId"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "assetId"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "loadAsset",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "assetId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields",
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InsertService",
+			"member": "LoadLocalAsset",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LoadLocalAsset",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "assetPath"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "LobbyService",
+			"type": "Remove",
+			"value": {
+				"Name": "LobbyService",
+				"Superclass": "Instance",
+				"MemoryCategory": "",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LocalizationService",
+			"member": "GetTranslatorForPlayer",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetTranslatorForPlayer",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "player"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LocalizationTable",
+			"member": "GetTranslator",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetTranslator",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "localeId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "GetPlayerByUserId",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "userId"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "userId"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPlayerByUserId",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "userId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "CreatePluginGui",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreatePluginGui",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "pluginGuiId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RenderSettings",
+			"member": "Resolution",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Resolution",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "Resolution"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PluginGui",
+			"type": "Add",
+			"value": {
+				"Name": "PluginGui",
+				"Superclass": "LayerCollector",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Translator",
+			"type": "Add",
+			"value": {
+				"Name": "Translator",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Translator",
+			"member": "LocaleId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "LocaleId",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Category": "Behavior",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Translator",
+			"member": "FormatByKey",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FormatByKey",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "key"
+					},
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						},
+						"Name": "args"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AASamples",
+			"type": "Remove",
+			"value": {
+				"Name": "AASamples"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AccessType",
+			"type": "Remove",
+			"value": {
+				"Name": "AccessType"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "Antialiasing",
+			"type": "Remove",
+			"value": {
+				"Name": "Antialiasing"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "Resolution",
+			"type": "Remove",
+			"value": {
+				"Name": "Resolution"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AvatarContextMenuOption",
+			"type": "Add",
+			"value": {
+				"Name": "AvatarContextMenuOption"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarContextMenuOption",
+			"item": "Friend",
+			"type": "Add",
+			"value": {
+				"Name": "Friend",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarContextMenuOption",
+			"item": "Chat",
+			"type": "Add",
+			"value": {
+				"Name": "Chat",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarContextMenuOption",
+			"item": "Emote",
+			"type": "Add",
+			"value": {
+				"Name": "Emote",
+				"Value": 2
+			}
+		}
+	]
+}

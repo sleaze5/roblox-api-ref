@@ -1,0 +1,129 @@
+{
+	"from": {
+		"version": "0.311.0.156626",
+		"hash": "50e234c37b004e7b"
+	},
+	"to": {
+		"version": "0.312.0.158325",
+		"hash": "e6b7e38f709a4636"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "GetAssetThumbnailAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAssetThumbnailAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "assetId"
+					},
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						},
+						"Name": "thumbnailSize"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "assetType",
+						"Default": "0"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BinaryStringValue",
+			"member": "Changed",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Changed",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "BinaryString"
+						},
+						"Name": "value"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Pose",
+			"member": "MaskWeight",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotReplicated"
+					],
+					"after": [
+						"NotReplicated",
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Property",
+				"Name": "MaskWeight",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Trail",
+			"member": "Clear",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Clear",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		}
+	]
+}

@@ -210,13 +210,16 @@ pub fn build_update(diff: &DumpDiff, published: &str, names: &ApiNames<'_>) -> U
 		table.add(change);
 	}
 	let counts = count_changes(&table.owners);
-	let mut description_count = 0;
-	for change in &diff.descriptions {
-		if let Some(detail) = description_detail(names, change) {
-			table.add_description(change, detail);
-			description_count += 1;
+	let description_count = diff.descriptions.as_ref().map(|descriptions| {
+		let mut count = 0;
+		for change in descriptions {
+			if let Some(detail) = description_detail(names, change) {
+				table.add_description(change, detail);
+				count += 1;
+			}
 		}
-	}
+		count
+	});
 	let mut owners: Vec<OwnerChanges> = table
 		.owners
 		.into_values()
@@ -470,5 +473,12 @@ mod tests {
 			json!([{ "part": "description", "status": "Added", "after": ["Grainy."] }])
 		);
 		assert_eq!(result["counts"]["Added"], 1);
+	}
+
+	#[test]
+	fn leaves_the_description_count_unknown_when_the_diff_has_no_descriptions() {
+		let result = update(&json!([]), &Value::Null);
+		assert_eq!(result["descriptionCount"], Value::Null);
+		assert_eq!(update(&json!([]), &json!([]))["descriptionCount"], 0);
 	}
 }

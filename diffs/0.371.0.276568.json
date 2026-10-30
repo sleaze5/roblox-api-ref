@@ -1,0 +1,713 @@
+{
+	"from": {
+		"version": "0.370.0.274702",
+		"hash": "a85d686049964076"
+	},
+	"to": {
+		"version": "0.371.0.276568",
+		"hash": "0776f568ec5847cd"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AlignOrientation",
+			"member": "AlignType",
+			"type": "Add",
+			"value": {
+				"Category": "AlignOrientation",
+				"MemberType": "Property",
+				"Name": "AlignType",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AlignType"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "OpenBrowserWindow",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "OpenBrowserWindow",
+				"Parameters": [
+					{
+						"Name": "url",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "OpenNativeOverlay",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "OpenNativeOverlay",
+				"Parameters": [
+					{
+						"Name": "title",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "url",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "BrowserWindowClosed",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "BrowserWindowClosed",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "RespawnTime",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "RespawnTime",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "ImportFbxAnimation",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Primitive",
+						"Name": "void"
+					},
+					"after": {
+						"Category": "Class",
+						"Name": "Instance"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Yields"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "ImportFbxAnimation",
+				"Parameters": [
+					{
+						"Name": "rigModel",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginToolbar",
+			"member": "CreateButton",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "text",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "tooltip",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "iconname",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "buttonId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "tooltip",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "iconname",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "",
+							"Name": "text",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateButton",
+				"Parameters": [
+					{
+						"Name": "buttonId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "tooltip",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "iconname",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "text",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginToolbar",
+			"member": "CreateButtonWithId",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateButtonWithId",
+				"Parameters": [
+					{
+						"Name": "buttonId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "text",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "tooltip",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "iconname",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Show Core GUI in Explorer while Playing",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Advanced",
+					"after": "Explorer"
+				}
+			],
+			"value": {
+				"Category": "Explorer",
+				"MemberType": "Property",
+				"Name": "Show Core GUI in Explorer while Playing",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Show Plugin GUI Service in Explorer",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Advanced",
+					"after": "Explorer"
+				}
+			],
+			"value": {
+				"Category": "Explorer",
+				"MemberType": "Property",
+				"Name": "Show Plugin GUI Service in Explorer",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Show plus button on hover in Explorer",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Advanced",
+					"after": "Explorer"
+				}
+			],
+			"value": {
+				"Category": "Explorer",
+				"MemberType": "Property",
+				"Name": "Show plus button on hover in Explorer",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Show Hidden Objects in Explorer",
+			"type": "Add",
+			"value": {
+				"Category": "Explorer",
+				"MemberType": "Property",
+				"Name": "Show Hidden Objects in Explorer",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "BrowserService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "BrowserService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BrowserService",
+			"member": "CloseBrowserWindow",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CloseBrowserWindow",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BrowserService",
+			"member": "EmitHybridEvent",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "EmitHybridEvent",
+				"Parameters": [
+					{
+						"Name": "moduleName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "eventName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "params",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BrowserService",
+			"member": "OpenBrowserWindow",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "OpenBrowserWindow",
+				"Parameters": [
+					{
+						"Name": "url",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BrowserService",
+			"member": "OpenNativeOverlay",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "OpenNativeOverlay",
+				"Parameters": [
+					{
+						"Name": "title",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "url",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BrowserService",
+			"member": "ReturnToJavaScript",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ReturnToJavaScript",
+				"Parameters": [
+					{
+						"Name": "callbackId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "success",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "params",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BrowserService",
+			"member": "BrowserWindowClosed",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "BrowserWindowClosed",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BrowserService",
+			"member": "BrowserWindowWillNavigate",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "BrowserWindowWillNavigate",
+				"Parameters": [
+					{
+						"Name": "url",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BrowserService",
+			"member": "JavaScriptCallback",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "JavaScriptCallback",
+				"Parameters": [
+					{
+						"Name": "content",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AlignType",
+			"type": "Add",
+			"value": {
+				"Name": "AlignType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AlignType",
+			"item": "Parallel",
+			"type": "Add",
+			"value": {
+				"Name": "Parallel",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AlignType",
+			"item": "Perpendicular",
+			"type": "Add",
+			"value": {
+				"Name": "Perpendicular",
+				"Value": 1
+			}
+		}
+	]
+}

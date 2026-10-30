@@ -1,0 +1,547 @@
+{
+	"from": {
+		"version": "0.371.0.276568",
+		"hash": "0776f568ec5847cd"
+	},
+	"to": {
+		"version": "0.372.0.278233",
+		"hash": "e990ebad47024089"
+	},
+	"changes": [
+		{
+			"element": "Class",
+			"class": "LocalAsset",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "LocalAsset",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LocalizationService",
+			"member": "GetTableEntries",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetTableEntries",
+				"Parameters": [
+					{
+						"Default": "nil",
+						"Name": "instance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "StreamingEnabled",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotReplicated"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "StreamingEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SoundService",
+			"member": "GetSoundMemoryData",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetSoundMemoryData",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "PromptImportLocalAsset",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Yields"
+					],
+					"after": [
+						"Yields",
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptImportLocalAsset",
+				"Parameters": [
+					{
+						"Name": "prompt",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "{}",
+						"Name": "fileTypeFilter",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Yields",
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "PromptImportLocalAssets",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Yields"
+					],
+					"after": [
+						"Yields",
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptImportLocalAssets",
+				"Parameters": [
+					{
+						"Name": "prompt",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "{}",
+						"Name": "fileTypeFilter",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Yields",
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "PromptImportFile",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptImportFile",
+				"Parameters": [
+					{
+						"Default": "{}",
+						"Name": "fileTypeFilter",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "PromptImportFiles",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptImportFiles",
+				"Parameters": [
+					{
+						"Default": "{}",
+						"Name": "fileTypeFilter",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AntiAddictionService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AntiAddictionService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AntiAddictionService",
+			"member": "GetAntiAddictionData",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAntiAddictionData",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AntiAddictionService",
+			"member": "MarkRead",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "MarkRead",
+				"Parameters": [
+					{
+						"Name": "messageId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AntiAddictionService",
+			"member": "Start",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Start",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AntiAddictionService",
+			"member": "Stop",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Stop",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AntiAddictionService",
+			"member": "Updated",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Updated",
+				"Parameters": [
+					{
+						"Name": "antiAddictionData",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "File",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "File",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "File",
+			"member": "FileName",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "FileName",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated",
+					"Deprecated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "File",
+			"member": "FileSize",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "FileSize",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated",
+					"Deprecated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "File",
+			"member": "Size",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Size",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "File",
+			"member": "GetBinaryContents",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBinaryContents",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "File",
+			"member": "GetFileContentsBinary",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFileContentsBinary",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "File",
+			"member": "GetTemporaryId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetTemporaryId",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Content"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UserInputType",
+			"item": "None",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 21,
+					"after": 22
+				}
+			],
+			"value": {
+				"Name": "None",
+				"Value": 22
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UserInputType",
+			"item": "InputMethod",
+			"type": "Add",
+			"value": {
+				"Name": "InputMethod",
+				"Value": 21
+			}
+		}
+	]
+}

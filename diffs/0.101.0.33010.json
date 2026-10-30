@@ -1,0 +1,98 @@
+{
+	"from": {
+		"version": "0.100.0.32485",
+		"hash": "f222b1da0383477f"
+	},
+	"to": {
+		"version": "0.101.0.33010",
+		"hash": "98a2db5d22e34279"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Light",
+			"member": "Enabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Enabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Appearance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Lighting",
+			"member": "OutdoorAmbient",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "OutdoorAmbient",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				},
+				"Category": "Appearance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "GetProductInfo",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Primitive",
+						"Name": "string"
+					},
+					"after": {
+						"Category": "Group",
+						"Name": "Dictionary"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetProductInfo",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "assetId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		}
+	]
+}

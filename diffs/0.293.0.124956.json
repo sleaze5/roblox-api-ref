@@ -1,0 +1,421 @@
+{
+	"from": {
+		"version": "0.292.0.123769",
+		"hash": "3ba7f62bc80141e0"
+	},
+	"to": {
+		"version": "0.293.0.124956",
+		"hash": "73962241f96c4f1b"
+	},
+	"changes": [
+		{
+			"element": "Class",
+			"class": "ChatFilter",
+			"type": "Remove",
+			"value": {
+				"Name": "ChatFilter",
+				"Superclass": "Instance",
+				"MemoryCategory": "",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiBase2d",
+			"member": "AbsoluteRotation",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "AbsoluteRotation",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiObject",
+			"member": "AbsoluteRotation",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "AbsoluteRotation",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiObject",
+			"member": "SizeFromContents",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "SizeFromContents",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LocalizationService",
+			"member": "LocaleId",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "LocaleId",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LocalizationService",
+			"member": "SystemLocaleId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "SystemLocaleId",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Category": "Localization",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "LightInfluence",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "LightInfluence",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Appearance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "SpreadAngle",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "SpreadAngle",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				},
+				"Category": "Emission",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "OsPlatform",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "OsPlatform",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextService",
+			"member": "FilterStringAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FilterStringAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "stringToFilter"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "fromUserId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIGridStyleLayout",
+			"member": "SetCustomSortFunction",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "DataType",
+								"Name": "Function"
+							},
+							"Name": "function"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "DataType",
+								"Name": "Function"
+							},
+							"Name": "function",
+							"Default": "nil"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetCustomSortFunction",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						},
+						"Name": "function",
+						"Default": "nil"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TextFilterResult",
+			"type": "Add",
+			"value": {
+				"Name": "TextFilterResult",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextFilterResult",
+			"member": "GetChatForUserAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetChatForUserAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "toUserId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextFilterResult",
+			"member": "GetNonChatStringForBroadcastAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetNonChatStringForBroadcastAsync",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextFilterResult",
+			"member": "GetNonChatStringForUserAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetNonChatStringForUserAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "toUserId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "R15CollisionType",
+			"type": "Add",
+			"value": {
+				"Name": "R15CollisionType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "R15CollisionType",
+			"item": "OuterBox",
+			"type": "Add",
+			"value": {
+				"Name": "OuterBox",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "R15CollisionType",
+			"item": "InnerBox",
+			"type": "Add",
+			"value": {
+				"Name": "InnerBox",
+				"Value": 1
+			}
+		}
+	]
+}

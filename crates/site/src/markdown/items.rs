@@ -44,6 +44,9 @@ pub fn history_facts(
 	let mut facts = vec![(
 		"Added",
 		Some(event_text(history.added.as_ref()).unwrap_or_else(|| {
+			if history.unrecorded {
+				return "Unrecorded".to_owned();
+			}
 			format!(
 				"Not recorded ({} or earlier)",
 				history

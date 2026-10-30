@@ -1,0 +1,865 @@
+{
+	"from": {
+		"version": "0.69.0.646",
+		"hash": "c1e3ff7c94e44086"
+	},
+	"to": {
+		"version": "0.69.1.9",
+		"hash": "1031096e0eaf488a"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "ClickDetector",
+			"member": "mouseClick",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "mouseClick",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "playerWhoClicked"
+					}
+				],
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebugSettings",
+			"member": "OsIs64Bit",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "OsIs64Bit",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Profile",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebugSettings",
+			"member": "LegacyScriptMode",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Deprecated"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "LegacyScriptMode",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DebuggerBreakpoint",
+			"type": "Remove",
+			"value": {
+				"Name": "DebuggerBreakpoint",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"preliminary",
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DebuggerService",
+			"type": "Remove",
+			"value": {
+				"Name": "DebuggerService",
+				"Superclass": "Instance",
+				"MemoryCategory": "",
+				"Tags": [
+					"preliminary"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DebuggerWatch",
+			"type": "Remove",
+			"value": {
+				"Name": "DebuggerWatch",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"preliminary"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FastLogSettings",
+			"member": "DumpLogs",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "filename"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "Filename"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "DumpLogs",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "Filename"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FastLogSettings",
+			"member": "Print",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "message"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "Message"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "Print",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "Message"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FastLogSettings",
+			"member": "SetGroupEnable",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "group"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "channel"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "Ext"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "Group"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "Channel"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "Ext"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetGroupEnable",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "Group"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "Channel"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "Ext"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiObject",
+			"member": "MouseWheelBackward",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "MouseWheelBackward",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "x"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "y"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiObject",
+			"member": "MouseWheelForward",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "MouseWheelForward",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "x"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "y"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "maxHealth",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "maxHealth",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Game",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InsertService",
+			"member": "loadAsset",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "loadAsset",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "assetId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields",
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Mouse",
+			"member": "keyDown",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "keyDown",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "Key"
+					}
+				],
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "brickColor",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "brickColor",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "BrickColor"
+				},
+				"Category": "Appearance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "touched",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "touched",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "otherPart"
+					}
+				],
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Seat",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"preliminary"
+					]
+				}
+			],
+			"value": {
+				"Name": "Seat",
+				"Superclass": "Part",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"preliminary"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ParallelRampPart",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Name": "ParallelRampPart",
+				"Superclass": "BasePart",
+				"MemoryCategory": ""
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PrismPart",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Name": "PrismPart",
+				"Superclass": "BasePart",
+				"MemoryCategory": ""
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PyramidPart",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Name": "PyramidPart",
+				"Superclass": "BasePart",
+				"MemoryCategory": ""
+			}
+		},
+		{
+			"element": "Class",
+			"class": "RightAngleRampPart",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Name": "RightAngleRampPart",
+				"Superclass": "BasePart",
+				"MemoryCategory": ""
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "CanLoadCharacterAppearance",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "CanLoadCharacterAppearance",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Behavior",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "ClearCharacterAppearance",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ClearCharacterAppearance",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "LoadCharacterAppearance",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LoadCharacterAppearance",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "assetInstance"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "GetRankInGroup",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRankInGroup",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "groupId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "GetRoleInGroup",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRoleInGroup",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "groupId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ScriptDebugger",
+			"type": "Remove",
+			"value": {
+				"Name": "ScriptDebugger",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"preliminary",
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "lighting",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "lighting",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Object"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated",
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GlobalSettings",
+			"member": "GetFFlag",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFFlag",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "name"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GlobalSettings",
+			"member": "GetFFlags",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFFlags",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "SetGroupRankUrl",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetGroupRankUrl",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "groupRankUrl"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "SetGroupRoleUrl",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetGroupRoleUrl",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "groupRoleUrl"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TouchTransmitter",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"preliminary",
+						"NotCreatable",
+						"NotBrowsable"
+					],
+					"after": [
+						"preliminary",
+						"NotCreatable"
+					]
+				}
+			],
+			"value": {
+				"Name": "TouchTransmitter",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"preliminary",
+					"NotCreatable"
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,843 @@
+{
+	"from": {
+		"version": "0.527.0.5270372",
+		"hash": "17b5475b8e834d18"
+	},
+	"to": {
+		"version": "0.528.0.5280404",
+		"hash": "5d20a6b7d5e94509"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Animator",
+			"member": "LoadStreamAnimation",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LoadStreamAnimation",
+				"Parameters": [
+					{
+						"Name": "animation",
+						"Type": {
+							"Category": "Class",
+							"Name": "TrackerStreamAnimation"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "AnimationStreamTrack"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CanvasGroup",
+			"member": "GroupColor",
+			"type": "Remove",
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "GroupColor",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CanvasGroup",
+			"member": "GroupColor3",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "GroupColor3",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImporterRootSettings",
+			"member": "InsertWithScenePosition",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "InsertWithScenePosition",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "LSPService",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "LSPService",
+				"Superclass": "Instance",
+				"Tags": [
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MetaBreakpoint",
+			"member": "SetChildBreakpointEnabledByScriptAndContext",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetChildBreakpointEnabledByScriptAndContext",
+				"Parameters": [
+					{
+						"Name": "script",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "contextGST",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "enabled",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "GetUserIsInTeamCreateToggleRamp",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetUserIsInTeamCreateToggleRamp",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChannel",
+			"member": "SendAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Yields"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SendAsync",
+				"Parameters": [
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "metadata",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "TextChatMessage"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserGameSettings",
+			"member": "DefaultCameraID",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Hidden"
+					],
+					"after": [
+						"Hidden",
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "DefaultCameraID",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoCaptureService",
+			"member": "Active",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": false,
+						"CanSave": false
+					}
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Active",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoCaptureService",
+			"member": "CameraID",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": false,
+						"CanSave": false
+					}
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "CameraID",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AnimationStreamTrack",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Animation",
+				"Name": "AnimationStreamTrack",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationStreamTrack",
+			"member": "IsPlaying",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "IsPlaying",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationStreamTrack",
+			"member": "Priority",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Priority",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AnimationPriority"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationStreamTrack",
+			"member": "WeightCurrent",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "WeightCurrent",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationStreamTrack",
+			"member": "WeightTarget",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "WeightTarget",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationStreamTrack",
+			"member": "AdjustWeight",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AdjustWeight",
+				"Parameters": [
+					{
+						"Default": "1",
+						"Name": "weight",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Default": "0.100000001",
+						"Name": "fadeTime",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationStreamTrack",
+			"member": "Play",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Play",
+				"Parameters": [
+					{
+						"Default": "0.100000001",
+						"Name": "fadeTime",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Default": "1",
+						"Name": "weight",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationStreamTrack",
+			"member": "Stop",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Stop",
+				"Parameters": [
+					{
+						"Default": "0.100000001",
+						"Name": "fadeTime",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationStreamTrack",
+			"member": "Stopped",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Stopped",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "FacialAnimationStreamingService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "FacialAnimationStreamingService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FacialAnimationStreamingService",
+			"member": "Enabled",
+			"type": "Add",
+			"value": {
+				"Category": "State",
+				"MemberType": "Property",
+				"Name": "Enabled",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "RtMessagingService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "RtMessagingService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ScriptDocument",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ScriptDocument",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDocument",
+			"member": "GetNumLines",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetNumLines",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDocument",
+			"member": "GetScript",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetScript",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "LuaSourceContainer"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDocument",
+			"member": "GetText",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetText",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ScriptEditorService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ScriptEditorService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptEditorService",
+			"member": "RegisterLSPCallback",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterLSPCallback",
+				"Parameters": [
+					{
+						"Name": "methodToOverride",
+						"Type": {
+							"Category": "Enum",
+							"Name": "LSPMethodType"
+						}
+					},
+					{
+						"Name": "callbackFunction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptEditorService",
+			"member": "TextDocumentDidChange",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "TextDocumentDidChange",
+				"Parameters": [
+					{
+						"Name": "document",
+						"Type": {
+							"Category": "Class",
+							"Name": "ScriptDocument"
+						}
+					},
+					{
+						"Name": "changesArray",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptEditorService",
+			"member": "TextDocumentDidClose",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "TextDocumentDidClose",
+				"Parameters": [
+					{
+						"Name": "oldDocument",
+						"Type": {
+							"Category": "Class",
+							"Name": "ScriptDocument"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptEditorService",
+			"member": "TextDocumentDidOpen",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "TextDocumentDidOpen",
+				"Parameters": [
+					{
+						"Name": "newDocument",
+						"Type": {
+							"Category": "Class",
+							"Name": "ScriptDocument"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TrackerStreamAnimation",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Animation",
+				"Name": "TrackerStreamAnimation",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectOutOfMemoryExitContinue",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectOutOfMemoryExitContinue",
+				"Value": 288
+			}
+		}
+	]
+}

@@ -1,0 +1,67 @@
+{
+	"from": {
+		"version": "0.136.0.43052",
+		"hash": "afc74353f06542bd"
+	},
+	"to": {
+		"version": "0.137.0.43210",
+		"hash": "256d780acc6049ae"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "DataStoreService",
+			"member": "GetDataStore",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetDataStore",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "name"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "scope",
+						"Default": "global"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ModuleScript",
+			"member": "Source",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Source",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "ProtectedString"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "LocalUserSecurity",
+					"Write": "LocalUserSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		}
+	]
+}

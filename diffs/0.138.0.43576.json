@@ -1,0 +1,1183 @@
+{
+	"from": {
+		"version": "0.137.0.43210",
+		"hash": "256d780acc6049ae"
+	},
+	"to": {
+		"version": "0.138.0.43576",
+		"hash": "7cb30356092f43ac"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "CreatePlaceAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreatePlaceAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "placeName"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "templatePlaceID"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "description",
+						"Default": ""
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "CreatePlaceInPlayerInventoryAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreatePlaceInPlayerInventoryAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "player"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "placeName"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "templatePlaceID"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "description",
+						"Default": ""
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "SavePlaceAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SavePlaceAsync",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStoreService",
+			"member": "GetOrderedDataStore",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetOrderedDataStore",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "name"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "scope",
+						"Default": "global"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiObject",
+			"member": "InputBegan",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "None"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "InputBegan",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "input"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiObject",
+			"member": "InputChanged",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "None"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "InputChanged",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "input"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiObject",
+			"member": "InputEnded",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "None"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "InputEnded",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "input"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiObject",
+			"member": "TouchLongPress",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "None"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "TouchLongPress",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						},
+						"Name": "touchPositions"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserInputState"
+						},
+						"Name": "state"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiObject",
+			"member": "TouchPan",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "None"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "TouchPan",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						},
+						"Name": "touchPositions"
+					},
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						},
+						"Name": "totalTranslation"
+					},
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						},
+						"Name": "velocity"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserInputState"
+						},
+						"Name": "state"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiObject",
+			"member": "TouchPinch",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "None"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "TouchPinch",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						},
+						"Name": "touchPositions"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						},
+						"Name": "scale"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						},
+						"Name": "velocity"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserInputState"
+						},
+						"Name": "state"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiObject",
+			"member": "TouchRotate",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "None"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "TouchRotate",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						},
+						"Name": "touchPositions"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						},
+						"Name": "rotation"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						},
+						"Name": "velocity"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserInputState"
+						},
+						"Name": "state"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiObject",
+			"member": "TouchSwipe",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "None"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "TouchSwipe",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "SwipeDirection"
+						},
+						"Name": "swipeDirection"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "numberOfTouches"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HttpService",
+			"member": "GenerateGUID",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GenerateGUID",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "SignalServerLuaDialogClosed",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SignalServerLuaDialogClosed",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "value"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "ClientLuaDialogRequested",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ClientLuaDialogRequested",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						},
+						"Name": "arguments"
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "ProcessReceipt",
+			"type": "Add",
+			"value": {
+				"MemberType": "Callback",
+				"Name": "ProcessReceipt",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						},
+						"Name": "receiptInfo"
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "ProductPurchaseDecision"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkServer",
+			"member": "SetGameId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetGameId",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "newGameId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "SimulationRadiusChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "SimulationRadiusChanged",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						},
+						"Name": "radius"
+					}
+				],
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "SavePlace",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Group",
+						"Name": "Tuple"
+					},
+					"after": {
+						"Category": "Primitive",
+						"Name": "bool"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SavePlace",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "SaveFilter"
+						},
+						"Name": "saveFilter",
+						"Default": "SaveAll"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "InputBegan",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "None"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "InputBegan",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "input"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "InputChanged",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "None"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "InputChanged",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "input"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "InputEnded",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "None"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "InputEnded",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "input"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchEnded",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "None"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "TouchEnded",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "touch"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchLongPress",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "None"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "TouchLongPress",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						},
+						"Name": "touchPositions"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserInputState"
+						},
+						"Name": "state"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchMoved",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "None"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "TouchMoved",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "touch"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchPan",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "None"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "TouchPan",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						},
+						"Name": "touchPositions"
+					},
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						},
+						"Name": "totalTranslation"
+					},
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						},
+						"Name": "velocity"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserInputState"
+						},
+						"Name": "state"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchPinch",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "None"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "TouchPinch",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						},
+						"Name": "touchPositions"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						},
+						"Name": "scale"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						},
+						"Name": "velocity"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserInputState"
+						},
+						"Name": "state"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchRotate",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "None"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "TouchRotate",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						},
+						"Name": "touchPositions"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						},
+						"Name": "rotation"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						},
+						"Name": "velocity"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserInputState"
+						},
+						"Name": "state"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchStarted",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "None"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "TouchStarted",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "touch"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchSwipe",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "None"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "TouchSwipe",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "SwipeDirection"
+						},
+						"Name": "swipeDirection"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "numberOfTouches"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchTap",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "None"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "TouchTap",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						},
+						"Name": "touchPositions"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "OrderedDataStore",
+			"type": "Add",
+			"value": {
+				"Name": "OrderedDataStore",
+				"Superclass": "GlobalDataStore",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "OrderedDataStore",
+			"member": "GetSortedAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetSortedAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "ascending"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "pagesize"
+					},
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						},
+						"Name": "minValue"
+					},
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						},
+						"Name": "maxValue"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Pages",
+			"type": "Add",
+			"value": {
+				"Name": "Pages",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Pages",
+			"member": "IsFinished",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "IsFinished",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Pages",
+			"member": "GetCurrentPage",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCurrentPage",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Pages",
+			"member": "AdvanceToNextPageAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AdvanceToNextPageAsync",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ProductPurchaseDecision",
+			"type": "Add",
+			"value": {
+				"Name": "ProductPurchaseDecision"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ProductPurchaseDecision",
+			"item": "NotProcessedYet",
+			"type": "Add",
+			"value": {
+				"Name": "NotProcessedYet",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ProductPurchaseDecision",
+			"item": "PurchaseGranted",
+			"type": "Add",
+			"value": {
+				"Name": "PurchaseGranted",
+				"Value": 1
+			}
+		}
+	]
+}

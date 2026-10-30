@@ -1,0 +1,304 @@
+{
+	"from": {
+		"version": "0.285.0.114548",
+		"hash": "da823d17eb7346c9"
+	},
+	"to": {
+		"version": "0.286.0.115583",
+		"hash": "70135ed1904e4974"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "ScrollingFrame",
+			"member": "AutoSizeCanvas",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "AutoSizeCanvas",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScrollingFrame",
+			"member": "AutoSizeCanvasPadding",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "AutoSizeCanvasPadding",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "UDim2"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkReplicator",
+			"member": "DisableProcessPackets",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DisableProcessPackets",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkReplicator",
+			"member": "EnableProcessPackets",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "EnableProcessPackets",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkReplicator",
+			"member": "SetPropSyncExpiration",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetPropSyncExpiration",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "double"
+						},
+						"Name": "seconds"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "GetUserThumbnailAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetUserThumbnailAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userId"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "ThumbnailType"
+						},
+						"Name": "thumbnailType"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "ThumbnailSize"
+						},
+						"Name": "thumbnailSize"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "OpenScreenshotsFolder",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "OpenScreenshotsFolder",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "ScreenshotReady",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ScreenshotReady",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "path"
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIGridStyleLayout",
+			"member": "AbsoluteContentSize",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "AbsoluteContentSize",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ChatColor",
+			"item": "White",
+			"type": "Add",
+			"value": {
+				"Name": "White",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ThumbnailSize",
+			"type": "Add",
+			"value": {
+				"Name": "ThumbnailSize"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ThumbnailSize",
+			"item": "Size48x48",
+			"type": "Add",
+			"value": {
+				"Name": "Size48x48",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ThumbnailSize",
+			"item": "Size180x180",
+			"type": "Add",
+			"value": {
+				"Name": "Size180x180",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ThumbnailSize",
+			"item": "Size420x420",
+			"type": "Add",
+			"value": {
+				"Name": "Size420x420",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ThumbnailType",
+			"type": "Add",
+			"value": {
+				"Name": "ThumbnailType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ThumbnailType",
+			"item": "HeadShot",
+			"type": "Add",
+			"value": {
+				"Name": "HeadShot",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ThumbnailType",
+			"item": "AvatarBust",
+			"type": "Add",
+			"value": {
+				"Name": "AvatarBust",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ThumbnailType",
+			"item": "AvatarThumbnail",
+			"type": "Add",
+			"value": {
+				"Name": "AvatarThumbnail",
+				"Value": 2
+			}
+		}
+	]
+}

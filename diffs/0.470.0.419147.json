@@ -1,0 +1,957 @@
+{
+	"from": {
+		"version": "0.469.0.418830",
+		"hash": "00ed05e620334247"
+	},
+	"to": {
+		"version": "0.470.0.419147",
+		"hash": "1c2bc58e0cae4563"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "HingeConstraint",
+			"member": "AngularResponsiveness",
+			"type": "Add",
+			"value": {
+				"Category": "Servo",
+				"MemberType": "Property",
+				"Name": "AngularResponsiveness",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SlidingBallConstraint",
+			"member": "LinearResponsiveness",
+			"type": "Add",
+			"value": {
+				"Category": "Servo",
+				"MemberType": "Property",
+				"Name": "LinearResponsiveness",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CylindricalConstraint",
+			"member": "AngularResponsiveness",
+			"type": "Add",
+			"value": {
+				"Category": "AngularServo",
+				"MemberType": "Property",
+				"Name": "AngularResponsiveness",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PVInstance",
+			"member": "Origin Orientation",
+			"type": "Add",
+			"value": {
+				"Category": "Transform",
+				"MemberType": "Property",
+				"Name": "Origin Orientation",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PVInstance",
+			"member": "Origin Position",
+			"type": "Add",
+			"value": {
+				"Category": "Transform",
+				"MemberType": "Property",
+				"Name": "Origin Position",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PVInstance",
+			"member": "Pivot Offset Orientation",
+			"type": "Add",
+			"value": {
+				"Category": "Pivot",
+				"MemberType": "Property",
+				"Name": "Pivot Offset Orientation",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PVInstance",
+			"member": "Pivot Offset Position",
+			"type": "Add",
+			"value": {
+				"Category": "Pivot",
+				"MemberType": "Property",
+				"Name": "Pivot Offset Position",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PVInstance",
+			"member": "GetPivot",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPivot",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PVInstance",
+			"member": "PivotTo",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PivotTo",
+				"Parameters": [
+					{
+						"Name": "targetCFrame",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "PivotOffset",
+			"type": "Add",
+			"value": {
+				"Category": "Transform",
+				"MemberType": "Property",
+				"Name": "PivotOffset",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "World Pivot Orientation",
+			"type": "Add",
+			"value": {
+				"Category": "Pivot",
+				"MemberType": "Property",
+				"Name": "World Pivot Orientation",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "World Pivot Position",
+			"type": "Add",
+			"value": {
+				"Category": "Pivot",
+				"MemberType": "Property",
+				"Name": "World Pivot Position",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "WorldPivot",
+			"type": "Add",
+			"value": {
+				"Category": "Pivot",
+				"MemberType": "Property",
+				"Name": "WorldPivot",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "GetPartBoundsInBox",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPartBoundsInBox",
+				"Parameters": [
+					{
+						"Name": "cframe",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					},
+					{
+						"Name": "size",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Default": "OverlapParams{MaxParts=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+						"Name": "overlapParams",
+						"Type": {
+							"Category": "DataType",
+							"Name": "OverlapParams"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "GetPartBoundsInRadius",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPartBoundsInRadius",
+				"Parameters": [
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "radius",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Default": "OverlapParams{MaxParts=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+						"Name": "overlapParams",
+						"Type": {
+							"Category": "DataType",
+							"Name": "OverlapParams"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "GetPartsInPart",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPartsInPart",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Default": "OverlapParams{MaxParts=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+						"Name": "overlapParams",
+						"Type": {
+							"Category": "DataType",
+							"Name": "OverlapParams"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PackageLink",
+			"member": "Creator",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Creator",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PackageLink",
+			"member": "PackageAssetName",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "PackageAssetName",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PackageLink",
+			"member": "PermissionLevel",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "PermissionLevel",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "PackagePermission"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "ScreenshotSavedToAlbum",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ScreenshotSavedToAlbum",
+				"Parameters": [
+					{
+						"Name": "filename",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "success",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "DEPRECATED_OnPublishPlaceToRoblox",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "DEPRECATED_OnPublishPlaceToRoblox",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "PivotSnapToGeometry",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "PivotSnapToGeometry",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TorsionSpringConstraint",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "PhysicsParts",
+				"Name": "TorsionSpringConstraint",
+				"Superclass": "Constraint"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TorsionSpringConstraint",
+			"member": "Coils",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "Coils",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TorsionSpringConstraint",
+			"member": "CurrentAngle",
+			"type": "Add",
+			"value": {
+				"Category": "Derived",
+				"MemberType": "Property",
+				"Name": "CurrentAngle",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TorsionSpringConstraint",
+			"member": "Damping",
+			"type": "Add",
+			"value": {
+				"Category": "Spring",
+				"MemberType": "Property",
+				"Name": "Damping",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TorsionSpringConstraint",
+			"member": "LimitEnabled",
+			"type": "Add",
+			"value": {
+				"Category": "Spring",
+				"MemberType": "Property",
+				"Name": "LimitEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TorsionSpringConstraint",
+			"member": "MaxAngle",
+			"type": "Add",
+			"value": {
+				"Category": "Limit",
+				"MemberType": "Property",
+				"Name": "MaxAngle",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TorsionSpringConstraint",
+			"member": "MaxTorque",
+			"type": "Add",
+			"value": {
+				"Category": "Spring",
+				"MemberType": "Property",
+				"Name": "MaxTorque",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TorsionSpringConstraint",
+			"member": "Radius",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "Radius",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TorsionSpringConstraint",
+			"member": "Restitution",
+			"type": "Add",
+			"value": {
+				"Category": "Limit",
+				"MemberType": "Property",
+				"Name": "Restitution",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TorsionSpringConstraint",
+			"member": "Stiffness",
+			"type": "Add",
+			"value": {
+				"Category": "Spring",
+				"MemberType": "Property",
+				"Name": "Stiffness",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PluginPolicyService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "PluginPolicyService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginPolicyService",
+			"member": "GetPluginPolicy",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPluginPolicy",
+				"Parameters": [
+					{
+						"Name": "pluginName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "PackagePermission",
+			"type": "Add",
+			"value": {
+				"Name": "PackagePermission"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PackagePermission",
+			"item": "None",
+			"type": "Add",
+			"value": {
+				"Name": "None",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PackagePermission",
+			"item": "NoAccess",
+			"type": "Add",
+			"value": {
+				"Name": "NoAccess",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PackagePermission",
+			"item": "Revoked",
+			"type": "Add",
+			"value": {
+				"Name": "Revoked",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PackagePermission",
+			"item": "UseView",
+			"type": "Add",
+			"value": {
+				"Name": "UseView",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PackagePermission",
+			"item": "Edit",
+			"type": "Add",
+			"value": {
+				"Name": "Edit",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PackagePermission",
+			"item": "Own",
+			"type": "Add",
+			"value": {
+				"Name": "Own",
+				"Value": 5
+			}
+		}
+	]
+}

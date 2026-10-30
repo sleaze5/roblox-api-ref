@@ -1,0 +1,887 @@
+{
+	"from": {
+		"version": "0.462.0.416719",
+		"hash": "49b4e2a90c9a455c"
+	},
+	"to": {
+		"version": "0.463.0.417004",
+		"hash": "6e5cfb545b12486e"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "DataStoreService",
+			"member": "GetDataStore",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "name",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "global",
+							"Name": "scope",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "name",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "global",
+							"Name": "scope",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "nil",
+							"Name": "options",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetDataStore",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "global",
+						"Name": "scope",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "options",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStoreService",
+			"member": "ListDataStoresAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ListDataStoresAsync",
+				"Parameters": [
+					{
+						"Default": "",
+						"Name": "prefix",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "pageSize",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStore",
+			"member": "ListVersionsAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ListVersionsAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "Ascending",
+						"Name": "sortDirection",
+						"Type": {
+							"Category": "Enum",
+							"Name": "SortDirection"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "minDate",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "maxDate",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "pageSize",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStore",
+			"member": "RemoveVersionAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RemoveVersionAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "version",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "PlayEmoteById",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PlayEmoteById",
+				"Parameters": [
+					{
+						"Name": "emoteName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "emoteId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "Orientation",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "Orientation",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ParticleOrientation"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DataStoreInfo",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "DataStoreInfo",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStoreInfo",
+			"member": "CreatedTime",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "CreatedTime",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStoreInfo",
+			"member": "DataStoreName",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "DataStoreName",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStoreInfo",
+			"member": "UpdatedTime",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "UpdatedTime",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "IXPService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "IXPService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IXPService",
+			"member": "ClearUserLayers",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ClearUserLayers",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IXPService",
+			"member": "GetBrowserTrackerLayerLoadingStatus",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBrowserTrackerLayerLoadingStatus",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "IXPLoadingStatus"
+				},
+				"Security": "LocalUserSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IXPService",
+			"member": "GetBrowserTrackerLayerVariables",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBrowserTrackerLayerVariables",
+				"Parameters": [
+					{
+						"Name": "layerName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "LocalUserSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IXPService",
+			"member": "GetUserLayerLoadingStatus",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetUserLayerLoadingStatus",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "IXPLoadingStatus"
+				},
+				"Security": "LocalUserSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IXPService",
+			"member": "GetUserLayerVariables",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetUserLayerVariables",
+				"Parameters": [
+					{
+						"Name": "layerName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "LocalUserSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IXPService",
+			"member": "InitializeUserLayers",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "InitializeUserLayers",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IXPService",
+			"member": "RegisterUserLayers",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterUserLayers",
+				"Parameters": [
+					{
+						"Name": "userLayers",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IXPService",
+			"member": "OnBrowserTrackerLayerLoadingStatusChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnBrowserTrackerLayerLoadingStatusChanged",
+				"Parameters": [
+					{
+						"Name": "status",
+						"Type": {
+							"Category": "Enum",
+							"Name": "IXPLoadingStatus"
+						}
+					}
+				],
+				"Security": "LocalUserSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IXPService",
+			"member": "OnUserLayerLoadingStatusChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnUserLayerLoadingStatusChanged",
+				"Parameters": [
+					{
+						"Name": "status",
+						"Type": {
+							"Category": "Enum",
+							"Name": "IXPLoadingStatus"
+						}
+					}
+				],
+				"Security": "LocalUserSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ObjectVersionInfo",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ObjectVersionInfo",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ObjectVersionInfo",
+			"member": "CreatedTime",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "CreatedTime",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ObjectVersionInfo",
+			"member": "IsDeleted",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "IsDeleted",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ObjectVersionInfo",
+			"member": "Version",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Version",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DataStoreEnumerationPages",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "DataStoreEnumerationPages",
+				"Superclass": "Pages",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DataStoreVersionPages",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "DataStoreVersionPages",
+				"Superclass": "Pages",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "IXPLoadingStatus",
+			"type": "Add",
+			"value": {
+				"Name": "IXPLoadingStatus"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "IXPLoadingStatus",
+			"item": "None",
+			"type": "Add",
+			"value": {
+				"Name": "None",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "IXPLoadingStatus",
+			"item": "Pending",
+			"type": "Add",
+			"value": {
+				"Name": "Pending",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "IXPLoadingStatus",
+			"item": "Initialized",
+			"type": "Add",
+			"value": {
+				"Name": "Initialized",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "IXPLoadingStatus",
+			"item": "ShutOff",
+			"type": "Add",
+			"value": {
+				"Name": "ShutOff",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "IXPLoadingStatus",
+			"item": "ErrorTimedOut",
+			"type": "Add",
+			"value": {
+				"Name": "ErrorTimedOut",
+				"Value": 7
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "IXPLoadingStatus",
+			"item": "ErrorConnection",
+			"type": "Add",
+			"value": {
+				"Name": "ErrorConnection",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "IXPLoadingStatus",
+			"item": "ErrorJsonParse",
+			"type": "Add",
+			"value": {
+				"Name": "ErrorJsonParse",
+				"Value": 6
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "IXPLoadingStatus",
+			"item": "ErrorInvalidUser",
+			"type": "Add",
+			"value": {
+				"Name": "ErrorInvalidUser",
+				"Value": 4
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ParticleOrientation",
+			"type": "Add",
+			"value": {
+				"Name": "ParticleOrientation"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ParticleOrientation",
+			"item": "FacingCamera",
+			"type": "Add",
+			"value": {
+				"Name": "FacingCamera",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ParticleOrientation",
+			"item": "FacingCameraWorldUp",
+			"type": "Add",
+			"value": {
+				"Name": "FacingCameraWorldUp",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ParticleOrientation",
+			"item": "VelocityParallel",
+			"type": "Add",
+			"value": {
+				"Name": "VelocityParallel",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ParticleOrientation",
+			"item": "VelocityPerpendicular",
+			"type": "Add",
+			"value": {
+				"Name": "VelocityPerpendicular",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "SortDirection",
+			"type": "Add",
+			"value": {
+				"Name": "SortDirection"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SortDirection",
+			"item": "Ascending",
+			"type": "Add",
+			"value": {
+				"Name": "Ascending",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SortDirection",
+			"item": "Descending",
+			"type": "Add",
+			"value": {
+				"Name": "Descending",
+				"Value": 1
+			}
+		}
+	]
+}

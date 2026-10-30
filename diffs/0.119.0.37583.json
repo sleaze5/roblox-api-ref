@@ -1,0 +1,364 @@
+{
+	"from": {
+		"version": "0.118.0.37235",
+		"hash": "7f156eab1e764642"
+	},
+	"to": {
+		"version": "0.119.0.37583",
+		"hash": "bfcf9c6870e347ac"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "FriendService",
+			"member": "SetFriendsOnlineUrl",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetFriendsOnlineUrl",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "url"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "GetFriendsOnline",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFriendsOnline",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "maxFriends",
+						"Default": "50"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "App",
+			"member": "FollowUser",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FollowUser",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AssetService",
+			"type": "Add",
+			"value": {
+				"Name": "AssetService",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "SetAssetRevertUrl",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetAssetRevertUrl",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "revertUrl"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "SetAssetVersionsUrl",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetAssetVersionsUrl",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "versionsUrl"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "SetPlaceAccessUrl",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetPlaceAccessUrl",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "accessUrl"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "GetAssetVersions",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAssetVersions",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "placeId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "pageNum",
+						"Default": "1"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "GetPlacePermissions",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPlacePermissions",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "placeId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "RevertAsset",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RevertAsset",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "placeId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "versionNumber"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "SetPlacePermissions",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetPlacePermissions",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "placeId"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "AccessType"
+						},
+						"Name": "accessType",
+						"Default": "Everyone"
+					},
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						},
+						"Name": "inviteList",
+						"Default": "{}"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AccessType",
+			"type": "Add",
+			"value": {
+				"Name": "AccessType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AccessType",
+			"item": "Me",
+			"type": "Add",
+			"value": {
+				"Name": "Me",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AccessType",
+			"item": "Friends",
+			"type": "Add",
+			"value": {
+				"Name": "Friends",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AccessType",
+			"item": "Everyone",
+			"type": "Add",
+			"value": {
+				"Name": "Everyone",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AccessType",
+			"item": "InviteOnly",
+			"type": "Add",
+			"value": {
+				"Name": "InviteOnly",
+				"Value": 3
+			}
+		}
+	]
+}

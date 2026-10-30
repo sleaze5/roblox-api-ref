@@ -1,0 +1,551 @@
+{
+	"from": {
+		"version": "0.144.0.45011",
+		"hash": "53c562c888894ea7"
+	},
+	"to": {
+		"version": "0.145.0.45304",
+		"hash": "dd7ca4fae8d24153"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "ContextActionService",
+			"member": "ContextButtonEnabled",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ContextButtonEnabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContextActionService",
+			"member": "ActivateLocalTool",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ActivateLocalTool",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContextActionService",
+			"member": "DeactivateLocalTool",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DeactivateLocalTool",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContextActionService",
+			"member": "BindActionToInputTypes",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "BindActionToInputTypes",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "actionName"
+					},
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						},
+						"Name": "functionToBind"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "createTouchButton"
+					},
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						},
+						"Name": "inputTypes"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContextActionService",
+			"member": "CallFunction",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CallFunction",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "actionName"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserInputState"
+						},
+						"Name": "state"
+					},
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "inputObject"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContextActionService",
+			"member": "FireActionButtonFoundSignal",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FireActionButtonFoundSignal",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "actionName"
+					},
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "actionButton"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContextActionService",
+			"member": "GetAllBoundActionInfo",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAllBoundActionInfo",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContextActionService",
+			"member": "GetBoundActionInfo",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBoundActionInfo",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "actionName"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContextActionService",
+			"member": "SetDescription",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetDescription",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "actionName"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "description"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContextActionService",
+			"member": "SetImage",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetImage",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "actionName"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "image"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContextActionService",
+			"member": "SetPosition",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetPosition",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "actionName"
+					},
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "UDim2"
+						},
+						"Name": "position"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContextActionService",
+			"member": "SetTitle",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetTitle",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "actionName"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "title"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContextActionService",
+			"member": "UnbindAction",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UnbindAction",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "actionName"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContextActionService",
+			"member": "UnbindAllActions",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UnbindAllActions",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContextActionService",
+			"member": "GetButton",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetButton",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "actionName"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContextActionService",
+			"member": "BoundActionAdded",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "BoundActionAdded",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "actionAdded"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "createTouchButton"
+					},
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						},
+						"Name": "functionInfoTable"
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContextActionService",
+			"member": "BoundActionChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "BoundActionChanged",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "actionChanged"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "changeName"
+					},
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						},
+						"Name": "changeTable"
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContextActionService",
+			"member": "BoundActionRemoved",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "BoundActionRemoved",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "actionRemoved"
+					},
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						},
+						"Name": "functionInfoTable"
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContextActionService",
+			"member": "GetActionButtonEvent",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "GetActionButtonEvent",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "actionName"
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "SetClanTag",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetClanTag",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "newClanTag"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		}
+	]
+}

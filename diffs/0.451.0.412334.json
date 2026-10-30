@@ -1,0 +1,1573 @@
+{
+	"from": {
+		"version": "0.450.0.411923",
+		"hash": "20f4846e87e7487f"
+	},
+	"to": {
+		"version": "0.451.0.412334",
+		"hash": "a7b72c3aa90940bf"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "GetItemDetails",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "itemId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "itemType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "ItemType"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "itemId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "itemType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "AvatarItemType"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetItemDetails",
+				"Parameters": [
+					{
+						"Name": "itemId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "itemType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AvatarItemType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "SearchCatalog",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SearchCatalog",
+				"Parameters": [
+					{
+						"Name": "searchParameters",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CatalogSearchParams"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePlayerGui",
+			"member": "GetGuiObjectsInCircle",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetGuiObjectsInCircle",
+				"Parameters": [
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "radius",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Chat",
+			"member": "SetBubbleChatSettings",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetBubbleChatSettings",
+				"Parameters": [
+					{
+						"Name": "settings",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Chat",
+			"member": "BubbleChatSettingsChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "BubbleChatSettingsChanged",
+				"Parameters": [
+					{
+						"Name": "settings",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GamepadService",
+			"member": "GamepadCursorEnabled",
+			"type": "Add",
+			"value": {
+				"Category": "State",
+				"MemberType": "Property",
+				"Name": "GamepadCursorEnabled",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GamepadService",
+			"member": "GetGamepadCursorPosition",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetGamepadCursorPosition",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GamepadService",
+			"member": "SetGamepadCursorPosition",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetGamepadCursorPosition",
+				"Parameters": [
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MeshPart",
+			"member": "DoubleSided",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotScriptable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "DoubleSided",
+				"Security": {
+					"Read": "None",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "OsPlatform",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": false,
+						"CanSave": false
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "OsPlatform",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Background Color",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Script Editor Colors",
+				"MemberType": "Property",
+				"Name": "Background Color",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Built-in Function Color",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Script Editor Colors",
+				"MemberType": "Property",
+				"Name": "Built-in Function Color",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Comment Color",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Script Editor Colors",
+				"MemberType": "Property",
+				"Name": "Comment Color",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Current Line Highlight Color",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Script Editor Colors",
+				"MemberType": "Property",
+				"Name": "Current Line Highlight Color",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Debugger Current Line Color",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Script Editor Colors",
+				"MemberType": "Property",
+				"Name": "Debugger Current Line Color",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Debugger Error Line Color",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Script Editor Colors",
+				"MemberType": "Property",
+				"Name": "Debugger Error Line Color",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Error Color",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Script Editor Colors",
+				"MemberType": "Property",
+				"Name": "Error Color",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Find Selection Background Color",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Script Editor Colors",
+				"MemberType": "Property",
+				"Name": "Find Selection Background Color",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Keyword Color",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Script Editor Colors",
+				"MemberType": "Property",
+				"Name": "Keyword Color",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Matching Word Background Color",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Script Editor Colors",
+				"MemberType": "Property",
+				"Name": "Matching Word Background Color",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Number Color",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Script Editor Colors",
+				"MemberType": "Property",
+				"Name": "Number Color",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Operator Color",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Script Editor Colors",
+				"MemberType": "Property",
+				"Name": "Operator Color",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Preprocessor Color",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Script Editor Colors",
+				"MemberType": "Property",
+				"Name": "Preprocessor Color",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Selection Background Color",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Script Editor Colors",
+				"MemberType": "Property",
+				"Name": "Selection Background Color",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Selection Color",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Script Editor Colors",
+				"MemberType": "Property",
+				"Name": "Selection Color",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "String Color",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Script Editor Colors",
+				"MemberType": "Property",
+				"Name": "String Color",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Text Color",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Script Editor Colors",
+				"MemberType": "Property",
+				"Name": "Text Color",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Warning Color",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Script Editor Colors",
+				"MemberType": "Property",
+				"Name": "Warning Color",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Whitespace Color",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Script Editor Colors",
+				"MemberType": "Property",
+				"Name": "Whitespace Color",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Auto Clean Empty Line",
+			"type": "Add",
+			"value": {
+				"Category": "Script Editor",
+				"MemberType": "Property",
+				"Name": "Auto Clean Empty Line",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioData",
+			"member": "EnableScriptCollabByDefaultOnLoad",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "PluginSecurity",
+						"Write": "PluginSecurity"
+					},
+					"after": {
+						"Read": "RobloxScriptSecurity",
+						"Write": "RobloxScriptSecurity"
+					}
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "EnableScriptCollabByDefaultOnLoad",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioData",
+			"member": "EnableScriptCollabOnLoad",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "PluginSecurity",
+						"Write": "PluginSecurity"
+					},
+					"after": {
+						"Read": "RobloxScriptSecurity",
+						"Write": "RobloxScriptSecurity"
+					}
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "EnableScriptCollabOnLoad",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioData",
+			"member": "EnableScriptCollabVersionHistoryOnLoad",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "PluginSecurity",
+						"Write": "PluginSecurity"
+					},
+					"after": {
+						"Read": "RobloxScriptSecurity",
+						"Write": "RobloxScriptSecurity"
+					}
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "EnableScriptCollabVersionHistoryOnLoad",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "PromptTransformPluginCheckEnable",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptTransformPluginCheckEnable",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserGameSettings",
+			"member": "GraphicsQualityLevel",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "GraphicsQualityLevel",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "CatalogPages",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "CatalogPages",
+				"Superclass": "Pages",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ItemType",
+			"type": "Remove",
+			"value": {
+				"Name": "ItemType"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AvatarItemType",
+			"type": "Add",
+			"value": {
+				"Name": "AvatarItemType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarItemType",
+			"item": "Asset",
+			"type": "Add",
+			"value": {
+				"Name": "Asset",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarItemType",
+			"item": "Bundle",
+			"type": "Add",
+			"value": {
+				"Name": "Bundle",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "BundleType",
+			"type": "Add",
+			"value": {
+				"Name": "BundleType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "BundleType",
+			"item": "BodyParts",
+			"type": "Add",
+			"value": {
+				"Name": "BodyParts",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "BundleType",
+			"item": "Animations",
+			"type": "Add",
+			"value": {
+				"Name": "Animations",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "CatalogCategoryFilter",
+			"type": "Add",
+			"value": {
+				"Name": "CatalogCategoryFilter"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CatalogCategoryFilter",
+			"item": "None",
+			"type": "Add",
+			"value": {
+				"Name": "None",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CatalogCategoryFilter",
+			"item": "Featured",
+			"type": "Add",
+			"value": {
+				"Name": "Featured",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CatalogCategoryFilter",
+			"item": "Collectibles",
+			"type": "Add",
+			"value": {
+				"Name": "Collectibles",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CatalogCategoryFilter",
+			"item": "CommunityCreations",
+			"type": "Add",
+			"value": {
+				"Name": "CommunityCreations",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CatalogCategoryFilter",
+			"item": "Premium",
+			"type": "Add",
+			"value": {
+				"Name": "Premium",
+				"Value": 5
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "CatalogSortType",
+			"type": "Add",
+			"value": {
+				"Name": "CatalogSortType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CatalogSortType",
+			"item": "Relevance",
+			"type": "Add",
+			"value": {
+				"Name": "Relevance",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CatalogSortType",
+			"item": "PriceHighToLow",
+			"type": "Add",
+			"value": {
+				"Name": "PriceHighToLow",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CatalogSortType",
+			"item": "PriceLowToHigh",
+			"type": "Add",
+			"value": {
+				"Name": "PriceLowToHigh",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CatalogSortType",
+			"item": "RecentlyUpdated",
+			"type": "Add",
+			"value": {
+				"Name": "RecentlyUpdated",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CatalogSortType",
+			"item": "MostFavorited",
+			"type": "Add",
+			"value": {
+				"Name": "MostFavorited",
+				"Value": 5
+			}
+		}
+	]
+}

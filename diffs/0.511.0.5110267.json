@@ -1,0 +1,285 @@
+{
+	"from": {
+		"version": "0.509.0.5090219",
+		"hash": "03d362be13cc46ac"
+	},
+	"to": {
+		"version": "0.511.0.5110267",
+		"hash": "0376baaa179048d9"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "DebuggerUIService",
+			"member": "IsConnectionForPlayDataModel",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsConnectionForPlayDataModel",
+				"Parameters": [
+					{
+						"Name": "debuggerConnectionId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TeleportService",
+			"member": "TeleportInitFailed",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "player",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Name": "teleportResult",
+							"Type": {
+								"Category": "Enum",
+								"Name": "TeleportResult"
+							}
+						},
+						{
+							"Name": "errorMessage",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "player",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Name": "teleportResult",
+							"Type": {
+								"Category": "Enum",
+								"Name": "TeleportResult"
+							}
+						},
+						{
+							"Name": "errorMessage",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "placeId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						},
+						{
+							"Name": "teleportOptions",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "TeleportInitFailed",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "teleportResult",
+						"Type": {
+							"Category": "Enum",
+							"Name": "TeleportResult"
+						}
+					},
+					{
+						"Name": "errorMessage",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "placeId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "teleportOptions",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserGameSettings",
+			"member": "VignetteEnabled",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "RobloxScriptSecurity",
+						"Write": "RobloxScriptSecurity"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "RobloxScriptSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": [
+						"Hidden",
+						"NotReplicated"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "VignetteEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "CrossDMScriptChangeListener",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "CrossDMScriptChangeListener",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CrossDMScriptChangeListener",
+			"member": "StartWatchingScript",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "StartWatchingScript",
+				"Parameters": [
+					{
+						"Name": "scriptRef",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "debuggerConnectionId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CrossDMScriptChangeListener",
+			"member": "GuidNameChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "GuidNameChanged",
+				"Parameters": [
+					{
+						"Name": "guid",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "fullName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "LocalDebuggerConnection",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "LocalDebuggerConnection",
+				"Superclass": "DebuggerConnection",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		}
+	]
+}

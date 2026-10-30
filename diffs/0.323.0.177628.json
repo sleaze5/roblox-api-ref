@@ -1,0 +1,1077 @@
+{
+	"from": {
+		"version": "0.322.0.176773",
+		"hash": "533bd3a21a16429e"
+	},
+	"to": {
+		"version": "0.323.0.177628",
+		"hash": "0612d81d72a8479f"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AdService",
+			"member": "ShowVideoAd",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ShowVideoAd",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AdService",
+			"member": "VideoAdClosed",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "VideoAdClosed",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "adShown"
+					}
+				],
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Beam",
+			"member": "LightInfluence",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "LightInfluence",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Appearance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Chat",
+			"member": "CanUserChatAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "userId"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "userId"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "CanUserChatAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "userId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Chat",
+			"member": "CanUsersChatAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "userIdFrom"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "userIdTo"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "userIdFrom"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "userIdTo"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "CanUsersChatAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "userIdFrom"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "userIdTo"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "CharacterAppearanceId",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ValueType",
+					"before": {
+						"Category": "Primitive",
+						"Name": "int"
+					},
+					"after": {
+						"Category": "Primitive",
+						"Name": "int64"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Property",
+				"Name": "CharacterAppearanceId",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "FollowUserId",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ValueType",
+					"before": {
+						"Category": "Primitive",
+						"Name": "int"
+					},
+					"after": {
+						"Category": "Primitive",
+						"Name": "int64"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Property",
+				"Name": "FollowUserId",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "UserId",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ValueType",
+					"before": {
+						"Category": "Primitive",
+						"Name": "int"
+					},
+					"after": {
+						"Category": "Primitive",
+						"Name": "int64"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Property",
+				"Name": "UserId",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "userId",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ValueType",
+					"before": {
+						"Category": "Primitive",
+						"Name": "int"
+					},
+					"after": {
+						"Category": "Primitive",
+						"Name": "int64"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Property",
+				"Name": "userId",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "GetRankInGroup",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "groupId"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "groupId"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRankInGroup",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "groupId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "GetRoleInGroup",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "groupId"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "groupId"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRoleInGroup",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "groupId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "IsBestFriendsWith",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "userId"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "userId"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsBestFriendsWith",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "userId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields",
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "IsFriendsWith",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "userId"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "userId"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsFriendsWith",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "userId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "IsInGroup",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "groupId"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "groupId"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsInGroup",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "groupId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "isFriendsWith",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "userId"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "userId"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "isFriendsWith",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "userId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields",
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "GetFriendsAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "userId"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "userId"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFriendsAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "userId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "GetNameFromUserIdAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "userId"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "userId"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetNameFromUserIdAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "userId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "GetUserIdFromNameAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Primitive",
+						"Name": "int"
+					},
+					"after": {
+						"Category": "Primitive",
+						"Name": "int64"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetUserIdFromNameAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "userName"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "GetUserThumbnailAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "userId"
+						},
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "ThumbnailType"
+							},
+							"Name": "thumbnailType"
+						},
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "ThumbnailSize"
+							},
+							"Name": "thumbnailSize"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "userId"
+						},
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "ThumbnailType"
+							},
+							"Name": "thumbnailType"
+						},
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "ThumbnailSize"
+							},
+							"Name": "thumbnailSize"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetUserThumbnailAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "userId"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "ThumbnailType"
+						},
+						"Name": "thumbnailType"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "ThumbnailSize"
+						},
+						"Name": "thumbnailSize"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "CreatePluginGui",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "pluginGuiId"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "pluginGuiName"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "restoreEnabledState"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "initialEnabledState"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreatePluginGui",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "pluginGuiName"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "restoreEnabledState"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "initialEnabledState"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "CreatorId",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ValueType",
+					"before": {
+						"Category": "Primitive",
+						"Name": "int"
+					},
+					"after": {
+						"Category": "Primitive",
+						"Name": "int64"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Property",
+				"Name": "CreatorId",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "GameId",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ValueType",
+					"before": {
+						"Category": "Primitive",
+						"Name": "int"
+					},
+					"after": {
+						"Category": "Primitive",
+						"Name": "int64"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Property",
+				"Name": "GameId",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Stats",
+			"member": "GetTotalUsedMemory",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetTotalUsedMemory",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Trail",
+			"member": "LightInfluence",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "LightInfluence",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Appearance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,216 @@
+{
+	"from": {
+		"version": "0.249.0.77601",
+		"hash": "7876cc336a4a44bf"
+	},
+	"to": {
+		"version": "0.250.0.78284",
+		"hash": "a10f4d0381364a83"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PlayerCanMakePurchases",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PlayerCanMakePurchases",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "player"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "GetRobuxBalance",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRobuxBalance",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PerformPurchase",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PerformPurchase",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "InfoType"
+						},
+						"Name": "infoType"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "productId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "expectedPrice"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "requestId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PartOperation",
+			"member": "TriangleCount",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "TriangleCount",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "LoadCharacter",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Yields"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "LoadCharacter",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "inGame",
+						"Default": "true"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "CharacterAppearanceId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "CharacterAppearanceId",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "Team",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Team",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Object"
+				},
+				"Category": "Team",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotReplicated"
+				]
+			}
+		}
+	]
+}

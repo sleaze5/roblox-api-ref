@@ -1,0 +1,1188 @@
+{
+	"from": {
+		"version": "0.538.0.5380364",
+		"hash": "a7e9cf37f70a404a"
+	},
+	"to": {
+		"version": "0.539.0.5390403",
+		"hash": "f14283c4371b45df"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AssetImportService",
+			"member": "PickFileWithPrompt",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PickFileWithPrompt",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "GetOutfits",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Default": "All",
+							"Name": "outfitSource",
+							"Type": {
+								"Category": "Enum",
+								"Name": "OutfitSource"
+							}
+						}
+					],
+					"after": [
+						{
+							"Default": "All",
+							"Name": "outfitSource",
+							"Type": {
+								"Category": "Enum",
+								"Name": "OutfitSource"
+							}
+						},
+						{
+							"Default": "All",
+							"Name": "outfitType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "OutfitType"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetOutfits",
+				"Parameters": [
+					{
+						"Default": "All",
+						"Name": "outfitSource",
+						"Type": {
+							"Category": "Enum",
+							"Name": "OutfitSource"
+						}
+					},
+					{
+						"Default": "All",
+						"Name": "outfitType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "OutfitType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "OutfitPages"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BreakpointManager",
+			"member": "MetaBreakpointSetChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "MetaBreakpointSetChanged",
+				"Parameters": [
+					{
+						"Name": "breakpoint",
+						"Type": {
+							"Category": "Class",
+							"Name": "MetaBreakpoint"
+						}
+					},
+					{
+						"Name": "detail",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FacialAnimationRecordingService",
+			"member": "CheckOrRequestCameraPermission",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CheckOrRequestCameraPermission",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextBox",
+			"member": "EnableRealtimeFilteringHints",
+			"type": "Remove",
+			"value": {
+				"Category": "Text",
+				"MemberType": "Property",
+				"Name": "EnableRealtimeFilteringHints",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "EmoteTriggered",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "EmoteTriggered",
+				"Parameters": [
+					{
+						"Name": "successAndTrackTuple",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "MoodAnimation",
+			"type": "Add",
+			"value": {
+				"Category": "Animation",
+				"MemberType": "Property",
+				"Name": "MoodAnimation",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "PhysicsInertiaAndVolumeFix",
+			"type": "Remove",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "PhysicsInertiaAndVolumeFix",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "PhysicsInertiaAndVolumeFix"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptEditorService",
+			"member": "GetScriptDocuments",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetScriptDocuments",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioDeviceEmulatorService",
+			"member": "IsMultiTouchEmulationOn",
+			"type": "Add",
+			"value": {
+				"Category": "State",
+				"MemberType": "Property",
+				"Name": "IsMultiTouchEmulationOn",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ToolboxService",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ToolboxService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ControllerBase",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ControllerBase",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ControllerBase",
+			"member": "MoveSpeedFactor",
+			"type": "Add",
+			"value": {
+				"Category": "Movement",
+				"MemberType": "Property",
+				"Name": "MoveSpeedFactor",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ControllerBase",
+			"member": "RigidityEnabled",
+			"type": "Add",
+			"value": {
+				"Category": "Balance",
+				"MemberType": "Property",
+				"Name": "RigidityEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AirController",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AirController",
+				"Superclass": "ControllerBase"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AirController",
+			"member": "CancelAirMomentum",
+			"type": "Add",
+			"value": {
+				"Category": "Movement",
+				"MemberType": "Property",
+				"Name": "CancelAirMomentum",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AirController",
+			"member": "MoveMaxForce",
+			"type": "Add",
+			"value": {
+				"Category": "Movement",
+				"MemberType": "Property",
+				"Name": "MoveMaxForce",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AirController",
+			"member": "OrientationMaxTorque",
+			"type": "Add",
+			"value": {
+				"Category": "Balance",
+				"MemberType": "Property",
+				"Name": "OrientationMaxTorque",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AirController",
+			"member": "OrientationSpeed",
+			"type": "Add",
+			"value": {
+				"Category": "Balance",
+				"MemberType": "Property",
+				"Name": "OrientationSpeed",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AirController",
+			"member": "VectorForce",
+			"type": "Add",
+			"value": {
+				"Category": "Balance",
+				"MemberType": "Property",
+				"Name": "VectorForce",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ClimbController",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ClimbController",
+				"Superclass": "ControllerBase"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ClimbController",
+			"member": "AccelerationTime",
+			"type": "Add",
+			"value": {
+				"Category": "Movement",
+				"MemberType": "Property",
+				"Name": "AccelerationTime",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ClimbController",
+			"member": "MoveMaxForce",
+			"type": "Add",
+			"value": {
+				"Category": "Movement",
+				"MemberType": "Property",
+				"Name": "MoveMaxForce",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ClimbController",
+			"member": "OrientationMaxTorque",
+			"type": "Add",
+			"value": {
+				"Category": "Balance",
+				"MemberType": "Property",
+				"Name": "OrientationMaxTorque",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ClimbController",
+			"member": "OrientationSpeed",
+			"type": "Add",
+			"value": {
+				"Category": "Balance",
+				"MemberType": "Property",
+				"Name": "OrientationSpeed",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "GroundController",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "GroundController",
+				"Superclass": "ControllerBase"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GroundController",
+			"member": "AccelerationLean",
+			"type": "Add",
+			"value": {
+				"Category": "Balance",
+				"MemberType": "Property",
+				"Name": "AccelerationLean",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GroundController",
+			"member": "AccelerationTime",
+			"type": "Add",
+			"value": {
+				"Category": "Movement",
+				"MemberType": "Property",
+				"Name": "AccelerationTime",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GroundController",
+			"member": "AlignSpeed",
+			"type": "Add",
+			"value": {
+				"Category": "Balance",
+				"MemberType": "Property",
+				"Name": "AlignSpeed",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GroundController",
+			"member": "AlignTorque",
+			"type": "Add",
+			"value": {
+				"Category": "Balance",
+				"MemberType": "Property",
+				"Name": "AlignTorque",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GroundController",
+			"member": "DecelerationTime",
+			"type": "Add",
+			"value": {
+				"Category": "Movement",
+				"MemberType": "Property",
+				"Name": "DecelerationTime",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GroundController",
+			"member": "Friction",
+			"type": "Add",
+			"value": {
+				"Category": "Movement",
+				"MemberType": "Property",
+				"Name": "Friction",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GroundController",
+			"member": "FrictionWeight",
+			"type": "Add",
+			"value": {
+				"Category": "Movement",
+				"MemberType": "Property",
+				"Name": "FrictionWeight",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GroundController",
+			"member": "MaxSlopeAngle",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "MaxSlopeAngle",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GroundController",
+			"member": "StandForce",
+			"type": "Add",
+			"value": {
+				"Category": "Movement",
+				"MemberType": "Property",
+				"Name": "StandForce",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GroundController",
+			"member": "StandSpeed",
+			"type": "Add",
+			"value": {
+				"Category": "Movement",
+				"MemberType": "Property",
+				"Name": "StandSpeed",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GroundController",
+			"member": "TurningFactor",
+			"type": "Add",
+			"value": {
+				"Category": "Movement",
+				"MemberType": "Property",
+				"Name": "TurningFactor",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "SwimController",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "SwimController",
+				"Superclass": "ControllerBase"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SwimController",
+			"member": "AccelerationTime",
+			"type": "Add",
+			"value": {
+				"Category": "Movement",
+				"MemberType": "Property",
+				"Name": "AccelerationTime",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SwimController",
+			"member": "OrientationMaxTorque",
+			"type": "Add",
+			"value": {
+				"Category": "Balance",
+				"MemberType": "Property",
+				"Name": "OrientationMaxTorque",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SwimController",
+			"member": "OrientationSpeed",
+			"type": "Add",
+			"value": {
+				"Category": "Balance",
+				"MemberType": "Property",
+				"Name": "OrientationSpeed",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ControllerManager",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ControllerManager",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ControllerManager",
+			"member": "ActiveController",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "ActiveController",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "ControllerBase"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ControllerManager",
+			"member": "BaseMoveSpeed",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "BaseMoveSpeed",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ControllerManager",
+			"member": "HipHeight",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "HipHeight",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ControllerManager",
+			"member": "GetControllers",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetControllers",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetType",
+			"item": "MoodAnimation",
+			"type": "Add",
+			"value": {
+				"Name": "MoodAnimation",
+				"Value": 78
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "MoodAnimation",
+			"type": "Add",
+			"value": {
+				"Name": "MoodAnimation",
+				"Value": 78
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "BundleType",
+			"item": "DynamicHead",
+			"type": "Add",
+			"value": {
+				"Name": "DynamicHead",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "BundleType",
+			"item": "DynamicHeadAvatar",
+			"type": "Add",
+			"value": {
+				"Name": "DynamicHeadAvatar",
+				"Value": 5
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "PhysicsInertiaAndVolumeFix",
+			"type": "Remove",
+			"value": {
+				"Name": "PhysicsInertiaAndVolumeFix"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AdFormat",
+			"type": "Add",
+			"value": {
+				"Name": "AdFormat"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AdFormat",
+			"item": "Image",
+			"type": "Add",
+			"value": {
+				"Name": "Image",
+				"Value": 1
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AdShape",
+			"type": "Add",
+			"value": {
+				"Name": "AdShape"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AdShape",
+			"item": "HorizontalRectangle",
+			"type": "Add",
+			"value": {
+				"Name": "HorizontalRectangle",
+				"Value": 1
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "OutfitType",
+			"type": "Add",
+			"value": {
+				"Name": "OutfitType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "OutfitType",
+			"item": "All",
+			"type": "Add",
+			"value": {
+				"Name": "All",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "OutfitType",
+			"item": "Avatar",
+			"type": "Add",
+			"value": {
+				"Name": "Avatar",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "OutfitType",
+			"item": "DynamicHead",
+			"type": "Add",
+			"value": {
+				"Name": "DynamicHead",
+				"Value": 3
+			}
+		}
+	]
+}

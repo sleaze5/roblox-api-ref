@@ -1,0 +1,73 @@
+{
+	"from": {
+		"version": "0.119.0.37583",
+		"hash": "bfcf9c6870e347ac"
+	},
+	"to": {
+		"version": "0.120.0.37812",
+		"hash": "914f6edfe4234b71"
+	},
+	"changes": [
+		{
+			"element": "Class",
+			"class": "Authoring",
+			"type": "Remove",
+			"value": {
+				"Name": "Authoring",
+				"Superclass": "Instance",
+				"MemoryCategory": ""
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "PlaceVersion",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "PlaceVersion",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "SetPlaceVersion",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetPlaceVersion",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "placeId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		}
+	]
+}

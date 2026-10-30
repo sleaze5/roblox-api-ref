@@ -1,0 +1,387 @@
+{
+	"from": {
+		"version": "0.514.0.5140398",
+		"hash": "1c42546fa0444503"
+	},
+	"to": {
+		"version": "0.515.0.5150376",
+		"hash": "da7548d603154250"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "CrossDMScriptChangeListener",
+			"member": "IsWatchingScript",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsWatchingScript",
+				"Parameters": [
+					{
+						"Name": "scriptRef",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerConnection",
+			"member": "SetExceptionBreakMode",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetExceptionBreakMode",
+				"Parameters": [
+					{
+						"Name": "breakMode",
+						"Type": {
+							"Category": "Enum",
+							"Name": "DebuggerExceptionBreakMode"
+						}
+					},
+					{
+						"Name": "callback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerUIService",
+			"member": "SetCurrentThreadId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetCurrentThreadId",
+				"Parameters": [
+					{
+						"Name": "debuggerThreadId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IXPService",
+			"member": "LogBrowserTrackerLayerExposure",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LogBrowserTrackerLayerExposure",
+				"Parameters": [
+					{
+						"Name": "layerName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IXPService",
+			"member": "LogUserLayerExposure",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LogUserLayerExposure",
+				"Parameters": [
+					{
+						"Name": "layerName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MetaBreakpoint",
+			"member": "LogMessage",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": false,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": true
+					}
+				},
+				{
+					"field": "Tags",
+					"before": [
+						"Hidden",
+						"ReadOnly",
+						"NotReplicated"
+					],
+					"after": [
+						"Hidden",
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "LogMessage",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MetaBreakpoint",
+			"member": "GetContexts",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetContexts",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MetaBreakpoint",
+			"member": "GetContextBreakpoints",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetContextBreakpoints",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VoiceChannel",
+			"member": "AddUserAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Group",
+						"Name": "Tuple"
+					},
+					"after": {
+						"Category": "Class",
+						"Name": "VoiceSource"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddUserAsync",
+				"Parameters": [
+					{
+						"Default": "-1",
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "VoiceSource"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LevelOfDetailSetting",
+			"item": "High",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Name": "High",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LevelOfDetailSetting",
+			"item": "Medium",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Name": "Medium",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LevelOfDetailSetting",
+			"item": "Low",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Name": "Low",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SignalBehavior",
+			"item": "AncestryDeferred",
+			"type": "Add",
+			"value": {
+				"Name": "AncestryDeferred",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "DebuggerExceptionBreakMode",
+			"type": "Add",
+			"value": {
+				"Name": "DebuggerExceptionBreakMode"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DebuggerExceptionBreakMode",
+			"item": "Never",
+			"type": "Add",
+			"value": {
+				"Name": "Never",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DebuggerExceptionBreakMode",
+			"item": "Unhandled",
+			"type": "Add",
+			"value": {
+				"Name": "Unhandled",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DebuggerExceptionBreakMode",
+			"item": "Always",
+			"type": "Add",
+			"value": {
+				"Name": "Always",
+				"Value": 2
+			}
+		}
+	]
+}

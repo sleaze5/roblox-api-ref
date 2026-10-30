@@ -1,0 +1,953 @@
+{
+	"from": {
+		"version": "0.448.0.411244",
+		"hash": "b3e30402567d46f6"
+	},
+	"to": {
+		"version": "0.449.0.411458",
+		"hash": "b2ff8cc6c0974db7"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "BulkImportService",
+			"member": "AssetImported",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "assetType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "AssetType"
+							}
+						},
+						{
+							"Name": "name",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "id",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "assetType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "AssetType"
+							}
+						},
+						{
+							"Name": "name",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "id",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "AssetImported",
+				"Parameters": [
+					{
+						"Name": "assetType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AssetType"
+						}
+					},
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "id",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiObject",
+			"member": "AutomaticSize",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "AutomaticSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AutomaticSize"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScrollingFrame",
+			"member": "AutomaticCanvasSize",
+			"type": "Add",
+			"value": {
+				"Category": "Scrolling",
+				"MemberType": "Property",
+				"Name": "AutomaticCanvasSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AutomaticSize"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "MeshPartHeads",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "MeshPartHeads",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "MeshPartHeads"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "PlaySound",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "soundChannel",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "soundChannel",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Default": "0",
+							"Name": "normalizedTimePosition",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "double"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "PlaySound",
+				"Parameters": [
+					{
+						"Name": "soundChannel",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "normalizedTimePosition",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "double"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PolicyService",
+			"member": "IsLuobuServer",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "IsLuobuServer",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "TriStateBoolean"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PolicyService",
+			"member": "LuobuWhitelisted",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "LuobuWhitelisted",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "TriStateBoolean"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Selection",
+			"member": "Add",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Add",
+				"Parameters": [
+					{
+						"Name": "instancesToAdd",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Selection",
+			"member": "Remove",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Remove",
+				"Parameters": [
+					{
+						"Name": "instancesToRemove",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Highlight Occurances",
+			"type": "Add",
+			"value": {
+				"Category": "Script Editor",
+				"MemberType": "Property",
+				"Name": "Highlight Occurances",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Script Editor Color Preset",
+			"type": "Add",
+			"value": {
+				"Category": "Script Editor Colors",
+				"MemberType": "Property",
+				"Name": "Script Editor Color Preset",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "StudioScriptEditorColorPresets"
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "AmaticSC",
+			"type": "Add",
+			"value": {
+				"Name": "AmaticSC",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 21
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Bangers",
+			"type": "Add",
+			"value": {
+				"Name": "Bangers",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 22
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Creepster",
+			"type": "Add",
+			"value": {
+				"Name": "Creepster",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 23
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "DenkOne",
+			"type": "Add",
+			"value": {
+				"Name": "DenkOne",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 24
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Fondamento",
+			"type": "Add",
+			"value": {
+				"Name": "Fondamento",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 25
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "FredokaOne",
+			"type": "Add",
+			"value": {
+				"Name": "FredokaOne",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 26
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "GrenzeGotisch",
+			"type": "Add",
+			"value": {
+				"Name": "GrenzeGotisch",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 27
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "IndieFlower",
+			"type": "Add",
+			"value": {
+				"Name": "IndieFlower",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 28
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "JosefinSans",
+			"type": "Add",
+			"value": {
+				"Name": "JosefinSans",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 29
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Jura",
+			"type": "Add",
+			"value": {
+				"Name": "Jura",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 30
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Kalam",
+			"type": "Add",
+			"value": {
+				"Name": "Kalam",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 31
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "LuckiestGuy",
+			"type": "Add",
+			"value": {
+				"Name": "LuckiestGuy",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 32
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Merriweather",
+			"type": "Add",
+			"value": {
+				"Name": "Merriweather",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 33
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Michroma",
+			"type": "Add",
+			"value": {
+				"Name": "Michroma",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 34
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Nunito",
+			"type": "Add",
+			"value": {
+				"Name": "Nunito",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 35
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Oswald",
+			"type": "Add",
+			"value": {
+				"Name": "Oswald",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 36
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "PatrickHand",
+			"type": "Add",
+			"value": {
+				"Name": "PatrickHand",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 37
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "PermanentMarker",
+			"type": "Add",
+			"value": {
+				"Name": "PermanentMarker",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 38
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Roboto",
+			"type": "Add",
+			"value": {
+				"Name": "Roboto",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 39
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "RobotoCondensed",
+			"type": "Add",
+			"value": {
+				"Name": "RobotoCondensed",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 40
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "RobotoMono",
+			"type": "Add",
+			"value": {
+				"Name": "RobotoMono",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 41
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Sarpanch",
+			"type": "Add",
+			"value": {
+				"Name": "Sarpanch",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 42
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "SpecialElite",
+			"type": "Add",
+			"value": {
+				"Name": "SpecialElite",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 43
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "TitilliumWeb",
+			"type": "Add",
+			"value": {
+				"Name": "TitilliumWeb",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 44
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Ubuntu",
+			"type": "Add",
+			"value": {
+				"Name": "Ubuntu",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 45
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AutomaticSize",
+			"type": "Add",
+			"value": {
+				"Name": "AutomaticSize"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AutomaticSize",
+			"item": "None",
+			"type": "Add",
+			"value": {
+				"Name": "None",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AutomaticSize",
+			"item": "X",
+			"type": "Add",
+			"value": {
+				"Name": "X",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AutomaticSize",
+			"item": "Y",
+			"type": "Add",
+			"value": {
+				"Name": "Y",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AutomaticSize",
+			"item": "XY",
+			"type": "Add",
+			"value": {
+				"Name": "XY",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "MeshPartHeads",
+			"type": "Add",
+			"value": {
+				"Name": "MeshPartHeads"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "MeshPartHeads",
+			"item": "Default",
+			"type": "Add",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "MeshPartHeads",
+			"item": "Disabled",
+			"type": "Add",
+			"value": {
+				"Name": "Disabled",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "MeshPartHeads",
+			"item": "Enabled",
+			"type": "Add",
+			"value": {
+				"Name": "Enabled",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "StudioScriptEditorColorCategories",
+			"type": "Add",
+			"value": {
+				"Name": "StudioScriptEditorColorCategories"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioScriptEditorColorCategories",
+			"item": "Default",
+			"type": "Add",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioScriptEditorColorCategories",
+			"item": "Operator",
+			"type": "Add",
+			"value": {
+				"Name": "Operator",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioScriptEditorColorCategories",
+			"item": "Number",
+			"type": "Add",
+			"value": {
+				"Name": "Number",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioScriptEditorColorCategories",
+			"item": "String",
+			"type": "Add",
+			"value": {
+				"Name": "String",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioScriptEditorColorCategories",
+			"item": "Comment",
+			"type": "Add",
+			"value": {
+				"Name": "Comment",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioScriptEditorColorCategories",
+			"item": "Keyword",
+			"type": "Add",
+			"value": {
+				"Name": "Keyword",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioScriptEditorColorCategories",
+			"item": "Builtin",
+			"type": "Add",
+			"value": {
+				"Name": "Builtin",
+				"Value": 6
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "StudioScriptEditorColorPresets",
+			"type": "Add",
+			"value": {
+				"Name": "StudioScriptEditorColorPresets"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioScriptEditorColorPresets",
+			"item": "RobloxDefault",
+			"type": "Add",
+			"value": {
+				"Name": "RobloxDefault",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioScriptEditorColorPresets",
+			"item": "Extra1",
+			"type": "Add",
+			"value": {
+				"Name": "Extra1",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioScriptEditorColorPresets",
+			"item": "Extra2",
+			"type": "Add",
+			"value": {
+				"Name": "Extra2",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioScriptEditorColorPresets",
+			"item": "Custom",
+			"type": "Add",
+			"value": {
+				"Name": "Custom",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "TriStateBoolean",
+			"type": "Add",
+			"value": {
+				"Name": "TriStateBoolean"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TriStateBoolean",
+			"item": "Unknown",
+			"type": "Add",
+			"value": {
+				"Name": "Unknown",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TriStateBoolean",
+			"item": "True",
+			"type": "Add",
+			"value": {
+				"Name": "True",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TriStateBoolean",
+			"item": "False",
+			"type": "Add",
+			"value": {
+				"Name": "False",
+				"Value": 2
+			}
+		}
+	]
+}

@@ -1,0 +1,564 @@
+{
+	"from": {
+		"version": "0.463.0.417004",
+		"hash": "6e5cfb545b12486e"
+	},
+	"to": {
+		"version": "0.464.0.417335",
+		"hash": "7093c2fe51dd495c"
+	},
+	"changes": [
+		{
+			"element": "Class",
+			"class": "DataStoreSetOptions",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotCreatable",
+						"NotReplicated"
+					],
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "DataStoreSetOptions",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HeightmapImporterService",
+			"member": "ProgressUpdate",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "progressRatio",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "progressRatio",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						},
+						{
+							"Name": "operation",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "ProgressUpdate",
+				"Parameters": [
+					{
+						"Name": "progressRatio",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "operation",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HeightmapImporterService",
+			"member": "ColormapHasUnknownPixels",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ColormapHasUnknownPixels",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkSettings",
+			"member": "RandomizeJoinInstanceOrder",
+			"type": "Add",
+			"value": {
+				"Category": "Advanced",
+				"MemberType": "Property",
+				"Name": "RandomizeJoinInstanceOrder",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "RotVelocity",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden",
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "RotVelocity",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "Velocity",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden",
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Velocity",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "GetVelocityAtPosition",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVelocityAtPosition",
+				"Parameters": [
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "PhysicsSteppingMethod",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "PhysicsSteppingMethod",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "PhysicsSteppingMethod"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "TimeScale",
+			"type": "Add",
+			"value": {
+				"Category": "Particles",
+				"MemberType": "Property",
+				"Name": "TimeScale",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsSettings",
+			"member": "AreTimestepsShown",
+			"type": "Add",
+			"value": {
+				"Category": "Display",
+				"MemberType": "Property",
+				"Name": "AreTimestepsShown",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ReflectionMetadataItem",
+			"member": "PropertyOrder",
+			"type": "Add",
+			"value": {
+				"Category": "Reflection",
+				"MemberType": "Property",
+				"Name": "PropertyOrder",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Language",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Category": "General",
+				"MemberType": "Property",
+				"Name": "Language",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "LanguagePreference"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "DisplayLanguage",
+			"type": "Add",
+			"value": {
+				"Category": "General",
+				"MemberType": "Property",
+				"Name": "DisplayLanguage",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "DEPRECATED_ShowPlaceVersionHistoryDialog",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DEPRECATED_ShowPlaceVersionHistoryDialog",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DataStoreIncrementOptions",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "DataStoreIncrementOptions",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStoreIncrementOptions",
+			"member": "GetMetadata",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetMetadata",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStoreIncrementOptions",
+			"member": "SetMetadata",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetMetadata",
+				"Parameters": [
+					{
+						"Name": "attributes",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "GetDataStoreOptions",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "GetDataStoreOptions",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GetDataStoreOptions",
+			"member": "AllScopes",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "AllScopes",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GetDataStoreOptions",
+			"member": "SetExperimentalFeatures",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetExperimentalFeatures",
+				"Parameters": [
+					{
+						"Name": "experimentalFeatures",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "PhysicsSteppingMethod",
+			"type": "Add",
+			"value": {
+				"Name": "PhysicsSteppingMethod"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PhysicsSteppingMethod",
+			"item": "Default",
+			"type": "Add",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PhysicsSteppingMethod",
+			"item": "Fixed",
+			"type": "Add",
+			"value": {
+				"Name": "Fixed",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PhysicsSteppingMethod",
+			"item": "Adaptive",
+			"type": "Add",
+			"value": {
+				"Name": "Adaptive",
+				"Value": 2
+			}
+		}
+	]
+}

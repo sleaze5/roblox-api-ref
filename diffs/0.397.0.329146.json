@@ -1,0 +1,606 @@
+{
+	"from": {
+		"version": "0.396.0.327208",
+		"hash": "520a34aef2cc4804"
+	},
+	"to": {
+		"version": "0.397.0.329146",
+		"hash": "431cf85077324f34"
+	},
+	"changes": [
+		{
+			"element": "Class",
+			"class": "AnalyticsService",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotCreatable",
+						"Service",
+						"NotReplicated"
+					],
+					"after": [
+						"NotCreatable",
+						"Service"
+					]
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AnalyticsService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DraftsService",
+			"member": "DraftDeleted",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "DraftDeleted",
+				"Parameters": [
+					{
+						"Name": "script",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DraftsService",
+			"member": "ScriptDeleted",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ScriptDeleted",
+				"Parameters": [
+					{
+						"Name": "script",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DraftsService",
+			"member": "DraftRemoved",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "DraftRemoved",
+				"Parameters": [
+					{
+						"Name": "script",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DraftsService",
+			"member": "ScriptRemoved",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ScriptRemoved",
+				"Parameters": [
+					{
+						"Name": "script",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiBase2d",
+			"member": "AbsoluteRotation",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": false,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": false,
+						"CanSave": false
+					}
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "AbsoluteRotation",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiObject",
+			"member": "BorderMode",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "BorderMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "BorderMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NotificationService",
+			"member": "IsLuaHomeWithAvatarEnabled",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "IsLuaHomeWithAvatarEnabled",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIGridStyleLayout",
+			"member": "AbsoluteContentSize",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": false,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": false,
+						"CanSave": false
+					}
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "AbsoluteContentSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIGridLayout",
+			"member": "AbsoluteCellCount",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": false,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": false,
+						"CanSave": false
+					}
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "AbsoluteCellCount",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIGridLayout",
+			"member": "AbsoluteCellSize",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": false,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": false,
+						"CanSave": false
+					}
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "AbsoluteCellSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "MemStorageConnection",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "MemStorageConnection",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemStorageConnection",
+			"member": "Disconnect",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Disconnect",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "MemStorageService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "MemStorageService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemStorageService",
+			"member": "Bind",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Bind",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "callback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemStorageService",
+			"member": "BindAndFire",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "BindAndFire",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "callback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemStorageService",
+			"member": "GetItem",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetItem",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "defaultValue",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemStorageService",
+			"member": "HasItem",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "HasItem",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemStorageService",
+			"member": "RemoveItem",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RemoveItem",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemStorageService",
+			"member": "SetItem",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetItem",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "value",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Technology",
+			"item": "ShadowMap",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Deprecated"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Name": "ShadowMap",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "BorderMode",
+			"type": "Add",
+			"value": {
+				"Name": "BorderMode"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "BorderMode",
+			"item": "Outline",
+			"type": "Add",
+			"value": {
+				"Name": "Outline",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "BorderMode",
+			"item": "Middle",
+			"type": "Add",
+			"value": {
+				"Name": "Middle",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "BorderMode",
+			"item": "Inset",
+			"type": "Add",
+			"value": {
+				"Name": "Inset",
+				"Value": 2
+			}
+		}
+	]
+}

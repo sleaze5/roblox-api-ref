@@ -1,0 +1,607 @@
+{
+	"from": {
+		"version": "0.399.0.334382",
+		"hash": "e38b6a0af30f4675"
+	},
+	"to": {
+		"version": "0.400.0.336387",
+		"hash": "c141de8009434b60"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "DataModelSession",
+			"member": "CurrentGameStateTypeAboutToChange",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "gameStateType",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "gameStateType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "StudioDataModelType"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "CurrentGameStateTypeAboutToChange",
+				"Parameters": [
+					{
+						"Name": "gameStateType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "StudioDataModelType"
+						}
+					}
+				],
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModelSession",
+			"member": "DataModelCreated",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "gameStateType",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "gameStateType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "StudioDataModelType"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "DataModelCreated",
+				"Parameters": [
+					{
+						"Name": "gameStateType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "StudioDataModelType"
+						}
+					}
+				],
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModelSession",
+			"member": "DataModelWillBeDestroyed",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "gameStateType",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "gameStateType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "StudioDataModelType"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "DataModelWillBeDestroyed",
+				"Parameters": [
+					{
+						"Name": "gameStateType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "StudioDataModelType"
+						}
+					}
+				],
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "ReplaceMaterial",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ReplaceMaterial",
+				"Parameters": [
+					{
+						"Name": "region",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Region3"
+						}
+					},
+					{
+						"Name": "resolution",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "sourceMaterial",
+						"Type": {
+							"Category": "Enum",
+							"Name": "Material"
+						}
+					},
+					{
+						"Name": "targetMaterial",
+						"Type": {
+							"Category": "Enum",
+							"Name": "Material"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "HostDataModelType",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "RobloxScriptSecurity",
+						"Write": "RobloxScriptSecurity"
+					},
+					"after": {
+						"Read": "PluginSecurity",
+						"Write": "PluginSecurity"
+					}
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "HostDataModelType",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "StudioDataModelType"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "Bind",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "Bind",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "callback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "BindAndFire",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "BindAndFire",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "callback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "Fire",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "Fire",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "value",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "GetItem",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetItem",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "defaultValue",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "HasItem",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "HasItem",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "RemoveItem",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "RemoveItem",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "SetItem",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetItem",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "value",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptContext",
+			"member": "SetCoverageFilter",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetCoverageFilter",
+				"Parameters": [
+					{
+						"Name": "callback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "GridSize",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "GridSize",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "RotateIncrement",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "RotateIncrement",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "UseLocalSpace",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "UseLocalSpace",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "PlacePublishedToRoblox",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PlacePublishedToRoblox",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "StandalonePluginScripts",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "StandalonePluginScripts",
+				"Superclass": "Instance"
+			}
+		}
+	]
+}

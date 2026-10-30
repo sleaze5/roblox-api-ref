@@ -1,0 +1,261 @@
+{
+	"from": {
+		"version": "0.520.0.5200400",
+		"hash": "1b11f5a739e1403f"
+	},
+	"to": {
+		"version": "0.521.0.5210405",
+		"hash": "56fa3cae838f4493"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "GetMaterialVariant",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetMaterialVariant",
+				"Parameters": [
+					{
+						"Name": "material",
+						"Type": {
+							"Category": "Enum",
+							"Name": "Material"
+						}
+					},
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "DEPRECATED_SetTurnOnTeamCreateOnPublish",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DEPRECATED_SetTurnOnTeamCreateOnPublish",
+				"Parameters": [
+					{
+						"Name": "turnOn",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TerrainDetail",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotBrowsable"
+					]
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "TerrainDetail",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VoiceChatService",
+			"member": "VoiceChatEnabledForPlaceOnRcc",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": false,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": false,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": [
+						"ReadOnly",
+						"NotReplicated"
+					],
+					"after": [
+						"Hidden"
+					]
+				}
+			],
+			"value": {
+				"Category": "State",
+				"MemberType": "Property",
+				"Name": "VoiceChatEnabledForPlaceOnRcc",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VoiceChatService",
+			"member": "VoiceChatEnabledForUniverseOnRcc",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": false,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": false,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": [
+						"ReadOnly",
+						"NotReplicated"
+					],
+					"after": [
+						"Hidden"
+					]
+				}
+			],
+			"value": {
+				"Category": "State",
+				"MemberType": "Property",
+				"Name": "VoiceChatEnabledForUniverseOnRcc",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectModeratedGame",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectModeratedGame",
+				"Value": 287
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "WrapLayerDebugMode",
+			"item": "ReferenceMeshAfterMorph",
+			"type": "Add",
+			"value": {
+				"Name": "ReferenceMeshAfterMorph",
+				"Value": 7
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "WrapLayerDebugMode",
+			"item": "HSROuterDetail",
+			"type": "Add",
+			"value": {
+				"Name": "HSROuterDetail",
+				"Value": 8
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "WrapLayerDebugMode",
+			"item": "HSROuter",
+			"type": "Add",
+			"value": {
+				"Name": "HSROuter",
+				"Value": 9
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "WrapLayerDebugMode",
+			"item": "HSRInner",
+			"type": "Add",
+			"value": {
+				"Name": "HSRInner",
+				"Value": 10
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "WrapLayerDebugMode",
+			"item": "HSRInnerReverse",
+			"type": "Add",
+			"value": {
+				"Name": "HSRInnerReverse",
+				"Value": 11
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "WrapTargetDebugMode",
+			"item": "OuterCageDetail",
+			"type": "Add",
+			"value": {
+				"Name": "OuterCageDetail",
+				"Value": 8
+			}
+		}
+	]
+}

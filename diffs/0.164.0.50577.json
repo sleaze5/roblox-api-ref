@@ -1,0 +1,131 @@
+{
+	"from": {
+		"version": "0.163.0.50106",
+		"hash": "45e17934caec46fc"
+	},
+	"to": {
+		"version": "0.164.0.50577",
+		"hash": "9054e3065d02489e"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "PhysicsSettings",
+			"member": "ShowDecompositionGeometry",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ShowDecompositionGeometry",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Display",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "GroupService",
+			"type": "Add",
+			"value": {
+				"Name": "GroupService",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GroupService",
+			"member": "GetAlliesAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAlliesAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "groupId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GroupService",
+			"member": "GetEnemiesAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetEnemiesAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "groupId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GroupService",
+			"member": "GetGroupInfoAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetGroupInfoAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "groupId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		}
+	]
+}

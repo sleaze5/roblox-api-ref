@@ -1,0 +1,859 @@
+{
+	"from": {
+		"version": "0.454.0.413308",
+		"hash": "029a086efd1a4035"
+	},
+	"to": {
+		"version": "0.455.0.413720",
+		"hash": "d86e464481a1476c"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "GetActor",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetActor",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptBundlePurchase",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "None"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptBundlePurchase",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "bundleId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptBundlePurchaseFinished",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "None"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptBundlePurchaseFinished",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "bundleId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "wasPurchased",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "AssemblyAngularVelocity",
+			"type": "Add",
+			"value": {
+				"Category": "Assembly ",
+				"MemberType": "Property",
+				"Name": "AssemblyAngularVelocity",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "AssemblyCenterOfMass",
+			"type": "Add",
+			"value": {
+				"Category": "Assembly ",
+				"MemberType": "Property",
+				"Name": "AssemblyCenterOfMass",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "AssemblyLinearVelocity",
+			"type": "Add",
+			"value": {
+				"Category": "Assembly ",
+				"MemberType": "Property",
+				"Name": "AssemblyLinearVelocity",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "AssemblyMass",
+			"type": "Add",
+			"value": {
+				"Category": "Assembly ",
+				"MemberType": "Property",
+				"Name": "AssemblyMass",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "AssemblyRootPart",
+			"type": "Add",
+			"value": {
+				"Category": "Assembly ",
+				"MemberType": "Property",
+				"Name": "AssemblyRootPart",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Class",
+					"Name": "BasePart"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "ApplyAngularImpulse",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ApplyAngularImpulse",
+				"Parameters": [
+					{
+						"Name": "impulse",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "ApplyImpulse",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ApplyImpulse",
+				"Parameters": [
+					{
+						"Name": "impulse",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "ApplyImpulseAtPosition",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ApplyImpulseAtPosition",
+				"Parameters": [
+					{
+						"Name": "impulse",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PlayerEmulatorService",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotCreatable",
+						"Service",
+						"NotReplicated"
+					],
+					"after": [
+						"NotCreatable",
+						"Service"
+					]
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "PlayerEmulatorService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PlayerEmulatorService",
+			"member": "PlayerEmulationEnabled",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "RobloxScriptSecurity",
+						"Write": "RobloxScriptSecurity"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "None"
+					}
+				},
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": false
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": true
+					}
+				},
+				{
+					"field": "Tags",
+					"before": [
+						"NotReplicated"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "PlayerEmulationEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PlayerEmulatorService",
+			"member": "EmulatedCountryCode",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "EmulatedCountryCode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PlayerEmulatorService",
+			"member": "EmulatedGameLocale",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "EmulatedGameLocale",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PlayerEmulatorService",
+			"member": "PlayerEmulationEnabled_deprecated",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "PlayerEmulationEnabled_deprecated",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PlayerEmulatorService",
+			"member": "SerializedEmulatedPolicyInfo",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "SerializedEmulatedPolicyInfo",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Pose",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Superclass",
+					"before": "Instance",
+					"after": "PoseBase"
+				}
+			],
+			"value": {
+				"MemoryCategory": "Animation",
+				"Name": "Pose",
+				"Superclass": "PoseBase"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Pose",
+			"member": "EasingDirection",
+			"type": "Remove",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "EasingDirection",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "PoseEasingDirection"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Pose",
+			"member": "EasingStyle",
+			"type": "Remove",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "EasingStyle",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "PoseEasingStyle"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Pose",
+			"member": "Weight",
+			"type": "Remove",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Weight",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Scroll Past Last Line",
+			"type": "Add",
+			"value": {
+				"Category": "Script Editor",
+				"MemberType": "Property",
+				"Name": "Scroll Past Last Line",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AppUpdateService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AppUpdateService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AppUpdateService",
+			"member": "CheckForUpdate",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CheckForUpdate",
+				"Parameters": [
+					{
+						"Default": "nil",
+						"Name": "handler",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AppUpdateService",
+			"member": "PerformManagedUpdate",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PerformManagedUpdate",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AssetDeliveryProxy",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AssetDeliveryProxy",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Actor",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "PhysicsParts",
+				"Name": "Actor",
+				"Superclass": "Model"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PoseBase",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "PoseBase",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PoseBase",
+			"member": "EasingDirection",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "EasingDirection",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "PoseEasingDirection"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PoseBase",
+			"member": "EasingStyle",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "EasingStyle",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "PoseEasingStyle"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PoseBase",
+			"member": "Weight",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Weight",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "NumberPose",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Animation",
+				"Name": "NumberPose",
+				"Superclass": "PoseBase"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NumberPose",
+			"member": "Value",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Value",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "double"
+				}
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AppUpdateStatus",
+			"type": "Add",
+			"value": {
+				"Name": "AppUpdateStatus"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AppUpdateStatus",
+			"item": "Unknown",
+			"type": "Add",
+			"value": {
+				"Name": "Unknown",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AppUpdateStatus",
+			"item": "NotSupported",
+			"type": "Add",
+			"value": {
+				"Name": "NotSupported",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AppUpdateStatus",
+			"item": "Failed",
+			"type": "Add",
+			"value": {
+				"Name": "Failed",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AppUpdateStatus",
+			"item": "NotAvailable",
+			"type": "Add",
+			"value": {
+				"Name": "NotAvailable",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AppUpdateStatus",
+			"item": "Available",
+			"type": "Add",
+			"value": {
+				"Name": "Available",
+				"Value": 4
+			}
+		}
+	]
+}

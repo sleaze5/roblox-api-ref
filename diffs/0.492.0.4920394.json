@@ -1,0 +1,891 @@
+{
+	"from": {
+		"version": "0.491.0.4910402",
+		"hash": "6ed8558392ea4bad"
+	},
+	"to": {
+		"version": "0.492.0.4920394",
+		"hash": "870c88495be64b50"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AppUpdateService",
+			"member": "DisableDUARAndOpenSurvey",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DisableDUARAndOpenSurvey",
+				"Parameters": [
+					{
+						"Name": "surveyUrl",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "NoPromptDeleteOutfit",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "NoPromptDeleteOutfit",
+				"Parameters": [
+					{
+						"Name": "outfitId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "PerformDeleteOutfit",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PerformDeleteOutfit",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "PromptDeleteOutfit",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptDeleteOutfit",
+				"Parameters": [
+					{
+						"Name": "outfitId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "SignalDeleteOutfitFailed",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SignalDeleteOutfitFailed",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "SignalDeleteOutfitPermissionDenied",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SignalDeleteOutfitPermissionDenied",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "OpenPromptDeleteOutfit",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OpenPromptDeleteOutfit",
+				"Parameters": [
+					{
+						"Name": "outfitId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "PromptDeleteOutfitCompleted",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptDeleteOutfitCompleted",
+				"Parameters": [
+					{
+						"Name": "result",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AvatarPromptResult"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CommandService",
+			"member": "RegisterCommand",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "pluginname",
+							"Type": {
+								"Category": "Class",
+								"Name": "Plugin"
+							}
+						},
+						{
+							"Name": "description",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "plugin",
+							"Type": {
+								"Category": "Class",
+								"Name": "Plugin"
+							}
+						},
+						{
+							"Name": "name",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "description",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterCommand",
+				"Parameters": [
+					{
+						"Name": "plugin",
+						"Type": {
+							"Category": "Class",
+							"Name": "Plugin"
+						}
+					},
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "description",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "CommandInstance"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "File",
+			"member": "FileName",
+			"type": "Remove",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "FileName",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated",
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "File",
+			"member": "FileSize",
+			"type": "Remove",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "FileSize",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated",
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "File",
+			"member": "GetFileContentsBinary",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFileContentsBinary",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "CollisionType",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "CollisionType",
+				"Security": {
+					"Read": "None",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "HumanoidCollisionType"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "GetPartsInPart",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "part",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Default": "OverlapParams{MaxParts=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+							"Name": "overlapParams",
+							"Type": {
+								"Category": "DataType",
+								"Name": "OverlapParams"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "part",
+							"Type": {
+								"Category": "Class",
+								"Name": "BasePart"
+							}
+						},
+						{
+							"Default": "OverlapParams{MaxParts=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+							"Name": "overlapParams",
+							"Type": {
+								"Category": "DataType",
+								"Name": "OverlapParams"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPartsInPart",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "BasePart"
+						}
+					},
+					{
+						"Default": "OverlapParams{MaxParts=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+						"Name": "overlapParams",
+						"Type": {
+							"Category": "DataType",
+							"Name": "OverlapParams"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsService",
+			"member": "CollisionGroupContainsPart",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "name",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "part",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "name",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "part",
+							"Type": {
+								"Category": "Class",
+								"Name": "BasePart"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "CollisionGroupContainsPart",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "BasePart"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsService",
+			"member": "SetPartCollisionGroup",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "part",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Name": "name",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "part",
+							"Type": {
+								"Category": "Class",
+								"Name": "BasePart"
+							}
+						},
+						{
+							"Name": "name",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetPartCollisionGroup",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "BasePart"
+						}
+					},
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "OpenScript",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "script",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Default": "1",
+							"Name": "lineNumber",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "script",
+							"Type": {
+								"Category": "Class",
+								"Name": "LuaSourceContainer"
+							}
+						},
+						{
+							"Default": "1",
+							"Name": "lineNumber",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "OpenScript",
+				"Parameters": [
+					{
+						"Name": "script",
+						"Type": {
+							"Category": "Class",
+							"Name": "LuaSourceContainer"
+						}
+					},
+					{
+						"Default": "1",
+						"Name": "lineNumber",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "DEPRECATED_DisableAccuratePlaySolo",
+			"type": "Remove",
+			"value": {
+				"Category": "Advanced",
+				"MemberType": "Property",
+				"Name": "DEPRECATED_DisableAccuratePlaySolo",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "PromptImportLocalAsset",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptImportLocalAsset",
+				"Parameters": [
+					{
+						"Name": "prompt",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "{}",
+						"Name": "fileTypeFilter",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Yields",
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "PromptImportLocalAssets",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptImportLocalAssets",
+				"Parameters": [
+					{
+						"Name": "prompt",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "{}",
+						"Name": "fileTypeFilter",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Yields",
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ChannelSelectorSoundEffect",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ChannelSelectorSoundEffect",
+				"Superclass": "SoundEffect",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChannelSelectorSoundEffect",
+			"member": "Channel",
+			"type": "Add",
+			"value": {
+				"Category": "State",
+				"MemberType": "Property",
+				"Name": "Channel",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioDataModelType",
+			"item": "PlayClient",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 2,
+					"after": 1
+				}
+			],
+			"value": {
+				"Name": "PlayClient",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioDataModelType",
+			"item": "PlayServer",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 3,
+					"after": 2
+				}
+			],
+			"value": {
+				"Name": "PlayServer",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioDataModelType",
+			"item": "RobloxPlugin",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 4,
+					"after": 3
+				}
+			],
+			"value": {
+				"Name": "RobloxPlugin",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioDataModelType",
+			"item": "UserPlugin",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 5,
+					"after": 4
+				}
+			],
+			"value": {
+				"Name": "UserPlugin",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioDataModelType",
+			"item": "None",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 6,
+					"after": 5
+				}
+			],
+			"value": {
+				"Name": "None",
+				"Value": 5
+			}
+		}
+	]
+}

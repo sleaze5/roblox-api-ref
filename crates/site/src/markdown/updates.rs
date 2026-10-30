@@ -193,7 +193,11 @@ pub fn update_markdown(cx: &Context, update: &Update) -> String {
 			),
 			(
 				"Description changes",
-				Some(update.description_count.to_string()),
+				Some(
+					update
+						.description_count
+						.map_or_else(|| "Not recorded".to_owned(), |count| count.to_string()),
+				),
 			),
 		])),
 	];

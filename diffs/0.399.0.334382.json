@@ -1,0 +1,458 @@
+{
+	"from": {
+		"version": "0.398.0.332127",
+		"hash": "3562a59535614917"
+	},
+	"to": {
+		"version": "0.399.0.334382",
+		"hash": "e38b6a0af30f4675"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "DraftsService",
+			"member": "DraftOutdatedStateChanged",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "DraftOutdatedStateChanged",
+				"Parameters": [
+					{
+						"Name": "script",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "outdated",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DraftsService",
+			"member": "GetDraftStatus",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetDraftStatus",
+				"Parameters": [
+					{
+						"Name": "script",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "DraftStatusCode"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DraftsService",
+			"member": "DraftStatusChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "DraftStatusChanged",
+				"Parameters": [
+					{
+						"Name": "script",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "MDIInstance",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "MDIInstance",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MDIInstance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "SetPluginEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetPluginEnabled",
+				"Parameters": [
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "state",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "UninstallPlugin",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UninstallPlugin",
+				"Parameters": [
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "UpdatePluginManagement",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UpdatePluginManagement",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "GetInstalledPluginData",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetInstalledPluginData",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "OnPluginInstalledFromToolbox",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnPluginInstalledFromToolbox",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DataModelSession",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "DataModelSession",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModelSession",
+			"member": "CurrentGameStateType",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "CurrentGameStateType",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "StudioDataModelType"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModelSession",
+			"member": "SessionId",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "SessionId",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModelSession",
+			"member": "CurrentGameStateTypeAboutToChange",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "CurrentGameStateTypeAboutToChange",
+				"Parameters": [
+					{
+						"Name": "gameStateType",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModelSession",
+			"member": "CurrentGameStateTypeChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "CurrentGameStateTypeChanged",
+				"Parameters": [],
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModelSession",
+			"member": "DataModelCreated",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "DataModelCreated",
+				"Parameters": [
+					{
+						"Name": "gameStateType",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModelSession",
+			"member": "DataModelWillBeDestroyed",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "DataModelWillBeDestroyed",
+				"Parameters": [
+					{
+						"Name": "gameStateType",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "MDIInstance",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "MDIInstance",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MDIInstance",
+			"member": "FocusedDataModelSession",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "FocusedDataModelSession",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MDIInstance",
+			"member": "FocusedDataModelSessionId",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "FocusedDataModelSessionId",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MDIInstance",
+			"member": "DataModelSessionEnded",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "DataModelSessionEnded",
+				"Parameters": [
+					{
+						"Name": "sessionId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MDIInstance",
+			"member": "DataModelSessionStarted",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "DataModelSessionStarted",
+				"Parameters": [
+					{
+						"Name": "sessionId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "PluginSecurity"
+			}
+		}
+	]
+}

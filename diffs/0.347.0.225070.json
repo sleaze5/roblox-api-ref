@@ -1,0 +1,622 @@
+{
+	"from": {
+		"version": "0.346.0.222214",
+		"hash": "f94ed8a819b24d95"
+	},
+	"to": {
+		"version": "0.347.0.225070",
+		"hash": "f83b9cfc8ec44bf6"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "SetUiMessage",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "UiMessageType"
+							},
+							"Name": "msgType"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "uiMessage"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "UiMessageType"
+							},
+							"Name": "msgType"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "uiMessage",
+							"Default": "errorCode"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetUiMessage",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "UiMessageType"
+						},
+						"Name": "msgType"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "uiMessage",
+						"Default": "errorCode"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "GetErrorCode",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetErrorCode",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "ConnectionError"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "GetErrorType",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetErrorType",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "ConnectionError"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RunService",
+			"member": "RobloxOnlyIsEdit",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RobloxOnlyIsEdit",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TeleportService",
+			"member": "SetTeleportGui",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetTeleportGui",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "gui"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ConnectionError",
+			"type": "Add",
+			"value": {
+				"Name": "ConnectionError"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "OK",
+			"type": "Add",
+			"value": {
+				"Name": "OK",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectErrors",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectErrors",
+				"Value": 256
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectBadhash",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectBadhash",
+				"Value": 257
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectSecurityKeyMismatch",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectSecurityKeyMismatch",
+				"Value": 258
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectNewSecurityKeyMismatch",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectNewSecurityKeyMismatch",
+				"Value": 259
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectProtocolMismatch",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectProtocolMismatch",
+				"Value": 260
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectReceivePacketError",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectReceivePacketError",
+				"Value": 261
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectReceivePacketStreamError",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectReceivePacketStreamError",
+				"Value": 262
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectSendPacketError",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectSendPacketError",
+				"Value": 263
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectIllegalTeleport",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectIllegalTeleport",
+				"Value": 264
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectDuplicatePlayer",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectDuplicatePlayer",
+				"Value": 265
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectDuplicateTicket",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectDuplicateTicket",
+				"Value": 266
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectTimeout",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectTimeout",
+				"Value": 267
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectLuaKick",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectLuaKick",
+				"Value": 268
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectOnRemoteSysStats",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectOnRemoteSysStats",
+				"Value": 269
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectHashTimeout",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectHashTimeout",
+				"Value": 270
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectCloudEditKick",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectCloudEditKick",
+				"Value": 271
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectPlayerless",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectPlayerless",
+				"Value": 272
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectEvicted",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectEvicted",
+				"Value": 273
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectDevMaintenance",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectDevMaintenance",
+				"Value": 274
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectRobloxMaintenance",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectRobloxMaintenance",
+				"Value": 275
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectRejoin",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectRejoin",
+				"Value": 276
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectConnectionLost",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectConnectionLost",
+				"Value": 277
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "PlacelaunchErrors",
+			"type": "Add",
+			"value": {
+				"Name": "PlacelaunchErrors",
+				"Value": 512
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "PlacelaunchDisabled",
+			"type": "Add",
+			"value": {
+				"Name": "PlacelaunchDisabled",
+				"Value": 515
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "PlacelauchError",
+			"type": "Add",
+			"value": {
+				"Name": "PlacelauchError",
+				"Value": 516
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "PlacelaunchGameEnded",
+			"type": "Add",
+			"value": {
+				"Name": "PlacelaunchGameEnded",
+				"Value": 517
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "PlacelaunchGameFull",
+			"type": "Add",
+			"value": {
+				"Name": "PlacelaunchGameFull",
+				"Value": 518
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "PlacelaunchUserLeft",
+			"type": "Add",
+			"value": {
+				"Name": "PlacelaunchUserLeft",
+				"Value": 522
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "PlacelaunchRestricted",
+			"type": "Add",
+			"value": {
+				"Name": "PlacelaunchRestricted",
+				"Value": 523
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "PlacelaunchUnauthorized",
+			"type": "Add",
+			"value": {
+				"Name": "PlacelaunchUnauthorized",
+				"Value": 524
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "PlacelaunchFlooded",
+			"type": "Add",
+			"value": {
+				"Name": "PlacelaunchFlooded",
+				"Value": 525
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "PlacelaunchHashExpired",
+			"type": "Add",
+			"value": {
+				"Name": "PlacelaunchHashExpired",
+				"Value": 526
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "PlacelaunchHashException",
+			"type": "Add",
+			"value": {
+				"Name": "PlacelaunchHashException",
+				"Value": 527
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "PlacelaunchPartyCannotFit",
+			"type": "Add",
+			"value": {
+				"Name": "PlacelaunchPartyCannotFit",
+				"Value": 528
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "PlacelaunchHttpError",
+			"type": "Add",
+			"value": {
+				"Name": "PlacelaunchHttpError",
+				"Value": 529
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "PlacelaunchCustomMessage",
+			"type": "Add",
+			"value": {
+				"Name": "PlacelaunchCustomMessage",
+				"Value": 610
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "PlacelaunchOtherError",
+			"type": "Add",
+			"value": {
+				"Name": "PlacelaunchOtherError",
+				"Value": 611
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "TeleportErrors",
+			"type": "Add",
+			"value": {
+				"Name": "TeleportErrors",
+				"Value": 768
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "TeleportFailure",
+			"type": "Add",
+			"value": {
+				"Name": "TeleportFailure",
+				"Value": 769
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "TeleportGameNotFound",
+			"type": "Add",
+			"value": {
+				"Name": "TeleportGameNotFound",
+				"Value": 770
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "TeleportGameEnded",
+			"type": "Add",
+			"value": {
+				"Name": "TeleportGameEnded",
+				"Value": 771
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "TeleportGameFull",
+			"type": "Add",
+			"value": {
+				"Name": "TeleportGameFull",
+				"Value": 772
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "TeleportUnauthorized",
+			"type": "Add",
+			"value": {
+				"Name": "TeleportUnauthorized",
+				"Value": 773
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "TeleportFlooded",
+			"type": "Add",
+			"value": {
+				"Name": "TeleportFlooded",
+				"Value": 774
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "TeleportIsTeleporting",
+			"type": "Add",
+			"value": {
+				"Name": "TeleportIsTeleporting",
+				"Value": 775
+			}
+		}
+	]
+}

@@ -1,0 +1,212 @@
+{
+	"from": {
+		"version": "0.338.0.202976",
+		"hash": "0d11713edd8c4452"
+	},
+	"to": {
+		"version": "0.339.0.205431",
+		"hash": "3cb5b0d716b54ead"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "BadgeService",
+			"member": "GetBadgeInfoAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBadgeInfoAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "badgeId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiObject",
+			"member": "SizeFromContents",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "SizeFromContents",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "GetSafeZoneOffsets",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetSafeZoneOffsets",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "SetSafeZoneOffsets",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetSafeZoneOffsets",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						},
+						"Name": "top"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						},
+						"Name": "bottom"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						},
+						"Name": "left"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						},
+						"Name": "right"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "SafeZoneOffsetsChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "SafeZoneOffsetsChanged",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Translator",
+			"member": "RobloxOnlyTranslate",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RobloxOnlyTranslate",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "context"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "text"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Translator",
+			"member": "Translate",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Translate",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "context"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "text"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "CorePackages",
+			"type": "Add",
+			"value": {
+				"Name": "CorePackages",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		}
+	]
+}

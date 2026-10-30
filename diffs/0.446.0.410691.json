@@ -1,0 +1,609 @@
+{
+	"from": {
+		"version": "0.445.1.410643",
+		"hash": "6fed604f83674939"
+	},
+	"to": {
+		"version": "0.446.0.410691",
+		"hash": "6abafbd8833c45d5"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "ContentProvider",
+			"member": "ListEncryptedAssets",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ListEncryptedAssets",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContentProvider",
+			"member": "RegisterDefaultEncryptionKey",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterDefaultEncryptionKey",
+				"Parameters": [
+					{
+						"Name": "encryptionKey",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContentProvider",
+			"member": "RegisterEncryptedAsset",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterEncryptedAsset",
+				"Parameters": [
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					},
+					{
+						"Name": "encryptionKey",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContentProvider",
+			"member": "UnregisterDefaultEncryptionKey",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UnregisterDefaultEncryptionKey",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContentProvider",
+			"member": "UnregisterEncryptedAsset",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UnregisterEncryptedAsset",
+				"Parameters": [
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "GetStartupAssetId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetStartupAssetId",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AvatarEditorService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AvatarEditorService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "GetAvatarRules",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAvatarRules",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "GetItemDetails",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetItemDetails",
+				"Parameters": [
+					{
+						"Name": "itemId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "itemType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ItemType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "GetRecommendedAssets",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRecommendedAssets",
+				"Parameters": [
+					{
+						"Name": "assetType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AvatarAssetType"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "contextAssetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "GetRecommendedBundles",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRecommendedBundles",
+				"Parameters": [
+					{
+						"Name": "bundleId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HttpRequestType",
+			"item": "Analytics",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 22,
+					"after": 23
+				}
+			],
+			"value": {
+				"Name": "Analytics",
+				"Value": 23
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HttpRequestType",
+			"item": "Localization",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 24,
+					"after": 25
+				}
+			],
+			"value": {
+				"Name": "Localization",
+				"Value": 25
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AvatarAssetType",
+			"type": "Add",
+			"value": {
+				"Name": "AvatarAssetType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "TShirt",
+			"type": "Add",
+			"value": {
+				"Name": "TShirt",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "Hat",
+			"type": "Add",
+			"value": {
+				"Name": "Hat",
+				"Value": 8
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "HairAccessory",
+			"type": "Add",
+			"value": {
+				"Name": "HairAccessory",
+				"Value": 41
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "FaceAccessory",
+			"type": "Add",
+			"value": {
+				"Name": "FaceAccessory",
+				"Value": 42
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "NeckAccessory",
+			"type": "Add",
+			"value": {
+				"Name": "NeckAccessory",
+				"Value": 43
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "ShoulderAccessory",
+			"type": "Add",
+			"value": {
+				"Name": "ShoulderAccessory",
+				"Value": 44
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "FrontAccessory",
+			"type": "Add",
+			"value": {
+				"Name": "FrontAccessory",
+				"Value": 45
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "BackAccessory",
+			"type": "Add",
+			"value": {
+				"Name": "BackAccessory",
+				"Value": 46
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "WaistAccessory",
+			"type": "Add",
+			"value": {
+				"Name": "WaistAccessory",
+				"Value": 47
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "Shirt",
+			"type": "Add",
+			"value": {
+				"Name": "Shirt",
+				"Value": 11
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "Pants",
+			"type": "Add",
+			"value": {
+				"Name": "Pants",
+				"Value": 12
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "Gear",
+			"type": "Add",
+			"value": {
+				"Name": "Gear",
+				"Value": 19
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "Head",
+			"type": "Add",
+			"value": {
+				"Name": "Head",
+				"Value": 17
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "Face",
+			"type": "Add",
+			"value": {
+				"Name": "Face",
+				"Value": 18
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "Torso",
+			"type": "Add",
+			"value": {
+				"Name": "Torso",
+				"Value": 27
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "RightArm",
+			"type": "Add",
+			"value": {
+				"Name": "RightArm",
+				"Value": 28
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "LeftArm",
+			"type": "Add",
+			"value": {
+				"Name": "LeftArm",
+				"Value": 29
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "LeftLeg",
+			"type": "Add",
+			"value": {
+				"Name": "LeftLeg",
+				"Value": 30
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "RightLeg",
+			"type": "Add",
+			"value": {
+				"Name": "RightLeg",
+				"Value": 31
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "ClimbAnimation",
+			"type": "Add",
+			"value": {
+				"Name": "ClimbAnimation",
+				"Value": 48
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "FallAnimation",
+			"type": "Add",
+			"value": {
+				"Name": "FallAnimation",
+				"Value": 50
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "IdleAnimation",
+			"type": "Add",
+			"value": {
+				"Name": "IdleAnimation",
+				"Value": 51
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "JumpAnimation",
+			"type": "Add",
+			"value": {
+				"Name": "JumpAnimation",
+				"Value": 52
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "RunAnimation",
+			"type": "Add",
+			"value": {
+				"Name": "RunAnimation",
+				"Value": 53
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "SwimAnimation",
+			"type": "Add",
+			"value": {
+				"Name": "SwimAnimation",
+				"Value": 54
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "WalkAnimation",
+			"type": "Add",
+			"value": {
+				"Name": "WalkAnimation",
+				"Value": 55
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "EmoteAnimation",
+			"type": "Add",
+			"value": {
+				"Name": "EmoteAnimation",
+				"Value": 61
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ItemType",
+			"type": "Add",
+			"value": {
+				"Name": "ItemType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ItemType",
+			"item": "Asset",
+			"type": "Add",
+			"value": {
+				"Name": "Asset",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ItemType",
+			"item": "Bundle",
+			"type": "Add",
+			"value": {
+				"Name": "Bundle",
+				"Value": 1
+			}
+		}
+	]
+}

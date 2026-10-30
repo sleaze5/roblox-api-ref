@@ -1,0 +1,243 @@
+{
+	"from": {
+		"version": "0.248.0.76966",
+		"hash": "6675f84c75f246df"
+	},
+	"to": {
+		"version": "0.249.0.77601",
+		"hash": "7876cc336a4a44bf"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "RopeConstraint",
+			"member": "CurrentLength",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "CurrentLength",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RopeConstraint",
+			"member": "CurrentDistance",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "CurrentDistance",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Derived",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "IsLoaded",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "IsLoaded",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "Playing",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Playing",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "RollOffMode",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "RollOffMode",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "RollOffMode"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "Loaded",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Loaded",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "soundId"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "Resumed",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Resumed",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "soundId"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SoundService",
+			"member": "BeginRecording",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "BeginRecording",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SoundService",
+			"member": "EndRecording",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "EndRecording",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxSecurity"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "StudioTool",
+			"type": "Remove",
+			"value": {
+				"Name": "StudioTool",
+				"Superclass": "Instance",
+				"MemoryCategory": ""
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RollOffMode",
+			"item": "InverseTapered",
+			"type": "Add",
+			"value": {
+				"Name": "InverseTapered",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RollOffMode",
+			"item": "LinearSquare",
+			"type": "Add",
+			"value": {
+				"Name": "LinearSquare",
+				"Value": 2
+			}
+		}
+	]
+}

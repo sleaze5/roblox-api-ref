@@ -1,0 +1,1401 @@
+{
+	"from": {
+		"version": "0.310.1.155249",
+		"hash": "64fb9e5f37b94a33"
+	},
+	"to": {
+		"version": "0.311.0.156626",
+		"hash": "50e234c37b004e7b"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "DataCost",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "RobloxPlaceSecurity",
+						"Write": "RobloxPlaceSecurity"
+					},
+					"after": {
+						"Read": "LocalUserSecurity",
+						"Write": "LocalUserSecurity"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Property",
+				"Name": "DataCost",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "LocalUserSecurity",
+					"Write": "LocalUserSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "FirstPersonTransition",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxPlaceSecurity",
+					"after": "LocalUserSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "FirstPersonTransition",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "entering"
+					}
+				],
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContentProvider",
+			"member": "GetFailedUrls",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFailedUrls",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContentProvider",
+			"member": "SetAssetUrl",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetAssetUrl",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "url"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContentProvider",
+			"member": "SetCacheSize",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetCacheSize",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "count"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContentProvider",
+			"member": "SetThreadPool",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetThreadPool",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "count"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CookiesService",
+			"member": "DeleteCookieValue",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DeleteCookieValue",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "key"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CookiesService",
+			"member": "GetCookieValue",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCookieValue",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "key"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CookiesService",
+			"member": "SetCookieValue",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetCookieValue",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "key"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "value"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebugSettings",
+			"member": "LegacyScriptMode",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LegacyScriptMode",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebugSettings",
+			"member": "SetBlockingRemove",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetBlockingRemove",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "value"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GamePassService",
+			"member": "SetPlayerHasPassUrl",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetPlayerHasPassUrl",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "playerHasPassUrl"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InsertService",
+			"member": "SetAdvancedResults",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetAdvancedResults",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "enable"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "user",
+						"Default": "false"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InsertService",
+			"member": "SetAssetUrl",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetAssetUrl",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "assetUrl"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InsertService",
+			"member": "SetAssetVersionUrl",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetAssetVersionUrl",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "assetVersionUrl"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InsertService",
+			"member": "SetBaseCategoryUrl",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetBaseCategoryUrl",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "baseSetsUrl"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InsertService",
+			"member": "SetBaseSetsUrl",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetBaseSetsUrl",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "baseSetsUrl"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InsertService",
+			"member": "SetCollectionUrl",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetCollectionUrl",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "collectionUrl"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InsertService",
+			"member": "SetFreeDecalUrl",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetFreeDecalUrl",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "freeDecalUrl"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InsertService",
+			"member": "SetFreeModelUrl",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetFreeModelUrl",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "freeModelUrl"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InsertService",
+			"member": "SetTrustLevel",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetTrustLevel",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						},
+						"Name": "trustLevel"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InsertService",
+			"member": "SetUserCategoryUrl",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetUserCategoryUrl",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "userSetsUrl"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InsertService",
+			"member": "SetUserSetsUrl",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetUserSetsUrl",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "userSetsUrl"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LocalizationService",
+			"member": "RobloxLocaleId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "RobloxLocaleId",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Category": "Localization",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Script",
+			"member": "GetHash",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxPlaceSecurity",
+					"after": "LocalUserSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetHash",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptThirdPartyPurchase",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxPlaceSecurity",
+					"after": "LocalUserSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptThirdPartyPurchase",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "player"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "productId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "ThirdPartyPurchaseFinished",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxPlaceSecurity",
+					"after": "LocalUserSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "ThirdPartyPurchaseFinished",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "player"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "productId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "receipt"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "wasPurchased"
+					}
+				],
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkClient",
+			"member": "PlayerConnect",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PlayerConnect",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "server"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "serverPort"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "clientPort",
+						"Default": "0"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "threadSleepTime",
+						"Default": "30"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "dataCenterId",
+						"Default": "-1"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "userName",
+						"Default": ""
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkServer",
+			"member": "Start",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Start",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "port",
+						"Default": "0"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "threadSleepTime",
+						"Default": "20"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NotificationService",
+			"member": "CancelAllNotification",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxPlaceSecurity",
+					"after": "LocalUserSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "CancelAllNotification",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NotificationService",
+			"member": "CancelNotification",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxPlaceSecurity",
+					"after": "LocalUserSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "CancelNotification",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "alertId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NotificationService",
+			"member": "ScheduleNotification",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxPlaceSecurity",
+					"after": "LocalUserSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "ScheduleNotification",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "alertId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "alertMsg"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "minutesToFire"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NotificationService",
+			"member": "GetScheduledNotifications",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxPlaceSecurity",
+					"after": "LocalUserSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetScheduledNotifications",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "LocalUserSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "SetCreatorID",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetCreatorID",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "creatorID"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "CreatorType"
+						},
+						"Name": "creatorType"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "SetCreatorId",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetCreatorId",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "creatorId"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "CreatorType"
+						},
+						"Name": "creatorType"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "SetGearSettings",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetGearSettings",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "GearGenreSetting"
+						},
+						"Name": "genreRestriction"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "allowedGenres"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "SetGenre",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetGenre",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "Genre"
+						},
+						"Name": "genre"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "SetPlaceID",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetPlaceID",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "placeID"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "robloxPlace",
+						"Default": "false"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "SetPlaceId",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetPlaceId",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "placeId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "robloxPlace",
+						"Default": "false"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "SetPlaceVersion",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetPlaceVersion",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "placeId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "SetScreenshotInfo",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetScreenshotInfo",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "info"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "SetUniverseId",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetUniverseId",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "universeId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "SetVideoInfo",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetVideoInfo",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "info"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TeleportService",
+			"member": "ConfirmationCallback",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Callback",
+				"Name": "ConfirmationCallback",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "message"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "placeId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "spawnName"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"noyield"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TeleportService",
+			"member": "ErrorCallback",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Callback",
+				"Name": "ErrorCallback",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "message"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"noyield"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Visit",
+			"member": "GetUploadUrl",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetUploadUrl",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Visit",
+			"member": "SetPing",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetPing",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "pingUrl"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "interval"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Visit",
+			"member": "SetUploadUrl",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetUploadUrl",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "url"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxSecurity"
+			}
+		}
+	]
+}

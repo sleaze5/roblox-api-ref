@@ -1,0 +1,293 @@
+{
+	"from": {
+		"version": "0.460.0.416222",
+		"hash": "cb7f6332fd194443"
+	},
+	"to": {
+		"version": "0.461.0.416397",
+		"hash": "12a5e031a8634e82"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AssetManagerService",
+			"member": "InsertMeshesWithLocation",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "InsertMeshesWithLocation",
+				"Parameters": [
+					{
+						"Name": "aliasNames",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NotificationService",
+			"member": "SwitchedToAppShellFeature",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SwitchedToAppShellFeature",
+				"Parameters": [
+					{
+						"Name": "appShellFeature",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AppShellFeature"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "CanTouch",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Data",
+					"after": "Behavior"
+				}
+			],
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "CanTouch",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DataStoreKeyInfo",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "DataStoreKeyInfo",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStoreKeyInfo",
+			"member": "KeyName",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "KeyName",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DataStore",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "DataStore",
+				"Superclass": "GlobalDataStore",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataStore",
+			"member": "ListKeysAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ListKeysAsync",
+				"Parameters": [
+					{
+						"Default": "",
+						"Name": "prefix",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "pageSize",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DataStoreKeyPages",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "DataStoreKeyPages",
+				"Superclass": "Pages",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnalyticsLogLevel",
+			"item": "Infomation",
+			"type": "Remove",
+			"value": {
+				"Name": "Infomation",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AnalyticsLogLevel",
+			"item": "Information",
+			"type": "Add",
+			"value": {
+				"Name": "Information",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AppShellFeature",
+			"type": "Add",
+			"value": {
+				"Name": "AppShellFeature"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AppShellFeature",
+			"item": "None",
+			"type": "Add",
+			"value": {
+				"Name": "None",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AppShellFeature",
+			"item": "Chat",
+			"type": "Add",
+			"value": {
+				"Name": "Chat",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AppShellFeature",
+			"item": "AvatarEditor",
+			"type": "Add",
+			"value": {
+				"Name": "AvatarEditor",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AppShellFeature",
+			"item": "GamePage",
+			"type": "Add",
+			"value": {
+				"Name": "GamePage",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AppShellFeature",
+			"item": "HomePage",
+			"type": "Add",
+			"value": {
+				"Name": "HomePage",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AppShellFeature",
+			"item": "More",
+			"type": "Add",
+			"value": {
+				"Name": "More",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AppShellFeature",
+			"item": "Landing",
+			"type": "Add",
+			"value": {
+				"Name": "Landing",
+				"Value": 6
+			}
+		}
+	]
+}

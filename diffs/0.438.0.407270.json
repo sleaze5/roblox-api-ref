@@ -1,0 +1,948 @@
+{
+	"from": {
+		"version": "0.437.0.406875",
+		"hash": "b16995f6563e479b"
+	},
+	"to": {
+		"version": "0.438.0.407270",
+		"hash": "515b52879c404bad"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AnalyticsService",
+			"member": "ApiKey",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "ApiKey",
+				"Security": {
+					"Read": "LocalUserSecurity",
+					"Write": "LocalUserSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Deprecated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnalyticsService",
+			"member": "FireEvent",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "FireEvent",
+				"Parameters": [
+					{
+						"Name": "category",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextButton",
+			"member": "RichText",
+			"type": "Add",
+			"value": {
+				"Category": "Text",
+				"MemberType": "Property",
+				"Name": "RichText",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextLabel",
+			"member": "RichText",
+			"type": "Add",
+			"value": {
+				"Category": "Text",
+				"MemberType": "Property",
+				"Name": "RichText",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextBox",
+			"member": "RichText",
+			"type": "Add",
+			"value": {
+				"Category": "Text",
+				"MemberType": "Property",
+				"Name": "RichText",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VideoFrame",
+			"member": "GetInfo",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetInfo",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemStorageService",
+			"member": "GetTable",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetTable",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Map"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkClient",
+			"member": "Ticket",
+			"type": "Remove",
+			"value": {
+				"Category": "Authentication",
+				"MemberType": "Property",
+				"Name": "Ticket",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkServer",
+			"member": "Port",
+			"type": "Remove",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Port",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkReplicator",
+			"member": "CloseConnection",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CloseConnection",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkReplicator",
+			"member": "GetRakStatsString",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRakStatsString",
+				"Parameters": [
+					{
+						"Default": "0",
+						"Name": "verbosityLevel",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkSettings",
+			"member": "DataMtuAdjust",
+			"type": "Remove",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "DataMtuAdjust",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkSettings",
+			"member": "DataSendPriority",
+			"type": "Remove",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "DataSendPriority",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "PacketPriority"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkSettings",
+			"member": "DataSendRate",
+			"type": "Remove",
+			"value": {
+				"Category": "Network",
+				"MemberType": "Property",
+				"Name": "DataSendRate",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkSettings",
+			"member": "PhysicsMtuAdjust",
+			"type": "Remove",
+			"value": {
+				"Category": "Physics",
+				"MemberType": "Property",
+				"Name": "PhysicsMtuAdjust",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkSettings",
+			"member": "PhysicsSendPriority",
+			"type": "Remove",
+			"value": {
+				"Category": "Physics",
+				"MemberType": "Property",
+				"Name": "PhysicsSendPriority",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "PacketPriority"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkSettings",
+			"member": "PreferredClientPort",
+			"type": "Remove",
+			"value": {
+				"Category": "Network",
+				"MemberType": "Property",
+				"Name": "PreferredClientPort",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkSettings",
+			"member": "PrintInstances",
+			"type": "Remove",
+			"value": {
+				"Category": "Diagnostics",
+				"MemberType": "Property",
+				"Name": "PrintInstances",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkSettings",
+			"member": "PrintSplitMessage",
+			"type": "Remove",
+			"value": {
+				"Category": "Diagnostics",
+				"MemberType": "Property",
+				"Name": "PrintSplitMessage",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkSettings",
+			"member": "ReceiveRate",
+			"type": "Remove",
+			"value": {
+				"Category": "Network",
+				"MemberType": "Property",
+				"Name": "ReceiveRate",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "double"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkSettings",
+			"member": "TouchSendRate",
+			"type": "Remove",
+			"value": {
+				"Category": "Network",
+				"MemberType": "Property",
+				"Name": "TouchSendRate",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "Raycast",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "origin",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						},
+						{
+							"Name": "direction",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						},
+						{
+							"Default": "RaycastParams{IgnoreWater=false, FilterDescendantsInstances={}}",
+							"Name": "raycastParams",
+							"Type": {
+								"Category": "DataType",
+								"Name": "RaycastParams"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "origin",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						},
+						{
+							"Name": "direction",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						},
+						{
+							"Default": "RaycastParams{IgnoreWater=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+							"Name": "raycastParams",
+							"Type": {
+								"Category": "DataType",
+								"Name": "RaycastParams"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "Raycast",
+				"Parameters": [
+					{
+						"Name": "origin",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "direction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Default": "RaycastParams{IgnoreWater=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+						"Name": "raycastParams",
+						"Type": {
+							"Category": "DataType",
+							"Name": "RaycastParams"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RaycastResult"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Selection",
+			"member": "ActiveInstance",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "ActiveInstance",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Active Color",
+			"type": "Add",
+			"value": {
+				"Category": "Tools",
+				"MemberType": "Property",
+				"Name": "Active Color",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Active Hover Over Color",
+			"type": "Add",
+			"value": {
+				"Category": "Tools",
+				"MemberType": "Property",
+				"Name": "Active Hover Over Color",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "GizmoRaycast",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "origin",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						},
+						{
+							"Name": "direction",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						},
+						{
+							"Default": "RaycastParams{IgnoreWater=false, FilterDescendantsInstances={}}",
+							"Name": "raycastParams",
+							"Type": {
+								"Category": "DataType",
+								"Name": "RaycastParams"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "origin",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						},
+						{
+							"Name": "direction",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						},
+						{
+							"Default": "RaycastParams{IgnoreWater=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+							"Name": "raycastParams",
+							"Type": {
+								"Category": "DataType",
+								"Name": "RaycastParams"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GizmoRaycast",
+				"Parameters": [
+					{
+						"Name": "origin",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "direction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Default": "RaycastParams{IgnoreWater=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+						"Name": "raycastParams",
+						"Type": {
+							"Category": "DataType",
+							"Name": "RaycastParams"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RaycastResult"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "ShowActiveInstanceHighlight",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "ShowActiveInstanceHighlight",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "SurfaceAppearance",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Deprecated"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "SurfaceAppearance",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SurfaceAppearance",
+			"member": "AlphaMode",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "RobloxSecurity",
+						"Write": "RobloxSecurity"
+					},
+					"after": {
+						"Read": "LocalUserSecurity",
+						"Write": "LocalUserSecurity"
+					}
+				}
+			],
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "AlphaMode",
+				"Security": {
+					"Read": "LocalUserSecurity",
+					"Write": "LocalUserSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AlphaMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SurfaceAppearance",
+			"member": "TexturePack",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "LocalUserSecurity",
+						"Write": "LocalUserSecurity"
+					},
+					"after": {
+						"Read": "RobloxSecurity",
+						"Write": "RobloxSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden"
+					]
+				}
+			],
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "TexturePack",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VirtualInputManager",
+			"member": "sendThemeChangeEvent",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "sendThemeChangeEvent",
+				"Parameters": [
+					{
+						"Name": "themeName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "InfoBarWarningBackground",
+			"type": "Add",
+			"value": {
+				"Name": "InfoBarWarningBackground",
+				"Value": 91
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "InfoBarWarningText",
+			"type": "Add",
+			"value": {
+				"Name": "InfoBarWarningText",
+				"Value": 92
+			}
+		}
+	]
+}

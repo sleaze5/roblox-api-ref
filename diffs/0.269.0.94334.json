@@ -1,0 +1,201 @@
+{
+	"from": {
+		"version": "0.268.0.93997",
+		"hash": "bb3642a049a044c3"
+	},
+	"to": {
+		"version": "0.269.0.94334",
+		"hash": "f0ef2b8297174acb"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AnalyticsService",
+			"member": "SetRBXEvent",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "eventContext"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "eventName"
+						},
+						{
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							},
+							"Name": "additionalArgs"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "target"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "eventContext"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "eventName"
+						},
+						{
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							},
+							"Name": "additionalArgs"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetRBXEvent",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "target"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "eventContext"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "eventName"
+					},
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						},
+						"Name": "additionalArgs"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnalyticsService",
+			"member": "ReportCounter",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ReportCounter",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "counterName"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "amount",
+						"Default": "1"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnalyticsService",
+			"member": "ReportStats",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ReportStats",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "category"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						},
+						"Name": "value"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GameSettings",
+			"member": "AdditionalCoreIncludeDirs",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "AdditionalCoreIncludeDirs",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Category": "Directories",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		}
+	]
+}

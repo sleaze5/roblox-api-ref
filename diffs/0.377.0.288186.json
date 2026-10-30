@@ -1,0 +1,729 @@
+{
+	"from": {
+		"version": "0.376.0.286907",
+		"hash": "2f61184c6e224a42"
+	},
+	"to": {
+		"version": "0.377.0.288186",
+		"hash": "7ac1214f2dc343d1"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AnalyticsService",
+			"member": "TrackEventWithArgs",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "TrackEventWithArgs",
+				"Parameters": [
+					{
+						"Name": "category",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "action",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "label",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "args",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "value",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "AutoJumpEnabled",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Control",
+					"after": "Jump Settings"
+				}
+			],
+			"value": {
+				"Category": "Jump Settings",
+				"MemberType": "Property",
+				"Name": "AutoJumpEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "JumpHeight",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Game",
+					"after": "Jump Settings"
+				}
+			],
+			"value": {
+				"Category": "Jump Settings",
+				"MemberType": "Property",
+				"Name": "JumpHeight",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "JumpPower",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Game",
+					"after": "Jump Settings"
+				}
+			],
+			"value": {
+				"Category": "Jump Settings",
+				"MemberType": "Property",
+				"Name": "JumpPower",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "UseJumpPower",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Game",
+					"after": "Jump Settings"
+				}
+			],
+			"value": {
+				"Category": "Jump Settings",
+				"MemberType": "Property",
+				"Name": "UseJumpPower",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "CreateHumanoidModelFromDescription",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateHumanoidModelFromDescription",
+				"Parameters": [
+					{
+						"Name": "description",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "rigType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "HumanoidRigType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "CreateHumanoidModelFromUserId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateHumanoidModelFromUserId",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "ImportFbxAnimation",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "rigModel",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "rigModel",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Default": "true",
+							"Name": "isR15",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "ImportFbxAnimation",
+				"Parameters": [
+					{
+						"Name": "rigModel",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Default": "true",
+						"Name": "isR15",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "ImportFbxRig",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [],
+					"after": [
+						{
+							"Default": "true",
+							"Name": "isR15",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "ImportFbxRig",
+				"Parameters": [
+					{
+						"Default": "true",
+						"Name": "isR15",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "CharacterJumpHeight",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "RobloxScriptSecurity",
+						"Write": "RobloxScriptSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden"
+					]
+				}
+			],
+			"value": {
+				"Category": "Character",
+				"MemberType": "Property",
+				"Name": "CharacterJumpHeight",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "CharacterJumpPower",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "RobloxScriptSecurity",
+						"Write": "RobloxScriptSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden"
+					]
+				}
+			],
+			"value": {
+				"Category": "Character",
+				"MemberType": "Property",
+				"Name": "CharacterJumpPower",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "CharacterMaxSlopeAngle",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "RobloxScriptSecurity",
+						"Write": "RobloxScriptSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden"
+					]
+				}
+			],
+			"value": {
+				"Category": "Character",
+				"MemberType": "Property",
+				"Name": "CharacterMaxSlopeAngle",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "CharacterUseJumpPower",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "RobloxScriptSecurity",
+						"Write": "RobloxScriptSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden"
+					]
+				}
+			],
+			"value": {
+				"Category": "Character",
+				"MemberType": "Property",
+				"Name": "CharacterUseJumpPower",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "CharacterWalkSpeed",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "RobloxScriptSecurity",
+						"Write": "RobloxScriptSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden"
+					]
+				}
+			],
+			"value": {
+				"Category": "Character",
+				"MemberType": "Property",
+				"Name": "CharacterWalkSpeed",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "GetDeviceType",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetDeviceType",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "DeviceType"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AngularVelocity",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AngularVelocity",
+				"Superclass": "Constraint"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AngularVelocity",
+			"member": "AngularVelocity",
+			"type": "Add",
+			"value": {
+				"Category": "Torque",
+				"MemberType": "Property",
+				"Name": "AngularVelocity",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AngularVelocity",
+			"member": "MaxTorque",
+			"type": "Add",
+			"value": {
+				"Category": "Torque",
+				"MemberType": "Property",
+				"Name": "MaxTorque",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AngularVelocity",
+			"member": "RelativeTo",
+			"type": "Add",
+			"value": {
+				"Category": "Torque",
+				"MemberType": "Property",
+				"Name": "RelativeTo",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ActuatorRelativeTo"
+				}
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "DeviceType",
+			"type": "Add",
+			"value": {
+				"Name": "DeviceType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DeviceType",
+			"item": "Unknown",
+			"type": "Add",
+			"value": {
+				"Name": "Unknown",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DeviceType",
+			"item": "Desktop",
+			"type": "Add",
+			"value": {
+				"Name": "Desktop",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DeviceType",
+			"item": "Tablet",
+			"type": "Add",
+			"value": {
+				"Name": "Tablet",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DeviceType",
+			"item": "Phone",
+			"type": "Add",
+			"value": {
+				"Name": "Phone",
+				"Value": 3
+			}
+		}
+	]
+}

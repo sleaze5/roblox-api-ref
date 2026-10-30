@@ -1,0 +1,397 @@
+{
+	"from": {
+		"version": "0.262.0.87765",
+		"hash": "2ceaab0743d341cd"
+	},
+	"to": {
+		"version": "0.263.0.88247",
+		"hash": "14d50132362e4612"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Dialog",
+			"member": "GoodbyeChoiceActive",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "GoodbyeChoiceActive",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DialogChoice",
+			"member": "GoodbyeChoiceActive",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "GoodbyeChoiceActive",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextButton",
+			"member": "TextSize",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "TextSize",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Text",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextLabel",
+			"member": "TextSize",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "TextSize",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Text",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextBox",
+			"member": "TextSize",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "TextSize",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Text",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HttpRbxApiService",
+			"member": "GetAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "apiUrlPath"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "useHttps",
+							"Default": "true"
+						},
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "ThrottlingPriority"
+							},
+							"Name": "priority",
+							"Default": "Default"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "apiUrlPath"
+						},
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "ThrottlingPriority"
+							},
+							"Name": "priority",
+							"Default": "Default"
+						}
+					]
+				},
+				{
+					"field": "Tags",
+					"before": [
+						"Yields"
+					],
+					"after": [
+						"Yields",
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "apiUrlPath"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "ThrottlingPriority"
+						},
+						"Name": "priority",
+						"Default": "Default"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields",
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HttpRbxApiService",
+			"member": "PostAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "apiUrlPath"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "data"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "useHttps",
+							"Default": "true"
+						},
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "ThrottlingPriority"
+							},
+							"Name": "priority",
+							"Default": "Default"
+						},
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "HttpContentType"
+							},
+							"Name": "content_type",
+							"Default": "ApplicationJson"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "apiUrlPath"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "data"
+						},
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "ThrottlingPriority"
+							},
+							"Name": "priority",
+							"Default": "Default"
+						},
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "HttpContentType"
+							},
+							"Name": "content_type",
+							"Default": "ApplicationJson"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "PostAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "apiUrlPath"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "data"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "ThrottlingPriority"
+						},
+						"Name": "priority",
+						"Default": "Default"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "HttpContentType"
+						},
+						"Name": "content_type",
+						"Default": "ApplicationJson"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Cartoon",
+			"type": "Add",
+			"value": {
+				"Name": "Cartoon",
+				"Value": 9
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Code",
+			"type": "Add",
+			"value": {
+				"Name": "Code",
+				"Value": 10
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Highway",
+			"type": "Add",
+			"value": {
+				"Name": "Highway",
+				"Value": 11
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "SciFi",
+			"type": "Add",
+			"value": {
+				"Name": "SciFi",
+				"Value": 12
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "NetworkOwnership",
+			"item": "OnContact",
+			"type": "Add",
+			"value": {
+				"Name": "OnContact",
+				"Value": 2
+			}
+		}
+	]
+}

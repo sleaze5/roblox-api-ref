@@ -1,0 +1,662 @@
+{
+	"from": {
+		"version": "0.380.0.293626",
+		"hash": "2e28f4fa448c4147"
+	},
+	"to": {
+		"version": "0.381.0.295409",
+		"hash": "908fb319de90454e"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "GetEmotesMenuOpen",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetEmotesMenuOpen",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "SetEmotesMenuOpen",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetEmotesMenuOpen",
+				"Parameters": [
+					{
+						"Name": "isOpen",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "EmotesMenuOpenChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "EmotesMenuOpenChanged",
+				"Parameters": [
+					{
+						"Name": "isOpen",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "MeshPart",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Superclass",
+					"before": "BasePart",
+					"after": "TriangleMeshPart"
+				}
+			],
+			"value": {
+				"MemoryCategory": "PhysicsParts",
+				"Name": "MeshPart",
+				"Superclass": "TriangleMeshPart"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MeshPart",
+			"member": "CollisionFidelity",
+			"type": "Remove",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "CollisionFidelity",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "CollisionFidelity"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MeshPart",
+			"member": "RenderFidelity",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "RenderFidelity",
+				"Security": {
+					"Read": "None",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "RenderFidelity"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PartOperation",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Superclass",
+					"before": "BasePart",
+					"after": "TriangleMeshPart"
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "PartOperation",
+				"Superclass": "TriangleMeshPart"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PartOperation",
+			"member": "CollisionFidelity",
+			"type": "Remove",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "CollisionFidelity",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "CollisionFidelity"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "GameSettingsAvatarType",
+			"type": "Remove",
+			"value": {
+				"Category": "Character",
+				"MemberType": "Property",
+				"Name": "GameSettingsAvatarType",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "GameAvatarType"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "GameSettingsR15CollisionType",
+			"type": "Remove",
+			"value": {
+				"Category": "Character",
+				"MemberType": "Property",
+				"Name": "GameSettingsR15CollisionType",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "R15CollisionType"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "GameSettingsScaleBodyType",
+			"type": "Remove",
+			"value": {
+				"Category": "Character",
+				"MemberType": "Property",
+				"Name": "GameSettingsScaleBodyType",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "NumberRange"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "GameSettingsScaleHead",
+			"type": "Remove",
+			"value": {
+				"Category": "Character",
+				"MemberType": "Property",
+				"Name": "GameSettingsScaleHead",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "NumberRange"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "GameSettingsScaleHeight",
+			"type": "Remove",
+			"value": {
+				"Category": "Character",
+				"MemberType": "Property",
+				"Name": "GameSettingsScaleHeight",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "NumberRange"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "GameSettingsScaleProportion",
+			"type": "Remove",
+			"value": {
+				"Category": "Character",
+				"MemberType": "Property",
+				"Name": "GameSettingsScaleProportion",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "NumberRange"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "GameSettingsScaleWidth",
+			"type": "Remove",
+			"value": {
+				"Category": "Character",
+				"MemberType": "Property",
+				"Name": "GameSettingsScaleWidth",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "NumberRange"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "GameSettingsAvatar",
+			"type": "Add",
+			"value": {
+				"Category": "Character",
+				"MemberType": "Property",
+				"Name": "GameSettingsAvatar",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "GameAvatarType"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "GameSettingsR15Collision",
+			"type": "Add",
+			"value": {
+				"Category": "Character",
+				"MemberType": "Property",
+				"Name": "GameSettingsR15Collision",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "R15CollisionType"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "GameSettingsScaleRangeBodyType",
+			"type": "Add",
+			"value": {
+				"Category": "Character",
+				"MemberType": "Property",
+				"Name": "GameSettingsScaleRangeBodyType",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "NumberRange"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "GameSettingsScaleRangeHead",
+			"type": "Add",
+			"value": {
+				"Category": "Character",
+				"MemberType": "Property",
+				"Name": "GameSettingsScaleRangeHead",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "NumberRange"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "GameSettingsScaleRangeHeight",
+			"type": "Add",
+			"value": {
+				"Category": "Character",
+				"MemberType": "Property",
+				"Name": "GameSettingsScaleRangeHeight",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "NumberRange"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "GameSettingsScaleRangeProportion",
+			"type": "Add",
+			"value": {
+				"Category": "Character",
+				"MemberType": "Property",
+				"Name": "GameSettingsScaleRangeProportion",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "NumberRange"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "GameSettingsScaleRangeWidth",
+			"type": "Add",
+			"value": {
+				"Category": "Character",
+				"MemberType": "Property",
+				"Name": "GameSettingsScaleRangeWidth",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "NumberRange"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Language",
+			"type": "Add",
+			"value": {
+				"Category": "General",
+				"MemberType": "Property",
+				"Name": "Language",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "LanguagePreference"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TriangleMeshPart",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "TriangleMeshPart",
+				"Superclass": "BasePart",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TriangleMeshPart",
+			"member": "CollisionFidelity",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "CollisionFidelity",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "CollisionFidelity"
+				}
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "LanguagePreference",
+			"type": "Add",
+			"value": {
+				"Name": "LanguagePreference"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LanguagePreference",
+			"item": "SystemDefault",
+			"type": "Add",
+			"value": {
+				"Name": "SystemDefault",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LanguagePreference",
+			"item": "English",
+			"type": "Add",
+			"value": {
+				"Name": "English",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LanguagePreference",
+			"item": "SimplifiedChinese",
+			"type": "Add",
+			"value": {
+				"Name": "SimplifiedChinese",
+				"Value": 2
+			}
+		}
+	]
+}

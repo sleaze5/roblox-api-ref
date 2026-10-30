@@ -1,0 +1,88 @@
+{
+	"from": {
+		"version": "0.305.0.145834",
+		"hash": "a0c92d7d6d284f6d"
+	},
+	"to": {
+		"version": "0.306.0.147686",
+		"hash": "86883159fabf4065"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "DataStoreService",
+			"member": "AutomaticRetry",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "AutomaticRetry",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Behavior",
+				"Security": {
+					"Read": "LocalUserSecurity",
+					"Write": "LocalUserSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GameSettings",
+			"member": "SoundEnabled",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "SoundEnabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "GetCharacterAppearanceInfoAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCharacterAppearanceInfoAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		}
+	]
+}

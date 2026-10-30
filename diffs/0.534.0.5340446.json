@@ -1,0 +1,743 @@
+{
+	"from": {
+		"version": "0.533.0.5330256",
+		"hash": "a876ecdbc41f4d4d"
+	},
+	"to": {
+		"version": "0.534.0.5340446",
+		"hash": "7998ab41a25f47d5"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AssetImportService",
+			"member": "StartSessionWithPrompt",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "StartSessionWithPrompt",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "AssetImportSession"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LocalizationService",
+			"member": "SetExperienceSettingsLocaleId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetExperienceSettingsLocaleId",
+				"Parameters": [
+					{
+						"Name": "locale",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BaseScript",
+			"member": "RunContext",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "RunContext",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "RunContext"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "MaterialService",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotCreatable",
+						"Service",
+						"NotBrowsable"
+					],
+					"after": [
+						"NotCreatable",
+						"Service"
+					]
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "MaterialService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "MaterialVariant",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "MaterialVariant",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDocument",
+			"member": "GetSelection",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetSelection",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDocument",
+			"member": "SelectionChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "SelectionChanged",
+				"Parameters": [
+					{
+						"Name": "positionLine",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "positionCharacter",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "anchorLine",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "anchorCharacter",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioPublishService",
+			"member": "ClearUploadNames",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ClearUploadNames",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioPublishService",
+			"member": "GamePublishCancelled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "GamePublishCancelled",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TerrainDetail",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "TerrainDetail",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AssetImportSession",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AssetImportSession",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportSession",
+			"member": "Cancel",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Cancel",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportSession",
+			"member": "GetCurrentImportMap",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCurrentImportMap",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportSession",
+			"member": "GetCurrentStatusTable",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCurrentStatusTable",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportSession",
+			"member": "GetFilename",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFilename",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportSession",
+			"member": "GetSettingsRoot",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetSettingsRoot",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportSession",
+			"member": "IsAvatar",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsAvatar",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportSession",
+			"member": "Upload",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Upload",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportSession",
+			"member": "UploadComplete",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "UploadComplete",
+				"Parameters": [
+					{
+						"Name": "succeeded",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "errorMap",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportSession",
+			"member": "UploadProgress",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "UploadProgress",
+				"Parameters": [
+					{
+						"Name": "progressRatio",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ContextActionPriority",
+			"item": "Default",
+			"type": "Remove",
+			"value": {
+				"Name": "Default",
+				"Value": 2000
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Rock",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Name": "Rock",
+				"Value": 896
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Glacier",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Name": "Glacier",
+				"Value": 1552
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Snow",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Name": "Snow",
+				"Value": 1328
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Sandstone",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Name": "Sandstone",
+				"Value": 912
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Mud",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Name": "Mud",
+				"Value": 1344
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Basalt",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Name": "Basalt",
+				"Value": 788
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Ground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Name": "Ground",
+				"Value": 1360
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "CrackedLava",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Name": "CrackedLava",
+				"Value": 804
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Asphalt",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Name": "Asphalt",
+				"Value": 1376
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "LeafyGrass",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Name": "LeafyGrass",
+				"Value": 1284
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Salt",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Name": "Salt",
+				"Value": 1392
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Limestone",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Name": "Limestone",
+				"Value": 820
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Pavement",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Name": "Pavement",
+				"Value": 836
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "WrapLayerDebugMode",
+			"item": "LayerCageFittedToBase",
+			"type": "Add",
+			"value": {
+				"Name": "LayerCageFittedToBase",
+				"Value": 12
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "WrapLayerDebugMode",
+			"item": "LayerCageFittedToPrev",
+			"type": "Add",
+			"value": {
+				"Name": "LayerCageFittedToPrev",
+				"Value": 13
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "RunContext",
+			"type": "Add",
+			"value": {
+				"Name": "RunContext"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RunContext",
+			"item": "Legacy",
+			"type": "Add",
+			"value": {
+				"Name": "Legacy",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RunContext",
+			"item": "Server",
+			"type": "Add",
+			"value": {
+				"Name": "Server",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RunContext",
+			"item": "Client",
+			"type": "Add",
+			"value": {
+				"Name": "Client",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RunContext",
+			"item": "Plugin",
+			"type": "Add",
+			"value": {
+				"Name": "Plugin",
+				"Value": 3
+			}
+		}
+	]
+}

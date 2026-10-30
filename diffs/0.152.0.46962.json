@@ -1,0 +1,903 @@
+{
+	"from": {
+		"version": "0.151.0.46786",
+		"hash": "890fab9e68e74869"
+	},
+	"to": {
+		"version": "0.152.0.46962",
+		"hash": "24e66ffe847b42da"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "GetDebugId",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetDebugId",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "scopeLength",
+						"Default": "4"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SurfaceGui",
+			"member": "ToolPunchThroughDistance",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ToolPunchThroughDistance",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "CameraOffset",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "CameraOffset",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkPeer",
+			"member": "SetOutgoingKBPSLimit",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetOutgoingKBPSLimit",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "limit"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkReplicator",
+			"member": "GetRakStatsString",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRakStatsString",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "verbosityLevel",
+						"Default": "0"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkSettings",
+			"member": "FreeMemoryMBytes",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "LocalUserSecurity",
+						"Write": "LocalUserSecurity"
+					},
+					"after": {
+						"Read": "PluginSecurity",
+						"Write": "PluginSecurity"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Property",
+				"Name": "FreeMemoryMBytes",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkSettings",
+			"member": "FreeMemoryPoolMBytes",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "LocalUserSecurity",
+						"Write": "LocalUserSecurity"
+					},
+					"after": {
+						"Read": "PluginSecurity",
+						"Write": "PluginSecurity"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Property",
+				"Name": "FreeMemoryPoolMBytes",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "GetModelCFrame",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetModelCFrame",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "GetModelSize",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetModelSize",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "MoveTo",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							},
+							"Name": "location"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							},
+							"Name": "position"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "MoveTo",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						},
+						"Name": "position"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "ResetOrientationToIdentity",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "ResetOrientationToIdentity",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "SetIdentityOrientation",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetIdentityOrientation",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "TranslateBy",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							},
+							"Name": "offset"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							},
+							"Name": "delta"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "TranslateBy",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						},
+						"Name": "delta"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "GetExtentsSize",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetExtentsSize",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "GetPrimaryPartCFrame",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPrimaryPartCFrame",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "SetPrimaryPartCFrame",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetPrimaryPartCFrame",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						},
+						"Name": "cframe"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "GetJobIntervalPeakFraction",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetJobIntervalPeakFraction",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "jobname"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "double"
+						},
+						"Name": "greaterThan"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "double"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "GetJobTimePeakFraction",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetJobTimePeakFraction",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "jobname"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "double"
+						},
+						"Name": "greaterThan"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "double"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "GetJobsExtendedStats",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetJobsExtendedStats",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "GetJobsInfo",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetJobsInfo",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "GetObjects",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetObjects",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						},
+						"Name": "url"
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StatsItem",
+			"member": "GetValue",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetValue",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "double"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StatsItem",
+			"member": "GetValueString",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetValueString",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ProfilingItem",
+			"member": "GetTimes",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetTimes",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "double"
+						},
+						"Name": "window",
+						"Default": "0"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ProfilingItem",
+			"member": "GetTimesForFrames",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "LocalUserSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetTimesForFrames",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "frames",
+						"Default": "1"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "NotificationService",
+			"type": "Add",
+			"value": {
+				"Name": "NotificationService",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NotificationService",
+			"member": "CancelAllNotification",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CancelAllNotification",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxPlaceSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NotificationService",
+			"member": "CancelNotification",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CancelNotification",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "alertId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxPlaceSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NotificationService",
+			"member": "ScheduleNotification",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ScheduleNotification",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "alertId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "alertMsg"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "minutesToFire"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxPlaceSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NotificationService",
+			"member": "GetScheduledNotifications",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetScheduledNotifications",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "RobloxPlaceSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		}
+	]
+}

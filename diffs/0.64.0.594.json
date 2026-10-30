@@ -1,0 +1,137 @@
+{
+	"from": {
+		"version": "0.63.0.591",
+		"hash": "e029025a3614426d"
+	},
+	"to": {
+		"version": "0.64.0.594",
+		"hash": "6ca07d14e2274822"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "NetworkSettings",
+			"member": "DataSendPriority",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "DataSendPriority",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "PacketPriority"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkSettings",
+			"member": "PhysicsSendPriority",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "PhysicsSendPriority",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "PacketPriority"
+				},
+				"Category": "Physics",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "MaxSimulationRadius",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "MaxSimulationRadius",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "LocalUserSecurity",
+					"Write": "LocalUserSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "PacketPriority",
+			"type": "Add",
+			"value": {
+				"Name": "PacketPriority"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PacketPriority",
+			"item": "IMMEDIATE_PRIORITY",
+			"type": "Add",
+			"value": {
+				"Name": "IMMEDIATE_PRIORITY",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PacketPriority",
+			"item": "HIGH_PRIORITY",
+			"type": "Add",
+			"value": {
+				"Name": "HIGH_PRIORITY",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PacketPriority",
+			"item": "MEDIUM_PRIORITY",
+			"type": "Add",
+			"value": {
+				"Name": "MEDIUM_PRIORITY",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PacketPriority",
+			"item": "LOW_PRIORITY",
+			"type": "Add",
+			"value": {
+				"Name": "LOW_PRIORITY",
+				"Value": 3
+			}
+		}
+	]
+}

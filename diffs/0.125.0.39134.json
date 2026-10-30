@@ -1,0 +1,488 @@
+{
+	"from": {
+		"version": "0.124.0.38869",
+		"hash": "d7b44391e3ff4217"
+	},
+	"to": {
+		"version": "0.125.0.39134",
+		"hash": "df24752ec7384d96"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "RemoveKey",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RemoveKey",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "key"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptProductPurchase",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptProductPurchase",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "player"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "productId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "equipIfPurchased",
+						"Default": "true"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "CurrencyType"
+						},
+						"Name": "currencyType",
+						"Default": "Default"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "SignalClientPurchaseSuccess",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SignalClientPurchaseSuccess",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "ticket"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "playerId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "productId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "SignalPromptProductPurchaseFinished",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SignalPromptProductPurchaseFinished",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "productId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "success"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "ClientPurchaseSuccess",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ClientPurchaseSuccess",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "ticket"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "playerId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "productId"
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptProductPurchaseFinished",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptProductPurchaseFinished",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "productId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "isPurchased"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptProductPurchaseRequested",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptProductPurchaseRequested",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "player"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "productId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "equipIfPurchased"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "CurrencyType"
+						},
+						"Name": "currencyType"
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "ServerPurchaseVerification",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ServerPurchaseVerification",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						},
+						"Name": "serverResponseTable"
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkSettings",
+			"member": "DataGCRate",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "DataGCRate",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Network",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkSettings",
+			"member": "ExtraMemoryUsed",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ExtraMemoryUsed",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "LocalUserSecurity",
+					"Write": "LocalUserSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkSettings",
+			"member": "FreeMemoryMBytes",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "FreeMemoryMBytes",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "LocalUserSecurity",
+					"Write": "LocalUserSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkSettings",
+			"member": "FreeMemoryPoolMBytes",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "FreeMemoryPoolMBytes",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "LocalUserSecurity",
+					"Write": "LocalUserSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkSettings",
+			"member": "PrintStreamInstanceQuota",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "PrintStreamInstanceQuota",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Diagnostics",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkSettings",
+			"member": "RenderStreamedRegions",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "RenderStreamedRegions",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Appearance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "MaxSimulationRadius",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "MaxSimulationRadius",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "LocalUserSecurity",
+					"Write": "LocalUserSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "MaximumSimulationRadius",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "MaximumSimulationRadius",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "LocalUserSecurity",
+					"Write": "LocalUserSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				]
+			}
+		}
+	]
+}

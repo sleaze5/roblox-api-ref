@@ -1,0 +1,118 @@
+{
+	"from": {
+		"version": "0.367.0.267289",
+		"hash": "d8c9cb3dbab24348"
+	},
+	"to": {
+		"version": "0.367.0.268133",
+		"hash": "f8d05d59339e4af6"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Split Meshes",
+			"type": "Add",
+			"value": {
+				"Category": "Meshes",
+				"MemberType": "Property",
+				"Name": "Split Meshes",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "MessagingService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "MessagingService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MessagingService",
+			"member": "PublishAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PublishAsync",
+				"Parameters": [
+					{
+						"Name": "topic",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MessagingService",
+			"member": "SubscribeAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SubscribeAsync",
+				"Parameters": [
+					{
+						"Name": "topic",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "callback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RBXScriptConnection"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		}
+	]
+}

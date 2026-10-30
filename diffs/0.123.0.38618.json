@@ -1,0 +1,326 @@
+{
+	"from": {
+		"version": "0.122.0.38287",
+		"hash": "394f11f19cd64b1a"
+	},
+	"to": {
+		"version": "0.123.0.38618",
+		"hash": "14fe283fc52248e5"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "StarterGui",
+			"member": "ResetPlayerGuiOnDeath",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ResetPlayerGuiOnDeath",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterGui",
+			"member": "ResetPlayerGuiOnSpawn",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ResetPlayerGuiOnSpawn",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "RemoteEvent",
+			"type": "Add",
+			"value": {
+				"Name": "RemoteEvent",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RemoteEvent",
+			"member": "FireAllClients",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FireAllClients",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						},
+						"Name": "arguments"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RemoteEvent",
+			"member": "FireClient",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FireClient",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "player"
+					},
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						},
+						"Name": "arguments"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RemoteEvent",
+			"member": "FireServer",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FireServer",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						},
+						"Name": "arguments"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RemoteEvent",
+			"member": "OnClientEvent",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnClientEvent",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						},
+						"Name": "arguments"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RemoteEvent",
+			"member": "OnServerEvent",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnServerEvent",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "player"
+					},
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						},
+						"Name": "arguments"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "RemoteFunction",
+			"type": "Add",
+			"value": {
+				"Name": "RemoteFunction",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RemoteFunction",
+			"member": "InvokeClient",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "InvokeClient",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "player"
+					},
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						},
+						"Name": "arguments"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RemoteFunction",
+			"member": "InvokeServer",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "InvokeServer",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						},
+						"Name": "arguments"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RemoteFunction",
+			"member": "OnClientInvoke",
+			"type": "Add",
+			"value": {
+				"MemberType": "Callback",
+				"Name": "OnClientInvoke",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						},
+						"Name": "arguments"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RemoteFunction",
+			"member": "OnServerInvoke",
+			"type": "Add",
+			"value": {
+				"MemberType": "Callback",
+				"Name": "OnServerInvoke",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "player"
+					},
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						},
+						"Name": "arguments"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None"
+			}
+		}
+	]
+}

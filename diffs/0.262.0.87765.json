@@ -1,0 +1,444 @@
+{
+	"from": {
+		"version": "0.261.0.87131",
+		"hash": "a1718013fcc842b1"
+	},
+	"to": {
+		"version": "0.262.0.87765",
+		"hash": "2ceaab0743d341cd"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "NetworkReplicator",
+			"member": "Disconnection",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "peer"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "lostConnection"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "peer"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "lostConnection"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "reason"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "Disconnection",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "peer"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "lostConnection"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "reason"
+					}
+				],
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "WaterReflectance",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "WaterReflectance",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Appearance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "FindPartOnRayWithWhitelist",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindPartOnRayWithWhitelist",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Ray"
+						},
+						"Name": "ray"
+					},
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						},
+						"Name": "whitelistDescendentsTable"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "ignoreWater",
+						"Default": "false"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "MinDistance",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Property",
+				"Name": "MinDistance",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "Pitch",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Property",
+				"Name": "Pitch",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "EmitterSize",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "EmitterSize",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "PlaybackSpeed",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "PlaybackSpeed",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "GazeSelectionEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "GazeSelectionEnabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ParabolaAdornment",
+			"type": "Add",
+			"value": {
+				"Name": "ParabolaAdornment",
+				"Superclass": "PVAdornment",
+				"MemoryCategory": "Instances"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParabolaAdornment",
+			"member": "A",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "A",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParabolaAdornment",
+			"member": "B",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "B",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParabolaAdornment",
+			"member": "C",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "C",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParabolaAdornment",
+			"member": "Range",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Range",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParabolaAdornment",
+			"member": "Thickness",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Thickness",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParabolaAdornment",
+			"member": "FindPartOnParabola",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindPartOnParabola",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						},
+						"Name": "ignoreDescendentsTable"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		}
+	]
+}

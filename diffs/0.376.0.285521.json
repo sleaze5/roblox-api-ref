@@ -1,0 +1,256 @@
+{
+	"from": {
+		"version": "0.375.0.284048",
+		"hash": "ed92a38305364c46"
+	},
+	"to": {
+		"version": "0.376.0.285521",
+		"hash": "0d8b4e93da034879"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "CollisionType",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "CollisionType",
+				"Security": {
+					"Read": "None",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "HumanoidCollisionType"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LocalizationService",
+			"member": "StartTextScraper",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [],
+					"after": [
+						{
+							"Default": "false",
+							"Name": "enforceRequirements",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "StartTextScraper",
+				"Parameters": [
+					{
+						"Default": "false",
+						"Name": "enforceRequirements",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NotificationService",
+			"member": "RobloxConnectionChanged",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "connectionName",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "connectionState",
+							"Type": {
+								"Category": "Enum",
+								"Name": "ConnectionState"
+							}
+						},
+						{
+							"Name": "sequenceNumber",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "connectionName",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "connectionState",
+							"Type": {
+								"Category": "Enum",
+								"Name": "ConnectionState"
+							}
+						},
+						{
+							"Name": "sequenceNumber",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "namespaceSequenceNumbers",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "RobloxConnectionChanged",
+				"Parameters": [
+					{
+						"Name": "connectionName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "connectionState",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ConnectionState"
+						}
+					},
+					{
+						"Name": "sequenceNumber",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "namespaceSequenceNumbers",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TweenService",
+			"member": "GetValue",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetValue",
+				"Parameters": [
+					{
+						"Name": "alpha",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "easingStyle",
+						"Type": {
+							"Category": "Enum",
+							"Name": "EasingStyle"
+						}
+					},
+					{
+						"Name": "easingDirection",
+						"Type": {
+							"Category": "Enum",
+							"Name": "EasingDirection"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PackageService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "PackageService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "HumanoidCollisionType",
+			"type": "Add",
+			"value": {
+				"Name": "HumanoidCollisionType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidCollisionType",
+			"item": "OuterBox",
+			"type": "Add",
+			"value": {
+				"Name": "OuterBox",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidCollisionType",
+			"item": "InnerBox",
+			"type": "Add",
+			"value": {
+				"Name": "InnerBox",
+				"Value": 1
+			}
+		}
+	]
+}

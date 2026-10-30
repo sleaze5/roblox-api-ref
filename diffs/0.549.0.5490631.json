@@ -1,0 +1,1772 @@
+{
+	"from": {
+		"version": "0.548.0.5480523",
+		"hash": "d9be6bba61054c5c"
+	},
+	"to": {
+		"version": "0.549.0.5490631",
+		"hash": "684e0a4fba484e48"
+	},
+	"changes": [
+		{
+			"element": "Class",
+			"class": "AnalyticsService",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Service"
+					],
+					"after": [
+						"Service",
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AnalyticsService",
+				"Superclass": "Instance",
+				"Tags": [
+					"Service",
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetDeliveryProxy",
+			"member": "Interface",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Interface",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetDeliveryProxy",
+			"member": "Port",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Port",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetDeliveryProxy",
+			"member": "StartServer",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "StartServer",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportSession",
+			"member": "GetCurrentImportMap",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCurrentImportMap",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ContextActionService",
+			"member": "BindActivate",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "userInputTypeForActivation",
+							"Type": {
+								"Category": "Enum",
+								"Name": "UserInputType"
+							}
+						},
+						{
+							"Default": "Unknown",
+							"Name": "keyCodeForActivation",
+							"Type": {
+								"Category": "Enum",
+								"Name": "KeyCode"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "userInputTypeForActivation",
+							"Type": {
+								"Category": "Enum",
+								"Name": "UserInputType"
+							}
+						},
+						{
+							"Name": "keyCodesForActivation",
+							"Type": {
+								"Category": "Group",
+								"Name": "Tuple"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "BindActivate",
+				"Parameters": [
+					{
+						"Name": "userInputTypeForActivation",
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserInputType"
+						}
+					},
+					{
+						"Name": "keyCodesForActivation",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerConnection",
+			"member": "UpdateSelectedFrame",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UpdateSelectedFrame",
+				"Parameters": [
+					{
+						"Name": "threadId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "frameNumber",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FaceAnimatorService",
+			"member": "Init",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Init",
+				"Parameters": [
+					{
+						"Name": "videoEnabled",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "audioEnabled",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextButton",
+			"member": "Font",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden"
+					]
+				}
+			],
+			"value": {
+				"Category": "Text",
+				"MemberType": "Property",
+				"Name": "Font",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "Font"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextLabel",
+			"member": "Font",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden"
+					]
+				}
+			],
+			"value": {
+				"Category": "Text",
+				"MemberType": "Property",
+				"Name": "Font",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "Font"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextBox",
+			"member": "Font",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden"
+					]
+				}
+			],
+			"value": {
+				"Category": "Text",
+				"MemberType": "Property",
+				"Name": "Font",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "Font"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScreenGui",
+			"member": "ClipToDeviceSafeArea",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "ClipToDeviceSafeArea",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotBrowsable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScreenGui",
+			"member": "SafeAreaCompatibility",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "SafeAreaCompatibility",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotBrowsable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "SafeAreaCompatibility"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AdGui",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "MemoryCategory",
+					"before": "Instances",
+					"after": "Internal"
+				}
+			],
+			"value": {
+				"MemoryCategory": "Internal",
+				"Name": "AdGui",
+				"Superclass": "SurfaceGuiBase",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "HideTerrainRegion",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "HideTerrainRegion",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "SetTerrainRegion",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetTerrainRegion",
+				"Parameters": [
+					{
+						"Name": "cframe",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					},
+					{
+						"Name": "size",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "SetWireframeRegion",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetWireframeRegion",
+				"Parameters": [
+					{
+						"Name": "cframe",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					},
+					{
+						"Name": "size",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "ShowTerrainRegion",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ShowTerrainRegion",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "GetPartBoundsInBox",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "cframe",
+							"Type": {
+								"Category": "DataType",
+								"Name": "CFrame"
+							}
+						},
+						{
+							"Name": "size",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						},
+						{
+							"Default": "OverlapParams{MaxParts=false, BruteForceAllSlow=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+							"Name": "overlapParams",
+							"Type": {
+								"Category": "DataType",
+								"Name": "OverlapParams"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "cframe",
+							"Type": {
+								"Category": "DataType",
+								"Name": "CFrame"
+							}
+						},
+						{
+							"Name": "size",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						},
+						{
+							"Default": "OverlapParams{MaxParts=false, BruteForceAllSlow=false, RespectCanCollide=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+							"Name": "overlapParams",
+							"Type": {
+								"Category": "DataType",
+								"Name": "OverlapParams"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPartBoundsInBox",
+				"Parameters": [
+					{
+						"Name": "cframe",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					},
+					{
+						"Name": "size",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Default": "OverlapParams{MaxParts=false, BruteForceAllSlow=false, RespectCanCollide=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+						"Name": "overlapParams",
+						"Type": {
+							"Category": "DataType",
+							"Name": "OverlapParams"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "GetPartBoundsInRadius",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "position",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						},
+						{
+							"Name": "radius",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						},
+						{
+							"Default": "OverlapParams{MaxParts=false, BruteForceAllSlow=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+							"Name": "overlapParams",
+							"Type": {
+								"Category": "DataType",
+								"Name": "OverlapParams"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "position",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						},
+						{
+							"Name": "radius",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						},
+						{
+							"Default": "OverlapParams{MaxParts=false, BruteForceAllSlow=false, RespectCanCollide=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+							"Name": "overlapParams",
+							"Type": {
+								"Category": "DataType",
+								"Name": "OverlapParams"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPartBoundsInRadius",
+				"Parameters": [
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "radius",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Default": "OverlapParams{MaxParts=false, BruteForceAllSlow=false, RespectCanCollide=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+						"Name": "overlapParams",
+						"Type": {
+							"Category": "DataType",
+							"Name": "OverlapParams"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "GetPartsInPart",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "part",
+							"Type": {
+								"Category": "Class",
+								"Name": "BasePart"
+							}
+						},
+						{
+							"Default": "OverlapParams{MaxParts=false, BruteForceAllSlow=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+							"Name": "overlapParams",
+							"Type": {
+								"Category": "DataType",
+								"Name": "OverlapParams"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "part",
+							"Type": {
+								"Category": "Class",
+								"Name": "BasePart"
+							}
+						},
+						{
+							"Default": "OverlapParams{MaxParts=false, BruteForceAllSlow=false, RespectCanCollide=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+							"Name": "overlapParams",
+							"Type": {
+								"Category": "DataType",
+								"Name": "OverlapParams"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPartsInPart",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "BasePart"
+						}
+					},
+					{
+						"Default": "OverlapParams{MaxParts=false, BruteForceAllSlow=false, RespectCanCollide=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+						"Name": "overlapParams",
+						"Type": {
+							"Category": "DataType",
+							"Name": "OverlapParams"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "Raycast",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "origin",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						},
+						{
+							"Name": "direction",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						},
+						{
+							"Default": "RaycastParams{IgnoreWater=false, BruteForceAllSlow=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+							"Name": "raycastParams",
+							"Type": {
+								"Category": "DataType",
+								"Name": "RaycastParams"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "origin",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						},
+						{
+							"Name": "direction",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						},
+						{
+							"Default": "RaycastParams{IgnoreWater=false, BruteForceAllSlow=false, RespectCanCollide=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+							"Name": "raycastParams",
+							"Type": {
+								"Category": "DataType",
+								"Name": "RaycastParams"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "Raycast",
+				"Parameters": [
+					{
+						"Name": "origin",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "direction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Default": "RaycastParams{IgnoreWater=false, BruteForceAllSlow=false, RespectCanCollide=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+						"Name": "raycastParams",
+						"Type": {
+							"Category": "DataType",
+							"Name": "RaycastParams"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RaycastResult"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PatchMapping",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "PatchMapping",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "CanSendGameInviteAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "player",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "player",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Default": "0",
+							"Name": "recipientId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "CanSendGameInviteAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "recipientId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "LoopRegion",
+			"type": "Add",
+			"value": {
+				"Category": "Regions",
+				"MemberType": "Property",
+				"Name": "LoopRegion",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "NumberRange"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "PlaybackRegion",
+			"type": "Add",
+			"value": {
+				"Category": "Regions",
+				"MemberType": "Property",
+				"Name": "PlaybackRegion",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "NumberRange"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "PlaybackRegionsEnabled",
+			"type": "Add",
+			"value": {
+				"Category": "Playback",
+				"MemberType": "Property",
+				"Name": "PlaybackRegionsEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotBrowsable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "HumanoidStateMachineMode",
+			"type": "Add",
+			"value": {
+				"Category": "Controls",
+				"MemberType": "Property",
+				"Name": "HumanoidStateMachineMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotBrowsable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "HumanoidStateMachineMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "GizmoRaycast",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "origin",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						},
+						{
+							"Name": "direction",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						},
+						{
+							"Default": "RaycastParams{IgnoreWater=false, BruteForceAllSlow=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+							"Name": "raycastParams",
+							"Type": {
+								"Category": "DataType",
+								"Name": "RaycastParams"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "origin",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						},
+						{
+							"Name": "direction",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						},
+						{
+							"Default": "RaycastParams{IgnoreWater=false, BruteForceAllSlow=false, RespectCanCollide=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+							"Name": "raycastParams",
+							"Type": {
+								"Category": "DataType",
+								"Name": "RaycastParams"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GizmoRaycast",
+				"Parameters": [
+					{
+						"Name": "origin",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "direction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Default": "RaycastParams{IgnoreWater=false, BruteForceAllSlow=false, RespectCanCollide=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+						"Name": "raycastParams",
+						"Type": {
+							"Category": "DataType",
+							"Name": "RaycastParams"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RaycastResult"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChannel",
+			"member": "ShouldDeliverCallback",
+			"type": "Add",
+			"value": {
+				"MemberType": "Callback",
+				"Name": "ShouldDeliverCallback",
+				"Parameters": [
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Class",
+							"Name": "TextChatMessage"
+						}
+					},
+					{
+						"Name": "textSource",
+						"Type": {
+							"Category": "Class",
+							"Name": "TextSource"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AssetPatchSettings",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AssetPatchSettings",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetPatchSettings",
+			"member": "ContentId",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "ContentId",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetPatchSettings",
+			"member": "OutputPath",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "OutputPath",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetPatchSettings",
+			"member": "PatchId",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "PatchId",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AnimationConstraint",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "PhysicsParts",
+				"Name": "AnimationConstraint",
+				"Superclass": "Constraint",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationConstraint",
+			"member": "MaxForce",
+			"type": "Add",
+			"value": {
+				"Category": "Compliance",
+				"MemberType": "Property",
+				"Name": "MaxForce",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationConstraint",
+			"member": "MaxTorque",
+			"type": "Add",
+			"value": {
+				"Category": "Compliance",
+				"MemberType": "Property",
+				"Name": "MaxTorque",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationConstraint",
+			"member": "Transform",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Transform",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "FacialAnimationStreamingServiceV2",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "FacialAnimationStreamingServiceV2",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FacialAnimationStreamingServiceV2",
+			"member": "ServiceState",
+			"type": "Add",
+			"value": {
+				"Category": "State",
+				"MemberType": "Property",
+				"Name": "ServiceState",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FacialAnimationStreamingServiceV2",
+			"member": "IsAudioEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsAudioEnabled",
+				"Parameters": [
+					{
+						"Name": "mask",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FacialAnimationStreamingServiceV2",
+			"member": "IsPlaceEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsPlaceEnabled",
+				"Parameters": [
+					{
+						"Name": "mask",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FacialAnimationStreamingServiceV2",
+			"member": "IsServerEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsServerEnabled",
+				"Parameters": [
+					{
+						"Name": "mask",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FacialAnimationStreamingServiceV2",
+			"member": "IsVideoEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsVideoEnabled",
+				"Parameters": [
+					{
+						"Name": "mask",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FacialAnimationStreamingServiceV2",
+			"member": "ResolveStateForUser",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ResolveStateForUser",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ScriptBuilder",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ScriptBuilder",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "CoreScriptBuilder",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "CoreScriptBuilder",
+				"Superclass": "ScriptBuilder",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "PlacelaunchUserPrivacyUnauthorized",
+			"type": "Add",
+			"value": {
+				"Name": "PlacelaunchUserPrivacyUnauthorized",
+				"Value": 533
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ParticleFlipbookLayout",
+			"item": "TwoByTwo",
+			"type": "Remove",
+			"value": {
+				"Name": "TwoByTwo",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ParticleFlipbookLayout",
+			"item": "FourByFour",
+			"type": "Remove",
+			"value": {
+				"Name": "FourByFour",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ParticleFlipbookLayout",
+			"item": "EightByEight",
+			"type": "Remove",
+			"value": {
+				"Name": "EightByEight",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ParticleFlipbookLayout",
+			"item": "Grid2x2",
+			"type": "Add",
+			"value": {
+				"Name": "Grid2x2",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ParticleFlipbookLayout",
+			"item": "Grid4x4",
+			"type": "Add",
+			"value": {
+				"Name": "Grid4x4",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ParticleFlipbookLayout",
+			"item": "Grid8x8",
+			"type": "Add",
+			"value": {
+				"Name": "Grid8x8",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "FacialAnimationStreamingState",
+			"type": "Add",
+			"value": {
+				"Name": "FacialAnimationStreamingState"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FacialAnimationStreamingState",
+			"item": "None",
+			"type": "Add",
+			"value": {
+				"Name": "None",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FacialAnimationStreamingState",
+			"item": "Audio",
+			"type": "Add",
+			"value": {
+				"Name": "Audio",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FacialAnimationStreamingState",
+			"item": "Video",
+			"type": "Add",
+			"value": {
+				"Name": "Video",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FacialAnimationStreamingState",
+			"item": "Place",
+			"type": "Add",
+			"value": {
+				"Name": "Place",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FacialAnimationStreamingState",
+			"item": "Server",
+			"type": "Add",
+			"value": {
+				"Name": "Server",
+				"Value": 8
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "HumanoidStateMachineMode",
+			"type": "Add",
+			"value": {
+				"Name": "HumanoidStateMachineMode"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidStateMachineMode",
+			"item": "Default",
+			"type": "Add",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidStateMachineMode",
+			"item": "Legacy",
+			"type": "Add",
+			"value": {
+				"Name": "Legacy",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidStateMachineMode",
+			"item": "NoStateMachine",
+			"type": "Add",
+			"value": {
+				"Name": "NoStateMachine",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidStateMachineMode",
+			"item": "LuaStateMachine",
+			"type": "Add",
+			"value": {
+				"Name": "LuaStateMachine",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "SafeAreaCompatibility",
+			"type": "Add",
+			"value": {
+				"Name": "SafeAreaCompatibility"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SafeAreaCompatibility",
+			"item": "None",
+			"type": "Add",
+			"value": {
+				"Name": "None",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SafeAreaCompatibility",
+			"item": "FullscreenExtension",
+			"type": "Add",
+			"value": {
+				"Name": "FullscreenExtension",
+				"Value": 1
+			}
+		}
+	]
+}

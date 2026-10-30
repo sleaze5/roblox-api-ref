@@ -1,0 +1,750 @@
+{
+	"from": {
+		"version": "0.146.0.45615",
+		"hash": "77cb13cdf4414374"
+	},
+	"to": {
+		"version": "0.147.0.45744",
+		"hash": "a21a1def88774149"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "AutoRotate",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "AutoRotate",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Control",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "ChangeState",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ChangeState",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "HumanoidStateType"
+						},
+						"Name": "state",
+						"Default": "None"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "GetState",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetState",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "HumanoidStateType"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "StateChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "StateChanged",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "HumanoidStateType"
+						},
+						"Name": "old"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "HumanoidStateType"
+						},
+						"Name": "new"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "FilteringEnabled",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Hidden"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemberType": "Property",
+				"Name": "FilteringEnabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Behavior",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "CameraMaxZoomDistance",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "CameraMaxZoomDistance",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Camera",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "CameraMinZoomDistance",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "CameraMinZoomDistance",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Camera",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "ClanTag",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ClanTag",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "HealthDisplayDistance",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "HealthDisplayDistance",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Camera",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "NameDisplayDistance",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "NameDisplayDistance",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Camera",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginManager",
+			"member": "ExportPlace",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ExportPlace",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "filePath",
+						"Default": ""
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginManager",
+			"member": "ExportSelection",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ExportSelection",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "filePath",
+						"Default": ""
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PointsService",
+			"member": "PointsAwarded",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "userId"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "userBalanceInGame"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "userTotalBalance"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "userId"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "pointsAwarded"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "userBalanceInGame"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "userTotalBalance"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "PointsAwarded",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "pointsAwarded"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userBalanceInGame"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userTotalBalance"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RenderSettings",
+			"member": "ReloadAssets",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ReloadAssets",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Debug",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "F1",
+			"type": "Add",
+			"value": {
+				"Name": "F1",
+				"Value": 282
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "F2",
+			"type": "Add",
+			"value": {
+				"Name": "F2",
+				"Value": 283
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "F3",
+			"type": "Add",
+			"value": {
+				"Name": "F3",
+				"Value": 284
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "F4",
+			"type": "Add",
+			"value": {
+				"Name": "F4",
+				"Value": 285
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "F5",
+			"type": "Add",
+			"value": {
+				"Name": "F5",
+				"Value": 286
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "F6",
+			"type": "Add",
+			"value": {
+				"Name": "F6",
+				"Value": 287
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "F7",
+			"type": "Add",
+			"value": {
+				"Name": "F7",
+				"Value": 288
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "F8",
+			"type": "Add",
+			"value": {
+				"Name": "F8",
+				"Value": 289
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "F9",
+			"type": "Add",
+			"value": {
+				"Name": "F9",
+				"Value": 290
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "F10",
+			"type": "Add",
+			"value": {
+				"Name": "F10",
+				"Value": 291
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "F11",
+			"type": "Add",
+			"value": {
+				"Name": "F11",
+				"Value": 292
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "F12",
+			"type": "Add",
+			"value": {
+				"Name": "F12",
+				"Value": 293
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "F13",
+			"type": "Add",
+			"value": {
+				"Name": "F13",
+				"Value": 294
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "F14",
+			"type": "Add",
+			"value": {
+				"Name": "F14",
+				"Value": 295
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeyCode",
+			"item": "F15",
+			"type": "Add",
+			"value": {
+				"Name": "F15",
+				"Value": 296
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "HumanoidStateType",
+			"type": "Add",
+			"value": {
+				"Name": "HumanoidStateType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidStateType",
+			"item": "FallingDown",
+			"type": "Add",
+			"value": {
+				"Name": "FallingDown",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidStateType",
+			"item": "Running",
+			"type": "Add",
+			"value": {
+				"Name": "Running",
+				"Value": 8
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidStateType",
+			"item": "RunningNoPhysics",
+			"type": "Add",
+			"value": {
+				"Name": "RunningNoPhysics",
+				"Value": 10
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidStateType",
+			"item": "Climbing",
+			"type": "Add",
+			"value": {
+				"Name": "Climbing",
+				"Value": 12
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidStateType",
+			"item": "StrafingNoPhysics",
+			"type": "Add",
+			"value": {
+				"Name": "StrafingNoPhysics",
+				"Value": 11
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidStateType",
+			"item": "Ragdoll",
+			"type": "Add",
+			"value": {
+				"Name": "Ragdoll",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidStateType",
+			"item": "GettingUp",
+			"type": "Add",
+			"value": {
+				"Name": "GettingUp",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidStateType",
+			"item": "Jumping",
+			"type": "Add",
+			"value": {
+				"Name": "Jumping",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidStateType",
+			"item": "Landed",
+			"type": "Add",
+			"value": {
+				"Name": "Landed",
+				"Value": 7
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidStateType",
+			"item": "Flying",
+			"type": "Add",
+			"value": {
+				"Name": "Flying",
+				"Value": 6
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidStateType",
+			"item": "Freefall",
+			"type": "Add",
+			"value": {
+				"Name": "Freefall",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidStateType",
+			"item": "Seated",
+			"type": "Add",
+			"value": {
+				"Name": "Seated",
+				"Value": 13
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidStateType",
+			"item": "PlatformStanding",
+			"type": "Add",
+			"value": {
+				"Name": "PlatformStanding",
+				"Value": 14
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidStateType",
+			"item": "Dead",
+			"type": "Add",
+			"value": {
+				"Name": "Dead",
+				"Value": 15
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidStateType",
+			"item": "Swimming",
+			"type": "Add",
+			"value": {
+				"Name": "Swimming",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidStateType",
+			"item": "Physics",
+			"type": "Add",
+			"value": {
+				"Name": "Physics",
+				"Value": 16
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidStateType",
+			"item": "None",
+			"type": "Add",
+			"value": {
+				"Name": "None",
+				"Value": 18
+			}
+		}
+	]
+}

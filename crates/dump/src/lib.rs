@@ -1,3 +1,4 @@
+pub mod backfill;
 pub mod diff;
 mod http;
 pub mod zip;
@@ -287,7 +288,8 @@ pub fn build_diff(
 			hash: to.hash.clone(),
 		},
 		changes: diff::diff_dump(before.0, after.0),
-		descriptions: diff::diff_descriptions(before, after),
+		descriptions: Some(diff::diff_descriptions(before, after)),
+		unrecorded: Vec::new(),
 	}
 }
 
@@ -316,7 +318,7 @@ async fn save_diff(
 	println!(
 		"Saved {} API changes and {} description changes from {} to {}.",
 		diff.changes.len(),
-		diff.descriptions.len(),
+		diff.descriptions.as_ref().map_or(0, Vec::len),
 		from.version,
 		to.version
 	);

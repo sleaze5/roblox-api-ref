@@ -1,0 +1,918 @@
+{
+	"from": {
+		"version": "0.511.0.5110267",
+		"hash": "0376baaa179048d9"
+	},
+	"to": {
+		"version": "0.512.0.5120419",
+		"hash": "d5507247339543c1"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "PerformCreateOutfit",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PerformCreateOutfit",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "PerformSaveAvatarNew",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PerformSaveAvatarNew",
+				"Parameters": [
+					{
+						"Name": "addedAssets",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "removedAssets",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "CSGCacheService",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "CSGCacheService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GamepadService",
+			"member": "GamepadCursorEnabled",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "State",
+					"after": "Data"
+				},
+				{
+					"field": "Security",
+					"before": {
+						"Read": "RobloxScriptSecurity",
+						"Write": "RobloxScriptSecurity"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "RobloxScriptSecurity"
+					}
+				},
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": false,
+						"CanSave": false
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": true
+					}
+				},
+				{
+					"field": "Tags",
+					"before": [
+						"Hidden",
+						"NotReplicated"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "GamepadCursorEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GamepadService",
+			"member": "DisableGamepadCursor",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DisableGamepadCursor",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GamepadService",
+			"member": "EnableGamepadCursor",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "EnableGamepadCursor",
+				"Parameters": [
+					{
+						"Name": "guiObject",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LogService",
+			"member": "ServerMessageOut",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "message",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "messageType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "MessageType"
+							}
+						},
+						{
+							"Name": "timestamp",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "message",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "messageType",
+							"Type": {
+								"Category": "Enum",
+								"Name": "MessageType"
+							}
+						},
+						{
+							"Name": "timestamp",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "double"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "ServerMessageOut",
+				"Parameters": [
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "messageType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "MessageType"
+						}
+					},
+					{
+						"Name": "timestamp",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "double"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "TerrainSlate",
+			"type": "Add",
+			"value": {
+				"Category": "Terrain Overrides",
+				"MemberType": "Property",
+				"Name": "TerrainSlate",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "TerrainWoodPlanks",
+			"type": "Add",
+			"value": {
+				"Category": "Terrain Overrides",
+				"MemberType": "Property",
+				"Name": "TerrainWoodPlanks",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialVariant",
+			"member": "StudsPerTile",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Appearance For Part",
+					"after": "Appearance"
+				}
+			],
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "StudsPerTile",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MetaBreakpoint",
+			"member": "Condition",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": false,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": true
+					}
+				},
+				{
+					"field": "Tags",
+					"before": [
+						"Hidden",
+						"ReadOnly",
+						"NotReplicated"
+					],
+					"after": [
+						"Hidden",
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Condition",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MetaBreakpoint",
+			"member": "SetCondition",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetCondition",
+				"Parameters": [
+					{
+						"Name": "condition",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "status",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "FindPartsInRegion3",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ThreadSafety",
+					"before": "Safe",
+					"after": "Unsafe"
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindPartsInRegion3",
+				"Parameters": [
+					{
+						"Name": "region",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Region3"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "ignoreDescendantsInstance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Default": "20",
+						"Name": "maxParts",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "FindPartsInRegion3WithIgnoreList",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindPartsInRegion3WithIgnoreList",
+				"Parameters": [
+					{
+						"Name": "region",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Region3"
+						}
+					},
+					{
+						"Name": "ignoreDescendantsTable",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					},
+					{
+						"Default": "20",
+						"Name": "maxParts",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "FindPartsInRegion3WithWhiteList",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindPartsInRegion3WithWhiteList",
+				"Parameters": [
+					{
+						"Name": "region",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Region3"
+						}
+					},
+					{
+						"Name": "whitelistDescendantsTable",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					},
+					{
+						"Default": "20",
+						"Name": "maxParts",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "GetPartBoundsInBox",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ThreadSafety",
+					"before": "Unsafe",
+					"after": "Safe"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPartBoundsInBox",
+				"Parameters": [
+					{
+						"Name": "cframe",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					},
+					{
+						"Name": "size",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Default": "OverlapParams{MaxParts=false, BruteForceAllSlow=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+						"Name": "overlapParams",
+						"Type": {
+							"Category": "DataType",
+							"Name": "OverlapParams"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "GetPartBoundsInRadius",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ThreadSafety",
+					"before": "Unsafe",
+					"after": "Safe"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPartBoundsInRadius",
+				"Parameters": [
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "radius",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Default": "OverlapParams{MaxParts=false, BruteForceAllSlow=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+						"Name": "overlapParams",
+						"Type": {
+							"Category": "DataType",
+							"Name": "OverlapParams"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "GetPartsInPart",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ThreadSafety",
+					"before": "Unsafe",
+					"after": "Safe"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPartsInPart",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "BasePart"
+						}
+					},
+					{
+						"Default": "OverlapParams{MaxParts=false, BruteForceAllSlow=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+						"Name": "overlapParams",
+						"Type": {
+							"Category": "DataType",
+							"Name": "OverlapParams"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "IsRegion3Empty",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsRegion3Empty",
+				"Parameters": [
+					{
+						"Name": "region",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Region3"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "ignoreDescendentsInstance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "IsRegion3EmptyWithIgnoreList",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsRegion3EmptyWithIgnoreList",
+				"Parameters": [
+					{
+						"Name": "region",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Region3"
+						}
+					},
+					{
+						"Name": "ignoreDescendentsTable",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "GlobalWind",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "GlobalWind",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptChangeService",
+			"member": "ScriptSourceEdited",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ScriptSourceEdited",
+				"Parameters": [
+					{
+						"Name": "script",
+						"Type": {
+							"Category": "Class",
+							"Name": "LuaSourceContainer"
+						}
+					},
+					{
+						"Name": "edits",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VoiceChatInternal",
+			"member": "SubscribeRetry",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SubscribeRetry",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "LSPService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "LSPService",
+				"Superclass": "Instance",
+				"Tags": [
+					"Service",
+					"NotReplicated"
+				]
+			}
+		}
+	]
+}

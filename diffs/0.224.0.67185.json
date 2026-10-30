@@ -1,0 +1,134 @@
+{
+	"from": {
+		"version": "0.223.0.66938",
+		"hash": "123a439339fe4306"
+	},
+	"to": {
+		"version": "0.224.0.67185",
+		"hash": "f7131a583a8d4ea7"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "InsertService",
+			"member": "AllowInsertFreeModels",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "AllowInsertFreeModels",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Behavior",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "PromptForExistingAssetId",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "assetId",
+							"Default": "-1"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "assetType"
+						}
+					]
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Yields"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptForExistingAssetId",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "assetType"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "CollisionFidelity",
+			"type": "Add",
+			"value": {
+				"Name": "CollisionFidelity"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CollisionFidelity",
+			"item": "Default",
+			"type": "Add",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CollisionFidelity",
+			"item": "Hull",
+			"type": "Add",
+			"value": {
+				"Name": "Hull",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CollisionFidelity",
+			"item": "Box",
+			"type": "Add",
+			"value": {
+				"Name": "Box",
+				"Value": 2
+			}
+		}
+	]
+}

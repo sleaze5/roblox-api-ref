@@ -1,0 +1,158 @@
+{
+	"from": {
+		"version": "0.467.0.418297",
+		"hash": "985a79b1a3fc4c81"
+	},
+	"to": {
+		"version": "0.468.0.418570",
+		"hash": "c079db0bd62c49fd"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "ScriptContext",
+			"member": "ScriptsDisabled",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": false
+					},
+					"after": {
+						"CanLoad": false,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": [
+						"NotReplicated"
+					],
+					"after": [
+						"Hidden"
+					]
+				}
+			],
+			"value": {
+				"Category": "State",
+				"MemberType": "Property",
+				"Name": "ScriptsDisabled",
+				"Security": {
+					"Read": "LocalUserSecurity",
+					"Write": "LocalUserSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Language",
+			"type": "Remove",
+			"value": {
+				"Category": "General",
+				"MemberType": "Property",
+				"Name": "Language",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "LanguagePreference"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WeldConstraint",
+			"member": "Enabled",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "Enabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "IncrementalPatchBuilder",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "IncrementalPatchBuilder",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "LanguagePreference",
+			"type": "Remove",
+			"value": {
+				"Name": "LanguagePreference"
+			}
+		}
+	]
+}

@@ -40,7 +40,11 @@ pub fn history_facts(
 	let noun = noun(kind);
 	let added = history.and_then(|history| history.added.as_ref());
 	let changed = history.and_then(|history| history.changed.as_ref());
+	let unrecorded = history.is_some_and(|history| history.unrecorded);
 	let added_hint = match added {
+		None if unrecorded => format!(
+			"Unrecorded: the public API dumps that older versions are compared with do not list this {noun}, so the update that added it is unknown."
+		),
 		None => format!(
 			"Not recorded: this {noun} already existed in {}, the oldest version that this site tracks.",
 			start.unwrap_or("the oldest version")
@@ -49,6 +53,7 @@ pub fn history_facts(
 	};
 	html! {
 		(fact("Added", Some(&added_hint), &match added {
+			None if unrecorded => html! { "Unrecorded" },
 			None => html! { "Not recorded" },
 			Some(event) => event_value(event, kind, name),
 		}))
@@ -82,6 +87,9 @@ pub fn history_list(
 							span class="text-xs text-fg-faint" { (format_date(&entry.published)) }
 							span class="text-fg-muted" { (entry_text(entry, noun)) }
 						}
+					}
+					@if history.unrecorded {
+						li class="text-fg-faint" { "Added: unrecorded" }
 					}
 					@if let Some(before) = &history.added_before {
 						li class="text-fg-faint" {

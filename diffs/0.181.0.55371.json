@@ -1,0 +1,131 @@
+{
+	"from": {
+		"version": "0.180.0.55224",
+		"hash": "1b62582f111742b3"
+	},
+	"to": {
+		"version": "0.181.0.55371",
+		"hash": "4764aa5f75b7446c"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "BlockUser",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "BlockUser",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "blockerUserId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "blockeeUserId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "UnblockUser",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UnblockUser",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "exblockerUserId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "exblockeeUserId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "VIPServerId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "VIPServerId",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "SetVIPServerId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetVIPServerId",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "newId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		}
+	]
+}

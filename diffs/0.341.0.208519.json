@@ -1,0 +1,150 @@
+{
+	"from": {
+		"version": "0.340.0.207129",
+		"hash": "0f99bb8f9f3d4b49"
+	},
+	"to": {
+		"version": "0.341.0.208519",
+		"hash": "d0a4dc4fae3446fb"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "PhysicsSettings",
+			"member": "ParallelPhysics",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ParallelPhysics",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextService",
+			"member": "FilterStringAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "stringToFilter"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "fromUserId"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "stringToFilter"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							},
+							"Name": "fromUserId"
+						},
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "TextFilterContext"
+							},
+							"Name": "textContext",
+							"Default": "PrivateChat"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "FilterStringAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "stringToFilter"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "fromUserId"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "TextFilterContext"
+						},
+						"Name": "textContext",
+						"Default": "PrivateChat"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "TextFilterContext",
+			"type": "Add",
+			"value": {
+				"Name": "TextFilterContext"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TextFilterContext",
+			"item": "PublicChat",
+			"type": "Add",
+			"value": {
+				"Name": "PublicChat",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TextFilterContext",
+			"item": "PrivateChat",
+			"type": "Add",
+			"value": {
+				"Name": "PrivateChat",
+				"Value": 2
+			}
+		}
+	]
+}

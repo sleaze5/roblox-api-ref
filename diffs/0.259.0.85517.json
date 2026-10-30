@@ -1,0 +1,297 @@
+{
+	"from": {
+		"version": "0.258.0.85044",
+		"hash": "2a3769b753884f05"
+	},
+	"to": {
+		"version": "0.259.0.85517",
+		"hash": "256edf8e82cb478d"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "FindFirstChildOfClass",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindFirstChildOfClass",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "className"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InsertService",
+			"member": "AllowInsertFreeModels",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotReplicated"
+					],
+					"after": [
+						"NotReplicated",
+						"NotBrowsable",
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Property",
+				"Name": "AllowInsertFreeModels",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Behavior",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotBrowsable",
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkClient",
+			"member": "PlayerConnect",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "userId"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "server"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "serverPort"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "clientPort",
+							"Default": "0"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "threadSleepTime",
+							"Default": "30"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "userId"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "server"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "serverPort"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "clientPort",
+							"Default": "0"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "threadSleepTime",
+							"Default": "30"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "dataCenterId",
+							"Default": "-1"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "PlayerConnect",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "server"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "serverPort"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "clientPort",
+						"Default": "0"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "threadSleepTime",
+						"Default": "30"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "dataCenterId",
+						"Default": "-1"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SoundService",
+			"member": "PlayLocalSound",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PlayLocalSound",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "sound"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserGameSettings",
+			"member": "PerformanceStatsVisible",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "PerformanceStatsVisible",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserGameSettings",
+			"member": "PerformanceStatsVisibleChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PerformanceStatsVisibleChanged",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "isPerformanceStatsVisible"
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		}
+	]
+}

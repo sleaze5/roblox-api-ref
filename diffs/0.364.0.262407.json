@@ -1,0 +1,803 @@
+{
+	"from": {
+		"version": "0.363.1.259732",
+		"hash": "d95fcc63c90e4d62"
+	},
+	"to": {
+		"version": "0.364.0.262407",
+		"hash": "d61fb56745d34d1e"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "KeyframeSequence",
+			"member": "AuthoredHipHeight",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "AuthoredHipHeight",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LocalizationService",
+			"member": "PromptDownloadGameTableToCSV",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptDownloadGameTableToCSV",
+				"Parameters": [
+					{
+						"Name": "table",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LocalizationService",
+			"member": "PromptUploadCSVToGameTable",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptUploadCSVToGameTable",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ClientReplicator",
+			"member": "RequestRCCProfilerData",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RequestRCCProfilerData",
+				"Parameters": [
+					{
+						"Name": "frameRate",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "timeFrame",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ClientReplicator",
+			"member": "RCCProfilerDataComplete",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "RCCProfilerDataComplete",
+				"Parameters": [
+					{
+						"Name": "success",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "CreatePluginAction",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "actionId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "text",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "statusTip",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "",
+							"Name": "iconName",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "actionId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "text",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "statusTip",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "",
+							"Name": "iconName",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "true",
+							"Name": "allowBinding",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreatePluginAction",
+				"Parameters": [
+					{
+						"Name": "actionId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "text",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "statusTip",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "iconName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "true",
+						"Name": "allowBinding",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "CreatePluginMenu",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreatePluginMenu",
+				"Parameters": [
+					{
+						"Name": "id",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "title",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "icon",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginAction",
+			"member": "AllowBinding",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "AllowBinding",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "CopyToClipboard",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CopyToClipboard",
+				"Parameters": [
+					{
+						"Name": "stringToCopy",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "OpenPluginInsertPage",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "OpenPluginInsertPage",
+				"Parameters": [
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "SetUniverseDisplayName",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetUniverseDisplayName",
+				"Parameters": [
+					{
+						"Name": "newName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserGameSettings",
+			"member": "RCCProfilerRecordFrameRate",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "RCCProfilerRecordFrameRate",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserGameSettings",
+			"member": "RCCProfilerRecordTimeFrame",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "RCCProfilerRecordTimeFrame",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PluginMenu",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "PluginMenu",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginMenu",
+			"member": "Icon",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "Icon",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginMenu",
+			"member": "Title",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "Title",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginMenu",
+			"member": "AddAction",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddAction",
+				"Parameters": [
+					{
+						"Name": "action",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginMenu",
+			"member": "AddMenu",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddMenu",
+				"Parameters": [
+					{
+						"Name": "menu",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginMenu",
+			"member": "AddNewAction",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddNewAction",
+				"Parameters": [
+					{
+						"Name": "actionId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "text",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "icon",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginMenu",
+			"member": "AddSeparator",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddSeparator",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginMenu",
+			"member": "Clear",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Clear",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginMenu",
+			"member": "ShowAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ShowAsync",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "StopWatchReporter",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "StopWatchReporter",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StopWatchReporter",
+			"member": "FinishTask",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FinishTask",
+				"Parameters": [
+					{
+						"Name": "taskId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StopWatchReporter",
+			"member": "SendReport",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SendReport",
+				"Parameters": [
+					{
+						"Name": "reportName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StopWatchReporter",
+			"member": "StartTask",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "StartTask",
+				"Parameters": [
+					{
+						"Name": "reportName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "taskName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "Gotham",
+			"type": "Add",
+			"value": {
+				"Name": "Gotham",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 17
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "GothamSemibold",
+			"type": "Add",
+			"value": {
+				"Name": "GothamSemibold",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 18
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "GothamBold",
+			"type": "Add",
+			"value": {
+				"Name": "GothamBold",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 19
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "GothamBlack",
+			"type": "Add",
+			"value": {
+				"Name": "GothamBlack",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 20
+			}
+		}
+	]
+}

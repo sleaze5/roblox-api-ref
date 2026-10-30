@@ -1,0 +1,457 @@
+{
+	"from": {
+		"version": "0.394.0.322464",
+		"hash": "bcb6acf0214745d2"
+	},
+	"to": {
+		"version": "0.395.0.324413",
+		"hash": "029c07e114464970"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Lighting",
+			"member": "Outlines",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "Outlines",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Deprecated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DraftsService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "DraftsService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DraftsService",
+			"member": "DiscardEdits",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DiscardEdits",
+				"Parameters": [
+					{
+						"Name": "scriptGuids",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DraftsService",
+			"member": "GetEditors",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetEditors",
+				"Parameters": [
+					{
+						"Name": "scriptGuid",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DraftsService",
+			"member": "OpenDrafts",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "OpenDrafts",
+				"Parameters": [
+					{
+						"Name": "scriptGuids",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DraftsService",
+			"member": "ShowDiffsAgainstBase",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ShowDiffsAgainstBase",
+				"Parameters": [
+					{
+						"Name": "scriptGuids",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DraftsService",
+			"member": "ShowDiffsAgainstServer",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ShowDiffsAgainstServer",
+				"Parameters": [
+					{
+						"Name": "scriptGuids",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DraftsService",
+			"member": "CommitEdits",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CommitEdits",
+				"Parameters": [
+					{
+						"Name": "scriptGuids",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DraftsService",
+			"member": "GetDrafts",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetDrafts",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DraftsService",
+			"member": "UpdateToLatestVersion",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UpdateToLatestVersion",
+				"Parameters": [
+					{
+						"Name": "scriptGuids",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DraftsService",
+			"member": "CommitStatusChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "CommitStatusChanged",
+				"Parameters": [
+					{
+						"Name": "scriptGuid",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "commitStatus",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DraftsService",
+			"member": "DraftAdded",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "DraftAdded",
+				"Parameters": [
+					{
+						"Name": "scriptGuid",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "script",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DraftsService",
+			"member": "DraftDeleted",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "DraftDeleted",
+				"Parameters": [
+					{
+						"Name": "scriptGuid",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DraftsService",
+			"member": "EditorsListChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "EditorsListChanged",
+				"Parameters": [
+					{
+						"Name": "scriptGuid",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DraftsService",
+			"member": "ScriptDeleted",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ScriptDeleted",
+				"Parameters": [
+					{
+						"Name": "scriptGuid",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DraftsService",
+			"member": "ScriptServerVersionChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ScriptServerVersionChanged",
+				"Parameters": [
+					{
+						"Name": "scriptGuid",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "EasingStyle",
+			"item": "Exponential",
+			"type": "Add",
+			"value": {
+				"Name": "Exponential",
+				"Value": 8
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "EasingStyle",
+			"item": "Circular",
+			"type": "Add",
+			"value": {
+				"Name": "Circular",
+				"Value": 9
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "EasingStyle",
+			"item": "Cubic",
+			"type": "Add",
+			"value": {
+				"Name": "Cubic",
+				"Value": 10
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "DraftStatusCode",
+			"type": "Add",
+			"value": {
+				"Name": "DraftStatusCode"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DraftStatusCode",
+			"item": "OK",
+			"type": "Add",
+			"value": {
+				"Name": "OK",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DraftStatusCode",
+			"item": "DraftOutdated",
+			"type": "Add",
+			"value": {
+				"Name": "DraftOutdated",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DraftStatusCode",
+			"item": "ScriptRemoved",
+			"type": "Add",
+			"value": {
+				"Name": "ScriptRemoved",
+				"Value": 2
+			}
+		}
+	]
+}

@@ -1,0 +1,453 @@
+{
+	"from": {
+		"version": "0.219.0.65545",
+		"hash": "a171864306c74d84"
+	},
+	"to": {
+		"version": "0.220.0.66026",
+		"hash": "095ded1bb67e4b27"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "HttpService",
+			"member": "PostAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "url"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "data"
+						},
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "HttpContentType"
+							},
+							"Name": "content_type",
+							"Default": "ApplicationJson"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "url"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "data"
+						},
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "HttpContentType"
+							},
+							"Name": "content_type",
+							"Default": "ApplicationJson"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "compress",
+							"Default": "false"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "PostAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "url"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "data"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "HttpContentType"
+						},
+						"Name": "content_type",
+						"Default": "ApplicationJson"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "compress",
+						"Default": "false"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "CustomPhysicalProperties",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "CustomPhysicalProperties",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "PhysicalProperties"
+				},
+				"Category": "Part ",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "PromptForExistingAssetId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptForExistingAssetId",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "assetId",
+						"Default": "-1"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "MaxDistance",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "MaxDistance",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "MinDistance",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "MinDistance",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "InCameraGesture",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "InCameraGesture",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "OverrideMouseIconEnabled",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "OverrideMouseIconEnabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "NetworkOwnership",
+			"type": "Add",
+			"value": {
+				"Name": "NetworkOwnership"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "NetworkOwnership",
+			"item": "Automatic",
+			"type": "Add",
+			"value": {
+				"Name": "Automatic",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "NetworkOwnership",
+			"item": "Manual",
+			"type": "Add",
+			"value": {
+				"Name": "Manual",
+				"Value": 1
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "PhysicalPropertiesMode",
+			"type": "Add",
+			"value": {
+				"Name": "PhysicalPropertiesMode"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PhysicalPropertiesMode",
+			"item": "Default",
+			"type": "Add",
+			"value": {
+				"Name": "Default",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PhysicalPropertiesMode",
+			"item": "Legacy",
+			"type": "Add",
+			"value": {
+				"Name": "Legacy",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PhysicalPropertiesMode",
+			"item": "New",
+			"type": "Add",
+			"value": {
+				"Name": "New",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "PoseEasingDirection",
+			"type": "Add",
+			"value": {
+				"Name": "PoseEasingDirection"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PoseEasingDirection",
+			"item": "Out",
+			"type": "Add",
+			"value": {
+				"Name": "Out",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PoseEasingDirection",
+			"item": "InOut",
+			"type": "Add",
+			"value": {
+				"Name": "InOut",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PoseEasingDirection",
+			"item": "In",
+			"type": "Add",
+			"value": {
+				"Name": "In",
+				"Value": 0
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "PoseEasingStyle",
+			"type": "Add",
+			"value": {
+				"Name": "PoseEasingStyle"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PoseEasingStyle",
+			"item": "Linear",
+			"type": "Add",
+			"value": {
+				"Name": "Linear",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PoseEasingStyle",
+			"item": "Constant",
+			"type": "Add",
+			"value": {
+				"Name": "Constant",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PoseEasingStyle",
+			"item": "Elastic",
+			"type": "Add",
+			"value": {
+				"Name": "Elastic",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PoseEasingStyle",
+			"item": "Cubic",
+			"type": "Add",
+			"value": {
+				"Name": "Cubic",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PoseEasingStyle",
+			"item": "Bounce",
+			"type": "Add",
+			"value": {
+				"Name": "Bounce",
+				"Value": 4
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "RollOffMode",
+			"type": "Add",
+			"value": {
+				"Name": "RollOffMode"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RollOffMode",
+			"item": "Inverse",
+			"type": "Add",
+			"value": {
+				"Name": "Inverse",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RollOffMode",
+			"item": "Linear",
+			"type": "Add",
+			"value": {
+				"Name": "Linear",
+				"Value": 1
+			}
+		}
+	]
+}

@@ -1,0 +1,104 @@
+{
+	"from": {
+		"version": "0.429.2.404265",
+		"hash": "b42d17e5656f47c9"
+	},
+	"to": {
+		"version": "0.430.0.404093",
+		"hash": "b13a393452934cff"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "DebugSettings",
+			"member": "IsFmodProfilingEnabled",
+			"type": "Remove",
+			"value": {
+				"Category": "Benchmarking",
+				"MemberType": "Property",
+				"Name": "IsFmodProfilingEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PartOperation",
+			"member": "SmoothingAngle",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "SmoothingAngle",
+				"Security": {
+					"Read": "None",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "SetInsertPoint",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetInsertPoint",
+				"Parameters": [
+					{
+						"Name": "point",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Default": "false",
+						"Name": "ignoreGrid",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ReplicatedScriptService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ReplicatedScriptService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		}
+	]
+}

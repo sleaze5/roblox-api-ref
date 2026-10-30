@@ -1,0 +1,275 @@
+{
+	"from": {
+		"version": "0.208.0.62570",
+		"hash": "7d64c9ce01664bca"
+	},
+	"to": {
+		"version": "0.209.0.62797",
+		"hash": "10ff6084ab364993"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Tool",
+			"member": "RequiresHandle",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "RequiresHandle",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Behavior",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "Drag",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Drag",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Particles",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "EmissionDirection",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "EmissionDirection",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "NormalId"
+				},
+				"Category": "Emission",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "LockedToPart",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "LockedToPart",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Particles",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "VelocityInheritance",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "VelocityInheritance",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Particles",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "Emit",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Emit",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "particleCount",
+						"Default": "16"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "MaxPlayers",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "RobloxSecurity",
+						"Write": "RobloxSecurity"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "None"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": [
+						"NotReplicated"
+					],
+					"after": [
+						"ReadOnly",
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Property",
+				"Name": "MaxPlayers",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "MaxPlayersInternal",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "MaxPlayersInternal",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "LocalUserSecurity",
+					"Write": "LocalUserSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "PreferredPlayers",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "PreferredPlayers",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "PreferredPlayersInternal",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "PreferredPlayersInternal",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "LocalUserSecurity",
+					"Write": "LocalUserSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		}
+	]
+}

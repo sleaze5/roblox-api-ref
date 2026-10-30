@@ -1,0 +1,348 @@
+{
+	"from": {
+		"version": "0.186.0.56666",
+		"hash": "c0830f3a542d41e9"
+	},
+	"to": {
+		"version": "0.187.0.56990",
+		"hash": "60f68cddda9b4f9b"
+	},
+	"changes": [
+		{
+			"element": "Class",
+			"class": "BaseScript",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Superclass",
+					"before": "Instance",
+					"after": "LuaSourceContainer"
+				}
+			],
+			"value": {
+				"Name": "BaseScript",
+				"Superclass": "LuaSourceContainer",
+				"MemoryCategory": "Script",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "DisplayDistanceType",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "DisplayDistanceType",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "HumanoidDisplayDistanceType"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "HealthDisplayDistance",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "HealthDisplayDistance",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "NameDisplayDistance",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "NameDisplayDistance",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "MoveToFinished",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "MoveToFinished",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "reached"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ModuleScript",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Superclass",
+					"before": "Instance",
+					"after": "LuaSourceContainer"
+				}
+			],
+			"value": {
+				"Name": "ModuleScript",
+				"Superclass": "LuaSourceContainer",
+				"MemoryCategory": "Script"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ModuleScript",
+			"member": "LinkedSource",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "LinkedSource",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Content"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "GetRenderCFrame",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRenderCFrame",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RunService",
+			"member": "BindToRenderStep",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "BindToRenderStep",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "name"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "priority"
+					},
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						},
+						"Name": "function"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RunService",
+			"member": "UnbindFromRenderStep",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UnbindFromRenderStep",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "name"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "LuaSourceContainer",
+			"type": "Add",
+			"value": {
+				"Name": "LuaSourceContainer",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "HumanoidDisplayDistanceType",
+			"type": "Add",
+			"value": {
+				"Name": "HumanoidDisplayDistanceType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidDisplayDistanceType",
+			"item": "Viewer",
+			"type": "Add",
+			"value": {
+				"Name": "Viewer",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidDisplayDistanceType",
+			"item": "Subject",
+			"type": "Add",
+			"value": {
+				"Name": "Subject",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidDisplayDistanceType",
+			"item": "None",
+			"type": "Add",
+			"value": {
+				"Name": "None",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "RenderPriority",
+			"type": "Add",
+			"value": {
+				"Name": "RenderPriority"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RenderPriority",
+			"item": "First",
+			"type": "Add",
+			"value": {
+				"Name": "First",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RenderPriority",
+			"item": "Input",
+			"type": "Add",
+			"value": {
+				"Name": "Input",
+				"Value": 100
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RenderPriority",
+			"item": "Camera",
+			"type": "Add",
+			"value": {
+				"Name": "Camera",
+				"Value": 200
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RenderPriority",
+			"item": "Character",
+			"type": "Add",
+			"value": {
+				"Name": "Character",
+				"Value": 300
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RenderPriority",
+			"item": "Last",
+			"type": "Add",
+			"value": {
+				"Name": "Last",
+				"Value": 2000
+			}
+		}
+	]
+}

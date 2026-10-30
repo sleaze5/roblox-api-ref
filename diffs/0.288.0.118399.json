@@ -1,0 +1,402 @@
+{
+	"from": {
+		"version": "0.287.1.117847",
+		"hash": "292abc120cb44384"
+	},
+	"to": {
+		"version": "0.288.0.118399",
+		"hash": "b6923b4ee6414bd0"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "DataStoreService",
+			"member": "GetRequestBudgetForRequestType",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRequestBudgetForRequestType",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "DataStoreRequestType"
+						},
+						"Name": "requestType"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "LoadCharacterBlocking",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "LoadCharacterBlocking",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TweenService",
+			"member": "Create",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Create",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "instance"
+					},
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "TweenInfo"
+						},
+						"Name": "tweenInfo"
+					},
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						},
+						"Name": "propertyTable"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TweenBase",
+			"type": "Add",
+			"value": {
+				"Name": "TweenBase",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotCreatable",
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TweenBase",
+			"member": "PlaybackState",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "PlaybackState",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "PlaybackState"
+				},
+				"Category": "Behavior",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TweenBase",
+			"member": "Cancel",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Cancel",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TweenBase",
+			"member": "Pause",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Pause",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TweenBase",
+			"member": "Play",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Play",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TweenBase",
+			"member": "Completed",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Completed",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "PlaybackState"
+						},
+						"Name": "playbackState"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Tween",
+			"type": "Add",
+			"value": {
+				"Name": "Tween",
+				"Superclass": "TweenBase",
+				"MemoryCategory": "Instances"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Tween",
+			"member": "Instance",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Instance",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Object"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Tween",
+			"member": "TweenInfo",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "TweenInfo",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "TweenInfo"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "DataStoreRequestType",
+			"type": "Add",
+			"value": {
+				"Name": "DataStoreRequestType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DataStoreRequestType",
+			"item": "GetAsync",
+			"type": "Add",
+			"value": {
+				"Name": "GetAsync",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DataStoreRequestType",
+			"item": "SetIncrementAsync",
+			"type": "Add",
+			"value": {
+				"Name": "SetIncrementAsync",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DataStoreRequestType",
+			"item": "UpdateAsync",
+			"type": "Add",
+			"value": {
+				"Name": "UpdateAsync",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DataStoreRequestType",
+			"item": "GetSortedAsync",
+			"type": "Add",
+			"value": {
+				"Name": "GetSortedAsync",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DataStoreRequestType",
+			"item": "SetIncrementSortedAsync",
+			"type": "Add",
+			"value": {
+				"Name": "SetIncrementSortedAsync",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DataStoreRequestType",
+			"item": "OnUpdate",
+			"type": "Add",
+			"value": {
+				"Name": "OnUpdate",
+				"Value": 5
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "PlaybackState",
+			"type": "Add",
+			"value": {
+				"Name": "PlaybackState"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PlaybackState",
+			"item": "Begin",
+			"type": "Add",
+			"value": {
+				"Name": "Begin",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PlaybackState",
+			"item": "Delayed",
+			"type": "Add",
+			"value": {
+				"Name": "Delayed",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PlaybackState",
+			"item": "Playing",
+			"type": "Add",
+			"value": {
+				"Name": "Playing",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PlaybackState",
+			"item": "Paused",
+			"type": "Add",
+			"value": {
+				"Name": "Paused",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PlaybackState",
+			"item": "Completed",
+			"type": "Add",
+			"value": {
+				"Name": "Completed",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PlaybackState",
+			"item": "Cancelled",
+			"type": "Add",
+			"value": {
+				"Name": "Cancelled",
+				"Value": 5
+			}
+		}
+	]
+}

@@ -1,0 +1,400 @@
+{
+	"from": {
+		"version": "0.201.1.61043",
+		"hash": "75334a80f0a9470d"
+	},
+	"to": {
+		"version": "0.202.0.61076",
+		"hash": "6b36c8d491874b3f"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AnimationTrack",
+			"member": "IsPlaying",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "IsPlaying",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationTrack",
+			"member": "Length",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Length",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationTrack",
+			"member": "Priority",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Priority",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "AnimationPriority"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiObject",
+			"member": "Selectable",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "RobloxScriptSecurity",
+						"Write": "RobloxScriptSecurity"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "None"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Property",
+				"Name": "Selectable",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkReplicator",
+			"member": "StatsReceived",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "StatsReceived",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						},
+						"Name": "stats"
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ClientReplicator",
+			"member": "StatsReceived",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "StatsReceived",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						},
+						"Name": "stats"
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "GetPlayerByUserId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPlayerByUserId",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "GetNameFromUserIdAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetNameFromUserIdAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "GetUserIdFromNameAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetUserIdFromNameAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "userName"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Platform",
+			"item": "None",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 4,
+					"after": 18
+				}
+			],
+			"value": {
+				"Name": "None",
+				"Value": 18
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Platform",
+			"item": "XBoxOne",
+			"type": "Add",
+			"value": {
+				"Name": "XBoxOne",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Platform",
+			"item": "PS4",
+			"type": "Add",
+			"value": {
+				"Name": "PS4",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Platform",
+			"item": "PS3",
+			"type": "Add",
+			"value": {
+				"Name": "PS3",
+				"Value": 6
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Platform",
+			"item": "XBox360",
+			"type": "Add",
+			"value": {
+				"Name": "XBox360",
+				"Value": 7
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Platform",
+			"item": "WiiU",
+			"type": "Add",
+			"value": {
+				"Name": "WiiU",
+				"Value": 8
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Platform",
+			"item": "NX",
+			"type": "Add",
+			"value": {
+				"Name": "NX",
+				"Value": 9
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Platform",
+			"item": "Ouya",
+			"type": "Add",
+			"value": {
+				"Name": "Ouya",
+				"Value": 10
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Platform",
+			"item": "AndroidTV",
+			"type": "Add",
+			"value": {
+				"Name": "AndroidTV",
+				"Value": 11
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Platform",
+			"item": "Chromecast",
+			"type": "Add",
+			"value": {
+				"Name": "Chromecast",
+				"Value": 12
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Platform",
+			"item": "Linux",
+			"type": "Add",
+			"value": {
+				"Name": "Linux",
+				"Value": 13
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Platform",
+			"item": "SteamOS",
+			"type": "Add",
+			"value": {
+				"Name": "SteamOS",
+				"Value": 14
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Platform",
+			"item": "WebOS",
+			"type": "Add",
+			"value": {
+				"Name": "WebOS",
+				"Value": 15
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Platform",
+			"item": "DOS",
+			"type": "Add",
+			"value": {
+				"Name": "DOS",
+				"Value": 16
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Platform",
+			"item": "BeOS",
+			"type": "Add",
+			"value": {
+				"Name": "BeOS",
+				"Value": 17
+			}
+		}
+	]
+}

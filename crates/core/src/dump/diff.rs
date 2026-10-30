@@ -106,7 +106,10 @@ pub struct DumpDiff {
 	pub from: DiffVersion,
 	pub to: DiffVersion,
 	pub changes: Vec<DumpChange>,
-	pub descriptions: Vec<DescriptionChange>,
+	#[serde(default, skip_serializing_if = "Option::is_none")]
+	pub descriptions: Option<Vec<DescriptionChange>>,
+	#[serde(default, skip_serializing_if = "Vec::is_empty")]
+	pub unrecorded: Vec<DumpChange>,
 }
 
 pub fn to_tab_json<T: Serialize>(value: &T) -> String {

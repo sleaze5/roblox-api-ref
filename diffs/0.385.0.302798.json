@@ -1,0 +1,473 @@
+{
+	"from": {
+		"version": "0.384.1.302070",
+		"hash": "e4c566c67e054118"
+	},
+	"to": {
+		"version": "0.385.0.302798",
+		"hash": "27794b946db44061"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "CoreScriptSyncService",
+			"member": "GetScriptFilePath",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetScriptFilePath",
+				"Parameters": [
+					{
+						"Name": "script",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NotificationService",
+			"member": "IsLuaGamesPageEnabled",
+			"type": "Remove",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "IsLuaGamesPageEnabled",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NotificationService",
+			"member": "IsLuaHomePageEnabled",
+			"type": "Remove",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "IsLuaHomePageEnabled",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NotificationService",
+			"member": "IsLuaBottomBarWithText",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "IsLuaBottomBarWithText",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "GearGenreSetting",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"ReadOnly",
+						"NotReplicated"
+					],
+					"after": [
+						"ReadOnly",
+						"NotReplicated",
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Category": "State",
+				"MemberType": "Property",
+				"Name": "GearGenreSetting",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated",
+					"Deprecated"
+				],
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "GearGenreSetting"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "IsGearTypeAllowed",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsGearTypeAllowed",
+				"Parameters": [
+					{
+						"Name": "gearType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "GearType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Stats",
+			"member": "GetBrowserTrackerId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBrowserTrackerId",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "GearGenreSetting",
+			"item": "AllGenres",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Name": "AllGenres",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "GearGenreSetting",
+			"item": "MatchingGenreOnly",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Name": "MatchingGenreOnly",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 1
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "GearType",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Name": "GearType",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "GearType",
+			"item": "MeleeWeapons",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Name": "MeleeWeapons",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "GearType",
+			"item": "RangedWeapons",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Name": "RangedWeapons",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "GearType",
+			"item": "Explosives",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Name": "Explosives",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "GearType",
+			"item": "PowerUps",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Name": "PowerUps",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "GearType",
+			"item": "NavigationEnhancers",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Name": "NavigationEnhancers",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "GearType",
+			"item": "MusicalInstruments",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Name": "MusicalInstruments",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "GearType",
+			"item": "SocialItems",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Name": "SocialItems",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 6
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "GearType",
+			"item": "BuildingTools",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Name": "BuildingTools",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 7
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "GearType",
+			"item": "Transport",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Name": "Transport",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 8
+			}
+		}
+	]
+}

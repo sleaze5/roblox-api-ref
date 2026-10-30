@@ -1,0 +1,195 @@
+{
+	"from": {
+		"version": "0.138.0.43576",
+		"hash": "7cb30356092f43ac"
+	},
+	"to": {
+		"version": "0.139.0.43815",
+		"hash": "9dddd6d1e4534c53"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptProductPurchaseFinished",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptProductPurchaseFinished",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "productId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "isPurchased"
+					}
+				],
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "ProcessReceipt",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Group",
+								"Name": "Variant"
+							},
+							"Name": "receiptInfo"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Group",
+								"Name": "Dictionary"
+							},
+							"Name": "receiptInfo"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Callback",
+				"Name": "ProcessReceipt",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						},
+						"Name": "receiptInfo"
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "ProductPurchaseDecision"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkServer",
+			"member": "SetGameId",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetGameId",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "newGameId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TeleportService",
+			"member": "TeleportToPlaceInstance",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "TeleportToPlaceInstance",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "placeId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "instanceId"
+					},
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "player",
+						"Default": "nil"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TeleportService",
+			"member": "GetPlayerPlaceInstanceAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPlayerPlaceInstanceAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		}
+	]
+}

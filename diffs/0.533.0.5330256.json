@@ -1,0 +1,538 @@
+{
+	"from": {
+		"version": "0.532.0.5320475",
+		"hash": "0f21fdf427bb4ab5"
+	},
+	"to": {
+		"version": "0.533.0.5330256",
+		"hash": "a876ecdbc41f4d4d"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "RigidConstraint",
+			"member": "Broken",
+			"type": "Remove",
+			"value": {
+				"Category": "Destruction",
+				"MemberType": "Property",
+				"Name": "Broken",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated",
+					"NotBrowsable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RigidConstraint",
+			"member": "DestructionEnabled",
+			"type": "Remove",
+			"value": {
+				"Category": "Destruction",
+				"MemberType": "Property",
+				"Name": "DestructionEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotBrowsable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RigidConstraint",
+			"member": "DestructionForce",
+			"type": "Remove",
+			"value": {
+				"Category": "Destruction",
+				"MemberType": "Property",
+				"Name": "DestructionForce",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotBrowsable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RigidConstraint",
+			"member": "DestructionTorque",
+			"type": "Remove",
+			"value": {
+				"Category": "Destruction",
+				"MemberType": "Property",
+				"Name": "DestructionTorque",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotBrowsable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "FaceControls",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemoryCategory": "Animation",
+				"Name": "FaceControls",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PathfindingLink",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "PathfindingLink",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "GetPlayers",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ThreadSafety",
+					"before": "Unsafe",
+					"after": "Safe"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPlayers",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDocument",
+			"member": "EditTextAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "newText",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "startLine",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "startCharacter",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Default": "-1",
+							"Name": "endLine",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Default": "-1",
+							"Name": "endCharacter",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "newText",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "startLine",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "startCharacter",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "endLine",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "endCharacter",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "EditTextAsync",
+				"Parameters": [
+					{
+						"Name": "newText",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "startLine",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "startCharacter",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "endLine",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "endCharacter",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Camera Pan Speed",
+			"type": "Add",
+			"value": {
+				"Category": "Camera",
+				"MemberType": "Property",
+				"Name": "Camera Pan Speed",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Team",
+			"member": "GetPlayers",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ThreadSafety",
+					"before": "Unsafe",
+					"after": "Safe"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPlayers",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TextChannel",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "TextChannel",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TextChatCommand",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "TextChatCommand",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ChatInputBarConfiguration",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotCreatable",
+						"NotBrowsable"
+					],
+					"after": [
+						"NotCreatable"
+					]
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ChatInputBarConfiguration",
+				"Superclass": "TextChatConfigurations",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ChatWindowConfiguration",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotCreatable",
+						"NotBrowsable"
+					],
+					"after": [
+						"NotCreatable"
+					]
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ChatWindowConfiguration",
+				"Superclass": "TextChatConfigurations",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TextChatService",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotCreatable",
+						"Service",
+						"NotBrowsable"
+					],
+					"after": [
+						"NotCreatable",
+						"Service"
+					]
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "TextChatService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TextSource",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotCreatable",
+						"NotBrowsable"
+					],
+					"after": [
+						"NotCreatable"
+					]
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "TextSource",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TeamCreateService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "TeamCreateService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TeamCreateService",
+			"member": "ToggleManageCollaborators",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ToggleManageCollaborators",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		}
+	]
+}

@@ -1,0 +1,494 @@
+{
+	"from": {
+		"version": "0.545.1.5450434",
+		"hash": "083442416b5d4b80"
+	},
+	"to": {
+		"version": "0.546.0.5460522",
+		"hash": "3bb02f4680434db0"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "GroundController",
+			"member": "MaxSlopeAngle",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": false,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden",
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "MaxSlopeAngle",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GroundController",
+			"member": "GroundOffset",
+			"type": "Add",
+			"value": {
+				"Category": "Movement",
+				"MemberType": "Property",
+				"Name": "GroundOffset",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ControllerManager",
+			"member": "HipHeight",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": true,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": false,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Hidden",
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "HipHeight",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "CanvasGroup",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotBrowsable"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"MemoryCategory": "Gui",
+				"Name": "CanvasGroup",
+				"Superclass": "GuiObject"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "SetHardwareSafeAreaInsets",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetHardwareSafeAreaInsets",
+				"Parameters": [
+					{
+						"Name": "left",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "top",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "right",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "bottom",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "IKControl",
+			"member": "Pole",
+			"type": "Remove",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "Pole",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptNativePurchaseWithLocalPlayer",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptNativePurchaseWithLocalPlayer",
+				"Parameters": [
+					{
+						"Name": "productId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "NativePurchaseFinishedWithLocalPlayer",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "NativePurchaseFinishedWithLocalPlayer",
+				"Parameters": [
+					{
+						"Name": "productId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "wasPurchased",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsService",
+			"member": "IsCollisionGroupRegistered",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsCollisionGroupRegistered",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "SetExperienceSettingsLocaleId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetExperienceSettingsLocaleId",
+				"Parameters": [
+					{
+						"Name": "locale",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptEditorService",
+			"member": "RegisterAutocompleteCallback",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "callbackFunction",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Function"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "name",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "priority",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "callbackFunction",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Function"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterAutocompleteCallback",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "priority",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "callbackFunction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptEditorService",
+			"member": "DeregisterAutocompleteCallback",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DeregisterAutocompleteCallback",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TeleportService",
+			"member": "MenuTeleportAttempt",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "MenuTeleportAttempt",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "IKControlType",
+			"item": "Null",
+			"type": "Remove",
+			"value": {
+				"Name": "Null",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "IKControlType",
+			"item": "Transform",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 3,
+					"after": 0
+				}
+			],
+			"value": {
+				"Name": "Transform",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "IKControlType",
+			"item": "LookAt",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 4,
+					"after": 3
+				}
+			],
+			"value": {
+				"Name": "LookAt",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "IKControlType",
+			"item": "Length",
+			"type": "Remove",
+			"value": {
+				"Name": "Length",
+				"Value": 5
+			}
+		}
+	]
+}

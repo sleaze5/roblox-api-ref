@@ -1,0 +1,205 @@
+{
+	"from": {
+		"version": "0.427.0.399257",
+		"hash": "d0bf986508c743d6"
+	},
+	"to": {
+		"version": "0.428.0.401006",
+		"hash": "12113dba42774ee0"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "LuaSourceContainer",
+			"member": "IsDifferentFromFileSystem",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "IsDifferentFromFileSystem",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ModuleScript",
+			"member": "CoreScriptModified",
+			"type": "Remove",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "CoreScriptModified",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"NotScriptable"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "DisplayName",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "RobloxScriptSecurity",
+						"Write": "RobloxScriptSecurity"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "None"
+					}
+				}
+			],
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "DisplayName",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDebugger",
+			"member": "GetGlobals",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [],
+					"after": [
+						{
+							"Default": "0",
+							"Name": "stackFrame",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetGlobals",
+				"Parameters": [
+					{
+						"Default": "0",
+						"Name": "stackFrame",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Map"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "AnimationIdSelected",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AnimationIdSelected",
+				"Parameters": [
+					{
+						"Name": "id",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "OnImportFromRoblox",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnImportFromRoblox",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ThirdPartyUserService",
+			"member": "GetUserDisplayName",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetUserDisplayName",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LanguagePreference",
+			"item": "Korean",
+			"type": "Add",
+			"value": {
+				"Name": "Korean",
+				"Value": 3
+			}
+		}
+	]
+}

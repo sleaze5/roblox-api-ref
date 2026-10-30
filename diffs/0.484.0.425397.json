@@ -1,0 +1,1333 @@
+{
+	"from": {
+		"version": "0.483.1.425021",
+		"hash": "dc147519f3754de1"
+	},
+	"to": {
+		"version": "0.484.0.425397",
+		"hash": "936fc5603684433d"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "PromptSaveAvatarCompleted",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "result",
+							"Type": {
+								"Category": "Enum",
+								"Name": "AvatarPromptResult"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "result",
+							"Type": {
+								"Category": "Enum",
+								"Name": "AvatarPromptResult"
+							}
+						},
+						{
+							"Name": "humanoidDescription",
+							"Type": {
+								"Category": "Class",
+								"Name": "HumanoidDescription"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptSaveAvatarCompleted",
+				"Parameters": [
+					{
+						"Name": "result",
+						"Type": {
+							"Category": "Enum",
+							"Name": "AvatarPromptResult"
+						}
+					},
+					{
+						"Name": "humanoidDescription",
+						"Type": {
+							"Category": "Class",
+							"Name": "HumanoidDescription"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AvatarEditorService",
+			"member": "NoPromptSaveAvatar",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "NoPromptSaveAvatar",
+				"Parameters": [
+					{
+						"Name": "humanoidDescription",
+						"Type": {
+							"Category": "Class",
+							"Name": "HumanoidDescription"
+						}
+					},
+					{
+						"Name": "rigType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "HumanoidRigType"
+						}
+					},
+					{
+						"Name": "saveDict",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "gearAssetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Chat",
+			"member": "FilterStringAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "stringToFilter",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "playerFrom",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Name": "playerTo",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "stringToFilter",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "playerFrom",
+							"Type": {
+								"Category": "Class",
+								"Name": "Player"
+							}
+						},
+						{
+							"Name": "playerTo",
+							"Type": {
+								"Category": "Class",
+								"Name": "Player"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "FilterStringAsync",
+				"Parameters": [
+					{
+						"Name": "stringToFilter",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "playerFrom",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "playerTo",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Chat",
+			"member": "FilterStringForBroadcast",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "stringToFilter",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "playerFrom",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "stringToFilter",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "playerFrom",
+							"Type": {
+								"Category": "Class",
+								"Name": "Player"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "FilterStringForBroadcast",
+				"Parameters": [
+					{
+						"Name": "stringToFilter",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "playerFrom",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Chat",
+			"member": "FilterStringForPlayerAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "stringToFilter",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "playerToFilterFor",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "stringToFilter",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "playerToFilterFor",
+							"Type": {
+								"Category": "Class",
+								"Name": "Player"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "FilterStringForPlayerAsync",
+				"Parameters": [
+					{
+						"Name": "stringToFilter",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "playerToFilterFor",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields",
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GamePassService",
+			"member": "PlayerHasPass",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "player",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Name": "gamePassId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "player",
+							"Type": {
+								"Category": "Class",
+								"Name": "Player"
+							}
+						},
+						{
+							"Name": "gamePassId",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "PlayerHasPass",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					},
+					{
+						"Name": "gamePassId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields",
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InsertService",
+			"member": "CreateMeshPartAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Class",
+						"Name": "Instance"
+					},
+					"after": {
+						"Category": "Class",
+						"Name": "MeshPart"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateMeshPartAsync",
+				"Parameters": [
+					{
+						"Name": "meshId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					},
+					{
+						"Name": "collisionFidelity",
+						"Type": {
+							"Category": "Enum",
+							"Name": "CollisionFidelity"
+						}
+					},
+					{
+						"Name": "renderFidelity",
+						"Type": {
+							"Category": "Enum",
+							"Name": "RenderFidelity"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "MeshPart"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "AssemblyAngularVelocity",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Assembly ",
+					"after": "Assembly"
+				}
+			],
+			"value": {
+				"Category": "Assembly",
+				"MemberType": "Property",
+				"Name": "AssemblyAngularVelocity",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "AssemblyCenterOfMass",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Assembly ",
+					"after": "Assembly"
+				}
+			],
+			"value": {
+				"Category": "Assembly",
+				"MemberType": "Property",
+				"Name": "AssemblyCenterOfMass",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "AssemblyLinearVelocity",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Assembly ",
+					"after": "Assembly"
+				}
+			],
+			"value": {
+				"Category": "Assembly",
+				"MemberType": "Property",
+				"Name": "AssemblyLinearVelocity",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "AssemblyMass",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Assembly ",
+					"after": "Assembly"
+				}
+			],
+			"value": {
+				"Category": "Assembly",
+				"MemberType": "Property",
+				"Name": "AssemblyMass",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "AssemblyRootPart",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Category",
+					"before": "Assembly ",
+					"after": "Assembly"
+				}
+			],
+			"value": {
+				"Category": "Assembly",
+				"MemberType": "Property",
+				"Name": "AssemblyRootPart",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "BasePart"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "CanQuery",
+			"type": "Add",
+			"value": {
+				"Category": "Collision",
+				"MemberType": "Property",
+				"Name": "CanQuery",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "CancelImportHeightmap",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CancelImportHeightmap",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "SetImportHeightmapPaused",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetImportHeightmapPaused",
+				"Parameters": [
+					{
+						"Name": "paused",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "ImportHeightmap",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ImportHeightmap",
+				"Parameters": [
+					{
+						"Name": "region",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Region3"
+						}
+					},
+					{
+						"Name": "heightmapAssetId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					},
+					{
+						"Name": "colormapAssetId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					},
+					{
+						"Name": "defaultMaterial",
+						"Type": {
+							"Category": "Enum",
+							"Name": "Material"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "TerrainProgressUpdate",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "TerrainProgressUpdate",
+				"Parameters": [
+					{
+						"Name": "progressRatio",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Enable Linting",
+			"type": "Add",
+			"value": {
+				"Category": "Script Editor",
+				"MemberType": "Property",
+				"Name": "Enable Linting",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Enable Signature Help",
+			"type": "Add",
+			"value": {
+				"Category": "Script Editor",
+				"MemberType": "Property",
+				"Name": "Enable Signature Help",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Enable Type Hover",
+			"type": "Add",
+			"value": {
+				"Category": "Script Editor",
+				"MemberType": "Property",
+				"Name": "Enable Type Hover",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AssetImportService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AssetImportService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportService",
+			"member": "ImportMesh",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ImportMesh",
+				"Parameters": [
+					{
+						"Name": "fileName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportService",
+			"member": "ImportMeshWithPrompt",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ImportMeshWithPrompt",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "CommandInstance",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "CommandInstance",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CommandInstance",
+			"member": "AllowGUIAccessPoints",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "AllowGUIAccessPoints",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CommandInstance",
+			"member": "Checked",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Checked",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CommandInstance",
+			"member": "DefaultShortcut",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "DefaultShortcut",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CommandInstance",
+			"member": "Enabled",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Enabled",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CommandInstance",
+			"member": "Group",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Group",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CommandInstance",
+			"member": "Icon",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Icon",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CommandInstance",
+			"member": "Name",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Name",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CommandInstance",
+			"member": "StatusTip",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "StatusTip",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CommandInstance",
+			"member": "Text",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Text",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CommandInstance",
+			"member": "RegisterExecutionCallback",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterExecutionCallback",
+				"Parameters": [
+					{
+						"Name": "callbackFunction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "CommandService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "CommandService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CommandService",
+			"member": "Execute",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Execute",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "params",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CommandService",
+			"member": "RegisterCommand",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterCommand",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "description",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "CommandInstance"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CommandService",
+			"member": "CommandExecuting",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "CommandExecuting",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "params",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TextInputType",
+			"item": "OneTimePassword",
+			"type": "Add",
+			"value": {
+				"Name": "OneTimePassword",
+				"Value": 8
+			}
+		}
+	]
+}

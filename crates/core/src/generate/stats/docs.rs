@@ -67,7 +67,11 @@ fn tally(period: &mut DocPeriod, details: &[DescriptionDetail]) {
 
 fn years(updates: &[Update]) -> Vec<DocPeriod> {
 	let mut periods: IndexMap<String, DocPeriod> = IndexMap::new();
-	for update in updates.iter().rev() {
+	for update in updates
+		.iter()
+		.rev()
+		.filter(|update| update.description_count.is_some())
+	{
 		let year = update.published[..4].to_owned();
 		let period = periods.entry(year.clone()).or_insert_with(|| DocPeriod {
 			period: year,

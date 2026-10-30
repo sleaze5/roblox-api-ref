@@ -1,0 +1,228 @@
+{
+	"from": {
+		"version": "0.345.0.219036",
+		"hash": "418137ce542940cc"
+	},
+	"to": {
+		"version": "0.346.0.222214",
+		"hash": "f94ed8a819b24d95"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "HttpRbxApiService",
+			"member": "GetAsyncFullUrl",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAsyncFullUrl",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "apiUrl"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "ThrottlingPriority"
+						},
+						"Name": "priority",
+						"Default": "Default"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "HttpRequestType"
+						},
+						"Name": "httpRequestType",
+						"Default": "Default"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "doNotAllowDiabolicalMode",
+						"Default": "false"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HttpRbxApiService",
+			"member": "PostAsyncFullUrl",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PostAsyncFullUrl",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "apiUrl"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "data"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "ThrottlingPriority"
+						},
+						"Name": "priority",
+						"Default": "Default"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "HttpContentType"
+						},
+						"Name": "content_type",
+						"Default": "ApplicationJson"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "HttpRequestType"
+						},
+						"Name": "httpRequestType",
+						"Default": "Default"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "doNotAllowDiabolicalMode",
+						"Default": "false"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NotificationService",
+			"member": "IsLuaGamesPageEnabled",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsLuaGamesPageEnabled",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NotificationService",
+			"member": "IsLuaGamesPageEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "IsLuaGamesPageEnabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Behavior",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NotificationService",
+			"member": "IsLuaHomePageEnabled",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsLuaHomePageEnabled",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NotificationService",
+			"member": "IsLuaHomePageEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "IsLuaHomePageEnabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Behavior",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PresenceService",
+			"type": "Remove",
+			"value": {
+				"Name": "PresenceService",
+				"Superclass": "Instance",
+				"MemoryCategory": "",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		}
+	]
+}

@@ -1,5 +1,5 @@
 use maud::{Markup, html};
-use rapi_core::api::text::{UPDATES_LEAD, update_summary};
+use rapi_core::api::text::{REBUILD_TEXT, UPDATES_LEAD, update_summary};
 use rapi_core::icons::Icon;
 use rapi_core::js::{format_date, format_month, format_short_date};
 use rapi_core::model::{ChangeStatus, OwnerChanges, Release, Update};
@@ -150,7 +150,10 @@ fn update_facts(cx: &Context, update: &Update, published: bool) -> Markup {
 		@for status in ChangeStatus::ALL {
 			(fact(status.name(), Some(count_hint(status)), &html! { (update.counts.get(status)) }))
 		}
-		(fact("Descriptions", Some("Descriptions that this version adds, changes, or removes."), &html! { (update.description_count) }))
+		@match update.description_count {
+			Some(count) => { (fact("Descriptions", Some("Descriptions that this version adds, changes, or removes."), &html! { (count) })) }
+			None => { (fact("Descriptions", Some("The API docs of this version and the one before it are not archived, so description changes are unknown."), &html! { "Not recorded" })) }
+		}
 	})
 }
 
@@ -242,7 +245,7 @@ fn update_summary_section(cx: &Context, update: &Update) -> Markup {
 				(update_facts(cx, update, false))
 			}
 			@if update.owners.is_empty() {
-				p class="text-fg-muted" { "The API did not change between these versions." }
+				p class="text-fg-muted" { (REBUILD_TEXT) }
 			} @else {
 				div class="flex flex-col gap-6" {
 					@for section in owner_sections(update) {
@@ -339,7 +342,7 @@ pub fn update_page(cx: &Context, update: &Update) -> Markup {
 				(update_facts(cx, update, true))
 			})))
 			@if sections.is_empty() {
-				p class="text-fg-muted" { "The API did not change between these versions." }
+				p class="text-fg-muted" { (REBUILD_TEXT) }
 			} @else {
 				(list_filter(cx, "Filter changes", "update-changes", "q", ListFilterPlacement::Page, None))
 				div id="update-changes" data-changes="" class="flex flex-col gap-8" {

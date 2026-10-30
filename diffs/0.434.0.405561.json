@@ -1,0 +1,323 @@
+{
+	"from": {
+		"version": "0.433.0.405142",
+		"hash": "0bdadb06f1744a67"
+	},
+	"to": {
+		"version": "0.434.0.405561",
+		"hash": "90e2017cee17461a"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "ABTestService",
+			"member": "GetBrowserTrackerABTestLoadingStatus",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBrowserTrackerABTestLoadingStatus",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "ABTestLoadingStatus"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ABTestService",
+			"member": "GetPendingOrInitializedUserId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPendingOrInitializedUserId",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ABTestService",
+			"member": "GetUserABTestLoadingStatus",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetUserABTestLoadingStatus",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "ABTestLoadingStatus"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ABTestService",
+			"member": "OnBrowserTrackerABTestLoadingStatusChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnBrowserTrackerABTestLoadingStatusChanged",
+				"Parameters": [
+					{
+						"Name": "status",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ABTestLoadingStatus"
+						}
+					}
+				],
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ABTestService",
+			"member": "OnUserABTestLoadingStatusChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnUserABTestLoadingStatusChanged",
+				"Parameters": [
+					{
+						"Name": "status",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ABTestLoadingStatus"
+						}
+					},
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "ArePartsTouchingOthers",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ArePartsTouchingOthers",
+				"Parameters": [
+					{
+						"Name": "partList",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					},
+					{
+						"Default": "0.000199999995",
+						"Name": "overlapIgnored",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginManager",
+			"member": "CreatePlugin",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"CustomLuaState"
+					],
+					"after": [
+						"Deprecated",
+						"CustomLuaState"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreatePlugin",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Deprecated",
+					"CustomLuaState"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PluginManagerInterface",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "PluginManagerInterface",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginManagerInterface",
+			"member": "CreatePlugin",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreatePlugin",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Deprecated",
+					"CustomLuaState"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginManagerInterface",
+			"member": "ExportPlace",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ExportPlace",
+				"Parameters": [
+					{
+						"Default": "",
+						"Name": "filePath",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginManagerInterface",
+			"member": "ExportSelection",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ExportSelection",
+				"Parameters": [
+					{
+						"Default": "",
+						"Name": "filePath",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ABTestLoadingStatus",
+			"type": "Add",
+			"value": {
+				"Name": "ABTestLoadingStatus"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ABTestLoadingStatus",
+			"item": "None",
+			"type": "Add",
+			"value": {
+				"Name": "None",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ABTestLoadingStatus",
+			"item": "Pending",
+			"type": "Add",
+			"value": {
+				"Name": "Pending",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ABTestLoadingStatus",
+			"item": "Initialized",
+			"type": "Add",
+			"value": {
+				"Name": "Initialized",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ABTestLoadingStatus",
+			"item": "Error",
+			"type": "Add",
+			"value": {
+				"Name": "Error",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ABTestLoadingStatus",
+			"item": "TimedOut",
+			"type": "Add",
+			"value": {
+				"Name": "TimedOut",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ABTestLoadingStatus",
+			"item": "ShutOff",
+			"type": "Add",
+			"value": {
+				"Name": "ShutOff",
+				"Value": 5
+			}
+		}
+	]
+}

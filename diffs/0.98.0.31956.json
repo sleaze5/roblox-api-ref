@@ -1,0 +1,69 @@
+{
+	"from": {
+		"version": "0.97.0.31945",
+		"hash": "719688fdb1e94e9a"
+	},
+	"to": {
+		"version": "0.98.0.31956",
+		"hash": "a45433ed822e4374"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Lighting",
+			"member": "GlobalShadows",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "GlobalShadows",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Appearance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkReplicator",
+			"member": "Disconnection",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "None",
+					"after": "LocalUserSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "Disconnection",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "peer"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "lostConnection"
+					}
+				],
+				"Security": "LocalUserSecurity"
+			}
+		}
+	]
+}

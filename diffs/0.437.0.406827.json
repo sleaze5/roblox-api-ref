@@ -1,0 +1,230 @@
+{
+	"from": {
+		"version": "0.436.0.406474",
+		"hash": "5798bdd996f04912"
+	},
+	"to": {
+		"version": "0.437.0.406827",
+		"hash": "f786173f5f9644dc"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "DebuggerBreakpoint",
+			"member": "IsLocal",
+			"type": "Remove",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "IsLocal",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerBreakpoint",
+			"member": "isContextDependentBreakpoint",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "isContextDependentBreakpoint",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "PhysicsSimulationRate",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "PhysicsSimulationRate",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "PhysicsSimulationRate"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDebugger",
+			"member": "SetBreakpoint",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "line",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "isLocalBreakpoint",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "line",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Name": "isContextDependentBreakpoint",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetBreakpoint",
+				"Parameters": [
+					{
+						"Name": "line",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "isContextDependentBreakpoint",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "GetTermsOfUseUrl",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetTermsOfUseUrl",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "BulkMoveMode",
+			"item": "FireNoEvents",
+			"type": "Remove",
+			"value": {
+				"Name": "FireNoEvents",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Technology",
+			"item": "Future",
+			"type": "Add",
+			"value": {
+				"Name": "Future",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 4
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "PhysicsSimulationRate",
+			"type": "Add",
+			"value": {
+				"Name": "PhysicsSimulationRate"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PhysicsSimulationRate",
+			"item": "Fixed240Hz",
+			"type": "Add",
+			"value": {
+				"Name": "Fixed240Hz",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PhysicsSimulationRate",
+			"item": "Fixed120Hz",
+			"type": "Add",
+			"value": {
+				"Name": "Fixed120Hz",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PhysicsSimulationRate",
+			"item": "Fixed60Hz",
+			"type": "Add",
+			"value": {
+				"Name": "Fixed60Hz",
+				"Value": 2
+			}
+		}
+	]
+}

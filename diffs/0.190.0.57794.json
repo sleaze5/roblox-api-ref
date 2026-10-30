@@ -1,0 +1,237 @@
+{
+	"from": {
+		"version": "0.189.0.57585",
+		"hash": "3a1b3a29e18e4ba7"
+	},
+	"to": {
+		"version": "0.190.0.57794",
+		"hash": "f9d6d23b9b1b466e"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "ViewportPointToRay",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ViewportPointToRay",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						},
+						"Name": "x"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						},
+						"Name": "y"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						},
+						"Name": "depth",
+						"Default": "0"
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Ray"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Camera",
+			"member": "WorldToViewportPoint",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "WorldToViewportPoint",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						},
+						"Name": "worldPoint"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "NotificationObject",
+			"type": "Remove",
+			"value": {
+				"Name": "NotificationObject",
+				"Superclass": "Frame",
+				"MemoryCategory": "",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "NotificationBox",
+			"type": "Remove",
+			"value": {
+				"Name": "NotificationBox",
+				"Superclass": "GuiObject",
+				"MemoryCategory": "",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextBox",
+			"member": "Focused",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Focused",
+				"Parameters": [],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "SendNotification",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SendNotification",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "title"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "text"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "image"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "duration"
+					},
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						},
+						"Name": "callback"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "Negate",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Negate",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						},
+						"Name": "objects"
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "Separate",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Separate",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						},
+						"Name": "objects"
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "Union",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Union",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						},
+						"Name": "objects"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity"
+			}
+		}
+	]
+}

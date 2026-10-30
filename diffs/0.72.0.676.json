@@ -1,0 +1,84 @@
+{
+	"from": {
+		"version": "0.71.0.669",
+		"hash": "037f5f7c526a4990"
+	},
+	"to": {
+		"version": "0.72.0.676",
+		"hash": "989516ec0fda489e"
+	},
+	"changes": [
+		{
+			"element": "Class",
+			"class": "GamePassService",
+			"type": "Add",
+			"value": {
+				"Name": "GamePassService",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GamePassService",
+			"member": "SetPlayerHasPassUrl",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetPlayerHasPassUrl",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "playerHasPassUrl"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GamePassService",
+			"member": "PlayerHasPass",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PlayerHasPass",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "player"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "gamePassId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		}
+	]
+}

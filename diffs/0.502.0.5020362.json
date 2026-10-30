@@ -1,0 +1,752 @@
+{
+	"from": {
+		"version": "0.501.0.5010363",
+		"hash": "fcb30c86a9c14b52"
+	},
+	"to": {
+		"version": "0.502.0.5020362",
+		"hash": "dcc93c78b1634a97"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AssetImportService",
+			"member": "UpdateSettings",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UpdateSettings",
+				"Parameters": [
+					{
+						"Name": "settings",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportService",
+			"member": "SettingsChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "SettingsChanged",
+				"Parameters": [
+					{
+						"Name": "property",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerUIService",
+			"member": "EditBreakpoint",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "EditBreakpoint",
+				"Parameters": [
+					{
+						"Name": "metaBreakpointId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MetaBreakpoint",
+			"member": "IsLogpoint",
+			"type": "Add",
+			"value": {
+				"Category": "State",
+				"MemberType": "Property",
+				"Name": "IsLogpoint",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MetaBreakpoint",
+			"member": "LogMessage",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "LogMessage",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptChangeService",
+			"member": "ScriptAdded",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ScriptAdded",
+				"Parameters": [
+					{
+						"Name": "script",
+						"Type": {
+							"Category": "Class",
+							"Name": "LuaSourceContainer"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptChangeService",
+			"member": "ScriptBeingRemoved",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ScriptBeingRemoved",
+				"Parameters": [
+					{
+						"Name": "script",
+						"Type": {
+							"Category": "Class",
+							"Name": "LuaSourceContainer"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptChangeService",
+			"member": "ScriptChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ScriptChanged",
+				"Parameters": [
+					{
+						"Name": "script",
+						"Type": {
+							"Category": "Class",
+							"Name": "LuaSourceContainer"
+						}
+					},
+					{
+						"Name": "property",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptChangeService",
+			"member": "ScriptFullNameChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ScriptFullNameChanged",
+				"Parameters": [
+					{
+						"Name": "script",
+						"Type": {
+							"Category": "Class",
+							"Name": "LuaSourceContainer"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptChangeService",
+			"member": "ScriptSourceChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ScriptSourceChanged",
+				"Parameters": [
+					{
+						"Name": "script",
+						"Type": {
+							"Category": "Class",
+							"Name": "LuaSourceContainer"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "VoiceChatService",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Service"
+					],
+					"after": [
+						"NotCreatable",
+						"Service"
+					]
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "VoiceChatService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AnimationClipProvider",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Animation",
+				"Name": "AnimationClipProvider",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationClipProvider",
+			"member": "GetAnimationClip",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAnimationClip",
+				"Parameters": [
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "AnimationClip"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationClipProvider",
+			"member": "GetAnimationClipById",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAnimationClipById",
+				"Parameters": [
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "useCache",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "AnimationClip"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Deprecated"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationClipProvider",
+			"member": "GetMemStats",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetMemStats",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationClipProvider",
+			"member": "RegisterActiveAnimationClip",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterActiveAnimationClip",
+				"Parameters": [
+					{
+						"Name": "animationClip",
+						"Type": {
+							"Category": "Class",
+							"Name": "AnimationClip"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Content"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationClipProvider",
+			"member": "RegisterAnimationClip",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterAnimationClip",
+				"Parameters": [
+					{
+						"Name": "animationClip",
+						"Type": {
+							"Category": "Class",
+							"Name": "AnimationClip"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Content"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationClipProvider",
+			"member": "GetAnimationClipAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAnimationClipAsync",
+				"Parameters": [
+					{
+						"Name": "assetId",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "AnimationClip"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationClipProvider",
+			"member": "GetAnimations",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAnimations",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DataModelPatchService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "DataModelPatchService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModelPatchService",
+			"member": "GetPatch",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPatch",
+				"Parameters": [
+					{
+						"Name": "patchName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModelPatchService",
+			"member": "RegisterPatch",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RegisterPatch",
+				"Parameters": [
+					{
+						"Name": "patchName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "behaviorName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "localConfigPath",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModelPatchService",
+			"member": "UpdatePatch",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UpdatePatch",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "patchName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "callbackFunction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "LuauScriptAnalyzerService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "LuauScriptAnalyzerService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PackageUIService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "PackageUIService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PackageUIService",
+			"member": "ConvertToPackageUpload",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ConvertToPackageUpload",
+				"Parameters": [
+					{
+						"Name": "uploadUrl",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "cloneInstances",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					},
+					{
+						"Name": "originalInstances",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PackageUIService",
+			"member": "OnConvertToPackageResult",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnConvertToPackageResult",
+				"Parameters": [
+					{
+						"Name": "isSuccessful",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "errorMessage",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PackageUIService",
+			"member": "OnOpenConvertToPackagePlugin",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnOpenConvertToPackagePlugin",
+				"Parameters": [
+					{
+						"Name": "instances",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					},
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "cloneInstances",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TemporaryScriptService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "TemporaryScriptService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		}
+	]
+}

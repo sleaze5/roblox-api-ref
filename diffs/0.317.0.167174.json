@@ -1,0 +1,420 @@
+{
+	"from": {
+		"version": "0.316.1.166809",
+		"hash": "0ae7a206c5f64a6e"
+	},
+	"to": {
+		"version": "0.317.0.167174",
+		"hash": "b7f83e24b90c4bf8"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "TextButton",
+			"member": "LineHeight",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "LineHeight",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Text",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextLabel",
+			"member": "LineHeight",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "LineHeight",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Text",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextBox",
+			"member": "LineHeight",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "LineHeight",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Text",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "LayerCollector",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotCreatable"
+					],
+					"after": [
+						"NotCreatable",
+						"NotBrowsable"
+					]
+				}
+			],
+			"value": {
+				"Name": "LayerCollector",
+				"Superclass": "GuiBase2d",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotCreatable",
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LayerCollector",
+			"member": "ZIndexBehavior",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ZIndexBehavior",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ZIndexBehavior"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LocalizationTable",
+			"member": "GetString",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "languageKey"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "expressionKey"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "targetLocaleId"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "key"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetString",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "targetLocaleId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "key"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LocalizationTable",
+			"member": "SetEntry",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "key"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "locale"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "text"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "key"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "targetLocaleId"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "text"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetEntry",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "key"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "targetLocaleId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "text"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "GetJoints",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetJoints",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "GetMaterialColor",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetMaterialColor",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "Material"
+						},
+						"Name": "material"
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "SetMaterialColor",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetMaterialColor",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "Material"
+						},
+						"Name": "material"
+					},
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Color3"
+						},
+						"Name": "value"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RunService",
+			"member": "Set3dRenderingEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Set3dRenderingEnabled",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "enable"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "SourceSansSemibold",
+			"type": "Add",
+			"value": {
+				"Name": "SourceSansSemibold",
+				"Value": 16
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ZIndexBehavior",
+			"type": "Add",
+			"value": {
+				"Name": "ZIndexBehavior"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ZIndexBehavior",
+			"item": "Global",
+			"type": "Add",
+			"value": {
+				"Name": "Global",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ZIndexBehavior",
+			"item": "Sibling",
+			"type": "Add",
+			"value": {
+				"Name": "Sibling",
+				"Value": 1
+			}
+		}
+	]
+}

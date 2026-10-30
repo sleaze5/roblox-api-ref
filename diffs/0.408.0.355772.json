@@ -1,0 +1,818 @@
+{
+	"from": {
+		"version": "0.407.0.353595",
+		"hash": "89ebdba3d36e437c"
+	},
+	"to": {
+		"version": "0.408.0.355772",
+		"hash": "b42952a64d7348e4"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "GetAttribute",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAttribute",
+				"Parameters": [
+					{
+						"Name": "attribute",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "GetAttributeChangedSignal",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAttributeChangedSignal",
+				"Parameters": [
+					{
+						"Name": "attribute",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RBXScriptSignal"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "GetAttributes",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAttributes",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "SetAttribute",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetAttribute",
+				"Parameters": [
+					{
+						"Name": "attribute",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "AttributeChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "AttributeChanged",
+				"Parameters": [
+					{
+						"Name": "attribute",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Animator",
+			"member": "GetPlayingAnimationTracks",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPlayingAnimationTracks",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Animator",
+			"member": "AnimationPlayed",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "AnimationPlayed",
+				"Parameters": [
+					{
+						"Name": "animationTrack",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "InputObject",
+			"member": "IsModifierKeyDown",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsModifierKeyDown",
+				"Parameters": [
+					{
+						"Name": "modifierKey",
+						"Type": {
+							"Category": "Enum",
+							"Name": "ModifierKey"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "JointInstance",
+			"member": "Enabled",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "Enabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "MDIInstance",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "MDIInstance",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "MDIInstance",
+			"type": "Remove",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "MDIInstance",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MDIInstance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "Bind",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Bind",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "callback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "BindAndFire",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "BindAndFire",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "callback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "Fire",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Fire",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "value",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "GetItem",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "key",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "",
+							"Name": "defaultValue",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "key",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "defaultValue",
+							"Type": {
+								"Category": "Group",
+								"Name": "Variant"
+							}
+						}
+					]
+				},
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Primitive",
+						"Name": "string"
+					},
+					"after": {
+						"Category": "Group",
+						"Name": "Variant"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetItem",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "defaultValue",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "HasItem",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "HasItem",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "RemoveItem",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RemoveItem",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "SetItem",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "key",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "",
+							"Name": "value",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "key",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "value",
+							"Type": {
+								"Category": "Group",
+								"Name": "Variant"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetItem",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "MultipleDocumentInterfaceInstance",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "MultipleDocumentInterfaceInstance",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MultipleDocumentInterfaceInstance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "Invoke",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Invoke",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "arguments",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "OnInvoke",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "OnInvoke",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "callback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "OnSetItem",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "OnSetItem",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "callback",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "EnableScriptCollabOnLoad",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "EnableScriptCollabOnLoad",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "MultipleDocumentInterfaceInstance",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "MultipleDocumentInterfaceInstance",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MultipleDocumentInterfaceInstance",
+			"member": "FocusedDataModelSession",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "FocusedDataModelSession",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MultipleDocumentInterfaceInstance",
+			"member": "DataModelSessionEnded",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "DataModelSessionEnded",
+				"Parameters": [
+					{
+						"Name": "dataModelSession",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MultipleDocumentInterfaceInstance",
+			"member": "DataModelSessionStarted",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "DataModelSessionStarted",
+				"Parameters": [
+					{
+						"Name": "dataModelSession",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ModifierKey",
+			"type": "Add",
+			"value": {
+				"Name": "ModifierKey"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ModifierKey",
+			"item": "Alt",
+			"type": "Add",
+			"value": {
+				"Name": "Alt",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ModifierKey",
+			"item": "Ctrl",
+			"type": "Add",
+			"value": {
+				"Name": "Ctrl",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ModifierKey",
+			"item": "Meta",
+			"type": "Add",
+			"value": {
+				"Name": "Meta",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ModifierKey",
+			"item": "Shift",
+			"type": "Add",
+			"value": {
+				"Name": "Shift",
+				"Value": 0
+			}
+		}
+	]
+}

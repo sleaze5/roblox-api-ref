@@ -1,0 +1,212 @@
+{
+	"from": {
+		"version": "0.173.1.53125",
+		"hash": "d65566343374484f"
+	},
+	"to": {
+		"version": "0.174.0.53305",
+		"hash": "3d3973aa91b04fab"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Chat",
+			"member": "FilterStringForPlayerAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FilterStringForPlayerAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "stringToFilter"
+					},
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "playerToFilterFor"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "StockSound",
+			"type": "Remove",
+			"value": {
+				"Name": "StockSound",
+				"Superclass": "Sound",
+				"MemoryCategory": "",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "HttpRbxApiService",
+			"type": "Add",
+			"value": {
+				"Name": "HttpRbxApiService",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HttpRbxApiService",
+			"member": "GetAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "apiUrlPath"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "useHttps",
+						"Default": "true"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "ThrottlingPriority"
+						},
+						"Name": "priority",
+						"Default": "Default"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HttpRbxApiService",
+			"member": "PostAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PostAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "apiUrlPath"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "data"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "useHttps",
+						"Default": "true"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "ThrottlingPriority"
+						},
+						"Name": "priority",
+						"Default": "Default"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "HttpContentType"
+						},
+						"Name": "content_type",
+						"Default": "ApplicationJson"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ThrottlingPriority",
+			"type": "Add",
+			"value": {
+				"Name": "ThrottlingPriority"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ThrottlingPriority",
+			"item": "Extreme",
+			"type": "Add",
+			"value": {
+				"Name": "Extreme",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ThrottlingPriority",
+			"item": "ElevatedOnServer",
+			"type": "Add",
+			"value": {
+				"Name": "ElevatedOnServer",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ThrottlingPriority",
+			"item": "Default",
+			"type": "Add",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		}
+	]
+}

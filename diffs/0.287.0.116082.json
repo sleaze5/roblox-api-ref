@@ -1,0 +1,455 @@
+{
+	"from": {
+		"version": "0.286.0.115676",
+		"hash": "a2e8ba9654ab48b6"
+	},
+	"to": {
+		"version": "0.287.0.116082",
+		"hash": "df6fa0ccdd284ac3"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "TextBox",
+			"member": "OverlayNativeInput",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "OverlayNativeInput",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkSettings",
+			"member": "FreeMemoryPoolMBytes",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "FreeMemoryPoolMBytes",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NotificationService",
+			"member": "RobloxEventReceived",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "RobloxEventReceived",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Map"
+						},
+						"Name": "eventData"
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "CollisionGroupId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "CollisionGroupId",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Category": "Behavior",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "CanCollideWith",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CanCollideWith",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "part"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsService",
+			"member": "CollisionGroupContainsPart",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CollisionGroupContainsPart",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "name"
+					},
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "part"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsService",
+			"member": "CollisionGroupSetCollidable",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CollisionGroupSetCollidable",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "name1"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "name2"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "collidable"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsService",
+			"member": "CollisionGroupsAreCollidable",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CollisionGroupsAreCollidable",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "name1"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "name2"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsService",
+			"member": "CreateCollisionGroup",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateCollisionGroup",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "name"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsService",
+			"member": "GetCollisionGroupId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCollisionGroupId",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "name"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsService",
+			"member": "GetCollisionGroupName",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCollisionGroupName",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "name"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsService",
+			"member": "GetCollisionGroups",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCollisionGroups",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsService",
+			"member": "GetMaxCollisionGroups",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetMaxCollisionGroups",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsService",
+			"member": "RemoveCollisionGroup",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RemoveCollisionGroup",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "name"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsService",
+			"member": "RenameCollisionGroup",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RenameCollisionGroup",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "from"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "to"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsService",
+			"member": "SetPartCollisionGroup",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetPartCollisionGroup",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "part"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "name"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "UIScale",
+			"type": "Add",
+			"value": {
+				"Name": "UIScale",
+				"Superclass": "UIComponent",
+				"MemoryCategory": "Instances"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UIScale",
+			"member": "Scale",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Scale",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Behavior",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		}
+	]
+}

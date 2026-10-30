@@ -1,0 +1,999 @@
+{
+	"from": {
+		"version": "0.263.0.88247",
+		"hash": "14d50132362e4612"
+	},
+	"to": {
+		"version": "0.264.0.89220",
+		"hash": "1600d28b04c54698"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Chat",
+			"member": "SetIsLuaChatBackendOverwritten",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetIsLuaChatBackendOverwritten",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "value"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScreenGui",
+			"member": "ResetOnSpawn",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ResetOnSpawn",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HttpRbxApiService",
+			"member": "GetAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Yields",
+						"Deprecated"
+					],
+					"after": [
+						"Yields"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "apiUrlPath"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "ThrottlingPriority"
+						},
+						"Name": "priority",
+						"Default": "Default"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ParticleEmitter",
+			"member": "Clear",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Clear",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "BindToClose",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "BindToClose",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						},
+						"Name": "function"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "PlaybackLoudness",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "PlaybackLoudness",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "double"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "SoundGroup",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "SoundGroup",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Object"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "SoundEffect",
+			"type": "Add",
+			"value": {
+				"Name": "SoundEffect",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SoundEffect",
+			"member": "Enabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Enabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SoundEffect",
+			"member": "Priority",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Priority",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ChorusSoundEffect",
+			"type": "Add",
+			"value": {
+				"Name": "ChorusSoundEffect",
+				"Superclass": "SoundEffect",
+				"MemoryCategory": "Instances"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChorusSoundEffect",
+			"member": "Depth",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Depth",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChorusSoundEffect",
+			"member": "Mix",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Mix",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChorusSoundEffect",
+			"member": "Rate",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Rate",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "CompressorSoundEffect",
+			"type": "Add",
+			"value": {
+				"Name": "CompressorSoundEffect",
+				"Superclass": "SoundEffect",
+				"MemoryCategory": "Instances"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CompressorSoundEffect",
+			"member": "Attack",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Attack",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CompressorSoundEffect",
+			"member": "GainMakeup",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "GainMakeup",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CompressorSoundEffect",
+			"member": "Release",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Release",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CompressorSoundEffect",
+			"member": "Threshold",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Threshold",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DistortionSoundEffect",
+			"type": "Add",
+			"value": {
+				"Name": "DistortionSoundEffect",
+				"Superclass": "SoundEffect",
+				"MemoryCategory": "Instances"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DistortionSoundEffect",
+			"member": "Level",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Level",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "EchoSoundEffect",
+			"type": "Add",
+			"value": {
+				"Name": "EchoSoundEffect",
+				"Superclass": "SoundEffect",
+				"MemoryCategory": "Instances"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EchoSoundEffect",
+			"member": "Delay",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Delay",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EchoSoundEffect",
+			"member": "DryLevel",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "DryLevel",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EchoSoundEffect",
+			"member": "Feedback",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Feedback",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EchoSoundEffect",
+			"member": "WetLevel",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "WetLevel",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "EqualizerSoundEffect",
+			"type": "Add",
+			"value": {
+				"Name": "EqualizerSoundEffect",
+				"Superclass": "SoundEffect",
+				"MemoryCategory": "Instances"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EqualizerSoundEffect",
+			"member": "HighGain",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "HighGain",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EqualizerSoundEffect",
+			"member": "LowGain",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "LowGain",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "EqualizerSoundEffect",
+			"member": "MidGain",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "MidGain",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "FlangeSoundEffect",
+			"type": "Add",
+			"value": {
+				"Name": "FlangeSoundEffect",
+				"Superclass": "SoundEffect",
+				"MemoryCategory": "Instances"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FlangeSoundEffect",
+			"member": "Depth",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Depth",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FlangeSoundEffect",
+			"member": "Mix",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Mix",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FlangeSoundEffect",
+			"member": "Rate",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Rate",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PitchShiftSoundEffect",
+			"type": "Add",
+			"value": {
+				"Name": "PitchShiftSoundEffect",
+				"Superclass": "SoundEffect",
+				"MemoryCategory": "Instances"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PitchShiftSoundEffect",
+			"member": "Octave",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Octave",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ReverbSoundEffect",
+			"type": "Add",
+			"value": {
+				"Name": "ReverbSoundEffect",
+				"Superclass": "SoundEffect",
+				"MemoryCategory": "Instances"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ReverbSoundEffect",
+			"member": "DecayTime",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "DecayTime",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ReverbSoundEffect",
+			"member": "Density",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Density",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ReverbSoundEffect",
+			"member": "Diffusion",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Diffusion",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ReverbSoundEffect",
+			"member": "DryLevel",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "DryLevel",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ReverbSoundEffect",
+			"member": "WetLevel",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "WetLevel",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TremoloSoundEffect",
+			"type": "Add",
+			"value": {
+				"Name": "TremoloSoundEffect",
+				"Superclass": "SoundEffect",
+				"MemoryCategory": "Instances"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TremoloSoundEffect",
+			"member": "Depth",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Depth",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TremoloSoundEffect",
+			"member": "Duty",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Duty",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TremoloSoundEffect",
+			"member": "Frequency",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Frequency",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "SoundGroup",
+			"type": "Add",
+			"value": {
+				"Name": "SoundGroup",
+				"Superclass": "Instance",
+				"MemoryCategory": "Internal"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SoundGroup",
+			"member": "Volume",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Volume",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		}
+	]
+}

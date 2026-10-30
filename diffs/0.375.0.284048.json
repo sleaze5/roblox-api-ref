@@ -1,0 +1,456 @@
+{
+	"from": {
+		"version": "0.374.0.282978",
+		"hash": "336bf35a8b764b4d"
+	},
+	"to": {
+		"version": "0.375.0.284048",
+		"hash": "ed92a38305364c46"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "GetBundleDetailsSync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBundleDetailsSync",
+				"Parameters": [
+					{
+						"Name": "bundleId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "GuiItem",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "GuiItem",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Backpack",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Superclass",
+					"before": "GuiItem",
+					"after": "Instance"
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "Backpack",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "BackpackItem",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Superclass",
+					"before": "GuiItem",
+					"after": "Instance"
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "BackpackItem",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ButtonBindingWidget",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ButtonBindingWidget",
+				"Superclass": "GuiItem",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "GuiRoot",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "GuiRoot",
+				"Superclass": "GuiItem",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Hopper",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Superclass",
+					"before": "GuiItem",
+					"after": "Instance"
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "Hopper",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "StarterPack",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Superclass",
+					"before": "GuiItem",
+					"after": "Instance"
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "StarterPack",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "JumpHeight",
+			"type": "Add",
+			"value": {
+				"Category": "Game",
+				"MemberType": "Property",
+				"Name": "JumpHeight",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "UseJumpPower",
+			"type": "Add",
+			"value": {
+				"Category": "Game",
+				"MemberType": "Property",
+				"Name": "UseJumpPower",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "CalculateJumpPower",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CalculateJumpPower",
+				"Parameters": [
+					{
+						"Name": "gravity",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "jumpHeight",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PackageLink",
+			"member": "VersionNumber",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "NotAccessibleSecurity"
+					}
+				},
+				{
+					"field": "Serialization",
+					"before": {
+						"CanLoad": false,
+						"CanSave": true
+					},
+					"after": {
+						"CanLoad": true,
+						"CanSave": false
+					}
+				},
+				{
+					"field": "Tags",
+					"before": [
+						"ReadOnly",
+						"NotReplicated"
+					],
+					"after": [
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Category": "Link",
+				"MemberType": "Property",
+				"Name": "VersionNumber",
+				"Security": {
+					"Read": "None",
+					"Write": "NotAccessibleSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "GetObjectsList",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetObjectsList",
+				"Parameters": [
+					{
+						"Name": "urls",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "CharacterJumpHeight",
+			"type": "Add",
+			"value": {
+				"Category": "Character",
+				"MemberType": "Property",
+				"Name": "CharacterJumpHeight",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "CharacterJumpPower",
+			"type": "Add",
+			"value": {
+				"Category": "Character",
+				"MemberType": "Property",
+				"Name": "CharacterJumpPower",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "CharacterMaxSlopeAngle",
+			"type": "Add",
+			"value": {
+				"Category": "Character",
+				"MemberType": "Property",
+				"Name": "CharacterMaxSlopeAngle",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "CharacterUseJumpPower",
+			"type": "Add",
+			"value": {
+				"Category": "Character",
+				"MemberType": "Property",
+				"Name": "CharacterUseJumpPower",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "CharacterWalkSpeed",
+			"type": "Add",
+			"value": {
+				"Category": "Character",
+				"MemberType": "Property",
+				"Name": "CharacterWalkSpeed",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "GetClassIcon",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetClassIcon",
+				"Parameters": [
+					{
+						"Name": "className",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "PluginSecurity"
+			}
+		}
+	]
+}

@@ -1,0 +1,1801 @@
+{
+	"from": {
+		"version": "0.297.0.132593",
+		"hash": "fc39a4c10c8d4c27"
+	},
+	"to": {
+		"version": "0.298.0.134625",
+		"hash": "d9a4e69f58054a1b"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "FindFirstAncestor",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindFirstAncestor",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "className"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "FindFirstAncestorOfClass",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindFirstAncestorOfClass",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "className"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "FindFirstAncestorWhichIsA",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindFirstAncestorWhichIsA",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "className"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "FindFirstChildWhichIsA",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindFirstChildWhichIsA",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "className"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "recursive",
+						"Default": "false"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "IsMemoryTrackerEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsMemoryTrackerEnabled",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "OpenNativeOverlay",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "OpenNativeOverlay",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "title"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "url"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "RequestNativeView",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RequestNativeView",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "url"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HttpRbxApiService",
+			"member": "GetAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "apiUrlPath"
+						},
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "ThrottlingPriority"
+							},
+							"Name": "priority",
+							"Default": "Default"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "apiUrlPath"
+						},
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "ThrottlingPriority"
+							},
+							"Name": "priority",
+							"Default": "Default"
+						},
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "HttpRequestType"
+							},
+							"Name": "httpRequestType",
+							"Default": "Default"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "doNotAllowDiabolicalMode",
+							"Default": "false"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "apiUrlPath"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "ThrottlingPriority"
+						},
+						"Name": "priority",
+						"Default": "Default"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "HttpRequestType"
+						},
+						"Name": "httpRequestType",
+						"Default": "Default"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "doNotAllowDiabolicalMode",
+						"Default": "false"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HttpRbxApiService",
+			"member": "PostAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "apiUrlPath"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "data"
+						},
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "ThrottlingPriority"
+							},
+							"Name": "priority",
+							"Default": "Default"
+						},
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "HttpContentType"
+							},
+							"Name": "content_type",
+							"Default": "ApplicationJson"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "apiUrlPath"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "data"
+						},
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "ThrottlingPriority"
+							},
+							"Name": "priority",
+							"Default": "Default"
+						},
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "HttpContentType"
+							},
+							"Name": "content_type",
+							"Default": "ApplicationJson"
+						},
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "HttpRequestType"
+							},
+							"Name": "httpRequestType",
+							"Default": "Default"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "doNotAllowDiabolicalMode",
+							"Default": "false"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "PostAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "apiUrlPath"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "data"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "ThrottlingPriority"
+						},
+						"Name": "priority",
+						"Default": "Default"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "HttpContentType"
+						},
+						"Name": "content_type",
+						"Default": "ApplicationJson"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "HttpRequestType"
+						},
+						"Name": "httpRequestType",
+						"Default": "Default"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "doNotAllowDiabolicalMode",
+						"Default": "false"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "FindPartOnRay",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "DataType",
+								"Name": "Ray"
+							},
+							"Name": "ray"
+						},
+						{
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							},
+							"Name": "ignoreDescendentsInstance",
+							"Default": "nil"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "terrainCellsAreCubes",
+							"Default": "false"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "ignoreWater",
+							"Default": "false"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "DataType",
+								"Name": "Ray"
+							},
+							"Name": "ray"
+						},
+						{
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							},
+							"Name": "ignoreDescendantsInstance",
+							"Default": "nil"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "terrainCellsAreCubes",
+							"Default": "false"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "ignoreWater",
+							"Default": "false"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindPartOnRay",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Ray"
+						},
+						"Name": "ray"
+					},
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "ignoreDescendantsInstance",
+						"Default": "nil"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "terrainCellsAreCubes",
+						"Default": "false"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "ignoreWater",
+						"Default": "false"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "FindPartOnRayWithIgnoreList",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "DataType",
+								"Name": "Ray"
+							},
+							"Name": "ray"
+						},
+						{
+							"Type": {
+								"Category": "DataType",
+								"Name": "Objects"
+							},
+							"Name": "ignoreDescendentsTable"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "terrainCellsAreCubes",
+							"Default": "false"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "ignoreWater",
+							"Default": "false"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "DataType",
+								"Name": "Ray"
+							},
+							"Name": "ray"
+						},
+						{
+							"Type": {
+								"Category": "DataType",
+								"Name": "Objects"
+							},
+							"Name": "ignoreDescendantsTable"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "terrainCellsAreCubes",
+							"Default": "false"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "ignoreWater",
+							"Default": "false"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindPartOnRayWithIgnoreList",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Ray"
+						},
+						"Name": "ray"
+					},
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						},
+						"Name": "ignoreDescendantsTable"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "terrainCellsAreCubes",
+						"Default": "false"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "ignoreWater",
+						"Default": "false"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "FindPartOnRayWithWhitelist",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "DataType",
+								"Name": "Ray"
+							},
+							"Name": "ray"
+						},
+						{
+							"Type": {
+								"Category": "DataType",
+								"Name": "Objects"
+							},
+							"Name": "whitelistDescendentsTable"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "ignoreWater",
+							"Default": "false"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "DataType",
+								"Name": "Ray"
+							},
+							"Name": "ray"
+						},
+						{
+							"Type": {
+								"Category": "DataType",
+								"Name": "Objects"
+							},
+							"Name": "whitelistDescendantsTable"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "ignoreWater",
+							"Default": "false"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindPartOnRayWithWhitelist",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Ray"
+						},
+						"Name": "ray"
+					},
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						},
+						"Name": "whitelistDescendantsTable"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "ignoreWater",
+						"Default": "false"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "FindPartsInRegion3",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "DataType",
+								"Name": "Region3"
+							},
+							"Name": "region"
+						},
+						{
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							},
+							"Name": "ignoreDescendentsInstance",
+							"Default": "nil"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "maxParts",
+							"Default": "20"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "DataType",
+								"Name": "Region3"
+							},
+							"Name": "region"
+						},
+						{
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							},
+							"Name": "ignoreDescendantsInstance",
+							"Default": "nil"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "maxParts",
+							"Default": "20"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindPartsInRegion3",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Region3"
+						},
+						"Name": "region"
+					},
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "ignoreDescendantsInstance",
+						"Default": "nil"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "maxParts",
+						"Default": "20"
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "FindPartsInRegion3WithIgnoreList",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "DataType",
+								"Name": "Region3"
+							},
+							"Name": "region"
+						},
+						{
+							"Type": {
+								"Category": "DataType",
+								"Name": "Objects"
+							},
+							"Name": "ignoreDescendentsTable"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "maxParts",
+							"Default": "20"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "DataType",
+								"Name": "Region3"
+							},
+							"Name": "region"
+						},
+						{
+							"Type": {
+								"Category": "DataType",
+								"Name": "Objects"
+							},
+							"Name": "ignoreDescendantsTable"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "maxParts",
+							"Default": "20"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindPartsInRegion3WithIgnoreList",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Region3"
+						},
+						"Name": "region"
+					},
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						},
+						"Name": "ignoreDescendantsTable"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "maxParts",
+						"Default": "20"
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "findPartOnRay",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "DataType",
+								"Name": "Ray"
+							},
+							"Name": "ray"
+						},
+						{
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							},
+							"Name": "ignoreDescendentsInstance",
+							"Default": "nil"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "terrainCellsAreCubes",
+							"Default": "false"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "ignoreWater",
+							"Default": "false"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "DataType",
+								"Name": "Ray"
+							},
+							"Name": "ray"
+						},
+						{
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							},
+							"Name": "ignoreDescendantsInstance",
+							"Default": "nil"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "terrainCellsAreCubes",
+							"Default": "false"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "ignoreWater",
+							"Default": "false"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "findPartOnRay",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Ray"
+						},
+						"Name": "ray"
+					},
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "ignoreDescendantsInstance",
+						"Default": "nil"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "terrainCellsAreCubes",
+						"Default": "false"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "ignoreWater",
+						"Default": "false"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "findPartsInRegion3",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "DataType",
+								"Name": "Region3"
+							},
+							"Name": "region"
+						},
+						{
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							},
+							"Name": "ignoreDescendentsInstance",
+							"Default": "nil"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "maxParts",
+							"Default": "20"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "DataType",
+								"Name": "Region3"
+							},
+							"Name": "region"
+						},
+						{
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							},
+							"Name": "ignoreDescendantsInstance",
+							"Default": "nil"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "maxParts",
+							"Default": "20"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "findPartsInRegion3",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Region3"
+						},
+						"Name": "region"
+					},
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "ignoreDescendantsInstance",
+						"Default": "nil"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "maxParts",
+						"Default": "20"
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "FallenPartsDestroyHeight",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "FallenPartsDestroyHeight",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Behavior",
+				"Security": {
+					"Read": "None",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "FindPartsInRegion3WithWhiteList",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindPartsInRegion3WithWhiteList",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Region3"
+						},
+						"Name": "region"
+					},
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						},
+						"Name": "whitelistDescendantsTable"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "maxParts",
+						"Default": "20"
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsSettings",
+			"member": "UseCSGv2",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "UseCSGv2",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Display",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "HttpGet",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "url"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "synchronous",
+							"Default": "false"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "url"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "synchronous",
+							"Default": "false"
+						},
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "HttpRequestType"
+							},
+							"Name": "httpRequestType",
+							"Default": "Default"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "doNotAllowDiabolicalMode",
+							"Default": "false"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "HttpGet",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "url"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "synchronous",
+						"Default": "false"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "HttpRequestType"
+						},
+						"Name": "httpRequestType",
+						"Default": "Default"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "doNotAllowDiabolicalMode",
+						"Default": "false"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "HttpPost",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "url"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "data"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "synchronous",
+							"Default": "false"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "contentType",
+							"Default": "*/*"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "url"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "data"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "synchronous",
+							"Default": "false"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "contentType",
+							"Default": "*/*"
+						},
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "HttpRequestType"
+							},
+							"Name": "httpRequestType",
+							"Default": "Default"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "doNotAllowDiabolicalMode",
+							"Default": "false"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "HttpPost",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "url"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "data"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "synchronous",
+						"Default": "false"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "contentType",
+						"Default": "*/*"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "HttpRequestType"
+						},
+						"Name": "httpRequestType",
+						"Default": "Default"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "doNotAllowDiabolicalMode",
+						"Default": "false"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "HttpGetAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "url"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "url"
+						},
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "HttpRequestType"
+							},
+							"Name": "httpRequestType",
+							"Default": "Default"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "doNotAllowDiabolicalMode",
+							"Default": "false"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "HttpGetAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "url"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "HttpRequestType"
+						},
+						"Name": "httpRequestType",
+						"Default": "Default"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "doNotAllowDiabolicalMode",
+						"Default": "false"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "HttpPostAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "url"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "data"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "contentType",
+							"Default": "*/*"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "url"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "data"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "contentType",
+							"Default": "*/*"
+						},
+						{
+							"Type": {
+								"Category": "Enum",
+								"Name": "HttpRequestType"
+							},
+							"Name": "httpRequestType",
+							"Default": "Default"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "doNotAllowDiabolicalMode",
+							"Default": "false"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "HttpPostAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "url"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "data"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "contentType",
+						"Default": "*/*"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "HttpRequestType"
+						},
+						"Name": "httpRequestType",
+						"Default": "Default"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "doNotAllowDiabolicalMode",
+						"Default": "false"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetType",
+			"item": "EarAccessory",
+			"type": "Add",
+			"value": {
+				"Name": "EarAccessory",
+				"Value": 57
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetType",
+			"item": "EyeAccessory",
+			"type": "Add",
+			"value": {
+				"Name": "EyeAccessory",
+				"Value": 58
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "HttpRequestType",
+			"type": "Add",
+			"value": {
+				"Name": "HttpRequestType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HttpRequestType",
+			"item": "Default",
+			"type": "Add",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HttpRequestType",
+			"item": "MarketplaceService",
+			"type": "Add",
+			"value": {
+				"Name": "MarketplaceService",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HttpRequestType",
+			"item": "Players",
+			"type": "Add",
+			"value": {
+				"Name": "Players",
+				"Value": 7
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HttpRequestType",
+			"item": "Chat",
+			"type": "Add",
+			"value": {
+				"Name": "Chat",
+				"Value": 15
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HttpRequestType",
+			"item": "Avatar",
+			"type": "Add",
+			"value": {
+				"Name": "Avatar",
+				"Value": 16
+			}
+		}
+	]
+}

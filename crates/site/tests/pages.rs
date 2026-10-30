@@ -380,18 +380,30 @@ fn lists_description_changes_under_their_item() {
 		.iter()
 		.find(|update| update.version == "0.619.0.6190508")
 		.expect("a tracked update");
-	assert!(update.description_count > 0);
+	let count = update.description_count.expect("recorded descriptions");
+	assert!(count > 0);
 	let content = markdown(&update_href(&update.version));
-	assert!(content.contains(&format!(
-		"- Description changes: {}",
-		update.description_count
-	)));
+	assert!(content.contains(&format!("- Description changes: {count}")));
 	assert!(
 		content
 			.lines()
 			.any(|line| line.starts_with("  - Description changed: ")
 				|| line.starts_with("  - Description added: "))
 	);
+}
+
+#[test]
+fn calls_an_update_without_changes_a_rebuild() {
+	let update = CX
+		.updates
+		.iter()
+		.find(|update| update.version == "0.47.0.391")
+		.expect("a backfilled update");
+	assert!(update.owners.is_empty());
+	assert_eq!(update.description_count, None);
+	let content = markdown(&update_href(&update.version));
+	assert!(content.contains("A rebuild of the Roblox Engine API"));
+	assert!(content.contains("- Description changes: Not recorded"));
 }
 
 #[test]

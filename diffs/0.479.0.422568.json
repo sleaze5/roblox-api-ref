@@ -1,0 +1,558 @@
+{
+	"from": {
+		"version": "0.478.1.422443",
+		"hash": "a9984a1e82a94814"
+	},
+	"to": {
+		"version": "0.479.0.422568",
+		"hash": "766a7c66dc884dbd"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "StarterGui",
+			"member": "VirtualCursorMode",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "VirtualCursorMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "VirtualCursorMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkSettings",
+			"member": "ExtraMemoryUsed",
+			"type": "Remove",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "ExtraMemoryUsed",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "SetCharacterAppearanceJson",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetCharacterAppearanceJson",
+				"Parameters": [
+					{
+						"Name": "jsonBlob",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "RequestCloseStudio",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RequestCloseStudio",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "ShowSaveOrPublishPlaceToRoblox",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "showGameSelect",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "isPublish",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "closeAfterSave",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "showGameSelect",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "isPublish",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "closeMode",
+							"Type": {
+								"Category": "Enum",
+								"Name": "StudioCloseMode"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "ShowSaveOrPublishPlaceToRoblox",
+				"Parameters": [
+					{
+						"Name": "showGameSelect",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "isPublish",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "closeMode",
+						"Type": {
+							"Category": "Enum",
+							"Name": "StudioCloseMode"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "OnSaveOrPublishPlaceToRoblox",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "showGameSelect",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "isPublish",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "closeAfterSave",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "showGameSelect",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "isPublish",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "closeMode",
+							"Type": {
+								"Category": "Enum",
+								"Name": "StudioCloseMode"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnSaveOrPublishPlaceToRoblox",
+				"Parameters": [
+					{
+						"Name": "showGameSelect",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "isPublish",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "closeMode",
+						"Type": {
+							"Category": "Enum",
+							"Name": "StudioCloseMode"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "RequestClose",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RequestClose",
+				"Parameters": [
+					{
+						"Name": "closeMode",
+						"Type": {
+							"Category": "Enum",
+							"Name": "StudioCloseMode"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VirtualInputManager",
+			"member": "SetInputTypesToIgnore",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetInputTypesToIgnore",
+				"Parameters": [
+					{
+						"Name": "inputTypesToIgnore",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VirtualInputManager",
+			"member": "SetViewportSize",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetViewportSize",
+				"Parameters": [
+					{
+						"Name": "sizePx",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VirtualInputManager",
+			"member": "StartPlayingJSON",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "StartPlayingJSON",
+				"Parameters": [
+					{
+						"Name": "string",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VirtualInputManager",
+			"member": "StopPlaying",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "StopPlaying",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "VoiceSource",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Internal",
+				"Name": "VoiceSource",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VoiceSource",
+			"member": "UserId",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "UserId",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				}
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ProductLocationRestriction",
+			"type": "Add",
+			"value": {
+				"Name": "ProductLocationRestriction"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ProductLocationRestriction",
+			"item": "AvatarShop",
+			"type": "Add",
+			"value": {
+				"Name": "AvatarShop",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ProductLocationRestriction",
+			"item": "AllowedGames",
+			"type": "Add",
+			"value": {
+				"Name": "AllowedGames",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ProductLocationRestriction",
+			"item": "AllGames",
+			"type": "Add",
+			"value": {
+				"Name": "AllGames",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "StudioCloseMode",
+			"type": "Add",
+			"value": {
+				"Name": "StudioCloseMode"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioCloseMode",
+			"item": "None",
+			"type": "Add",
+			"value": {
+				"Name": "None",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioCloseMode",
+			"item": "CloseStudio",
+			"type": "Add",
+			"value": {
+				"Name": "CloseStudio",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioCloseMode",
+			"item": "CloseDoc",
+			"type": "Add",
+			"value": {
+				"Name": "CloseDoc",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "VirtualCursorMode",
+			"type": "Add",
+			"value": {
+				"Name": "VirtualCursorMode"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "VirtualCursorMode",
+			"item": "Default",
+			"type": "Add",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "VirtualCursorMode",
+			"item": "Disabled",
+			"type": "Add",
+			"value": {
+				"Name": "Disabled",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "VirtualCursorMode",
+			"item": "Enabled",
+			"type": "Add",
+			"value": {
+				"Name": "Enabled",
+				"Value": 2
+			}
+		}
+	]
+}

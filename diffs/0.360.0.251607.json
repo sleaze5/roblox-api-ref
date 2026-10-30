@@ -1,0 +1,250 @@
+{
+	"from": {
+		"version": "0.359.0.249529",
+		"hash": "318797802ea54261"
+	},
+	"to": {
+		"version": "0.360.0.251607",
+		"hash": "ceee6355d6b64298"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "GetBundleDetailsAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBundleDetailsAsync",
+				"Parameters": [
+					{
+						"Name": "bundleId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Constraint",
+			"member": "Active",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "Active",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "JointInstance",
+			"member": "Active",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "Active",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "SendAppUISizes",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "statusBarSize",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector2"
+							}
+						},
+						{
+							"Name": "navBarSize",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector2"
+							}
+						},
+						{
+							"Name": "bottomBarSize",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector2"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "statusBarSize",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector2"
+							}
+						},
+						{
+							"Name": "navBarSize",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector2"
+							}
+						},
+						{
+							"Name": "bottomBarSize",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector2"
+							}
+						},
+						{
+							"Name": "rightBarSize",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector2"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SendAppUISizes",
+				"Parameters": [
+					{
+						"Name": "statusBarSize",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "navBarSize",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "bottomBarSize",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					},
+					{
+						"Name": "rightBarSize",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "RightBarSize",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "RightBarSize",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector2"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WeldConstraint",
+			"member": "Active",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "Active",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		}
+	]
+}

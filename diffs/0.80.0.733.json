@@ -1,0 +1,1396 @@
+{
+	"from": {
+		"version": "0.79.0.713",
+		"hash": "3ebe0cca16b6421c"
+	},
+	"to": {
+		"version": "0.80.0.733",
+		"hash": "3203d0987c7b43bf"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "IsLoaded",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsLoaded",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "Loaded",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Loaded",
+				"Parameters": [],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "FWService",
+			"type": "Add",
+			"value": {
+				"Name": "FWService",
+				"Superclass": "Instance",
+				"MemoryCategory": ""
+			}
+		},
+		{
+			"element": "Class",
+			"class": "LoadingGui",
+			"type": "Add",
+			"value": {
+				"Name": "LoadingGui",
+				"Superclass": "Instance",
+				"MemoryCategory": ""
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LoadingGui",
+			"member": "HideAutomatically",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "HideAutomatically",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LoadingGui",
+			"member": "Hide",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Hide",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "UserInputService",
+			"type": "Add",
+			"value": {
+				"Name": "UserInputService",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "GamepadEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "GamepadEnabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "KeyboardEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "KeyboardEnabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "MouseEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "MouseEnabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "TouchEnabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "PacketReliability",
+			"type": "Add",
+			"value": {
+				"Name": "PacketReliability"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PacketReliability",
+			"item": "UNRELIABLE",
+			"type": "Add",
+			"value": {
+				"Name": "UNRELIABLE",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PacketReliability",
+			"item": "UNRELIABLE_SEQUENCED",
+			"type": "Add",
+			"value": {
+				"Name": "UNRELIABLE_SEQUENCED",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PacketReliability",
+			"item": "RELIABLE",
+			"type": "Add",
+			"value": {
+				"Name": "RELIABLE",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PacketReliability",
+			"item": "RELIABLE_ORDERED",
+			"type": "Add",
+			"value": {
+				"Name": "RELIABLE_ORDERED",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PacketReliability",
+			"item": "RELIABLE_SEQUENCED",
+			"type": "Add",
+			"value": {
+				"Name": "RELIABLE_SEQUENCED",
+				"Value": 4
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "LevelOfDetailSetting",
+			"type": "Add",
+			"value": {
+				"Name": "LevelOfDetailSetting"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LevelOfDetailSetting",
+			"item": "High",
+			"type": "Add",
+			"value": {
+				"Name": "High",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LevelOfDetailSetting",
+			"item": "Medium",
+			"type": "Add",
+			"value": {
+				"Name": "Medium",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LevelOfDetailSetting",
+			"item": "Low",
+			"type": "Add",
+			"value": {
+				"Name": "Low",
+				"Value": 0
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "RuntimeUndoBehavior",
+			"type": "Add",
+			"value": {
+				"Name": "RuntimeUndoBehavior"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RuntimeUndoBehavior",
+			"item": "Aggregate",
+			"type": "Add",
+			"value": {
+				"Name": "Aggregate",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RuntimeUndoBehavior",
+			"item": "Snapshot",
+			"type": "Add",
+			"value": {
+				"Name": "Snapshot",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RuntimeUndoBehavior",
+			"item": "Hybrid",
+			"type": "Add",
+			"value": {
+				"Name": "Hybrid",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "FunctionalTestResult",
+			"type": "Add",
+			"value": {
+				"Name": "FunctionalTestResult"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FunctionalTestResult",
+			"item": "Passed",
+			"type": "Add",
+			"value": {
+				"Name": "Passed",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FunctionalTestResult",
+			"item": "Warning",
+			"type": "Add",
+			"value": {
+				"Name": "Warning",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "FunctionalTestResult",
+			"item": "Error",
+			"type": "Add",
+			"value": {
+				"Name": "Error",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ActionType",
+			"type": "Add",
+			"value": {
+				"Name": "ActionType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ActionType",
+			"item": "Nothing",
+			"type": "Add",
+			"value": {
+				"Name": "Nothing",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ActionType",
+			"item": "Pause",
+			"type": "Add",
+			"value": {
+				"Name": "Pause",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ActionType",
+			"item": "Lose",
+			"type": "Add",
+			"value": {
+				"Name": "Lose",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ActionType",
+			"item": "Draw",
+			"type": "Add",
+			"value": {
+				"Name": "Draw",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ActionType",
+			"item": "Win",
+			"type": "Add",
+			"value": {
+				"Name": "Win",
+				"Value": 4
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "TweenStatus",
+			"type": "Add",
+			"value": {
+				"Name": "TweenStatus"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TweenStatus",
+			"item": "Canceled",
+			"type": "Add",
+			"value": {
+				"Name": "Canceled",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TweenStatus",
+			"item": "Completed",
+			"type": "Add",
+			"value": {
+				"Name": "Completed",
+				"Value": 1
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "JointType",
+			"type": "Add",
+			"value": {
+				"Name": "JointType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "JointType",
+			"item": "None",
+			"type": "Add",
+			"value": {
+				"Name": "None",
+				"Value": 13
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "JointType",
+			"item": "Rotate",
+			"type": "Add",
+			"value": {
+				"Name": "Rotate",
+				"Value": 6
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "JointType",
+			"item": "RotateP",
+			"type": "Add",
+			"value": {
+				"Name": "RotateP",
+				"Value": 7
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "JointType",
+			"item": "RotateV",
+			"type": "Add",
+			"value": {
+				"Name": "RotateV",
+				"Value": 8
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "JointType",
+			"item": "Glue",
+			"type": "Add",
+			"value": {
+				"Name": "Glue",
+				"Value": 9
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "JointType",
+			"item": "Weld",
+			"type": "Add",
+			"value": {
+				"Name": "Weld",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "JointType",
+			"item": "Snap",
+			"type": "Add",
+			"value": {
+				"Name": "Snap",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "KeywordFilterType",
+			"type": "Add",
+			"value": {
+				"Name": "KeywordFilterType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeywordFilterType",
+			"item": "Include",
+			"type": "Add",
+			"value": {
+				"Name": "Include",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "KeywordFilterType",
+			"item": "Exclude",
+			"type": "Add",
+			"value": {
+				"Name": "Exclude",
+				"Value": 1
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "SurfaceConstraint",
+			"type": "Add",
+			"value": {
+				"Name": "SurfaceConstraint"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SurfaceConstraint",
+			"item": "None",
+			"type": "Add",
+			"value": {
+				"Name": "None",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SurfaceConstraint",
+			"item": "Hinge",
+			"type": "Add",
+			"value": {
+				"Name": "Hinge",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SurfaceConstraint",
+			"item": "SteppingMotor",
+			"type": "Add",
+			"value": {
+				"Name": "SteppingMotor",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SurfaceConstraint",
+			"item": "Motor",
+			"type": "Add",
+			"value": {
+				"Name": "Motor",
+				"Value": 3
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "Stuff",
+			"type": "Add",
+			"value": {
+				"Name": "Stuff"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Stuff",
+			"item": "Heads",
+			"type": "Add",
+			"value": {
+				"Name": "Heads",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Stuff",
+			"item": "Faces",
+			"type": "Add",
+			"value": {
+				"Name": "Faces",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Stuff",
+			"item": "Hats",
+			"type": "Add",
+			"value": {
+				"Name": "Hats",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Stuff",
+			"item": "TShirts",
+			"type": "Add",
+			"value": {
+				"Name": "TShirts",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Stuff",
+			"item": "Shirts",
+			"type": "Add",
+			"value": {
+				"Name": "Shirts",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Stuff",
+			"item": "Pants",
+			"type": "Add",
+			"value": {
+				"Name": "Pants",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Stuff",
+			"item": "Gears",
+			"type": "Add",
+			"value": {
+				"Name": "Gears",
+				"Value": 6
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Stuff",
+			"item": "Torsos",
+			"type": "Add",
+			"value": {
+				"Name": "Torsos",
+				"Value": 7
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Stuff",
+			"item": "LeftArms",
+			"type": "Add",
+			"value": {
+				"Name": "LeftArms",
+				"Value": 8
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Stuff",
+			"item": "RightArms",
+			"type": "Add",
+			"value": {
+				"Name": "RightArms",
+				"Value": 9
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Stuff",
+			"item": "LeftLegs",
+			"type": "Add",
+			"value": {
+				"Name": "LeftLegs",
+				"Value": 10
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Stuff",
+			"item": "RightLegs",
+			"type": "Add",
+			"value": {
+				"Name": "RightLegs",
+				"Value": 11
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Stuff",
+			"item": "Bodies",
+			"type": "Add",
+			"value": {
+				"Name": "Bodies",
+				"Value": 12
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Stuff",
+			"item": "Costumes",
+			"type": "Add",
+			"value": {
+				"Name": "Costumes",
+				"Value": 13
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "PrivilegeType",
+			"type": "Add",
+			"value": {
+				"Name": "PrivilegeType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PrivilegeType",
+			"item": "Owner",
+			"type": "Add",
+			"value": {
+				"Name": "Owner",
+				"Value": 255
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PrivilegeType",
+			"item": "Admin",
+			"type": "Add",
+			"value": {
+				"Name": "Admin",
+				"Value": 240
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PrivilegeType",
+			"item": "Member",
+			"type": "Add",
+			"value": {
+				"Name": "Member",
+				"Value": 128
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PrivilegeType",
+			"item": "Visitor",
+			"type": "Add",
+			"value": {
+				"Name": "Visitor",
+				"Value": 10
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PrivilegeType",
+			"item": "Banned",
+			"type": "Add",
+			"value": {
+				"Name": "Banned",
+				"Value": 0
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "D3DFORMAT",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFORMAT"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_UNKNOWN",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_UNKNOWN",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_R8G8B8",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_R8G8B8",
+				"Value": 20
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_A8R8G8B8",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_A8R8G8B8",
+				"Value": 21
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_X8R8G8B8",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_X8R8G8B8",
+				"Value": 22
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_R5G6B5",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_R5G6B5",
+				"Value": 23
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_X1R5G5B5",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_X1R5G5B5",
+				"Value": 24
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_A1R5G5B5",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_A1R5G5B5",
+				"Value": 25
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_A4R4G4B4",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_A4R4G4B4",
+				"Value": 26
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_R3G3B2",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_R3G3B2",
+				"Value": 27
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_A8",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_A8",
+				"Value": 28
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_A8R3G3B2",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_A8R3G3B2",
+				"Value": 29
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_X4R4G4B4",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_X4R4G4B4",
+				"Value": 30
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_A2B10G10R10",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_A2B10G10R10",
+				"Value": 31
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_A8B8G8R8",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_A8B8G8R8",
+				"Value": 32
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_X8B8G8R8",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_X8B8G8R8",
+				"Value": 33
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_G16R16",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_G16R16",
+				"Value": 34
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_A2R10G10B10",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_A2R10G10B10",
+				"Value": 35
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_A16B16G16R16",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_A16B16G16R16",
+				"Value": 36
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_A8P8",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_A8P8",
+				"Value": 40
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_P8",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_P8",
+				"Value": 41
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_L8",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_L8",
+				"Value": 50
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_A8L8",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_A8L8",
+				"Value": 51
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_A4L4",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_A4L4",
+				"Value": 52
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_V8U8",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_V8U8",
+				"Value": 60
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_L6V5U5",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_L6V5U5",
+				"Value": 61
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_X8L8V8U8",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_X8L8V8U8",
+				"Value": 62
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_Q8W8V8U8",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_Q8W8V8U8",
+				"Value": 63
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_V16U16",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_V16U16",
+				"Value": 64
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_A2W10V10U10",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_A2W10V10U10",
+				"Value": 67
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_D16_LOCKABLE",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_D16_LOCKABLE",
+				"Value": 70
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_D32",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_D32",
+				"Value": 71
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_D15S1",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_D15S1",
+				"Value": 73
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_D24S8",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_D24S8",
+				"Value": 75
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_D24X8",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_D24X8",
+				"Value": 77
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_D24X4S4",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_D24X4S4",
+				"Value": 79
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_D16",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_D16",
+				"Value": 80
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_D32F_LOCKABLE",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_D32F_LOCKABLE",
+				"Value": 82
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_D24FS8",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_D24FS8",
+				"Value": 83
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_L16",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_L16",
+				"Value": 81
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_VERTEXDATA",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_VERTEXDATA",
+				"Value": 100
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_INDEX16",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_INDEX16",
+				"Value": 101
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_INDEX32",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_INDEX32",
+				"Value": 102
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_Q16W16V16U16",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_Q16W16V16U16",
+				"Value": 110
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_R16F",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_R16F",
+				"Value": 111
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_G16R16F",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_G16R16F",
+				"Value": 112
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_A16B16G16R16F",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_A16B16G16R16F",
+				"Value": 113
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_R32F",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_R32F",
+				"Value": 114
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_G32R32F",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_G32R32F",
+				"Value": 115
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_A32B32G32R32F",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_A32B32G32R32F",
+				"Value": 116
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DFORMAT",
+			"item": "D3DFMT_CxV8U8",
+			"type": "Add",
+			"value": {
+				"Name": "D3DFMT_CxV8U8",
+				"Value": 117
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "D3DDEVTYPE",
+			"type": "Add",
+			"value": {
+				"Name": "D3DDEVTYPE"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DDEVTYPE",
+			"item": "D3DDEVTYPE_HAL",
+			"type": "Add",
+			"value": {
+				"Name": "D3DDEVTYPE_HAL",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DDEVTYPE",
+			"item": "D3DDEVTYPE_REF",
+			"type": "Add",
+			"value": {
+				"Name": "D3DDEVTYPE_REF",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DDEVTYPE",
+			"item": "D3DDEVTYPE_SW",
+			"type": "Add",
+			"value": {
+				"Name": "D3DDEVTYPE_SW",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "D3DDEVTYPE",
+			"item": "D3DDEVTYPE_NULLREF",
+			"type": "Add",
+			"value": {
+				"Name": "D3DDEVTYPE_NULLREF",
+				"Value": 4
+			}
+		}
+	]
+}

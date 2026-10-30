@@ -1,0 +1,530 @@
+{
+	"from": {
+		"version": "0.401.0.338533",
+		"hash": "0edc8bf65f0a4f5a"
+	},
+	"to": {
+		"version": "0.402.0.340802",
+		"hash": "61f909d2d2fd427f"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "BrowserService",
+			"member": "ExecuteJavaScript",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ExecuteJavaScript",
+				"Parameters": [
+					{
+						"Name": "javascript",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModelSession",
+			"member": "CurrentGameStateType",
+			"type": "Remove",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "CurrentGameStateType",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "StudioDataModelType"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModelSession",
+			"member": "CurrentGameStateTypeAboutToChange",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "CurrentGameStateTypeAboutToChange",
+				"Parameters": [
+					{
+						"Name": "gameStateType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "StudioDataModelType"
+						}
+					}
+				],
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModelSession",
+			"member": "CurrentGameStateTypeChanged",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "CurrentGameStateTypeChanged",
+				"Parameters": [],
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModelSession",
+			"member": "CurrentDataModelType",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "CurrentDataModelType",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "StudioDataModelType"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModelSession",
+			"member": "CurrentDataModelTypeAboutToChange",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "CurrentDataModelTypeAboutToChange",
+				"Parameters": [
+					{
+						"Name": "dataModelType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "StudioDataModelType"
+						}
+					}
+				],
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModelSession",
+			"member": "CurrentDataModelTypeChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "CurrentDataModelTypeChanged",
+				"Parameters": [],
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiButton",
+			"member": "SetVerb",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetVerb",
+				"Parameters": [
+					{
+						"Name": "verb",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextBox",
+			"member": "IsPassword",
+			"type": "Remove",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "IsPassword",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "LocalizationService",
+			"member": "GetCountryRegionForPlayerAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCountryRegionForPlayerAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "HostDataModelTypeIsCurrent",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "HostDataModelTypeIsCurrent",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "UserEmotesEnabled",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "RobloxScriptSecurity"
+					},
+					"after": {
+						"Read": "None",
+						"Write": "None"
+					}
+				}
+			],
+			"value": {
+				"Category": "Character",
+				"MemberType": "Property",
+				"Name": "UserEmotesEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "emitPlacePublishedSignal",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "emitPlacePublishedSignal",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "GamePublishedToRoblox",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "GamePublishedToRoblox",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "OnConvertToPackageResult",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "result",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "isSuccessful",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "errorMessage",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnConvertToPackageResult",
+				"Parameters": [
+					{
+						"Name": "isSuccessful",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "errorMessage",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "PlacePublishedToRoblox",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PlacePublishedToRoblox",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "EmitPlacePublishedSignal",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "EmitPlacePublishedSignal",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "GamePublishFinished",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "GamePublishFinished",
+				"Parameters": [
+					{
+						"Name": "success",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PolicyService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "PolicyService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PolicyService",
+			"member": "GetPolicyInfoForPlayerAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPolicyInfoForPlayerAsync",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ExplosionType",
+			"item": "CratersAndDebris",
+			"type": "Remove",
+			"value": {
+				"Name": "CratersAndDebris",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Technology",
+			"item": "Legacy",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Name": "Legacy",
+				"Tags": [
+					"Deprecated"
+				],
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Technology",
+			"item": "Compatibility",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"Deprecated"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Name": "Compatibility",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TextInputType",
+			"item": "Password",
+			"type": "Add",
+			"value": {
+				"Name": "Password",
+				"Value": 5
+			}
+		}
+	]
+}

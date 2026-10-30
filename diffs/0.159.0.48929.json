@@ -1,0 +1,86 @@
+{
+	"from": {
+		"version": "0.158.0.48436",
+		"hash": "1112937d32504d8c"
+	},
+	"to": {
+		"version": "0.159.0.48929",
+		"hash": "a2dbb0391e1e433c"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "NetworkOwnerChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "NetworkOwnerChanged",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "SystemAddress"
+						},
+						"Name": "systemAddress"
+					}
+				],
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PartOperation",
+			"member": "UsePartColor",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "UsePartColor",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RenderSettings",
+			"member": "Shadow",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Shadow",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "Shadow"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "Shadow",
+			"type": "Remove",
+			"value": {
+				"Name": "Shadow"
+			}
+		}
+	]
+}

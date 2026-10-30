@@ -1,0 +1,93 @@
+{
+	"from": {
+		"version": "0.52.0.533",
+		"hash": "59ef45ad660c45f5"
+	},
+	"to": {
+		"version": "0.53.0.540",
+		"hash": "ef80cfd9c83546fe"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "DebugAnimation",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "DebugAnimation",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RenderHooksService",
+			"member": "PrintScene",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PrintScene",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptContext",
+			"member": "ScriptsDisabled",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "LocalUserSecurity",
+						"Write": "LocalUserSecurity"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Property",
+				"Name": "ScriptsDisabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "State",
+				"Security": {
+					"Read": "LocalUserSecurity",
+					"Write": "LocalUserSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				]
+			}
+		}
+	]
+}

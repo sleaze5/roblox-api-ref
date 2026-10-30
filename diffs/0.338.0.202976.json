@@ -1,0 +1,311 @@
+{
+	"from": {
+		"version": "0.337.0.201523",
+		"hash": "190969b96ac24135"
+	},
+	"to": {
+		"version": "0.338.0.202976",
+		"hash": "0d11713edd8c4452"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "StarterGui",
+			"member": "ProcessUserInput",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ProcessUserInput",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Behavior",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginGui",
+			"member": "WindowFocusReleased",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "WindowFocusReleased",
+				"Parameters": [],
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginGui",
+			"member": "WindowFocused",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "WindowFocused",
+				"Parameters": [],
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "JumpCharacter",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "JumpCharacter",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "MoveCharacter",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "MoveCharacter",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector2"
+						},
+						"Name": "walkDirection"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						},
+						"Name": "maxWalkDelta"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "LocaleId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "LocaleId",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "CreatePluginAction",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreatePluginAction",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "actionId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "text"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "statusTip"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "KeyboardService",
+			"type": "Add",
+			"value": {
+				"Name": "KeyboardService",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "MouseService",
+			"type": "Add",
+			"value": {
+				"Name": "MouseService",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PluginAction",
+			"type": "Add",
+			"value": {
+				"Name": "PluginAction",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginAction",
+			"member": "ActionId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ActionId",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginAction",
+			"member": "StatusTip",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "StatusTip",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginAction",
+			"member": "Text",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Text",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginAction",
+			"member": "Triggered",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Triggered",
+				"Parameters": [],
+				"Security": "PluginSecurity"
+			}
+		}
+	]
+}

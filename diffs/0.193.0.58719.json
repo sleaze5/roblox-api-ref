@@ -1,0 +1,476 @@
+{
+	"from": {
+		"version": "0.193.0.58295",
+		"hash": "2ee5d7d0d55c4aa7"
+	},
+	"to": {
+		"version": "0.193.0.58719",
+		"hash": "d406f4a063944ff7"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "ChangeHistoryService",
+			"member": "OnRedo",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnRedo",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "waypoint"
+					}
+				],
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ChangeHistoryService",
+			"member": "OnUndo",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnUndo",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "waypoint"
+					}
+				],
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "SelectedObject",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "SelectedObject",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Object"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "AddSelectionParent",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddSelectionParent",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "selectionName"
+					},
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "selectionParent"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "AddSelectionTuple",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddSelectionTuple",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "selectionName"
+					},
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						},
+						"Name": "selections"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "RemoveSelectionGroup",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RemoveSelectionGroup",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "selectionName"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "IsSmooth",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "IsSmooth",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "ConvertToSmooth",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ConvertToSmooth",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "FillBall",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FillBall",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						},
+						"Name": "center"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						},
+						"Name": "radius"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "Material"
+						},
+						"Name": "material"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "FillBlock",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FillBlock",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						},
+						"Name": "cframe"
+					},
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						},
+						"Name": "size"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "Material"
+						},
+						"Name": "material"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "FillRegion",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FillRegion",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Region3"
+						},
+						"Name": "region"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						},
+						"Name": "resolution"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "Material"
+						},
+						"Name": "material"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "ReadVoxels",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ReadVoxels",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Region3"
+						},
+						"Name": "region"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						},
+						"Name": "resolution"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "WriteVoxels",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "WriteVoxels",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Region3"
+						},
+						"Name": "region"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						},
+						"Name": "resolution"
+					},
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						},
+						"Name": "materials"
+					},
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						},
+						"Name": "occupancy"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TerrainRegion",
+			"member": "IsSmooth",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "IsSmooth",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TerrainRegion",
+			"member": "ConvertToSmooth",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ConvertToSmooth",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Air",
+			"type": "Add",
+			"value": {
+				"Name": "Air",
+				"Value": 1792,
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Water",
+			"type": "Add",
+			"value": {
+				"Name": "Water",
+				"Value": 2048,
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Material",
+			"item": "Rock",
+			"type": "Add",
+			"value": {
+				"Name": "Rock",
+				"Value": 896,
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		}
+	]
+}

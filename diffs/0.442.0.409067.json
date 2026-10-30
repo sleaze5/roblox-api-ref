@@ -1,0 +1,476 @@
+{
+	"from": {
+		"version": "0.441.1.408989",
+		"hash": "8d0d1573d9b14eb5"
+	},
+	"to": {
+		"version": "0.442.0.409067",
+		"hash": "be1ccd4216c24116"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "LevelOfDetail",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "LevelOfDetail",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ModelLevelOfDetail"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "FindPartOnRay",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindPartOnRay",
+				"Parameters": [
+					{
+						"Name": "ray",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Ray"
+						}
+					},
+					{
+						"Default": "nil",
+						"Name": "ignoreDescendantsInstance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Default": "false",
+						"Name": "terrainCellsAreCubes",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Default": "false",
+						"Name": "ignoreWater",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "FindPartOnRayWithIgnoreList",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindPartOnRayWithIgnoreList",
+				"Parameters": [
+					{
+						"Name": "ray",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Ray"
+						}
+					},
+					{
+						"Name": "ignoreDescendantsTable",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					},
+					{
+						"Default": "false",
+						"Name": "terrainCellsAreCubes",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Default": "false",
+						"Name": "ignoreWater",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "FindPartOnRayWithWhitelist",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindPartOnRayWithWhitelist",
+				"Parameters": [
+					{
+						"Name": "ray",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Ray"
+						}
+					},
+					{
+						"Name": "whitelistDescendantsTable",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					},
+					{
+						"Default": "false",
+						"Name": "ignoreWater",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "SkinnedMeshEnabled",
+			"type": "Remove",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "SkinnedMeshEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "SkinnedMeshAllowType"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptContext",
+			"member": "ErrorDetailed",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "message",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "stackTrace",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "script",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Name": "details",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "message",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "stackTrace",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "script",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						},
+						{
+							"Name": "details",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "securityLevel",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "ErrorDetailed",
+				"Parameters": [
+					{
+						"Name": "message",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "stackTrace",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "script",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "details",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "securityLevel",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Maximum Table Depth",
+			"type": "Add",
+			"value": {
+				"Category": "Output",
+				"MemberType": "Property",
+				"Name": "Maximum Table Depth",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Team",
+			"member": "ChildOrder",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "ChildOrder",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "SkinnedMeshAllowType",
+			"type": "Remove",
+			"value": {
+				"Name": "SkinnedMeshAllowType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TeleportMethod",
+			"item": "TeleportToPartyAsync",
+			"type": "Remove",
+			"value": {
+				"Name": "TeleportToPartyAsync",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TeleportMethod",
+			"item": "TeleportPartyAsync",
+			"type": "Add",
+			"value": {
+				"Name": "TeleportPartyAsync",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TeleportMethod",
+			"item": "TeleportUnknown",
+			"type": "Add",
+			"value": {
+				"Name": "TeleportUnknown",
+				"Value": 4
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ModelLevelOfDetail",
+			"type": "Add",
+			"value": {
+				"Name": "ModelLevelOfDetail"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ModelLevelOfDetail",
+			"item": "Automatic",
+			"type": "Add",
+			"value": {
+				"Name": "Automatic",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ModelLevelOfDetail",
+			"item": "StreamingMesh",
+			"type": "Add",
+			"value": {
+				"Name": "StreamingMesh",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ModelLevelOfDetail",
+			"item": "Disabled",
+			"type": "Add",
+			"value": {
+				"Name": "Disabled",
+				"Value": 2
+			}
+		}
+	]
+}

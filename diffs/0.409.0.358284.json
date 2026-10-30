@@ -1,0 +1,178 @@
+{
+	"from": {
+		"version": "0.408.0.357216",
+		"hash": "b893a4d364554419"
+	},
+	"to": {
+		"version": "0.409.0.358284",
+		"hash": "2c88bb74b1a349e7"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "BadgeService",
+			"member": "OnBadgeAwarded",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnBadgeAwarded",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "creatorId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "badgeId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "EnableScriptCollabOnLoad",
+			"type": "Remove",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "EnableScriptCollabOnLoad",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "StudioData",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotCreatable",
+						"Service",
+						"NotReplicated"
+					],
+					"after": [
+						"NotCreatable",
+						"Service"
+					]
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "StudioData",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioData",
+			"member": "EnableScriptCollabOnLoad",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "EnableScriptCollabOnLoad",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "OpenInBrowser_DONOTUSE",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "OpenInBrowser_DONOTUSE",
+				"Parameters": [
+					{
+						"Name": "url",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "DateTimeKind",
+			"type": "Add",
+			"value": {
+				"Name": "DateTimeKind"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DateTimeKind",
+			"item": "Utc",
+			"type": "Add",
+			"value": {
+				"Name": "Utc",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DateTimeKind",
+			"item": "Local",
+			"type": "Add",
+			"value": {
+				"Name": "Local",
+				"Value": 1
+			}
+		}
+	]
+}

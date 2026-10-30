@@ -1,0 +1,278 @@
+{
+	"from": {
+		"version": "0.235.0.71049",
+		"hash": "3334c46e6d704f6d"
+	},
+	"to": {
+		"version": "0.236.0.71257",
+		"hash": "4bc75dd7e05f4feb"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "GetPhysicsAnalyzerBreakOnIssue",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPhysicsAnalyzerBreakOnIssue",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "GetPhysicsAnalyzerIssue",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPhysicsAnalyzerIssue",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "index"
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "SetPhysicsAnalyzerBreakOnIssue",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetPhysicsAnalyzerBreakOnIssue",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "enable"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "PhysicsAnalyzerIssuesFound",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PhysicsAnalyzerIssuesFound",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "count"
+					}
+				],
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PhysicsSettings",
+			"member": "PhysicsAnalyzerEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "PhysicsAnalyzerEnabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "SetGameInstanceId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetGameInstanceId",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "instanceID"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "UserHeadCFrame",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"ReadOnly",
+						"NotReplicated"
+					],
+					"after": [
+						"ReadOnly",
+						"NotReplicated",
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Property",
+				"Name": "UserHeadCFrame",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated",
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "GetUserCFrame",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetUserCFrame",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserCFrame"
+						},
+						"Name": "type"
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "UserCFrameChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "UserCFrameChanged",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserCFrame"
+						},
+						"Name": "type"
+					},
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						},
+						"Name": "value"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "UserCFrame",
+			"type": "Add",
+			"value": {
+				"Name": "UserCFrame"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UserCFrame",
+			"item": "Head",
+			"type": "Add",
+			"value": {
+				"Name": "Head",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UserCFrame",
+			"item": "LeftHand",
+			"type": "Add",
+			"value": {
+				"Name": "LeftHand",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "UserCFrame",
+			"item": "RightHand",
+			"type": "Add",
+			"value": {
+				"Name": "RightHand",
+				"Value": 2
+			}
+		}
+	]
+}

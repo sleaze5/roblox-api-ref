@@ -1,0 +1,526 @@
+{
+	"from": {
+		"version": "0.264.0.89220",
+		"hash": "1600d28b04c54698"
+	},
+	"to": {
+		"version": "0.265.0.90222",
+		"hash": "688e44b42a994c8f"
+	},
+	"changes": [
+		{
+			"element": "Class",
+			"class": "CoreGui",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotCreatable",
+						"Service",
+						"NotReplicated",
+						"NotBrowsable"
+					],
+					"after": [
+						"NotCreatable",
+						"Service",
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"Name": "CoreGui",
+				"Superclass": "BasePlayerGui",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "CoreEffectFolder",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "CoreEffectFolder",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Object"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "CoreGuiFolder",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "CoreGuiFolder",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Object"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "AddAccessory",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddAccessory",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "accessory"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "GetAccessories",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAccessories",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "GetLimb",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetLimb",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "part"
+					}
+				],
+				"ReturnType": {
+					"Category": "Enum",
+					"Name": "Limb"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "RemoveAccessories",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RemoveAccessories",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "Touched",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Touched",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "touchingPart"
+					},
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "humanoidPart"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "ImportFbxRig",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Primitive",
+						"Name": "void"
+					},
+					"after": {
+						"Category": "Class",
+						"Name": "Instance"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Yields"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "ImportFbxRig",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ReflectionMetadataItem",
+			"member": "ClassCategory",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ClassCategory",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Category": "Reflection",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "VRService",
+			"type": "Add",
+			"value": {
+				"Name": "VRService",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VRService",
+			"member": "GuiInputUserCFrame",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "GuiInputUserCFrame",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "UserCFrame"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VRService",
+			"member": "VREnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "VREnabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VRService",
+			"member": "GetUserCFrame",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetUserCFrame",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserCFrame"
+						},
+						"Name": "type"
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "CFrame"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VRService",
+			"member": "GetUserCFrameEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetUserCFrameEnabled",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserCFrame"
+						},
+						"Name": "type"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VRService",
+			"member": "RecenterUserHeadCFrame",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RecenterUserHeadCFrame",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VRService",
+			"member": "UserCFrameChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "UserCFrameChanged",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserCFrame"
+						},
+						"Name": "type"
+					},
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						},
+						"Name": "value"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VRService",
+			"member": "UserCFrameEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "UserCFrameEnabled",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "UserCFrame"
+						},
+						"Name": "type"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "enabled"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "Limb",
+			"type": "Add",
+			"value": {
+				"Name": "Limb"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Limb",
+			"item": "Head",
+			"type": "Add",
+			"value": {
+				"Name": "Head",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Limb",
+			"item": "Torso",
+			"type": "Add",
+			"value": {
+				"Name": "Torso",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Limb",
+			"item": "LeftArm",
+			"type": "Add",
+			"value": {
+				"Name": "LeftArm",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Limb",
+			"item": "RightArm",
+			"type": "Add",
+			"value": {
+				"Name": "RightArm",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Limb",
+			"item": "LeftLeg",
+			"type": "Add",
+			"value": {
+				"Name": "LeftLeg",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Limb",
+			"item": "RightLeg",
+			"type": "Add",
+			"value": {
+				"Name": "RightLeg",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Limb",
+			"item": "Unknown",
+			"type": "Add",
+			"value": {
+				"Name": "Unknown",
+				"Value": 6
+			}
+		}
+	]
+}

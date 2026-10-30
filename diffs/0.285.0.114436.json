@@ -1,0 +1,357 @@
+{
+	"from": {
+		"version": "0.284.0.112222",
+		"hash": "398bf2b17c844b38"
+	},
+	"to": {
+		"version": "0.285.0.114436",
+		"hash": "058c2df0638c4b29"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "GetPropertyChangedSignal",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPropertyChangedSignal",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "property"
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RBXScriptSignal"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ContentFilter",
+			"type": "Remove",
+			"value": {
+				"Name": "ContentFilter",
+				"Superclass": "Instance",
+				"MemoryCategory": ""
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FriendService",
+			"member": "SetCreateFriendRequestUrl",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetCreateFriendRequestUrl",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "url"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FriendService",
+			"member": "SetDeleteFriendRequestUrl",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetDeleteFriendRequestUrl",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "url"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FriendService",
+			"member": "SetEnabled",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetEnabled",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "enable"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FriendService",
+			"member": "SetFriendsOnlineUrl",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetFriendsOnlineUrl",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "url"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FriendService",
+			"member": "FriendsEvent",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "RobloxSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "FriendsEvent",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						},
+						"Name": "eventInfo"
+					},
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						},
+						"Name": "friendData"
+					}
+				],
+				"Security": "RobloxSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "KeyframeSequenceProvider",
+			"member": "GetAnimations",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "userId"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "page",
+							"Default": "1"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "userId"
+						}
+					]
+				},
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Group",
+						"Name": "Dictionary"
+					},
+					"after": {
+						"Category": "Class",
+						"Name": "Instance"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAnimations",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "ScreenOrientation",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ScreenOrientation",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ScreenOrientation"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "ScreenOrientationChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ScreenOrientationChanged",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "ScreenOrientation"
+						},
+						"Name": "newOrientation"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "fromSensor"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "InventoryPages",
+			"type": "Add",
+			"value": {
+				"Name": "InventoryPages",
+				"Superclass": "Pages",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ScreenOrientation",
+			"type": "Add",
+			"value": {
+				"Name": "ScreenOrientation"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ScreenOrientation",
+			"item": "Landscape",
+			"type": "Add",
+			"value": {
+				"Name": "Landscape",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ScreenOrientation",
+			"item": "Portrait",
+			"type": "Add",
+			"value": {
+				"Name": "Portrait",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ScreenOrientation",
+			"item": "Sensor",
+			"type": "Add",
+			"value": {
+				"Name": "Sensor",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ScreenOrientation",
+			"item": "UserChoice",
+			"type": "Add",
+			"value": {
+				"Name": "UserChoice",
+				"Value": 3
+			}
+		}
+	]
+}

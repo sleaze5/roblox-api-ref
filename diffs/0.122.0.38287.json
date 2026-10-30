@@ -1,0 +1,257 @@
+{
+	"from": {
+		"version": "0.121.1.37958",
+		"hash": "e51d9fbd5a3e49c4"
+	},
+	"to": {
+		"version": "0.122.0.38287",
+		"hash": "394f11f19cd64b1a"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AssetService",
+			"member": "GetCreatorAssetID",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCreatorAssetID",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "creationID"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "ActivateExperimentalFeatures",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ActivateExperimentalFeatures",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxSecurity"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "HttpService",
+			"type": "Add",
+			"value": {
+				"Name": "HttpService",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotCreatable",
+					"Service"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HttpService",
+			"member": "HttpEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "HttpEnabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "LocalUserSecurity",
+					"Write": "LocalUserSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HttpService",
+			"member": "JSONDecode",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "JSONDecode",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "input"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HttpService",
+			"member": "JSONEncode",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "JSONEncode",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						},
+						"Name": "input"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HttpService",
+			"member": "GetAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "url"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HttpService",
+			"member": "PostAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PostAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "url"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "data"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "HttpContentType"
+						},
+						"Name": "content_type",
+						"Default": "ApplicationJson"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "SourceSans",
+			"type": "Add",
+			"value": {
+				"Name": "SourceSans",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "Font",
+			"item": "SourceSansBold",
+			"type": "Add",
+			"value": {
+				"Name": "SourceSansBold",
+				"Value": 4
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "HttpContentType",
+			"type": "Add",
+			"value": {
+				"Name": "HttpContentType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HttpContentType",
+			"item": "ApplicationJson",
+			"type": "Add",
+			"value": {
+				"Name": "ApplicationJson",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HttpContentType",
+			"item": "TextPlain",
+			"type": "Add",
+			"value": {
+				"Name": "TextPlain",
+				"Value": 2
+			}
+		}
+	]
+}

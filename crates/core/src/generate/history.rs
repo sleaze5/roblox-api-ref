@@ -1,8 +1,9 @@
-use std::collections::HashMap;
+use std::collections::{HashMap, HashSet};
 
 use indexmap::IndexMap;
 use rapi_routes::OwnerKind;
 
+use crate::dump::{ChangeElement, DumpChange};
 use crate::model::{
 	Api, ChangeDetail, ChangeEntry, ChangeStatus, Deprecation, EntryValues, EnumItem,
 	HistoryChanges, HistoryEntry, HistoryEvent, HistoryKind, ItemHistory, Member, MemberCounts,
@@ -419,6 +420,7 @@ impl HistoryTable {
 			entries: entries.iter().rev().cloned().collect(),
 			added,
 			added_before: None,
+			unrecorded: false,
 			changed,
 			deprecated: self.deprecations.get(key).cloned(),
 		})
@@ -433,7 +435,21 @@ pub fn build_history(updates: &[Update]) -> HistoryTable {
 	table
 }
 
-pub fn apply_history(api: &mut Api, table: &HistoryTable, start: &str) {
+pub fn unrecorded_key(change: &DumpChange) -> String {
+	match change.element {
+		ChangeElement::Class => owner_key(OwnerKind::Class, change.owner()),
+		ChangeElement::Enum => owner_key(OwnerKind::Enum, change.owner()),
+		ChangeElement::Member => item_key(OwnerKind::Class, change.owner(), change.name()),
+		ChangeElement::EnumItem => item_key(OwnerKind::Enum, change.owner(), change.name()),
+	}
+}
+
+pub fn apply_history(
+	api: &mut Api,
+	table: &HistoryTable,
+	start: &str,
+	unrecorded: &HashSet<String>,
+) {
 	api.history_start = Some(start.to_owned());
 	api.removed = Some(RemovedOwners {
 		classes: table
@@ -448,9 +464,17 @@ pub fn apply_history(api: &mut Api, table: &HistoryTable, start: &str) {
 			.collect(),
 	});
 	let attach = |key: &str| {
-		table.history(key).map(|mut history| {
+		let unrecorded = unrecorded.contains(key);
+		let history = table
+			.history(key)
+			.or_else(|| unrecorded.then(ItemHistory::default));
+		history.map(|mut history| {
 			if history.added.is_none() {
-				history.added_before = Some(start.to_owned());
+				if unrecorded {
+					history.unrecorded = true;
+				} else {
+					history.added_before = Some(start.to_owned());
+				}
 			}
 			history
 		})
@@ -469,6 +493,12 @@ pub fn apply_history(api: &mut Api, table: &HistoryTable, start: &str) {
 					removed,
 				}),
 				RemovedValue::EnumItem(_) => None,
+			})
+			.filter(|removed| {
+				!item
+					.members
+					.iter()
+					.any(|member| member.name == removed.value.name)
 			})
 			.collect();
 		if !removed.is_empty() {
@@ -494,6 +524,12 @@ pub fn apply_history(api: &mut Api, table: &HistoryTable, start: &str) {
 					removed,
 				}),
 				RemovedValue::Member(_) => None,
+			})
+			.filter(|removed| {
+				!item
+					.items
+					.iter()
+					.any(|entry| entry.name == removed.value.name)
 			})
 			.collect();
 		if !removed.is_empty() {
@@ -702,7 +738,7 @@ mod tests {
 				hash: String::new(),
 			},
 			counts: ChangeCounts::default(),
-			description_count: 0,
+			description_count: Some(0),
 			owners,
 		}
 	}

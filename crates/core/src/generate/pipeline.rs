@@ -1,4 +1,4 @@
-use std::collections::HashMap;
+use std::collections::{HashMap, HashSet};
 use std::path::{Path, PathBuf};
 
 use rayon::prelude::*;
@@ -6,7 +6,7 @@ use rayon::prelude::*;
 use super::class_icons::{ClassIconFiles, apply_class_icons};
 use super::docs::ApiNames;
 use super::facets::{FacetSlugs, build_facet_slugs};
-use super::history::{apply_history, build_history};
+use super::history::{apply_history, build_history, unrecorded_key};
 use super::normalize::normalize_api;
 use super::search_index::build_search_index;
 use super::stats::build_stats;
@@ -105,6 +105,11 @@ pub fn generate_site(paths: &Paths) -> Result<Site, String> {
 	let mut api = normalize_api(&dump?, &docs?, &version);
 	let class_icons = apply_class_icons(&mut api.classes, &icons?)?;
 	let diffs = diffs?;
+	let unrecorded: HashSet<String> = diffs
+		.iter()
+		.flat_map(|dated| &dated.diff.unrecorded)
+		.map(unrecorded_key)
+		.collect();
 	let updates = {
 		let names = ApiNames {
 			classes: &api.classes,
@@ -117,7 +122,7 @@ pub fn generate_site(paths: &Paths) -> Result<Site, String> {
 		.first()
 		.map_or_else(|| version.version.clone(), |first| first.version.clone());
 	let table = build_history(&updates);
-	apply_history(&mut api, &table, &history_start);
+	apply_history(&mut api, &table, &history_start, &unrecorded);
 	let stats = build_stats(&api, &updates, &history_start);
 	let slugs = build_facet_slugs(&api.facets);
 	let search = build_search_index(&api, &updates);

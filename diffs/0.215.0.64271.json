@@ -1,0 +1,149 @@
+{
+	"from": {
+		"version": "0.214.0.64128",
+		"hash": "8ee76ff82f0348de"
+	},
+	"to": {
+		"version": "0.215.0.64271",
+		"hash": "7f75021347394a41"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "TeleportedIn",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "TeleportedIn",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "CreateLocalPlayer",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "userId"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "userId"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "isTeleport",
+							"Default": "false"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreateLocalPlayer",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userId"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "isTeleport",
+						"Default": "false"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "GetObjects",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetObjects",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						},
+						"Name": "url"
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "get",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "get",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Content"
+						},
+						"Name": "url"
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "LocalUserSecurity",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,142 @@
+{
+	"from": {
+		"version": "0.281.0.108659",
+		"hash": "638183e929e84807"
+	},
+	"to": {
+		"version": "0.282.0.109918",
+		"hash": "6433b2f7baad403a"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "ClickDetector",
+			"member": "RightMouseClick",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "RightMouseClick",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "playerWhoClicked"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ForceField",
+			"member": "Visible",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Visible",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "SpecificGravity",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"ReadOnly",
+						"NotReplicated"
+					],
+					"after": [
+						"ReadOnly",
+						"NotReplicated",
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Property",
+				"Name": "SpecificGravity",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated",
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "SocialService",
+			"type": "Remove",
+			"value": {
+				"Name": "SocialService",
+				"Superclass": "Instance",
+				"MemoryCategory": ""
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "GraphicsMode",
+			"item": "NoGraphics",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 6,
+					"after": 7
+				}
+			],
+			"value": {
+				"Name": "NoGraphics",
+				"Value": 7
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "GraphicsMode",
+			"item": "Vulkan",
+			"type": "Add",
+			"value": {
+				"Name": "Vulkan",
+				"Value": 6
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "Stuff",
+			"type": "Remove",
+			"value": {
+				"Name": "Stuff"
+			}
+		}
+	]
+}

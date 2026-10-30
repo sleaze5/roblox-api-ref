@@ -1,0 +1,911 @@
+{
+	"from": {
+		"version": "0.476.0.421371",
+		"hash": "7e6cbc662641461f"
+	},
+	"to": {
+		"version": "0.477.0.421716",
+		"hash": "fdd297b0d25d463e"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Instance",
+			"member": "FindFirstDescendant",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindFirstDescendant",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"ThreadSafety": "ReadOnly"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "AccessoryBlob",
+			"type": "Add",
+			"value": {
+				"Category": "Accessories",
+				"MemberType": "Property",
+				"Name": "AccessoryBlob",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "GetAccessories",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAccessories",
+				"Parameters": [
+					{
+						"Name": "includeRigidAccessories",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "HumanoidDescription",
+			"member": "SetAccessories",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetAccessories",
+				"Parameters": [
+					{
+						"Name": "accessories",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					},
+					{
+						"Name": "includeRigidAccessories",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreQueue",
+			"member": "AddAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "value",
+							"Type": {
+								"Category": "Group",
+								"Name": "Variant"
+							}
+						},
+						{
+							"Default": "0",
+							"Name": "priority",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Default": "-1",
+							"Name": "expiration",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "value",
+							"Type": {
+								"Category": "Group",
+								"Name": "Variant"
+							}
+						},
+						{
+							"Default": "0",
+							"Name": "priority",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "double"
+							}
+						},
+						{
+							"Default": "-1",
+							"Name": "expiration",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddAsync",
+				"Parameters": [
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "priority",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "double"
+						}
+					},
+					{
+						"Default": "-1",
+						"Name": "expiration",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreQueue",
+			"member": "ReadAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "count",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Default": "false",
+							"Name": "allOrNothing",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Default": "0",
+							"Name": "waitTimeout",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "count",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Default": "false",
+							"Name": "allOrNothing",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Default": "0",
+							"Name": "waitTimeout",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "double"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "ReadAsync",
+				"Parameters": [
+					{
+						"Name": "count",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Default": "false",
+						"Name": "allOrNothing",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "waitTimeout",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "double"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreService",
+			"member": "GetQueue",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "name",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "30000",
+							"Name": "invisibilityTimeout",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "name",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "30",
+							"Name": "invisibilityTimeout",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetQueue",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "30",
+						"Name": "invisibilityTimeout",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreSortedMap",
+			"member": "SetAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "key",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "value",
+							"Type": {
+								"Category": "Group",
+								"Name": "Variant"
+							}
+						},
+						{
+							"Default": "-1",
+							"Name": "expiration",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "key",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "value",
+							"Type": {
+								"Category": "Group",
+								"Name": "Variant"
+							}
+						},
+						{
+							"Default": "-1",
+							"Name": "expiration",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Default": "-1",
+						"Name": "expiration",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreSortedMap",
+			"member": "UpdateAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "key",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "transformFunction",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Function"
+							}
+						},
+						{
+							"Default": "-1",
+							"Name": "expiration",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "key",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Name": "transformFunction",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Function"
+							}
+						},
+						{
+							"Default": "-1",
+							"Name": "expiration",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int64"
+							}
+						}
+					]
+				},
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Primitive",
+						"Name": "void"
+					},
+					"after": {
+						"Category": "Group",
+						"Name": "Variant"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "UpdateAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "transformFunction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					},
+					{
+						"Default": "-1",
+						"Name": "expiration",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterPlayer",
+			"member": "LoadCharacterLayeredClothing",
+			"type": "Add",
+			"value": {
+				"Category": "Character",
+				"MemberType": "Property",
+				"Name": "LoadCharacterLayeredClothing",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "LoadCharacterLayeredClothing"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StatsItem",
+			"member": "DisplayName",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "DisplayName",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "PromptForLocalSave",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PromptForLocalSave",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "FirstPublishOfCloudPlace",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "FirstPublishOfCloudPlace",
+				"Parameters": [
+					{
+						"Name": "universeId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "placeId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AccessoryType",
+			"type": "Add",
+			"value": {
+				"Name": "AccessoryType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AccessoryType",
+			"item": "Hat",
+			"type": "Add",
+			"value": {
+				"Name": "Hat",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AccessoryType",
+			"item": "Hair",
+			"type": "Add",
+			"value": {
+				"Name": "Hair",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AccessoryType",
+			"item": "Face",
+			"type": "Add",
+			"value": {
+				"Name": "Face",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AccessoryType",
+			"item": "Neck",
+			"type": "Add",
+			"value": {
+				"Name": "Neck",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AccessoryType",
+			"item": "Shoulder",
+			"type": "Add",
+			"value": {
+				"Name": "Shoulder",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AccessoryType",
+			"item": "Front",
+			"type": "Add",
+			"value": {
+				"Name": "Front",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AccessoryType",
+			"item": "Back",
+			"type": "Add",
+			"value": {
+				"Name": "Back",
+				"Value": 6
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AccessoryType",
+			"item": "Waist",
+			"type": "Add",
+			"value": {
+				"Name": "Waist",
+				"Value": 7
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AccessoryType",
+			"item": "TeeShirt",
+			"type": "Add",
+			"value": {
+				"Name": "TeeShirt",
+				"Value": 8
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AccessoryType",
+			"item": "Shirt",
+			"type": "Add",
+			"value": {
+				"Name": "Shirt",
+				"Value": 9
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AccessoryType",
+			"item": "Pants",
+			"type": "Add",
+			"value": {
+				"Name": "Pants",
+				"Value": 10
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AccessoryType",
+			"item": "Jacket",
+			"type": "Add",
+			"value": {
+				"Name": "Jacket",
+				"Value": 11
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AccessoryType",
+			"item": "Sweater",
+			"type": "Add",
+			"value": {
+				"Name": "Sweater",
+				"Value": 12
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AccessoryType",
+			"item": "Shorts",
+			"type": "Add",
+			"value": {
+				"Name": "Shorts",
+				"Value": 13
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AccessoryType",
+			"item": "LeftShoe",
+			"type": "Add",
+			"value": {
+				"Name": "LeftShoe",
+				"Value": 14
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AccessoryType",
+			"item": "RightShoe",
+			"type": "Add",
+			"value": {
+				"Name": "RightShoe",
+				"Value": 15
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AccessoryType",
+			"item": "DressSkirt",
+			"type": "Add",
+			"value": {
+				"Name": "DressSkirt",
+				"Value": 16
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "LoadCharacterLayeredClothing",
+			"type": "Add",
+			"value": {
+				"Name": "LoadCharacterLayeredClothing"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LoadCharacterLayeredClothing",
+			"item": "Default",
+			"type": "Add",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LoadCharacterLayeredClothing",
+			"item": "Disabled",
+			"type": "Add",
+			"value": {
+				"Name": "Disabled",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "LoadCharacterLayeredClothing",
+			"item": "Enabled",
+			"type": "Add",
+			"value": {
+				"Name": "Enabled",
+				"Value": 2
+			}
+		}
+	]
+}

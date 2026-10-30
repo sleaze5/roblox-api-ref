@@ -60,6 +60,8 @@ pub struct ItemHistory {
 	pub added: Option<HistoryEvent>,
 	#[serde(skip_serializing_if = "Option::is_none")]
 	pub added_before: Option<String>,
+	#[serde(skip_serializing_if = "std::ops::Not::not")]
+	pub unrecorded: bool,
 	#[serde(skip_serializing_if = "Option::is_none")]
 	pub changed: Option<HistoryEvent>,
 	#[serde(skip_serializing_if = "Option::is_none")]

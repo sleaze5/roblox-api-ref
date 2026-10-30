@@ -1,0 +1,405 @@
+{
+	"from": {
+		"version": "0.157.1.48302",
+		"hash": "c04585a2d58a4f29"
+	},
+	"to": {
+		"version": "0.158.0.48436",
+		"hash": "1112937d32504d8c"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "InputObject",
+			"member": "Delta",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Delta",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Vector3"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "SetDevProductInfoUrl",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetDevProductInfoUrl",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "url"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "SetPlayerOwnsAssetUrl",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetPlayerOwnsAssetUrl",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "url"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "SetProductInfoUrl",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetProductInfoUrl",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "url"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "MouseBehavior",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "MouseBehavior",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "MouseBehavior"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "MouseIconEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "MouseIconEnabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Path",
+			"type": "Add",
+			"value": {
+				"Name": "Path",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Path",
+			"member": "Status",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Status",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "PathStatus"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Path",
+			"member": "GetPointCoordinates",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPointCoordinates",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Path",
+			"member": "CheckOcclusionAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CheckOcclusionAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "start"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PathfindingService",
+			"type": "Add",
+			"value": {
+				"Name": "PathfindingService",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PathfindingService",
+			"member": "EmptyCutoff",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "EmptyCutoff",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PathfindingService",
+			"member": "ComputeRawPathAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ComputeRawPathAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						},
+						"Name": "start"
+					},
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						},
+						"Name": "finish"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						},
+						"Name": "maxDistance"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "MouseBehavior",
+			"type": "Add",
+			"value": {
+				"Name": "MouseBehavior"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "MouseBehavior",
+			"item": "Default",
+			"type": "Add",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "MouseBehavior",
+			"item": "LockCenter",
+			"type": "Add",
+			"value": {
+				"Name": "LockCenter",
+				"Value": 1
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "PathStatus",
+			"type": "Add",
+			"value": {
+				"Name": "PathStatus"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PathStatus",
+			"item": "Success",
+			"type": "Add",
+			"value": {
+				"Name": "Success",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PathStatus",
+			"item": "ClosestNoPath",
+			"type": "Add",
+			"value": {
+				"Name": "ClosestNoPath",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PathStatus",
+			"item": "ClosestOutOfRange",
+			"type": "Add",
+			"value": {
+				"Name": "ClosestOutOfRange",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PathStatus",
+			"item": "FailStartNotEmpty",
+			"type": "Add",
+			"value": {
+				"Name": "FailStartNotEmpty",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "PathStatus",
+			"item": "FailFinishNotEmpty",
+			"type": "Add",
+			"value": {
+				"Name": "FailFinishNotEmpty",
+				"Value": 4
+			}
+		}
+	]
+}

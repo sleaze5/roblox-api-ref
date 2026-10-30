@@ -1,0 +1,168 @@
+{
+	"from": {
+		"version": "0.152.1.47062",
+		"hash": "ca7bb36aabe54be5"
+	},
+	"to": {
+		"version": "0.153.0.47177",
+		"hash": "4d8b1955ef2740b3"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "CreatePlace",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CreatePlace",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "placeName"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "templatePlaceID"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserGameSettings",
+			"member": "CameraMode",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "CameraMode",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "CameraMode"
+				},
+				"Category": "Control",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserGameSettings",
+			"member": "TouchMovementMode",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "TouchMovementMode",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "TouchMovementMode"
+				},
+				"Category": "Control",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "CustomCameraMode",
+			"type": "Add",
+			"value": {
+				"Name": "CustomCameraMode"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CustomCameraMode",
+			"item": "Default",
+			"type": "Add",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CustomCameraMode",
+			"item": "Follow",
+			"type": "Add",
+			"value": {
+				"Name": "Follow",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CustomCameraMode",
+			"item": "Classic",
+			"type": "Add",
+			"value": {
+				"Name": "Classic",
+				"Value": 1
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "TouchMovementMode",
+			"type": "Add",
+			"value": {
+				"Name": "TouchMovementMode"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TouchMovementMode",
+			"item": "Default",
+			"type": "Add",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TouchMovementMode",
+			"item": "Thumbstick",
+			"type": "Add",
+			"value": {
+				"Name": "Thumbstick",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TouchMovementMode",
+			"item": "DPad",
+			"type": "Add",
+			"value": {
+				"Name": "DPad",
+				"Value": 2
+			}
+		}
+	]
+}

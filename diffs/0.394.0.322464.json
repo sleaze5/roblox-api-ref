@@ -1,0 +1,212 @@
+{
+	"from": {
+		"version": "0.393.0.319623",
+		"hash": "5c910d55759b4a6d"
+	},
+	"to": {
+		"version": "0.394.0.322464",
+		"hash": "bcb6acf0214745d2"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "InspectPlayerFromUserIdWithCtx",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "InspectPlayerFromUserIdWithCtx",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "ctx",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "InspectPlayerFromUserIdWithCtxRequest",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "InspectPlayerFromUserIdWithCtxRequest",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "ctx",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "PlayEmoteById",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PlayEmoteById",
+				"Parameters": [
+					{
+						"Name": "emoteName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "emoteId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "SignalPromptBundlePurchaseFinished",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SignalPromptBundlePurchaseFinished",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "bundleId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "success",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarketplaceService",
+			"member": "PromptBundlePurchaseFinished",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "PromptBundlePurchaseFinished",
+				"Parameters": [
+					{
+						"Name": "player",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "bundleId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "wasPurchased",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PluginAction",
+			"member": "Checked",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Checked",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "InfoType",
+			"item": "Bundle",
+			"type": "Add",
+			"value": {
+				"Name": "Bundle",
+				"Value": 4
+			}
+		}
+	]
+}

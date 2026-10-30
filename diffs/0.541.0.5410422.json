@@ -1,0 +1,564 @@
+{
+	"from": {
+		"version": "0.540.0.5400503",
+		"hash": "e715923c36704abd"
+	},
+	"to": {
+		"version": "0.541.0.5410422",
+		"hash": "a9c245e1ec824aa3"
+	},
+	"changes": [
+		{
+			"element": "Class",
+			"class": "BreakpointManager",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "BreakpointManager",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AdGui",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotCreatable"
+					],
+					"after": [
+						"NotCreatable",
+						"NotBrowsable"
+					]
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AdGui",
+				"Superclass": "SurfaceGuiBase",
+				"Tags": [
+					"NotCreatable",
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "EmoteTriggered",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "successAndTrackTuple",
+							"Type": {
+								"Category": "Group",
+								"Name": "Tuple"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "success",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "animationTrack",
+							"Type": {
+								"Category": "Class",
+								"Name": "AnimationTrack"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "EmoteTriggered",
+				"Parameters": [
+					{
+						"Name": "success",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "animationTrack",
+						"Type": {
+							"Category": "Class",
+							"Name": "AnimationTrack"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "hasPropertyWarningInStudio",
+			"type": "Remove",
+			"value": {
+				"Category": "Material Overrides",
+				"MemberType": "Property",
+				"Name": "hasPropertyWarningInStudio",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "StreamingIntegrityMode",
+			"type": "Add",
+			"value": {
+				"Category": "Streaming",
+				"MemberType": "Property",
+				"Name": "StreamingIntegrityMode",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "StreamingIntegrityMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDocument",
+			"member": "GetViewport",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetViewport",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptDocument",
+			"member": "ViewportChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ViewportChanged",
+				"Parameters": [
+					{
+						"Name": "startLine",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "endLine",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioAssetService",
+			"member": "OnSaveToRoblox",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnSaveToRoblox",
+				"Parameters": [
+					{
+						"Name": "instances",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VoiceChatInternal",
+			"member": "GetChannelId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetChannelId",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "MetaBreakpointManager",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "MetaBreakpointManager",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MetaBreakpointManager",
+			"member": "AddBreakpoint",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddBreakpoint",
+				"Parameters": [
+					{
+						"Name": "script",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "line",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "condition",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MetaBreakpointManager",
+			"member": "GetBreakpointById",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBreakpointById",
+				"Parameters": [
+					{
+						"Name": "metaBreakpointId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "MetaBreakpoint"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MetaBreakpointManager",
+			"member": "RemoveBreakpointById",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RemoveBreakpointById",
+				"Parameters": [
+					{
+						"Name": "metaBreakpointId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MetaBreakpointManager",
+			"member": "MetaBreakpointAdded",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "MetaBreakpointAdded",
+				"Parameters": [
+					{
+						"Name": "breakpoint",
+						"Type": {
+							"Category": "Class",
+							"Name": "MetaBreakpoint"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MetaBreakpointManager",
+			"member": "MetaBreakpointChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "MetaBreakpointChanged",
+				"Parameters": [
+					{
+						"Name": "breakpoint",
+						"Type": {
+							"Category": "Class",
+							"Name": "MetaBreakpoint"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MetaBreakpointManager",
+			"member": "MetaBreakpointRemoved",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "MetaBreakpointRemoved",
+				"Parameters": [
+					{
+						"Name": "breakpoint",
+						"Type": {
+							"Category": "Class",
+							"Name": "MetaBreakpoint"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MetaBreakpointManager",
+			"member": "MetaBreakpointSetChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "MetaBreakpointSetChanged",
+				"Parameters": [
+					{
+						"Name": "breakpoint",
+						"Type": {
+							"Category": "Class",
+							"Name": "MetaBreakpoint"
+						}
+					},
+					{
+						"Name": "detail",
+						"Type": {
+							"Category": "Group",
+							"Name": "Dictionary"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AdPortal",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AdPortal",
+				"Superclass": "BasePart",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AdFormat",
+			"type": "Remove",
+			"value": {
+				"Name": "AdFormat"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetType",
+			"item": "DynamicHead",
+			"type": "Add",
+			"value": {
+				"Name": "DynamicHead",
+				"Value": 79
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "DynamicHead",
+			"type": "Add",
+			"value": {
+				"Name": "DynamicHead",
+				"Value": 79
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TrackerError",
+			"item": "CameraPermission",
+			"type": "Remove",
+			"value": {
+				"Name": "CameraPermission",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TrackerError",
+			"item": "MicPermission",
+			"type": "Remove",
+			"value": {
+				"Name": "MicPermission",
+				"Value": 8
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TrackerError",
+			"item": "VideoNoPermission",
+			"type": "Add",
+			"value": {
+				"Name": "VideoNoPermission",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "TrackerError",
+			"item": "AudioNoPermission",
+			"type": "Add",
+			"value": {
+				"Name": "AudioNoPermission",
+				"Value": 8
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "StreamingIntegrityMode",
+			"type": "Add",
+			"value": {
+				"Name": "StreamingIntegrityMode"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StreamingIntegrityMode",
+			"item": "Default",
+			"type": "Add",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StreamingIntegrityMode",
+			"item": "Disabled",
+			"type": "Add",
+			"value": {
+				"Name": "Disabled",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StreamingIntegrityMode",
+			"item": "MinimumRadiusPause",
+			"type": "Add",
+			"value": {
+				"Name": "MinimumRadiusPause",
+				"Value": 2
+			}
+		}
+	]
+}

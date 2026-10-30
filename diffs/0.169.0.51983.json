@@ -1,0 +1,94 @@
+{
+	"from": {
+		"version": "0.168.0.51652",
+		"hash": "a730860d440c4e6c"
+	},
+	"to": {
+		"version": "0.169.0.51983",
+		"hash": "2c1f992c1a264ecc"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "LocalTransparencyModifier",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "LocalTransparencyModifier",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "FollowUserId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "FollowUserId",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ReplicatedFirst",
+			"member": "IsFinishedReplicating",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IsFinishedReplicating",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ReplicatedFirst",
+			"member": "FinishedReplicating",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "FinishedReplicating",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity"
+			}
+		}
+	]
+}

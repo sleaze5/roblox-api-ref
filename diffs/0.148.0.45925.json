@@ -1,0 +1,128 @@
+{
+	"from": {
+		"version": "0.147.0.45744",
+		"hash": "a21a1def88774149"
+	},
+	"to": {
+		"version": "0.148.0.45925",
+		"hash": "38d9c3e04e394773"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "ImageButton",
+			"member": "ImageTransparency",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ImageTransparency",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Image",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ImageLabel",
+			"member": "ImageTransparency",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ImageTransparency",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Image",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "MoveTo",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							},
+							"Name": "location"
+						},
+						{
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							},
+							"Name": "part"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							},
+							"Name": "location"
+						},
+						{
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							},
+							"Name": "part",
+							"Default": "nil"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "MoveTo",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						},
+						"Name": "location"
+					},
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "part",
+						"Default": "nil"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		}
+	]
+}

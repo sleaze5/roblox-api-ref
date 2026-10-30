@@ -1,0 +1,331 @@
+{
+	"from": {
+		"version": "0.356.0.242723",
+		"hash": "69b00ab27339415c"
+	},
+	"to": {
+		"version": "0.357.0.244916",
+		"hash": "08edfeeed2494a60"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "SubtractAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "parts",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Objects"
+							}
+						},
+						{
+							"Default": "Default",
+							"Name": "collisionfidelity",
+							"Type": {
+								"Category": "Enum",
+								"Name": "CollisionFidelity"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "parts",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Objects"
+							}
+						},
+						{
+							"Default": "Default",
+							"Name": "collisionfidelity",
+							"Type": {
+								"Category": "Enum",
+								"Name": "CollisionFidelity"
+							}
+						},
+						{
+							"Default": "Automatic",
+							"Name": "renderFidelity",
+							"Type": {
+								"Category": "Enum",
+								"Name": "RenderFidelity"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SubtractAsync",
+				"Parameters": [
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					},
+					{
+						"Default": "Default",
+						"Name": "collisionfidelity",
+						"Type": {
+							"Category": "Enum",
+							"Name": "CollisionFidelity"
+						}
+					},
+					{
+						"Default": "Automatic",
+						"Name": "renderFidelity",
+						"Type": {
+							"Category": "Enum",
+							"Name": "RenderFidelity"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "UnionAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "parts",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Objects"
+							}
+						},
+						{
+							"Default": "Default",
+							"Name": "collisionfidelity",
+							"Type": {
+								"Category": "Enum",
+								"Name": "CollisionFidelity"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "parts",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Objects"
+							}
+						},
+						{
+							"Default": "Default",
+							"Name": "collisionfidelity",
+							"Type": {
+								"Category": "Enum",
+								"Name": "CollisionFidelity"
+							}
+						},
+						{
+							"Default": "Automatic",
+							"Name": "renderFidelity",
+							"Type": {
+								"Category": "Enum",
+								"Name": "RenderFidelity"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "UnionAsync",
+				"Parameters": [
+					{
+						"Name": "parts",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						}
+					},
+					{
+						"Default": "Default",
+						"Name": "collisionfidelity",
+						"Type": {
+							"Category": "Enum",
+							"Name": "CollisionFidelity"
+						}
+					},
+					{
+						"Default": "Automatic",
+						"Name": "renderFidelity",
+						"Type": {
+							"Category": "Enum",
+							"Name": "RenderFidelity"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PartOperation",
+			"member": "RenderFidelity",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "RenderFidelity",
+				"Security": {
+					"Read": "None",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "RenderFidelity"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Model",
+			"member": "GetBoundingBox",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetBoundingBox",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "StudioService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "StudioService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "ActiveScript",
+			"type": "Add",
+			"value": {
+				"Category": "State",
+				"MemberType": "Property",
+				"Name": "ActiveScript",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Instance"
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "PlacelauchError",
+			"type": "Remove",
+			"value": {
+				"Name": "PlacelauchError",
+				"Value": 516
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "DisconnectIdle",
+			"type": "Add",
+			"value": {
+				"Name": "DisconnectIdle",
+				"Value": 278
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ConnectionError",
+			"item": "PlacelaunchError",
+			"type": "Add",
+			"value": {
+				"Name": "PlacelaunchError",
+				"Value": 516
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "RenderFidelity",
+			"type": "Add",
+			"value": {
+				"Name": "RenderFidelity"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RenderFidelity",
+			"item": "Automatic",
+			"type": "Add",
+			"value": {
+				"Name": "Automatic",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "RenderFidelity",
+			"item": "Precise",
+			"type": "Add",
+			"value": {
+				"Name": "Precise",
+				"Value": 1
+			}
+		}
+	]
+}

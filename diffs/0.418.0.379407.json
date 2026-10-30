@@ -1,0 +1,239 @@
+{
+	"from": {
+		"version": "0.417.0.376966",
+		"hash": "7d01026f9f644102"
+	},
+	"to": {
+		"version": "0.418.0.379407",
+		"hash": "34ecac83082e49d0"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "IkMoveTo",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "IkMoveTo",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "target",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					},
+					{
+						"Default": "1",
+						"Name": "translateStiffness",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Default": "1",
+						"Name": "rotateStiffness",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Default": "OtherMechanismsAnchored",
+						"Name": "collisionsMode",
+						"Type": {
+							"Category": "Enum",
+							"Name": "CollisionsMode"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Plugin",
+			"member": "GetStudioUserId",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetStudioUserId",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "PluginSecurity",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "UI Theme",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"ReadOnly",
+						"NotReplicated"
+					],
+					"after": [
+						"Hidden",
+						"ReadOnly",
+						"NotReplicated",
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Category": "General",
+				"MemberType": "Property",
+				"Name": "UI Theme",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated",
+					"Deprecated"
+				],
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "UITheme"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "LocalAssetsFolder",
+			"type": "Add",
+			"value": {
+				"Category": "Directories",
+				"MemberType": "Property",
+				"Name": "LocalAssetsFolder",
+				"Security": {
+					"Read": "None",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "QDir"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "GetUserId",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": "RobloxScriptSecurity",
+					"after": "PluginSecurity"
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetUserId",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "PluginSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "ShowBulkImportView",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ShowBulkImportView",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "CollisionsMode",
+			"type": "Add",
+			"value": {
+				"Name": "CollisionsMode"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CollisionsMode",
+			"item": "NoCollisions",
+			"type": "Add",
+			"value": {
+				"Name": "NoCollisions",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CollisionsMode",
+			"item": "OtherMechanismsAnchored",
+			"type": "Add",
+			"value": {
+				"Name": "OtherMechanismsAnchored",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CollisionsMode",
+			"item": "IncludeContactedMechanisms",
+			"type": "Add",
+			"value": {
+				"Name": "IncludeContactedMechanisms",
+				"Value": 2
+			}
+		}
+	]
+}

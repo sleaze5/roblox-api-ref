@@ -1,0 +1,347 @@
+{
+	"from": {
+		"version": "0.68.0.640",
+		"hash": "88f213c9d8fd49a1"
+	},
+	"to": {
+		"version": "0.69.0.646",
+		"hash": "c1e3ff7c94e44086"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "DebugSettings",
+			"member": "OsIs64Bit",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "OsIs64Bit",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Profile",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiObject",
+			"member": "MouseWheelBackward",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "MouseWheelBackward",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "x"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "y"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiObject",
+			"member": "MouseWheelForward",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "MouseWheelForward",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "x"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "y"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Seat",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"preliminary"
+					],
+					"after": null
+				}
+			],
+			"value": {
+				"Name": "Seat",
+				"Superclass": "Part",
+				"MemoryCategory": "Instances"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ParallelRampPart",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotBrowsable"
+					]
+				}
+			],
+			"value": {
+				"Name": "ParallelRampPart",
+				"Superclass": "BasePart",
+				"MemoryCategory": "",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PrismPart",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotBrowsable"
+					]
+				}
+			],
+			"value": {
+				"Name": "PrismPart",
+				"Superclass": "BasePart",
+				"MemoryCategory": "",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PyramidPart",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotBrowsable"
+					]
+				}
+			],
+			"value": {
+				"Name": "PyramidPart",
+				"Superclass": "BasePart",
+				"MemoryCategory": "",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "RightAngleRampPart",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotBrowsable"
+					]
+				}
+			],
+			"value": {
+				"Name": "RightAngleRampPart",
+				"Superclass": "BasePart",
+				"MemoryCategory": "",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "GetRankInGroup",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRankInGroup",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "groupId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "GetRoleInGroup",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRoleInGroup",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "groupId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GlobalSettings",
+			"member": "GetFFlags",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFFlags",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "SetGroupRankUrl",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetGroupRankUrl",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "groupRankUrl"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SocialService",
+			"member": "SetGroupRoleUrl",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetGroupRoleUrl",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "groupRoleUrl"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "TouchTransmitter",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"preliminary",
+						"NotCreatable"
+					],
+					"after": [
+						"preliminary",
+						"NotCreatable",
+						"NotBrowsable"
+					]
+				}
+			],
+			"value": {
+				"Name": "TouchTransmitter",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"preliminary",
+					"NotCreatable",
+					"NotBrowsable"
+				]
+			}
+		}
+	]
+}

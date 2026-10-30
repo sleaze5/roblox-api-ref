@@ -1,0 +1,111 @@
+{
+	"from": {
+		"version": "0.279.0.105801",
+		"hash": "b31134db0a5f40bd"
+	},
+	"to": {
+		"version": "0.279.1.107003",
+		"hash": "ebcfbf2d5d9f4a91"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "Chat",
+			"member": "CanUserChatAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CanUserChatAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Chat",
+			"member": "CanUsersChatAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "CanUsersChatAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userIdFrom"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userIdTo"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ChatPrivacyMode",
+			"type": "Add",
+			"value": {
+				"Name": "ChatPrivacyMode"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ChatPrivacyMode",
+			"item": "AllUsers",
+			"type": "Add",
+			"value": {
+				"Name": "AllUsers",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ChatPrivacyMode",
+			"item": "NoOne",
+			"type": "Add",
+			"value": {
+				"Name": "NoOne",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ChatPrivacyMode",
+			"item": "Friends",
+			"type": "Add",
+			"value": {
+				"Name": "Friends",
+				"Value": 2
+			}
+		}
+	]
+}

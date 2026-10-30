@@ -1,0 +1,250 @@
+{
+	"from": {
+		"version": "0.203.0.61342",
+		"hash": "b11c8de329894f4a"
+	},
+	"to": {
+		"version": "0.204.0.61460",
+		"hash": "4993687f79834cd9"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AnimationController",
+			"member": "AnimationPlayed",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "AnimationPlayed",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "animationTrack"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AnimationTrack",
+			"member": "Animation",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Animation",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Object"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SelectionBox",
+			"member": "LineThickness",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "LineThickness",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Appearance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "AnimationPlayed",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "AnimationPlayed",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "animationTrack"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SpawnLocation",
+			"member": "Enabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "Enabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Behavior",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "GetFriendsOnline",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "maxFriends",
+							"Default": "50"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							},
+							"Name": "maxFriends",
+							"Default": "200"
+						}
+					]
+				},
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Group",
+						"Name": "Dictionary"
+					},
+					"after": {
+						"Category": "Group",
+						"Name": "Array"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFriendsOnline",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "maxFriends",
+						"Default": "200"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Players",
+			"member": "GetFriendsAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFriendsAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "userId"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Sound",
+			"member": "Ended",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Ended",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "soundId"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "FriendPages",
+			"type": "Add",
+			"value": {
+				"Name": "FriendPages",
+				"Superclass": "Pages",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		}
+	]
+}

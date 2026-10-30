@@ -1,0 +1,389 @@
+{
+	"from": {
+		"version": "0.123.0.38618",
+		"hash": "14fe283fc52248e5"
+	},
+	"to": {
+		"version": "0.124.0.38869",
+		"hash": "d7b44391e3ff4217"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "StarterGui",
+			"member": "BackpackGuiEnabled",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "BackpackGuiEnabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterGui",
+			"member": "HealthGuiEnabled",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "HealthGuiEnabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterGui",
+			"member": "PlayerListGuiEnabled",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "PlayerListGuiEnabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterGui",
+			"member": "GetCoreGuiEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCoreGuiEnabled",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "CoreGuiType"
+						},
+						"Name": "coreGuiType"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterGui",
+			"member": "SetCoreGuiEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetCoreGuiEnabled",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "CoreGuiType"
+						},
+						"Name": "coreGuiType"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "enabled"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StarterGui",
+			"member": "CoreGuiChangedSignal",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "CoreGuiChangedSignal",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "CoreGuiType"
+						},
+						"Name": "coreGuiType"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "enabled"
+					}
+				],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DebuggerService",
+			"type": "Remove",
+			"value": {
+				"Name": "DebuggerService",
+				"Superclass": "Instance",
+				"MemoryCategory": ""
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GuiService",
+			"member": "BrowserWindowClosed",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "BrowserWindowClosed",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DebuggerManager",
+			"type": "Add",
+			"value": {
+				"Name": "DebuggerManager",
+				"Superclass": "Instance",
+				"MemoryCategory": "Instances",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerManager",
+			"member": "DebuggingEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "DebuggingEnabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerManager",
+			"member": "AddDebugger",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddDebugger",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "script"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerManager",
+			"member": "EnableDebugging",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "EnableDebugging",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerManager",
+			"member": "GetDebuggers",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetDebuggers",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerManager",
+			"member": "DebuggerAdded",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "DebuggerAdded",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "debugger"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerManager",
+			"member": "DebuggerRemoved",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "DebuggerRemoved",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "debugger"
+					}
+				],
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "CoreGuiType",
+			"type": "Add",
+			"value": {
+				"Name": "CoreGuiType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CoreGuiType",
+			"item": "PlayerList",
+			"type": "Add",
+			"value": {
+				"Name": "PlayerList",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CoreGuiType",
+			"item": "Health",
+			"type": "Add",
+			"value": {
+				"Name": "Health",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CoreGuiType",
+			"item": "Backpack",
+			"type": "Add",
+			"value": {
+				"Name": "Backpack",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CoreGuiType",
+			"item": "Chat",
+			"type": "Add",
+			"value": {
+				"Name": "Chat",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CoreGuiType",
+			"item": "All",
+			"type": "Add",
+			"value": {
+				"Name": "All",
+				"Value": 4
+			}
+		}
+	]
+}

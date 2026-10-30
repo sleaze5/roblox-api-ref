@@ -1,0 +1,2151 @@
+{
+	"from": {
+		"version": "0.484.0.425477",
+		"hash": "c421ff4dbd384a23"
+	},
+	"to": {
+		"version": "0.485.0.425755",
+		"hash": "1f84cb2abd704766"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AssetImportService",
+			"member": "ImportMesh",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Group",
+						"Name": "Dictionary"
+					},
+					"after": {
+						"Category": "Class",
+						"Name": "AssetImportSettings"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "ImportMesh",
+				"Parameters": [
+					{
+						"Name": "fileName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "AssetImportSettings"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportService",
+			"member": "ImportMeshWithPrompt",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Group",
+						"Name": "Dictionary"
+					},
+					"after": {
+						"Category": "Class",
+						"Name": "AssetImportSettings"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "ImportMeshWithPrompt",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "AssetImportSettings"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Clouds",
+			"member": "Color",
+			"type": "Add",
+			"value": {
+				"Category": "State",
+				"MemberType": "Property",
+				"Name": "Color",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Clouds",
+			"member": "Enabled",
+			"type": "Add",
+			"value": {
+				"Category": "State",
+				"MemberType": "Property",
+				"Name": "Enabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "CommandInstance",
+			"member": "Permission",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Permission",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "CommandPermission"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Humanoid",
+			"member": "ClusterCompositionFinished",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ClusterCompositionFinished",
+				"Parameters": [],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Lighting",
+			"member": "TempUseNewSkyRemovalBehaviour",
+			"type": "Add",
+			"value": {
+				"Category": "Appearance",
+				"MemberType": "Property",
+				"Name": "TempUseNewSkyRemovalBehaviour",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "SetNetworkOwner",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Default": "nil",
+							"Name": "playerInstance",
+							"Type": {
+								"Category": "Class",
+								"Name": "Instance"
+							}
+						}
+					],
+					"after": [
+						{
+							"Default": "nil",
+							"Name": "playerInstance",
+							"Type": {
+								"Category": "Class",
+								"Name": "Player"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetNetworkOwner",
+				"Parameters": [
+					{
+						"Default": "nil",
+						"Name": "playerInstance",
+						"Type": {
+							"Category": "Class",
+							"Name": "Player"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "HumanoidOnlySetCollisionsOnStateChange",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "HumanoidOnlySetCollisionsOnStateChange",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "HumanoidOnlySetCollisionsOnStateChange"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AssetImportItemSettings",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AssetImportItemSettings",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportItemSettings",
+			"member": "ShouldImport",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "ShouldImport",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AssetImportMeshSettings",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AssetImportMeshSettings",
+				"Superclass": "AssetImportItemSettings",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AssetImportTextureSettings",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AssetImportTextureSettings",
+				"Superclass": "AssetImportItemSettings",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "AssetImportSettings",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AssetImportSettings",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportSettings",
+			"member": "Hierarchy",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Hierarchy",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "AssetImportItemSettings"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportSettings",
+			"member": "Import",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Import",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Breakpoint",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "Breakpoint",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Breakpoint",
+			"member": "Condition",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Condition",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Expression"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Breakpoint",
+			"member": "Enabled",
+			"type": "Add",
+			"value": {
+				"Category": "State",
+				"MemberType": "Property",
+				"Name": "Enabled",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Breakpoint",
+			"member": "Line",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Line",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Breakpoint",
+			"member": "Script",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Script",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "ScriptRef"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Breakpoint",
+			"member": "Valid",
+			"type": "Add",
+			"value": {
+				"Category": "State",
+				"MemberType": "Property",
+				"Name": "Valid",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Breakpoint",
+			"member": "Remove",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Remove",
+				"Parameters": [
+					{
+						"Name": "status",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Breakpoint",
+			"member": "SetCondition",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetCondition",
+				"Parameters": [
+					{
+						"Name": "condition",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "status",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Breakpoint",
+			"member": "SetEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetEnabled",
+				"Parameters": [
+					{
+						"Name": "enabled",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "status",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Breakpoint",
+			"member": "SetLine",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetLine",
+				"Parameters": [
+					{
+						"Name": "line",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "status",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DebuggerConnection",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "DebuggerConnection",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerConnection",
+			"member": "Id",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Id",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerConnection",
+			"member": "IsPaused",
+			"type": "Add",
+			"value": {
+				"Category": "State",
+				"MemberType": "Property",
+				"Name": "IsPaused",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerConnection",
+			"member": "AddBreakpoint",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddBreakpoint",
+				"Parameters": [
+					{
+						"Name": "script",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "line",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Name": "conditon",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "status",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerConnection",
+			"member": "Pause",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Pause",
+				"Parameters": [
+					{
+						"Name": "status",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerConnection",
+			"member": "Resume",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Resume",
+				"Parameters": [
+					{
+						"Name": "status",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerConnection",
+			"member": "Terminate",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Terminate",
+				"Parameters": [
+					{
+						"Name": "status",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerConnection",
+			"member": "BreakpointAdded",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "BreakpointAdded",
+				"Parameters": [
+					{
+						"Name": "breakpoint",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerConnection",
+			"member": "BreakpointChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "BreakpointChanged",
+				"Parameters": [
+					{
+						"Name": "breakpoint",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerConnection",
+			"member": "BreakpointRemoved",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "BreakpointRemoved",
+				"Parameters": [
+					{
+						"Name": "breakpoint",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "reason",
+						"Type": {
+							"Category": "Enum",
+							"Name": "BreakpointRemoveReason"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerConnection",
+			"member": "Paused",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Paused",
+				"Parameters": [
+					{
+						"Name": "pausedState",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "reason",
+						"Type": {
+							"Category": "Enum",
+							"Name": "DebuggerPauseReason"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerConnection",
+			"member": "Resumed",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "Resumed",
+				"Parameters": [
+					{
+						"Name": "pausedState",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "DebuggerConnectionManager",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "DebuggerConnectionManager",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerConnectionManager",
+			"member": "Timeout",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Timeout",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "double"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerConnectionManager",
+			"member": "ConnectLocal",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ConnectLocal",
+				"Parameters": [
+					{
+						"Name": "dataModel",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerConnectionManager",
+			"member": "ConnectRemote",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ConnectRemote",
+				"Parameters": [
+					{
+						"Name": "host",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "port",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerConnectionManager",
+			"member": "FocusConnection",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FocusConnection",
+				"Parameters": [
+					{
+						"Name": "connection",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerConnectionManager",
+			"member": "ConnectionEnded",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ConnectionEnded",
+				"Parameters": [
+					{
+						"Name": "connection",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "reason",
+						"Type": {
+							"Category": "Enum",
+							"Name": "DebuggerEndReason"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerConnectionManager",
+			"member": "ConnectionStarted",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ConnectionStarted",
+				"Parameters": [
+					{
+						"Name": "connection",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerConnectionManager",
+			"member": "FocusChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "FocusChanged",
+				"Parameters": [
+					{
+						"Name": "connection",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "Expression",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "Expression",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Expression",
+			"member": "Expression",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Expression",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Expression",
+			"member": "Evaluate",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Evaluate",
+				"Parameters": [
+					{
+						"Name": "frame",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "status",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PausedState",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "PausedState",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PausedState",
+			"member": "IsValid",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "IsValid",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PausedState",
+			"member": "Reason",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Reason",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "DebuggerPauseReason"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PausedState",
+			"member": "ThreadCount",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "ThreadCount",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PausedState",
+			"member": "GetThread",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetThread",
+				"Parameters": [
+					{
+						"Name": "index",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PausedStateBreakpoint",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "PausedStateBreakpoint",
+				"Superclass": "PausedState",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PausedStateBreakpoint",
+			"member": "Breakpoint",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Breakpoint",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "Breakpoint"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PausedStateBreakpoint",
+			"member": "BreakpointThread",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "BreakpointThread",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "ThreadState"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PausedStateException",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "PausedStateException",
+				"Superclass": "PausedState",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PausedStateException",
+			"member": "ExceptionText",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "ExceptionText",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PausedStateException",
+			"member": "ExceptionThread",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "ExceptionThread",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "ThreadState"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "RemoteDebuggerServer",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "RemoteDebuggerServer",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ScriptRef",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ScriptRef",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptRef",
+			"member": "Find",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Find",
+				"Parameters": [
+					{
+						"Name": "dataModel",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptRef",
+			"member": "FindAll",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "FindAll",
+				"Parameters": [
+					{
+						"Name": "dataModel",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ThreadState",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ThreadState",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ThreadState",
+			"member": "ThreadId",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "ThreadId",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ThreadState",
+			"member": "GetCallstack",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetCallstack",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ThreadState",
+			"member": "RequestCallstack",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RequestCallstack",
+				"Parameters": [
+					{
+						"Name": "status",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AccessoryType",
+			"item": "TeeShirt",
+			"type": "Remove",
+			"value": {
+				"Name": "TeeShirt",
+				"Value": 8
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AccessoryType",
+			"item": "TShirt",
+			"type": "Add",
+			"value": {
+				"Name": "TShirt",
+				"Value": 8
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetType",
+			"item": "TeeShirt",
+			"type": "Remove",
+			"value": {
+				"Name": "TeeShirt",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetType",
+			"item": "TeeShirtAccessory",
+			"type": "Remove",
+			"value": {
+				"Name": "TeeShirtAccessory",
+				"Value": 64
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetType",
+			"item": "TShirt",
+			"type": "Add",
+			"value": {
+				"Name": "TShirt",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetType",
+			"item": "TShirtAccessory",
+			"type": "Add",
+			"value": {
+				"Name": "TShirtAccessory",
+				"Value": 64
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "TeeShirtAccessory",
+			"type": "Remove",
+			"value": {
+				"Name": "TeeShirtAccessory",
+				"Value": 64
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "TShirtAccessory",
+			"type": "Add",
+			"value": {
+				"Name": "TShirtAccessory",
+				"Value": 64
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "AvatarJointPositionType",
+			"type": "Remove",
+			"value": {
+				"Name": "AvatarJointPositionType"
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "BreakpointRemoveReason",
+			"type": "Add",
+			"value": {
+				"Name": "BreakpointRemoveReason"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "BreakpointRemoveReason",
+			"item": "Requested",
+			"type": "Add",
+			"value": {
+				"Name": "Requested",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "BreakpointRemoveReason",
+			"item": "ScriptChanged",
+			"type": "Add",
+			"value": {
+				"Name": "ScriptChanged",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "BreakpointRemoveReason",
+			"item": "ScriptRemoved",
+			"type": "Add",
+			"value": {
+				"Name": "ScriptRemoved",
+				"Value": 2
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "CommandPermission",
+			"type": "Add",
+			"value": {
+				"Name": "CommandPermission"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CommandPermission",
+			"item": "Plugin",
+			"type": "Add",
+			"value": {
+				"Name": "Plugin",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CommandPermission",
+			"item": "LocalUser",
+			"type": "Add",
+			"value": {
+				"Name": "LocalUser",
+				"Value": 1
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "DebuggerEndReason",
+			"type": "Add",
+			"value": {
+				"Name": "DebuggerEndReason"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DebuggerEndReason",
+			"item": "ClientRequest",
+			"type": "Add",
+			"value": {
+				"Name": "ClientRequest",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DebuggerEndReason",
+			"item": "Timeout",
+			"type": "Add",
+			"value": {
+				"Name": "Timeout",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DebuggerEndReason",
+			"item": "InvalidHost",
+			"type": "Add",
+			"value": {
+				"Name": "InvalidHost",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DebuggerEndReason",
+			"item": "Disconnected",
+			"type": "Add",
+			"value": {
+				"Name": "Disconnected",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DebuggerEndReason",
+			"item": "ServerShutdown",
+			"type": "Add",
+			"value": {
+				"Name": "ServerShutdown",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DebuggerEndReason",
+			"item": "ServerProtocolMismatch",
+			"type": "Add",
+			"value": {
+				"Name": "ServerProtocolMismatch",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DebuggerEndReason",
+			"item": "ConfigurationFailed",
+			"type": "Add",
+			"value": {
+				"Name": "ConfigurationFailed",
+				"Value": 6
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DebuggerEndReason",
+			"item": "RpcError",
+			"type": "Add",
+			"value": {
+				"Name": "RpcError",
+				"Value": 7
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "DebuggerFrameType",
+			"type": "Add",
+			"value": {
+				"Name": "DebuggerFrameType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DebuggerFrameType",
+			"item": "C",
+			"type": "Add",
+			"value": {
+				"Name": "C",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DebuggerFrameType",
+			"item": "Lua",
+			"type": "Add",
+			"value": {
+				"Name": "Lua",
+				"Value": 1
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "DebuggerPauseReason",
+			"type": "Add",
+			"value": {
+				"Name": "DebuggerPauseReason"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DebuggerPauseReason",
+			"item": "Unknown",
+			"type": "Add",
+			"value": {
+				"Name": "Unknown",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DebuggerPauseReason",
+			"item": "Requested",
+			"type": "Add",
+			"value": {
+				"Name": "Requested",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DebuggerPauseReason",
+			"item": "Breakpoint",
+			"type": "Add",
+			"value": {
+				"Name": "Breakpoint",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DebuggerPauseReason",
+			"item": "Exception",
+			"type": "Add",
+			"value": {
+				"Name": "Exception",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DebuggerPauseReason",
+			"item": "SingleStep",
+			"type": "Add",
+			"value": {
+				"Name": "SingleStep",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DebuggerPauseReason",
+			"item": "Entrypoint",
+			"type": "Add",
+			"value": {
+				"Name": "Entrypoint",
+				"Value": 5
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "DebuggerStatus",
+			"type": "Add",
+			"value": {
+				"Name": "DebuggerStatus"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DebuggerStatus",
+			"item": "Success",
+			"type": "Add",
+			"value": {
+				"Name": "Success",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DebuggerStatus",
+			"item": "Timeout",
+			"type": "Add",
+			"value": {
+				"Name": "Timeout",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DebuggerStatus",
+			"item": "ConnectionLost",
+			"type": "Add",
+			"value": {
+				"Name": "ConnectionLost",
+				"Value": 2
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DebuggerStatus",
+			"item": "InvalidResponse",
+			"type": "Add",
+			"value": {
+				"Name": "InvalidResponse",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DebuggerStatus",
+			"item": "InternalError",
+			"type": "Add",
+			"value": {
+				"Name": "InternalError",
+				"Value": 4
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DebuggerStatus",
+			"item": "InvalidState",
+			"type": "Add",
+			"value": {
+				"Name": "InvalidState",
+				"Value": 5
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "DebuggerStatus",
+			"item": "RpcError",
+			"type": "Add",
+			"value": {
+				"Name": "RpcError",
+				"Value": 6
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "HumanoidOnlySetCollisionsOnStateChange",
+			"type": "Add",
+			"value": {
+				"Name": "HumanoidOnlySetCollisionsOnStateChange"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidOnlySetCollisionsOnStateChange",
+			"item": "Default",
+			"type": "Add",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidOnlySetCollisionsOnStateChange",
+			"item": "Disabled",
+			"type": "Add",
+			"value": {
+				"Name": "Disabled",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "HumanoidOnlySetCollisionsOnStateChange",
+			"item": "Enabled",
+			"type": "Add",
+			"value": {
+				"Name": "Enabled",
+				"Value": 2
+			}
+		}
+	]
+}

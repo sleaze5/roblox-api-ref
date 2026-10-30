@@ -1,0 +1,381 @@
+{
+	"from": {
+		"version": "0.330.0.189424",
+		"hash": "0bb91d28bcd0467c"
+	},
+	"to": {
+		"version": "0.331.0.191385",
+		"hash": "0b0d33f48a1a43b3"
+	},
+	"changes": [
+		{
+			"element": "Class",
+			"class": "CylinderMesh",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"Name": "CylinderMesh",
+				"Superclass": "BevelMesh",
+				"MemoryCategory": "PhysicsParts",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkSettings",
+			"member": "ExperimentalPhysicsEnabled",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Property",
+				"Name": "ExperimentalPhysicsEnabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "Negate",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Negate",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "UnionWith",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UnionWith",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "part"
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "LocalUserSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "PlayerJoinData",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "PlayerJoinData",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "PlayerJoinData"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "HttpGet",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "HttpGet",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "url"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "synchronous",
+						"Default": "false"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "HttpRequestType"
+						},
+						"Name": "httpRequestType",
+						"Default": "Default"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "doNotAllowDiabolicalMode",
+						"Default": "false"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "HttpPost",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "HttpPost",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "url"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "data"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "synchronous",
+						"Default": "false"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "contentType",
+						"Default": "*/*"
+					},
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "HttpRequestType"
+						},
+						"Name": "httpRequestType",
+						"Default": "Default"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "doNotAllowDiabolicalMode",
+						"Default": "false"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TeleportService",
+			"member": "TeleportPartyAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "TeleportPartyAsync",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						},
+						"Name": "placeId"
+					},
+					{
+						"Type": {
+							"Category": "DataType",
+							"Name": "Objects"
+						},
+						"Name": "players"
+					},
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						},
+						"Name": "teleportData"
+					},
+					{
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						},
+						"Name": "customLoadingScreen",
+						"Default": "nil"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Trail",
+			"member": "WidthScale",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "WidthScale",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "NumberSequence"
+				},
+				"Category": "Emission",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PlayerJoinData",
+			"type": "Add",
+			"value": {
+				"Name": "PlayerJoinData",
+				"Superclass": "Instance",
+				"MemoryCategory": "",
+				"Tags": [
+					"NotCreatable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PlayerJoinData",
+			"member": "SourcePlaceId",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "SourcePlaceId",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"ReadOnly"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PlayerJoinData",
+			"member": "GetPartyUserIds",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPartyUserIds",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ScaleType",
+			"item": "Fit",
+			"type": "Add",
+			"value": {
+				"Name": "Fit",
+				"Value": 3
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ScaleType",
+			"item": "Crop",
+			"type": "Add",
+			"value": {
+				"Name": "Crop",
+				"Value": 4
+			}
+		}
+	]
+}

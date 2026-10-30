@@ -227,7 +227,7 @@ pub struct Update {
 	pub published: String,
 	pub previous: Release,
 	pub counts: ChangeCounts,
-	pub description_count: u32,
+	pub description_count: Option<u32>,
 	pub owners: Vec<OwnerChanges>,
 }
 

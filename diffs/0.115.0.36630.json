@@ -1,0 +1,265 @@
+{
+	"from": {
+		"version": "0.114.0.36086",
+		"hash": "684c5da2d8ab4528"
+	},
+	"to": {
+		"version": "0.115.0.36630",
+		"hash": "6578e7baa4e743db"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "FastLogSettings",
+			"member": "SetGroupEnable",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetGroupEnable",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "group"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "channel"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "ext"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "FastLogSettings",
+			"member": "SetVariable",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetVariable",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "group"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "channel",
+						"Default": "ext"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BasePart",
+			"member": "GetJoints",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetJoints",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "RobloxPlaceSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "GetNumAwakeParts",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetNumAwakeParts",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "SavePlace",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SavePlace",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Enum",
+							"Name": "SaveFilter"
+						},
+						"Name": "saveFilter",
+						"Default": "SaveAll"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxPlaceSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "SavePlaceFinished",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "SavePlaceFinished",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "succeeded"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "errorString"
+					}
+				],
+				"Security": "RobloxPlaceSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GlobalSettings",
+			"member": "GetFFlags",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFFlags",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GlobalSettings",
+			"member": "GetFVariable",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFVariable",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "name"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "GlobalSettings",
+			"member": "GetFVariables",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFVariables",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "UserInputService",
+			"member": "TouchControlsEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "TouchControlsEnabled",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "",
+				"Security": {
+					"Read": "RobloxPlaceSecurity",
+					"Write": "RobloxPlaceSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				}
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SurfaceType",
+			"item": "Blank",
+			"type": "Remove",
+			"value": {
+				"Name": "Blank",
+				"Value": 10
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "SurfaceType",
+			"item": "SmoothNoOutlines",
+			"type": "Add",
+			"value": {
+				"Name": "SmoothNoOutlines",
+				"Value": 10
+			}
+		}
+	]
+}

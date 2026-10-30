@@ -1,0 +1,2579 @@
+{
+	"from": {
+		"version": "0.503.0.5030338",
+		"hash": "9a5c76acd9104c33"
+	},
+	"to": {
+		"version": "0.504.0.5040410",
+		"hash": "c5f45f330c3b462c"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "AssetImportService",
+			"member": "ProgressUpdate",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "ProgressUpdate",
+				"Parameters": [
+					{
+						"Name": "progressRatio",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetImportService",
+			"member": "UploadFinished",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "UploadFinished",
+				"Parameters": [
+					{
+						"Name": "succeeded",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerUIService",
+			"member": "Pause",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Pause",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DebuggerUIService",
+			"member": "Resume",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "Resume",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "GamepadService",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotCreatable",
+						"Service"
+					],
+					"after": [
+						"NotCreatable",
+						"Service",
+						"NotReplicated"
+					]
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "GamepadService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "Brick",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "RobloxSecurity",
+						"Write": "RobloxSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotScriptable"
+					]
+				}
+			],
+			"value": {
+				"Category": "Material Overrides",
+				"MemberType": "Property",
+				"Name": "Brick",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "Cobblestone",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "RobloxSecurity",
+						"Write": "RobloxSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotScriptable"
+					]
+				}
+			],
+			"value": {
+				"Category": "Material Overrides",
+				"MemberType": "Property",
+				"Name": "Cobblestone",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "Concrete",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "RobloxSecurity",
+						"Write": "RobloxSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotScriptable"
+					]
+				}
+			],
+			"value": {
+				"Category": "Material Overrides",
+				"MemberType": "Property",
+				"Name": "Concrete",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "CorrodedMetal",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "RobloxSecurity",
+						"Write": "RobloxSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotScriptable"
+					]
+				}
+			],
+			"value": {
+				"Category": "Material Overrides",
+				"MemberType": "Property",
+				"Name": "CorrodedMetal",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "DiamondPlate",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "RobloxSecurity",
+						"Write": "RobloxSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotScriptable"
+					]
+				}
+			],
+			"value": {
+				"Category": "Material Overrides",
+				"MemberType": "Property",
+				"Name": "DiamondPlate",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "Fabric",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "RobloxSecurity",
+						"Write": "RobloxSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotScriptable"
+					]
+				}
+			],
+			"value": {
+				"Category": "Material Overrides",
+				"MemberType": "Property",
+				"Name": "Fabric",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "Foil",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "RobloxSecurity",
+						"Write": "RobloxSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotScriptable"
+					]
+				}
+			],
+			"value": {
+				"Category": "Material Overrides",
+				"MemberType": "Property",
+				"Name": "Foil",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "Granite",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "RobloxSecurity",
+						"Write": "RobloxSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotScriptable"
+					]
+				}
+			],
+			"value": {
+				"Category": "Material Overrides",
+				"MemberType": "Property",
+				"Name": "Granite",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "Grass",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "RobloxSecurity",
+						"Write": "RobloxSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotScriptable"
+					]
+				}
+			],
+			"value": {
+				"Category": "Material Overrides",
+				"MemberType": "Property",
+				"Name": "Grass",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "Ice",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "RobloxSecurity",
+						"Write": "RobloxSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotScriptable"
+					]
+				}
+			],
+			"value": {
+				"Category": "Material Overrides",
+				"MemberType": "Property",
+				"Name": "Ice",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "Marble",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "RobloxSecurity",
+						"Write": "RobloxSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotScriptable"
+					]
+				}
+			],
+			"value": {
+				"Category": "Material Overrides",
+				"MemberType": "Property",
+				"Name": "Marble",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "Metal",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "RobloxSecurity",
+						"Write": "RobloxSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotScriptable"
+					]
+				}
+			],
+			"value": {
+				"Category": "Material Overrides",
+				"MemberType": "Property",
+				"Name": "Metal",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "Pebble",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "RobloxSecurity",
+						"Write": "RobloxSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotScriptable"
+					]
+				}
+			],
+			"value": {
+				"Category": "Material Overrides",
+				"MemberType": "Property",
+				"Name": "Pebble",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "Plastic",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "RobloxSecurity",
+						"Write": "RobloxSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotScriptable"
+					]
+				}
+			],
+			"value": {
+				"Category": "Material Overrides",
+				"MemberType": "Property",
+				"Name": "Plastic",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "Sand",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "RobloxSecurity",
+						"Write": "RobloxSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotScriptable"
+					]
+				}
+			],
+			"value": {
+				"Category": "Material Overrides",
+				"MemberType": "Property",
+				"Name": "Sand",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "Slate",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "RobloxSecurity",
+						"Write": "RobloxSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotScriptable"
+					]
+				}
+			],
+			"value": {
+				"Category": "Material Overrides",
+				"MemberType": "Property",
+				"Name": "Slate",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "SmoothPlastic",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "RobloxSecurity",
+						"Write": "RobloxSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotScriptable"
+					]
+				}
+			],
+			"value": {
+				"Category": "Material Overrides",
+				"MemberType": "Property",
+				"Name": "SmoothPlastic",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "Wood",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "RobloxSecurity",
+						"Write": "RobloxSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotScriptable"
+					]
+				}
+			],
+			"value": {
+				"Category": "Material Overrides",
+				"MemberType": "Property",
+				"Name": "Wood",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "WoodPlanks",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Security",
+					"before": {
+						"Read": "None",
+						"Write": "None"
+					},
+					"after": {
+						"Read": "RobloxSecurity",
+						"Write": "RobloxSecurity"
+					}
+				},
+				{
+					"field": "Tags",
+					"before": null,
+					"after": [
+						"NotScriptable"
+					]
+				}
+			],
+			"value": {
+				"Category": "Material Overrides",
+				"MemberType": "Property",
+				"Name": "WoodPlanks",
+				"Security": {
+					"Read": "RobloxSecurity",
+					"Write": "RobloxSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotScriptable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "ClearOverridePartMaterial",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ClearOverridePartMaterial",
+				"Parameters": [
+					{
+						"Name": "material",
+						"Type": {
+							"Category": "Enum",
+							"Name": "Material"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "GetOverridePartMaterial",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetOverridePartMaterial",
+				"Parameters": [
+					{
+						"Name": "material",
+						"Type": {
+							"Category": "Enum",
+							"Name": "Material"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "MaterialVariant"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MaterialService",
+			"member": "SetOverridePartMaterial",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetOverridePartMaterial",
+				"Parameters": [
+					{
+						"Name": "materialVariant",
+						"Type": {
+							"Category": "Class",
+							"Name": "MaterialVariant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MetaBreakpoint",
+			"member": "Valid",
+			"type": "Remove",
+			"value": {
+				"Category": "State",
+				"MemberType": "Property",
+				"Name": "Valid",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PathfindingLink",
+			"member": "ModifierId",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "ModifierId",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Doc View Code Background Color",
+			"type": "Add",
+			"value": {
+				"Category": "Script Editor Colors",
+				"MemberType": "Property",
+				"Name": "Doc View Code Background Color",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Enable Autocomplete Doc View",
+			"type": "Add",
+			"value": {
+				"Category": "Script Editor",
+				"MemberType": "Property",
+				"Name": "Enable Autocomplete Doc View",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Studio",
+			"member": "Enable Signature Help Doc View",
+			"type": "Add",
+			"value": {
+				"Category": "Script Editor",
+				"MemberType": "Property",
+				"Name": "Enable Signature Help Doc View",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChannel",
+			"member": "DisplaySystemMessage",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "DisplaySystemMessage",
+				"Parameters": [
+					{
+						"Name": "systemMessage",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "metadata",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "TextChatMessage"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChannel",
+			"member": "AddUserAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "AddUserAsync",
+				"Parameters": [
+					{
+						"Name": "userId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TextChannel",
+			"member": "MessageReceived",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "MessageReceived",
+				"Parameters": [
+					{
+						"Name": "textChatMessage",
+						"Type": {
+							"Category": "DataType",
+							"Name": "TextChatMessage"
+						}
+					}
+				],
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "VersionControlService",
+			"member": "ScriptCollabEnabled",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "ScriptCollabEnabled",
+				"Security": {
+					"Read": "RobloxScriptSecurity",
+					"Write": "RobloxScriptSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "VoiceChatService",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotCreatable",
+						"Service"
+					],
+					"after": [
+						"NotCreatable",
+						"Service",
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "VoiceChatService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Class",
+			"class": "RigidConstraint",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "PhysicsParts",
+				"Name": "RigidConstraint",
+				"Superclass": "Constraint",
+				"Tags": [
+					"NotBrowsable"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RigidConstraint",
+			"member": "Broken",
+			"type": "Add",
+			"value": {
+				"Category": "Destruction",
+				"MemberType": "Property",
+				"Name": "Broken",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotBrowsable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RigidConstraint",
+			"member": "DestructionEnabled",
+			"type": "Add",
+			"value": {
+				"Category": "Destruction",
+				"MemberType": "Property",
+				"Name": "DestructionEnabled",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotBrowsable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RigidConstraint",
+			"member": "DestructionForce",
+			"type": "Add",
+			"value": {
+				"Category": "Destruction",
+				"MemberType": "Property",
+				"Name": "DestructionForce",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotBrowsable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "RigidConstraint",
+			"member": "DestructionTorque",
+			"type": "Add",
+			"value": {
+				"Category": "Destruction",
+				"MemberType": "Property",
+				"Name": "DestructionTorque",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"Tags": [
+					"NotBrowsable"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				}
+			}
+		},
+		{
+			"element": "Class",
+			"class": "MarkerCurve",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "MarkerCurve",
+				"Superclass": "Instance"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarkerCurve",
+			"member": "Length",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Length",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": true
+				},
+				"Tags": [
+					"ReadOnly",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarkerCurve",
+			"member": "GetMarkerAtIndex",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetMarkerAtIndex",
+				"Parameters": [
+					{
+						"Name": "index",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Dictionary"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarkerCurve",
+			"member": "GetMarkers",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetMarkers",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarkerCurve",
+			"member": "InsertMarkerAtTime",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "InsertMarkerAtTime",
+				"Parameters": [
+					{
+						"Name": "time",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Name": "marker",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MarkerCurve",
+			"member": "RemoveMarkerAtIndex",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RemoveMarkerAtIndex",
+				"Parameters": [
+					{
+						"Name": "startingIndex",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Default": "1",
+						"Name": "count",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "ScriptRegistrationService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "ScriptRegistrationService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "ScriptRegistrationService",
+			"member": "GetSourceContainerByScriptGuid",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetSourceContainerByScriptGuid",
+				"Parameters": [
+					{
+						"Name": "guid",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "LuaSourceContainer"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioScriptEditorColorCategories",
+			"item": "DocViewCodeBackground",
+			"type": "Add",
+			"value": {
+				"Name": "DocViewCodeBackground",
+				"Value": 38
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DebuggerCurrentLine",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 63,
+					"after": 64
+				}
+			],
+			"value": {
+				"Name": "DebuggerCurrentLine",
+				"Value": 64
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DebuggerErrorLine",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 64,
+					"after": 65
+				}
+			],
+			"value": {
+				"Name": "DebuggerErrorLine",
+				"Value": 65
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptEditorCurrentLine",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 103,
+					"after": 104
+				}
+			],
+			"value": {
+				"Name": "ScriptEditorCurrentLine",
+				"Value": 104
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffFilePathText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 65,
+					"after": 66
+				}
+			],
+			"value": {
+				"Name": "DiffFilePathText",
+				"Value": 66
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextHunkInfo",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 66,
+					"after": 67
+				}
+			],
+			"value": {
+				"Name": "DiffTextHunkInfo",
+				"Value": 67
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextNoChange",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 67,
+					"after": 68
+				}
+			],
+			"value": {
+				"Name": "DiffTextNoChange",
+				"Value": 68
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextAddition",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 68,
+					"after": 69
+				}
+			],
+			"value": {
+				"Name": "DiffTextAddition",
+				"Value": 69
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextDeletion",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 69,
+					"after": 70
+				}
+			],
+			"value": {
+				"Name": "DiffTextDeletion",
+				"Value": 70
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextSeparatorBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 70,
+					"after": 71
+				}
+			],
+			"value": {
+				"Name": "DiffTextSeparatorBackground",
+				"Value": 71
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextNoChangeBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 71,
+					"after": 72
+				}
+			],
+			"value": {
+				"Name": "DiffTextNoChangeBackground",
+				"Value": 72
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextAdditionBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 72,
+					"after": 73
+				}
+			],
+			"value": {
+				"Name": "DiffTextAdditionBackground",
+				"Value": 73
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffTextDeletionBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 73,
+					"after": 74
+				}
+			],
+			"value": {
+				"Name": "DiffTextDeletionBackground",
+				"Value": 74
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffLineNum",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 74,
+					"after": 75
+				}
+			],
+			"value": {
+				"Name": "DiffLineNum",
+				"Value": 75
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffLineNumSeparatorBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 75,
+					"after": 76
+				}
+			],
+			"value": {
+				"Name": "DiffLineNumSeparatorBackground",
+				"Value": 76
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffLineNumNoChangeBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 76,
+					"after": 77
+				}
+			],
+			"value": {
+				"Name": "DiffLineNumNoChangeBackground",
+				"Value": 77
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffLineNumAdditionBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 77,
+					"after": 78
+				}
+			],
+			"value": {
+				"Name": "DiffLineNumAdditionBackground",
+				"Value": 78
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffLineNumDeletionBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 78,
+					"after": 79
+				}
+			],
+			"value": {
+				"Name": "DiffLineNumDeletionBackground",
+				"Value": 79
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffFilePathBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 79,
+					"after": 80
+				}
+			],
+			"value": {
+				"Name": "DiffFilePathBackground",
+				"Value": 80
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DiffFilePathBorder",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 80,
+					"after": 81
+				}
+			],
+			"value": {
+				"Name": "DiffFilePathBorder",
+				"Value": 81
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ChatIncomingBgColor",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 81,
+					"after": 82
+				}
+			],
+			"value": {
+				"Name": "ChatIncomingBgColor",
+				"Value": 82
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ChatIncomingTextColor",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 82,
+					"after": 83
+				}
+			],
+			"value": {
+				"Name": "ChatIncomingTextColor",
+				"Value": 83
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ChatOutgoingBgColor",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 83,
+					"after": 84
+				}
+			],
+			"value": {
+				"Name": "ChatOutgoingBgColor",
+				"Value": 84
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ChatOutgoingTextColor",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 84,
+					"after": 85
+				}
+			],
+			"value": {
+				"Name": "ChatOutgoingTextColor",
+				"Value": 85
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ChatModeratedMessageColor",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 85,
+					"after": 86
+				}
+			],
+			"value": {
+				"Name": "ChatModeratedMessageColor",
+				"Value": 86
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "Separator",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 86,
+					"after": 87
+				}
+			],
+			"value": {
+				"Name": "Separator",
+				"Value": 87
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ButtonBorder",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 87,
+					"after": 88
+				}
+			],
+			"value": {
+				"Name": "ButtonBorder",
+				"Value": 88
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ButtonText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 88,
+					"after": 89
+				}
+			],
+			"value": {
+				"Name": "ButtonText",
+				"Value": 89
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "InputFieldBorder",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 89,
+					"after": 90
+				}
+			],
+			"value": {
+				"Name": "InputFieldBorder",
+				"Value": 90
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "CheckedFieldBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 90,
+					"after": 91
+				}
+			],
+			"value": {
+				"Name": "CheckedFieldBackground",
+				"Value": 91
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "CheckedFieldBorder",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 91,
+					"after": 92
+				}
+			],
+			"value": {
+				"Name": "CheckedFieldBorder",
+				"Value": 92
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "CheckedFieldIndicator",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 92,
+					"after": 93
+				}
+			],
+			"value": {
+				"Name": "CheckedFieldIndicator",
+				"Value": 93
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "HeaderSection",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 93,
+					"after": 94
+				}
+			],
+			"value": {
+				"Name": "HeaderSection",
+				"Value": 94
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "Midlight",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 94,
+					"after": 95
+				}
+			],
+			"value": {
+				"Name": "Midlight",
+				"Value": 95
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "StatusBar",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 95,
+					"after": 96
+				}
+			],
+			"value": {
+				"Name": "StatusBar",
+				"Value": 96
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DialogButton",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 96,
+					"after": 97
+				}
+			],
+			"value": {
+				"Name": "DialogButton",
+				"Value": 97
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DialogButtonText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 97,
+					"after": 98
+				}
+			],
+			"value": {
+				"Name": "DialogButtonText",
+				"Value": 98
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DialogButtonBorder",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 98,
+					"after": 99
+				}
+			],
+			"value": {
+				"Name": "DialogButtonBorder",
+				"Value": 99
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DialogMainButton",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 99,
+					"after": 100
+				}
+			],
+			"value": {
+				"Name": "DialogMainButton",
+				"Value": 100
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DialogMainButtonText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 100,
+					"after": 101
+				}
+			],
+			"value": {
+				"Name": "DialogMainButtonText",
+				"Value": 101
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "InfoBarWarningBackground",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 101,
+					"after": 102
+				}
+			],
+			"value": {
+				"Name": "InfoBarWarningBackground",
+				"Value": 102
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "InfoBarWarningText",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 102,
+					"after": 103
+				}
+			],
+			"value": {
+				"Name": "InfoBarWarningText",
+				"Value": 103
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptMethod",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 104,
+					"after": 105
+				}
+			],
+			"value": {
+				"Name": "ScriptMethod",
+				"Value": 105
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptProperty",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 105,
+					"after": 106
+				}
+			],
+			"value": {
+				"Name": "ScriptProperty",
+				"Value": 106
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptNil",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 106,
+					"after": 107
+				}
+			],
+			"value": {
+				"Name": "ScriptNil",
+				"Value": 107
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptBool",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 107,
+					"after": 108
+				}
+			],
+			"value": {
+				"Name": "ScriptBool",
+				"Value": 108
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptFunction",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 108,
+					"after": 109
+				}
+			],
+			"value": {
+				"Name": "ScriptFunction",
+				"Value": 109
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptLocal",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 109,
+					"after": 110
+				}
+			],
+			"value": {
+				"Name": "ScriptLocal",
+				"Value": 110
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptSelf",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 110,
+					"after": 111
+				}
+			],
+			"value": {
+				"Name": "ScriptSelf",
+				"Value": 111
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptLuauKeyword",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 111,
+					"after": 112
+				}
+			],
+			"value": {
+				"Name": "ScriptLuauKeyword",
+				"Value": 112
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptFunctionName",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 112,
+					"after": 113
+				}
+			],
+			"value": {
+				"Name": "ScriptFunctionName",
+				"Value": 113
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptTodo",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 113,
+					"after": 114
+				}
+			],
+			"value": {
+				"Name": "ScriptTodo",
+				"Value": 114
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "ScriptBracket",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 114,
+					"after": 115
+				}
+			],
+			"value": {
+				"Name": "ScriptBracket",
+				"Value": 115
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "AttributeCog",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Value",
+					"before": 115,
+					"after": 116
+				}
+			],
+			"value": {
+				"Name": "AttributeCog",
+				"Value": 116
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "StudioStyleGuideColor",
+			"item": "DocViewCodeBackground",
+			"type": "Add",
+			"value": {
+				"Name": "DocViewCodeBackground",
+				"Value": 63
+			}
+		}
+	]
+}

@@ -159,6 +159,7 @@ const USAGE: &str = "Usage: cargo rapi <command>
 
 Commands:
   dump-update          Move to the newest LIVE Studio build, and record its diff
+  backfill             Prepend the archived builds before the first tracked version, and their diffs
   dump                 Download the API files of the current build
   diff <from> <to>     Rewrite the diff between two tracked versions
   gen                  Write src/generated: the search index and engine, icons, and build data
@@ -183,6 +184,7 @@ fn run(args: &[String]) -> Result<(), String> {
 		Some("dev") => dev(&paths),
 		Some("dump") => rapi_dump::download(&paths),
 		Some("dump-update") => rapi_dump::update(&paths),
+		Some("backfill") => rapi_dump::backfill::backfill(&paths),
 		Some("diff") => match (args.get(1), args.get(2)) {
 			(Some(from), Some(to)) => rapi_dump::rediff(&paths, from, to),
 			_ => Err(USAGE.to_owned()),

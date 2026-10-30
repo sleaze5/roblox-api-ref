@@ -1,0 +1,246 @@
+{
+	"from": {
+		"version": "0.222.0.66426",
+		"hash": "cdc47f439edb4527"
+	},
+	"to": {
+		"version": "0.223.0.66841",
+		"hash": "3d12ae92598d425e"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "NetworkServer",
+			"member": "ConfigureAsCloudEditServer",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ConfigureAsCloudEditServer",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxSecurity"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "WaterColor",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "WaterColor",
+				"ValueType": {
+					"Category": "DataType",
+					"Name": "Color3"
+				},
+				"Category": "Appearance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "WaterTransparency",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "WaterTransparency",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Appearance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "WaterWaveSize",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "WaterWaveSize",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Appearance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Terrain",
+			"member": "WaterWaveSpeed",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "WaterWaveSpeed",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "float"
+				},
+				"Category": "Appearance",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "PGSIsEnabled",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PGSIsEnabled",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TeleportService",
+			"member": "CustomizedTeleportUI",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Tags",
+					"before": [
+						"NotReplicated"
+					],
+					"after": [
+						"NotReplicated",
+						"Deprecated"
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Property",
+				"Name": "CustomizedTeleportUI",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Data",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": false
+				},
+				"Tags": [
+					"NotReplicated",
+					"Deprecated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TeleportService",
+			"member": "GetLocalPlayerTeleportData",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetLocalPlayerTeleportData",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TeleportService",
+			"member": "GetTeleportSetting",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetTeleportSetting",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "setting"
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "TeleportService",
+			"member": "SetTeleportSetting",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetTeleportSetting",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "setting"
+					},
+					{
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						},
+						"Name": "value"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		}
+	]
+}

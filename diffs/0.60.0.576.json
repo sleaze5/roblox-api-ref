@@ -1,0 +1,180 @@
+{
+	"from": {
+		"version": "0.59.0.569",
+		"hash": "76ed5b3c6cb0467f"
+	},
+	"to": {
+		"version": "0.60.0.576",
+		"hash": "7cacfdcf8d724c45"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "NetworkSettings",
+			"member": "PrintSplitMessage",
+			"type": "Add",
+			"value": {
+				"MemberType": "Property",
+				"Name": "PrintSplitMessage",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Category": "Diagnostics",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "LoadNumber",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Primitive",
+						"Name": "float"
+					},
+					"after": {
+						"Category": "Primitive",
+						"Name": "double"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "LoadNumber",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "key"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "double"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "SaveNumber",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "key"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							},
+							"Name": "value"
+						}
+					],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							},
+							"Name": "key"
+						},
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "double"
+							},
+							"Name": "value"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "SaveNumber",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "key"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "double"
+						},
+						"Name": "value"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Player",
+			"member": "loadNumber",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "ReturnType",
+					"before": {
+						"Category": "Primitive",
+						"Name": "float"
+					},
+					"after": {
+						"Category": "Primitive",
+						"Name": "double"
+					}
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "loadNumber",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "key"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "double"
+				},
+				"Security": "None",
+				"Tags": [
+					"Deprecated"
+				]
+			}
+		}
+	]
+}

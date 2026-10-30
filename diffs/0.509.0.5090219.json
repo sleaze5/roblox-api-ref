@@ -1,0 +1,685 @@
+{
+	"from": {
+		"version": "0.508.0.5080185",
+		"hash": "659db69cf40e4220"
+	},
+	"to": {
+		"version": "0.509.0.5090219",
+		"hash": "03d362be13cc46ac"
+	},
+	"changes": [
+		{
+			"element": "Class",
+			"class": "AnimationFromVideoCreatorStudioService",
+			"type": "Remove",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "AnimationFromVideoCreatorStudioService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetManagerService",
+			"member": "GetMeshId",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetMeshId",
+				"Parameters": [
+					{
+						"Name": "aliasName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "AssetManagerService",
+			"member": "GetTextureId",
+			"type": "Remove",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetTextureId",
+				"Parameters": [
+					{
+						"Name": "aliasName",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "int64"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "GetPartBoundsInBox",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "cframe",
+							"Type": {
+								"Category": "DataType",
+								"Name": "CFrame"
+							}
+						},
+						{
+							"Name": "size",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						},
+						{
+							"Default": "OverlapParams{MaxParts=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+							"Name": "overlapParams",
+							"Type": {
+								"Category": "DataType",
+								"Name": "OverlapParams"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "cframe",
+							"Type": {
+								"Category": "DataType",
+								"Name": "CFrame"
+							}
+						},
+						{
+							"Name": "size",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						},
+						{
+							"Default": "OverlapParams{MaxParts=false, BruteForceAllSlow=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+							"Name": "overlapParams",
+							"Type": {
+								"Category": "DataType",
+								"Name": "OverlapParams"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPartBoundsInBox",
+				"Parameters": [
+					{
+						"Name": "cframe",
+						"Type": {
+							"Category": "DataType",
+							"Name": "CFrame"
+						}
+					},
+					{
+						"Name": "size",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Default": "OverlapParams{MaxParts=false, BruteForceAllSlow=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+						"Name": "overlapParams",
+						"Type": {
+							"Category": "DataType",
+							"Name": "OverlapParams"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "GetPartBoundsInRadius",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "position",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						},
+						{
+							"Name": "radius",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						},
+						{
+							"Default": "OverlapParams{MaxParts=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+							"Name": "overlapParams",
+							"Type": {
+								"Category": "DataType",
+								"Name": "OverlapParams"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "position",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						},
+						{
+							"Name": "radius",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "float"
+							}
+						},
+						{
+							"Default": "OverlapParams{MaxParts=false, BruteForceAllSlow=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+							"Name": "overlapParams",
+							"Type": {
+								"Category": "DataType",
+								"Name": "OverlapParams"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPartBoundsInRadius",
+				"Parameters": [
+					{
+						"Name": "position",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "radius",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "float"
+						}
+					},
+					{
+						"Default": "OverlapParams{MaxParts=false, BruteForceAllSlow=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+						"Name": "overlapParams",
+						"Type": {
+							"Category": "DataType",
+							"Name": "OverlapParams"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "GetPartsInPart",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "part",
+							"Type": {
+								"Category": "Class",
+								"Name": "BasePart"
+							}
+						},
+						{
+							"Default": "OverlapParams{MaxParts=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+							"Name": "overlapParams",
+							"Type": {
+								"Category": "DataType",
+								"Name": "OverlapParams"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "part",
+							"Type": {
+								"Category": "Class",
+								"Name": "BasePart"
+							}
+						},
+						{
+							"Default": "OverlapParams{MaxParts=false, BruteForceAllSlow=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+							"Name": "overlapParams",
+							"Type": {
+								"Category": "DataType",
+								"Name": "OverlapParams"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetPartsInPart",
+				"Parameters": [
+					{
+						"Name": "part",
+						"Type": {
+							"Category": "Class",
+							"Name": "BasePart"
+						}
+					},
+					{
+						"Default": "OverlapParams{MaxParts=false, BruteForceAllSlow=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+						"Name": "overlapParams",
+						"Type": {
+							"Category": "DataType",
+							"Name": "OverlapParams"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Objects"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "WorldRoot",
+			"member": "Raycast",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "origin",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						},
+						{
+							"Name": "direction",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						},
+						{
+							"Default": "RaycastParams{IgnoreWater=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+							"Name": "raycastParams",
+							"Type": {
+								"Category": "DataType",
+								"Name": "RaycastParams"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "origin",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						},
+						{
+							"Name": "direction",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						},
+						{
+							"Default": "RaycastParams{IgnoreWater=false, BruteForceAllSlow=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+							"Name": "raycastParams",
+							"Type": {
+								"Category": "DataType",
+								"Name": "RaycastParams"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "Raycast",
+				"Parameters": [
+					{
+						"Name": "origin",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "direction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Default": "RaycastParams{IgnoreWater=false, BruteForceAllSlow=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+						"Name": "raycastParams",
+						"Type": {
+							"Category": "DataType",
+							"Name": "RaycastParams"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RaycastResult"
+				},
+				"Security": "None",
+				"ThreadSafety": "Safe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PathfindingLink",
+			"member": "ModifierId",
+			"type": "Remove",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "ModifierId",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PathfindingLink",
+			"member": "Label",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Label",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PathfindingModifier",
+			"member": "ModifierId",
+			"type": "Remove",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "ModifierId",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PathfindingModifier",
+			"member": "Label",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "Label",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadSafe",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "string"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "GizmoRaycast",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "origin",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						},
+						{
+							"Name": "direction",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						},
+						{
+							"Default": "RaycastParams{IgnoreWater=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+							"Name": "raycastParams",
+							"Type": {
+								"Category": "DataType",
+								"Name": "RaycastParams"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "origin",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						},
+						{
+							"Name": "direction",
+							"Type": {
+								"Category": "DataType",
+								"Name": "Vector3"
+							}
+						},
+						{
+							"Default": "RaycastParams{IgnoreWater=false, BruteForceAllSlow=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+							"Name": "raycastParams",
+							"Type": {
+								"Category": "DataType",
+								"Name": "RaycastParams"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GizmoRaycast",
+				"Parameters": [
+					{
+						"Name": "origin",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Name": "direction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Vector3"
+						}
+					},
+					{
+						"Default": "RaycastParams{IgnoreWater=false, BruteForceAllSlow=false, CollisionGroup=Default, FilterDescendantsInstances={}}",
+						"Name": "raycastParams",
+						"Type": {
+							"Category": "DataType",
+							"Name": "RaycastParams"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "RaycastResult"
+				},
+				"Security": "PluginSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "StudioPublishService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "StudioPublishService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioPublishService",
+			"member": "PublishAs",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PublishAs",
+				"Parameters": [
+					{
+						"Name": "universeId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "placeId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "groupId",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int64"
+						}
+					},
+					{
+						"Name": "isPublish",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "publishParameters",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		}
+	]
+}

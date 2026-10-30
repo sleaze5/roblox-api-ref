@@ -1,0 +1,962 @@
+{
+	"from": {
+		"version": "0.474.0.420553",
+		"hash": "21d788c32aa5497b"
+	},
+	"to": {
+		"version": "0.475.0.420862",
+		"hash": "bc60d62a37a34348"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "BaseWrap",
+			"member": "GetFaces",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetFaces",
+				"Parameters": [
+					{
+						"Name": "cageType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "CageType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BaseWrap",
+			"member": "GetVertices",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetVertices",
+				"Parameters": [
+					{
+						"Name": "cageType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "CageType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "BaseWrap",
+			"member": "ModifyVertices",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ModifyVertices",
+				"Parameters": [
+					{
+						"Name": "cageType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "CageType"
+						}
+					},
+					{
+						"Name": "vertices",
+						"Type": {
+							"Category": "Group",
+							"Name": "Array"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreQueue",
+			"member": "ReadAsync",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "count",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Default": "false",
+							"Name": "allOrNothing",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Default": "-1",
+							"Name": "waitTimeout",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "count",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						},
+						{
+							"Default": "false",
+							"Name": "allOrNothing",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Default": "0",
+							"Name": "waitTimeout",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "ReadAsync",
+				"Parameters": [
+					{
+						"Name": "count",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Default": "false",
+						"Name": "allOrNothing",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Default": "0",
+						"Name": "waitTimeout",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Tuple"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreService",
+			"member": "GetQueue",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "name",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "30",
+							"Name": "invisibilityTimeout",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "name",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "string"
+							}
+						},
+						{
+							"Default": "30000",
+							"Name": "invisibilityTimeout",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "int"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetQueue",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "30000",
+						"Name": "invisibilityTimeout",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreService",
+			"member": "GetSortedMap",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetSortedMap",
+				"Parameters": [
+					{
+						"Name": "name",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Class",
+					"Name": "Instance"
+				},
+				"Security": "None",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "NetworkSettings",
+			"member": "EmulatedTotalMemoryInMB",
+			"type": "Add",
+			"value": {
+				"Category": "Data",
+				"MemberType": "Property",
+				"Name": "EmulatedTotalMemoryInMB",
+				"Security": {
+					"Read": "PluginSecurity",
+					"Write": "PluginSecurity"
+				},
+				"Serialization": {
+					"CanLoad": false,
+					"CanSave": false
+				},
+				"Tags": [
+					"Hidden",
+					"NotReplicated"
+				],
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Primitive",
+					"Name": "int"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "Workspace",
+			"member": "ClientAnimatorThrottling",
+			"type": "Add",
+			"value": {
+				"Category": "Behavior",
+				"MemberType": "Property",
+				"Name": "ClientAnimatorThrottling",
+				"Security": {
+					"Read": "None",
+					"Write": "None"
+				},
+				"Serialization": {
+					"CanLoad": true,
+					"CanSave": true
+				},
+				"ThreadSafety": "ReadOnly",
+				"ValueType": {
+					"Category": "Enum",
+					"Name": "ClientAnimatorThrottlingMode"
+				}
+			}
+		},
+		{
+			"element": "Member",
+			"class": "SoundService",
+			"member": "DeviceListChanged",
+			"type": "Add",
+			"value": {
+				"MemberType": "Event",
+				"Name": "DeviceListChanged",
+				"Parameters": [
+					{
+						"Name": "newDevices",
+						"Type": {
+							"Category": "Group",
+							"Name": "Tuple"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "OnSaveOrPublishPlaceToRoblox",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [
+						{
+							"Name": "showGameSelect",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "isPublish",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					],
+					"after": [
+						{
+							"Name": "showGameSelect",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "isPublish",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						},
+						{
+							"Name": "closeAfterSave",
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							}
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Event",
+				"Name": "OnSaveOrPublishPlaceToRoblox",
+				"Parameters": [
+					{
+						"Name": "showGameSelect",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "isPublish",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					},
+					{
+						"Name": "closeAfterSave",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						}
+					}
+				],
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "StudioService",
+			"member": "RequestCloseStudio",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RequestCloseStudio",
+				"Parameters": [],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity",
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "MemoryStoreSortedMap",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "MemoryStoreSortedMap",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreSortedMap",
+			"member": "GetAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Variant"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreSortedMap",
+			"member": "GetRangeAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "GetRangeAsync",
+				"Parameters": [
+					{
+						"Name": "direction",
+						"Type": {
+							"Category": "Enum",
+							"Name": "SortDirection"
+						}
+					},
+					{
+						"Name": "count",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "exclusiveLowerBound",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Default": "",
+						"Name": "exclusiveUpperBound",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Group",
+					"Name": "Array"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreSortedMap",
+			"member": "RemoveAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "RemoveAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreSortedMap",
+			"member": "SetAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "SetAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "value",
+						"Type": {
+							"Category": "Group",
+							"Name": "Variant"
+						}
+					},
+					{
+						"Default": "-1",
+						"Name": "expiration",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "bool"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "MemoryStoreSortedMap",
+			"member": "UpdateAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "UpdateAsync",
+				"Parameters": [
+					{
+						"Name": "key",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						}
+					},
+					{
+						"Name": "transformFunction",
+						"Type": {
+							"Category": "DataType",
+							"Name": "Function"
+						}
+					},
+					{
+						"Default": "-1",
+						"Name": "expiration",
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "None",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "Class",
+			"class": "PublishService",
+			"type": "Add",
+			"value": {
+				"MemoryCategory": "Instances",
+				"Name": "PublishService",
+				"Superclass": "Instance",
+				"Tags": [
+					"NotCreatable",
+					"Service",
+					"NotReplicated"
+				]
+			}
+		},
+		{
+			"element": "Member",
+			"class": "PublishService",
+			"member": "PublishCageMeshAsync",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "PublishCageMeshAsync",
+				"Parameters": [
+					{
+						"Name": "wrap",
+						"Type": {
+							"Category": "Class",
+							"Name": "Instance"
+						}
+					},
+					{
+						"Name": "cageType",
+						"Type": {
+							"Category": "Enum",
+							"Name": "CageType"
+						}
+					}
+				],
+				"ReturnType": {
+					"Category": "DataType",
+					"Name": "Content"
+				},
+				"Security": "RobloxScriptSecurity",
+				"Tags": [
+					"Yields"
+				],
+				"ThreadSafety": "Unsafe"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetType",
+			"item": "TeeShirtAccessory",
+			"type": "Add",
+			"value": {
+				"Name": "TeeShirtAccessory",
+				"Value": 63
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetType",
+			"item": "ShirtAccessory",
+			"type": "Add",
+			"value": {
+				"Name": "ShirtAccessory",
+				"Value": 64
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetType",
+			"item": "PantsAccessory",
+			"type": "Add",
+			"value": {
+				"Name": "PantsAccessory",
+				"Value": 65
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetType",
+			"item": "JacketAccessory",
+			"type": "Add",
+			"value": {
+				"Name": "JacketAccessory",
+				"Value": 66
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetType",
+			"item": "SweaterAccessory",
+			"type": "Add",
+			"value": {
+				"Name": "SweaterAccessory",
+				"Value": 67
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetType",
+			"item": "ShortsAccessory",
+			"type": "Add",
+			"value": {
+				"Name": "ShortsAccessory",
+				"Value": 68
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetType",
+			"item": "LeftShoeAccessory",
+			"type": "Add",
+			"value": {
+				"Name": "LeftShoeAccessory",
+				"Value": 69
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetType",
+			"item": "RightShoeAccessory",
+			"type": "Add",
+			"value": {
+				"Name": "RightShoeAccessory",
+				"Value": 70
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AssetType",
+			"item": "DressSkirtAccessory",
+			"type": "Add",
+			"value": {
+				"Name": "DressSkirtAccessory",
+				"Value": 71
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "TeeShirtAccessory",
+			"type": "Add",
+			"value": {
+				"Name": "TeeShirtAccessory",
+				"Value": 63
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "ShirtAccessory",
+			"type": "Add",
+			"value": {
+				"Name": "ShirtAccessory",
+				"Value": 64
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "PantsAccessory",
+			"type": "Add",
+			"value": {
+				"Name": "PantsAccessory",
+				"Value": 65
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "JacketAccessory",
+			"type": "Add",
+			"value": {
+				"Name": "JacketAccessory",
+				"Value": 66
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "SweaterAccessory",
+			"type": "Add",
+			"value": {
+				"Name": "SweaterAccessory",
+				"Value": 67
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "ShortsAccessory",
+			"type": "Add",
+			"value": {
+				"Name": "ShortsAccessory",
+				"Value": 68
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "LeftShoeAccessory",
+			"type": "Add",
+			"value": {
+				"Name": "LeftShoeAccessory",
+				"Value": 69
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "RightShoeAccessory",
+			"type": "Add",
+			"value": {
+				"Name": "RightShoeAccessory",
+				"Value": 70
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "AvatarAssetType",
+			"item": "DressSkirtAccessory",
+			"type": "Add",
+			"value": {
+				"Name": "DressSkirtAccessory",
+				"Value": 71
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "CageType",
+			"type": "Add",
+			"value": {
+				"Name": "CageType"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CageType",
+			"item": "Inner",
+			"type": "Add",
+			"value": {
+				"Name": "Inner",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "CageType",
+			"item": "Outer",
+			"type": "Add",
+			"value": {
+				"Name": "Outer",
+				"Value": 1
+			}
+		},
+		{
+			"element": "Enum",
+			"enum": "ClientAnimatorThrottlingMode",
+			"type": "Add",
+			"value": {
+				"Name": "ClientAnimatorThrottlingMode"
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ClientAnimatorThrottlingMode",
+			"item": "Default",
+			"type": "Add",
+			"value": {
+				"Name": "Default",
+				"Value": 0
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ClientAnimatorThrottlingMode",
+			"item": "Disabled",
+			"type": "Add",
+			"value": {
+				"Name": "Disabled",
+				"Value": 1
+			}
+		},
+		{
+			"element": "EnumItem",
+			"enum": "ClientAnimatorThrottlingMode",
+			"item": "Enabled",
+			"type": "Add",
+			"value": {
+				"Name": "Enabled",
+				"Value": 2
+			}
+		}
+	]
+}

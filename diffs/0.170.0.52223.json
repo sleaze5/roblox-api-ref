@@ -1,0 +1,101 @@
+{
+	"from": {
+		"version": "0.169.0.51983",
+		"hash": "2c1f992c1a264ecc"
+	},
+	"to": {
+		"version": "0.170.0.52223",
+		"hash": "b44a93d7db0543f5"
+	},
+	"changes": [
+		{
+			"element": "Member",
+			"class": "HttpService",
+			"member": "GenerateGUID",
+			"type": "Change",
+			"changes": [
+				{
+					"field": "Parameters",
+					"before": [],
+					"after": [
+						{
+							"Type": {
+								"Category": "Primitive",
+								"Name": "bool"
+							},
+							"Name": "wrapInCurlyBraces",
+							"Default": "true"
+						}
+					]
+				}
+			],
+			"value": {
+				"MemberType": "Function",
+				"Name": "GenerateGUID",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "bool"
+						},
+						"Name": "wrapInCurlyBraces",
+						"Default": "true"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "string"
+				},
+				"Security": "None"
+			}
+		},
+		{
+			"element": "Member",
+			"class": "DataModel",
+			"member": "ReportInGoogleAnalytics",
+			"type": "Add",
+			"value": {
+				"MemberType": "Function",
+				"Name": "ReportInGoogleAnalytics",
+				"Parameters": [
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "category"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "action",
+						"Default": "custom"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "string"
+						},
+						"Name": "label",
+						"Default": "none"
+					},
+					{
+						"Type": {
+							"Category": "Primitive",
+							"Name": "int"
+						},
+						"Name": "value",
+						"Default": "0"
+					}
+				],
+				"ReturnType": {
+					"Category": "Primitive",
+					"Name": "void"
+				},
+				"Security": "RobloxScriptSecurity"
+			}
+		}
+	]
+}
