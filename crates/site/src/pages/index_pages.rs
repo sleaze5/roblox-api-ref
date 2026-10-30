@@ -7,12 +7,13 @@ use rapi_core::api::facets::{
 use rapi_core::api::text::REMOVED_LEAD;
 use rapi_core::icons::Icon;
 use rapi_core::js::{compare_names, format_date};
-use rapi_core::model::{DataType, DataTypeCategory, Enum, RemovedOwner};
+use rapi_core::model::{ChangeStatus, DataType, DataTypeCategory, Enum, RemovedOwner};
 use rapi_routes::{
 	FACET_KINDS, FacetKind, OwnerKind, REMOVED, TYPES, enum_href, facet_index_href, owner_anchor,
 	type_href, update_href,
 };
 
+use crate::components::changes::change_mark;
 use crate::components::filters::{ListFilterPlacement, list_filter};
 use crate::components::index::{
 	IndexCurrent, IndexGroup, data_type_category_title, facet_icon, index_sidebar,
@@ -156,13 +157,16 @@ fn data_type_groups(cx: &Context, standalone: bool) -> Markup {
 
 fn removed_row(owner: &RemovedOwner, kind: OwnerKind) -> Markup {
 	html! {
-		li data-name=(owner.name) class="flex flex-wrap items-baseline gap-x-3 px-2 py-1" {
-			code class="text-fg-muted" { (owner.name) }
-			span class="text-fg-faint" {
-				"Removed in "
-				a href={ (update_href(&owner.removed.version)) "#" (owner_anchor(kind, &owner.name)) } class="font-mono text-fg-muted hover:text-fg hover:underline" { (owner.removed.version) }
+		li id=(owner_anchor(kind, &owner.name)) data-change="" data-name=(owner.name) class="change-line px-2 py-1" {
+			(change_mark(Some(ChangeStatus::Removed), Some("Removed:")))
+			span class="flex min-w-0 flex-wrap items-baseline gap-x-3" {
+				code class="text-fg-muted" { (owner.name) }
+				span class="text-fg-faint" {
+					"Removed in "
+					a href={ (update_href(&owner.removed.version)) "#" (owner_anchor(kind, &owner.name)) } class="font-mono text-fg-muted hover:text-fg hover:underline" { (owner.removed.version) }
+				}
+				span class="text-xs text-fg-faint" { (format_date(&owner.removed.published)) }
 			}
-			span class="text-xs text-fg-faint" { (format_date(&owner.removed.published)) }
 		}
 	}
 }

@@ -41,6 +41,14 @@ impl OwnerGroupKind {
 		}
 	}
 
+	pub const fn status(self) -> ChangeStatus {
+		match self {
+			Self::Additions => ChangeStatus::Added,
+			Self::Removals => ChangeStatus::Removed,
+			Self::Changes => ChangeStatus::Changed,
+		}
+	}
+
 	const fn of(owner: &OwnerChanges) -> Self {
 		match owner.status {
 			Some(ChangeStatus::Added) => Self::Additions,
@@ -346,7 +354,7 @@ pub fn owner_group(
 		.status
 		.or((!owner.descriptions.is_empty()).then_some(ChangeStatus::Changed));
 	let heading_content = html! {
-		(change_mark(status, None))
+		(change_mark(status.or(Some(ChangeStatus::Changed)), None))
 		span class="flex min-w-0 items-center gap-2" {
 			span aria-hidden="true" data-kind=(owner.kind.name()) style=[class_icon_style(owner_icon(cx, owner))] class="kind-icon text-fg-muted" {}
 			span class="sr-only" { (label.as_deref().unwrap_or(noun)) }
@@ -387,6 +395,7 @@ pub fn owner_subsection_block(
 	html! {
 		section id=(id) data-list-section="" aria-labelledby={ (id) "-title" } class="flex flex-col gap-4" {
 			h3 id={ (id) "-title" } class="flex items-center gap-2 border-b border-line-subtle pb-2 text-base font-semibold" {
+				(change_mark(Some(group.group.status()), None))
 				(title.unwrap_or(group.title))
 				span class="text-sm font-normal text-fg-faint" { (group.owners.len()) }
 			}

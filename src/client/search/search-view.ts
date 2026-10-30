@@ -145,7 +145,7 @@ function removedOption(entry: ViewRemoved, index: number): string {
 	return option(
 		index,
 		href,
-		`${kindIcon(kind, -1)}<span class="shrink-0 font-mono text-fg-muted line-through">${escapeHtml(name)}</span><span class="truncate font-mono text-fg-faint">${escapeHtml(parent)}</span><span class="ml-auto shrink-0 text-xs text-fg-faint">Removed in ${escapeHtml(version)}</span>`,
+		`<span class="change-mark w-4 shrink-0" data-status="Removed"><span class="sr-only">Removed:</span></span>${kindIcon(kind, -1)}<span class="shrink-0 font-mono text-fg-muted">${escapeHtml(name)}</span><span class="truncate font-mono text-fg-faint">${escapeHtml(parent)}</span><span class="ml-auto shrink-0 text-xs text-fg-faint">Removed in ${escapeHtml(version)}</span>`,
 	)
 }
 

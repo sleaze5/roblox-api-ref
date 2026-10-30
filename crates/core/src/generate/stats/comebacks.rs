@@ -67,7 +67,7 @@ fn comebacks_of(api: &Api, updates: &[Update]) -> Vec<Comeback> {
 				update,
 				|| {
 					current_owner_ref(api, owner)
-						.unwrap_or_else(|| removed_owner_ref(owner, &update.version))
+						.unwrap_or_else(|| removed_owner_ref(api, owner, &update.version))
 				},
 			);
 			for entry in &owner.entries {
@@ -76,8 +76,9 @@ fn comebacks_of(api: &Api, updates: &[Update]) -> Vec<Comeback> {
 					Some(entry.status),
 					update,
 					|| {
-						current_entry_ref(api, owner, entry)
-							.unwrap_or_else(|| removed_entry_ref(owner, entry, &update.version))
+						current_entry_ref(api, owner, entry).unwrap_or_else(|| {
+							removed_entry_ref(api, owner, entry, &update.version)
+						})
 					},
 				);
 			}

@@ -4,15 +4,17 @@ use rapi_core::api::stats_text::{
 	per_update_totals,
 };
 use rapi_core::js::{format_date, js_number, js_round};
-use rapi_core::model::{ChangeCounts, ChangeTally, PeriodTrend, Tallies, TrendKind, UpdateTrend};
+use rapi_core::model::{
+	ChangeCounts, ChangeStatus, ChangeTally, PeriodTrend, Tallies, TrendKind, UpdateTrend,
+};
 use rapi_routes::update_href;
 
 use super::tables::{column, data_table, number, stats_section, text};
+use crate::components::changes::{change_counts, status_count, status_count_or_zero};
 use crate::context::Context;
 use crate::pages::charts::{
 	BarColumn, Column, LinePoint, column_chart, diverging_bar_chart, line_chart, year_ticks,
 };
-use crate::pages::updates::change_counts;
 
 pub fn tally_counts(tally: &ChangeTally) -> ChangeCounts {
 	ChangeCounts {
@@ -72,7 +74,7 @@ pub fn trend_table(
 							(tally_cell(&tallies.callback, true))
 							(tally_cell(&tallies.enumeration, false))
 							(tally_cell(&tallies.enum_item, true))
-							td data-number="" class=[(deprecated == 0).then_some("text-fg-faint")] { (deprecated) }
+							td data-number="" class=(if deprecated == 0 { "text-fg-faint" } else { "text-warning" }) { (deprecated) }
 						}
 					}
 				}
@@ -214,6 +216,14 @@ fn added_removed_chart(title: &str, updates: &[UpdateTrend], kind: Option<TrendK
 	)
 }
 
+fn average_cell(status: ChangeStatus, average: &str) -> Markup {
+	if average == "0" {
+		html! { span class="text-fg-faint" { "0" } }
+	} else {
+		status_count(status, average)
+	}
+}
+
 fn per_update_table(updates: &[UpdateTrend]) -> Markup {
 	let rows: Vec<(String, Vec<Markup>)> = per_update_totals(updates)
 		.into_iter()
@@ -222,10 +232,10 @@ fn per_update_table(updates: &[UpdateTrend]) -> Markup {
 				format!("per-update-{}", row.label.to_lowercase().replace(' ', "-")),
 				vec![
 					text(row.label),
-					text(row.added),
-					text(row.removed),
-					text(row.average_added),
-					text(row.average_removed),
+					status_count_or_zero(ChangeStatus::Added, row.added),
+					status_count_or_zero(ChangeStatus::Removed, row.removed),
+					average_cell(ChangeStatus::Added, &row.average_added),
+					average_cell(ChangeStatus::Removed, &row.average_removed),
 				],
 			)
 		})

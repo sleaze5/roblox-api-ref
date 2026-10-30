@@ -5,6 +5,7 @@ use rapi_core::js::{format_date, format_month, format_short_date};
 use rapi_core::model::{ChangeStatus, OwnerChanges, Release, Update};
 use rapi_routes::{owner_anchor, update_anchor, update_href, upload_name};
 
+use crate::components::changes::{change_counts, change_mark, status_count_or_zero};
 use crate::components::facts::{fact, fact_list};
 use crate::components::filters::{ListFilterPlacement, list_filter};
 use crate::components::page::{HeaderIcon, PageHeader, page_lead, root_crumbs, updates_crumbs};
@@ -14,7 +15,7 @@ use crate::components::updates::{
 use crate::context::Context;
 use crate::html::{IconSize, class_icon_style, icon};
 use crate::layout::{RailEntry, RailLink, Section, Shell, page_rail, section_sidebar};
-use crate::pages::index_pages::{INDEX_GRID_CLASS, index_row_markup, index_section_markup};
+use crate::pages::index_pages::{INDEX_GRID_CLASS, index_section_markup};
 
 const RECENT_COUNT: usize = 10;
 
@@ -148,7 +149,7 @@ fn update_facts(cx: &Context, update: &Update, published: bool) -> Markup {
 			}
 		}))
 		@for status in ChangeStatus::ALL {
-			(fact(status.name(), Some(count_hint(status)), &html! { (update.counts.get(status)) }))
+			(fact(status.name(), Some(count_hint(status)), &status_count_or_zero(status, update.counts.get(status))))
 		}
 		@match update.description_count {
 			Some(count) => { (fact("Descriptions", Some("Descriptions that this version adds, changes, or removes."), &html! { (count) })) }
@@ -163,33 +164,6 @@ fn entry_counts(owner: &OwnerChanges) -> rapi_core::model::ChangeCounts {
 		counts.bump(entry.status);
 	}
 	counts
-}
-
-pub fn change_counts(counts: &rapi_core::model::ChangeCounts, changes: bool) -> Markup {
-	let parts = [
-		(ChangeStatus::Added, "+", "Added", "text-success"),
-		(ChangeStatus::Removed, "−", "Removed", "text-danger"),
-		(ChangeStatus::Changed, "~", "Changed", "text-fg-faint"),
-	];
-	let shown: Vec<_> = parts
-		.into_iter()
-		.filter(|(status, ..)| {
-			counts.get(*status) > 0 && (changes || *status != ChangeStatus::Changed)
-		})
-		.collect();
-	html! {
-		@if !shown.is_empty() {
-			span class="flex gap-2 tabular-nums" {
-				@for (status, mark, label, class) in shown {
-					span {
-						span aria-hidden="true" class={ "font-mono " (class) } { (mark) }
-						span class="sr-only" { (label) " " }
-						(counts.get(status))
-					}
-				}
-			}
-		}
-	}
 }
 
 fn owner_note(owner: &OwnerChanges) -> Markup {
@@ -212,6 +186,7 @@ fn group_summary(cx: &Context, update: &Update, group: &OwnerSubsection) -> Mark
 	html! {
 		section id=(id) data-list-section="" aria-labelledby={ (id) "-title" } class="flex flex-col gap-2" {
 			h3 id={ (id) "-title" } class="flex items-center gap-2 border-b border-line-subtle pb-2 text-base font-semibold" {
+				(change_mark(Some(group.group.status()), None))
 				(group.rail_label)
 				span class="text-sm font-normal text-fg-faint" { (group.owners.len()) }
 			}
@@ -226,6 +201,19 @@ fn group_summary(cx: &Context, update: &Update, group: &OwnerSubsection) -> Mark
 							span class="shrink-0 text-xs text-fg-faint" { (owner_note(owner)) }
 						}
 					}
+				}
+			}
+		}
+	}
+}
+
+fn earlier_update_row(update: &Update) -> Markup {
+	html! {
+		li data-name=(update.version) {
+			a href=(update_href(&update.version)) class="flex h-7 items-center justify-between gap-2 rounded-sm px-2 font-mono text-fg motion-colors hover:bg-hover" {
+				span class="truncate" { (update.version) }
+				span class="shrink-0 font-sans text-xs text-fg-faint" {
+					@if update.counts.total() == 0 { "Rebuild" } @else { (change_counts(&update.counts, true)) }
 				}
 			}
 		}
@@ -293,7 +281,7 @@ pub fn updates_page(cx: &Context) -> Markup {
 					(index_section_markup(cx, "earlier-updates", "Earlier updates", Icon::GitDiff, earlier.len(), None, &html! {
 						ul class=(INDEX_GRID_CLASS) {
 							@for update in earlier {
-								(index_row_markup(&update.version, &update_href(&update.version), update.counts.total() as usize, false))
+								(earlier_update_row(update))
 							}
 						}
 					}))

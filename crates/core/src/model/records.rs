@@ -41,8 +41,7 @@ pub enum StatRef {
 	Removed {
 		of: CountKind,
 		label: String,
-		version: String,
-		anchor: String,
+		href: String,
 	},
 }
 
@@ -105,16 +104,10 @@ impl Serialize for StatRef {
 				map.serialize_entry("version", version)?;
 				map.serialize_entry("published", published)?;
 			}
-			Self::Removed {
-				of,
-				label,
-				version,
-				anchor,
-			} => {
+			Self::Removed { of, label, href } => {
 				map.serialize_entry("of", of)?;
 				map.serialize_entry("label", label)?;
-				map.serialize_entry("version", version)?;
-				map.serialize_entry("anchor", anchor)?;
+				map.serialize_entry("href", href)?;
 			}
 		}
 		map.end()

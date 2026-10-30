@@ -6,8 +6,8 @@ use rapi_core::icons::Icon;
 use rapi_core::js::compare_names;
 use rapi_core::model::{DataType, DataTypeCategory, FacetAccess, FacetUse, RemovedOwner, UseKind};
 use rapi_routes::{
-	FACET_KINDS, FacetKind, OwnerKind, REMOVED, TYPES, facet_index_href, owner_anchor, type_href,
-	update_href,
+	FACET_KINDS, FacetKind, OwnerKind, REMOVED, TYPES, facet_index_href, removed_owner_href,
+	type_href,
 };
 
 use crate::components::members::kind_icon;
@@ -116,11 +116,7 @@ fn removed_leaves(kind: OwnerKind, owners: &[RemovedOwner]) -> Vec<Leaf> {
 		.iter()
 		.map(|owner| Leaf {
 			name: owner.name.clone(),
-			href: format!(
-				"{}#{}",
-				update_href(&owner.removed.version),
-				owner_anchor(kind, &owner.name)
-			),
+			href: removed_owner_href(kind, &owner.name),
 		})
 		.collect()
 }

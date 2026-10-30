@@ -43,7 +43,7 @@ const view: SearchView = {
 			"BulkImportService",
 			"",
 			"0.745.0.7451137",
-			"/updates/0.745.0.7451137/#Class-BulkImportService",
+			"/index/removed/#Class-BulkImportService",
 		],
 	],
 	c: "Part.Touched",
@@ -55,7 +55,7 @@ describe("search view", () => {
 			"/updates/0.745.0.7451137/",
 			"/classes/BasePart/#Event-Touched",
 			"/classes/Part/",
-			"/updates/0.745.0.7451137/#Class-BulkImportService",
+			"/index/removed/#Class-BulkImportService",
 		])
 		const html = resultsHtml(view, "/icons.svg")
 		for (const [index, href] of optionHrefs(view).entries()) {
@@ -80,6 +80,7 @@ describe("search view", () => {
 		expect(html).toContain('style="--icon: 7"')
 		expect(html).toContain('<span class="tag-chip tag-warning">Deprecated</span>')
 		expect(html).toContain('aria-label="Removed"')
+		expect(html).toContain('class="change-mark w-4 shrink-0" data-status="Removed"')
 	})
 
 	test("completes only what follows the typed text", () => {

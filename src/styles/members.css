@@ -260,7 +260,14 @@
 		rotate: 90deg;
 	}
 
-	& > ul {
-		padding-left: calc(var(--spacing) * 5);
+	& > ul > li {
+		display: grid;
+		grid-template-columns: 14px minmax(0, 1fr);
+		column-gap: calc(var(--spacing) * 1.5);
+		align-items: baseline;
+	}
+
+	& > ul .change-mark {
+		line-height: inherit;
 	}
 }

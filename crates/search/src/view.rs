@@ -1,6 +1,6 @@
 use rapi_routes::{
-	OwnerKind, change_anchor, class_href, enum_href, enum_item_href, member_href, owner_anchor,
-	type_href, update_href, upload_name,
+	OwnerKind, class_href, enum_href, enum_item_href, member_href, removed_enum_item_href,
+	removed_member_href, removed_owner_href, type_href, update_href, upload_name,
 };
 
 use crate::complete::complete;
@@ -63,26 +63,16 @@ pub fn result_href(engine: &Engine, result: &SearchResult) -> String {
 }
 
 pub fn removed_href(entry: &RemovedData) -> String {
-	let anchor = match &entry.parent {
-		None => owner_anchor(
-			if entry.kind == EntryKind::Enum {
-				OwnerKind::Enum
-			} else {
-				OwnerKind::Class
-			},
-			&entry.name,
-		),
-		Some(parent) => change_anchor(
-			if entry.kind == EntryKind::EnumItem {
-				OwnerKind::Enum
-			} else {
-				OwnerKind::Class
-			},
+	match (&entry.parent, entry.kind) {
+		(None, EntryKind::Enum) => removed_owner_href(OwnerKind::Enum, &entry.name),
+		(None, _) => removed_owner_href(OwnerKind::Class, &entry.name),
+		(Some(parent), EntryKind::EnumItem) => removed_enum_item_href(parent, &entry.name),
+		(Some(parent), kind) => removed_member_href(
 			parent,
+			kind.member().unwrap_or(rapi_routes::MemberKind::Property),
 			&entry.name,
 		),
-	};
-	format!("{}#{anchor}", update_href(&entry.version))
+	}
 }
 
 pub fn group_results(
@@ -295,4 +285,39 @@ pub fn render_view(engine: &Engine, input: &str) -> String {
 	};
 	json.raw("}");
 	json.0
+}
+
+#[cfg(test)]
+mod tests {
+	use super::*;
+
+	fn entry(kind: EntryKind, name: &str, parent: Option<&str>) -> RemovedData {
+		RemovedData {
+			kind,
+			name: name.to_owned(),
+			parent: parent.map(str::to_owned),
+			version: "0.745.0.7451137".to_owned(),
+			published: "2026-10-26".to_owned(),
+		}
+	}
+
+	#[test]
+	fn opens_removed_items_in_their_removed_rows() {
+		assert_eq!(
+			removed_href(&entry(EntryKind::Class, "BulkImportService", None)),
+			"/index/removed/#Class-BulkImportService"
+		);
+		assert_eq!(
+			removed_href(&entry(EntryKind::Enum, "Old", None)),
+			"/index/removed/#Enum-Old"
+		);
+		assert_eq!(
+			removed_href(&entry(EntryKind::Method, "isA", Some("Instance"))),
+			"/classes/Instance/#Removed-Method-isA"
+		);
+		assert_eq!(
+			removed_href(&entry(EntryKind::EnumItem, "Old", Some("Material"))),
+			"/enums/Material/#Removed-Item-Old"
+		);
+	}
 }

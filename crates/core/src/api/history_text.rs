@@ -1,4 +1,6 @@
-use crate::model::{Deprecation, HistoryChanges, HistoryEntry, HistoryKind, MemberCounts};
+use crate::model::{
+	ChangeStatus, Deprecation, HistoryChanges, HistoryEntry, HistoryKind, MemberCounts,
+};
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HistoryNoun {
@@ -7,7 +9,7 @@ pub enum HistoryNoun {
 }
 
 impl HistoryNoun {
-	const fn word(self) -> &'static str {
+	pub const fn word(self) -> &'static str {
 		match self {
 			Self::Member => "member",
 			Self::Item => "item",
@@ -15,7 +17,20 @@ impl HistoryNoun {
 	}
 }
 
-fn plural(count: u32, noun: &str) -> String {
+#[derive(Clone, Debug, PartialEq, Eq)]
+pub enum HistoryPart {
+	Added,
+	Removed,
+	Changed,
+	Members {
+		counts: MemberCounts,
+		deprecated: u32,
+	},
+	Deprecation(Deprecation),
+	Text(String),
+}
+
+pub fn plural(count: u32, noun: &str) -> String {
 	format!("{count} {noun}{}", if count == 1 { "" } else { "s" })
 }
 
@@ -39,59 +54,100 @@ fn member_parts(members: MemberCounts, deprecated: u32, noun: HistoryNoun) -> Ve
 	.collect()
 }
 
-fn change_parts(changes: &HistoryChanges) -> Vec<String> {
+fn change_parts(changes: &HistoryChanges) -> Vec<HistoryPart> {
 	let mut parts = Vec::new();
-	match changes.deprecation {
-		Some(Deprecation::Set) => parts.push("deprecated".to_owned()),
-		Some(Deprecation::Clear) => parts.push("no longer deprecated".to_owned()),
-		None => {}
+	if let Some(deprecation) = changes.deprecation {
+		parts.push(HistoryPart::Deprecation(deprecation));
 	}
 	parts.extend(
 		changes
 			.fields
 			.iter()
-			.map(|field| format!("{field} updated")),
+			.map(|field| HistoryPart::Text(format!("{field} updated"))),
 	);
 	if changes.tags_added > 0 {
-		parts.push(format!("{} added", plural(changes.tags_added, "tag")));
+		parts.push(HistoryPart::Text(format!(
+			"{} added",
+			plural(changes.tags_added, "tag")
+		)));
 	}
 	if changes.tags_removed > 0 {
-		parts.push(format!("{} removed", plural(changes.tags_removed, "tag")));
+		parts.push(HistoryPart::Text(format!(
+			"{} removed",
+			plural(changes.tags_removed, "tag")
+		)));
 	}
 	parts
 }
 
-pub fn entry_text(entry: &HistoryEntry, noun: HistoryNoun) -> String {
+pub fn entry_parts(entry: &HistoryEntry) -> Vec<HistoryPart> {
 	let has = |kind: HistoryKind| entry.kinds.contains(&kind);
 	let mut parts = Vec::new();
 	if has(HistoryKind::Added) {
-		parts.push("added".to_owned());
+		parts.push(HistoryPart::Added);
 	}
 	if has(HistoryKind::Removed) {
-		parts.push("removed".to_owned());
+		parts.push(HistoryPart::Removed);
 	}
 	if has(HistoryKind::Changed) && entry.changes.is_none() {
-		parts.push("changed".to_owned());
+		parts.push(HistoryPart::Changed);
 	}
-	if let Some(members) = entry.members {
+	if let Some(counts) = entry.members {
 		let deprecated = entry
 			.changes
 			.as_ref()
 			.and_then(|changes| changes.deprecated)
 			.unwrap_or(0);
-		parts.extend(member_parts(members, deprecated, noun));
+		if counts.added + counts.removed + counts.changed + deprecated > 0 {
+			parts.push(HistoryPart::Members { counts, deprecated });
+		}
 	}
 	if let Some(changes) = &entry.changes {
 		parts.extend(change_parts(changes));
 	}
 	if has(HistoryKind::Described) {
-		parts.push("description updated".to_owned());
+		parts.push(HistoryPart::Text("description updated".to_owned()));
 	}
-	let text = parts.join(", ");
+	parts
+}
+
+pub fn entry_status(entry: &HistoryEntry) -> ChangeStatus {
+	if entry.kinds.contains(&HistoryKind::Added) {
+		ChangeStatus::Added
+	} else if entry.kinds.contains(&HistoryKind::Removed) {
+		ChangeStatus::Removed
+	} else {
+		ChangeStatus::Changed
+	}
+}
+
+pub const fn deprecation_text(deprecation: Deprecation) -> &'static str {
+	match deprecation {
+		Deprecation::Set => "deprecated",
+		Deprecation::Clear => "no longer deprecated",
+	}
+}
+
+pub fn capitalize(text: &str) -> String {
 	let mut characters = text.chars();
 	characters.next().map_or_else(String::new, |first| {
 		first.to_uppercase().chain(characters).collect()
 	})
+}
+
+pub fn entry_text(entry: &HistoryEntry, noun: HistoryNoun) -> String {
+	let parts: Vec<String> = entry_parts(entry)
+		.into_iter()
+		.flat_map(|part| match part {
+			HistoryPart::Added => vec!["added".to_owned()],
+			HistoryPart::Removed => vec!["removed".to_owned()],
+			HistoryPart::Changed => vec!["changed".to_owned()],
+			HistoryPart::Members { counts, deprecated } => member_parts(counts, deprecated, noun),
+			HistoryPart::Deprecation(deprecation) => vec![deprecation_text(deprecation).to_owned()],
+			HistoryPart::Text(text) => vec![text],
+		})
+		.collect();
+	capitalize(&parts.join(", "))
 }
 
 #[cfg(test)]

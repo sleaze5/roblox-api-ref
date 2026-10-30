@@ -157,6 +157,34 @@ pub fn change_anchor(kind: OwnerKind, owner: &str, name: &str) -> String {
 	format!("{}.{name}", owner_anchor(kind, owner))
 }
 
+pub fn removed_member_anchor(kind: MemberKind, name: &str) -> String {
+	format!("Removed-{}", member_anchor(kind, name))
+}
+
+pub fn removed_enum_item_anchor(name: &str) -> String {
+	format!("Removed-{}", enum_item_anchor(name))
+}
+
+pub fn removed_member_href(class_name: &str, kind: MemberKind, name: &str) -> String {
+	format!(
+		"{}#{}",
+		class_href(class_name),
+		removed_member_anchor(kind, name)
+	)
+}
+
+pub fn removed_enum_item_href(enum_name: &str, item: &str) -> String {
+	format!(
+		"{}#{}",
+		enum_href(enum_name),
+		removed_enum_item_anchor(item)
+	)
+}
+
+pub fn removed_owner_href(kind: OwnerKind, name: &str) -> String {
+	format!("{REMOVED}#{}", owner_anchor(kind, name))
+}
+
 pub fn update_anchor(version: &str) -> String {
 	format!("update-{version}")
 }
@@ -196,6 +224,18 @@ mod tests {
 			"Enum-Material.Old"
 		);
 		assert_eq!(markdown_href("/classes/Part/"), "/classes/Part.md");
+		assert_eq!(
+			removed_member_href("Instance", MemberKind::Method, "isA"),
+			"/classes/Instance/#Removed-Method-isA"
+		);
+		assert_eq!(
+			removed_enum_item_href("Material", "Old"),
+			"/enums/Material/#Removed-Item-Old"
+		);
+		assert_eq!(
+			removed_owner_href(OwnerKind::Class, "BulkImportService"),
+			"/index/removed/#Class-BulkImportService"
+		);
 	}
 
 	#[test]

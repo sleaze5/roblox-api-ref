@@ -38,9 +38,7 @@ fn stat_ref_href(item: &StatRef) -> Option<String> {
 			..
 		} => member_href(owner, *member_kind, member),
 		StatRef::Update { version, .. } => update_href(version),
-		StatRef::Removed {
-			version, anchor, ..
-		} => format!("{}#{anchor}", update_href(version)),
+		StatRef::Removed { href, .. } => href.clone(),
 		StatRef::Member { kind, owner, name } => member_href(owner, *kind, name),
 	})
 }

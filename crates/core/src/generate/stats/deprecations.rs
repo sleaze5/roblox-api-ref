@@ -68,7 +68,7 @@ fn has_deprecated(tags: &[String]) -> bool {
 	tags.iter().any(|tag| tag == DEPRECATED)
 }
 
-fn removals(updates: &[Update]) -> Vec<Removal> {
+fn removals(api: &Api, updates: &[Update]) -> Vec<Removal> {
 	let mut tracker = Tracker::default();
 	for update in oldest_first(updates) {
 		for owner in &update.owners {
@@ -79,7 +79,7 @@ fn removals(updates: &[Update]) -> Vec<Removal> {
 				}
 				Some(ChangeStatus::Removed) => {
 					tracker.removal(&key, update, |days| Removal {
-						item: removed_owner_ref(owner, &update.version),
+						item: removed_owner_ref(api, owner, &update.version),
 						kind: owner_count_kind(owner.kind),
 						deprecated: has_deprecated(&owner.tags),
 						scriptable: None,
@@ -96,7 +96,7 @@ fn removals(updates: &[Update]) -> Vec<Removal> {
 				}
 				if entry.status == ChangeStatus::Removed {
 					tracker.removal(&key, update, |days| Removal {
-						item: removed_entry_ref(owner, entry, &update.version),
+						item: removed_entry_ref(api, owner, entry, &update.version),
 						kind: entry_kind(entry),
 						deprecated: entry.before_tags().is_some_and(has_deprecated),
 						scriptable: Some(match &entry.values {
@@ -297,7 +297,7 @@ fn table(api: &Api, all: &[Removal], current: &[Deprecated]) -> KindTable {
 }
 
 pub fn deprecation_records(api: &Api, updates: &[Update]) -> RecordGroup {
-	let all = removals(updates);
+	let all = removals(api, updates);
 	let current = current_items(api);
 	let timed: Vec<Measured> = all
 		.iter()

@@ -67,8 +67,9 @@ pub fn signature_records(api: &crate::model::Api, updates: &[Update]) -> RecordG
 				let tally = tallies
 					.entry(item_key(owner.kind, &owner.name, &entry.name))
 					.or_insert_with(|| Tally {
-						item: current_entry_ref(api, owner, entry)
-							.unwrap_or_else(|| removed_entry_ref(owner, entry, &update.version)),
+						item: current_entry_ref(api, owner, entry).unwrap_or_else(|| {
+							removed_entry_ref(api, owner, entry, &update.version)
+						}),
 						signature: 0,
 						defaults: 0,
 					});

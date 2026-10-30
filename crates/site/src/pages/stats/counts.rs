@@ -1,9 +1,10 @@
 use maud::{Markup, html};
 use rapi_core::api::stats_text::{SERVICES_HINT, count_label};
 use rapi_core::icons::Icon;
-use rapi_core::model::{CountKind, CountRow};
+use rapi_core::model::{ChangeStatus, CountKind, CountRow};
 
 use super::tables::{HINT_CLASS, ROW_HINT_CLASS};
+use crate::components::changes::status_count_or_zero;
 use crate::context::Context;
 use crate::html::{IconSize, icon};
 
@@ -54,7 +55,7 @@ pub fn count_table(cx: &Context, rows: &[CountRow], history_start: &str) -> Mark
 								}
 							}
 							td data-number="" { (row.current) }
-							td data-number="" { (row.removed) }
+							td data-number="" { (status_count_or_zero(ChangeStatus::Removed, row.removed)) }
 							td data-number="" { (row.current + row.removed) }
 						}
 					}
@@ -63,7 +64,7 @@ pub fn count_table(cx: &Context, rows: &[CountRow], history_start: &str) -> Mark
 					tr {
 						th scope="row" { "All" }
 						td data-number="" { (current) }
-						td data-number="" { (removed) }
+						td data-number="" { (status_count_or_zero(ChangeStatus::Removed, removed)) }
 						td data-number="" { (current + removed) }
 					}
 				}

@@ -567,3 +567,32 @@ fn keeps_live_enum_item_links() {
 		.is_empty()
 	);
 }
+
+fn removed_links(body: &str) -> Vec<&str> {
+	body.split("href=\"")
+		.skip(1)
+		.filter_map(|rest| rest.split('"').next())
+		.filter(|href| href.contains("#Removed-") || href.starts_with("/index/removed/#"))
+		.collect()
+}
+
+#[test]
+fn links_removed_stat_items_to_their_removed_rows() {
+	let stats = render_page(&CX, "/stats/");
+	let links = removed_links(&stats.body);
+	assert!(links.iter().any(|href| href.contains("#Removed-")));
+	assert!(
+		links
+			.iter()
+			.any(|href| href.starts_with("/index/removed/#"))
+	);
+	for href in links {
+		let (path, anchor) = href.split_once('#').expect("an anchor");
+		assert!(
+			render_page(&CX, path)
+				.body
+				.contains(&format!("id=\"{anchor}\"")),
+			"{href} has no target"
+		);
+	}
+}
