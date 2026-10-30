@@ -1,3 +1,5 @@
+import { hashId } from "./hash-id.ts"
+
 function toggleButtons(article: Element): HTMLButtonElement[] {
 	return [...article.querySelectorAll<HTMLButtonElement>("[data-collapse-toggle]")]
 }
@@ -22,7 +24,7 @@ function syncCollapseAll(article: Element): void {
 }
 
 function revealTarget(article: Element): void {
-	const id = decodeURIComponent(window.location.hash.slice(1))
+	const id = hashId(window.location.hash)
 	const target = id === "" ? null : document.getElementById(id)
 	const group = target?.closest("[data-collapsed]")
 	const button = group?.querySelector<HTMLButtonElement>("[data-collapse-toggle]")

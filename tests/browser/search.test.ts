@@ -129,4 +129,26 @@ describe("search dialog", () => {
 		await page.waitForSelector("text=No results for")
 		expect(await page.getAttribute("dialog input", "aria-expanded")).toBe("false")
 	})
+
+	test("loads the index again when search opens after a failed load", async () => {
+		const page = await openPage("/")
+		let failures = 1
+		await page.route(/\/assets\/search[^/]*\.bin$/, async (route) => {
+			if (failures > 0) {
+				failures -= 1
+				await route.fulfill({ status: 503 })
+			} else {
+				await route.continue()
+			}
+		})
+		await page.keyboard.press("Control+k")
+		await page.waitForSelector("dialog[open] >> text=could not load")
+		await page.keyboard.press("Escape")
+		await page.waitForSelector("dialog", { state: "hidden" })
+		await openSearch(page)
+		expect(await page.locator("[data-search-body]").innerText()).not.toContain(
+			"could not load",
+		)
+		expect(await search(page, "Humanoid.MoveTo")).not.toEqual([])
+	})
 })

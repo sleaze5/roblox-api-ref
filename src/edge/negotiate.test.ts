@@ -126,6 +126,22 @@ describe("negotiate", () => {
 		expect(response.headers.get("Last-Modified")).toBeNull()
 	})
 
+	test.each([
+		["text/html", "GET"],
+		["text/html", "HEAD"],
+		["text/markdown", "GET"],
+		["text/markdown", "HEAD"],
+	])(
+		"answers 404, not 304, to a %s %s for a missing page",
+		async (accept, method) => {
+			const response = await request("/classes/Nope/", accept, method, {
+				"If-Modified-Since": lastModified,
+			})
+			expect(response.status).toBe(404)
+			expect(response.headers.get("Last-Modified")).toBeNull()
+		},
+	)
+
 	test("answers a missing page with a Markdown 404 for agents", async () => {
 		const response = await request("/classes/Nope/", "text/markdown")
 		expect(response.status).toBe(404)
