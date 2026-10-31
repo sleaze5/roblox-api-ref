@@ -396,7 +396,7 @@ The `gen` task reads every update, oldest first, and records each update that to
 ### Links
 
 - Show a link in code in its code color. Underline it on hover and focus. Do not underline it at rest.
-- Show a link in prose in `--color-fg` with a dotted 1px `--color-fg-muted` underline, offset by 4px. On hover, change the underline to `--color-fg`.
+- Show a link in prose in `--color-fg` with a solid 1px `--color-fg-muted` underline, offset by 4px. Keep dotted underlines for labels with tooltips. On hover, change the underline to `--color-fg`.
 - Link every class, member, enum, and documented data type to its Creator Hub page, through the "Open on Creator Hub" action in the page title row or on the member.
 
 ### Filters and URL state
