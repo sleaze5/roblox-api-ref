@@ -5,7 +5,10 @@ use std::sync::OnceLock;
 use rapi_core::api::filter_tags::{FilterTagGroup, filter_tag_groups};
 use rapi_core::generate::facets::FacetSlugs;
 use rapi_core::model::{Api, Release, Stats, Update};
-use rapi_routes::{FacetKind, class_href, enum_href, enum_item_href, member_href, type_href};
+use rapi_routes::{
+	FacetKind, OwnerKind, class_href, enum_href, enum_item_href, member_href, removed_owner_href,
+	type_href,
+};
 
 pub struct Context {
 	pub api: Api,
@@ -85,6 +88,24 @@ impl Context {
 
 	pub fn absolute_url(&self, path: &str) -> String {
 		absolute_url(&self.origin, path)
+	}
+
+	pub fn is_removed_owner(&self, kind: OwnerKind, name: &str) -> bool {
+		let removed = match kind {
+			OwnerKind::Class => self.api.removed_classes(),
+			OwnerKind::Enum => self.api.removed_enums(),
+		};
+		removed.iter().any(|owner| owner.name == name)
+	}
+
+	pub fn owner_href(&self, kind: OwnerKind, name: &str) -> Option<String> {
+		match kind {
+			OwnerKind::Class if self.api.classes.contains_key(name) => Some(class_href(name)),
+			OwnerKind::Enum if self.api.enums.contains_key(name) => Some(enum_href(name)),
+			_ => self
+				.is_removed_owner(kind, name)
+				.then(|| removed_owner_href(kind, name)),
+		}
 	}
 }
 
