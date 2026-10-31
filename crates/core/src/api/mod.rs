@@ -1,6 +1,7 @@
 pub mod access;
 pub mod code;
 pub mod default_value;
+pub mod doc_link_hint;
 pub mod docs_links;
 pub mod facets;
 pub mod filter_tags;

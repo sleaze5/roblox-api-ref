@@ -1,4 +1,5 @@
 use maud::{Markup, html};
+use rapi_core::api::doc_link_hint::doc_link_hint;
 use rapi_core::model::{Doc, DocElement, DocLink, DocNode, DocTag};
 use rapi_routes::{class_href, enum_href, enum_item_href, member_href, type_href};
 
@@ -34,11 +35,11 @@ fn anchor(element: &DocElement) -> Markup {
 	html! {
 		@match &element.link {
 			None => (children(&element.children)),
-			Some(DocLink::External { url }) => a href=(url) target=(EXTERNAL_TARGET) rel=(EXTERNAL_REL) {
+			Some(link @ DocLink::External { url }) => a href=(url) target=(EXTERNAL_TARGET) rel=(EXTERNAL_REL) data-tooltip=(doc_link_hint(link)) {
 				(children(&element.children))
 				span class="sr-only" { " (opens in a new tab)" }
 			},
-			Some(link) => a href=(doc_link_href(link)) { (children(&element.children)) },
+			Some(link) => a href=(doc_link_href(link)) data-tooltip=(doc_link_hint(link)) { (children(&element.children)) },
 		}
 	}
 }
