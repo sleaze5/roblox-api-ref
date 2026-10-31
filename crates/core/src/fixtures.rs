@@ -31,6 +31,7 @@ pub fn member(name: &str, detail: MemberDetail) -> Member {
 		preferred: None,
 		preferred_target: None,
 		description: None,
+		sample: None,
 		detail,
 	}
 }
@@ -79,5 +80,6 @@ pub fn class(name: &str, members: Vec<Member>, superclass: Option<&str>) -> Clas
 		subclasses: Vec::new(),
 		used_by: Vec::new(),
 		description: None,
+		sample: None,
 	}
 }

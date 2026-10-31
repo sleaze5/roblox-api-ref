@@ -7,6 +7,7 @@ pub mod history;
 pub mod index;
 pub mod members;
 pub mod page;
+pub mod sample;
 pub mod tags;
 pub mod tree;
 pub mod updates;

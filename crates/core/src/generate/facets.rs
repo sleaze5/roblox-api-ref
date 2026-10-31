@@ -234,6 +234,7 @@ mod tests {
 			preferred: None,
 			preferred_target: None,
 			description: None,
+			sample: None,
 			detail: MemberDetail::Property {
 				ty: ApiType {
 					category: TypeCategory::Primitive,
@@ -264,6 +265,7 @@ mod tests {
 			subclasses: Vec::new(),
 			used_by: Vec::new(),
 			description: None,
+			sample: None,
 		}
 	}
 

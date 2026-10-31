@@ -1,13 +1,15 @@
 use maud::{Markup, html};
 use rapi_core::api::code::{CodeToken, CodeTone};
 
-const fn tone_class(tone: CodeTone) -> Option<&'static str> {
+pub const fn tone_class(tone: CodeTone) -> Option<&'static str> {
 	match tone {
 		CodeTone::SelfName => Some("text-fg-muted"),
 		CodeTone::Type => Some("text-code-type"),
 		CodeTone::Constant => Some("text-code-constant"),
 		CodeTone::String => Some("text-code-string"),
 		CodeTone::Function => Some("text-code-function"),
+		CodeTone::Keyword => Some("text-code-keyword"),
+		CodeTone::Comment => Some("text-fg-faint"),
 		CodeTone::Name => Some("font-medium text-fg-bright"),
 		CodeTone::Parameter | CodeTone::Punctuation | CodeTone::Plain => None,
 	}
