@@ -6,7 +6,7 @@ use rapi_core::model::{
 	ChangeDetail, ChangeEntry, ChangeStatus, DescriptionDetail, DescriptionPart, DetailTone,
 	DetailValue, EntryValues, OwnerChanges, Update,
 };
-use rapi_routes::{OwnerKind, change_anchor, class_href, enum_href, owner_anchor};
+use rapi_routes::{OwnerKind, change_anchor, owner_anchor};
 
 use crate::components::changes::{ChangedValue, change_mark, change_parts, parts_text};
 use crate::components::doc::doc_text;
@@ -131,8 +131,8 @@ fn detail_value_text(cx: &Context, value: &DetailValue) -> Markup {
 			DetailTone::Text => span { (value.text) },
 			DetailTone::Code => code { (value.text) },
 			DetailTone::Type => {
-				@if cx.api.classes.contains_key(&value.text) {
-					code { a href=(class_href(&value.text)) class="text-code-type" { (value.text) } }
+				@if let Some(href) = cx.owner_href(OwnerKind::Class, &value.text) {
+					code { a href=(href) class="text-code-type" { (value.text) } }
 				} @else {
 					code class="text-code-type" { (value.text) }
 				}
@@ -302,18 +302,7 @@ const fn kind_noun(kind: OwnerKind) -> &'static str {
 }
 
 fn owner_name(cx: &Context, owner: &OwnerChanges) -> Markup {
-	let href = match owner.kind {
-		OwnerKind::Class => cx
-			.api
-			.classes
-			.contains_key(&owner.name)
-			.then(|| class_href(&owner.name)),
-		OwnerKind::Enum => cx
-			.api
-			.enums
-			.contains_key(&owner.name)
-			.then(|| enum_href(&owner.name)),
-	};
+	let href = cx.owner_href(owner.kind, &owner.name);
 	html! {
 		code class="min-w-0 truncate font-semibold text-code-type" {
 			@match href {
