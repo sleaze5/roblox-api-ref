@@ -154,6 +154,7 @@ Use this scale. Do not use other sizes.
 - Filter menu: `funnel-simple`
 - Copy a link: `link-simple`
 - Copied: `check`
+- Copy a code sample: `copy`
 - Wrap the lines of a code sample: `arrow-u-down-left`
 - History: `clock-counter-clockwise`
 - Open on Creator Hub, and a prose link that leaves the site: `arrow-square-out`
@@ -278,7 +279,7 @@ The Classes listing shows the whole class tree, fully expanded.
 - The `gen` task formats each sample with StyLua (tabs at width 4, double quotes, call parentheses always, simple statements collapsed, a 120 column guide), uses LF line endings, keeps at most two line breaks in a row, and trims the edges. A sample that does not parse keeps its original text.
 - The `gen` task highlights each sample from its Luau syntax tree and the API names, with the GitHub Dark code colors: keywords and operators in `--color-code-keyword`, strings in `--color-code-string`, numbers, booleans, `nil`, enum items, and built-in globals such as `game`, `workspace`, `script`, and `math` in `--color-code-constant`, called functions, methods, and declared functions in `--color-code-function`, types, data types, and enum names in `--color-code-type`, comments in `--color-fg-faint`, and everything else in `--color-fg`. Sample code has no links.
 - Show a sample under a "Code sample" caption in `--color-fg-muted` at weight 500, as a `pre` on `--color-surface` with a 1px `--color-line` border, `--radius-md`, and 12px padding. Number every line in a right-aligned `--color-fg-faint` gutter that stays in place while long lines scroll sideways inside the block. A wrapped line continues under its code with an empty gutter. Copying never includes the numbers.
-- Two actions sit in the top right corner of the block, shown on hover and focus: a 24px icon toggle that wraps long lines, named "Wrap lines" or "Unwrap lines" in its tooltip, and a "Copy" button that copies the source and reads "Copied" in `--color-success` for 1.5 seconds. Without JavaScript, the actions are hidden.
+- Two actions sit in the top right corner of the block, shown on hover and focus: a 24px icon toggle that wraps long lines, named "Wrap lines" or "Unwrap lines" in its tooltip, and a 24px `copy` icon button, named "Copy code" in its tooltip, that copies the source and reads "Copied!" in `--color-success` for 1 second before it returns to the icon. Without JavaScript, the actions are hidden.
 
 ### Signatures
 

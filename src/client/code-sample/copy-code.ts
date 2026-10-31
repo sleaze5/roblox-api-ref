@@ -1,7 +1,8 @@
 import { announce } from "../announce.ts"
+import { hideTooltip } from "../tooltip/tooltip.ts"
 
-const copiedDuration = 1500
-const copiedLabel = "Copied"
+const copiedDuration = 1000
+const copiedLabel = "Copied!"
 
 export async function copyCode(
 	button: HTMLButtonElement,
@@ -20,12 +21,15 @@ export async function copyCode(
 		announce("The code could not be copied. Select it and copy it instead.")
 		return
 	}
-	const idle = button.textContent
+	const tooltip = button.getAttribute("data-tooltip") ?? ""
+	hideTooltip(button)
+	button.removeAttribute("data-tooltip")
 	button.setAttribute("data-copied", "")
 	button.textContent = copiedLabel
 	announce("Code copied")
 	setTimeout(() => {
 		button.removeAttribute("data-copied")
-		button.textContent = idle
+		button.textContent = ""
+		button.setAttribute("data-tooltip", tooltip)
 	}, copiedDuration)
 }

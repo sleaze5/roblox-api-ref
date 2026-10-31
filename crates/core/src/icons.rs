@@ -87,7 +87,7 @@ impl Icon {
 		Self::X,
 	];
 
-	pub const MASKS: [Self; 22] = [
+	pub const MASKS: [Self; 23] = [
 		Self::ArrowSquareOut,
 		Self::ArrowUDownLeft,
 		Self::ArrowUUpLeft,
@@ -96,6 +96,7 @@ impl Icon {
 		Self::CaretRight,
 		Self::Check,
 		Self::ClockCounterClockwise,
+		Self::Copy,
 		Self::Cube,
 		Self::Folders,
 		Self::Function,

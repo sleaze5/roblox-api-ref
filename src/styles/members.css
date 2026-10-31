@@ -371,13 +371,27 @@
 
 @utility copy-code {
 	@apply code-action;
-	padding-inline: calc(var(--spacing) * 2);
+	position: relative;
+	min-width: calc(var(--spacing) * 6);
 	font-family: var(--font-sans);
 	font-size: var(--text-xs);
 	font-weight: var(--font-weight-medium);
 
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 4px;
+		background-color: currentColor;
+		mask: url("../generated/icons/copy.svg") center / contain no-repeat;
+	}
+
 	&[data-copied] {
+		padding-inline: calc(var(--spacing) * 2);
 		color: var(--color-success);
+
+		&::before {
+			content: none;
+		}
 	}
 }
 

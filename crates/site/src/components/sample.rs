@@ -29,7 +29,7 @@ pub fn code_sample(sample: Option<&CodeSample>) -> Markup {
 					}
 					div data-code-actions="" hidden class="code-actions" {
 						button type="button" data-wrap-code="" aria-pressed="false" aria-label="Wrap lines" data-tooltip="Wrap lines" class="wrap-code" {}
-						button type="button" data-copy-code="" class="copy-code" { "Copy" }
+						button type="button" data-copy-code="" aria-label="Copy code" data-tooltip="Copy code" class="copy-code" {}
 					}
 				}
 			}
