@@ -195,10 +195,10 @@ mod tests {
 		resolve_href(&names, href)
 	}
 
-	fn external(url: &str) -> Option<DocLink> {
-		Some(DocLink::External {
+	fn external(url: &str) -> DocLink {
+		DocLink::External {
 			url: url.to_owned(),
-		})
+		}
 	}
 
 	#[test]
@@ -232,25 +232,29 @@ mod tests {
 	fn opens_everything_else_at_its_absolute_url() {
 		assert_eq!(
 			resolve("/reference/engine/classes/Gone"),
-			external("https://create.roblox.com/docs/reference/engine/classes/Gone")
+			Some(external(
+				"https://create.roblox.com/docs/reference/engine/classes/Gone"
+			))
 		);
 		assert_eq!(
 			resolve("../../../projects/teleport.md#migrate-to-secure-teleports"),
-			external(
+			Some(external(
 				"https://create.roblox.com/docs/projects/teleport#migrate-to-secure-teleports"
-			)
+			))
 		);
 		assert_eq!(
 			resolve("../../../projects/assets/index.md#asset-uris"),
-			external("https://create.roblox.com/docs/projects/assets#asset-uris")
+			Some(external(
+				"https://create.roblox.com/docs/projects/assets#asset-uris"
+			))
 		);
 		assert_eq!(
 			resolve("/luau/strings.md"),
-			external("https://create.roblox.com/docs/luau/strings")
+			Some(external("https://create.roblox.com/docs/luau/strings"))
 		);
 		assert_eq!(
 			resolve("https://en.wikipedia.org/wiki/MD5"),
-			external("https://en.wikipedia.org/wiki/MD5")
+			Some(external("https://en.wikipedia.org/wiki/MD5"))
 		);
 		assert_eq!(resolve("javascript:alert(1)"), None);
 	}
