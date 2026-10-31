@@ -1,8 +1,9 @@
 use maud::{Markup, html};
-use rapi_core::api::doc_link_hint::doc_link_hint;
+use rapi_core::api::doc_link_hint::{doc_link_hint, doc_link_kind};
 use rapi_core::model::{Doc, DocElement, DocLink, DocNode, DocTag};
 use rapi_routes::{class_href, enum_href, enum_item_href, member_href, type_href};
 
+use crate::context::Context;
 use crate::html::{EXTERNAL_REL, EXTERNAL_TARGET, classes};
 
 pub fn doc_link_href(link: &DocLink) -> String {
@@ -20,34 +21,41 @@ pub fn doc_link_href(link: &DocLink) -> String {
 	}
 }
 
-fn children(nodes: &[DocNode]) -> Markup {
+fn children(cx: &Context, nodes: &[DocNode]) -> Markup {
 	html! {
 		@for node in nodes {
 			@match node {
 				DocNode::Text(text) => (text),
-				DocNode::Element(element) => (element_markup(element)),
+				DocNode::Element(element) => (element_markup(cx, element)),
 			}
 		}
 	}
 }
 
-fn anchor(element: &DocElement) -> Markup {
+fn class_icon_index(cx: &Context, link: &DocLink) -> Option<u32> {
+	match link {
+		DocLink::Class { name } => cx.api.classes.get(name).and_then(|item| item.icon),
+		_ => None,
+	}
+}
+
+fn anchor(cx: &Context, element: &DocElement) -> Markup {
 	html! {
 		@match &element.link {
-			None => (children(&element.children)),
+			None => (children(cx, &element.children)),
 			Some(link @ DocLink::External { url }) => a href=(url) target=(EXTERNAL_TARGET) rel=(EXTERNAL_REL) data-tooltip=(doc_link_hint(link)) {
-				(children(&element.children))
+				(children(cx, &element.children))
 				span class="sr-only" { " (opens in a new tab)" }
 			},
-			Some(link) => a href=(doc_link_href(link)) data-tooltip=(doc_link_hint(link)) { (children(&element.children)) },
+			Some(link) => a href=(doc_link_href(link)) data-tooltip=(doc_link_hint(link)) data-tooltip-kind=[doc_link_kind(link)] data-tooltip-icon=[class_icon_index(cx, link)] { (children(cx, &element.children)) },
 		}
 	}
 }
 
-fn element_markup(element: &DocElement) -> Markup {
-	let inner = || children(&element.children);
+fn element_markup(cx: &Context, element: &DocElement) -> Markup {
+	let inner = || children(cx, &element.children);
 	match element.tag {
-		DocTag::A => anchor(element),
+		DocTag::A => anchor(cx, element),
 		DocTag::Br => html! { br; },
 		DocTag::Code => html! { code { (inner()) } },
 		DocTag::Em => html! { em { (inner()) } },
@@ -60,10 +68,10 @@ fn element_markup(element: &DocElement) -> Markup {
 	}
 }
 
-pub fn doc_text(doc: Option<&Doc>, class: &str) -> Markup {
+pub fn doc_text(cx: &Context, doc: Option<&Doc>, class: &str) -> Markup {
 	html! {
 		@if let Some(doc) = doc {
-			div class=(classes(&["doc-text", class])) { (children(doc)) }
+			div class=(classes(&["doc-text", class])) { (children(cx, doc)) }
 		}
 	}
 }

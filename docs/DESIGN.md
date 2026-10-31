@@ -396,7 +396,7 @@ The `gen` task reads every update, oldest first, and records each update that to
 ### Links
 
 - Show a link in code in its code color. Underline it on hover and focus. Do not underline it at rest.
-- Show a link in prose in `--color-fg` with a solid 1px `--color-fg-muted` underline, offset by 4px. Keep dotted underlines for labels with tooltips. On hover, change the underline to `--color-fg`. A link in a description has a tooltip that names where it goes: the kind and the name of a class, member, or data type page, such as "Class Part", "Method Instance:Clone", or "Data type Vector3", the full Luau path of an enum or enum item page, such as "Enum.KeyCode" or "Enum.PreferredInput.MicroGamepad", or the host of any other site without `www.`, such as "create.roblox.com".
+- Show a link in prose in `--color-fg` with a solid 1px `--color-fg-muted` underline, offset by 4px. Keep dotted underlines for labels with tooltips. On hover, change the underline to `--color-fg`. A link in a description has a tooltip that names where it goes. A link to a page on this site shows the 14px kind icon of its target, the Studio icon for a class, then the target as code would write it: "Class Part", "Instance.Name", "Instance:Clone()" with empty parentheses whatever the parameters, "Enum.KeyCode", "Enum.PreferredInput.MicroGamepad", or "Data type Vector3". A link to another site shows only its host without `www.`, such as "create.roblox.com".
 - Link every class, member, enum, and documented data type to its Creator Hub page, through the "Open on Creator Hub" action in the page title row or on the member.
 
 ### Filters and URL state

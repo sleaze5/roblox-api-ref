@@ -187,18 +187,18 @@ fn description_label(detail: &DescriptionDetail) -> Markup {
 	}
 }
 
-pub fn description_changes(details: &[DescriptionDetail]) -> Markup {
+pub fn description_changes(cx: &Context, details: &[DescriptionDetail]) -> Markup {
 	html! {
 		@if !details.is_empty() {
 			div class="flex flex-col gap-3 change-indent" {
 				@for detail in details {
 					div class="flex flex-col gap-1.5" {
 						p class="text-fg-faint" { (description_label(detail)) }
-						(doc_text(detail.after.as_ref(), "member-description"))
+						(doc_text(cx, detail.after.as_ref(), "member-description"))
 						@if let Some(before) = &detail.before {
 							details class="change-previous" {
 								summary { "Previous description" }
-								(doc_text(Some(before), "member-description"))
+								(doc_text(cx, Some(before), "member-description"))
 							}
 						}
 					}
@@ -289,7 +289,7 @@ fn change_entry_row(
 			}
 			@if !tags.is_empty() { (tag_list(&tags, "change-indent")) }
 			(change_details(cx, &entry.details))
-			(description_changes(&entry.descriptions))
+			(description_changes(cx, &entry.descriptions))
 		}
 	}
 }
@@ -373,7 +373,7 @@ pub fn owner_group(
 				Heading::H4 => h4 id=(title_id) data-change=[change] class="change-line" { (heading_content) },
 			}
 			(change_details(cx, &owner.details))
-			(description_changes(&owner.descriptions))
+			(description_changes(cx, &owner.descriptions))
 			@if !owner.entries.is_empty() {
 				ul class="flex flex-col gap-2" {
 					@for entry in &owner.entries {

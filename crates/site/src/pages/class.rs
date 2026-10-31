@@ -114,7 +114,7 @@ fn class_header(cx: &Context, item: &Class, ancestors: &[&Class]) -> Markup {
 		"Classes with the same superclass, including this class."
 	};
 	header.render(cx, Some(html! {
-		(doc_text(item.description.as_ref(), "max-w-prose text-base text-fg"))
+		(doc_text(cx, item.description.as_ref(), "max-w-prose text-base text-fg"))
 		(tag_list(&dated_tags(plain_tags(&item.tags), item.history.as_ref()), ""))
 		(fact_list(&html! {
 			(fact("Memory category", Some("The memory category that the API dump assigns to this class."), &html! {

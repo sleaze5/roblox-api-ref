@@ -67,7 +67,7 @@ struct DetailRow<'a> {
 	description: Option<&'a Doc>,
 }
 
-fn detail_table(caption: &str, heading: &str, rows: &[DetailRow]) -> Markup {
+fn detail_table(cx: &Context, caption: &str, heading: &str, rows: &[DetailRow]) -> Markup {
 	let described = rows.iter().any(|row| row.description.is_some());
 	html! {
 		@if !rows.is_empty() {
@@ -87,7 +87,7 @@ fn detail_table(caption: &str, heading: &str, rows: &[DetailRow]) -> Markup {
 						@for row in rows {
 							tr {
 								td data-code="" { code { (code_tokens(&row.code)) } }
-								@if described { td { (doc_text(row.description, "")) } }
+								@if described { td { (doc_text(cx, row.description, "")) } }
 							}
 						}
 					}
@@ -97,7 +97,7 @@ fn detail_table(caption: &str, heading: &str, rows: &[DetailRow]) -> Markup {
 	}
 }
 
-fn member_details(member: &Member) -> Markup {
+fn member_details(cx: &Context, member: &Member) -> Markup {
 	let parameters: Vec<DetailRow> = member
 		.parameters()
 		.iter()
@@ -125,8 +125,8 @@ fn member_details(member: &Member) -> Markup {
 		_ => Vec::new(),
 	};
 	html! {
-		(detail_table("Parameters", "Parameter", &parameters))
-		(detail_table("Returns", "Type", &returns))
+		(detail_table(cx, "Parameters", "Parameter", &parameters))
+		(detail_table(cx, "Returns", "Type", &returns))
 	}
 }
 
@@ -145,7 +145,7 @@ fn preferred(member: &Member) -> Markup {
 	}
 }
 
-fn member_card(member: &Member, owner: &str, own: bool) -> Markup {
+fn member_card(cx: &Context, member: &Member, owner: &str, own: bool) -> Markup {
 	let kind = member.kind();
 	let anchor = member_anchor(kind, &member.name);
 	let href = if own {
@@ -171,9 +171,9 @@ fn member_card(member: &Member, owner: &str, own: bool) -> Markup {
 					(creator_hub_link(&class_docs_href(owner, Some(&member.name)), &member.name))
 				}
 			}
-			(doc_text(member.description.as_ref(), "member-description"))
+			(doc_text(cx, member.description.as_ref(), "member-description"))
 			(tag_list(&dated_tags(member_tags(member), member.history.as_ref()), ""))
-			(member_details(member))
+			(member_details(cx, member))
 			(preferred(member))
 			@if own {
 				(history_list(member.history.as_ref(), &change_anchor(OwnerKind::Class, owner, &member.name), HistoryNoun::Member, ""))
@@ -182,10 +182,10 @@ fn member_card(member: &Member, owner: &str, own: bool) -> Markup {
 	}
 }
 
-fn cards(members: &[&Member], owner: &str, own: bool) -> Markup {
+fn cards(cx: &Context, members: &[&Member], owner: &str, own: bool) -> Markup {
 	html! {
 		ul class="flex flex-col gap-4" {
-			@for member in members { (member_card(member, owner, own)) }
+			@for member in members { (member_card(cx, member, owner, own)) }
 		}
 	}
 }
@@ -229,11 +229,11 @@ fn member_group(
 								span class="text-fg-faint" { "Property category" }
 								a href=(cx.facet_href(FacetKind::PropertyCategory, &category)) class="hover:text-fg hover:underline" { (category) }
 							}
-							(cards(&list, owner, own))
+							(cards(cx, &list, owner, own))
 						}
 					}
 				} @else {
-					(cards(members, owner, own))
+					(cards(cx, members, owner, own))
 				}
 			}
 		}

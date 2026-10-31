@@ -3,6 +3,7 @@ import {
 	hintTarget,
 	tapTarget,
 	tooltipTarget,
+	type TooltipIcon,
 	type TooltipTarget,
 } from "./tooltip-target.ts"
 
@@ -15,12 +16,25 @@ let timer: ReturnType<typeof setTimeout> | undefined
 let lastHidden = 0
 let pressed: HTMLElement | undefined
 
+function iconElement(icon: TooltipIcon): HTMLElement {
+	const element = document.createElement("span")
+	element.className = "kind-icon"
+	element.dataset["kind"] = icon.kind
+	if (icon.index !== null) {
+		element.style.setProperty("--icon", icon.index)
+	}
+	return element
+}
+
 function show(target: TooltipTarget | undefined): void {
 	if (tip === null || target === undefined) {
 		return
 	}
 	anchor = target.element
 	tip.textContent = target.text
+	if (target.icon !== undefined) {
+		tip.prepend(iconElement(target.icon))
+	}
 	if (!tip.matches(":popover-open")) {
 		tip.showPopover()
 	}

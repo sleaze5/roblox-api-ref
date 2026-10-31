@@ -1,12 +1,31 @@
+export type TooltipIcon = {
+	kind: string
+	index: string | null
+}
+
 export type TooltipTarget = {
 	element: HTMLElement
 	text: string
+	icon?: TooltipIcon
+}
+
+function hintIcon(element: HTMLElement): TooltipIcon | undefined {
+	const kind = element.getAttribute("data-tooltip-kind")
+	return kind === null
+		? undefined
+		: { kind, index: element.getAttribute("data-tooltip-icon") }
 }
 
 export function hintTarget(element: Element): TooltipTarget | undefined {
 	const hinted = element.closest<HTMLElement>("[data-tooltip]")
 	const text = hinted?.getAttribute("data-tooltip") ?? ""
-	return hinted === null || text === "" ? undefined : { element: hinted, text }
+	if (hinted === null || text === "") {
+		return undefined
+	}
+	const icon = hintIcon(hinted)
+	return icon === undefined
+		? { element: hinted, text }
+		: { element: hinted, text, icon }
 }
 
 function isClipped(element: HTMLElement): boolean {

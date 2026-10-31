@@ -27,7 +27,7 @@ pub fn copy_link(name: &str, href: &str) -> Markup {
 	}
 }
 
-fn enum_item_row(owner: &Enum, item: &EnumItem) -> Markup {
+fn enum_item_row(cx: &Context, owner: &Enum, item: &EnumItem) -> Markup {
 	let anchor = enum_item_anchor(&item.name);
 	let tokens = [
 		token("Enum.", CodeTone::Punctuation),
@@ -43,7 +43,7 @@ fn enum_item_row(owner: &Enum, item: &EnumItem) -> Markup {
 				code class="member-code" { (code_tokens(&tokens)) }
 				div class="member-actions" { (copy_link(&item.name, &format!("#{anchor}"))) }
 			}
-			(doc_text(item.description.as_ref(), "member-description"))
+			(doc_text(cx, item.description.as_ref(), "member-description"))
 			(tag_list(&dated_tags(plain_tags(&item.tags), item.history.as_ref()), ""))
 			@if !item.legacy_names.is_empty() {
 				p class="text-fg-muted" {
@@ -98,7 +98,7 @@ pub fn enum_page(cx: &Context, item: &Enum) -> Markup {
 	let body = html! {
 		article class="flex flex-col gap-6" {
 			(header.render(cx, Some(html! {
-				(doc_text(item.description.as_ref(), "max-w-prose text-base text-fg"))
+				(doc_text(cx, item.description.as_ref(), "max-w-prose text-base text-fg"))
 				(tag_list(&dated_tags(plain_tags(&item.tags), item.history.as_ref()), ""))
 				(fact_list(&html! {
 					(fact("Items", Some("Enum items that this enum defines."), &html! { (item.items.len()) }))
@@ -116,7 +116,7 @@ pub fn enum_page(cx: &Context, item: &Enum) -> Markup {
 						span class="text-sm font-normal text-fg-faint" { (item.items.len()) }
 					}
 					ul class="flex flex-col gap-4" {
-						@for entry in &item.items { (enum_item_row(item, entry)) }
+						@for entry in &item.items { (enum_item_row(cx, item, entry)) }
 					}
 				}
 				(usage_sections(cx, &item.used_by, &docs_name))
