@@ -2,8 +2,8 @@ use indexmap::IndexMap;
 use rapi_routes::MemberKind;
 
 use super::docs::apply_api_docs;
-use super::samples::apply_code_samples;
 use super::facets::collect_facets;
+use super::samples::apply_code_samples;
 use crate::dump::{
 	ApiDocs, Dump, DumpCapabilities, DumpEnumItem, DumpMember, DumpParameter, DumpReturns,
 	DumpSecurity, DumpTag, DumpType, RobloxVersion,

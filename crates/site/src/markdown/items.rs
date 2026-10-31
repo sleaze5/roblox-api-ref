@@ -13,9 +13,9 @@ use rapi_core::api::signature::{inline_tokens, signature_parts};
 use rapi_core::api::tags::{member_tags, plain_tags};
 use rapi_core::js::{compare_names, format_date};
 use rapi_core::model::{
-	CodeSample,
-	AccessTier, Class, DataType, Enum, EnumItem, Facet, FacetAccess, FacetUse, HistoryEvent,
-	ItemHistory, Member, MemberDetail, Removed, Security, TypeRole, TypeUsage, UseKind,
+	AccessTier, Class, CodeSample, DataType, Enum, EnumItem, Facet, FacetAccess, FacetUse,
+	HistoryEvent, ItemHistory, Member, MemberDetail, Removed, Security, TypeRole, TypeUsage,
+	UseKind,
 };
 use rapi_routes::{
 	MemberKind, OwnerKind, change_anchor, class_href, enum_href, type_href, update_href,

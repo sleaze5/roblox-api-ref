@@ -1,0 +1,31 @@
+import { announce } from "../announce.ts"
+
+const copiedDuration = 1500
+const copiedLabel = "Copied"
+
+export async function copyCode(
+	button: HTMLButtonElement,
+	sample: HTMLElement,
+): Promise<void> {
+	if (button.hasAttribute("data-copied")) {
+		return
+	}
+	const lines = Array.from(
+		sample.querySelectorAll("[data-code-line]"),
+		(line) => line.textContent,
+	)
+	try {
+		await navigator.clipboard.writeText(lines.join("\n"))
+	} catch {
+		announce("The code could not be copied. Select it and copy it instead.")
+		return
+	}
+	const idle = button.textContent
+	button.setAttribute("data-copied", "")
+	button.textContent = copiedLabel
+	announce("Code copied")
+	setTimeout(() => {
+		button.removeAttribute("data-copied")
+		button.textContent = idle
+	}, copiedDuration)
+}

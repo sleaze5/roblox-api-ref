@@ -3,7 +3,7 @@ use stylua_lib::{
 	OutputVerification, QuoteStyle, SortRequiresConfig, SpaceAfterFunctionNames, format_code,
 };
 
-const COLUMN_WIDTH: usize = 88;
+const COLUMN_WIDTH: usize = 120;
 
 fn config() -> Config {
 	Config {

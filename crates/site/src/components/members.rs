@@ -17,9 +17,9 @@ use rapi_routes::{
 
 use crate::components::code::code_tokens;
 use crate::components::doc::doc_text;
-use crate::components::sample::code_sample;
 use crate::components::filters::{FieldCount, filter_field};
 use crate::components::history::history_list;
+use crate::components::sample::code_sample;
 use crate::components::tags::{dated_tags, tag_list};
 use crate::context::Context;
 use crate::html::{IconSize, creator_hub_link, icon, sprite_icon};
@@ -178,7 +178,7 @@ fn member_card(cx: &Context, member: &Member, owner: &str, own: bool) -> Markup 
 			(preferred(member))
 			@if own {
 				(history_list(member.history.as_ref(), &change_anchor(OwnerKind::Class, owner, &member.name), HistoryNoun::Member, ""))
-				(code_sample(cx, member.sample.as_ref()))
+				(code_sample(member.sample.as_ref()))
 			}
 		}
 	}

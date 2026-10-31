@@ -16,8 +16,8 @@ use crate::components::doc::doc_text;
 use crate::components::facts::{fact, fact_list};
 use crate::components::history::{history_facts, history_list};
 use crate::components::members::{member_filter_bar, member_section, section_id};
-use crate::components::sample::code_sample;
 use crate::components::page::{HeaderIcon, PageHeader, class_crumbs};
+use crate::components::sample::code_sample;
 use crate::components::tags::{dated_tags, tag_list};
 use crate::components::tree::class_tree;
 use crate::components::usage::{ROLE_SECTIONS, usage_count, usage_sections};
@@ -130,7 +130,7 @@ fn class_header(cx: &Context, item: &Class, ancestors: &[&Class]) -> Markup {
 		(access_facts(&item.members))
 		(fact_list(&history_facts(item.history.as_ref(), OwnerKind::Class, &item.name, cx.api.history_start.as_deref())))
 		(history_list(item.history.as_ref(), &owner_anchor(OwnerKind::Class, &item.name), HistoryNoun::Member, ""))
-		(code_sample(cx, item.sample.as_ref()))
+		(code_sample(item.sample.as_ref()))
 	}))
 }
 

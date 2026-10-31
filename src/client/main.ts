@@ -1,3 +1,4 @@
+import { initCodeSamples } from "./code-sample/code-sample.ts"
 import { initCopyLinks } from "./copy-link.ts"
 import { initDrawer } from "./drawer.ts"
 import { initListFilter } from "./filters/list-filter.ts"
@@ -10,6 +11,7 @@ import { initStickyRows } from "./tree/sticky-rows.ts"
 initSearchTrigger()
 initTooltips()
 initCopyLinks()
+initCodeSamples()
 initDrawer()
 initStickyRows()
 

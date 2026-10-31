@@ -1,12 +1,14 @@
 mod format;
 mod highlight;
+mod lines;
 
 use std::collections::HashMap;
 
 use indexmap::IndexMap;
 
-pub use self::format::format_sample;
-pub use self::highlight::highlight;
+use self::format::format_sample;
+use self::highlight::highlight;
+use self::lines::split_lines;
 use super::docs::ApiNames;
 use crate::dump::ApiDocs;
 use crate::model::{Class, CodeSample, DataType, Enum};
@@ -17,14 +19,14 @@ struct Samples<'a, 'b> {
 	cache: HashMap<&'b str, Option<CodeSample>>,
 }
 
-impl<'b> Samples<'_, 'b> {
+impl Samples<'_, '_> {
 	fn get(&mut self, key: &str) -> Option<CodeSample> {
 		let code = self.docs.get(key)?.code_sample.as_deref()?;
 		if let Some(found) = self.cache.get(code) {
 			return found.clone();
 		}
 		let sample = format_sample(code).map(|source| CodeSample {
-			tokens: highlight(&self.names, &source),
+			lines: split_lines(highlight(&self.names, &source)),
 			source,
 		});
 		self.cache.insert(code, sample.clone());

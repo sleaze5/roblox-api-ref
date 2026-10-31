@@ -82,6 +82,7 @@ Code uses the GitHub Dark syntax colors:
 - `--color-code-constant` (`#79c0ff`): numbers, booleans, `nil`, and enum items
 - `--color-code-string` (`#a5d6ff`): string values
 - `--color-code-function` (`#d2a8ff`): method names and constructors such as `new`
+- `--color-code-keyword` (`#ff7b72`): keywords and operators in code samples
 
 The class prefix of a member signature, such as `Part.` in `Part.Anchored`, names `self`. It uses `--color-fg-muted`, not `--color-code-type`. An enum item is written like an enum value in a signature, such as `Enum.ActuatorRelativeTo.Attachment0 = 0`: `Enum.` in `--color-fg`, the enum name in `--color-code-type`, and the item name and value in `--color-code-constant`.
 
@@ -153,6 +154,7 @@ Use this scale. Do not use other sizes.
 - Filter menu: `funnel-simple`
 - Copy a link: `link-simple`
 - Copied: `check`
+- Wrap the lines of a code sample: `arrow-u-down-left`
 - History: `clock-counter-clockwise`
 - Open on Creator Hub, and a prose link that leaves the site: `arrow-square-out`
 - Disclosure: `caret-right`
@@ -262,12 +264,21 @@ The Classes listing shows the whole class tree, fully expanded.
 
 ### Descriptions
 
-- Descriptions come only from the `documentation` field of `en-us.json` in the build's `content-api-docs.zip`. Do not write, summarize, or complete descriptions by hand. Do not show its code samples or links to learn more.
+- Descriptions come only from the `documentation` field of `en-us.json` in the build's `content-api-docs.zip`. Do not write, summarize, or complete descriptions by hand. Do not show its links to learn more.
 - Describe classes, members, parameters, return values, enums, and enum items. Match parameter docs to the dump's parameters by name, and take the first return doc. The API docs only document the generic `Connect` arguments of events, so event parameters have no descriptions. Do not describe data types or facets on the Index pages.
 - Show a description as `--text-base` prose in `--color-fg`, at most `max-w-prose` wide. Member and enum item descriptions sit behind a 1px `--color-line-strong` rule on the left, indented by 12px, like a block quote.
 - The `gen` task converts the HTML into a small tree. It keeps inline code, strong and emphasized text, line breaks, lists, preformatted text, keyboard keys, superscripts, and links. It removes images and unwraps every other element. It replaces typographic quotes with plain quotes, uses LF line endings, keeps at most two line breaks in a row, and trims whitespace, line breaks, and empty elements at the edges of every block. Strong text uses `--color-fg-bright` at weight 600. Emphasized text uses `--color-fg-bright` without italics.
 - Link only what the API docs link. Inline code stays unlinked code in `--color-fg`, even when it names an API, because the docs give it no target.
 - Resolve every link against Creator Hub. A link to a class, member, enum, enum item, or data type page in the engine reference links to the same page on this site with a root-relative path. Every other link, such as a Creator Hub guide or another site, opens its own absolute URL in a new tab with `rel="external noopener noreferrer"` and a screen reader note that it opens in a new tab, and ends with a 14px `arrow-square-out` icon in `--color-fg-muted`.
+
+### Code samples
+
+- Code samples come only from the `code_sample` field of `en-us.json`. Show them for classes and for the members that a class defines itself, not on inherited member cards. Data types and globals have no samples.
+- A class sample is the last item of the top info area, before the member filter. A member sample is the last item of its member.
+- The `gen` task formats each sample with StyLua (tabs at width 4, double quotes, call parentheses always, simple statements collapsed, a 120 column guide), uses LF line endings, keeps at most two line breaks in a row, and trims the edges. A sample that does not parse keeps its original text.
+- The `gen` task highlights each sample from its Luau syntax tree and the API names, with the GitHub Dark code colors: keywords and operators in `--color-code-keyword`, strings in `--color-code-string`, numbers, booleans, `nil`, enum items, and built-in globals such as `game`, `workspace`, `script`, and `math` in `--color-code-constant`, called functions, methods, and declared functions in `--color-code-function`, types, data types, and enum names in `--color-code-type`, comments in `--color-fg-faint`, and everything else in `--color-fg`. Sample code has no links.
+- Show a sample under a "Code sample" caption in `--color-fg-muted` at weight 500, as a `pre` on `--color-surface` with a 1px `--color-line` border, `--radius-md`, and 12px padding. Number every line in a right-aligned `--color-fg-faint` gutter that stays in place while long lines scroll sideways inside the block. A wrapped line continues under its code with an empty gutter. Copying never includes the numbers.
+- Two actions sit in the top right corner of the block, shown on hover and focus: a 24px icon toggle that wraps long lines, named "Wrap lines" or "Unwrap lines" in its tooltip, and a "Copy" button that copies the source and reads "Copied" in `--color-success` for 1.5 seconds. Without JavaScript, the actions are hidden.
 
 ### Signatures
 

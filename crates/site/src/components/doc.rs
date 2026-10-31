@@ -32,7 +32,7 @@ fn children(cx: &Context, nodes: &[DocNode]) -> Markup {
 	}
 }
 
-pub fn class_icon_index(cx: &Context, link: &DocLink) -> Option<u32> {
+fn class_icon_index(cx: &Context, link: &DocLink) -> Option<u32> {
 	match link {
 		DocLink::Class { name } => cx.api.classes.get(name).and_then(|item| item.icon),
 		_ => None,

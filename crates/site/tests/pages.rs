@@ -483,6 +483,7 @@ fn bool_property(name: &str) -> rapi_core::model::Member {
 		preferred: None,
 		preferred_target: None,
 		description: None,
+		sample: None,
 		detail: MemberDetail::Property {
 			ty: ApiType {
 				category: TypeCategory::Primitive,

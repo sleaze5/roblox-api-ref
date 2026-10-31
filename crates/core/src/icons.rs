@@ -4,6 +4,7 @@ use std::path::Path;
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
 pub enum Icon {
 	ArrowSquareOut,
+	ArrowUDownLeft,
 	ArrowUUpLeft,
 	Books,
 	BracketsCurly,
@@ -44,8 +45,9 @@ pub enum Icon {
 }
 
 impl Icon {
-	pub const ALL: [Self; 38] = [
+	pub const ALL: [Self; 39] = [
 		Self::ArrowSquareOut,
+		Self::ArrowUDownLeft,
 		Self::ArrowUUpLeft,
 		Self::Books,
 		Self::BracketsCurly,
@@ -85,8 +87,9 @@ impl Icon {
 		Self::X,
 	];
 
-	pub const MASKS: [Self; 21] = [
+	pub const MASKS: [Self; 22] = [
 		Self::ArrowSquareOut,
+		Self::ArrowUDownLeft,
 		Self::ArrowUUpLeft,
 		Self::BracketsCurly,
 		Self::CaretDown,
@@ -112,6 +115,7 @@ impl Icon {
 	pub const fn name(self) -> &'static str {
 		match self {
 			Self::ArrowSquareOut => "arrow-square-out",
+			Self::ArrowUDownLeft => "arrow-u-down-left",
 			Self::ArrowUUpLeft => "arrow-u-up-left",
 			Self::Books => "books",
 			Self::BracketsCurly => "brackets-curly",
