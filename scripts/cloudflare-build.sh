@@ -19,4 +19,4 @@ fi
 rustup toolchain install
 
 bun install --frozen-lockfile
-bun vp run ci
+bun vp run dist

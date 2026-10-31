@@ -27,9 +27,28 @@ jobs:
             actions: write
         steps:
             - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-            - uses: ./.github/actions/setup
+
+            - id: live
+              run: |
+                  live=$(curl -fsS --retry 3 https://clientsettings.roblox.com/v2/client-version/WindowsStudio64/channel/LIVE | jq -r .version) || live=""
+                  tracked=$(jq -r '.[-1].version' roblox-versions.json)
+                  echo "Live: ${live:-unknown}, tracked: $tracked"
+                  if [ "$EVENT" = schedule ] && [ "$live" = "$tracked" ]; then new=false; else new=true; fi
+                  echo "new=$new" >> "$GITHUB_OUTPUT"
+              env:
+                  EVENT: ${{ github.event_name }}
+
+            - if: steps.live.outputs.new == 'true'
+              uses: ./.github/actions/setup-bun
+            - if: steps.live.outputs.new == 'true'
+              uses: ./.github/actions/setup-rust
+              with:
+                  cache: release
+            - if: steps.live.outputs.new == 'true'
+              uses: ./.github/actions/api-data
 
             - id: version
+              if: steps.live.outputs.new == 'true'
               run: |
                   bun vp run dump:update
                   if git diff --quiet -- roblox-versions.json; then changed=false; else changed=true; fi
