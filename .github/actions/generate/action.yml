@@ -44,7 +44,7 @@ runs:
               save: ${{ inputs.save-rust }}
 
         - if: steps.lookup.outputs.cache-hit != 'true'
-          uses: ./.github/actions/data
+          uses: ./.github/actions/api-data
 
         - if: steps.lookup.outputs.cache-hit != 'true'
           shell: bash

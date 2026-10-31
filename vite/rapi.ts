@@ -4,7 +4,6 @@ import type { Readable, Writable } from "node:stream"
 
 type DevProcess = ChildProcessByStdio<Writable, Readable, null>
 
-// RAPI_BIN names a prebuilt rapi binary, which CI restores from its cache instead of building.
 export function runRapi(root: string, args: string[]): Promise<void> {
 	const bin = process.env["RAPI_BIN"]
 	const [command, commandArgs] = bin ? [bin, args] : ["cargo", ["rapi", ...args]]

@@ -1,0 +1,14 @@
+name: Roblox API data
+description: Restore the Roblox API files in data/ for the current version in roblox-versions.json. The `dump` task downloads them when the cache misses.
+
+runs:
+    using: composite
+    steps:
+        - id: version
+          shell: bash
+          run: echo "hash=$(jq -r '.[-1].hash' roblox-versions.json)" >> "$GITHUB_OUTPUT"
+
+        - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+          with:
+              path: data
+              key: roblox-api-${{ steps.version.outputs.hash }}

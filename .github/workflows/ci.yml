@@ -44,7 +44,7 @@ jobs:
                   all: ${{ inputs.scope == 'all' }}
 
     format:
-        needs: changes
+        needs: generate
         runs-on: ubuntu-24.04-arm
         timeout-minutes: 10
         steps:
@@ -53,6 +53,9 @@ jobs:
                   persist-credentials: false
             - uses: ./.github/actions/setup-bun
             - uses: ./.github/actions/setup-rust
+            - uses: ./.github/actions/generated
+              with:
+                  key: ${{ needs.generate.outputs.key }}
             - run: bun vp run format:check
 
     clippy:
@@ -83,12 +86,11 @@ jobs:
             - uses: ./.github/actions/setup-rust
               with:
                   cache: release
-            - uses: ./.github/actions/data
+            - uses: ./.github/actions/api-data
             - run: bun vp run rust:test
 
     generate:
         needs: changes
-        if: needs.changes.outputs.rust == 'true' || needs.changes.outputs.data == 'true' || needs.changes.outputs.web == 'true'
         runs-on: ubuntu-24.04-arm
         timeout-minutes: 20
         outputs:
@@ -117,6 +119,7 @@ jobs:
 
     web-test:
         needs: [changes, generate]
+        if: needs.changes.outputs.rust == 'true' || needs.changes.outputs.data == 'true' || needs.changes.outputs.web == 'true'
         runs-on: ubuntu-24.04-arm
         timeout-minutes: 10
         steps:
@@ -131,6 +134,7 @@ jobs:
 
     site:
         needs: [changes, generate]
+        if: needs.changes.outputs.rust == 'true' || needs.changes.outputs.data == 'true' || needs.changes.outputs.web == 'true'
         runs-on: ubuntu-24.04-arm
         timeout-minutes: 15
         steps:
@@ -145,7 +149,6 @@ jobs:
             - uses: ./.github/actions/playwright
             - run: bun vp run test:browser
 
-    # The one check that the default branch requires. It passes when every job that the changes selected passed.
     build:
         needs: [changes, format, clippy, rust-test, generate, web-check, web-test, site]
         if: always() && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.fork)

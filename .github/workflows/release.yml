@@ -28,8 +28,6 @@ jobs:
         steps:
             - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-            # The hourly run sets nothing up while the LIVE Studio version is the one that the site already tracks.
-            # A manual run always looks for a new version.
             - id: live
               run: |
                   live=$(curl -fsS --retry 3 https://clientsettings.roblox.com/v2/client-version/WindowsStudio64/channel/LIVE | jq -r .version) || live=""
@@ -47,7 +45,7 @@ jobs:
               with:
                   cache: release
             - if: steps.live.outputs.new == 'true'
-              uses: ./.github/actions/data
+              uses: ./.github/actions/api-data
 
             - id: version
               if: steps.live.outputs.new == 'true'
