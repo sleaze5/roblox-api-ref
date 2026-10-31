@@ -3,7 +3,7 @@ mod links;
 mod to_doc;
 
 pub use html::{HtmlNode, parse_html};
-pub use links::{ApiNames, CodeContext, Resolver, resolve_code, resolve_href};
+pub use links::{ApiNames, Resolver, resolve_href};
 pub use to_doc::{LinkResolver, normalize_text, to_doc};
 
 use indexmap::IndexMap;
@@ -11,24 +11,15 @@ use indexmap::IndexMap;
 use crate::dump::{ApiDocs, ApiDocsEntry};
 use crate::model::{Class, Doc, Enum, MemberDetail};
 
-pub fn describe_html(names: &ApiNames<'_>, context: CodeContext<'_>, html: &str) -> Option<Doc> {
-	let resolver = Resolver {
-		names,
-		context: Some(context),
-	};
-	to_doc(&parse_html(html), &resolver)
+pub fn describe_html(names: &ApiNames<'_>, html: &str) -> Option<Doc> {
+	to_doc(&parse_html(html), &Resolver { names })
 }
 
-fn describe(
-	names: &ApiNames<'_>,
-	docs: &ApiDocs,
-	context: CodeContext<'_>,
-	key: Option<&str>,
-) -> Option<Doc> {
+fn describe(names: &ApiNames<'_>, docs: &ApiDocs, key: Option<&str>) -> Option<Doc> {
 	let html = key
 		.and_then(|key| docs.get(key))
 		.and_then(|entry| entry.documentation.as_deref())?;
-	describe_html(names, context, html)
+	describe_html(names, html)
 }
 
 struct Descriptions {
@@ -43,9 +34,8 @@ fn member_descriptions(
 	class_name: &str,
 	member: &crate::model::Member,
 ) -> Descriptions {
-	let context = CodeContext::Class(class_name);
 	let key = format!("@roblox/globaltype/{class_name}.{}", member.name);
-	let description = describe(names, docs, context, Some(&key));
+	let description = describe(names, docs, Some(&key));
 	if !matches!(
 		member.detail,
 		MemberDetail::Method { .. } | MemberDetail::Callback { .. }
@@ -70,18 +60,12 @@ fn member_descriptions(
 		.parameters()
 		.iter()
 		.map(|parameter| {
-			describe(
-				names,
-				docs,
-				context,
-				params.get(parameter.name.as_str()).copied(),
-			)
+			describe(names, docs, params.get(parameter.name.as_str()).copied())
 		})
 		.collect();
 	let returns = describe(
 		names,
 		docs,
-		context,
 		entry
 			.returns
 			.as_ref()
@@ -113,7 +97,6 @@ pub fn apply_api_docs(
 				let description = describe(
 					&names,
 					docs,
-					CodeContext::Class(&item.name),
 					Some(&format!("@roblox/globaltype/{}", item.name)),
 				);
 				let members = item
@@ -127,11 +110,9 @@ pub fn apply_api_docs(
 		let enum_docs: Vec<(Option<Doc>, Vec<Option<Doc>>)> = enums
 			.values()
 			.map(|item| {
-				let context = CodeContext::Enum(&item.name);
 				let description = describe(
 					&names,
 					docs,
-					context,
 					Some(&format!("@roblox/global/Enum.{}", item.name)),
 				);
 				let items = item
@@ -141,7 +122,6 @@ pub fn apply_api_docs(
 						describe(
 							&names,
 							docs,
-							context,
 							Some(&format!("@roblox/enum/{}.{}", item.name, entry.name)),
 						)
 					})

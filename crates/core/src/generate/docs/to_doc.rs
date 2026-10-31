@@ -4,14 +4,12 @@ use crate::model::{Doc, DocElement, DocLink, DocNode, DocTag, doc_text};
 
 pub trait LinkResolver {
 	fn href(&self, href: &str) -> Option<DocLink>;
-	fn code(&self, text: &str) -> Option<DocLink>;
 }
 
 #[derive(Clone, Copy)]
 struct Context<'a> {
 	links: &'a dyn LinkResolver,
 	pre: bool,
-	linked: bool,
 }
 
 fn append(nodes: &mut Vec<DocNode>, node: DocNode) {
@@ -74,15 +72,14 @@ fn trim_edges(nodes: Vec<DocNode>) -> Vec<DocNode> {
 	trim_edge(trim_edge(nodes, Edge::Start), Edge::End)
 }
 
-fn link_of(element: &HtmlElement, children: &[DocNode], context: Context<'_>) -> Option<DocLink> {
-	match element.name.as_str() {
-		"a" => element
-			.attributes
-			.get("href")
-			.and_then(|href| context.links.href(href)),
-		"code" if !context.linked && !context.pre => context.links.code(&doc_text(children)),
-		_ => None,
+fn link_of(element: &HtmlElement, context: Context<'_>) -> Option<DocLink> {
+	if element.name != "a" {
+		return None;
 	}
+	element
+		.attributes
+		.get("href")
+		.and_then(|href| context.links.href(href))
 }
 
 fn convert_element(element: &HtmlElement, context: Context<'_>) -> Vec<DocNode> {
@@ -91,7 +88,6 @@ fn convert_element(element: &HtmlElement, context: Context<'_>) -> Vec<DocNode> 
 	}
 	let inner = Context {
 		pre: context.pre || element.name == "pre",
-		linked: context.linked || element.name == "a",
 		..context
 	};
 	let block = matches!(element.name.as_str(), "ul" | "li" | "pre");
@@ -99,7 +95,7 @@ fn convert_element(element: &HtmlElement, context: Context<'_>) -> Vec<DocNode> 
 	let Some(tag) = DocTag::parse(&element.name) else {
 		return children;
 	};
-	let link = link_of(element, &children, context);
+	let link = link_of(element, context);
 	if tag == DocTag::A && link.is_none() {
 		return children;
 	}
@@ -179,7 +175,6 @@ pub fn to_doc(nodes: &[HtmlNode], links: &dyn LinkResolver) -> Option<Doc> {
 	let context = Context {
 		links,
 		pre: false,
-		linked: false,
 	};
 	let doc = trim_edges(normalize_nodes(convert_nodes(nodes, context, false)));
 	if js_trim(&doc_text(&doc)).is_empty() {
@@ -202,12 +197,6 @@ mod tests {
 				url: href.to_owned(),
 			})
 		}
-
-		fn code(&self, text: &str) -> Option<DocLink> {
-			(text == "Part").then(|| DocLink::Class {
-				name: "Part".to_owned(),
-			})
-		}
 	}
 
 	fn convert(html: &str) -> Option<Doc> {
@@ -226,12 +215,6 @@ mod tests {
 		})
 	}
 
-	fn part() -> DocLink {
-		DocLink::Class {
-			name: "Part".to_owned(),
-		}
-	}
-
 	#[test]
 	fn collapses_whitespace_trims_the_edges_and_removes_images() {
 		assert_eq!(
@@ -245,13 +228,11 @@ mod tests {
 	}
 
 	#[test]
-	fn links_code_spans_but_not_code_inside_a_link_or_a_preformatted_block() {
+	fn links_only_anchors_and_never_code_spans() {
 		assert_eq!(
-			convert(
-				"<code>Part</code> <a href=\"https://x.dev\"><code>Part</code></a> <pre><code>Part</code></pre>"
-			),
+			convert("<code>Part</code> <a href=\"https://x.dev\"><code>Part</code></a>"),
 			Some(vec![
-				element(DocTag::Code, vec![text("Part")], Some(part())),
+				element(DocTag::Code, vec![text("Part")], None),
 				text(" "),
 				element(
 					DocTag::A,
@@ -259,12 +240,6 @@ mod tests {
 					Some(DocLink::External {
 						url: "https://x.dev".to_owned()
 					})
-				),
-				text(" "),
-				element(
-					DocTag::Pre,
-					vec![element(DocTag::Code, vec![text("Part")], None)],
-					None
 				),
 			])
 		);

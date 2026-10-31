@@ -1,6 +1,6 @@
 use maud::{Markup, html};
 use rapi_core::model::{Doc, DocElement, DocLink, DocNode, DocTag};
-use rapi_routes::{MemberKind, class_href, enum_href, enum_item_href, member_href, type_href};
+use rapi_routes::{class_href, enum_href, enum_item_href, member_href, type_href};
 
 use crate::html::{EXTERNAL_REL, EXTERNAL_TARGET, classes};
 
@@ -16,18 +16,6 @@ pub fn doc_link_href(link: &DocLink) -> String {
 		DocLink::EnumItem { owner, name } => enum_item_href(owner, name),
 		DocLink::Type { name } => type_href(name),
 		DocLink::External { url } => url.clone(),
-	}
-}
-
-pub const fn doc_code_tone(link: &DocLink) -> &'static str {
-	match link {
-		DocLink::EnumItem { .. } => "constant",
-		DocLink::Member {
-			member: MemberKind::Method,
-			..
-		} => "function",
-		DocLink::Member { .. } => "member",
-		_ => "type",
 	}
 }
 
@@ -55,22 +43,12 @@ fn anchor(element: &DocElement) -> Markup {
 	}
 }
 
-fn code(element: &DocElement) -> Markup {
-	let code = html! { code { (children(&element.children)) } };
-	match &element.link {
-		None => code,
-		Some(link) => {
-			html! { a href=(doc_link_href(link)) data-code=(doc_code_tone(link)) { (code) } }
-		}
-	}
-}
-
 fn element_markup(element: &DocElement) -> Markup {
 	let inner = || children(&element.children);
 	match element.tag {
 		DocTag::A => anchor(element),
 		DocTag::Br => html! { br; },
-		DocTag::Code => code(element),
+		DocTag::Code => html! { code { (inner()) } },
 		DocTag::Em => html! { em { (inner()) } },
 		DocTag::Kbd => html! { kbd class="kbd" { (inner()) } },
 		DocTag::Li => html! { li { (inner()) } },

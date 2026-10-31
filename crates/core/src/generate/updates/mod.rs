@@ -7,7 +7,7 @@ pub use fields::{change_details, raw_text};
 use indexmap::IndexMap;
 use rapi_routes::{MemberKind, OwnerKind};
 
-use super::docs::{ApiNames, CodeContext, describe_html};
+use super::docs::{ApiNames, describe_html};
 use crate::dump::{ChangeElement, DescriptionChange, DumpChange, DumpDiff, RobloxVersion};
 use crate::generate::normalize::{normalize_enum_item, normalize_member};
 use crate::js::compare_names;
@@ -144,12 +144,8 @@ fn description_detail(
 	names: &ApiNames<'_>,
 	change: &DescriptionChange,
 ) -> Option<DescriptionDetail> {
-	let context = match change.element {
-		ChangeElement::Class | ChangeElement::Member => CodeContext::Class(change.owner()),
-		ChangeElement::Enum | ChangeElement::EnumItem => CodeContext::Enum(change.owner()),
-	};
 	let convert = |html: Option<&String>| {
-		html.and_then(|html| describe_html(names, context, html))
+		html.and_then(|html| describe_html(names, html))
 			.filter(|doc| !doc.is_empty())
 	};
 	let before = convert(change.before.as_ref());

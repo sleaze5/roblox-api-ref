@@ -43,10 +43,9 @@ fn element_markdown(cx: &Context, element: &DocElement) -> String {
 	match element.tag {
 		DocTag::A => linked(cx, element, &children()),
 		DocTag::Br => "\n\n".to_owned(),
-		DocTag::Code => linked(cx, element, &inline_code(&doc_text(&element.children))),
+		DocTag::Code | DocTag::Kbd => inline_code(&doc_text(&element.children)),
 		DocTag::Em => format!("*{}*", children()),
 		DocTag::Strong => format!("**{}**", children()),
-		DocTag::Kbd => inline_code(&doc_text(&element.children)),
 		DocTag::Sup => children(),
 		DocTag::Li => format!("\n- {}", js_trim(&children())),
 		DocTag::Pre => format!(

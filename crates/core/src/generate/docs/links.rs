@@ -63,75 +63,11 @@ impl ApiNames<'_> {
 	}
 }
 
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum CodeContext<'a> {
-	Class(&'a str),
-	Enum(&'a str),
-}
-
 fn is_word(text: &str) -> bool {
 	!text.is_empty()
 		&& text
 			.bytes()
 			.all(|byte| byte.is_ascii_alphanumeric() || byte == b'_')
-}
-
-fn context_link(
-	names: &ApiNames<'_>,
-	name: &str,
-	call: bool,
-	context: Option<CodeContext<'_>>,
-) -> Option<DocLink> {
-	match context {
-		Some(CodeContext::Enum(owner)) => {
-			if call {
-				None
-			} else {
-				names.enum_link(owner, Some(name))
-			}
-		}
-		Some(CodeContext::Class(owner)) => {
-			let link = names.member_link(owner, name);
-			if call
-				&& matches!(&link, Some(DocLink::Member { member, .. }) if *member != rapi_routes::MemberKind::Method)
-			{
-				None
-			} else {
-				link
-			}
-		}
-		None => None,
-	}
-}
-
-pub fn resolve_code(
-	names: &ApiNames<'_>,
-	text: &str,
-	context: Option<CodeContext<'_>>,
-) -> Option<DocLink> {
-	let trimmed = js_trim(text);
-	let call = trimmed.ends_with("()");
-	let name = trimmed.strip_suffix("()").unwrap_or(trimmed);
-	if let Some(rest) = name.strip_prefix("Enum.") {
-		let (enum_name, item) = rest
-			.split_once('.')
-			.map_or((rest, None), |(a, b)| (a, Some(b)));
-		if is_word(enum_name) && item.is_none_or(is_word) {
-			return names.enum_link(enum_name, item);
-		}
-	}
-	if let Some(index) = name.find(['.', ':']) {
-		let (owner, member) = (&name[..index], &name[index + 1..]);
-		if is_word(owner) && is_word(member) {
-			return names.member_link(owner, member);
-		}
-	}
-	if !is_word(name) {
-		return None;
-	}
-	names
-		.type_link(name)
-		.or_else(|| context_link(names, name, call, context))
 }
 
 const DOCS_ORIGIN: &str = "https://create.roblox.com";
@@ -204,15 +140,10 @@ pub fn resolve_href(names: &ApiNames<'_>, href: &str) -> Option<DocLink> {
 
 pub struct Resolver<'a> {
 	pub names: &'a ApiNames<'a>,
-	pub context: Option<CodeContext<'a>>,
 }
 
 impl LinkResolver for Resolver<'_> {
 	fn href(&self, href: &str) -> Option<DocLink> {
 		resolve_href(self.names, href)
-	}
-
-	fn code(&self, text: &str) -> Option<DocLink> {
-		resolve_code(self.names, text, self.context)
 	}
 }
