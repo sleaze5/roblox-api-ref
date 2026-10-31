@@ -172,10 +172,7 @@ fn normalize_nodes(nodes: Vec<DocNode>) -> Vec<DocNode> {
 }
 
 pub fn to_doc(nodes: &[HtmlNode], links: &dyn LinkResolver) -> Option<Doc> {
-	let context = Context {
-		links,
-		pre: false,
-	};
+	let context = Context { links, pre: false };
 	let doc = trim_edges(normalize_nodes(convert_nodes(nodes, context, false)));
 	if js_trim(&doc_text(&doc)).is_empty() {
 		None

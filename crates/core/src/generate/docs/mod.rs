@@ -59,9 +59,7 @@ fn member_descriptions(
 	let parameters = member
 		.parameters()
 		.iter()
-		.map(|parameter| {
-			describe(names, docs, params.get(parameter.name.as_str()).copied())
-		})
+		.map(|parameter| describe(names, docs, params.get(parameter.name.as_str()).copied()))
 		.collect();
 	let returns = describe(
 		names,

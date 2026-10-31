@@ -154,7 +154,7 @@ Use this scale. Do not use other sizes.
 - Copy a link: `link-simple`
 - Copied: `check`
 - History: `clock-counter-clockwise`
-- Open on Creator Hub: `arrow-square-out`
+- Open on Creator Hub, and a prose link that leaves the site: `arrow-square-out`
 - Disclosure: `caret-right`
 - Close: `x`
 
@@ -266,8 +266,8 @@ The Classes listing shows the whole class tree, fully expanded.
 - Describe classes, members, parameters, return values, enums, and enum items. Match parameter docs to the dump's parameters by name, and take the first return doc. The API docs only document the generic `Connect` arguments of events, so event parameters have no descriptions. Do not describe data types or facets on the Index pages.
 - Show a description as `--text-base` prose in `--color-fg`, at most `max-w-prose` wide. Member and enum item descriptions sit behind a 1px `--color-line-strong` rule on the left, indented by 12px, like a block quote.
 - The `gen` task converts the HTML into a small tree. It keeps inline code, strong and emphasized text, line breaks, lists, preformatted text, keyboard keys, superscripts, and links. It removes images and unwraps every other element. It replaces typographic quotes with plain quotes, uses LF line endings, keeps at most two line breaks in a row, and trims whitespace, line breaks, and empty elements at the edges of every block. Strong text uses `--color-fg-bright` at weight 600. Emphasized text uses `--color-fg-bright` without italics.
-- Link only what the API docs link. Inline code stays unlinked code in `--color-fg`, even when it names an API, because the docs give it no target. An `<a>` that points to a class, member, enum, enum item, or data type page on create.roblox.com links to the same page on this site; every other link opens its own URL in a new tab.
-- Creator Hub reference links point to this site. Other links, such as guides, open on Creator Hub in a new tab and follow the prose link style.
+- Link only what the API docs link. Inline code stays unlinked code in `--color-fg`, even when it names an API, because the docs give it no target.
+- Resolve every link against Creator Hub. A link to a class, member, enum, enum item, or data type page in the engine reference links to the same page on this site with a root-relative path. Every other link, such as a Creator Hub guide or another site, opens its own absolute URL in a new tab with `rel="external noopener noreferrer"` and a screen reader note that it opens in a new tab, and ends with a 14px `arrow-square-out` icon in `--color-fg-muted`.
 
 ### Signatures
 

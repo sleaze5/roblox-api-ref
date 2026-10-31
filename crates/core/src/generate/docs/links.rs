@@ -147,3 +147,111 @@ impl LinkResolver for Resolver<'_> {
 		resolve_href(self.names, href)
 	}
 }
+
+#[cfg(test)]
+mod tests {
+	use super::*;
+	use crate::fixtures::{class, property, ty};
+	use crate::model::{EnumItem, TypeCategory};
+
+	fn enum_with(name: &str, item: &str) -> Enum {
+		Enum {
+			name: name.to_owned(),
+			history: None,
+			tags: Vec::new(),
+			items: vec![EnumItem {
+				name: item.to_owned(),
+				history: None,
+				value: 0,
+				tags: Vec::new(),
+				legacy_names: Vec::new(),
+				description: None,
+			}],
+			removed_items: None,
+			used_by: Vec::new(),
+			description: None,
+		}
+	}
+
+	fn resolve(href: &str) -> Option<DocLink> {
+		let name = property("Name", ty(TypeCategory::Primitive, "string", false), None);
+		let classes = IndexMap::from([
+			("Instance".to_owned(), class("Instance", vec![name], None)),
+			(
+				"Part".to_owned(),
+				class("Part", Vec::new(), Some("Instance")),
+			),
+		]);
+		let enums = IndexMap::from([(
+			"PreferredInput".to_owned(),
+			enum_with("PreferredInput", "MicroGamepad"),
+		)]);
+		let data_types = IndexMap::new();
+		let names = ApiNames {
+			classes: &classes,
+			enums: &enums,
+			data_types: &data_types,
+		};
+		resolve_href(&names, href)
+	}
+
+	fn external(url: &str) -> Option<DocLink> {
+		Some(DocLink::External {
+			url: url.to_owned(),
+		})
+	}
+
+	#[test]
+	fn links_engine_reference_pages_to_this_site() {
+		assert_eq!(
+			resolve(
+				"https://create.roblox.com/docs/reference/engine/enums/PreferredInput#MicroGamepad"
+			),
+			Some(DocLink::EnumItem {
+				owner: "PreferredInput".to_owned(),
+				name: "MicroGamepad".to_owned(),
+			})
+		);
+		assert_eq!(
+			resolve("/reference/engine/classes/Part.md#Name"),
+			Some(DocLink::Member {
+				owner: "Instance".to_owned(),
+				member: rapi_routes::MemberKind::Property,
+				name: "Name".to_owned(),
+			})
+		);
+		assert_eq!(
+			resolve("Part.md#Missing"),
+			Some(DocLink::Class {
+				name: "Part".to_owned(),
+			})
+		);
+	}
+
+	#[test]
+	fn opens_everything_else_at_its_absolute_url() {
+		assert_eq!(
+			resolve("/reference/engine/classes/Gone"),
+			external("https://create.roblox.com/docs/reference/engine/classes/Gone")
+		);
+		assert_eq!(
+			resolve("../../../projects/teleport.md#migrate-to-secure-teleports"),
+			external(
+				"https://create.roblox.com/docs/projects/teleport#migrate-to-secure-teleports"
+			)
+		);
+		assert_eq!(
+			resolve("../../../projects/assets/index.md#asset-uris"),
+			external("https://create.roblox.com/docs/projects/assets#asset-uris")
+		);
+		assert_eq!(
+			resolve("/luau/strings.md"),
+			external("https://create.roblox.com/docs/luau/strings")
+		);
+		assert_eq!(
+			resolve("https://en.wikipedia.org/wiki/MD5"),
+			external("https://en.wikipedia.org/wiki/MD5")
+		);
+		assert_eq!(resolve("javascript:alert(1)"), None);
+	}
+}

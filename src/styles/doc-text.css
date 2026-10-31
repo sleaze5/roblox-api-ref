@@ -19,6 +19,20 @@
 		}
 	}
 
+	& a[target="_blank"]::after {
+		content: "";
+		display: inline-block;
+		width: calc(var(--spacing) * 3.5);
+		height: calc(var(--spacing) * 3.5);
+		margin-left: calc(var(--spacing) * 0.5);
+		vertical-align: -0.125em;
+		background-color: var(--color-fg-muted);
+		mask-image: url("../generated/icons/arrow-square-out.svg");
+		mask-position: center;
+		mask-repeat: no-repeat;
+		mask-size: contain;
+	}
+
 	& strong {
 		color: var(--color-fg-bright);
 		font-weight: var(--font-weight-semibold);
