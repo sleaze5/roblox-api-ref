@@ -1,5 +1,5 @@
 import { announce } from "../announce.ts"
-import { hideTooltip } from "../tooltip/tooltip.ts"
+import { refreshTooltip } from "../tooltip/tooltip.ts"
 
 const copiedDuration = 1000
 const copiedLabel = "Copied!"
@@ -22,8 +22,8 @@ export async function copyCode(
 		return
 	}
 	const tooltip = button.getAttribute("data-tooltip") ?? ""
-	hideTooltip(button)
 	button.removeAttribute("data-tooltip")
+	refreshTooltip(button)
 	button.setAttribute("data-copied", "")
 	button.textContent = copiedLabel
 	announce("Code copied")

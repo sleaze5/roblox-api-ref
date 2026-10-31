@@ -58,12 +58,6 @@ export function showTooltip(target: HTMLElement): void {
 	show(hintTarget(target))
 }
 
-export function hideTooltip(target: HTMLElement): void {
-	if (target === anchor) {
-		hide()
-	}
-}
-
 export function refreshTooltip(target: HTMLElement): void {
 	if (target !== anchor) {
 		return
