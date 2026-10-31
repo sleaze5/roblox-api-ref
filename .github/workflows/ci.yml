@@ -6,6 +6,14 @@ on:
             - main
     pull_request:
     workflow_dispatch:
+        inputs:
+            scope:
+                description: Check everything, or only the parts that the commits since the default branch change
+                type: choice
+                options:
+                    - all
+                    - changed
+                default: all
 
 permissions:
     contents: read
@@ -15,30 +23,137 @@ concurrency:
     cancel-in-progress: ${{ github.ref != format('refs/heads/{0}', github.event.repository.default_branch) }}
 
 jobs:
-    build:
+    changes:
         if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.fork
         runs-on: ubuntu-24.04-arm
-        timeout-minutes: 30
+        timeout-minutes: 5
+        outputs:
+            rust: ${{ steps.changes.outputs.rust }}
+            data: ${{ steps.changes.outputs.data }}
+            web: ${{ steps.changes.outputs.web }}
         steps:
             - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
               with:
                   persist-credentials: false
                   fetch-depth: 0
                   filter: blob:none
-
             - id: changes
-              run: |
-                  files=$(git diff --name-only --no-renames "origin/$BASE...HEAD")
-                  if [ -n "$files" ] && ! grep -qv '\.md$' <<< "$files"; then code=false; else code=true; fi
-                  echo "code=$code" >> "$GITHUB_OUTPUT"
-              env:
-                  BASE: ${{ github.base_ref || github.event.repository.default_branch }}
+              uses: ./.github/actions/changes
+              with:
+                  base: ${{ github.base_ref || github.event.repository.default_branch }}
+                  all: ${{ inputs.scope == 'all' }}
 
-            - if: steps.changes.outputs.code == 'true'
-              uses: ./.github/actions/setup
-            - if: steps.changes.outputs.code == 'true'
-              run: bun vp run ci
-            - if: steps.changes.outputs.code == 'true'
-              run: bunx playwright install --with-deps chromium
-            - if: steps.changes.outputs.code == 'true'
-              run: bun vp run test:browser
+    format:
+        needs: changes
+        runs-on: ubuntu-24.04-arm
+        timeout-minutes: 10
+        steps:
+            - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+              with:
+                  persist-credentials: false
+            - uses: ./.github/actions/setup-bun
+            - uses: ./.github/actions/setup-rust
+            - run: bun vp run format:check
+
+    clippy:
+        needs: changes
+        if: needs.changes.outputs.rust == 'true'
+        runs-on: ubuntu-24.04-arm
+        timeout-minutes: 20
+        steps:
+            - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+              with:
+                  persist-credentials: false
+            - uses: ./.github/actions/setup-bun
+            - uses: ./.github/actions/setup-rust
+              with:
+                  cache: check
+            - run: bun vp run clippy
+
+    rust-test:
+        needs: changes
+        if: needs.changes.outputs.rust == 'true' || needs.changes.outputs.data == 'true'
+        runs-on: ubuntu-24.04-arm
+        timeout-minutes: 20
+        steps:
+            - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+              with:
+                  persist-credentials: false
+            - uses: ./.github/actions/setup-bun
+            - uses: ./.github/actions/setup-rust
+              with:
+                  cache: release
+            - uses: ./.github/actions/data
+            - run: bun vp run rust:test
+
+    generate:
+        needs: changes
+        if: needs.changes.outputs.rust == 'true' || needs.changes.outputs.data == 'true' || needs.changes.outputs.web == 'true'
+        runs-on: ubuntu-24.04-arm
+        timeout-minutes: 20
+        outputs:
+            key: ${{ steps.generate.outputs.key }}
+        steps:
+            - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+              with:
+                  persist-credentials: false
+            - id: generate
+              uses: ./.github/actions/generate
+
+    web-check:
+        needs: [changes, generate]
+        if: needs.changes.outputs.rust == 'true' || needs.changes.outputs.web == 'true'
+        runs-on: ubuntu-24.04-arm
+        timeout-minutes: 10
+        steps:
+            - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+              with:
+                  persist-credentials: false
+            - uses: ./.github/actions/setup-bun
+            - uses: ./.github/actions/generated
+              with:
+                  key: ${{ needs.generate.outputs.key }}
+            - run: bun vp run --ignore-depends-on web:check
+
+    web-test:
+        needs: [changes, generate]
+        runs-on: ubuntu-24.04-arm
+        timeout-minutes: 10
+        steps:
+            - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+              with:
+                  persist-credentials: false
+            - uses: ./.github/actions/setup-bun
+            - uses: ./.github/actions/generated
+              with:
+                  key: ${{ needs.generate.outputs.key }}
+            - run: bun vp run --ignore-depends-on web:test
+
+    site:
+        needs: [changes, generate]
+        runs-on: ubuntu-24.04-arm
+        timeout-minutes: 15
+        steps:
+            - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+              with:
+                  persist-credentials: false
+            - uses: ./.github/actions/setup-bun
+            - uses: ./.github/actions/generated
+              with:
+                  key: ${{ needs.generate.outputs.key }}
+            - run: bun vp run --ignore-depends-on dist
+            - uses: ./.github/actions/playwright
+            - run: bun vp run test:browser
+
+    # The one check that the default branch requires. It passes when every job that the changes selected passed.
+    build:
+        needs: [changes, format, clippy, rust-test, generate, web-check, web-test, site]
+        if: always() && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.fork)
+        runs-on: ubuntu-slim
+        timeout-minutes: 5
+        steps:
+            - run: |
+                  echo "$RESULTS"
+                  [[ "$RESULTS" != *failure* && "$RESULTS" != *cancelled* ]]
+              env:
+                  RESULTS: ${{ toJSON(needs) }}

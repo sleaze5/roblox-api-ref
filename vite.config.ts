@@ -148,10 +148,16 @@ export default defineConfig({
 				cache: false,
 			},
 			"test": {
-				command: [
-					"cargo test --workspace --release --quiet",
-					"bun vp test run",
-				],
+				command: ["vp run rust:test", "vp run web:test"],
+				cache: false,
+			},
+			"rust:test": {
+				command: "cargo test --workspace --release --quiet",
+				dependsOn: ["dump"],
+				cache: originCache,
+			},
+			"web:test": {
+				command: "bun vp test run",
 				dependsOn: ["gen"],
 				cache: originCache,
 			},
@@ -201,12 +207,13 @@ export default defineConfig({
 				dependsOn: ["gen"],
 			},
 			"check": {
-				command: [
-					"vp run format:check",
-					"vp run clippy",
-					"bun vp check --no-fmt",
-				],
+				command: ["vp run format:check", "vp run clippy", "vp run web:check"],
+				cache: false,
+			},
+			"web:check": {
+				command: "bun vp check --no-fmt",
 				dependsOn: ["gen"],
+				cache: { input: sourceInput },
 			},
 			"ci": {
 				command: ["vp run check", "vp run test", "bun vp build"],

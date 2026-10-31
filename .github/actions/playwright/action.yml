@@ -1,0 +1,23 @@
+name: Playwright
+description: Install Chromium for the Playwright version in package.json, with the browser cache, and its system dependencies.
+
+runs:
+    using: composite
+    steps:
+        - id: version
+          shell: bash
+          run: echo "version=$(jq -r .devDependencies.playwright package.json)" >> "$GITHUB_OUTPUT"
+
+        - id: cache
+          uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+          with:
+              path: ~/.cache/ms-playwright
+              key: playwright-${{ runner.os }}-${{ runner.arch }}-${{ steps.version.outputs.version }}
+
+        - if: steps.cache.outputs.cache-hit != 'true'
+          shell: bash
+          run: bunx playwright install --with-deps chromium
+
+        - if: steps.cache.outputs.cache-hit == 'true'
+          shell: bash
+          run: bunx playwright install-deps chromium

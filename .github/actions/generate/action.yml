@@ -1,0 +1,64 @@
+name: Generate
+description: >-
+    Cache what the `gen` task writes, keyed by every file it reads: src/generated, the Roblox API files in data/, and the rapi binary. When the cache already has them, the job only looks the key up. Otherwise it builds rapi, runs `gen`, and saves them for the jobs that need them, which restore them with the `generated` action.
+
+inputs:
+    save-rust:
+        description: Whether to save the Rust release build cache
+        default: "false"
+    warm-tests:
+        description: Whether to also compile the Rust tests, so the saved Rust cache covers them
+        default: "false"
+
+outputs:
+    key:
+        description: The cache key to pass to the `generated` action
+        value: ${{ steps.key.outputs.key }}
+
+runs:
+    using: composite
+    steps:
+        - id: key
+          shell: bash
+          run: echo "key=generated-$RUNNER_OS-$RUNNER_ARCH-$HASH" >> "$GITHUB_OUTPUT"
+          env:
+              HASH: ${{ hashFiles('crates/**', 'Cargo.toml', 'Cargo.lock', 'rust-toolchain.toml', '.cargo/**', 'roblox-versions.json', 'diffs/**', 'scripts/fonts.ts', 'scripts/paths.ts', 'bun.lock') }}
+
+        - id: lookup
+          uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+          with:
+              path: |
+                  src/generated
+                  data
+                  target/release/rapi
+              key: ${{ steps.key.outputs.key }}
+              lookup-only: true
+
+        - if: steps.lookup.outputs.cache-hit != 'true'
+          uses: ./.github/actions/setup-bun
+
+        - if: steps.lookup.outputs.cache-hit != 'true'
+          uses: ./.github/actions/setup-rust
+          with:
+              cache: release
+              save: ${{ inputs.save-rust }}
+
+        - if: steps.lookup.outputs.cache-hit != 'true'
+          uses: ./.github/actions/data
+
+        - if: steps.lookup.outputs.cache-hit != 'true'
+          shell: bash
+          run: bun vp run gen
+
+        - if: steps.lookup.outputs.cache-hit != 'true' && inputs.warm-tests == 'true'
+          shell: bash
+          run: cargo test --workspace --release --no-run --quiet
+
+        - if: steps.lookup.outputs.cache-hit != 'true'
+          uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+          with:
+              path: |
+                  src/generated
+                  data
+                  target/release/rapi
+              key: ${{ steps.key.outputs.key }}

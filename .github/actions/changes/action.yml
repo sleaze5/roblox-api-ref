@@ -1,0 +1,51 @@
+name: Changes
+description: >-
+    Find which parts of the project the commits since the merge base with the base branch change: `rust` for the Cargo workspace, `data` for the versions and diffs, and `web` for the client, edge, tests, scripts, and packages. Markdown selects no part, because the `format` job checks every change. Any other path, an empty diff, and `all` select every part. Needs a checkout with history.
+
+inputs:
+    base:
+        description: The branch to compare with
+        required: true
+    all:
+        description: Select every part without looking at the diff
+        default: "false"
+
+outputs:
+    rust:
+        description: Whether the Cargo workspace changed
+        value: ${{ steps.changes.outputs.rust }}
+    data:
+        description: Whether roblox-versions.json or diffs/ changed
+        value: ${{ steps.changes.outputs.data }}
+    web:
+        description: Whether the client, edge, tests, scripts, or packages changed
+        value: ${{ steps.changes.outputs.web }}
+
+runs:
+    using: composite
+    steps:
+        - id: changes
+          shell: bash
+          run: |
+              rust=false data=false web=false
+              select_all() { rust=true data=true web=true; }
+              if [ "$ALL" = true ]; then
+                  files=""
+              else
+                  files=$(git diff --name-only --no-renames "origin/$BASE...HEAD")
+              fi
+              [ -n "$files" ] || select_all
+              while IFS= read -r file; do
+                  case "$file" in
+                      "" | *.md | README | LICENSE | .gitignore) ;;
+                      crates/* | .cargo/* | Cargo.toml | Cargo.lock | rust-toolchain.toml | rustfmt.toml) rust=true ;;
+                      diffs/* | roblox-versions.json) data=true ;;
+                      src/* | vite/* | tests/* | functions/* | public/* | scripts/*) web=true ;;
+                      index.html | vite.config.ts | tsconfig.json | package.json | bun.lock | bunfig.toml) web=true ;;
+                      *) select_all ;;
+                  esac
+              done <<< "$files"
+              printf 'rust=%s\ndata=%s\nweb=%s\n' "$rust" "$data" "$web" | tee -a "$GITHUB_OUTPUT"
+          env:
+              BASE: ${{ inputs.base }}
+              ALL: ${{ inputs.all }}

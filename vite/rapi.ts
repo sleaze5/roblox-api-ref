@@ -4,16 +4,17 @@ import type { Readable, Writable } from "node:stream"
 
 type DevProcess = ChildProcessByStdio<Writable, Readable, null>
 
+// RAPI_BIN names a prebuilt rapi binary, which CI restores from its cache instead of building.
 export function runRapi(root: string, args: string[]): Promise<void> {
+	const bin = process.env["RAPI_BIN"]
+	const [command, commandArgs] = bin ? [bin, args] : ["cargo", ["rapi", ...args]]
 	return new Promise((resolve, reject) => {
-		const child = spawn("cargo", ["rapi", ...args], { cwd: root, stdio: "inherit" })
+		const child = spawn(command, commandArgs, { cwd: root, stdio: "inherit" })
 		child.on("error", reject)
 		child.on("exit", (code) =>
 			code === 0
 				? resolve()
-				: reject(
-						new Error(`cargo rapi ${args.join(" ")} exited with ${code}.`),
-					),
+				: reject(new Error(`rapi ${args.join(" ")} exited with ${code}.`)),
 		)
 	})
 }

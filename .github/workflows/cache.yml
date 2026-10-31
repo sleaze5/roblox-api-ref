@@ -1,0 +1,48 @@
+name: Warm caches
+
+# A run can restore only the caches of its own branch and of the default branch. CI does not run on the default
+# branch, so this workflow saves the caches there that every other branch starts from. The Land action starts it,
+# because pushes made with GITHUB_TOKEN do not start workflows.
+
+on:
+    push:
+        branches:
+            - main
+    schedule:
+        - cron: 43 4 * * 3
+    workflow_dispatch:
+
+permissions:
+    contents: read
+
+concurrency:
+    group: cache
+    cancel-in-progress: true
+
+jobs:
+    release:
+        runs-on: ubuntu-24.04-arm
+        timeout-minutes: 30
+        steps:
+            - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+              with:
+                  persist-credentials: false
+            - uses: ./.github/actions/generate
+              with:
+                  save-rust: true
+                  warm-tests: true
+
+    check:
+        runs-on: ubuntu-24.04-arm
+        timeout-minutes: 20
+        steps:
+            - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+              with:
+                  persist-credentials: false
+            - id: rust
+              uses: ./.github/actions/setup-rust
+              with:
+                  cache: check
+                  save: true
+            - if: steps.rust.outputs.cache-hit != 'true'
+              run: cargo clippy --workspace --all-targets --quiet
