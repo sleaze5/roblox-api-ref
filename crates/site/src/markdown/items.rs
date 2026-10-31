@@ -13,6 +13,7 @@ use rapi_core::api::signature::{inline_tokens, signature_parts};
 use rapi_core::api::tags::{member_tags, plain_tags};
 use rapi_core::js::{compare_names, format_date};
 use rapi_core::model::{
+	CodeSample,
 	AccessTier, Class, DataType, Enum, EnumItem, Facet, FacetAccess, FacetUse, HistoryEvent,
 	ItemHistory, Member, MemberDetail, Removed, Security, TypeRole, TypeUsage, UseKind,
 };
@@ -217,6 +218,17 @@ fn returns(cx: &Context, member: &Member) -> Option<String> {
 	}
 }
 
+fn sample_markdown(sample: Option<&CodeSample>) -> Option<String> {
+	let source = &sample?.source;
+	let longest = source
+		.split(|character| character != '`')
+		.map(str::len)
+		.max()
+		.unwrap_or(0);
+	let fence = "`".repeat(longest.max(2) + 1);
+	Some(format!("Code sample:\n\n{fence}luau\n{source}\n{fence}"))
+}
+
 fn member_markdown(cx: &Context, member: &Member, owner: &str) -> String {
 	let tags: Vec<String> = member_tags(member)
 		.into_iter()
@@ -245,6 +257,7 @@ fn member_markdown(cx: &Context, member: &Member, owner: &str) -> String {
 			parameter_list(cx, member)
 		},
 		returns(cx, member),
+		sample_markdown(member.sample.as_ref()),
 	])
 	.trim_end()
 	.to_owned()
@@ -307,6 +320,7 @@ pub fn class_markdown(cx: &Context, item: &Class) -> String {
 		Some(format!("Roblox Engine API class from {}.", release(cx))),
 		Some(fact_list(&facts)),
 		Some(doc_markdown(cx, item.description.as_ref())),
+		sample_markdown(item.sample.as_ref()),
 	];
 	for kind in MemberKind::ALL {
 		let members = members_in_page_order(&item.members, kind);

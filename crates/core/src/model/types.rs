@@ -2,7 +2,7 @@ use indexmap::IndexMap;
 use rapi_routes::{FACET_KINDS, FacetKind, MemberKind};
 use serde::{Deserialize, Serialize, Serializer};
 
-use super::{Doc, ItemHistory, Removed, RemovedOwner};
+use super::{CodeSample, Doc, ItemHistory, Removed, RemovedOwner};
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
 pub enum Security {
@@ -131,6 +131,8 @@ pub struct Member {
 	pub preferred_target: Option<PreferredTarget>,
 	#[serde(skip_serializing_if = "Option::is_none")]
 	pub description: Option<Doc>,
+	#[serde(skip)]
+	pub sample: Option<CodeSample>,
 	#[serde(flatten)]
 	pub detail: MemberDetail,
 }
@@ -296,6 +298,8 @@ pub struct Class {
 	pub used_by: Vec<TypeUsage>,
 	#[serde(skip_serializing_if = "Option::is_none")]
 	pub description: Option<Doc>,
+	#[serde(skip)]
+	pub sample: Option<CodeSample>,
 }
 
 #[derive(Clone, Debug, PartialEq, Serialize)]

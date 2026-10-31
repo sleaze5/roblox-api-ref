@@ -13,6 +13,7 @@ pub struct ApiDocsEntry {
 	pub documentation: Option<String>,
 	pub params: Option<Vec<ApiDocsParam>>,
 	pub returns: Option<Vec<String>>,
+	pub code_sample: Option<String>,
 }
 
 pub type ApiDocs = HashMap<String, ApiDocsEntry>;

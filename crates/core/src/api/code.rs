@@ -8,6 +8,8 @@ pub enum CodeTone {
 	Name,
 	Parameter,
 	Punctuation,
+	Keyword,
+	Comment,
 	Plain,
 }
 

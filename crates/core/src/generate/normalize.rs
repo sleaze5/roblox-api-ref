@@ -2,6 +2,7 @@ use indexmap::IndexMap;
 use rapi_routes::MemberKind;
 
 use super::docs::apply_api_docs;
+use super::samples::apply_code_samples;
 use super::facets::collect_facets;
 use crate::dump::{
 	ApiDocs, Dump, DumpCapabilities, DumpEnumItem, DumpMember, DumpParameter, DumpReturns,
@@ -193,6 +194,7 @@ pub fn normalize_member(member: &DumpMember) -> Member {
 		preferred: preferred_name(member.tags.as_deref()),
 		preferred_target: None,
 		description: None,
+		sample: None,
 		detail,
 	}
 }
@@ -227,6 +229,7 @@ fn normalize_classes(dump: &Dump) -> IndexMap<String, Class> {
 				subclasses: Vec::new(),
 				used_by: Vec::new(),
 				description: None,
+				sample: None,
 			},
 		);
 	}
@@ -418,6 +421,7 @@ pub fn normalize_api(dump: &Dump, docs: &ApiDocs, version: &RobloxVersion) -> Ap
 	let mut enums = normalize_enums(dump, &usage);
 	let data_types = collect_data_types(&usage);
 	apply_api_docs(&mut classes, &mut enums, &data_types, docs);
+	apply_code_samples(&mut classes, &enums, &data_types, docs);
 	let facets = collect_facets(classes.values(), enums.values());
 	Api {
 		version: version.version.clone(),

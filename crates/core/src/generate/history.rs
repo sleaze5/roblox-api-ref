@@ -565,6 +565,7 @@ mod tests {
 			preferred: None,
 			preferred_target: None,
 			description: None,
+			sample: None,
 			detail: MemberDetail::Property {
 				ty: ApiType {
 					category: TypeCategory::Primitive,

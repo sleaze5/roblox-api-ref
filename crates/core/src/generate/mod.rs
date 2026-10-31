@@ -4,6 +4,7 @@ pub mod facets;
 pub mod history;
 pub mod normalize;
 pub mod pipeline;
+pub mod samples;
 pub mod search_index;
 pub mod stats;
 pub mod updates;
