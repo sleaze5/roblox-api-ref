@@ -137,6 +137,11 @@ export default defineConfig({
 				command: ["vp run fix", "bun vp build"],
 				cache: originCache,
 			},
+			"dist": {
+				command: "bun vp build",
+				dependsOn: ["gen"],
+				cache: false,
+			},
 			"preview": {
 				command: "bun vp preview",
 				dependsOn: ["build"],
