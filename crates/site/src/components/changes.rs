@@ -42,6 +42,13 @@ fn status_symbol_mark(status: ChangeStatus) -> Markup {
 	html! { span aria-hidden="true" class={ "font-mono " (class) } { (mark) } }
 }
 
+pub fn inline_mark(status: ChangeStatus) -> Markup {
+	html! {
+		(status_symbol_mark(status))
+		span class="sr-only" { (status_name(status)) ": " }
+	}
+}
+
 pub fn status_count(status: ChangeStatus, count: impl maud::Render) -> Markup {
 	html! { span class="tabular-nums" { (status_symbol_mark(status)) (count) } }
 }

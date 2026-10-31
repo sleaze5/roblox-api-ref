@@ -5,7 +5,7 @@ use rapi_core::js::js_number;
 use rapi_core::model::{ChangeStatus, KindTable, StatRecord, StatRef, has_items};
 
 use super::tables::{ROW_HINT_CLASS, column, data_table, number, text, update_cell};
-use crate::components::changes::change_mark;
+use crate::components::changes::inline_mark;
 use crate::components::code::breakable_code_tokens;
 use crate::context::Context;
 
@@ -13,11 +13,11 @@ pub const SHOWN_ITEMS: usize = 8;
 
 pub fn item_list(items: &[StatRef]) -> Markup {
 	html! {
-		ul class="flex flex-wrap gap-x-4 gap-y-1" {
+		ul class="flex flex-wrap items-baseline gap-x-4 gap-y-1" {
 			@for item in items {
 				@if matches!(item, StatRef::Removed { .. }) {
 					li class="flex min-w-0 items-baseline gap-1" {
-						(change_mark(Some(ChangeStatus::Removed), Some("Removed:")))
+						(inline_mark(ChangeStatus::Removed))
 						code class="min-w-0" { (breakable_code_tokens(&stat_ref_tokens(item))) }
 					}
 				} @else {

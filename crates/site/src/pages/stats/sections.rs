@@ -3,12 +3,13 @@ use rapi_core::api::access::{access_tier_hint, access_tier_label};
 use rapi_core::api::stats_text::{
 	DOCS_LEAD, GROWTH_LEAD, access_lead, coverage_label, percent_text,
 };
-use rapi_core::model::{AccessTier, CoverageKind, TagTrend};
-use rapi_routes::{FacetKind, class_href};
+use rapi_core::model::{AccessTier, ChangeStatus, CoverageKind, TagTrend};
+use rapi_routes::{FacetKind, OwnerKind};
 
 use super::tables::{
 	ROW_HINT_CLASS, column, data_table, hinted, number, stats_section, text, update_cell,
 };
+use crate::components::changes::{inline_mark, status_count};
 use crate::context::Context;
 use crate::pages::charts::{Share, share_chart};
 
@@ -234,19 +235,20 @@ pub fn growth_section(cx: &Context) -> Markup {
 				vec![
 					text(&year.period),
 					html! {
-						ul class="flex flex-wrap gap-x-4 gap-y-1 whitespace-normal" {
+						ul class="flex flex-wrap items-baseline gap-x-4 gap-y-1 whitespace-normal" {
 							@for item in &year.classes {
-								li {
+								li class="flex items-baseline gap-1" {
+									@if cx.is_removed_owner(OwnerKind::Class, &item.name) {
+										(inline_mark(ChangeStatus::Removed))
+									}
 									code {
-										@if cx.api.classes.contains_key(&item.name) {
-											a href=(class_href(&item.name)) class="text-code-type hover:underline" { (item.name) }
-										} @else {
-											span class="text-fg-muted" { (item.name) }
+										@match cx.owner_href(OwnerKind::Class, &item.name) {
+											Some(href) if cx.api.classes.contains_key(&item.name) => a href=(href) class="text-code-type hover:underline" { (item.name) },
+											Some(href) => a href=(href) class="text-fg-muted hover:underline" { (item.name) },
+											None => span class="text-fg-muted" { (item.name) },
 										}
 									}
-									" "
-									span class="text-success" { "+" }
-									(item.added)
+									(status_count(ChangeStatus::Added, item.added))
 								}
 							}
 						}
