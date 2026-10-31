@@ -10,15 +10,15 @@ fn site(url: &str) -> String {
 
 pub fn doc_link_hint(link: &DocLink) -> String {
 	match link {
-		DocLink::Class { name } => format!("Class: {name}"),
+		DocLink::Class { name } => format!("Class {name}"),
 		DocLink::Member {
 			owner,
 			member,
 			name,
-		} => format!("{}: {owner}{}{name}", member.name(), member.separator()),
-		DocLink::Enum { name } => format!("Enum: {name}"),
-		DocLink::EnumItem { owner, name } => format!("Enum item: {owner}.{name}"),
-		DocLink::Type { name } => format!("Data type: {name}"),
+		} => format!("{} {owner}{}{name}", member.name(), member.separator()),
+		DocLink::Enum { name } => format!("Enum.{name}"),
+		DocLink::EnumItem { owner, name } => format!("Enum.{owner}.{name}"),
+		DocLink::Type { name } => format!("Data type {name}"),
 		DocLink::External { url } => site(url),
 	}
 }
@@ -35,7 +35,7 @@ mod tests {
 			doc_link_hint(&DocLink::Class {
 				name: "Part".to_owned()
 			}),
-			"Class: Part"
+			"Class Part"
 		);
 		assert_eq!(
 			doc_link_hint(&DocLink::Member {
@@ -43,7 +43,7 @@ mod tests {
 				member: MemberKind::Method,
 				name: "Clone".to_owned(),
 			}),
-			"Method: Instance:Clone"
+			"Method Instance:Clone"
 		);
 		assert_eq!(
 			doc_link_hint(&DocLink::Member {
@@ -51,26 +51,26 @@ mod tests {
 				member: MemberKind::Property,
 				name: "Name".to_owned(),
 			}),
-			"Property: Instance.Name"
+			"Property Instance.Name"
 		);
 		assert_eq!(
 			doc_link_hint(&DocLink::Enum {
 				name: "KeyCode".to_owned()
 			}),
-			"Enum: KeyCode"
+			"Enum.KeyCode"
 		);
 		assert_eq!(
 			doc_link_hint(&DocLink::EnumItem {
 				owner: "PreferredInput".to_owned(),
 				name: "MicroGamepad".to_owned(),
 			}),
-			"Enum item: PreferredInput.MicroGamepad"
+			"Enum.PreferredInput.MicroGamepad"
 		);
 		assert_eq!(
 			doc_link_hint(&DocLink::Type {
 				name: "Vector3".to_owned()
 			}),
-			"Data type: Vector3"
+			"Data type Vector3"
 		);
 	}
 
