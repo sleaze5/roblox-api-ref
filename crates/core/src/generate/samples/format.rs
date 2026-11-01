@@ -1,6 +1,7 @@
 use stylua_lib::{
-	BlockNewlineGaps, CallParenType, CollapseSimpleStatement, Config, IndentType, LineEndings, LuaVersion,
-	OutputVerification, QuoteStyle, SortRequiresConfig, SpaceAfterFunctionNames, format_code,
+	BlockNewlineGaps, CallParenType, CollapseSimpleStatement, Config, IndentType, LineEndings,
+	LuaVersion, OutputVerification, QuoteStyle, SortRequiresConfig, SpaceAfterFunctionNames,
+	format_code,
 };
 
 const COLUMN_WIDTH: usize = 120;
@@ -64,7 +65,15 @@ mod tests {
 	fn formats_with_tabs_double_quotes_and_call_parentheses() {
 		assert_eq!(
 			format_sample("local   x = require 'Module'\nif x then   return   end").as_deref(),
-			Some("local x = require(\"Module\")\nif x then return end")
+			Some("local x = require(\"Module\")\nif x then\n\treturn\nend")
+		);
+	}
+
+	#[test]
+	fn removes_blank_lines_at_block_boundaries() {
+		assert_eq!(
+			format_sample("if ready then\n\n\twork()\n\nend").as_deref(),
+			Some("if ready then\n\twork()\nend")
 		);
 	}
 
