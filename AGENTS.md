@@ -82,6 +82,10 @@ Do not add or remove tasks unless the request requires it. When you add a task, 
 
 Read [docs/DESIGN.md](./docs/DESIGN.md) before you change UI, styles, icons, interface text, or motion. It defines the tokens, components, layout, and motion of the site.
 
+## Git
+
+Read [docs/GIT.md](./docs/GIT.md) before you commit, open a pull request, or merge. It defines Git authorship, commits, pull requests, and merging.
+
 ## Animation performance
 
 - Animate only `transform` and `opacity`. Hover and focus feedback may also transition `color`, `background-color`, and `border-color`.
