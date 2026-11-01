@@ -1,22 +1,24 @@
 use stylua_lib::{
-	CallParenType, CollapseSimpleStatement, Config, IndentType, LineEndings, LuaVersion,
-	OutputVerification, QuoteStyle, SortRequiresConfig, SpaceAfterFunctionNames, format_code,
+	BlockNewlineGaps, CallParenType, CollapseSimpleStatement, Config, IndentType, LineEndings,
+	LuaVersion, OutputVerification, QuoteStyle, SortRequiresConfig, SpaceAfterFunctionNames,
+	format_code,
 };
 
 const COLUMN_WIDTH: usize = 120;
 
 fn config() -> Config {
 	Config {
+		block_newline_gaps: BlockNewlineGaps::Never,
 		call_parentheses: CallParenType::Always,
-		collapse_simple_statement: CollapseSimpleStatement::Always,
+		collapse_simple_statement: CollapseSimpleStatement::Never,
 		column_width: COLUMN_WIDTH,
 		indent_type: IndentType::Tabs,
 		indent_width: 4,
 		line_endings: LineEndings::Unix,
 		quote_style: QuoteStyle::ForceDouble,
+		sort_requires: SortRequiresConfig { enabled: false },
 		space_after_function_names: SpaceAfterFunctionNames::Never,
 		syntax: LuaVersion::All,
-		sort_requires: SortRequiresConfig { enabled: false },
 		..Config::default()
 	}
 }
@@ -63,7 +65,15 @@ mod tests {
 	fn formats_with_tabs_double_quotes_and_call_parentheses() {
 		assert_eq!(
 			format_sample("local   x = require 'Module'\nif x then   return   end").as_deref(),
-			Some("local x = require(\"Module\")\nif x then return end")
+			Some("local x = require(\"Module\")\nif x then\n\treturn\nend")
+		);
+	}
+
+	#[test]
+	fn removes_blank_lines_at_block_boundaries() {
+		assert_eq!(
+			format_sample("if ready then\n\n\twork()\n\nend").as_deref(),
+			Some("if ready then\n\twork()\nend")
 		);
 	}
 
