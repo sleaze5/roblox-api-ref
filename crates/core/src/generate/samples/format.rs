@@ -9,7 +9,7 @@ fn config() -> Config {
 	Config {
 		block_newline_gaps: BlockNewlineGaps::Always,
 		call_parentheses: CallParenType::Always,
-		collapse_simple_statement: CollapseSimpleStatement::Always,
+		collapse_simple_statement: CollapseSimpleStatement::Never,
 		column_width: COLUMN_WIDTH,
 		indent_type: IndentType::Tabs,
 		indent_width: 4,
