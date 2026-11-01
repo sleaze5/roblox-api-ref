@@ -1,5 +1,5 @@
 use stylua_lib::{
-	CallParenType, CollapseSimpleStatement, Config, IndentType, LineEndings, LuaVersion,
+	BlockNewlineGaps, CallParenType, CollapseSimpleStatement, Config, IndentType, LineEndings, LuaVersion,
 	OutputVerification, QuoteStyle, SortRequiresConfig, SpaceAfterFunctionNames, format_code,
 };
 
@@ -7,6 +7,7 @@ const COLUMN_WIDTH: usize = 120;
 
 fn config() -> Config {
 	Config {
+		block_newline_gaps: BlockNewlineGaps::Always,
 		call_parentheses: CallParenType::Always,
 		collapse_simple_statement: CollapseSimpleStatement::Always,
 		column_width: COLUMN_WIDTH,
@@ -14,9 +15,9 @@ fn config() -> Config {
 		indent_width: 4,
 		line_endings: LineEndings::Unix,
 		quote_style: QuoteStyle::ForceDouble,
+		sort_requires: SortRequiresConfig { enabled: false },
 		space_after_function_names: SpaceAfterFunctionNames::Never,
 		syntax: LuaVersion::All,
-		sort_requires: SortRequiresConfig { enabled: false },
 		..Config::default()
 	}
 }
