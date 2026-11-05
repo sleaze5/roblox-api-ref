@@ -53,7 +53,7 @@ impl ListFilterPlacement {
 	const fn class(self) -> &'static str {
 		match self {
 			Self::Page => "sticky top-header z-10 -mx-3 border-b border-line bg-canvas px-3 py-2",
-			Self::Sidebar => "sticky -top-3 z-20 -mx-3 -mt-3 bg-surface p-3",
+			Self::Sidebar => "sticky -top-3 z-20 -mx-3 -mt-3 flex gap-2 bg-surface p-3",
 		}
 	}
 }
@@ -74,9 +74,22 @@ pub fn list_filter(
 	placement: ListFilterPlacement,
 	noun: Option<&str>,
 ) -> Markup {
+	list_filter_with(cx, label, target, param, placement, noun, None)
+}
+
+pub fn list_filter_with(
+	cx: &Context,
+	label: &str,
+	target: &str,
+	param: &str,
+	placement: ListFilterPlacement,
+	noun: Option<&str>,
+	trailing: Option<&Markup>,
+) -> Markup {
 	html! {
 		form data-list-filter=(target) data-param=(param) data-noun=[noun] role="search" aria-label=(label) class=(placement.class()) {
-			(filter_field(cx, label, label, list_count(placement, noun), ""))
+			(filter_field(cx, label, label, list_count(placement, noun), "flex-1"))
+			@if let Some(trailing) = trailing { (trailing) }
 		}
 	}
 }
