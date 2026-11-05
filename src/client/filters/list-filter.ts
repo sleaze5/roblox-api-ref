@@ -1,4 +1,5 @@
 import { createChangeFilter } from "./change-filter.ts"
+import { createEmptyState } from "./empty-state.ts"
 import { trackFilterHeight } from "./sticky-offset.ts"
 import { readParam, writeParams } from "../url-state.ts"
 import { NameMatcher } from "./name-match.ts"
@@ -45,6 +46,7 @@ export function initListFilter(form: HTMLFormElement): void {
 	}
 	const filter = createFilter(list)
 	const matcher = new NameMatcher(filter.names)
+	const empty = createEmptyState(form, input)
 	let latest = 0
 
 	const refresh = async () => {
@@ -57,6 +59,7 @@ export function initListFilter(form: HTMLFormElement): void {
 			return
 		}
 		const matched = filter.apply(match, text)
+		empty.update(value, matched)
 		if (summary !== null) {
 			const noun = form.dataset["noun"]
 			const counts = summaryText(matched, filter.total)
