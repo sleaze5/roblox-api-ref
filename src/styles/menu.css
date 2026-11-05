@@ -13,9 +13,12 @@
 	font-weight: var(--font-weight-medium);
 	white-space: nowrap;
 	cursor: pointer;
+	@apply motion-press;
 
-	&:hover {
-		color: var(--color-fg);
+	@media (hover: hover) {
+		&:hover {
+			color: var(--color-fg);
+		}
 	}
 
 	&:has(+ :popover-open) {
@@ -85,9 +88,11 @@
 		color var(--duration-fast) var(--ease-standard),
 		background-color var(--duration-fast) var(--ease-standard);
 
-	&:hover {
-		background-color: var(--color-hover);
-		color: var(--color-fg);
+	@media (hover: hover) {
+		&:hover {
+			background-color: var(--color-hover);
+			color: var(--color-fg);
+		}
 	}
 
 	&:has([name="require"]:checked) {
@@ -100,7 +105,7 @@
 	}
 
 	&:has(:disabled) {
-		opacity: 0.4;
+		opacity: 0.45;
 		background-color: transparent;
 		color: var(--color-fg-muted);
 	}
@@ -157,13 +162,13 @@
 	border-radius: var(--radius-xs);
 	color: var(--color-fg-faint);
 	cursor: pointer;
-	transition:
-		color var(--duration-fast) var(--ease-standard),
-		background-color var(--duration-fast) var(--ease-standard);
+	@apply motion-press motion-colors;
 
-	&:hover {
-		background-color: var(--color-hover);
-		color: var(--color-fg);
+	@media (hover: hover) {
+		&:hover {
+			background-color: var(--color-hover);
+			color: var(--color-fg);
+		}
 	}
 
 	&:has(:checked) {
@@ -208,13 +213,13 @@
 		border-radius: var(--radius-xs);
 		color: var(--color-fg-muted);
 		cursor: pointer;
-		transition:
-			color var(--duration-fast) var(--ease-standard),
-			background-color var(--duration-fast) var(--ease-standard);
+		@apply motion-press motion-colors;
 	}
 
-	& label:hover {
-		color: var(--color-fg);
+	@media (hover: hover) {
+		& label:hover {
+			color: var(--color-fg);
+		}
 	}
 
 	& label:has(:checked) {

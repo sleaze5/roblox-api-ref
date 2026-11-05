@@ -30,9 +30,11 @@
 		}
 	}
 
-	& summary:hover,
-	& li > a:hover {
-		background-color: var(--color-hover);
+	@media (hover: hover) {
+		& summary:hover,
+		& li > a:hover {
+			background-color: var(--color-hover);
+		}
 	}
 
 	& summary::before {
@@ -73,12 +75,16 @@
 		mask-size: contain;
 	}
 
-	& a:hover {
-		color: var(--color-fg-bright);
+	@media (hover: hover) {
+		& a:hover {
+			color: var(--color-fg-bright);
+		}
 	}
 
-	& summary > a:hover {
-		text-decoration: underline;
+	@media (hover: hover) {
+		& summary > a:hover {
+			text-decoration: underline;
+		}
 	}
 
 	& [data-deprecated] {
@@ -202,12 +208,14 @@
 		background-color: var(--color-surface);
 	}
 
-	& details > summary:hover {
-		background-color: color-mix(
-			in srgb,
-			var(--color-fg-bright) 6%,
-			var(--color-surface)
-		);
+	@media (hover: hover) {
+		& details > summary:hover {
+			background-color: color-mix(
+				in srgb,
+				var(--color-fg-bright) 6%,
+				var(--color-surface)
+			);
+		}
 	}
 
 	& details > summary:has(> [aria-current="page"]) {
