@@ -119,7 +119,7 @@ fn class_header(cx: &Context, item: &Class, ancestors: &[&Class]) -> Markup {
 		(tag_list(&dated_tags(plain_tags(&item.tags), item.history.as_ref()), ""))
 		(fact_list(&html! {
 			(fact("Memory category", Some("The memory category that the API dump assigns to this class."), &html! {
-				a href=(cx.facet_href(FacetKind::MemoryCategory, &item.memory_category)) class="font-mono text-fg underline decoration-line-strong hover:decoration-fg" { (item.memory_category) }
+				a href=(cx.facet_href(FacetKind::MemoryCategory, &item.memory_category)) class="font-mono prose-link" { (item.memory_category) }
 			}))
 			(fact("Own members", Some("Members that this class defines itself."), &html! { (item.members.len()) }))
 			(fact("Inherited members", Some("Members that this class inherits from its superclasses."), &html! { (inherited) }))

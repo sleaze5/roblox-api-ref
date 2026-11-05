@@ -39,6 +39,14 @@ export function initSearchTrigger(): void {
 	document.addEventListener("keydown", (event) => {
 		const shortcut =
 			(event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k"
+		const open = document.querySelector<HTMLDialogElement>(
+			"[data-search-root] dialog[open]",
+		)
+		if (shortcut && open !== null) {
+			event.preventDefault()
+			open.close()
+			return
+		}
 		if (shortcut || (event.key === "/" && !isTyping(event.target))) {
 			event.preventDefault()
 			show(undefined, null, true)

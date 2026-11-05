@@ -101,7 +101,7 @@ impl PageHeader<'_> {
 							HeaderIcon::Named(name) => (icon(cx, name, IconSize::S28, "text-fg-muted")),
 							HeaderIcon::Class(index) => (class_icon(index, "size-7")),
 						}
-						h1 class=(classes(&["min-w-0 flex-1 text-2xl font-semibold text-fg-bright", if self.code { "font-mono break-all" } else { "break-words" }])) {
+						h1 translate=[self.code.then_some("no")] class=(classes(&["min-w-0 flex-1 text-2xl font-semibold text-fg-bright", if self.code { "font-mono break-all" } else { "break-words" }])) {
 							(self.title)
 						}
 						@if let Some((href, name)) = &self.docs {

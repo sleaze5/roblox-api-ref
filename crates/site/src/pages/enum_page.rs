@@ -40,7 +40,7 @@ fn enum_item_row(cx: &Context, owner: &Enum, item: &EnumItem) -> Markup {
 	html! {
 		li id=(anchor) data-name=(item.name) class="member-card" {
 			div class="member-head" {
-				code class="member-code" { (code_tokens(&tokens)) }
+				code translate="no" class="member-code" { (code_tokens(&tokens)) }
 				div class="member-actions" { (copy_link(&item.name, &format!("#{anchor}"))) }
 			}
 			(doc_text(cx, item.description.as_ref(), "member-description"))

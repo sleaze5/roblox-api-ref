@@ -253,6 +253,7 @@ pub fn updates_page(cx: &Context) -> Markup {
 		.iter()
 		.map(|update| {
 			RailLink::new(update_anchor(&update.version), &update.version)
+				.code()
 				.count(update.counts.total() as usize)
 				.count_hint("Changes in this update.")
 		})
