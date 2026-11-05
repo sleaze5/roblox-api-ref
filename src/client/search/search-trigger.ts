@@ -35,8 +35,18 @@ function show(
 	})
 }
 
+function setInstant(instant: boolean): void {
+	document
+		.querySelector("[data-search-root]")
+		?.toggleAttribute("data-instant", instant)
+}
+
 export function initSearchTrigger(): void {
+	document.addEventListener("pointerdown", () => setInstant(false), { capture: true })
 	document.addEventListener("keydown", (event) => {
+		if (event.key === "Escape") {
+			setInstant(true)
+		}
 		const shortcut =
 			(event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k"
 		const open = document.querySelector<HTMLDialogElement>(
@@ -44,11 +54,13 @@ export function initSearchTrigger(): void {
 		)
 		if (shortcut && open !== null) {
 			event.preventDefault()
+			setInstant(true)
 			open.close()
 			return
 		}
 		if (shortcut || (event.key === "/" && !isTyping(event.target))) {
 			event.preventDefault()
+			setInstant(true)
 			show(undefined, null, true)
 		}
 	})

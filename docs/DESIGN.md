@@ -39,6 +39,8 @@ Build from these utilities before you write new styles. If one lacks a variant y
 Everything the reader sees must look designed for this site. No browser-drawn control may appear unstyled.
 
 - Do not use the `title` attribute. Put the accessible name in `aria-label` or visible text, and the hint in `data-tooltip`. Tooltips show after 500ms on hover and at once on keyboard focus, and close on `Escape`, scroll, and pointer down. On touch screens, a tap on an element with `data-tooltip` that is not a link or a button, such as a dotted fact label or a chart column, shows its tooltip at once, and a second tap closes it.
+- Once a tooltip has closed, a tooltip that opens within 300ms appears at once, without the delay or the fade, so moving across a row of hints feels immediate.
+- Show the search shortcut as the reader's platform writes it: "Ctrl K" in the prerendered HTML, and "⌘ K" on Apple devices once the script runs.
 - Explain each fact label with a tooltip of one short sentence that ends with a period, such as "Classes that inherit directly from this class." A label with a tooltip has a dotted `--color-line-strong` underline and the help cursor. The class page rail explains its counts the same way.
 - When a link's text is cut off with an ellipsis, such as a long name in the sidebar, the rail, or an Index list, its tooltip shows the full text. Do not add `data-tooltip` for this. The tooltip script detects the cut-off text.
 - Do not use `<datalist>`, visible native checkboxes, or unstyled `<select>` elements. Use the building blocks above. Use a `menu` instead of a `<select>`.
@@ -189,7 +191,7 @@ Keep nested curves concentric: the inner radius equals the outer radius minus th
 
 ## Layout
 
-- The header is 48px tall on `--color-surface`. The site name and the section links (Classes, Enums, Index, Updates, and Statistics) sit on the left, the search trigger in the middle, and the build version on the right. From 1024px to 1279px, where the build version is hidden, the search trigger moves to the right edge so the section links have room. Member filters stay in the content column. Write the build version as `version-<hash> (<version>)`, such as `version-7aaa6838d36c4448 (0.744.0.7441077)`, in Geist Mono `--text-xs` and `--color-fg-faint`.
+- The header is 48px tall on `--color-surface`. The site name and the section links (Classes, Enums, Index, Updates, and Statistics) sit on the left, the current section marked like the current page in the drawer, with a `--color-active` fill and `--color-fg-bright` text, the search trigger in the middle, and the build version on the right. From 1024px to 1279px, where the build version is hidden, the search trigger moves to the right edge so the section links have room. Member filters stay in the content column. Write the build version as `version-<hash> (<version>)`, such as `version-7aaa6838d36c4448 (0.744.0.7441077)`, in Geist Mono `--text-xs` and `--color-fg-faint`.
 - The sidebar is 264px wide on `--color-surface`. It holds a filter field and the full index of its section: the whole class tree on the Classes listing and class pages, every enum on the Enums listing and enum pages, and the whole index on every Index page. Listings and detail pages of a section share the same sidebar, so moving between them never shifts the content column. The current page is selected, its ancestors are open, and the sidebar starts scrolled to it. Only the home page, the Statistics page, the site pages, and the not found page have no sidebar.
 - In the class tree of the sidebar, the row of each open class sticks below the filter field while its subclasses scroll, so the stuck rows show the inheritance path of the rows below them, like the sticky scroll of a code editor's file tree. A row sticks one row lower for each level of depth. Clicking a stuck row scrolls the tree to that class instead of opening its page or collapsing it.
 - The content column is on `--color-canvas`. Its maximum width is 760px. The page always reserves the scrollbar gutter, so short and long pages put the column in the same place.
@@ -204,6 +206,7 @@ Keep nested curves concentric: the inner radius equals the outer radius minus th
 Below 1024px:
 
 - Every page has the drawer button. The drawer lists the section links first, then the sidebar of the page, if the page has one. The drawer opens scrolled to the current page.
+- The drawer has a 20px `x` close button, named "Close navigation", that works without JavaScript. On a page with a sidebar, it sits to the right of the sticky sidebar filter, so it stays in view while the tree scrolls. On a page without one, it sits at the top right, above the section links.
 - The header shows the drawer button, the site name, and a search icon button. It hides the section links, the search hint text, and the keyboard shortcut.
 - The member filter bar does not stick to the top, so it does not cover the members.
 - The search dialog sits near the top of the screen, has a close button instead of the Esc hint, and hides the keyboard hints.
@@ -440,6 +443,9 @@ The `gen` task reads every update, oldest first, and records each update that to
 - Selection: mark the current page in the sidebar with a `--color-active` fill and `--color-fg-bright` text, without a bar. Mark a member opened by its anchor with a 2px `--color-fg-muted` bar on the left edge only. The bar must not shift the content.
 - Disabled: use 45% opacity and `cursor: not-allowed`. Do not also change the color.
 - Not found: on a missing page or an empty search, say what was not found and how to continue. For example: No results for `Humanoid.Jumpp`. Check the spelling or search for a class name.
+- Empty filter: when a list, tree, or Updates filter matches nothing, a message below the filter says "Nothing matches `query`. Check the spelling, or clear the filter." and offers a "Clear filter" button that empties the field and returns focus to it.
+- Press: every button, chip, toggle, and icon action scales to `--motion-scale` while pressed. Links and rows do not.
+- Hover styles apply only on devices that can hover, so a tap never leaves a hover fill behind. Taps show a `--color-hover` tap highlight.
 
 ## Motion
 
@@ -457,9 +463,9 @@ Motion must feel immediate. If the reader can notice that they are waiting for a
 What moves:
 
 - Menus and popovers fade in and move `--motion-distance` from their anchor.
-- The search dialog fades in and scales from `--motion-scale`. Its backdrop fades.
+- The search dialog fades in and scales from `--motion-scale` when it is opened with a click or a tap. Its backdrop fades. Opened or closed from the keyboard, with `Ctrl+K`, `Cmd+K`, `/`, or `Escape`, it appears and disappears at once: a shortcut that the reader presses many times a day never waits for an animation. Pressing the shortcut again closes it.
 - The mobile sidebar slides in from the left edge.
-- Tooltips fade. They do not move.
+- Tooltips fade. They do not move. A tooltip that opens right after another one closes does not fade.
 - Buttons scale to `--motion-scale` while pressed.
 - The disclosure caret rotates 90 degrees when its group opens.
 - The thumb of a switch slides to the right when it turns on.
