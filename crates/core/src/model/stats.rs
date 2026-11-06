@@ -1,9 +1,8 @@
 use rapi_routes::MemberKind;
-use serde::Serialize;
 
 use super::RecordGroup;
 
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, Serialize)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
 pub enum CountKind {
 	Class,
 	Service,
@@ -63,14 +62,14 @@ impl CountKind {
 	}
 }
 
-#[derive(Clone, Debug, PartialEq, Eq, Serialize)]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub struct CountRow {
 	pub kind: CountKind,
 	pub current: u32,
 	pub removed: u32,
 }
 
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, Serialize)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
 pub enum TrendKind {
 	Class,
 	Property,
@@ -92,7 +91,7 @@ impl TrendKind {
 	}
 }
 
-#[derive(Clone, Copy, Debug, Default, PartialEq, Eq, Serialize)]
+#[derive(Clone, Copy, Debug, Default, PartialEq, Eq)]
 pub struct ChangeTally {
 	pub added: u32,
 	pub removed: u32,
@@ -109,15 +108,13 @@ impl ChangeTally {
 	}
 }
 
-#[derive(Clone, Copy, Debug, Default, PartialEq, Eq, Serialize)]
-#[serde(rename_all = "PascalCase")]
+#[derive(Clone, Copy, Debug, Default, PartialEq, Eq)]
 pub struct Tallies {
 	pub class: ChangeTally,
 	pub property: ChangeTally,
 	pub method: ChangeTally,
 	pub event: ChangeTally,
 	pub callback: ChangeTally,
-	#[serde(rename = "Enum")]
 	pub enumeration: ChangeTally,
 	pub enum_item: ChangeTally,
 }
@@ -200,7 +197,7 @@ impl Tallies {
 	}
 }
 
-#[derive(Clone, Debug, PartialEq, Serialize)]
+#[derive(Clone, Debug, PartialEq)]
 pub struct UpdateTrend {
 	pub version: String,
 	pub hash: String,
@@ -210,20 +207,20 @@ pub struct UpdateTrend {
 	pub enums: u32,
 }
 
-#[derive(Clone, Debug, PartialEq, Serialize)]
+#[derive(Clone, Debug, PartialEq)]
 pub struct PeriodTrend {
 	pub period: String,
 	pub updates: u32,
 	pub tallies: Tallies,
 }
 
-#[derive(Clone, Debug, PartialEq, Eq, Hash, Serialize)]
+#[derive(Clone, Debug, PartialEq, Eq, Hash)]
 pub struct UpdateEvent {
 	pub version: String,
 	pub published: String,
 }
 
-#[derive(Clone, Debug, PartialEq, Serialize)]
+#[derive(Clone, Debug, PartialEq)]
 pub struct ComebackBatch {
 	pub removed: UpdateEvent,
 	pub returned: UpdateEvent,
@@ -231,8 +228,7 @@ pub struct ComebackBatch {
 	pub days: i64,
 }
 
-#[derive(Clone, Debug, PartialEq, Eq, Serialize)]
-#[serde(rename_all = "camelCase")]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub struct AccessPeriod {
 	pub period: String,
 	pub added_open: u32,
@@ -243,16 +239,14 @@ pub struct AccessPeriod {
 	pub made_unsafe: u32,
 }
 
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Serialize)]
-#[serde(rename_all = "camelCase")]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub struct AccessNow {
 	pub members: u32,
 	pub scriptable: u32,
 	pub thread_safe: u32,
 }
 
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, Serialize)]
-#[serde(rename_all = "camelCase")]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
 pub enum AccessTier {
 	Game,
 	Plugin,
@@ -264,8 +258,7 @@ impl AccessTier {
 	pub const ALL: [Self; 4] = [Self::Game, Self::Plugin, Self::Command, Self::Roblox];
 }
 
-#[derive(Clone, Copy, Debug, Default, PartialEq, Eq, Serialize)]
-#[serde(rename_all = "PascalCase")]
+#[derive(Clone, Copy, Debug, Default, PartialEq, Eq)]
 pub struct KindCounts {
 	pub property: u32,
 	pub method: u32,
@@ -288,30 +281,29 @@ impl KindCounts {
 	}
 }
 
-#[derive(Clone, Debug, PartialEq, Eq, Serialize)]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub struct TierRow {
 	pub tier: AccessTier,
 	pub kinds: KindCounts,
 }
 
-#[derive(Clone, Debug, PartialEq, Eq, Serialize)]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub struct AccessStats {
 	pub now: AccessNow,
 	pub tiers: Vec<TierRow>,
 	pub years: Vec<AccessPeriod>,
 }
 
-#[derive(Clone, Debug, PartialEq, Eq, Serialize)]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub struct TagTrend {
 	pub name: String,
 	pub current: u32,
 	pub gained: u32,
 	pub lost: u32,
-	#[serde(skip_serializing_if = "Option::is_none")]
 	pub first: Option<UpdateEvent>,
 }
 
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, Serialize)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
 pub enum CoverageKind {
 	Class,
 	Property,
@@ -347,14 +339,14 @@ impl CoverageKind {
 	}
 }
 
-#[derive(Clone, Debug, PartialEq, Eq, Serialize)]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub struct CoverageRow {
 	pub kind: CoverageKind,
 	pub described: u32,
 	pub total: u32,
 }
 
-#[derive(Clone, Debug, PartialEq, Eq, Serialize)]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub struct DocPeriod {
 	pub period: String,
 	pub added: u32,
@@ -362,19 +354,19 @@ pub struct DocPeriod {
 	pub removed: u32,
 }
 
-#[derive(Clone, Debug, PartialEq, Eq, Serialize)]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub struct DocStats {
 	pub coverage: Vec<CoverageRow>,
 	pub years: Vec<DocPeriod>,
 }
 
-#[derive(Clone, Debug, PartialEq, Eq, Serialize)]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub struct GrowthClass {
 	pub name: String,
 	pub added: i64,
 }
 
-#[derive(Clone, Debug, PartialEq, Eq, Serialize)]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub struct GrowthPeriod {
 	pub period: String,
 	pub classes: Vec<GrowthClass>,
@@ -384,28 +376,27 @@ pub const BUCKET_STARTS: [u32; 9] = [0, 1, 2, 3, 4, 5, 10, 20, 50];
 
 pub const GAP_DAYS: u32 = 14;
 
-#[derive(Clone, Debug, PartialEq, Eq, Serialize)]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub struct Distribution {
 	pub id: String,
 	pub label: String,
 	pub counts: Vec<u32>,
 }
 
-#[derive(Clone, Debug, PartialEq, Eq, Serialize)]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub struct WeekdayTrend {
 	pub weekday: usize,
 	pub updates: u32,
 	pub changes: u32,
 }
 
-#[derive(Clone, Debug, PartialEq, Eq, Serialize)]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub struct GapBucket {
 	pub days: u32,
 	pub updates: u32,
 }
 
-#[derive(Clone, Debug, PartialEq, Serialize)]
-#[serde(rename_all = "camelCase")]
+#[derive(Clone, Debug, PartialEq)]
 pub struct Stats {
 	pub history_start: String,
 	pub counts: Vec<CountRow>,

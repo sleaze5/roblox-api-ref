@@ -277,11 +277,16 @@ pub fn build_updates(diffs: &[DatedDiff], names: &ApiNames<'_>) -> Vec<Update> {
 #[cfg(test)]
 mod tests {
 	use indexmap::IndexMap;
+	use rapi_routes::OwnerKind;
 	use serde_json::{Value, json};
 
 	use super::*;
+	use crate::model::{
+		ChangeCounts, ChangeDetail, ChangeEntry, ChangeStatus, DescriptionDetail, DescriptionPart,
+		DetailTone, DetailValue, DocNode, EntryValues, Member, Release, Security, doc_text,
+	};
 
-	fn update(changes: &Value, descriptions: &Value) -> Value {
+	fn update(changes: &Value, descriptions: &Value) -> Update {
 		let diff: DumpDiff = serde_json::from_value(json!({
 			"from": { "version": "0.1.0.1", "hash": "aaaaaaaaaaaaaaaa" },
 			"to": { "version": "0.2.0.1", "hash": "bbbbbbbbbbbbbbbb" },
@@ -295,19 +300,39 @@ mod tests {
 			enums: &enums,
 			data_types: &data_types,
 		};
-		serde_json::to_value(build_update(&diff, "2026-10-19T23:04:06.000Z", &names))
-			.expect("an update serializes")
+		build_update(&diff, "2026-10-19T23:04:06.000Z", &names)
 	}
 
-	fn owners(update: &Value) -> Vec<(String, String)> {
-		update["owners"]
-			.as_array()
-			.into_iter()
-			.flatten()
-			.map(|owner| {
+	fn counts(added: u32, removed: u32, changed: u32) -> ChangeCounts {
+		ChangeCounts {
+			added,
+			removed,
+			changed,
+		}
+	}
+
+	fn members(entry: &ChangeEntry) -> (&Member, &Member) {
+		match &entry.values {
+			EntryValues::Member {
+				before: Some(before),
+				after: Some(after),
+			} => (before, after),
+			_ => panic!("{} has no member before and after", entry.name),
+		}
+	}
+
+	fn texts(
+		details: &[DescriptionDetail],
+	) -> Vec<(DescriptionPart, ChangeStatus, String, String)> {
+		let text = |doc: &Option<Vec<DocNode>>| doc.as_deref().map(doc_text).unwrap_or_default();
+		details
+			.iter()
+			.map(|detail| {
 				(
-					owner["kind"].as_str().unwrap_or_default().to_owned(),
-					owner["name"].as_str().unwrap_or_default().to_owned(),
+					detail.part,
+					detail.status,
+					text(&detail.before),
+					text(&detail.after),
 				)
 			})
 			.collect()
@@ -325,20 +350,22 @@ mod tests {
 			]),
 			&json!([]),
 		);
+		let owners: Vec<(OwnerKind, &str)> = result
+			.owners
+			.iter()
+			.map(|owner| (owner.kind, owner.name.as_str()))
+			.collect();
 		assert_eq!(
-			owners(&result),
-			[
-				("Class".to_owned(), "Part".to_owned()),
-				("Enum".to_owned(), "Material".to_owned())
-			]
+			owners,
+			[(OwnerKind::Class, "Part"), (OwnerKind::Enum, "Material")]
 		);
+		assert_eq!(result.counts, counts(1, 1, 0));
 		assert_eq!(
-			result["counts"],
-			json!({ "Added": 1, "Removed": 1, "Changed": 0 })
-		);
-		assert_eq!(
-			result["previous"],
-			json!({ "version": "0.1.0.1", "hash": "aaaaaaaaaaaaaaaa" })
+			result.previous,
+			Release {
+				version: "0.1.0.1".to_owned(),
+				hash: "aaaaaaaaaaaaaaaa".to_owned(),
+			}
 		);
 	}
 
@@ -360,22 +387,39 @@ mod tests {
 			}]),
 			&json!([]),
 		);
-		let entry = &result["owners"][0]["entries"][0];
+		let entry = &result.owners[0].entries[0];
+		let (before, after) = members(entry);
 		assert_eq!(
-			(&entry["before"]["security"], &entry["before"]["tags"]),
-			(&json!("None"), &json!(["Hidden"]))
+			(before.security, &before.tags[..]),
+			(Security::None, &["Hidden".to_owned()][..])
 		);
 		assert_eq!(
-			(&entry["after"]["security"], &entry["after"]["tags"]),
-			(&json!("PluginSecurity"), &json!(["Deprecated"]))
+			(after.security, &after.tags[..]),
+			(Security::PluginSecurity, &["Deprecated".to_owned()][..])
 		);
+		let text = |text: &str| {
+			Some(DetailValue {
+				text: text.to_owned(),
+				tone: DetailTone::Text,
+			})
+		};
 		assert_eq!(
-			entry["details"],
-			json!([
-				{ "kind": "value", "label": "Security", "before": { "text": "No security", "tone": "text" }, "after": { "text": "Plugin security", "tone": "text" } },
-				{ "kind": "tags", "label": "Added tags", "tags": ["Deprecated"] },
-				{ "kind": "tags", "label": "Removed tags", "tags": ["Hidden"] },
-			])
+			entry.details,
+			[
+				ChangeDetail::Value {
+					label: "Security".to_owned(),
+					before: text("No security"),
+					after: text("Plugin security"),
+				},
+				ChangeDetail::Tags {
+					label: "Added tags".to_owned(),
+					tags: vec!["Deprecated".to_owned()],
+				},
+				ChangeDetail::Tags {
+					label: "Removed tags".to_owned(),
+					tags: vec!["Hidden".to_owned()],
+				},
+			]
 		);
 	}
 
@@ -394,11 +438,8 @@ mod tests {
 			}]),
 			&json!([]),
 		);
-		assert_eq!(result["owners"], json!([]));
-		assert_eq!(
-			result["counts"],
-			json!({ "Added": 0, "Removed": 0, "Changed": 0 })
-		);
+		assert!(result.owners.is_empty());
+		assert_eq!(result.counts, counts(0, 0, 0));
 	}
 
 	#[test]
@@ -408,11 +449,10 @@ mod tests {
 			.map(|value| json!({ "element": "EnumItem", "enum": "Material", "item": format!("Item{value}"), "type": "Add", "value": { "Name": format!("Item{value}"), "Value": value } }))
 			.collect();
 		let result = update(&Value::Array(changes), &json!([]));
-		let names: Vec<&str> = result["owners"][0]["entries"]
-			.as_array()
-			.unwrap()
+		let names: Vec<&str> = result.owners[0]
+			.entries
 			.iter()
-			.map(|entry| entry["name"].as_str().unwrap())
+			.map(|entry| entry.name.as_str())
 			.collect();
 		assert_eq!(names, ["Item1", "Item3", "Item5"]);
 	}
@@ -433,25 +473,32 @@ mod tests {
 				{ "element": "Member", "class": "Part", "member": "Anchored", "part": "return", "before": "Same.", "after": "<p>Same.</p>", "value": anchored },
 			]),
 		);
+		assert_eq!(result.counts, counts(0, 0, 0));
+		assert_eq!(result.description_count, Some(2));
+		let owner = &result.owners[0];
 		assert_eq!(
-			result["counts"],
-			json!({ "Added": 0, "Removed": 0, "Changed": 0 })
+			texts(&owner.descriptions),
+			[(
+				DescriptionPart::Description,
+				ChangeStatus::Added,
+				String::new(),
+				"A Part.".to_owned()
+			)]
 		);
-		assert_eq!(result["descriptionCount"], 2);
-		let owner = &result["owners"][0];
+		assert_eq!(owner.entries.len(), 1);
+		let entry = &owner.entries[0];
 		assert_eq!(
-			owner["descriptions"],
-			json!([{ "part": "description", "status": "Added", "after": ["A ", { "tag": "code", "children": ["Part"] }, "."] }])
-		);
-		let entries = owner["entries"].as_array().unwrap();
-		assert_eq!(entries.len(), 1);
-		assert_eq!(
-			(&entries[0]["name"], &entries[0]["status"]),
-			(&json!("Anchored"), &json!("Changed"))
+			(entry.name.as_str(), entry.status),
+			("Anchored", ChangeStatus::Changed)
 		);
 		assert_eq!(
-			entries[0]["descriptions"],
-			json!([{ "part": "description", "status": "Changed", "before": ["Old text."], "after": ["New text."] }])
+			texts(&entry.descriptions),
+			[(
+				DescriptionPart::Description,
+				ChangeStatus::Changed,
+				"Old text.".to_owned(),
+				"New text.".to_owned()
+			)]
 		);
 	}
 
@@ -461,20 +508,24 @@ mod tests {
 			&json!([{ "element": "EnumItem", "enum": "Material", "item": "Sand", "type": "Add", "value": { "Name": "Sand", "Value": 3 } }]),
 			&json!([{ "element": "EnumItem", "enum": "Material", "item": "Sand", "part": "description", "before": null, "after": "Grainy.", "value": { "Name": "Sand", "Value": 3 } }]),
 		);
-		let entries = result["owners"][0]["entries"].as_array().unwrap();
+		let entries = &result.owners[0].entries;
 		assert_eq!(entries.len(), 1);
-		assert_eq!(entries[0]["status"], "Added");
+		assert_eq!(entries[0].status, ChangeStatus::Added);
 		assert_eq!(
-			entries[0]["descriptions"],
-			json!([{ "part": "description", "status": "Added", "after": ["Grainy."] }])
+			texts(&entries[0].descriptions),
+			[(
+				DescriptionPart::Description,
+				ChangeStatus::Added,
+				String::new(),
+				"Grainy.".to_owned()
+			)]
 		);
-		assert_eq!(result["counts"]["Added"], 1);
+		assert_eq!(result.counts.added, 1);
 	}
 
 	#[test]
 	fn leaves_the_description_count_unknown_when_the_diff_has_no_descriptions() {
-		let result = update(&json!([]), &Value::Null);
-		assert_eq!(result["descriptionCount"], Value::Null);
-		assert_eq!(update(&json!([]), &json!([]))["descriptionCount"], 0);
+		assert_eq!(update(&json!([]), &Value::Null).description_count, None);
+		assert_eq!(update(&json!([]), &json!([])).description_count, Some(0));
 	}
 }

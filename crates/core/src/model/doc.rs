@@ -1,17 +1,12 @@
 use rapi_routes::MemberKind;
-use serde::{Serialize, Serializer};
 
-use super::types::member_kind;
-
-#[derive(Clone, Debug, PartialEq, Eq, Serialize)]
-#[serde(tag = "kind", rename_all = "camelCase")]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub enum DocLink {
 	Class {
 		name: String,
 	},
 	Member {
 		owner: String,
-		#[serde(serialize_with = "member_kind")]
 		member: MemberKind,
 		name: String,
 	},
@@ -77,22 +72,14 @@ impl DocTag {
 	}
 }
 
-impl Serialize for DocTag {
-	fn serialize<S: Serializer>(&self, serializer: S) -> Result<S::Ok, S::Error> {
-		serializer.serialize_str(self.name())
-	}
-}
-
-#[derive(Clone, Debug, PartialEq, Eq, Serialize)]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub struct DocElement {
 	pub tag: DocTag,
 	pub children: Vec<DocNode>,
-	#[serde(skip_serializing_if = "Option::is_none")]
 	pub link: Option<DocLink>,
 }
 
-#[derive(Clone, Debug, PartialEq, Eq, Serialize)]
-#[serde(untagged)]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub enum DocNode {
 	Text(String),
 	Element(DocElement),

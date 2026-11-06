@@ -1,9 +1,9 @@
 use rapi_routes::OwnerKind;
-use serde::{Deserialize, Serialize, Serializer};
+use serde::{Deserialize, Serialize};
 
 use super::{Doc, EnumItem, Member};
 
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, Serialize)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
 pub enum ChangeStatus {
 	Added,
 	Removed,
@@ -30,28 +30,24 @@ impl ChangeStatus {
 	}
 }
 
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Serialize)]
-#[serde(rename_all = "camelCase")]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DetailTone {
 	Text,
 	Code,
 	Type,
 }
 
-#[derive(Clone, Debug, PartialEq, Eq, Serialize)]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub struct DetailValue {
 	pub text: String,
 	pub tone: DetailTone,
 }
 
-#[derive(Clone, Debug, PartialEq, Eq, Serialize)]
-#[serde(tag = "kind", rename_all = "camelCase")]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub enum ChangeDetail {
 	Value {
 		label: String,
-		#[serde(skip_serializing_if = "Option::is_none")]
 		before: Option<DetailValue>,
-		#[serde(skip_serializing_if = "Option::is_none")]
 		after: Option<DetailValue>,
 	},
 	Tags {
@@ -76,43 +72,34 @@ pub enum DescriptionPart {
 	Return,
 }
 
-#[derive(Clone, Debug, PartialEq, Eq, Serialize)]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub struct DescriptionDetail {
 	pub part: DescriptionPart,
-	#[serde(skip_serializing_if = "Option::is_none")]
 	pub parameter: Option<String>,
 	pub status: ChangeStatus,
-	#[serde(skip_serializing_if = "Option::is_none")]
 	pub before: Option<Doc>,
-	#[serde(skip_serializing_if = "Option::is_none")]
 	pub after: Option<Doc>,
 }
 
-#[derive(Clone, Debug, PartialEq, Serialize)]
-#[serde(tag = "kind")]
+#[derive(Clone, Debug, PartialEq)]
 pub enum EntryValues {
 	Member {
-		#[serde(skip_serializing_if = "Option::is_none")]
 		before: Option<Box<Member>>,
-		#[serde(skip_serializing_if = "Option::is_none")]
 		after: Option<Box<Member>>,
 	},
 	EnumItem {
-		#[serde(skip_serializing_if = "Option::is_none")]
 		before: Option<Box<EnumItem>>,
-		#[serde(skip_serializing_if = "Option::is_none")]
 		after: Option<Box<EnumItem>>,
 	},
 }
 
-#[derive(Clone, Debug, PartialEq, Serialize)]
+#[derive(Clone, Debug, PartialEq)]
 pub struct ChangeEntry {
 	pub status: ChangeStatus,
 	pub owner: String,
 	pub name: String,
 	pub details: Vec<ChangeDetail>,
 	pub descriptions: Vec<DescriptionDetail>,
-	#[serde(flatten)]
 	pub values: EntryValues,
 }
 
@@ -165,26 +152,18 @@ impl ChangeEntry {
 	}
 }
 
-#[derive(Clone, Debug, PartialEq, Serialize)]
+#[derive(Clone, Debug, PartialEq)]
 pub struct OwnerChanges {
-	#[serde(serialize_with = "owner_kind")]
 	pub kind: OwnerKind,
 	pub name: String,
-	#[serde(skip_serializing_if = "Option::is_none")]
 	pub status: Option<ChangeStatus>,
 	pub details: Vec<ChangeDetail>,
 	pub descriptions: Vec<DescriptionDetail>,
 	pub entries: Vec<ChangeEntry>,
-	#[serde(skip)]
 	pub tags: Vec<String>,
 }
 
-pub fn owner_kind<S: Serializer>(kind: &OwnerKind, serializer: S) -> Result<S::Ok, S::Error> {
-	serializer.serialize_str(kind.name())
-}
-
-#[derive(Clone, Copy, Debug, Default, PartialEq, Eq, Serialize)]
-#[serde(rename_all = "PascalCase")]
+#[derive(Clone, Copy, Debug, Default, PartialEq, Eq)]
 pub struct ChangeCounts {
 	pub added: u32,
 	pub removed: u32,
@@ -213,14 +192,13 @@ impl ChangeCounts {
 	}
 }
 
-#[derive(Clone, Debug, PartialEq, Eq, Serialize)]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub struct Release {
 	pub version: String,
 	pub hash: String,
 }
 
-#[derive(Clone, Debug, PartialEq, Serialize)]
-#[serde(rename_all = "camelCase")]
+#[derive(Clone, Debug, PartialEq)]
 pub struct Update {
 	pub version: String,
 	pub hash: String,
