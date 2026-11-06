@@ -4,7 +4,7 @@ use rapi_routes::{
 	ABOUT, CLASSES, CONTACT, ENUMS, HOME, INDEX, PRIVACY, STATS, UPDATES, upload_name,
 };
 
-use crate::components::filters::{ListFilterPlacement, list_filter};
+use crate::components::filters::{ListFilterPlacement, list_filter_with};
 use crate::context::Context;
 use crate::html::{EXTERNAL_REL, EXTERNAL_TARGET, IconSize, classes, icon};
 use crate::meta::REPOSITORY_URL;
@@ -69,7 +69,10 @@ impl Shell {
 				nav id="sidebar" popover="auto" aria-label="Navigation"
 					data-drawer-only=[(!has_sidebar).then_some("")]
 					class=(classes(&[DRAWER_CLASS, if has_sidebar { "md:sticky md:top-header md:h-below-header md:max-w-none md:shrink-0" } else { "" }])) {
-					(drawer_sections(self.section))
+					@if !has_sidebar {
+						div class="mb-2 flex justify-end md:hidden" { (drawer_close(cx)) }
+					}
+					(drawer_sections(self.section, has_sidebar))
 					@if let Some(sidebar) = &self.sidebar { (sidebar) }
 				}
 				@if has_sidebar {
@@ -101,23 +104,23 @@ fn header(cx: &Context, section: Option<Section>) -> Markup {
 	html! {
 		header class="sticky top-0 z-20 flex h-12 items-center gap-2 border-b border-line bg-surface px-2 md:gap-3 md:px-4" {
 			div class="flex min-w-0 flex-1 items-center gap-2 md:gap-3" {
-				button type="button" popovertarget="sidebar" aria-label="Open navigation" class="grid size-10 shrink-0 place-items-center rounded-sm text-fg-muted motion-colors hover:bg-hover hover:text-fg md:hidden" {
+				button type="button" popovertarget="sidebar" aria-label="Open navigation" class="grid size-10 shrink-0 place-items-center rounded-sm text-fg-muted motion-colors motion-press hover:bg-hover hover:text-fg md:hidden" {
 					(icon(cx, Icon::List, IconSize::S20, ""))
 				}
 				a href=(HOME) class="truncate font-semibold whitespace-nowrap text-fg" { "Roblox API Reference" }
 				nav aria-label="Sections" class="hidden items-center gap-1 md:flex" {
 					@for (link, label, href) in SECTION_LINKS {
 						a href=(href) aria-current=[current(section, link)]
-							class=(classes(&["inline-flex h-8 items-center rounded-sm px-2 font-medium whitespace-nowrap motion-colors hover:bg-hover hover:text-fg", if section == Some(link) { "text-fg" } else { "text-fg-muted" }])) {
+							class=(classes(&["inline-flex h-8 items-center rounded-sm px-2 font-medium whitespace-nowrap motion-colors pointer-coarse:h-10", if section == Some(link) { "bg-active text-fg-bright" } else { "text-fg-muted hover:bg-hover hover:text-fg" }])) {
 							(label)
 						}
 					}
 				}
 			}
-			button type="button" data-search-open="" aria-label="Search the API" aria-keyshortcuts="Control+K /" class="ml-auto flex h-10 shrink-0 items-center gap-2 rounded-sm px-2.5 text-fg-muted motion-colors hover:bg-hover hover:text-fg md:ml-0 md:h-8 md:w-80 md:shrink md:border md:border-line md:bg-raised md:text-fg-faint md:hover:border-line-strong md:hover:bg-raised md:hover:text-fg-muted" {
+			button type="button" data-search-open="" aria-label="Search the API" aria-keyshortcuts="Control+K /" class="ml-auto flex h-10 shrink-0 items-center gap-2 rounded-sm px-2.5 text-fg-muted motion-colors motion-press hover:bg-hover hover:text-fg md:ml-0 md:h-8 md:w-80 md:shrink md:border md:border-line md:bg-raised md:text-fg-faint md:hover:border-line-strong md:hover:bg-raised md:hover:text-fg-muted" {
 				(icon(cx, Icon::MagnifyingGlass, IconSize::S16, ""))
 				span class="hidden md:inline" { "Search the API" }
-				kbd class="ml-auto hidden kbd md:block" { "Ctrl K" }
+				kbd data-shortcut="" class="ml-auto hidden kbd md:block" { "Ctrl K" }
 			}
 			div class="hidden min-w-0 flex-1 items-center justify-end gap-3 lg:flex" {
 				span data-tooltip=(label) class="min-w-0 truncate font-mono text-xs text-fg-faint" { (label) }
@@ -126,9 +129,17 @@ fn header(cx: &Context, section: Option<Section>) -> Markup {
 	}
 }
 
-fn drawer_sections(section: Option<Section>) -> Markup {
+fn drawer_close(cx: &Context) -> Markup {
 	html! {
-		ul aria-label="Sections" class="mb-3 flex flex-col border-b border-line pb-3 md:hidden" {
+		button type="button" popovertarget="sidebar" popovertargetaction="hide" aria-label="Close navigation" class="grid size-8 shrink-0 place-items-center rounded-sm text-fg-muted motion-colors motion-press hover:bg-hover hover:text-fg pointer-coarse:size-10 md:hidden" {
+			(icon(cx, Icon::X, IconSize::S20, ""))
+		}
+	}
+}
+
+fn drawer_sections(section: Option<Section>, has_sidebar: bool) -> Markup {
+	html! {
+		ul aria-label="Sections" class=(classes(&["flex flex-col md:hidden", if has_sidebar { "mb-3 border-b border-line pb-3" } else { "" }])) {
 			@for (link, label, href) in std::iter::once(HOME_LINK).chain(SECTION_LINKS) {
 				li {
 					a href=(href) aria-current=[current(section, link)]
@@ -168,7 +179,7 @@ fn footer() -> Markup {
 
 pub fn section_sidebar(cx: &Context, label: &str, target: &str, children: &Markup) -> Markup {
 	html! {
-		(list_filter(cx, label, target, "nav", ListFilterPlacement::Sidebar, None))
+		(list_filter_with(cx, label, target, "nav", ListFilterPlacement::Sidebar, None, Some(&drawer_close(cx))))
 		(children)
 	}
 }

@@ -105,7 +105,7 @@ export function highlight(name: string, marks: number[]): string {
 }
 
 const optionClass =
-	"flex h-8 items-center gap-2 rounded-sm px-2 text-fg-muted aria-selected:bg-hover aria-selected:text-fg"
+	"flex h-8 items-center gap-2 rounded-sm px-2 text-fg-muted pointer-coarse:h-10 aria-selected:bg-hover aria-selected:text-fg"
 
 function option(index: number, href: string, content: string): string {
 	return `<a id="${optionId(index)}" role="option" aria-selected="false" href="${escapeHtml(href)}" class="${optionClass}">${content}</a>`

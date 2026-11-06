@@ -59,7 +59,7 @@ pub fn home_page(cx: &Context) -> Markup {
 					span class="font-mono text-sm text-fg" { (upload_name(&api.hash)) }
 					"), with every default value in the API dump."
 				}
-				button type="button" data-search-open="" class="flex h-12 w-full min-w-0 items-center gap-3 rounded-md border border-line bg-raised px-4 text-left text-base text-fg-faint motion-colors hover:border-line-strong hover:text-fg-muted" {
+				button type="button" data-search-open="" class="flex h-12 w-full min-w-0 items-center gap-3 rounded-md border border-line bg-raised px-4 text-left text-base text-fg-faint motion-colors motion-press hover:border-line-strong hover:text-fg-muted" {
 					(icon(cx, Icon::MagnifyingGlass, IconSize::S20, ""))
 					span class="truncate" { "Search classes, members, enums, and data types" }
 					kbd class="ml-auto hidden kbd md:block" { "/" }
@@ -110,7 +110,7 @@ pub fn not_found_page(cx: &Context) -> Markup {
 	let body = header.render(cx, Some(html! {
 		(page_lead(&html! {
 			"This page does not exist in " (release_text(&cx.api.version, &cx.api.hash)) ". Search for the class or enum, or browse the "
-			a href=(CLASSES) class="text-fg underline decoration-line-strong hover:decoration-fg" { "class tree" }
+			a href=(CLASSES) class="prose-link" { "class tree" }
 			"."
 		}))
 		button type="button" data-search-open="" class="button w-fit" {

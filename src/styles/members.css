@@ -125,9 +125,7 @@
 	height: calc(var(--spacing) * 6);
 	border-radius: var(--radius-sm);
 	color: var(--color-fg-muted);
-	transition:
-		color var(--duration-fast) var(--ease-standard),
-		background-color var(--duration-fast) var(--ease-standard);
+	@apply motion-press motion-colors;
 
 	&::before,
 	&::after {
@@ -145,9 +143,11 @@
 		opacity: 0;
 	}
 
-	&:hover {
-		background-color: var(--color-hover);
-		color: var(--color-fg-bright);
+	@media (hover: hover) {
+		&:hover {
+			background-color: var(--color-hover);
+			color: var(--color-fg-bright);
+		}
 	}
 
 	@media (pointer: coarse) {
@@ -211,9 +211,11 @@
 		pointer-events: none;
 	}
 
-	&:hover {
-		background-color: var(--color-hover);
-		color: var(--color-fg);
+	@media (hover: hover) {
+		&:hover {
+			background-color: var(--color-hover);
+			color: var(--color-fg);
+		}
 	}
 }
 
@@ -252,8 +254,10 @@
 		transition: rotate var(--duration-fast) var(--ease-out);
 	}
 
-	& > summary:hover {
-		color: var(--color-fg);
+	@media (hover: hover) {
+		& > summary:hover {
+			color: var(--color-fg);
+		}
 	}
 
 	&[open] > summary::after {
@@ -359,13 +363,13 @@
 	border-radius: var(--radius-sm);
 	background-color: var(--color-raised);
 	color: var(--color-fg-muted);
-	transition:
-		color var(--duration-fast) var(--ease-standard),
-		border-color var(--duration-fast) var(--ease-standard);
+	@apply motion-press motion-colors;
 
-	&:hover {
-		border-color: var(--color-line-strong);
-		color: var(--color-fg-bright);
+	@media (hover: hover) {
+		&:hover {
+			border-color: var(--color-line-strong);
+			color: var(--color-fg-bright);
+		}
 	}
 }
 

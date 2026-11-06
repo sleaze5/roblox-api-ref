@@ -10,6 +10,7 @@ pub struct RailLink {
 	pub label: String,
 	pub count: Option<usize>,
 	pub count_hint: Option<String>,
+	pub code: bool,
 	pub entries: Vec<RailEntry>,
 }
 
@@ -20,6 +21,7 @@ impl RailLink {
 			label: label.into(),
 			count: None,
 			count_hint: None,
+			code: false,
 			entries: Vec::new(),
 		}
 	}
@@ -37,6 +39,12 @@ impl RailLink {
 	}
 
 	#[must_use]
+	pub const fn code(mut self) -> Self {
+		self.code = true;
+		self
+	}
+
+	#[must_use]
 	pub fn entries(mut self, entries: Vec<RailEntry>) -> Self {
 		self.entries = entries;
 		self
@@ -50,7 +58,7 @@ pub fn page_rail(links: &[RailLink]) -> Markup {
 			@for link in links {
 				div data-rail-section=(link.id) class="group/rail flex flex-col" {
 					a href={ "#" (link.id) } class="flex h-7 items-center justify-between rounded-sm px-2 text-fg-muted motion-colors group-data-active/rail:text-fg hover:bg-hover hover:text-fg" {
-						span { (link.label) }
+						span class=[link.code.then_some("font-mono")] { (link.label) }
 						@if let Some(count) = link.count {
 							span data-tooltip=[link.count_hint.as_deref()] class="text-xs text-fg-faint" { (count) }
 						}

@@ -31,7 +31,7 @@ fn event_value(event: &HistoryEvent, kind: OwnerKind, name: &str, status: Change
 	html! {
 		span class="flex flex-wrap items-baseline gap-x-2" {
 			(change_mark(Some(status), None))
-			a href=(history_href(event, kind, name)) class="font-mono text-fg underline decoration-line-strong hover:decoration-fg" { (event.version) }
+			a href=(history_href(event, kind, name)) class="font-mono prose-link" { (event.version) }
 			span class="text-fg-faint" { (format_date(&event.published)) }
 		}
 	}

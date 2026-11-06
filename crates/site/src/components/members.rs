@@ -44,7 +44,7 @@ pub fn signature(parts: &SignatureParts) -> Markup {
 	let parameters = parts.parameters.as_deref().unwrap_or_default();
 	let wrapped = parameters.len() >= 2 && text_length(&inline_tokens(parts)) > WRAP_LENGTH;
 	html! {
-		code class="member-code" {
+		code translate="no" class="member-code" {
 			(code_tokens(&parts.owner))
 			wbr;
 			(code_tokens(&parts.head))
@@ -139,7 +139,7 @@ fn preferred(member: &Member) -> Markup {
 				"Use "
 				@match &member.preferred_target {
 					None => span class="font-mono text-fg" { (name) },
-					Some(target) => a href=(member_href(&target.owner, target.kind, name)) class="font-mono text-fg underline decoration-line-strong hover:decoration-fg" { (name) },
+					Some(target) => a href=(member_href(&target.owner, target.kind, name)) class="font-mono prose-link" { (name) },
 				}
 				" instead."
 			}

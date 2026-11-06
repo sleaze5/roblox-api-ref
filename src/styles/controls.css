@@ -7,10 +7,13 @@
 	transition:
 		color var(--duration-fast) var(--ease-standard),
 		background-color var(--duration-fast) var(--ease-standard),
-		border-color var(--duration-fast) var(--ease-standard);
+		border-color var(--duration-fast) var(--ease-standard),
+		scale var(--duration-instant) var(--ease-standard);
 
-	&:hover {
-		border-color: var(--color-line-strong);
+	@media (hover: hover) {
+		&:hover {
+			border-color: var(--color-line-strong);
+		}
 	}
 
 	@media (pointer: coarse) {
@@ -71,10 +74,13 @@
 	font-weight: var(--font-weight-medium);
 	white-space: nowrap;
 	cursor: pointer;
+	@apply motion-press;
 
-	&:hover {
-		background-color: var(--color-hover);
-		color: var(--color-fg);
+	@media (hover: hover) {
+		&:hover {
+			background-color: var(--color-hover);
+			color: var(--color-fg);
+		}
 	}
 
 	@media (pointer: coarse) {
@@ -93,10 +99,13 @@
 	color: var(--color-fg-muted);
 	cursor: pointer;
 	user-select: none;
+	@apply motion-press;
 
-	&:hover {
-		background-color: var(--color-hover);
-		color: var(--color-fg);
+	@media (hover: hover) {
+		&:hover {
+			background-color: var(--color-hover);
+			color: var(--color-fg);
+		}
 	}
 
 	&:has(:checked) {

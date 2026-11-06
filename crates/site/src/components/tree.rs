@@ -73,7 +73,7 @@ pub fn class_tree(
 		counts,
 	};
 	html! {
-		ul id=(id) data-tree="" data-sticky-tree=[sticky.then_some("")] class=(classes(&["class-tree tree-class-icons", if sticky { "tree-sticky" } else { "" }])) {
+		ul id=(id) data-tree="" data-sticky-tree=[sticky.then_some("")] translate="no" class=(classes(&["class-tree tree-class-icons", if sticky { "tree-sticky" } else { "" }])) {
 			@for item in roots { (class_node(item, &options, 0)) }
 		}
 	}
@@ -110,7 +110,7 @@ pub fn flat_tree(
 	current: Option<&str>,
 ) -> Markup {
 	html! {
-		ul id=(id) data-tree="" class=(classes(&["class-tree", icon.class()])) {
+		ul id=(id) data-tree="" translate="no" class=(classes(&["class-tree", icon.class()])) {
 			@for item in items {
 				li {
 					a href=(item.href) aria-current=[(current == Some(item.name.as_str())).then_some("page")] data-deprecated=[item.deprecated.then_some("")] {

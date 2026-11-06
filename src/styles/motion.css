@@ -40,6 +40,13 @@
 			opacity: 0;
 		}
 	}
+
+	[data-instant] &,
+	[data-instant] &[open],
+	[data-instant] &::backdrop,
+	[data-instant] &[open]::backdrop {
+		transition-duration: 0s;
+	}
 }
 
 @utility motion-drawer {
@@ -75,9 +82,17 @@
 }
 
 @utility motion-colors {
-	transition-property: color, background-color, border-color;
-	transition-duration: var(--duration-fast);
-	transition-timing-function: var(--ease-standard);
+	transition:
+		color var(--duration-fast) var(--ease-standard),
+		background-color var(--duration-fast) var(--ease-standard),
+		border-color var(--duration-fast) var(--ease-standard),
+		scale var(--duration-instant) var(--ease-standard);
+}
+
+@utility motion-press {
+	&:active:not(:disabled, :has(:disabled)) {
+		scale: var(--motion-scale);
+	}
 }
 
 @utility motion-caret {

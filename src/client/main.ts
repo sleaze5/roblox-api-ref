@@ -5,10 +5,12 @@ import { initListFilter } from "./filters/list-filter.ts"
 import { initMemberFilter } from "./members/member-filter.ts"
 import { initScrollSpy } from "./rail/scroll-spy.ts"
 import { initSearchTrigger } from "./search/search-trigger.ts"
+import { initShortcutHint } from "./shortcut-hint.ts"
 import { initTooltips } from "./tooltip/tooltip.ts"
 import { initStickyRows } from "./tree/sticky-rows.ts"
 
 initSearchTrigger()
+initShortcutHint()
 initTooltips()
 initCopyLinks()
 initCodeSamples()

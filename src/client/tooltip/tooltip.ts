@@ -26,10 +26,11 @@ function iconElement(icon: TooltipIcon): HTMLElement {
 	return element
 }
 
-function show(target: TooltipTarget | undefined): void {
+function show(target: TooltipTarget | undefined, instant = false): void {
 	if (tip === null || target === undefined) {
 		return
 	}
+	tip.toggleAttribute("data-instant", instant)
 	anchor = target.element
 	tip.textContent = target.text
 	if (target.icon !== undefined) {
@@ -86,7 +87,7 @@ export function initTooltips(): void {
 		}
 		clearTimeout(timer)
 		if (performance.now() - lastHidden < warmWindow) {
-			show(target)
+			show(target, true)
 		} else {
 			timer = setTimeout(() => show(target), showDelay)
 		}
