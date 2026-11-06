@@ -1,3 +1,4 @@
+use crate::js::upper_first;
 use crate::model::{
 	ChangeStatus, Deprecation, HistoryChanges, HistoryEntry, HistoryKind, MemberCounts,
 };
@@ -128,13 +129,6 @@ pub const fn deprecation_text(deprecation: Deprecation) -> &'static str {
 	}
 }
 
-pub fn capitalize(text: &str) -> String {
-	let mut characters = text.chars();
-	characters.next().map_or_else(String::new, |first| {
-		first.to_uppercase().chain(characters).collect()
-	})
-}
-
 pub fn entry_text(entry: &HistoryEntry, noun: HistoryNoun) -> String {
 	let parts: Vec<String> = entry_parts(entry)
 		.into_iter()
@@ -147,7 +141,7 @@ pub fn entry_text(entry: &HistoryEntry, noun: HistoryNoun) -> String {
 			HistoryPart::Text(text) => vec![text],
 		})
 		.collect();
-	capitalize(&parts.join(", "))
+	upper_first(&parts.join(", "))
 }
 
 #[cfg(test)]

@@ -1,9 +1,10 @@
+use super::members::member_kind_title;
 use super::release::release_name;
 use super::text::format_month_period;
 use crate::js::{js_number, js_round};
 use crate::model::{
-	AccessNow, BUCKET_STARTS, ChangeTally, CountKind, CoverageKind, GAP_DAYS, Tallies, TrendKind,
-	UpdateTrend,
+	AccessNow, BUCKET_STARTS, ChangeTally, CountKind, CoverageKind, GAP_DAYS, StatRef, Tallies,
+	TrendKind, UpdateTrend,
 };
 
 pub const fn count_label(kind: CountKind) -> &'static str {
@@ -64,20 +65,17 @@ pub const fn kind_slug(kind: CountKind) -> &'static str {
 
 pub const SERVICES_HINT: &str = "Classes tagged Service. The Classes row includes them.";
 
-pub fn ref_noun(kind: &str) -> String {
-	let noun = match kind {
-		"Class" => "Classes",
-		"Property" => "Properties",
-		"Method" => "Methods",
-		"Event" => "Events",
-		"Callback" => "Callbacks",
-		"Enum" => "Enums",
-		"EnumItem" => "Enum items",
-		"DataType" => "Data types",
-		"Parameter" => "Parameters",
-		"Name" => "Names",
-		"Update" => "Updates",
-		_ => "Removed items",
+pub fn ref_noun(item: &StatRef) -> String {
+	let noun = match item {
+		StatRef::Class { .. } => "Classes",
+		StatRef::Member { kind, .. } => member_kind_title(*kind),
+		StatRef::Enum { .. } => "Enums",
+		StatRef::EnumItem { .. } => "Enum items",
+		StatRef::DataType { .. } => "Data types",
+		StatRef::Parameter { .. } => "Parameters",
+		StatRef::Name { .. } => "Names",
+		StatRef::Update { .. } => "Updates",
+		StatRef::Removed { .. } => "Removed items",
 	};
 	noun.to_lowercase()
 }
@@ -144,13 +142,6 @@ pub const fn coverage_label(kind: CoverageKind) -> &'static str {
 		CoverageKind::Enum => "Enums",
 		CoverageKind::EnumItem => "Enum items",
 	}
-}
-
-pub fn capitalized(text: &str) -> String {
-	let mut chars = text.chars();
-	chars.next().map_or_else(String::new, |first| {
-		first.to_uppercase().chain(chars).collect()
-	})
 }
 
 pub const PER_UPDATE_NOTE: &str = "The classes, members, and enum items that each update added and removed. A number marks a bar that runs past the axis.";

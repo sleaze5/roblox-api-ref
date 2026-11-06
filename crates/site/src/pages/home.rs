@@ -2,7 +2,7 @@ use maud::{Markup, html};
 use rapi_core::api::release::release_text;
 use rapi_core::icons::Icon;
 use rapi_core::js::compare_names;
-use rapi_core::model::Class;
+use rapi_core::model::{Class, is_deprecated};
 use rapi_routes::{CLASSES, ENUMS, INDEX, STATS, UPDATES, class_href, upload_name};
 
 use crate::components::page::{HeaderIcon, PageHeader, page_lead, root_crumbs};
@@ -42,10 +42,7 @@ pub fn home_page(cx: &Context) -> Markup {
 	let mut services: Vec<&Class> = api
 		.classes
 		.values()
-		.filter(|item| {
-			item.tags.iter().any(|tag| tag == "Service")
-				&& !item.tags.iter().any(|tag| tag == "Deprecated")
-		})
+		.filter(|item| item.tags.iter().any(|tag| tag == "Service") && !is_deprecated(&item.tags))
 		.collect();
 	services.sort_by(|a, b| compare_names(&a.name, &b.name));
 	let body = html! {

@@ -1,5 +1,4 @@
 use indexmap::IndexMap;
-use rapi_routes::MemberKind;
 
 use super::docs::apply_api_docs;
 use super::facets::collect_facets;
@@ -411,7 +410,12 @@ fn collect_data_types(usage: &UsageIndex) -> IndexMap<String, DataType> {
 	data_types
 }
 
-pub fn normalize_api(dump: &Dump, docs: &ApiDocs, version: &RobloxVersion) -> Api {
+pub fn normalize_api(
+	dump: &Dump,
+	docs: &ApiDocs,
+	version: &RobloxVersion,
+	history_start: &str,
+) -> Api {
 	let mut classes = normalize_classes(dump);
 	resolve_preferred_members(&mut classes);
 	let usage = index_type_usage(&classes);
@@ -432,13 +436,9 @@ pub fn normalize_api(dump: &Dump, docs: &ApiDocs, version: &RobloxVersion) -> Ap
 		enums,
 		data_types,
 		facets,
-		history_start: None,
+		history_start: history_start.to_owned(),
 		removed: None,
 	}
-}
-
-pub const fn member_kind_name(kind: MemberKind) -> &'static str {
-	kind.name()
 }
 
 #[cfg(test)]

@@ -10,7 +10,7 @@ use self::format::format_sample;
 use self::highlight::highlight;
 use self::lines::split_lines;
 use super::docs::ApiNames;
-use crate::dump::ApiDocs;
+use crate::dump::{ApiDocs, class_docs_key, member_docs_key};
 use crate::model::{Class, CodeSample, DataType, Enum};
 
 struct Samples<'a, 'b> {
@@ -53,13 +53,11 @@ pub fn apply_code_samples(
 		classes
 			.values()
 			.map(|item| {
-				let own = samples.get(&format!("@roblox/globaltype/{}", item.name));
+				let own = samples.get(&class_docs_key(&item.name));
 				let members = item
 					.members
 					.iter()
-					.map(|member| {
-						samples.get(&format!("@roblox/globaltype/{}.{}", item.name, member.name))
-					})
+					.map(|member| samples.get(&member_docs_key(&item.name, &member.name)))
 					.collect();
 				(own, members)
 			})

@@ -9,7 +9,6 @@ use crate::routes::{IndexList, Route};
 use crate::site_pages::site_page;
 
 pub const SITE_NAME: &str = "Roblox API Reference";
-pub const SITE_TAGLINE: &str = "Unofficial Roblox Engine API reference.";
 pub const SITE_SUMMARY: &str = "Search and browse every class, member, enum, and data type, and see what changed in each Roblox Studio build.";
 pub const SITE_DESCRIPTION: &str = "Unofficial Roblox Engine API reference. Search and browse every class, member, enum, and data type, and see what changed in each Roblox Studio build.";
 pub const REPOSITORY_URL: &str = "https://github.com/sleaze5/roblox-api-ref";

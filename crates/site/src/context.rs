@@ -1,10 +1,10 @@
-use std::collections::HashSet;
+use std::collections::{HashMap, HashSet};
 use std::fmt::Write as _;
 use std::sync::OnceLock;
 
 use rapi_core::api::filter_tags::{FilterTagGroup, filter_tag_groups};
 use rapi_core::generate::facets::FacetSlugs;
-use rapi_core::model::{Api, Release, Stats, Update};
+use rapi_core::model::{Api, Stats, Update};
 use rapi_routes::{
 	FacetKind, OwnerKind, class_href, enum_href, enum_item_href, member_href, removed_owner_href,
 	type_href,
@@ -19,6 +19,7 @@ pub struct Context {
 	pub origin: String,
 	links: OnceLock<HashSet<String>>,
 	filter_tags: OnceLock<Vec<FilterTagGroup>>,
+	pub(crate) route_index: OnceLock<HashMap<String, usize>>,
 }
 
 impl Context {
@@ -39,6 +40,7 @@ impl Context {
 			origin,
 			links: OnceLock::new(),
 			filter_tags: OnceLock::new(),
+			route_index: OnceLock::new(),
 		}
 	}
 
@@ -73,13 +75,6 @@ impl Context {
 			}
 			links
 		})
-	}
-
-	pub fn release(&self) -> Release {
-		Release {
-			version: self.api.version.clone(),
-			hash: self.api.hash.clone(),
-		}
 	}
 
 	pub fn facet_href(&self, kind: FacetKind, name: &str) -> String {

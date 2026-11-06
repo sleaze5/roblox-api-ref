@@ -6,20 +6,20 @@ use rapi_core::api::facets::{
 	facet_description, facet_label, use_kind_title, use_sections, use_text,
 };
 use rapi_core::api::history_text::{HistoryNoun, entry_text};
-use rapi_core::api::luau::luau_name;
 use rapi_core::api::members::{member_kind_title, members_in_page_order};
 use rapi_core::api::release::release_text;
 use rapi_core::api::signature::{inline_tokens, signature_parts};
 use rapi_core::api::tags::{member_tags, plain_tags};
 use rapi_core::js::{compare_names, format_date};
 use rapi_core::model::{
-	AccessTier, Class, CodeSample, DataType, Enum, EnumItem, Facet, FacetAccess, FacetUse,
-	HistoryEvent, ItemHistory, Member, MemberDetail, Removed, Security, TypeRole, TypeUsage,
-	UseKind,
+	Class, CodeSample, DataType, Enum, EnumItem, Facet, FacetAccess, FacetUse, HistoryEvent,
+	ItemHistory, Member, MemberDetail, Removed, Security, TypeRole, TypeUsage, UseKind,
 };
 use rapi_routes::{
 	MemberKind, OwnerKind, change_anchor, class_href, enum_href, type_href, update_href,
 };
+use rapi_search::AccessTier;
+use rapi_search::luau_name;
 
 use super::doc::doc_markdown;
 use super::text::{escape_text, fact_list, inline_code, join_blocks, link, table_cell};

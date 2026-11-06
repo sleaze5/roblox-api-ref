@@ -2,13 +2,14 @@ use std::collections::HashSet;
 use std::path::Path;
 use std::sync::LazyLock;
 
-use rapi_core::generate::pipeline::{Paths, generate_site};
+use rapi_core::generate::pipeline::generate_site;
+use rapi_core::paths::Paths;
 use rapi_routes::{
 	FACET_KINDS, FacetKind, class_href, enum_href, facet_index_href, type_href, update_href,
 };
 use rapi_site::markdown::{markdown_path, page_markdown};
 use rapi_site::meta::{SITE_DESCRIPTION, page_title};
-use rapi_site::routes::{IndexList, Route, SitePageName, match_route, route_paths};
+use rapi_site::routes::{IndexList, Route, SitePageName, all_routes, match_route};
 use rapi_site::{Context, RenderedPage, render_page};
 use serde_json::Value;
 
@@ -31,13 +32,20 @@ fn route(path: &str) -> Route<'static> {
 	match_route(&CX, path)
 }
 
+fn route_paths() -> Vec<String> {
+	all_routes(&CX)
+		.iter()
+		.map(|route| route.href(&CX))
+		.collect()
+}
+
 fn markdown(path: &str) -> String {
 	page_markdown(&CX, &route(path)).content
 }
 
 #[test]
 fn resolves_every_generated_page_without_duplicate_paths() {
-	let paths = route_paths(&CX);
+	let paths = route_paths();
 	assert!(paths.len() > 2000);
 	assert_eq!(paths.iter().collect::<HashSet<_>>().len(), paths.len());
 	assert_eq!(
@@ -65,7 +73,7 @@ fn gives_classes_enums_types_facets_and_updates_their_pages() {
 		Route::IndexList(IndexList::Types)
 	));
 	assert!(matches!(route("/about/"), Route::Site(SitePageName::About)));
-	let paths: HashSet<String> = route_paths(&CX).into_iter().collect();
+	let paths: HashSet<String> = route_paths().into_iter().collect();
 	for kind in FACET_KINDS {
 		assert!(
 			matches!(route(&facet_index_href(kind)), Route::FacetIndex(found) if found == kind)
@@ -130,7 +138,7 @@ fn names_each_page_before_the_site_name() {
 
 fn head(path: &str) -> (RenderedPage, String) {
 	let page = render_page(&CX, path);
-	let tags = rapi_site::head::head_tags(&CX, &page, path);
+	let tags = rapi_site::head::head_tags(&CX, &page);
 	(page, tags)
 }
 
@@ -251,7 +259,7 @@ fn publishes_the_organization_on_the_home_about_and_contact_pages() {
 
 #[test]
 fn renders_every_page_with_its_markdown_at_the_page_url_plus_md() {
-	for path in route_paths(&CX) {
+	for path in route_paths() {
 		let page = render_page(&CX, &path);
 		assert!(page.body.contains("id=\"main\""), "{path}");
 		assert!(

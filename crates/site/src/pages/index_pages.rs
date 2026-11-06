@@ -7,7 +7,9 @@ use rapi_core::api::facets::{
 use rapi_core::api::text::REMOVED_LEAD;
 use rapi_core::icons::Icon;
 use rapi_core::js::{compare_names, format_date};
-use rapi_core::model::{ChangeStatus, DataType, DataTypeCategory, Enum, RemovedOwner};
+use rapi_core::model::{
+	ChangeStatus, DataType, DataTypeCategory, Enum, RemovedOwner, is_deprecated,
+};
 use rapi_routes::{
 	FACET_KINDS, FacetKind, OwnerKind, REMOVED, TYPES, enum_href, facet_index_href, owner_anchor,
 	type_href, update_href,
@@ -73,7 +75,7 @@ pub fn enum_index_page(cx: &Context) -> Markup {
 			(list_filter(cx, "Filter enums", "enum-list", "q", ListFilterPlacement::Page, None))
 			ul id="enum-list" class="grid grid-cols-1 gap-x-4 md:grid-cols-2 lg:grid-cols-3" {
 				@for item in &enums {
-					@let deprecated = item.tags.iter().any(|tag| tag == "Deprecated");
+					@let deprecated = is_deprecated(&item.tags);
 					li data-name=(item.name) {
 						a href=(enum_href(&item.name))
 							aria-label=[deprecated.then(|| format!("{} (deprecated)", item.name))]

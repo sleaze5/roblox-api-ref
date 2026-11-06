@@ -34,7 +34,7 @@ fn sort_items(mut group: RecordGroup) -> RecordGroup {
 	group
 }
 
-pub fn build_stats(api: &Api, updates: &[Update], history_start: &str) -> Stats {
+pub fn build_stats(api: &Api, updates: &[Update]) -> Stats {
 	let trends = trends::update_trends(api, updates);
 	let comebacks = comebacks::comeback_stats(api, updates);
 	let mut records = vec![
@@ -50,7 +50,6 @@ pub fn build_stats(api: &Api, updates: &[Update], history_start: &str) -> Stats 
 	records.push(comebacks.records);
 	records.push(signatures::signature_records(api, updates));
 	Stats {
-		history_start: history_start.to_owned(),
 		counts: counts::count_stats(api, updates),
 		records: records.into_iter().map(sort_items).collect(),
 		years: trends::year_trends(&trends),

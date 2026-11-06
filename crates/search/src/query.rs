@@ -1,3 +1,4 @@
+use crate::access::AccessTier;
 use crate::format::{EntryKind, flags};
 
 pub const KIND_ALIASES: [(&str, &[EntryKind]); 10] = [
@@ -33,8 +34,6 @@ pub const TAG_ALIASES: [(&str, u16); 9] = [
 	("notscriptable", flags::NOT_SCRIPTABLE),
 ];
 
-pub const ACCESS_FILTERS: [(&str, u8); 3] = [("game", 0), ("plugin", 1), ("command", 2)];
-
 #[derive(Clone, Debug, Default, PartialEq, Eq)]
 pub struct ParsedQuery {
 	pub words: Vec<String>,
@@ -46,7 +45,7 @@ pub struct ParsedQuery {
 	pub value_type: Option<String>,
 	pub uses: Option<String>,
 	pub enum_scope: bool,
-	pub access: Option<u8>,
+	pub access: Option<AccessTier>,
 }
 
 impl ParsedQuery {
@@ -68,6 +67,8 @@ impl ParsedQuery {
 		}
 	}
 }
+
+pub const JS_SPACE: &str = r"\t\n\x0B\x0C\r \u{a0}\u{1680}\u{2000}-\u{200a}\u{2028}\u{2029}\u{202f}\u{205f}\u{3000}\u{feff}";
 
 pub const fn is_js_space(character: char) -> bool {
 	matches!(
@@ -94,10 +95,8 @@ fn apply_filter(query: &mut ParsedQuery, negated: bool, field: &str, value: &str
 			}
 			true
 		}
-		"access" => ACCESS_FILTERS
-			.iter()
-			.find(|(name, _)| *name == lower)
-			.map(|(_, level)| query.access = Some(*level))
+		"access" => AccessTier::filter(&lower)
+			.map(|tier| query.access = Some(tier))
 			.is_some(),
 		"is" => KIND_ALIASES
 			.iter()
@@ -206,7 +205,7 @@ mod tests {
 		assert_eq!(query.include, flags::YIELDS);
 		assert_eq!(query.exclude, flags::DEPRECATED);
 		assert_eq!(query.value_type.as_deref(), Some("Color3"));
-		assert_eq!(query.access, Some(0));
+		assert_eq!(query.access, Some(AccessTier::Game));
 	}
 
 	#[test]

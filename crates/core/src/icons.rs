@@ -87,12 +87,11 @@ impl Icon {
 		Self::X,
 	];
 
-	pub const MASKS: [Self; 23] = [
+	pub const MASKS: [Self; 21] = [
 		Self::ArrowSquareOut,
 		Self::ArrowUDownLeft,
 		Self::ArrowUUpLeft,
 		Self::BracketsCurly,
-		Self::CaretDown,
 		Self::CaretRight,
 		Self::Check,
 		Self::ClockCounterClockwise,
@@ -100,7 +99,6 @@ impl Icon {
 		Self::Cube,
 		Self::Folders,
 		Self::Function,
-		Self::GitDiff,
 		Self::GitFork,
 		Self::Hash,
 		Self::Lightning,
@@ -195,4 +193,32 @@ pub fn build_favicon(phosphor: &Path) -> std::io::Result<String> {
 	Ok(format!(
 		"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" rx=\"56\" fill=\"#111111\"/><g fill=\"#ffffff\" transform=\"translate(32 32) scale(.75)\">{body}</g></svg>\n"
 	))
+}
+
+#[cfg(test)]
+mod tests {
+	use std::collections::BTreeSet;
+	use std::path::Path;
+
+	use super::Icon;
+
+	#[test]
+	fn writes_a_mask_for_exactly_the_icons_that_the_styles_use() {
+		let styles = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../src/styles");
+		let mut used = BTreeSet::new();
+		for entry in std::fs::read_dir(styles).expect("src/styles exists") {
+			let css = std::fs::read_to_string(entry.expect("a style file").path())
+				.expect("a style file reads");
+			for (index, _) in css.match_indices("generated/icons/") {
+				let rest = &css[index + "generated/icons/".len()..];
+				let end = rest.find(".svg").expect("a mask URL ends in .svg");
+				used.insert(rest[..end].to_owned());
+			}
+		}
+		let masks: BTreeSet<String> = Icon::MASKS
+			.iter()
+			.map(|icon| icon.name().to_owned())
+			.collect();
+		assert_eq!(masks, used);
+	}
 }

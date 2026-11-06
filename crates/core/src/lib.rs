@@ -6,3 +6,4 @@ pub mod generate;
 pub mod icons;
 pub mod js;
 pub mod model;
+pub mod paths;

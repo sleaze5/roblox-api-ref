@@ -62,15 +62,6 @@ pub fn class_icon(icon: u32, class: &str) -> Markup {
 	}
 }
 
-pub fn external_link(href: &str, content: &Markup) -> Markup {
-	html! {
-		a href=(href) target=(EXTERNAL_TARGET) rel=(EXTERNAL_REL) {
-			(content)
-			span class="sr-only" { " (opens in a new tab)" }
-		}
-	}
-}
-
 pub fn creator_hub_link(href: &str, name: &str) -> Markup {
 	html! {
 		a href=(href) target=(EXTERNAL_TARGET) rel=(EXTERNAL_REL)

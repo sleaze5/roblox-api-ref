@@ -1,8 +1,8 @@
 use maud::{Markup, html};
 use rapi_core::api::history_text::{
-	HistoryNoun, HistoryPart, capitalize, deprecation_text, entry_parts, entry_status, plural,
+	HistoryNoun, HistoryPart, deprecation_text, entry_parts, entry_status, plural,
 };
-use rapi_core::js::format_date;
+use rapi_core::js::{format_date, upper_first};
 use rapi_core::model::{
 	ChangeCounts, ChangeStatus, Deprecation, HistoryEntry, HistoryEvent, ItemHistory, MemberCounts,
 };
@@ -41,7 +41,7 @@ pub fn history_facts(
 	history: Option<&ItemHistory>,
 	kind: OwnerKind,
 	name: &str,
-	start: Option<&str>,
+	start: &str,
 ) -> Markup {
 	let noun = noun(kind);
 	let added = history.and_then(|history| history.added.as_ref());
@@ -52,8 +52,7 @@ pub fn history_facts(
 			"Unrecorded: the public API dumps that older versions are compared with do not list this {noun}, so the update that added it is unknown."
 		),
 		None => format!(
-			"Not recorded: this {noun} already existed in {}, the oldest version that this site tracks.",
-			start.unwrap_or("the oldest version")
+			"Not recorded: this {noun} already existed in {start}, the oldest version that this site tracks."
 		),
 		Some(_) => format!("The update that added this {noun}."),
 	};
@@ -98,7 +97,7 @@ fn members_part(counts: MemberCounts, deprecated: u32, noun: HistoryNoun) -> Mar
 
 fn part_text(text: &str, first: bool) -> String {
 	if first {
-		capitalize(text)
+		upper_first(text)
 	} else {
 		text.to_owned()
 	}

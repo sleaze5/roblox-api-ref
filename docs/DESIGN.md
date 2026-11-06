@@ -445,14 +445,13 @@ The `gen` task reads every update, oldest first, and records each update that to
 
 Motion must feel immediate. If the reader can notice that they are waiting for an animation, the animation is too slow. Follow the animation performance rules in `AGENTS.md`.
 
-- `--duration-instant` (60ms): press feedback
 - `--duration-fast` (100ms): hover color, tooltips, and icon swaps
 - `--duration-exit` (90ms): every exit
 - `--duration-ui` (140ms): entrances of menus, popovers, the search dialog, and the mobile sidebar
 - `--ease-out` (`cubic-bezier(0.16, 1, 0.3, 1)`): entrances
 - `--ease-standard` (`cubic-bezier(0.4, 0, 0.2, 1)`): exits and color changes
 - `--motion-distance` (4px): entrance offset
-- `--motion-scale` (0.98): entrance and press scale
+- `--motion-scale` (0.98): entrance scale
 
 What moves:
 
@@ -460,7 +459,6 @@ What moves:
 - The search dialog fades in and scales from `--motion-scale`. Its backdrop fades.
 - The mobile sidebar slides in from the left edge.
 - Tooltips fade. They do not move.
-- Buttons scale to `--motion-scale` while pressed.
 - The disclosure caret rotates 90 degrees when its group opens.
 - The thumb of a switch slides to the right when it turns on.
 - The copy icon crossfades to the check icon, then back after 1.5 seconds.

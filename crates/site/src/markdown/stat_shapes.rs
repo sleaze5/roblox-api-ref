@@ -19,7 +19,7 @@ fn with_unit(value: f64, unit: Option<&str>) -> String {
 
 pub fn record_items(record: &StatRecord) -> String {
 	match &record.ties {
-		Some(ties) => format!("{} {}", ties.count, ref_noun(&ties.kind)),
+		Some(ties) => format!("{} {}", ties.count, ref_noun(&ties.sample)),
 		None => record
 			.items
 			.iter()

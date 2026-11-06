@@ -1,10 +1,17 @@
 use indexmap::IndexMap;
-use rapi_routes::{FACET_KINDS, FacetKind, MemberKind};
-use serde::{Deserialize, Serialize, Serializer};
+use rapi_routes::{FacetKind, MemberKind};
+use rapi_search::AccessTier;
+use serde::Deserialize;
 
 use super::{CodeSample, Doc, ItemHistory, Removed, RemovedOwner};
 
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+pub const DEPRECATED_TAG: &str = "Deprecated";
+
+pub fn is_deprecated(tags: &[String]) -> bool {
+	tags.iter().any(|tag| tag == DEPRECATED_TAG)
+}
+
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Deserialize)]
 pub enum Security {
 	None,
 	PluginSecurity,
@@ -45,9 +52,18 @@ impl Security {
 	pub const fn rank(self) -> usize {
 		self as usize
 	}
+
+	pub const fn access_tier(self) -> AccessTier {
+		match self {
+			Self::None => AccessTier::Game,
+			Self::PluginSecurity => AccessTier::Plugin,
+			Self::LocalUserSecurity => AccessTier::Command,
+			_ => AccessTier::Roblox,
+		}
+	}
 }
 
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Deserialize)]
 pub enum TypeCategory {
 	Primitive,
 	Class,
@@ -68,12 +84,11 @@ impl TypeCategory {
 	}
 }
 
-#[derive(Clone, Debug, PartialEq, Eq, Hash, Serialize)]
+#[derive(Clone, Debug, PartialEq, Eq, Hash)]
 pub struct ApiType {
 	pub category: TypeCategory,
 	pub name: String,
 	pub optional: bool,
-	#[serde(skip_serializing_if = "Option::is_none")]
 	pub members: Option<Vec<ApiType>>,
 }
 
@@ -87,64 +102,46 @@ impl ApiType {
 	}
 }
 
-#[derive(Clone, Debug, PartialEq, Serialize)]
+#[derive(Clone, Debug, PartialEq)]
 pub struct Parameter {
 	pub name: String,
-	#[serde(rename = "type")]
 	pub ty: ApiType,
-	#[serde(skip_serializing_if = "Option::is_none")]
 	pub default: Option<String>,
-	#[serde(skip_serializing_if = "Option::is_none")]
 	pub description: Option<Doc>,
 }
 
-#[derive(Clone, Debug, Default, PartialEq, Eq, Serialize)]
+#[derive(Clone, Debug, Default, PartialEq, Eq)]
 pub struct Capabilities {
 	pub read: Vec<String>,
 	pub write: Vec<String>,
 }
 
-#[derive(Clone, Debug, PartialEq, Eq, Serialize)]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub struct PreferredTarget {
 	pub owner: String,
-	#[serde(serialize_with = "member_kind")]
 	pub kind: MemberKind,
 }
 
-pub fn member_kind<S: Serializer>(kind: &MemberKind, serializer: S) -> Result<S::Ok, S::Error> {
-	serializer.serialize_str(kind.name())
-}
-
-#[derive(Clone, Debug, PartialEq, Serialize)]
-#[serde(rename_all = "camelCase")]
+#[derive(Clone, Debug, PartialEq)]
 pub struct Member {
 	pub name: String,
-	#[serde(skip_serializing_if = "Option::is_none")]
 	pub history: Option<ItemHistory>,
 	pub tags: Vec<String>,
 	pub security: Security,
 	pub thread_safety: String,
 	pub capabilities: Capabilities,
-	#[serde(skip_serializing_if = "Option::is_none")]
 	pub preferred: Option<String>,
-	#[serde(skip_serializing_if = "Option::is_none")]
 	pub preferred_target: Option<PreferredTarget>,
-	#[serde(skip_serializing_if = "Option::is_none")]
 	pub description: Option<Doc>,
-	#[serde(skip)]
 	pub sample: Option<CodeSample>,
-	#[serde(flatten)]
 	pub detail: MemberDetail,
 }
 
-#[derive(Clone, Debug, PartialEq, Serialize)]
-#[serde(tag = "kind", rename_all_fields = "camelCase")]
+#[derive(Clone, Debug, PartialEq)]
 pub enum MemberDetail {
 	Property {
-		#[serde(rename = "type")]
 		ty: ApiType,
 		category: String,
-		#[serde(skip_serializing_if = "Option::is_none")]
 		default: Option<String>,
 		write_security: Security,
 		can_load: bool,
@@ -154,7 +151,6 @@ pub enum MemberDetail {
 	Method {
 		parameters: Vec<Parameter>,
 		returns: ApiType,
-		#[serde(skip_serializing_if = "Option::is_none")]
 		return_description: Option<Doc>,
 		simulation_access: bool,
 	},
@@ -164,7 +160,6 @@ pub enum MemberDetail {
 	Callback {
 		parameters: Vec<Parameter>,
 		returns: ApiType,
-		#[serde(skip_serializing_if = "Option::is_none")]
 		return_description: Option<Doc>,
 	},
 }
@@ -262,75 +257,59 @@ impl Member {
 	}
 }
 
-#[derive(Clone, Debug, PartialEq, Eq, Serialize)]
-#[serde(rename_all = "camelCase")]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub struct TypeUsage {
 	pub class_name: String,
 	pub member_name: String,
-	#[serde(serialize_with = "member_kind")]
 	pub kind: MemberKind,
 	pub role: TypeRole,
 }
 
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, Serialize)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
 pub enum TypeRole {
 	Value,
 	Parameter,
 	Return,
 }
 
-#[derive(Clone, Debug, PartialEq, Serialize)]
-#[serde(rename_all = "camelCase")]
+#[derive(Clone, Debug, PartialEq)]
 pub struct Class {
 	pub name: String,
-	#[serde(skip_serializing_if = "Option::is_none")]
 	pub history: Option<ItemHistory>,
-	#[serde(skip_serializing_if = "Option::is_none")]
 	pub icon: Option<u32>,
-	#[serde(skip_serializing_if = "Option::is_none")]
 	pub superclass: Option<String>,
 	pub memory_category: String,
 	pub tags: Vec<String>,
 	pub members: Vec<Member>,
-	#[serde(skip_serializing_if = "Option::is_none")]
 	pub removed_members: Option<Vec<Removed<Member>>>,
 	pub subclasses: Vec<String>,
 	pub used_by: Vec<TypeUsage>,
-	#[serde(skip_serializing_if = "Option::is_none")]
 	pub description: Option<Doc>,
-	#[serde(skip)]
 	pub sample: Option<CodeSample>,
 }
 
-#[derive(Clone, Debug, PartialEq, Serialize)]
-#[serde(rename_all = "camelCase")]
+#[derive(Clone, Debug, PartialEq)]
 pub struct EnumItem {
 	pub name: String,
-	#[serde(skip_serializing_if = "Option::is_none")]
 	pub history: Option<ItemHistory>,
 	pub value: i64,
 	pub tags: Vec<String>,
 	pub legacy_names: Vec<String>,
-	#[serde(skip_serializing_if = "Option::is_none")]
 	pub description: Option<Doc>,
 }
 
-#[derive(Clone, Debug, PartialEq, Serialize)]
-#[serde(rename_all = "camelCase")]
+#[derive(Clone, Debug, PartialEq)]
 pub struct Enum {
 	pub name: String,
-	#[serde(skip_serializing_if = "Option::is_none")]
 	pub history: Option<ItemHistory>,
 	pub tags: Vec<String>,
 	pub items: Vec<EnumItem>,
-	#[serde(skip_serializing_if = "Option::is_none")]
 	pub removed_items: Option<Vec<Removed<EnumItem>>>,
 	pub used_by: Vec<TypeUsage>,
-	#[serde(skip_serializing_if = "Option::is_none")]
 	pub description: Option<Doc>,
 }
 
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, Serialize)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
 pub enum DataTypeCategory {
 	Primitive,
 	Group,
@@ -357,15 +336,14 @@ impl DataTypeCategory {
 	}
 }
 
-#[derive(Clone, Debug, PartialEq, Serialize)]
-#[serde(rename_all = "camelCase")]
+#[derive(Clone, Debug, PartialEq)]
 pub struct DataType {
 	pub name: String,
 	pub category: DataTypeCategory,
 	pub used_by: Vec<TypeUsage>,
 }
 
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, Serialize)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
 pub enum FacetAccess {
 	Read,
 	Write,
@@ -425,32 +403,19 @@ impl UseKind {
 	}
 }
 
-impl Serialize for UseKind {
-	fn serialize<S: Serializer>(&self, serializer: S) -> Result<S::Ok, S::Error> {
-		serializer.serialize_str(self.name())
-	}
-}
-
-#[derive(Clone, Debug, PartialEq, Eq, Serialize)]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub struct FacetUse {
 	pub kind: UseKind,
-	#[serde(skip_serializing_if = "String::is_empty")]
 	pub owner: String,
 	pub name: String,
-	#[serde(skip_serializing_if = "Option::is_none")]
 	pub access: Option<FacetAccess>,
 }
 
-#[derive(Clone, Debug, PartialEq, Serialize)]
+#[derive(Clone, Debug, PartialEq)]
 pub struct Facet {
-	#[serde(serialize_with = "facet_kind")]
 	pub kind: FacetKind,
 	pub name: String,
 	pub uses: Vec<FacetUse>,
-}
-
-pub fn facet_kind<S: Serializer>(kind: &FacetKind, serializer: S) -> Result<S::Ok, S::Error> {
-	serializer.serialize_str(kind.key())
 }
 
 #[derive(Clone, Debug, Default, PartialEq)]
@@ -466,20 +431,13 @@ impl Facets {
 	}
 }
 
-impl Serialize for Facets {
-	fn serialize<S: Serializer>(&self, serializer: S) -> Result<S::Ok, S::Error> {
-		serializer.collect_map(FACET_KINDS.iter().map(|kind| (kind.key(), self.of(*kind))))
-	}
-}
-
-#[derive(Clone, Debug, Default, PartialEq, Serialize)]
+#[derive(Clone, Debug, Default, PartialEq)]
 pub struct RemovedOwners {
 	pub classes: Vec<RemovedOwner>,
 	pub enums: Vec<RemovedOwner>,
 }
 
-#[derive(Clone, Debug, PartialEq, Serialize)]
-#[serde(rename_all = "camelCase")]
+#[derive(Clone, Debug, PartialEq)]
 pub struct Api {
 	pub version: String,
 	pub hash: String,
@@ -489,9 +447,7 @@ pub struct Api {
 	pub enums: IndexMap<String, Enum>,
 	pub data_types: IndexMap<String, DataType>,
 	pub facets: Facets,
-	#[serde(skip_serializing_if = "Option::is_none")]
-	pub history_start: Option<String>,
-	#[serde(skip_serializing_if = "Option::is_none")]
+	pub history_start: String,
 	pub removed: Option<RemovedOwners>,
 }
 

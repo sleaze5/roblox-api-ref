@@ -1,13 +1,13 @@
 use std::path::{Path, PathBuf};
 
-use rapi_routes::decode_uri_component;
+use rapi_routes::{NOT_FOUND_PAGE, decode_uri_component};
 use rayon::prelude::*;
 
 use crate::context::Context;
 use crate::head::escape_html;
 use crate::meta::SITE_DESCRIPTION;
-use crate::render_page;
-use crate::routes::route_paths;
+use crate::render_route;
+use crate::routes::{Route, all_routes};
 use crate::template::{fill_template, minify, prepare_template};
 
 pub const SPRITE_SOURCE: &str = "src/generated/icons.svg";
@@ -27,19 +27,17 @@ fn write(path: &Path, contents: impl AsRef<[u8]>) -> Result<(), String> {
 	std::fs::write(path, contents).map_err(|error| format!("{}: {error}", path.display()))
 }
 
-fn output_file(out_dir: &Path, route: &str) -> PathBuf {
-	if route == "/404" {
-		return out_dir.join("404.html");
-	}
-	let decoded = decode_uri_component(route).unwrap_or_else(|| route.to_owned());
-	out_dir
-		.join(decoded.trim_start_matches('/'))
-		.join("index.html")
-}
-
-fn markdown_file(out_dir: &Path, href: &str) -> PathBuf {
+fn site_file(out_dir: &Path, href: &str) -> PathBuf {
 	let decoded = decode_uri_component(href).unwrap_or_else(|| href.to_owned());
 	out_dir.join(decoded.trim_start_matches('/'))
+}
+
+fn output_file(out_dir: &Path, route: &Route, href: &str) -> PathBuf {
+	if matches!(route, Route::NotFound) {
+		site_file(out_dir, NOT_FOUND_PAGE)
+	} else {
+		site_file(out_dir, href).join("index.html")
+	}
 }
 
 pub fn robots_txt(cx: &Context) -> String {
@@ -49,13 +47,16 @@ pub fn robots_txt(cx: &Context) -> String {
 	)
 }
 
-pub fn sitemap_xml(cx: &Context, routes: &[String]) -> String {
+pub fn sitemap_xml(cx: &Context, routes: &[Route]) -> String {
 	let mut xml = String::from(
 		"<?xml version=\"1.0\" encoding=\"UTF-8\"?><urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">",
 	);
-	for route in routes.iter().filter(|route| *route != "/404") {
+	for route in routes
+		.iter()
+		.filter(|route| !matches!(route, Route::NotFound))
+	{
 		xml.push_str("<url><loc>");
-		xml.push_str(&escape_html(&cx.absolute_url(route)));
+		xml.push_str(&escape_html(&cx.absolute_url(&route.href(cx))));
 		xml.push_str("</loc><lastmod>");
 		xml.push_str(&cx.api.published);
 		xml.push_str("</lastmod></url>");
@@ -71,29 +72,24 @@ pub fn opensearch_xml(cx: &Context) -> String {
 	)
 }
 
-pub fn write_site(
-	cx: &Context,
-	out_dir: &Path,
-	routes: Option<&[String]>,
-) -> Result<usize, String> {
+pub fn write_site(cx: &Context, out_dir: &Path) -> Result<usize, String> {
 	let template_file = out_dir.join("index.html");
 	let template = std::fs::read_to_string(&template_file)
 		.map_err(|error| format!("{}: {error}", template_file.display()))?;
-	let template = prepare_template(&template);
-	let all_routes = route_paths(cx);
-	let routes = routes.unwrap_or(&all_routes);
+	let template = prepare_template(&template)?;
+	let routes = all_routes(cx);
 	write(&out_dir.join("robots.txt"), robots_txt(cx))?;
-	write(&out_dir.join("sitemap.xml"), sitemap_xml(cx, &all_routes))?;
+	write(&out_dir.join("sitemap.xml"), sitemap_xml(cx, &routes))?;
 	write(&out_dir.join("opensearch.xml"), opensearch_xml(cx))?;
 	write(&out_dir.join("updates.xml"), crate::feed::updates_feed(cx))?;
 	routes.par_iter().try_for_each(|route| {
-		let page = render_page(cx, route);
+		let page = render_route(cx, route);
 		write(
-			&markdown_file(out_dir, &page.markdown.href),
+			&site_file(out_dir, &page.markdown.href),
 			&page.markdown.content,
 		)?;
-		let html = fill_template(cx, &template, &page, route);
-		write(&output_file(out_dir, route), minify(&html))
+		let html = fill_template(cx, &template, &page);
+		write(&output_file(out_dir, route, &page.href), minify(&html))
 	})?;
 	Ok(routes.len())
 }

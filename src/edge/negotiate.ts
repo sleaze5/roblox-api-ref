@@ -7,7 +7,7 @@ export type Assets = {
 	fetch: (request: Request) => Promise<Response>
 }
 
-export type NegotiationContext = {
+type NegotiationContext = {
 	request: Request
 	next: () => Promise<Response>
 	assets: Assets

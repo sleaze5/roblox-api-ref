@@ -2,8 +2,9 @@ use std::path::{Path, PathBuf};
 use std::process::ExitCode;
 use std::time::Instant;
 
-use rapi_core::generate::pipeline::{Paths, generate_site};
+use rapi_core::generate::pipeline::generate_site;
 use rapi_core::icons::{Icon, build_favicon, build_icon_sprite, read_icon};
+use rapi_core::paths::Paths;
 
 mod wasm;
 
@@ -93,19 +94,11 @@ fn site_context(paths: &Paths, sprite: String) -> Result<rapi_site::Context, Str
 
 fn render(paths: &Paths, args: &[String]) -> Result<(), String> {
 	let start = Instant::now();
-	let mut dist = paths.root.join("dist");
-	let mut routes = Vec::new();
-	let mut args = args.iter();
-	while let Some(arg) = args.next() {
-		if arg == "--dist" {
-			dist = args
-				.next()
-				.map(PathBuf::from)
-				.ok_or("--dist needs a directory")?;
-		} else {
-			routes.push(arg.clone());
-		}
-	}
+	let dist = match args {
+		[] => paths.root.join("dist"),
+		[flag, dir] if flag == "--dist" => PathBuf::from(dir),
+		_ => return Err(USAGE.to_owned()),
+	};
 	let manifest_file = dist.join(".vite").join("manifest.json");
 	let manifest: serde_json::Value = serde_json::from_slice(
 		&std::fs::read(&manifest_file)
@@ -120,11 +113,7 @@ fn render(paths: &Paths, args: &[String]) -> Result<(), String> {
 		)
 	})?;
 	let cx = site_context(paths, sprite)?;
-	let count = rapi_site::build::write_site(
-		&cx,
-		&dist,
-		(!routes.is_empty()).then_some(routes.as_slice()),
-	)?;
+	let count = rapi_site::build::write_site(&cx, &dist)?;
 	println!(
 		"Prerendered and minified {count} pages in {}ms.",
 		start.elapsed().as_millis()
@@ -147,7 +136,7 @@ fn dev(paths: &Paths) -> Result<(), String> {
 		let path = request["path"].as_str().unwrap_or("/");
 		let template = request["template"].as_str().unwrap_or_default();
 		let page = rapi_site::render_page(&cx, path);
-		let html = rapi_site::template::fill_template(&cx, template, &page, path);
+		let html = rapi_site::template::fill_template(&cx, template, &page);
 		let response = serde_json::json!({ "status": page.status, "html": html });
 		writeln!(stdout, "{response}").map_err(|error| error.to_string())?;
 		stdout.flush().map_err(|error| error.to_string())?;
@@ -163,21 +152,17 @@ Commands:
   dump                 Download the API files of the current build
   diff <from> <to>     Rewrite the diff between two tracked versions
   gen                  Write src/generated: the search index and engine, icons, and build data
-  render [--dist dir] [paths...]
-                       Prerender pages into Vite's output directory
+  render [--dist dir]  Prerender every page into Vite's output directory
   dev                  Serve pages to the Vite dev server over stdin and stdout";
 
-fn project_root() -> Result<PathBuf, String> {
+fn project_paths() -> Result<Paths, String> {
 	let current = std::env::current_dir().map_err(|error| error.to_string())?;
-	current
-		.ancestors()
-		.find(|dir| dir.join("roblox-versions.json").is_file())
-		.map(Path::to_path_buf)
+	Paths::locate(&current)
 		.ok_or_else(|| format!("{} is not inside the project.", current.display()))
 }
 
 fn run(args: &[String]) -> Result<(), String> {
-	let paths = Paths::new(project_root()?);
+	let paths = project_paths()?;
 	match args.first().map(String::as_str) {
 		Some("gen") => generate(&paths),
 		Some("render") => render(&paths, &args[1..]),

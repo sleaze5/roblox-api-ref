@@ -1,5 +1,5 @@
 use crate::js::compare_names;
-use crate::model::{Member, MemberDetail, Security};
+use crate::model::{DEPRECATED_TAG, Member, MemberDetail, Security};
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TagTone {
@@ -81,14 +81,14 @@ pub fn tag_label(tag: &str) -> String {
 pub fn plain_tags(tags: &[String]) -> Vec<DisplayTag> {
 	let mut ordered: Vec<&String> = tags.iter().collect();
 	ordered.sort_by(|a, b| match (a.as_str(), b.as_str()) {
-		("Deprecated", _) => std::cmp::Ordering::Less,
-		(_, "Deprecated") => std::cmp::Ordering::Greater,
+		(DEPRECATED_TAG, _) => std::cmp::Ordering::Less,
+		(_, DEPRECATED_TAG) => std::cmp::Ordering::Greater,
 		_ => compare_names(a, b),
 	});
 	ordered
 		.into_iter()
 		.map(|tag| {
-			let tone = if tag == "Deprecated" {
+			let tone = if tag == DEPRECATED_TAG {
 				TagTone::Warning
 			} else {
 				TagTone::Neutral
