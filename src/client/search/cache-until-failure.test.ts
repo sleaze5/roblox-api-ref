@@ -16,7 +16,7 @@ describe("cacheUntilFailure", () => {
 	})
 
 	test("shares one load between calls made while it runs", async () => {
-		const load = vi.fn(() => Promise.resolve({}))
+		const load = vi.fn<() => Promise<object>>(() => Promise.resolve({}))
 		const cached = cacheUntilFailure(load)
 
 		const [first, second] = await Promise.all([cached(), cached()])
