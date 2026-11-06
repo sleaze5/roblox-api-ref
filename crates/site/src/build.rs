@@ -76,7 +76,7 @@ pub fn write_site(cx: &Context, out_dir: &Path) -> Result<usize, String> {
 	let template_file = out_dir.join("index.html");
 	let template = std::fs::read_to_string(&template_file)
 		.map_err(|error| format!("{}: {error}", template_file.display()))?;
-	let template = prepare_template(&template);
+	let template = prepare_template(&template)?;
 	let routes = all_routes(cx);
 	write(&out_dir.join("robots.txt"), robots_txt(cx))?;
 	write(&out_dir.join("sitemap.xml"), sitemap_xml(cx, &routes))?;
