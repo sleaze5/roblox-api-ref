@@ -2,7 +2,7 @@ import init, { Matcher, Search } from "../../generated/search.js"
 import wasmUrl from "../../generated/search_bg.wasm?url"
 import { cacheUntilFailure } from "./cache-until-failure.ts"
 
-export type SearchModule = {
+type SearchModule = {
 	Matcher: typeof Matcher
 	Search: typeof Search
 }

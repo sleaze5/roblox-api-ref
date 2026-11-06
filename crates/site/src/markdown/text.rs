@@ -1,4 +1,4 @@
-use rapi_core::js::is_js_space;
+use rapi_search::is_js_space;
 
 pub fn escape_text(text: &str) -> String {
 	let mut escaped = String::with_capacity(text.len());

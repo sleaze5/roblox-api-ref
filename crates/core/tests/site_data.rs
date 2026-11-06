@@ -1,11 +1,12 @@
 use std::path::Path;
 use std::sync::LazyLock;
 
-use rapi_core::generate::pipeline::{Paths, Site, generate_site};
-use rapi_core::model::{
-	AccessTier, ApiType, CountKind, CoverageKind, MemberDetail, StatRecord, StatRef,
-};
+use rapi_core::api::access::access_tier;
+use rapi_core::generate::pipeline::{Site, generate_site};
+use rapi_core::model::{ApiType, CountKind, CoverageKind, MemberDetail, StatRecord, StatRef};
+use rapi_core::paths::Paths;
 use rapi_routes::{FacetKind, MemberKind};
+use rapi_search::AccessTier;
 
 static SITE: LazyLock<Site> = LazyLock::new(|| {
 	let root = Path::new(env!("CARGO_MANIFEST_DIR")).join("../..");
@@ -292,10 +293,6 @@ fn lists_the_members_that_use_a_class_as_their_type() {
 #[test]
 fn records_the_history_of_classes_members_and_enums() {
 	let api = &SITE.api;
-	assert_eq!(
-		api.history_start.as_deref(),
-		SITE.stats.history_start.as_str().into()
-	);
 	let recorded = api
 		.classes
 		.values()
@@ -320,7 +317,30 @@ fn builds_a_search_index_that_decodes_to_the_same_data() {
 		rapi_search::IndexData::decode(&bytes).expect("the index decodes"),
 		SITE.search
 	);
-	assert_eq!(SITE.search.names.len(), SITE.search.kinds.len());
+}
+
+#[test]
+fn filters_search_results_by_who_can_use_them() {
+	let engine = rapi_search::Engine::new(&SITE.search.encode()).expect("the index loads");
+	for tier in AccessTier::FILTERS {
+		let query = rapi_search::parse_query(&format!("is:property access:{}", tier.name()));
+		let tiers: Vec<AccessTier> = engine
+			.search(&query, usize::MAX)
+			.iter()
+			.map(|result| {
+				let class = engine.name(engine.parent(result.entry).expect("a member has a class"));
+				let name = engine.name(result.entry);
+				let member = SITE.api.classes[class]
+					.members
+					.iter()
+					.find(|member| member.name == name)
+					.expect("the result is a member of its class");
+				access_tier(member)
+			})
+			.collect();
+		assert!(tiers.contains(&tier), "{}", tier.name());
+		assert!(tiers.iter().all(|found| *found <= tier), "{}", tier.name());
+	}
 }
 
 #[test]
@@ -337,16 +357,25 @@ fn counts_the_services_among_the_classes() {
 
 #[test]
 fn spreads_every_class_member_and_enum_over_the_distributions() {
+	let members_of = |kind: MemberKind| {
+		SITE.api
+			.classes
+			.values()
+			.flat_map(|item| &item.members)
+			.filter(|member| member.kind() == kind)
+			.count()
+	};
 	for distribution in &SITE.stats.distributions {
 		let total: u32 = distribution.counts.iter().sum();
-		let expected = if distribution.id.ends_with("-per-class") {
-			len(SITE.api.classes.len())
-		} else if distribution.id == "items-per-enum" {
-			len(SITE.api.enums.len())
-		} else {
-			total
+		let expected = match distribution.id.as_str() {
+			"items-per-enum" => SITE.api.enums.len(),
+			"parameters-per-method" => members_of(MemberKind::Method),
+			"parameters-per-event" => members_of(MemberKind::Event),
+			"parameters-per-callback" => members_of(MemberKind::Callback),
+			id if id.ends_with("-per-class") => SITE.api.classes.len(),
+			id => panic!("{id} has no expected total"),
 		};
-		assert_eq!(total, expected, "{}", distribution.id);
+		assert_eq!(total, len(expected), "{}", distribution.id);
 	}
 }
 

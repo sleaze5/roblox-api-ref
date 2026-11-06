@@ -18,9 +18,10 @@ use maud::Markup;
 pub use context::Context;
 use markdown::{MarkdownPage, page_markdown};
 use meta::{Breadcrumb, SchemaType, breadcrumbs, page_title, schema_type};
-use routes::{Route, match_route};
+use routes::{Route, all_routes, match_route};
 
 pub struct RenderedPage {
+	pub href: String,
 	pub status: u16,
 	pub title: String,
 	pub body: String,
@@ -51,29 +52,30 @@ fn page_body(cx: &Context, route: &Route) -> Markup {
 	}
 }
 
-pub fn render_page(cx: &Context, path: &str) -> RenderedPage {
-	let route = match_route(cx, path);
+pub fn render_route(cx: &Context, route: &Route) -> RenderedPage {
 	RenderedPage {
+		href: route.href(cx),
 		status: if matches!(route, Route::NotFound) {
 			404
 		} else {
 			200
 		},
-		title: page_title(&route),
-		body: filter_summary::fill_filter_summaries(&page_body(cx, &route).into_string()),
-		schema_type: schema_type(&route),
-		breadcrumbs: breadcrumbs(cx, &route),
-		markdown: page_markdown(cx, &route),
+		title: page_title(route),
+		body: filter_summary::fill_filter_summaries(&page_body(cx, route).into_string()),
+		schema_type: schema_type(route),
+		breadcrumbs: breadcrumbs(cx, route),
+		markdown: page_markdown(cx, route),
 		modified: cx.api.published.clone(),
 	}
 }
 
+pub fn render_page(cx: &Context, path: &str) -> RenderedPage {
+	render_route(cx, &match_route(cx, path))
+}
+
 pub fn page_index(cx: &Context) -> Vec<(String, String)> {
-	routes::route_paths(cx)
-		.into_iter()
-		.map(|path| {
-			let markdown = markdown::markdown_path(cx, &match_route(cx, &path));
-			(path, markdown)
-		})
+	all_routes(cx)
+		.iter()
+		.map(|route| (route.href(cx), markdown::markdown_path(cx, route)))
 		.collect()
 }

@@ -1,6 +1,7 @@
 use std::cmp::Ordering;
 use std::collections::HashMap;
 
+use crate::access::AccessTier;
 use crate::format::RemovedData;
 use crate::format::{EntryKind, Index, IndexError, Role, flags};
 use crate::luau_name;
@@ -223,7 +224,7 @@ impl Engine {
 				.uses
 				.as_deref()
 				.map(|value| self.matching_types(value)),
-			max_access: query.access.unwrap_or(u8::MAX),
+			max_access: query.access.map_or(u8::MAX, AccessTier::code),
 		}
 	}
 
@@ -243,7 +244,7 @@ impl Engine {
 		{
 			return false;
 		}
-		if self.index.security(entry_index) > prepared.max_access {
+		if self.index.access(entry_index) > prepared.max_access {
 			return false;
 		}
 		let entry_flags = self.flags(entry);

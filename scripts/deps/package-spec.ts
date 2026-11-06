@@ -1,4 +1,4 @@
-export type PackageSpec = {
+type PackageSpec = {
 	name: string
 	version: string
 	format: (version: string) => string

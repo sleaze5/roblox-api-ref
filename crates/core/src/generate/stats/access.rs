@@ -3,9 +3,9 @@ use indexmap::IndexMap;
 use super::refs::oldest_first;
 use crate::api::access::{access_tier, tier_rows};
 use crate::model::{
-	AccessNow, AccessPeriod, AccessStats, AccessTier, Api, ChangeStatus, EntryValues, Member,
-	TierRow, Update,
+	AccessNow, AccessPeriod, AccessStats, Api, ChangeStatus, EntryValues, Member, TierRow, Update,
 };
+use rapi_search::AccessTier;
 
 fn scriptable(member: &Member) -> bool {
 	access_tier(member) == AccessTier::Game

@@ -11,11 +11,10 @@ use crate::api::stats_text::{kind_plural, kind_singular, kind_slug};
 use crate::generate::history::{entry_deprecation, item_key, owner_deprecation, owner_key};
 use crate::js::{days_between, js_round};
 use crate::model::{
-	AccessTier, Api, ChangeStatus, CountKind, Deprecation, EntryValues, HistoryEvent, ItemHistory,
-	KindRow, KindTable, RecordGroup, StatRef, Update,
+	Api, ChangeStatus, CountKind, Deprecation, EntryValues, HistoryEvent, ItemHistory, KindRow,
+	KindTable, RecordGroup, StatRef, Update, is_deprecated,
 };
-
-const DEPRECATED: &str = "Deprecated";
+use rapi_search::AccessTier;
 
 struct Removal {
 	item: StatRef,
@@ -65,7 +64,7 @@ impl Tracker {
 }
 
 fn has_deprecated(tags: &[String]) -> bool {
-	tags.iter().any(|tag| tag == DEPRECATED)
+	is_deprecated(tags)
 }
 
 fn removals(api: &Api, updates: &[Update]) -> Vec<Removal> {

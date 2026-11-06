@@ -3,7 +3,7 @@ use std::sync::LazyLock;
 
 use regex::Regex;
 
-use crate::js::JS_SPACE;
+use rapi_search::JS_SPACE;
 
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub struct HtmlElement {

@@ -1,8 +1,6 @@
 use super::extremes::{Info, Measured, highest, info, lowest, measured};
 use crate::api::stats_text::{kind_plural, kind_slug};
-use crate::model::{Api, Class, CountKind, RecordGroup, StatRecord, StatRef};
-
-const DEPRECATED: &str = "Deprecated";
+use crate::model::{Api, Class, CountKind, RecordGroup, StatRecord, StatRef, is_deprecated};
 
 fn class_ref(name: &str) -> StatRef {
 	StatRef::Class {
@@ -109,7 +107,7 @@ pub fn class_records(api: &Api) -> RecordGroup {
 		measure(api, |item| {
 			item.members
 				.iter()
-				.filter(|member| member.tags.iter().any(|tag| tag == DEPRECATED))
+				.filter(|member| is_deprecated(&member.tags))
 				.count()
 		}),
 	));

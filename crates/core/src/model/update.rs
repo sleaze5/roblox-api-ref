@@ -1,9 +1,9 @@
 use rapi_routes::OwnerKind;
-use serde::{Deserialize, Serialize, Serializer};
+use serde::{Deserialize, Serialize};
 
 use super::{Doc, EnumItem, Member};
 
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, Serialize)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
 pub enum ChangeStatus {
 	Added,
 	Removed,
@@ -30,32 +30,86 @@ impl ChangeStatus {
 	}
 }
 
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Serialize)]
-#[serde(rename_all = "camelCase")]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DetailTone {
 	Text,
 	Code,
 	Type,
 }
 
-#[derive(Clone, Debug, PartialEq, Eq, Serialize)]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub struct DetailValue {
 	pub text: String,
 	pub tone: DetailTone,
 }
 
-#[derive(Clone, Debug, PartialEq, Eq, Serialize)]
-#[serde(tag = "kind", rename_all = "camelCase")]
+#[derive(Clone, Debug, PartialEq, Eq)]
+pub enum DetailField {
+	Security,
+	ReadSecurity,
+	WriteSecurity,
+	Capabilities,
+	ReadCapabilities,
+	WriteCapabilities,
+	ThreadSafety,
+	PropertyCategory,
+	Serialization,
+	UseInstead,
+	Superclass,
+	MemoryCategory,
+	LegacyNames,
+	SimulationAccess,
+	Other(String),
+}
+
+impl DetailField {
+	pub fn label(&self) -> &str {
+		match self {
+			Self::Security => "Security",
+			Self::ReadSecurity => "Read security",
+			Self::WriteSecurity => "Write security",
+			Self::Capabilities => "Capabilities",
+			Self::ReadCapabilities => "Read capabilities",
+			Self::WriteCapabilities => "Write capabilities",
+			Self::ThreadSafety => "Thread safety",
+			Self::PropertyCategory => "Property category",
+			Self::Serialization => "Serialization",
+			Self::UseInstead => "Use instead",
+			Self::Superclass => "Superclass",
+			Self::MemoryCategory => "Memory category",
+			Self::LegacyNames => "Legacy names",
+			Self::SimulationAccess => "Simulation access",
+			Self::Other(field) => field,
+		}
+	}
+}
+
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum TagChange {
+	Initial,
+	Added,
+	Removed,
+}
+
+impl TagChange {
+	pub const fn label(self) -> &'static str {
+		match self {
+			Self::Initial => "Tags",
+			Self::Added => "Added tags",
+			Self::Removed => "Removed tags",
+		}
+	}
+}
+
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub enum ChangeDetail {
 	Value {
-		label: String,
-		#[serde(skip_serializing_if = "Option::is_none")]
+		field: DetailField,
 		before: Option<DetailValue>,
-		#[serde(skip_serializing_if = "Option::is_none")]
 		after: Option<DetailValue>,
 	},
 	Tags {
-		label: String,
+		change: TagChange,
 		tags: Vec<String>,
 	},
 }
@@ -63,7 +117,15 @@ pub enum ChangeDetail {
 impl ChangeDetail {
 	pub fn label(&self) -> &str {
 		match self {
-			Self::Value { label, .. } | Self::Tags { label, .. } => label,
+			Self::Value { field, .. } => field.label(),
+			Self::Tags { change, .. } => change.label(),
+		}
+	}
+
+	pub fn tags(&self, changes: &[TagChange]) -> &[String] {
+		match self {
+			Self::Tags { change, tags } if changes.contains(change) => tags,
+			_ => &[],
 		}
 	}
 }
@@ -76,43 +138,34 @@ pub enum DescriptionPart {
 	Return,
 }
 
-#[derive(Clone, Debug, PartialEq, Eq, Serialize)]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub struct DescriptionDetail {
 	pub part: DescriptionPart,
-	#[serde(skip_serializing_if = "Option::is_none")]
 	pub parameter: Option<String>,
 	pub status: ChangeStatus,
-	#[serde(skip_serializing_if = "Option::is_none")]
 	pub before: Option<Doc>,
-	#[serde(skip_serializing_if = "Option::is_none")]
 	pub after: Option<Doc>,
 }
 
-#[derive(Clone, Debug, PartialEq, Serialize)]
-#[serde(tag = "kind")]
+#[derive(Clone, Debug, PartialEq)]
 pub enum EntryValues {
 	Member {
-		#[serde(skip_serializing_if = "Option::is_none")]
 		before: Option<Box<Member>>,
-		#[serde(skip_serializing_if = "Option::is_none")]
 		after: Option<Box<Member>>,
 	},
 	EnumItem {
-		#[serde(skip_serializing_if = "Option::is_none")]
 		before: Option<Box<EnumItem>>,
-		#[serde(skip_serializing_if = "Option::is_none")]
 		after: Option<Box<EnumItem>>,
 	},
 }
 
-#[derive(Clone, Debug, PartialEq, Serialize)]
+#[derive(Clone, Debug, PartialEq)]
 pub struct ChangeEntry {
 	pub status: ChangeStatus,
 	pub owner: String,
 	pub name: String,
 	pub details: Vec<ChangeDetail>,
 	pub descriptions: Vec<DescriptionDetail>,
-	#[serde(flatten)]
 	pub values: EntryValues,
 }
 
@@ -122,10 +175,6 @@ impl ChangeEntry {
 			EntryValues::Member { .. } => OwnerKind::Class,
 			EntryValues::EnumItem { .. } => OwnerKind::Enum,
 		}
-	}
-
-	pub const fn is_member(&self) -> bool {
-		matches!(self.values, EntryValues::Member { .. })
 	}
 
 	pub fn after_tags(&self) -> Option<&[String]> {
@@ -148,13 +197,6 @@ impl ChangeEntry {
 		}
 	}
 
-	pub fn has_values(&self) -> (bool, bool) {
-		match &self.values {
-			EntryValues::Member { before, after } => (before.is_some(), after.is_some()),
-			EntryValues::EnumItem { before, after } => (before.is_some(), after.is_some()),
-		}
-	}
-
 	pub fn is_api_change(&self) -> bool {
 		self.status != ChangeStatus::Changed
 			|| !self.details.is_empty()
@@ -165,26 +207,18 @@ impl ChangeEntry {
 	}
 }
 
-#[derive(Clone, Debug, PartialEq, Serialize)]
+#[derive(Clone, Debug, PartialEq)]
 pub struct OwnerChanges {
-	#[serde(serialize_with = "owner_kind")]
 	pub kind: OwnerKind,
 	pub name: String,
-	#[serde(skip_serializing_if = "Option::is_none")]
 	pub status: Option<ChangeStatus>,
 	pub details: Vec<ChangeDetail>,
 	pub descriptions: Vec<DescriptionDetail>,
 	pub entries: Vec<ChangeEntry>,
-	#[serde(skip)]
 	pub tags: Vec<String>,
 }
 
-pub fn owner_kind<S: Serializer>(kind: &OwnerKind, serializer: S) -> Result<S::Ok, S::Error> {
-	serializer.serialize_str(kind.name())
-}
-
-#[derive(Clone, Copy, Debug, Default, PartialEq, Eq, Serialize)]
-#[serde(rename_all = "PascalCase")]
+#[derive(Clone, Copy, Debug, Default, PartialEq, Eq)]
 pub struct ChangeCounts {
 	pub added: u32,
 	pub removed: u32,
@@ -213,14 +247,13 @@ impl ChangeCounts {
 	}
 }
 
-#[derive(Clone, Debug, PartialEq, Eq, Serialize)]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub struct Release {
 	pub version: String,
 	pub hash: String,
 }
 
-#[derive(Clone, Debug, PartialEq, Serialize)]
-#[serde(rename_all = "camelCase")]
+#[derive(Clone, Debug, PartialEq)]
 pub struct Update {
 	pub version: String,
 	pub hash: String,

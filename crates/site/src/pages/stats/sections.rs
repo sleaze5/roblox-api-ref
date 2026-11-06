@@ -3,7 +3,7 @@ use rapi_core::api::access::{access_tier_hint, access_tier_label};
 use rapi_core::api::stats_text::{
 	DOCS_LEAD, GROWTH_LEAD, access_lead, coverage_label, percent_text,
 };
-use rapi_core::model::{AccessTier, ChangeStatus, CoverageKind, TagTrend};
+use rapi_core::model::{ChangeStatus, CoverageKind, TagTrend};
 use rapi_routes::{FacetKind, OwnerKind};
 
 use super::tables::{
@@ -12,15 +12,6 @@ use super::tables::{
 use crate::components::changes::{inline_mark, status_count};
 use crate::context::Context;
 use crate::pages::charts::{Share, share_chart};
-
-pub const fn tier_name(tier: AccessTier) -> &'static str {
-	match tier {
-		AccessTier::Game => "game",
-		AccessTier::Plugin => "plugin",
-		AccessTier::Command => "command",
-		AccessTier::Roblox => "roblox",
-	}
-}
 
 pub const fn coverage_name(kind: CoverageKind) -> &'static str {
 	match kind {
@@ -44,7 +35,7 @@ pub fn access_section(cx: &Context) -> Markup {
 		.map(|row| {
 			let kinds = &row.kinds;
 			(
-				format!("access-{}", tier_name(row.tier)),
+				format!("access-{}", row.tier.name()),
 				vec![
 					html! { span data-tooltip=(access_tier_hint(row.tier)) class=(ROW_HINT_CLASS) { (access_tier_label(row.tier)) } },
 					text(kinds.property),

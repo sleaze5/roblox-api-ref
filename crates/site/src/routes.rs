@@ -1,7 +1,12 @@
 use rapi_core::model::{Class, DataType, Enum, Facet, Update};
-use rapi_routes::{FACET_KINDS, FacetKind, decode_uri_component, encode_uri_component};
+use rapi_routes::{
+	CLASSES, ENUMS, FACET_KINDS, FacetKind, HOME, INDEX, NOT_FOUND, REMOVED, STATS, TYPES, UPDATES,
+	class_href, decode_uri_component, encode_uri_component, enum_href, facet_index_href, type_href,
+	update_href,
+};
 
 use crate::context::Context;
+use crate::site_pages::site_page;
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IndexList {
@@ -35,105 +40,82 @@ pub enum Route<'a> {
 	NotFound,
 }
 
-const TOP_PAGES: [(&str, Route<'static>); 8] = [
-	("classes", Route::Classes),
-	("enums", Route::Enums),
-	("index", Route::Index),
-	("updates", Route::Updates),
-	("stats", Route::Stats),
-	("about", Route::Site(SitePageName::About)),
-	("contact", Route::Site(SitePageName::Contact)),
-	("privacy", Route::Site(SitePageName::Privacy)),
-];
+impl Route<'_> {
+	pub fn href(&self, cx: &Context) -> String {
+		match self {
+			Self::Home => HOME.to_owned(),
+			Self::Classes => CLASSES.to_owned(),
+			Self::Enums => ENUMS.to_owned(),
+			Self::Index => INDEX.to_owned(),
+			Self::IndexList(IndexList::Types) => TYPES.to_owned(),
+			Self::IndexList(IndexList::Removed) => REMOVED.to_owned(),
+			Self::FacetIndex(kind) => facet_index_href(*kind),
+			Self::Class(item) => class_href(&item.name),
+			Self::Enum(item) => enum_href(&item.name),
+			Self::Type(item) => type_href(&item.name),
+			Self::Facet(facet) => cx.facet_href(facet.kind, &facet.name),
+			Self::Updates => UPDATES.to_owned(),
+			Self::Stats => STATS.to_owned(),
+			Self::Update(update) => update_href(&update.version),
+			Self::Site(name) => site_page(*name).href.to_owned(),
+			Self::NotFound => NOT_FOUND.to_owned(),
+		}
+	}
+}
 
-pub fn route_paths(cx: &Context) -> Vec<String> {
+pub fn all_routes(cx: &Context) -> Vec<Route<'_>> {
 	let api = &cx.api;
-	let mut paths = vec!["/".to_owned()];
-	paths.extend(TOP_PAGES.iter().map(|(name, _)| format!("/{name}/")));
-	paths.push("/404".to_owned());
-	let item = |section: &str, name: &str| format!("/{section}/{}/", encode_uri_component(name));
-	paths.extend(api.classes.keys().map(|name| item("classes", name)));
-	paths.extend(api.enums.keys().map(|name| item("enums", name)));
-	paths.extend(
-		cx.updates
-			.iter()
-			.map(|update| item("updates", &update.version)),
-	);
-	paths.push("/index/types/".to_owned());
-	paths.push("/index/removed/".to_owned());
-	paths.extend(api.data_types.keys().map(|name| item("index/types", name)));
+	let mut routes = vec![
+		Route::Home,
+		Route::Classes,
+		Route::Enums,
+		Route::Index,
+		Route::Updates,
+		Route::Stats,
+		Route::Site(SitePageName::About),
+		Route::Site(SitePageName::Contact),
+		Route::Site(SitePageName::Privacy),
+		Route::NotFound,
+	];
+	routes.extend(api.classes.values().map(Route::Class));
+	routes.extend(api.enums.values().map(Route::Enum));
+	routes.extend(cx.updates.iter().map(Route::Update));
+	routes.push(Route::IndexList(IndexList::Types));
+	routes.push(Route::IndexList(IndexList::Removed));
+	routes.extend(api.data_types.values().map(Route::Type));
 	for kind in FACET_KINDS {
-		paths.push(format!("/index/{}/", kind.path()));
-		paths.extend(api.facets.of(kind).keys().map(|name| {
-			format!(
-				"/index/{}/{}/",
-				kind.path(),
-				encode_uri_component(cx.slugs.slug(kind, name))
-			)
-		}));
+		routes.push(Route::FacetIndex(kind));
+		routes.extend(api.facets.of(kind).values().map(Route::Facet));
 	}
-	paths
+	routes
 }
 
-fn item_route<'a>(cx: &'a Context, section: &str, name: &str) -> Route<'a> {
-	match section {
-		"classes" => cx
-			.api
-			.classes
-			.get(name)
-			.map_or(Route::NotFound, Route::Class),
-		"enums" => cx.api.enums.get(name).map_or(Route::NotFound, Route::Enum),
-		"updates" => cx
-			.updates
-			.iter()
-			.find(|update| update.version == name)
-			.map_or(Route::NotFound, Route::Update),
-		_ => Route::NotFound,
-	}
-}
-
-fn index_route<'a>(cx: &'a Context, section: &str, name: Option<&str>) -> Route<'a> {
-	match (section, name) {
-		("removed", None) => Route::IndexList(IndexList::Removed),
-		("types", None) => Route::IndexList(IndexList::Types),
-		("types", Some(name)) => cx
-			.api
-			.data_types
-			.get(name)
-			.map_or(Route::NotFound, Route::Type),
-		_ => match (FacetKind::from_path(section), name) {
-			(None, _) => Route::NotFound,
-			(Some(kind), None) => Route::FacetIndex(kind),
-			(Some(kind), Some(slug)) => cx
-				.api
-				.facets
-				.of(kind)
-				.get(cx.slugs.name(kind, slug))
-				.map_or(Route::NotFound, Route::Facet),
-		},
+fn canonical_path(path: &str) -> String {
+	let segments: Vec<String> = path
+		.split('/')
+		.filter(|segment| !segment.is_empty())
+		.map(|segment| {
+			decode_uri_component(segment)
+				.map_or_else(|| segment.to_owned(), |name| encode_uri_component(&name))
+		})
+		.collect();
+	if segments.is_empty() {
+		HOME.to_owned()
+	} else {
+		format!("/{}/", segments.join("/"))
 	}
 }
 
 pub fn match_route<'a>(cx: &'a Context, path: &str) -> Route<'a> {
-	let segments: Vec<String> = path
-		.split('/')
-		.filter(|segment| !segment.is_empty())
-		.map(|segment| decode_uri_component(segment).unwrap_or_else(|| segment.to_owned()))
-		.collect();
-	let section = segments.first().map_or("", String::as_str);
-	let name = segments.get(1).map(String::as_str);
-	match segments.len() {
-		0 => Route::Home,
-		1 => TOP_PAGES
+	let index = cx.route_index.get_or_init(|| {
+		all_routes(cx)
 			.iter()
-			.find(|(top, _)| *top == section)
-			.map_or(Route::NotFound, |(_, route)| *route),
-		2 | 3 if section == "index" => index_route(
-			cx,
-			name.unwrap_or_default(),
-			segments.get(2).map(String::as_str),
-		),
-		2 => item_route(cx, section, name.unwrap_or_default()),
-		_ => Route::NotFound,
-	}
+			.enumerate()
+			.filter(|(_, route)| !matches!(route, Route::NotFound))
+			.map(|(index, route)| (route.href(cx), index))
+			.collect()
+	});
+	index
+		.get(&canonical_path(path))
+		.map_or(Route::NotFound, |&found| all_routes(cx)[found])
 }

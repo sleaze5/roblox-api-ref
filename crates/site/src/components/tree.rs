@@ -1,9 +1,9 @@
 use std::collections::HashSet;
 
 use maud::{Markup, html};
-use rapi_core::api::members::is_deprecated;
 use rapi_core::js::compare_names;
 use rapi_core::model::Class;
+use rapi_core::model::is_deprecated;
 use rapi_routes::class_href;
 
 use crate::context::Context;

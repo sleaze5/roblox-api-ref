@@ -1,8 +1,8 @@
 import { escapeHtml } from "../html.ts"
 
-export type ViewUpdate = [version: string, upload: string, date: string, href: string]
+type ViewUpdate = [version: string, upload: string, date: string, href: string]
 
-export type ViewResult = [
+type ViewResult = [
 	kind: number,
 	classIcon: number,
 	name: string,
@@ -13,9 +13,9 @@ export type ViewResult = [
 	href: string,
 ]
 
-export type ViewGroup = [title: string, results: ViewResult[]]
+type ViewGroup = [title: string, results: ViewResult[]]
 
-export type ViewRemoved = [
+type ViewRemoved = [
 	kind: number,
 	name: string,
 	parent: string,
@@ -32,7 +32,7 @@ export type SearchView = {
 
 export const emptyView: SearchView = { u: [], g: [], x: [], c: null }
 
-export const kindNames = [
+const kindNames = [
 	"Class",
 	"Enum",
 	"Property",

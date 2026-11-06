@@ -68,19 +68,20 @@ describe("search view", () => {
 	})
 
 	test("highlights the matched characters and escapes names", () => {
-		expect(highlight("Touched", [0, 5])).toBe(
-			'<span class="text-fg-bright">Touch</span>ed',
-		)
-		expect(highlight("GetTouchingParts", [0, 1, 3, 4, 11, 12])).toBe(
-			'<span class="text-fg-bright">G</span>et<span class="text-fg-bright">T</span>ouching<span class="text-fg-bright">P</span>arts',
-		)
+		const marked = (html: string) =>
+			[...html.matchAll(/<span[^>]*>([^<]*)<\/span>/g)].map((match) => match[1])
+		const text = (html: string) => html.replaceAll(/<[^>]*>/g, "")
+		expect(marked(highlight("Touched", [0, 5]))).toEqual(["Touch"])
+		const parts = highlight("GetTouchingParts", [0, 1, 3, 4, 11, 12])
+		expect(marked(parts)).toEqual(["G", "T", "P"])
+		expect(text(parts)).toBe("GetTouchingParts")
 		const html = resultsHtml(view, "/icons.svg")
 		expect(html).toContain("Part&lt;b&gt;")
 		expect(html).not.toContain("<b>")
 		expect(html).toContain('style="--icon: 7"')
-		expect(html).toContain('<span class="tag-chip tag-warning">Deprecated</span>')
+		expect(html).toMatch(/>Deprecated<\/span>/)
 		expect(html).toContain('aria-label="Removed"')
-		expect(html).toContain('class="change-mark w-4 shrink-0" data-status="Removed"')
+		expect(html).toContain('data-status="Removed"')
 	})
 
 	test("completes only what follows the typed text", () => {

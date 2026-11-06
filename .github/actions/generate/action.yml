@@ -22,7 +22,7 @@ runs:
           shell: bash
           run: echo "key=generated-$RUNNER_OS-$RUNNER_ARCH-$HASH" >> "$GITHUB_OUTPUT"
           env:
-              HASH: ${{ hashFiles('crates/**', 'Cargo.toml', 'Cargo.lock', 'rust-toolchain.toml', '.cargo/**', 'roblox-versions.json', 'diffs/**', 'scripts/fonts.ts', 'scripts/paths.ts', 'bun.lock') }}
+              HASH: ${{ hashFiles('crates/**', 'Cargo.toml', 'Cargo.lock', 'rust-toolchain.toml', '.cargo/**', 'roblox-versions.json', 'diffs/**', 'scripts/fonts.ts', 'scripts/paths.ts', 'src/assets/fonts/**', 'bun.lock') }}
 
         - id: lookup
           uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0

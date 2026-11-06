@@ -25,8 +25,9 @@ fn value_text(value: &DetailValue) -> String {
 
 fn detail_text(detail: &ChangeDetail) -> String {
 	match detail {
-		ChangeDetail::Tags { label, tags } => format!(
-			"{label}: {}",
+		ChangeDetail::Tags { change, tags } => format!(
+			"{}: {}",
+			change.label(),
 			plain_tags(tags)
 				.into_iter()
 				.map(|tag| tag.label)
@@ -34,10 +35,11 @@ fn detail_text(detail: &ChangeDetail) -> String {
 				.join(", ")
 		),
 		ChangeDetail::Value {
-			label,
+			field,
 			before,
 			after,
 		} => {
+			let label = field.label();
 			let after = after.as_ref().map_or_else(|| "none".to_owned(), value_text);
 			match before {
 				None => format!("{label}: {after}"),

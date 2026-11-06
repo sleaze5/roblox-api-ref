@@ -45,10 +45,6 @@ impl FacetKind {
 			Self::MemoryCategory => "memory-categories",
 		}
 	}
-
-	pub fn from_path(path: &str) -> Option<Self> {
-		FACET_KINDS.into_iter().find(|kind| kind.path() == path)
-	}
 }
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord)]
@@ -88,6 +84,8 @@ pub const STATS: &str = "/stats/";
 pub const ABOUT: &str = "/about/";
 pub const CONTACT: &str = "/contact/";
 pub const PRIVACY: &str = "/privacy/";
+pub const NOT_FOUND: &str = "/404";
+pub const NOT_FOUND_PAGE: &str = "/404.html";
 pub const LLMS_TXT: &str = "/llms.txt";
 pub const NOT_FOUND_MARKDOWN: &str = "/404.md";
 pub const REMOVED: &str = "/index/removed/";
@@ -236,13 +234,5 @@ mod tests {
 			removed_owner_href(OwnerKind::Class, "BulkImportService"),
 			"/index/removed/#Class-BulkImportService"
 		);
-	}
-
-	#[test]
-	fn maps_facet_paths_both_ways() {
-		for kind in FACET_KINDS {
-			assert_eq!(FacetKind::from_path(kind.path()), Some(kind));
-		}
-		assert_eq!(FacetKind::from_path("types"), None);
 	}
 }

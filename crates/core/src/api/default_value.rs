@@ -1,7 +1,9 @@
 use rapi_routes::{enum_href, enum_item_href, type_href};
 
 use super::code::{CodeToken, CodeTone, linked, token};
-use super::luau::{is_boolean_type, is_number_type, is_string_type, luau_name};
+use rapi_search::luau_name;
+
+use super::luau::{is_boolean_type, is_number_type, is_string_type};
 use crate::js::{js_number, js_round, json_string};
 use crate::model::{ApiType, TypeCategory};
 

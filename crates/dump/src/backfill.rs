@@ -3,10 +3,9 @@ use std::path::{Path, PathBuf};
 use futures_util::{StreamExt, TryStreamExt, stream};
 use indexmap::IndexMap;
 use rapi_core::dump::{
-	ChangeType, DiffVersion, DumpChange, DumpDiff, RobloxVersion, compare_versions, read_versions,
-	to_tab_json, write_versions,
+	ChangeType, DumpChange, DumpDiff, RobloxVersion, compare_versions, to_tab_json, write_versions,
 };
-use rapi_core::generate::pipeline::Paths;
+use rapi_core::paths::Paths;
 use reqwest::Client;
 use serde_json::Value;
 
@@ -121,14 +120,8 @@ fn diff_between(
 	unrecorded: Vec<DumpChange>,
 ) -> DumpDiff {
 	DumpDiff {
-		from: DiffVersion {
-			version: from.version.clone(),
-			hash: from.hash.clone(),
-		},
-		to: DiffVersion {
-			version: to.version.clone(),
-			hash: to.hash.clone(),
-		},
+		from: from.into(),
+		to: to.into(),
 		changes: diff::diff_dump(before, after),
 		descriptions: None,
 		unrecorded,
@@ -141,11 +134,8 @@ fn save(paths: &Paths, diff: &DumpDiff) -> Result<()> {
 }
 
 pub fn backfill(paths: &Paths) -> Result<()> {
-	let versions = read_versions(&paths.versions()).map_err(|error| error.to_string())?;
-	let first = versions
-		.first()
-		.cloned()
-		.ok_or("roblox-versions.json has no versions. Run `bun vp run dump:update` first.")?;
+	let versions = paths.tracked_versions()?;
+	let first = versions[0].clone();
 	let cache: PathBuf = paths.data().join("archive");
 	std::fs::create_dir_all(&cache).map_err(|error| error.to_string())?;
 	std::fs::create_dir_all(paths.diffs()).map_err(|error| error.to_string())?;

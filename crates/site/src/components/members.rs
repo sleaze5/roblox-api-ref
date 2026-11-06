@@ -4,12 +4,13 @@ use rapi_core::api::docs_links::class_docs_href;
 use rapi_core::api::filter_tags::{FilterTagGroup, member_tag_keys};
 use rapi_core::api::history_text::HistoryNoun;
 use rapi_core::api::luau::type_tokens;
-use rapi_core::api::members::{category_groups, is_deprecated, member_kind_title, members_of_kind};
+use rapi_core::api::members::{category_groups, member_kind_title, members_of_kind};
 use rapi_core::api::signature::{
 	SignatureParts, inline_tokens, is_nothing, parameter_tokens, signature_parts,
 };
 use rapi_core::api::tags::member_tags;
 use rapi_core::icons::Icon;
+use rapi_core::model::is_deprecated;
 use rapi_core::model::{Class, Doc, Member, MemberDetail};
 use rapi_routes::{
 	FacetKind, MemberKind, OwnerKind, change_anchor, class_href, member_anchor, member_href,
@@ -221,7 +222,7 @@ fn member_group(
 		.first()
 		.is_some_and(|member| member.kind() == MemberKind::Property);
 	html! {
-		div data-group="" data-owner=(owner) data-inherited-group=[(!own).then_some("")] data-collapsed=[(!own).then_some("")] class="flex flex-col gap-2" {
+		div data-group="" data-inherited-group=[(!own).then_some("")] data-collapsed=[(!own).then_some("")] class="flex flex-col gap-2" {
 			(group_header(cx, owner, own, members.len(), &id))
 			div id=(id) data-group-body="" class="flex flex-col gap-4" {
 				@if categorized {

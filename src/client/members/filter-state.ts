@@ -1,16 +1,10 @@
 import { readParam, writeParams } from "../url-state.ts"
 
-export const hideOptions = [
-	"property",
-	"method",
-	"event",
-	"callback",
-	"inherited",
-] as const
+const hideOptions = ["property", "method", "event", "callback", "inherited"] as const
 
 export type HideOption = (typeof hideOptions)[number]
 
-export type MatchMode = "any" | "all"
+type MatchMode = "any" | "all"
 
 export type MemberFilterState = {
 	text: string

@@ -5,12 +5,11 @@ use rapi_routes::OwnerKind;
 
 use crate::dump::{ChangeElement, DumpChange};
 use crate::model::{
-	Api, ChangeDetail, ChangeEntry, ChangeStatus, Deprecation, EntryValues, EnumItem,
-	HistoryChanges, HistoryEntry, HistoryEvent, HistoryKind, ItemHistory, Member, MemberCounts,
-	MemberDetail, OwnerChanges, Removed, RemovedOwner, RemovedOwners, Update,
+	Api, ChangeDetail, ChangeEntry, ChangeStatus, DEPRECATED_TAG, Deprecation, DetailField,
+	EntryValues, EnumItem, HistoryChanges, HistoryEntry, HistoryEvent, HistoryKind, ItemHistory,
+	Member, MemberCounts, MemberDetail, OwnerChanges, Removed, RemovedOwner, RemovedOwners,
+	TagChange, Update, is_deprecated,
 };
-
-const DEPRECATED: &str = "Deprecated";
 
 pub fn owner_key(kind: OwnerKind, name: &str) -> String {
 	format!("{}:{name}", kind.name())
@@ -36,19 +35,23 @@ const fn status_kind(status: ChangeStatus) -> HistoryKind {
 	}
 }
 
-fn field_name(label: &str) -> String {
-	match label {
-		"Security" | "Read security" | "Write security" => "security",
-		"Thread safety" => "thread safety",
-		"Capabilities" | "Read capabilities" | "Write capabilities" => "capabilities",
-		"Property category" => "category",
-		"Serialization" => "serialization",
-		"Use instead" => "replacement",
-		"Superclass" => "superclass",
-		"Memory category" => "memory category",
-		"Legacy names" => "legacy names",
-		"Simulation access" => "simulation access",
-		other => return other.to_lowercase(),
+fn field_name(field: &DetailField) -> String {
+	match field {
+		DetailField::Security | DetailField::ReadSecurity | DetailField::WriteSecurity => {
+			"security"
+		}
+		DetailField::ThreadSafety => "thread safety",
+		DetailField::Capabilities
+		| DetailField::ReadCapabilities
+		| DetailField::WriteCapabilities => "capabilities",
+		DetailField::PropertyCategory => "category",
+		DetailField::Serialization => "serialization",
+		DetailField::UseInstead => "replacement",
+		DetailField::Superclass => "superclass",
+		DetailField::MemoryCategory => "memory category",
+		DetailField::LegacyNames => "legacy names",
+		DetailField::SimulationAccess => "simulation access",
+		DetailField::Other(field) => return field.to_lowercase(),
 	}
 	.to_owned()
 }
@@ -147,25 +150,26 @@ fn summarize(details: &[ChangeDetail], fields: Vec<String>) -> Option<HistoryCha
 	};
 	for detail in details {
 		match detail {
-			ChangeDetail::Tags { label, tags } => {
-				let added = label == "Added tags" || label == "Tags";
-				if tags.iter().any(|tag| tag == DEPRECATED) {
+			ChangeDetail::Tags { change, tags } => {
+				let added = *change != TagChange::Removed;
+				if is_deprecated(tags) {
 					changes.deprecation = Some(if added {
 						Deprecation::Set
 					} else {
 						Deprecation::Clear
 					});
 				}
-				let others = u32::try_from(tags.iter().filter(|tag| *tag != DEPRECATED).count())
-					.unwrap_or(u32::MAX);
+				let others =
+					u32::try_from(tags.iter().filter(|tag| *tag != DEPRECATED_TAG).count())
+						.unwrap_or(u32::MAX);
 				if added {
 					changes.tags_added += others;
 				} else {
 					changes.tags_removed += others;
 				}
 			}
-			ChangeDetail::Value { label, .. } => {
-				let field = field_name(label);
+			ChangeDetail::Value { field, .. } => {
+				let field = field_name(field);
 				if !changes.fields.contains(&field) {
 					changes.fields.push(field);
 				}
@@ -246,30 +250,27 @@ fn member_counts(owner: &OwnerChanges) -> Option<MemberCounts> {
 	(counts.added + counts.removed + counts.changed > 0).then_some(counts)
 }
 
-fn tag_detail(details: &[ChangeDetail], labels: &[&str]) -> bool {
-	details.iter().any(|detail| {
-		matches!(detail, ChangeDetail::Tags { label, tags }
-			if labels.contains(&label.as_str()) && tags.iter().any(|tag| tag == DEPRECATED))
-	})
+fn tag_detail(details: &[ChangeDetail], changes: &[TagChange]) -> bool {
+	details
+		.iter()
+		.any(|detail| is_deprecated(detail.tags(changes)))
 }
 
 pub fn entry_deprecation(entry: &ChangeEntry) -> Option<Deprecation> {
-	if entry.status == ChangeStatus::Removed || tag_detail(&entry.details, &["Removed tags"]) {
+	if entry.status == ChangeStatus::Removed || tag_detail(&entry.details, &[TagChange::Removed]) {
 		return Some(Deprecation::Clear);
 	}
-	let born = entry.status == ChangeStatus::Added
-		&& entry
-			.after_tags()
-			.is_some_and(|tags| tags.iter().any(|tag| tag == DEPRECATED));
-	(born || tag_detail(&entry.details, &["Added tags"])).then_some(Deprecation::Set)
+	let born = entry.status == ChangeStatus::Added && entry.after_tags().is_some_and(is_deprecated);
+	(born || tag_detail(&entry.details, &[TagChange::Added])).then_some(Deprecation::Set)
 }
 
 pub fn owner_deprecation(owner: &OwnerChanges) -> Option<Deprecation> {
-	if owner.status == Some(ChangeStatus::Removed) || tag_detail(&owner.details, &["Removed tags"])
+	if owner.status == Some(ChangeStatus::Removed)
+		|| tag_detail(&owner.details, &[TagChange::Removed])
 	{
 		return Some(Deprecation::Clear);
 	}
-	tag_detail(&owner.details, &["Tags", "Added tags"]).then_some(Deprecation::Set)
+	tag_detail(&owner.details, &[TagChange::Initial, TagChange::Added]).then_some(Deprecation::Set)
 }
 
 #[derive(Clone, Debug)]
@@ -444,13 +445,8 @@ pub fn unrecorded_key(change: &DumpChange) -> String {
 	}
 }
 
-pub fn apply_history(
-	api: &mut Api,
-	table: &HistoryTable,
-	start: &str,
-	unrecorded: &HashSet<String>,
-) {
-	api.history_start = Some(start.to_owned());
+pub fn apply_history(api: &mut Api, table: &HistoryTable, unrecorded: &HashSet<String>) {
+	let start = api.history_start.clone();
 	api.removed = Some(RemovedOwners {
 		classes: table
 			.removed_owners_of(OwnerKind::Class)
@@ -473,7 +469,7 @@ pub fn apply_history(
 				if unrecorded {
 					history.unrecorded = true;
 				} else {
-					history.added_before = Some(start.to_owned());
+					history.added_before = Some(start.clone());
 				}
 			}
 			history
@@ -611,9 +607,9 @@ mod tests {
 		)
 	}
 
-	fn value(label: &str) -> ChangeDetail {
+	fn value(field: DetailField) -> ChangeDetail {
 		ChangeDetail::Value {
-			label: label.to_owned(),
+			field,
 			before: None,
 			after: None,
 		}
@@ -621,7 +617,7 @@ mod tests {
 
 	fn added_tags(tags: &[&str]) -> ChangeDetail {
 		ChangeDetail::Tags {
-			label: "Added tags".to_owned(),
+			change: TagChange::Added,
 			tags: tags.iter().map(|tag| (*tag).to_owned()).collect(),
 		}
 	}
@@ -651,8 +647,8 @@ mod tests {
 	#[test]
 	fn groups_read_and_write_security_and_counts_tags_apart_from_deprecated() {
 		let entry = changed(vec![
-			value("Read security"),
-			value("Write security"),
+			value(DetailField::ReadSecurity),
+			value(DetailField::WriteSecurity),
 			added_tags(&["Deprecated", "Hidden"]),
 		]);
 		assert_eq!(
@@ -692,7 +688,7 @@ mod tests {
 	fn summarizes_the_class_details_but_not_when_it_is_added() {
 		let owner = part(
 			Some(ChangeStatus::Changed),
-			vec![value("Memory category")],
+			vec![value(DetailField::MemoryCategory)],
 			Vec::new(),
 		);
 		assert_eq!(
@@ -701,7 +697,7 @@ mod tests {
 		);
 		let added = part(
 			Some(ChangeStatus::Added),
-			vec![value("Memory category")],
+			vec![value(DetailField::MemoryCategory)],
 			Vec::new(),
 		);
 		assert_eq!(owner_changes(&added), None);
@@ -713,9 +709,9 @@ mod tests {
 			None,
 			Vec::new(),
 			vec![
-				changed(vec![value("Security")]),
+				changed(vec![value(DetailField::Security)]),
 				changed(vec![
-					value("Read security"),
+					value(DetailField::ReadSecurity),
 					added_tags(&["Deprecated", "Yields"]),
 				]),
 			],

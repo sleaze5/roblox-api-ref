@@ -338,7 +338,7 @@ pub fn update_page(cx: &Context, update: &Update) -> Markup {
 					@for section in &sections {
 						(index_section_markup(cx, section.id, section.title, section.icon, section.count, None, &html! {
 							div class="flex flex-col gap-8" {
-								@for group in &section.groups { (owner_subsection_block(cx, group, None, "")) }
+								@for group in &section.groups { (owner_subsection_block(cx, group)) }
 							}
 						}))
 					}

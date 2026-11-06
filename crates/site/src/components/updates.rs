@@ -265,12 +265,7 @@ fn added_tags(entry: &ChangeEntry) -> Vec<DisplayTag> {
 	}
 }
 
-fn change_entry_row(
-	cx: &Context,
-	entry: &ChangeEntry,
-	owner_added: bool,
-	id_prefix: &str,
-) -> Markup {
+fn change_entry_row(cx: &Context, entry: &ChangeEntry, owner_added: bool) -> Markup {
 	let tags = added_tags(entry);
 	let mut lines = change_lines(cx, entry);
 	if owner_added {
@@ -280,7 +275,7 @@ fn change_entry_row(
 		}
 	}
 	html! {
-		li id={ (id_prefix) (change_anchor(entry.owner_kind(), &entry.owner, &entry.name)) } data-change="" data-name={ (entry.owner) "." (entry.name) } class="flex flex-col gap-1" {
+		li id=(change_anchor(entry.owner_kind(), &entry.owner, &entry.name)) data-change="" data-name={ (entry.owner) "." (entry.name) } class="flex flex-col gap-1" {
 			@for line in &lines {
 				div class="change-line" {
 					(change_mark(line.status, line.label))
@@ -320,19 +315,8 @@ pub fn owner_icon(cx: &Context, owner: &OwnerChanges) -> Option<u32> {
 	}
 }
 
-#[derive(Clone, Copy)]
-pub enum Heading {
-	H3,
-	H4,
-}
-
-pub fn owner_group(
-	cx: &Context,
-	owner: &OwnerChanges,
-	id_prefix: &str,
-	heading: Heading,
-) -> Markup {
-	let id = format!("{id_prefix}{}", owner_anchor(owner.kind, &owner.name));
+fn owner_group(cx: &Context, owner: &OwnerChanges) -> Markup {
+	let id = owner_anchor(owner.kind, &owner.name);
 	let noun = kind_noun(owner.kind);
 	let label = match owner.status {
 		Some(ChangeStatus::Added) => Some(format!("Added {noun}")),
@@ -357,16 +341,13 @@ pub fn owner_group(
 	let change = status.map(|_| "");
 	html! {
 		section id=(id) data-change-group="" data-name=(owner.name) aria-labelledby=(title_id) class="flex flex-col gap-2" {
-			@match heading {
-				Heading::H3 => h3 id=(title_id) data-change=[change] class="change-line" { (heading_content) },
-				Heading::H4 => h4 id=(title_id) data-change=[change] class="change-line" { (heading_content) },
-			}
+			h4 id=(title_id) data-change=[change] class="change-line" { (heading_content) }
 			(change_details(cx, &owner.details))
 			(description_changes(cx, &owner.descriptions))
 			@if !owner.entries.is_empty() {
 				ul class="flex flex-col gap-2" {
 					@for entry in &owner.entries {
-						(change_entry_row(cx, entry, owner.status == Some(ChangeStatus::Added), id_prefix))
+						(change_entry_row(cx, entry, owner.status == Some(ChangeStatus::Added)))
 					}
 				}
 			}
@@ -374,22 +355,17 @@ pub fn owner_group(
 	}
 }
 
-pub fn owner_subsection_block(
-	cx: &Context,
-	group: &OwnerSubsection,
-	title: Option<&str>,
-	id_prefix: &str,
-) -> Markup {
-	let id = format!("{id_prefix}{}", group.id);
+pub fn owner_subsection_block(cx: &Context, group: &OwnerSubsection) -> Markup {
+	let id = &group.id;
 	html! {
 		section id=(id) data-list-section="" aria-labelledby={ (id) "-title" } class="flex flex-col gap-4" {
 			h3 id={ (id) "-title" } class="flex items-center gap-2 border-b border-line-subtle pb-2 text-base font-semibold" {
 				(change_mark(Some(group.group.status()), None))
-				(title.unwrap_or(group.title))
+				(group.title)
 				span class="text-sm font-normal text-fg-faint" { (group.owners.len()) }
 			}
 			div class="flex flex-col gap-6" {
-				@for owner in &group.owners { (owner_group(cx, owner, id_prefix, Heading::H4)) }
+				@for owner in &group.owners { (owner_group(cx, owner)) }
 			}
 		}
 	}

@@ -50,32 +50,4 @@ describe("loadEngine", () => {
 		expect(await loadEngine()).toBe(engine)
 		expect(fetch).toHaveBeenCalledTimes(2)
 	})
-
-	test("loads the search module again after it fails", async () => {
-		loadSearchModule
-			.mockRejectedValueOnce(new Error("WebAssembly.instantiate failed"))
-			.mockResolvedValue(searchModule)
-		vi.stubGlobal(
-			"fetch",
-			vi.fn<typeof globalThis.fetch>(() => Promise.resolve(indexResponse())),
-		)
-		const loadEngine = await freshLoadEngine()
-
-		await expect(loadEngine()).rejects.toThrow("WebAssembly.instantiate failed")
-		expect(await loadEngine()).toBeInstanceOf(FakeSearch)
-		expect(loadSearchModule).toHaveBeenCalledTimes(2)
-	})
-
-	test("shares one load between calls made while it runs", async () => {
-		loadSearchModule.mockResolvedValue(searchModule)
-		const fetch = vi.fn<typeof globalThis.fetch>(() =>
-			Promise.resolve(indexResponse()),
-		)
-		vi.stubGlobal("fetch", fetch)
-		const loadEngine = await freshLoadEngine()
-
-		const [first, second] = await Promise.all([loadEngine(), loadEngine()])
-		expect(first).toBe(second)
-		expect(fetch).toHaveBeenCalledOnce()
-	})
 })

@@ -18,7 +18,7 @@ export function runRapi(root: string, args: string[]): Promise<void> {
 	})
 }
 
-export type DevPage = {
+type DevPage = {
 	status: number
 	html: string
 }

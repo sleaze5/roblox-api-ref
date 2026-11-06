@@ -8,8 +8,9 @@ use rapi_core::api::history_text::HistoryNoun;
 use rapi_core::api::members::{member_kind_title, members_in_page_order};
 use rapi_core::api::tags::plain_tags;
 use rapi_core::icons::Icon;
-use rapi_core::model::{AccessTier, Class, Member};
+use rapi_core::model::{Class, Member};
 use rapi_routes::{FacetKind, MemberKind, OwnerKind, member_anchor, owner_anchor};
+use rapi_search::AccessTier;
 
 use crate::components::changes::{ChangedValue, RemovedList, removed_items};
 use crate::components::doc::doc_text;
@@ -128,7 +129,7 @@ fn class_header(cx: &Context, item: &Class, ancestors: &[&Class]) -> Markup {
 			(fact("Uses", Some("Properties, parameters, and return values that use this class as their type."), &html! { (item.used_by.len()) }))
 		}))
 		(access_facts(&item.members))
-		(fact_list(&history_facts(item.history.as_ref(), OwnerKind::Class, &item.name, cx.api.history_start.as_deref())))
+		(fact_list(&history_facts(item.history.as_ref(), OwnerKind::Class, &item.name, &cx.api.history_start)))
 		(history_list(item.history.as_ref(), &owner_anchor(OwnerKind::Class, &item.name), HistoryNoun::Member, ""))
 		(code_sample(item.sample.as_ref()))
 	}))

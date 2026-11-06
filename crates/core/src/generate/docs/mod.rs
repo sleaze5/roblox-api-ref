@@ -8,7 +8,10 @@ pub use to_doc::{LinkResolver, normalize_text, to_doc};
 
 use indexmap::IndexMap;
 
-use crate::dump::{ApiDocs, ApiDocsEntry};
+use crate::dump::{
+	ApiDocs, ApiDocsEntry, class_docs_key, documentation, enum_docs_key, enum_item_docs_key,
+	member_docs_key,
+};
 use crate::model::{Class, Doc, Enum, MemberDetail};
 
 pub fn describe_html(names: &ApiNames<'_>, html: &str) -> Option<Doc> {
@@ -16,10 +19,7 @@ pub fn describe_html(names: &ApiNames<'_>, html: &str) -> Option<Doc> {
 }
 
 fn describe(names: &ApiNames<'_>, docs: &ApiDocs, key: Option<&str>) -> Option<Doc> {
-	let html = key
-		.and_then(|key| docs.get(key))
-		.and_then(|entry| entry.documentation.as_deref())?;
-	describe_html(names, html)
+	describe_html(names, documentation(docs, key)?)
 }
 
 struct Descriptions {
@@ -34,7 +34,7 @@ fn member_descriptions(
 	class_name: &str,
 	member: &crate::model::Member,
 ) -> Descriptions {
-	let key = format!("@roblox/globaltype/{class_name}.{}", member.name);
+	let key = member_docs_key(class_name, &member.name);
 	let description = describe(names, docs, Some(&key));
 	if !matches!(
 		member.detail,
@@ -46,30 +46,19 @@ fn member_descriptions(
 			returns: None,
 		};
 	}
-	let entry = docs
-		.get(&key)
-		.cloned()
-		.unwrap_or_else(ApiDocsEntry::default);
-	let params: std::collections::HashMap<&str, &str> = entry
-		.params
-		.iter()
-		.flatten()
-		.map(|param| (param.name.as_str(), param.documentation.as_str()))
-		.collect();
+	let entry = docs.get(&key);
 	let parameters = member
 		.parameters()
 		.iter()
-		.map(|parameter| describe(names, docs, params.get(parameter.name.as_str()).copied()))
+		.map(|parameter| {
+			describe(
+				names,
+				docs,
+				entry.and_then(|entry| entry.parameter(&parameter.name)),
+			)
+		})
 		.collect();
-	let returns = describe(
-		names,
-		docs,
-		entry
-			.returns
-			.as_ref()
-			.and_then(|returns| returns.first())
-			.map(String::as_str),
-	);
+	let returns = describe(names, docs, entry.and_then(ApiDocsEntry::first_return));
 	Descriptions {
 		description,
 		parameters,
@@ -92,11 +81,7 @@ pub fn apply_api_docs(
 		let class_docs: Vec<(Option<Doc>, Vec<Descriptions>)> = classes
 			.values()
 			.map(|item| {
-				let description = describe(
-					&names,
-					docs,
-					Some(&format!("@roblox/globaltype/{}", item.name)),
-				);
+				let description = describe(&names, docs, Some(&class_docs_key(&item.name)));
 				let members = item
 					.members
 					.iter()
@@ -108,11 +93,7 @@ pub fn apply_api_docs(
 		let enum_docs: Vec<(Option<Doc>, Vec<Option<Doc>>)> = enums
 			.values()
 			.map(|item| {
-				let description = describe(
-					&names,
-					docs,
-					Some(&format!("@roblox/global/Enum.{}", item.name)),
-				);
+				let description = describe(&names, docs, Some(&enum_docs_key(&item.name)));
 				let items = item
 					.items
 					.iter()
@@ -120,7 +101,7 @@ pub fn apply_api_docs(
 						describe(
 							&names,
 							docs,
-							Some(&format!("@roblox/enum/{}.{}", item.name, entry.name)),
+							Some(&enum_item_docs_key(&item.name, &entry.name)),
 						)
 					})
 					.collect();

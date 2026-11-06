@@ -348,11 +348,11 @@ pub fn stats_markdown(cx: &Context) -> String {
 		stats_lead(&cx.api.version),
 		fact_list(&[
 			("Version", Some(cx.api.version.clone())),
-			("Tracked since", Some(stats.history_start.clone())),
+			("Tracked since", Some(cx.api.history_start.clone())),
 			("Updates", Some(stats.updates.len().to_string())),
 		]),
 		"## Counts".to_owned(),
-		format!("{} {SERVICES_HINT}", removed_note(&stats.history_start)),
+		format!("{} {SERVICES_HINT}", removed_note(&cx.api.history_start)),
 		markdown_table(&["Kind", "Current", "Removed", "Total"], &counts),
 	];
 	for group in &stats.records {
