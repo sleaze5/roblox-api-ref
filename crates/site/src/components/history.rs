@@ -52,8 +52,7 @@ pub fn history_facts(
 			"Unrecorded: the public API dumps that older versions are compared with do not list this {noun}, so the update that added it is unknown."
 		),
 		None => format!(
-			"Not recorded: this {noun} already existed in {}, the oldest version that this site tracks.",
-			start
+			"Not recorded: this {noun} already existed in {start}, the oldest version that this site tracks."
 		),
 		Some(_) => format!("The update that added this {noun}."),
 	};
