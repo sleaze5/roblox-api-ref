@@ -3,16 +3,7 @@ use rapi_routes::{class_href, enum_href, type_href};
 use super::code::{CodeToken, CodeTone, linked, linked_token, token};
 use crate::model::{ApiType, TypeCategory};
 
-pub fn luau_name(name: &str) -> &str {
-	match name {
-		"int" | "int64" | "float" | "double" => "number",
-		"bool" => "boolean",
-		"Variant" => "any",
-		"ContentId" | "ProtectedString" | "BinaryString" => "string",
-		"CoordinateFrame" | "OptionalCoordinateFrame" => "CFrame",
-		other => other,
-	}
-}
+pub use rapi_search::luau_name;
 
 pub fn is_number_type(ty: &ApiType) -> bool {
 	matches!(

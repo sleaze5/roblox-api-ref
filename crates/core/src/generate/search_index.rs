@@ -2,7 +2,8 @@ use std::collections::HashMap;
 
 use rapi_search::{EntryKind, IndexData, RemovedData, UpdateData, flags};
 
-use crate::api::members::{access_rank, is_hidden, is_internal};
+use crate::api::access::access_tier;
+use crate::api::members::{is_hidden, is_internal};
 use crate::js::{compare_names, format_date};
 use crate::model::{
 	Api, ApiType, Class, HistoryEvent, Member, MemberDetail, RemovedOwner, TypeCategory, Update,
@@ -189,14 +190,8 @@ fn removed_entries(api: &Api) -> Vec<RemovedData> {
 	entries.extend(owners(EntryKind::Enum, api.removed_enums()));
 	for item in api.classes.values() {
 		for removed in item.removed_members.iter().flatten() {
-			let kind = match removed.value.kind() {
-				rapi_routes::MemberKind::Property => EntryKind::Property,
-				rapi_routes::MemberKind::Method => EntryKind::Method,
-				rapi_routes::MemberKind::Event => EntryKind::Event,
-				rapi_routes::MemberKind::Callback => EntryKind::Callback,
-			};
 			entries.push(removed_entry(
-				kind,
+				EntryKind::of_member(removed.value.kind()),
 				&removed.value.name,
 				Some(&item.name),
 				&removed.removed,
@@ -214,15 +209,6 @@ fn removed_entries(api: &Api) -> Vec<RemovedData> {
 		}
 	}
 	entries
-}
-
-fn member_entry_kind(member: &Member) -> EntryKind {
-	match member.kind() {
-		rapi_routes::MemberKind::Property => EntryKind::Property,
-		rapi_routes::MemberKind::Method => EntryKind::Method,
-		rapi_routes::MemberKind::Event => EntryKind::Event,
-		rapi_routes::MemberKind::Callback => EntryKind::Callback,
-	}
 }
 
 pub fn build_search_index(api: &Api, updates: &[Update]) -> IndexData {
@@ -258,13 +244,13 @@ pub fn build_search_index(api: &Api, updates: &[Update]) -> IndexData {
 	for item in &classes {
 		let parent = class_entries[item.name.as_str()];
 		for member in &item.members {
-			let security = u8::try_from(access_rank(member)).unwrap_or(u8::MAX);
+			let access = access_tier(member).code();
 			let entry = builder.add(
-				member_entry_kind(member),
+				EntryKind::of_member(member.kind()),
 				&member.name,
 				Some(parent),
 				&member.tags,
-				security,
+				access,
 			) as usize;
 			let value_types = builder.type_ids(value_type_keys(member));
 			let parameter_types = builder.type_ids(parameter_type_keys(member));

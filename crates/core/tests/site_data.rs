@@ -1,6 +1,7 @@
 use std::path::Path;
 use std::sync::LazyLock;
 
+use rapi_core::api::access::access_tier;
 use rapi_core::dump::Paths;
 use rapi_core::generate::pipeline::{Site, generate_site};
 use rapi_core::model::{
@@ -315,13 +316,27 @@ fn records_the_history_of_classes_members_and_enums() {
 }
 
 #[test]
-fn builds_a_search_index_that_decodes_to_the_same_data() {
-	let bytes = SITE.search.encode();
-	assert_eq!(
-		rapi_search::IndexData::decode(&bytes).expect("the index decodes"),
-		SITE.search
-	);
-	assert_eq!(SITE.search.names.len(), SITE.search.kinds.len());
+fn filters_search_results_by_who_can_use_them() {
+	let engine = rapi_search::Engine::new(&SITE.search.encode()).expect("the index loads");
+	for tier in AccessTier::FILTERS {
+		let query = rapi_search::parse_query(&format!("is:property access:{}", tier.name()));
+		let tiers: Vec<AccessTier> = engine
+			.search(&query, usize::MAX)
+			.iter()
+			.map(|result| {
+				let class = engine.name(engine.parent(result.entry).expect("a member has a class"));
+				let name = engine.name(result.entry);
+				let member = SITE.api.classes[class]
+					.members
+					.iter()
+					.find(|member| member.name == name)
+					.expect("the result is a member of its class");
+				access_tier(member)
+			})
+			.collect();
+		assert!(tiers.contains(&tier), "{}", tier.name());
+		assert!(tiers.iter().all(|found| *found <= tier), "{}", tier.name());
+	}
 }
 
 #[test]

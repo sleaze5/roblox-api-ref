@@ -35,17 +35,6 @@ pub fn is_hidden(member: &Member) -> bool {
 			.any(|name| name == "InternalTest")
 }
 
-pub const fn access_rank(member: &Member) -> usize {
-	match member.detail {
-		MemberDetail::Property { write_security, .. } => {
-			let read = member.security.rank();
-			let write = write_security.rank();
-			if read < write { read } else { write }
-		}
-		_ => member.security.rank(),
-	}
-}
-
 pub const fn is_internal(member: &Member) -> bool {
 	match member.detail {
 		MemberDetail::Property { write_security, .. } => {

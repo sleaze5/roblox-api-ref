@@ -1,4 +1,3 @@
-use super::members::access_rank;
 use crate::model::{AccessTier, KindCounts, Member, Security};
 
 pub const fn access_tier_label(tier: AccessTier) -> &'static str {
@@ -25,13 +24,11 @@ pub const fn access_tier_hint(tier: AccessTier) -> &'static str {
 	}
 }
 
-pub const fn access_tier(member: &Member) -> AccessTier {
-	match access_rank(member) {
-		0 => AccessTier::Game,
-		1 => AccessTier::Plugin,
-		2 => AccessTier::Command,
-		_ => AccessTier::Roblox,
-	}
+pub fn access_tier(member: &Member) -> AccessTier {
+	member
+		.security
+		.access_tier()
+		.min(member.write_security().access_tier())
 }
 
 pub fn tier_counts(members: &[Member]) -> [u32; 4] {

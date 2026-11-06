@@ -1,4 +1,5 @@
 use rapi_routes::MemberKind;
+pub use rapi_search::AccessTier;
 
 use super::RecordGroup;
 
@@ -244,18 +245,6 @@ pub struct AccessNow {
 	pub members: u32,
 	pub scriptable: u32,
 	pub thread_safe: u32,
-}
-
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
-pub enum AccessTier {
-	Game,
-	Plugin,
-	Command,
-	Roblox,
-}
-
-impl AccessTier {
-	pub const ALL: [Self; 4] = [Self::Game, Self::Plugin, Self::Command, Self::Roblox];
 }
 
 #[derive(Clone, Copy, Debug, Default, PartialEq, Eq)]

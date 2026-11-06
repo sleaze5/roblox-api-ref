@@ -117,6 +117,15 @@ impl EntryKind {
 		}
 	}
 
+	pub const fn of_member(kind: rapi_routes::MemberKind) -> Self {
+		match kind {
+			rapi_routes::MemberKind::Property => Self::Property,
+			rapi_routes::MemberKind::Method => Self::Method,
+			rapi_routes::MemberKind::Event => Self::Event,
+			rapi_routes::MemberKind::Callback => Self::Callback,
+		}
+	}
+
 	pub const fn member(self) -> Option<rapi_routes::MemberKind> {
 		match self {
 			Self::Property => Some(rapi_routes::MemberKind::Property),
@@ -350,7 +359,7 @@ impl IndexData {
 			kinds: (0..count).map(|entry| index.kind(entry)).collect(),
 			parents: (0..count).map(|entry| index.parent(entry)).collect(),
 			flags: (0..count).map(|entry| index.flags(entry)).collect(),
-			security: (0..count).map(|entry| index.security(entry)).collect(),
+			security: (0..count).map(|entry| index.access(entry)).collect(),
 			value_types: (0..count)
 				.map(|entry| index.value_types(entry).collect())
 				.collect(),
@@ -638,7 +647,7 @@ impl Index {
 		self.flags[entry]
 	}
 
-	pub fn security(&self, entry: usize) -> u8 {
+	pub fn access(&self, entry: usize) -> u8 {
 		self.security[entry]
 	}
 

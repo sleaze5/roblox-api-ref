@@ -1,5 +1,6 @@
+use crate::access::AccessTier;
 use crate::engine::{Engine, SearchResult};
-use crate::query::{ACCESS_FILTERS, KIND_ALIASES, TAG_ALIASES};
+use crate::query::{KIND_ALIASES, TAG_ALIASES};
 
 fn find_option<'a>(options: impl Iterator<Item = &'a str>, value: &str) -> Option<&'a str> {
 	options.into_iter().find(|candidate| {
@@ -20,7 +21,7 @@ fn complete_filter(word: &str, engine: &Engine) -> Option<String> {
 			let option = match prefix {
 				"is:" => find_option(KIND_ALIASES.iter().map(|(name, _)| *name), value),
 				"tag:" => find_option(TAG_ALIASES.iter().map(|(name, _)| *name), value),
-				"access:" => find_option(ACCESS_FILTERS.iter().map(|(name, _)| *name), value),
+				"access:" => find_option(AccessTier::FILTERS.iter().map(|tier| tier.name()), value),
 				_ => find_option(engine.type_names(), value),
 			};
 			return option.map(|option| format!("{negation}{prefix}{option}"));

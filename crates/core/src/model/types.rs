@@ -1,5 +1,6 @@
 use indexmap::IndexMap;
 use rapi_routes::{FacetKind, MemberKind};
+use rapi_search::AccessTier;
 use serde::Deserialize;
 
 use super::{CodeSample, Doc, ItemHistory, Removed, RemovedOwner};
@@ -44,6 +45,15 @@ impl Security {
 
 	pub const fn rank(self) -> usize {
 		self as usize
+	}
+
+	pub const fn access_tier(self) -> AccessTier {
+		match self {
+			Self::None => AccessTier::Game,
+			Self::PluginSecurity => AccessTier::Plugin,
+			Self::LocalUserSecurity => AccessTier::Command,
+			_ => AccessTier::Roblox,
+		}
 	}
 }
 
