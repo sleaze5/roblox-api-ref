@@ -69,10 +69,10 @@ pub fn prepare_template(template: &str) -> String {
 	out
 }
 
-pub fn fill_template(cx: &Context, template: &str, page: &RenderedPage, route: &str) -> String {
+pub fn fill_template(cx: &Context, template: &str, page: &RenderedPage) -> String {
 	let mut html = template.replacen("<!--app-title-->", &escape_html(&page.title), 1);
 	html = html.replacen("<!--app-description-->", &escape_html(SITE_DESCRIPTION), 1);
-	html = html.replacen("<!--app-head-->", &head_tags(cx, page, route), 1);
+	html = html.replacen("<!--app-head-->", &head_tags(cx, page), 1);
 	html.replacen("<!--app-body-->", &page.body, 1)
 }
 

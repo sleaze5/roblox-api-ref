@@ -130,7 +130,7 @@ fn names_each_page_before_the_site_name() {
 
 fn head(path: &str) -> (RenderedPage, String) {
 	let page = render_page(&CX, path);
-	let tags = rapi_site::head::head_tags(&CX, &page, path);
+	let tags = rapi_site::head::head_tags(&CX, &page);
 	(page, tags)
 }
 

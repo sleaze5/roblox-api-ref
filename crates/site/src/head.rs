@@ -1,5 +1,6 @@
 use std::fmt::Write as _;
 
+use rapi_routes::NOT_FOUND_PAGE;
 use serde_json::{Value, json};
 
 use crate::RenderedPage;
@@ -134,10 +135,14 @@ const IMAGE_TYPE: &str = "image/png";
 const IMAGE_WIDTH: &str = "1200";
 const IMAGE_HEIGHT: &str = "630";
 
-pub fn head_tags(cx: &Context, page: &RenderedPage, route: &str) -> String {
-	let url = cx.absolute_url(if route == "/404" { "/404.html" } else { route });
-	let image = cx.absolute_url("/og-image.png");
+pub fn head_tags(cx: &Context, page: &RenderedPage) -> String {
 	let not_found = page.status == 404;
+	let url = cx.absolute_url(if not_found {
+		NOT_FOUND_PAGE
+	} else {
+		&page.href
+	});
+	let image = cx.absolute_url("/og-image.png");
 	let article = page.schema_type == Some(SchemaType::TechArticle);
 	let mut out = String::new();
 	meta(&mut out, "name", "application-name", SITE_NAME);
