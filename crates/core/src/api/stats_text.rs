@@ -144,13 +144,6 @@ pub const fn coverage_label(kind: CoverageKind) -> &'static str {
 	}
 }
 
-pub fn capitalized(text: &str) -> String {
-	let mut chars = text.chars();
-	chars.next().map_or_else(String::new, |first| {
-		first.to_uppercase().chain(chars).collect()
-	})
-}
-
 pub const PER_UPDATE_NOTE: &str = "The classes, members, and enum items that each update added and removed. A number marks a bar that runs past the axis.";
 
 pub const PER_UPDATE_TABLE_NOTE: &str = "The classes, members, and enum items that the tracked updates added and removed, in all and on average per update.";

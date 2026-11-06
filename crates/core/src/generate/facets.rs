@@ -178,18 +178,6 @@ impl FacetSlugs {
 			.get(slug)
 			.map_or(slug, String::as_str)
 	}
-
-	pub fn to_json(&self) -> serde_json::Value {
-		let mut map = serde_json::Map::new();
-		for kind in FACET_KINDS {
-			let (to_slug, to_name) = &self.0[kind.index()];
-			map.insert(
-				kind.key().to_owned(),
-				serde_json::json!({ "toSlug": to_slug, "toName": to_name }),
-			);
-		}
-		serde_json::Value::Object(map)
-	}
 }
 
 pub fn build_facet_slugs(facets: &Facets) -> FacetSlugs {

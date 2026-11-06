@@ -177,10 +177,6 @@ impl ChangeEntry {
 		}
 	}
 
-	pub const fn is_member(&self) -> bool {
-		matches!(self.values, EntryValues::Member { .. })
-	}
-
 	pub fn after_tags(&self) -> Option<&[String]> {
 		match &self.values {
 			EntryValues::Member { after, .. } => {
@@ -198,13 +194,6 @@ impl ChangeEntry {
 			EntryValues::EnumItem { before, .. } => {
 				before.as_ref().map(|item| item.tags.as_slice())
 			}
-		}
-	}
-
-	pub fn has_values(&self) -> (bool, bool) {
-		match &self.values {
-			EntryValues::Member { before, after } => (before.is_some(), after.is_some()),
-			EntryValues::EnumItem { before, after } => (before.is_some(), after.is_some()),
 		}
 	}
 

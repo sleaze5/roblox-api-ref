@@ -14,8 +14,7 @@ pub use access::AccessTier;
 pub use complete::complete;
 pub use engine::{Engine, SearchResult, TypeUsers};
 pub use format::{
-	EntryKind, IndexData, IndexError, RemovedData, Role, USAGE_LIMIT, UpdateData, decode_check,
-	flags,
+	EntryKind, IndexData, IndexError, RemovedData, Role, USAGE_LIMIT, UpdateData, flags,
 };
 pub use lookup::{match_removed, match_updates};
 pub use matcher::Matcher;

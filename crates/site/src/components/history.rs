@@ -1,8 +1,8 @@
 use maud::{Markup, html};
 use rapi_core::api::history_text::{
-	HistoryNoun, HistoryPart, capitalize, deprecation_text, entry_parts, entry_status, plural,
+	HistoryNoun, HistoryPart, deprecation_text, entry_parts, entry_status, plural,
 };
-use rapi_core::js::format_date;
+use rapi_core::js::{format_date, upper_first};
 use rapi_core::model::{
 	ChangeCounts, ChangeStatus, Deprecation, HistoryEntry, HistoryEvent, ItemHistory, MemberCounts,
 };
@@ -98,7 +98,7 @@ fn members_part(counts: MemberCounts, deprecated: u32, noun: HistoryNoun) -> Mar
 
 fn part_text(text: &str, first: bool) -> String {
 	if first {
-		capitalize(text)
+		upper_first(text)
 	} else {
 		text.to_owned()
 	}

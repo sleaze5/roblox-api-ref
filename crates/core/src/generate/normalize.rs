@@ -1,5 +1,4 @@
 use indexmap::IndexMap;
-use rapi_routes::MemberKind;
 
 use super::docs::apply_api_docs;
 use super::facets::collect_facets;
@@ -435,10 +434,6 @@ pub fn normalize_api(dump: &Dump, docs: &ApiDocs, version: &RobloxVersion) -> Ap
 		history_start: None,
 		removed: None,
 	}
-}
-
-pub const fn member_kind_name(kind: MemberKind) -> &'static str {
-	kind.name()
 }
 
 #[cfg(test)]

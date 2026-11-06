@@ -523,10 +523,6 @@ pub struct Index {
 	removed_updates: Vec<u16>,
 }
 
-pub fn decode_check(bytes: &[u8]) -> Result<(), IndexError> {
-	Index::new(bytes).map(|_| ())
-}
-
 impl Index {
 	pub fn new(bytes: &[u8]) -> Result<Self, IndexError> {
 		if !bytes.starts_with(MAGIC) {

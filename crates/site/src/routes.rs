@@ -90,10 +90,6 @@ pub fn all_routes(cx: &Context) -> Vec<Route<'_>> {
 	routes
 }
 
-pub fn route_paths(cx: &Context) -> Vec<String> {
-	all_routes(cx).iter().map(|route| route.href(cx)).collect()
-}
-
 fn canonical_path(path: &str) -> String {
 	let segments: Vec<String> = path
 		.split('/')

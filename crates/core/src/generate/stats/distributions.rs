@@ -19,10 +19,7 @@ pub fn distributions(api: &Api) -> Vec<Distribution> {
 		.into_iter()
 		.map(|kind| Distribution {
 			id: format!("{}-per-class", kind_slug(kind)),
-			label: format!(
-				"{} per class",
-				crate::api::stats_text::capitalized(kind_plural(kind))
-			),
+			label: format!("{} per class", crate::js::upper_first(kind_plural(kind))),
 			counts: bucket_counts(api.classes.values().map(|item| {
 				item.members
 					.iter()

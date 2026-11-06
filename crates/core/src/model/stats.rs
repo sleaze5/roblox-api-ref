@@ -31,14 +31,6 @@ impl CountKind {
 
 	pub const MEMBERS: [Self; 4] = [Self::Property, Self::Method, Self::Event, Self::Callback];
 
-	pub const ENTRIES: [Self; 5] = [
-		Self::Property,
-		Self::Method,
-		Self::Event,
-		Self::Callback,
-		Self::EnumItem,
-	];
-
 	pub const ITEMS: [Self; 7] = [
 		Self::Class,
 		Self::Property,
