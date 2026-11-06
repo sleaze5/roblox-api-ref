@@ -104,7 +104,7 @@ pub fn enum_page(cx: &Context, item: &Enum) -> Markup {
 					(fact("Items", Some("Enum items that this enum defines."), &html! { (item.items.len()) }))
 					(fact("Uses", Some("Properties, parameters, and return values that use this enum."), &html! { (item.used_by.len()) }))
 				}))
-				(fact_list(&history_facts(item.history.as_ref(), OwnerKind::Enum, &item.name, cx.api.history_start.as_deref())))
+				(fact_list(&history_facts(item.history.as_ref(), OwnerKind::Enum, &item.name, &cx.api.history_start)))
 				(history_list(item.history.as_ref(), &owner_anchor(OwnerKind::Enum, &item.name), HistoryNoun::Item, ""))
 			})))
 			(list_filter(cx, "Filter items and uses", "enum-content", "q", ListFilterPlacement::Page, None))

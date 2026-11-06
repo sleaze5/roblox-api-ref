@@ -294,10 +294,6 @@ fn lists_the_members_that_use_a_class_as_their_type() {
 #[test]
 fn records_the_history_of_classes_members_and_enums() {
 	let api = &SITE.api;
-	assert_eq!(
-		api.history_start.as_deref(),
-		SITE.stats.history_start.as_str().into()
-	);
 	let recorded = api
 		.classes
 		.values()
@@ -353,16 +349,25 @@ fn counts_the_services_among_the_classes() {
 
 #[test]
 fn spreads_every_class_member_and_enum_over_the_distributions() {
+	let members_of = |kind: MemberKind| {
+		SITE.api
+			.classes
+			.values()
+			.flat_map(|item| &item.members)
+			.filter(|member| member.kind() == kind)
+			.count()
+	};
 	for distribution in &SITE.stats.distributions {
 		let total: u32 = distribution.counts.iter().sum();
-		let expected = if distribution.id.ends_with("-per-class") {
-			len(SITE.api.classes.len())
-		} else if distribution.id == "items-per-enum" {
-			len(SITE.api.enums.len())
-		} else {
-			total
+		let expected = match distribution.id.as_str() {
+			"items-per-enum" => SITE.api.enums.len(),
+			"parameters-per-method" => members_of(MemberKind::Method),
+			"parameters-per-event" => members_of(MemberKind::Event),
+			"parameters-per-callback" => members_of(MemberKind::Callback),
+			id if id.ends_with("-per-class") => SITE.api.classes.len(),
+			id => panic!("{id} has no expected total"),
 		};
-		assert_eq!(total, expected, "{}", distribution.id);
+		assert_eq!(total, len(expected), "{}", distribution.id);
 	}
 }
 

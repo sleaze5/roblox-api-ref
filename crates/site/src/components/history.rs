@@ -41,7 +41,7 @@ pub fn history_facts(
 	history: Option<&ItemHistory>,
 	kind: OwnerKind,
 	name: &str,
-	start: Option<&str>,
+	start: &str,
 ) -> Markup {
 	let noun = noun(kind);
 	let added = history.and_then(|history| history.added.as_ref());
@@ -53,7 +53,7 @@ pub fn history_facts(
 		),
 		None => format!(
 			"Not recorded: this {noun} already existed in {}, the oldest version that this site tracks.",
-			start.unwrap_or("the oldest version")
+			start
 		),
 		Some(_) => format!("The update that added this {noun}."),
 	};

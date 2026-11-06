@@ -64,7 +64,7 @@ pub fn generate_site(paths: &Paths) -> Result<Site, String> {
 			)
 		},
 	);
-	let mut api = normalize_api(&dump?, &docs?, &version);
+	let mut api = normalize_api(&dump?, &docs?, &version, &versions[0].version);
 	let class_icons = apply_class_icons(&mut api.classes, &icons?)?;
 	let diffs = diffs?;
 	let unrecorded: HashSet<String> = diffs
@@ -80,10 +80,9 @@ pub fn generate_site(paths: &Paths) -> Result<Site, String> {
 		};
 		build_updates(&diffs, &names)
 	};
-	let history_start = versions[0].version.clone();
 	let table = build_history(&updates);
-	apply_history(&mut api, &table, &history_start, &unrecorded);
-	let stats = build_stats(&api, &updates, &history_start);
+	apply_history(&mut api, &table, &unrecorded);
+	let stats = build_stats(&api, &updates);
 	let slugs = build_facet_slugs(&api.facets);
 	let search = build_search_index(&api, &updates);
 	Ok(Site {

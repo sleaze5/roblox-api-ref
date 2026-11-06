@@ -447,7 +447,7 @@ pub struct Api {
 	pub enums: IndexMap<String, Enum>,
 	pub data_types: IndexMap<String, DataType>,
 	pub facets: Facets,
-	pub history_start: Option<String>,
+	pub history_start: String,
 	pub removed: Option<RemovedOwners>,
 }
 

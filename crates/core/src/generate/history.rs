@@ -445,13 +445,8 @@ pub fn unrecorded_key(change: &DumpChange) -> String {
 	}
 }
 
-pub fn apply_history(
-	api: &mut Api,
-	table: &HistoryTable,
-	start: &str,
-	unrecorded: &HashSet<String>,
-) {
-	api.history_start = Some(start.to_owned());
+pub fn apply_history(api: &mut Api, table: &HistoryTable, unrecorded: &HashSet<String>) {
+	let start = api.history_start.clone();
 	api.removed = Some(RemovedOwners {
 		classes: table
 			.removed_owners_of(OwnerKind::Class)
@@ -474,7 +469,7 @@ pub fn apply_history(
 				if unrecorded {
 					history.unrecorded = true;
 				} else {
-					history.added_before = Some(start.to_owned());
+					history.added_before = Some(start.clone());
 				}
 			}
 			history

@@ -73,11 +73,11 @@ pub fn stats_page(cx: &Context) -> Markup {
 				(page_lead(&html! { (stats_lead(&cx.api.version)) }))
 				(fact_list(&html! {
 					(fact("Version", Some("The Roblox Studio version that the current numbers describe."), &html! { span class="font-mono" { (cx.api.version) } }))
-					(fact("Tracked since", Some("The oldest version in the update history."), &html! { span class="font-mono" { (stats.history_start) } }))
+					(fact("Tracked since", Some("The oldest version in the update history."), &html! { span class="font-mono" { (cx.api.history_start) } }))
 					(fact("Updates", Some("Updates in the tracked history."), &html! { (stats.updates.len()) }))
 				}))
 			})))
-			(stats_section("counts", "Counts", Some(&removed_note(&stats.history_start)), &count_table(cx, &stats.counts, &stats.history_start)))
+			(stats_section("counts", "Counts", Some(&removed_note(&cx.api.history_start)), &count_table(cx, &stats.counts, &cx.api.history_start)))
 			@for group in &stats.records {
 				@let comebacks = group.id == "comeback-records";
 				(stats_section(&group.id, &group.title, comebacks.then_some(COMEBACKS_LEAD), &html! {

@@ -410,7 +410,12 @@ fn collect_data_types(usage: &UsageIndex) -> IndexMap<String, DataType> {
 	data_types
 }
 
-pub fn normalize_api(dump: &Dump, docs: &ApiDocs, version: &RobloxVersion) -> Api {
+pub fn normalize_api(
+	dump: &Dump,
+	docs: &ApiDocs,
+	version: &RobloxVersion,
+	history_start: &str,
+) -> Api {
 	let mut classes = normalize_classes(dump);
 	resolve_preferred_members(&mut classes);
 	let usage = index_type_usage(&classes);
@@ -431,7 +436,7 @@ pub fn normalize_api(dump: &Dump, docs: &ApiDocs, version: &RobloxVersion) -> Ap
 		enums,
 		data_types,
 		facets,
-		history_start: None,
+		history_start: history_start.to_owned(),
 		removed: None,
 	}
 }

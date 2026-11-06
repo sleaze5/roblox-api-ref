@@ -379,7 +379,6 @@ pub struct GapBucket {
 
 #[derive(Clone, Debug, PartialEq)]
 pub struct Stats {
-	pub history_start: String,
 	pub counts: Vec<CountRow>,
 	pub records: Vec<RecordGroup>,
 	pub updates: Vec<UpdateTrend>,

@@ -128,7 +128,7 @@ fn class_header(cx: &Context, item: &Class, ancestors: &[&Class]) -> Markup {
 			(fact("Uses", Some("Properties, parameters, and return values that use this class as their type."), &html! { (item.used_by.len()) }))
 		}))
 		(access_facts(&item.members))
-		(fact_list(&history_facts(item.history.as_ref(), OwnerKind::Class, &item.name, cx.api.history_start.as_deref())))
+		(fact_list(&history_facts(item.history.as_ref(), OwnerKind::Class, &item.name, &cx.api.history_start)))
 		(history_list(item.history.as_ref(), &owner_anchor(OwnerKind::Class, &item.name), HistoryNoun::Member, ""))
 		(code_sample(item.sample.as_ref()))
 	}))
