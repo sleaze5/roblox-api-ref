@@ -6,7 +6,6 @@ import {
 	notFoundMarkdownPath,
 } from "./markdown-path.ts"
 
-/** Every page path and its Markdown path, as `cargo rapi gen` writes them. */
 const pages = JSON.parse(
 	readFileSync(new URL("../generated/pages.json", import.meta.url), "utf8"),
 ) as [path: string, markdown: string][]
