@@ -10,20 +10,6 @@ pub struct RobloxVersion {
 	pub published: String,
 }
 
-impl RobloxVersion {
-	pub fn dump_file_name(&self) -> String {
-		format!("Full-API-Dump-{}-{}.json", self.hash, self.channel)
-	}
-
-	pub fn api_docs_file_name(&self) -> String {
-		format!("Api-Docs-en-us-{}-{}.json", self.hash, self.channel)
-	}
-
-	pub fn studio_icons_file_name(&self) -> String {
-		format!("Studio-Icons-{}-{}.json", self.hash, self.channel)
-	}
-}
-
 pub fn read_versions(path: &Path) -> std::io::Result<Vec<RobloxVersion>> {
 	match std::fs::read(path) {
 		Ok(bytes) => serde_json::from_slice(&bytes).map_err(std::io::Error::other),

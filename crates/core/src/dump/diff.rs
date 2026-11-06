@@ -1,12 +1,22 @@
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 
+use super::RobloxVersion;
 use crate::model::DescriptionPart;
 
 #[derive(Clone, Debug, PartialEq, Eq, Serialize, Deserialize)]
 pub struct DiffVersion {
 	pub version: String,
 	pub hash: String,
+}
+
+impl From<&RobloxVersion> for DiffVersion {
+	fn from(version: &RobloxVersion) -> Self {
+		Self {
+			version: version.version.clone(),
+			hash: version.hash.clone(),
+		}
+	}
 }
 
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]

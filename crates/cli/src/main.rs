@@ -2,7 +2,8 @@ use std::path::{Path, PathBuf};
 use std::process::ExitCode;
 use std::time::Instant;
 
-use rapi_core::generate::pipeline::{Paths, generate_site};
+use rapi_core::dump::Paths;
+use rapi_core::generate::pipeline::generate_site;
 use rapi_core::icons::{Icon, build_favicon, build_icon_sprite, read_icon};
 
 mod wasm;
@@ -154,17 +155,14 @@ Commands:
   render [--dist dir]   Prerender every page into Vite's output directory
   dev                  Serve pages to the Vite dev server over stdin and stdout";
 
-fn project_root() -> Result<PathBuf, String> {
+fn project_paths() -> Result<Paths, String> {
 	let current = std::env::current_dir().map_err(|error| error.to_string())?;
-	current
-		.ancestors()
-		.find(|dir| dir.join("roblox-versions.json").is_file())
-		.map(Path::to_path_buf)
+	Paths::locate(&current)
 		.ok_or_else(|| format!("{} is not inside the project.", current.display()))
 }
 
 fn run(args: &[String]) -> Result<(), String> {
-	let paths = Paths::new(project_root()?);
+	let paths = project_paths()?;
 	match args.first().map(String::as_str) {
 		Some("gen") => generate(&paths),
 		Some("render") => render(&paths, &args[1..]),

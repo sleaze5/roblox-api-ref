@@ -2,7 +2,8 @@ use std::collections::HashSet;
 use std::path::Path;
 use std::sync::LazyLock;
 
-use rapi_core::generate::pipeline::{Paths, generate_site};
+use rapi_core::dump::Paths;
+use rapi_core::generate::pipeline::generate_site;
 use rapi_routes::{
 	FACET_KINDS, FacetKind, class_href, enum_href, facet_index_href, type_href, update_href,
 };

@@ -1,7 +1,8 @@
 use std::path::Path;
 use std::sync::LazyLock;
 
-use rapi_core::generate::pipeline::{Paths, Site, generate_site};
+use rapi_core::dump::Paths;
+use rapi_core::generate::pipeline::{Site, generate_site};
 use rapi_core::model::{
 	AccessTier, ApiType, CountKind, CoverageKind, MemberDetail, StatRecord, StatRef,
 };

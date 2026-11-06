@@ -7,10 +7,9 @@ use std::path::{Path, PathBuf};
 
 use base64::Engine as _;
 use rapi_core::dump::{
-	ApiDocs, DiffVersion, DumpDiff, RobloxVersion, compare_versions, read_versions, to_tab_json,
-	write_versions,
+	ApiDocs, DataFile, DumpDiff, Paths, RobloxVersion, compare_versions, read_versions,
+	to_tab_json, write_versions,
 };
-use rapi_core::generate::pipeline::Paths;
 use reqwest::Client;
 use serde_json::Value;
 
@@ -73,41 +72,14 @@ pub fn build_before<'a>(builds: &'a [StudioBuild], build: &StudioBuild) -> Optio
 		.find(|entry| compare_versions(&entry.version, &build.version).is_lt())
 }
 
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-enum DataFile {
-	ApiDump,
-	ApiDocs,
-	StudioIcons,
-}
-
-impl DataFile {
-	const ALL: [Self; 3] = [Self::ApiDump, Self::ApiDocs, Self::StudioIcons];
-
-	const fn prefix(self) -> &'static str {
-		match self {
-			Self::ApiDump => "Full-API-Dump-",
-			Self::ApiDocs => "Api-Docs-",
-			Self::StudioIcons => "Studio-Icons-",
+async fn download_data_file(client: &Client, file: DataFile, hash: &str) -> Result<Vec<u8>> {
+	match file {
+		DataFile::ApiDump => get_bytes(client, &api_dump_url(hash)).await,
+		DataFile::ApiDocs => {
+			let reader = HttpReader::open(client, &api_docs_url(hash)).await?;
+			extract_entry(&reader, "en-us.json").await
 		}
-	}
-
-	fn file_name(self, version: &RobloxVersion) -> String {
-		match self {
-			Self::ApiDump => version.dump_file_name(),
-			Self::ApiDocs => version.api_docs_file_name(),
-			Self::StudioIcons => version.studio_icons_file_name(),
-		}
-	}
-
-	async fn download(self, client: &Client, hash: &str) -> Result<Vec<u8>> {
-		match self {
-			Self::ApiDump => get_bytes(client, &api_dump_url(hash)).await,
-			Self::ApiDocs => {
-				let reader = HttpReader::open(client, &api_docs_url(hash)).await?;
-				extract_entry(&reader, "en-us.json").await
-			}
-			Self::StudioIcons => download_studio_icons(client, hash).await,
-		}
+		DataFile::StudioIcons => download_studio_icons(client, hash).await,
 	}
 }
 
@@ -147,31 +119,26 @@ async fn save_file(path: &Path, bytes: &[u8]) -> Result<()> {
 
 async fn ensure_file(
 	client: &Client,
-	data_dir: &Path,
+	paths: &Paths,
 	file: DataFile,
 	version: &RobloxVersion,
 ) -> Result<PathBuf> {
 	let file_name = file.file_name(version);
-	let path = data_dir.join(&file_name);
+	let path = paths.data_file(file, version);
 	if tokio::fs::try_exists(&path).await.unwrap_or(false) {
 		println!("{file_name} is already downloaded.");
 		return Ok(path);
 	}
-	tokio::fs::create_dir_all(data_dir)
+	tokio::fs::create_dir_all(paths.data())
 		.await
 		.map_err(|error| error.to_string())?;
-	save_file(&path, &file.download(client, &version.hash).await?).await?;
+	save_file(
+		&path,
+		&download_data_file(client, file, &version.hash).await?,
+	)
+	.await?;
 	println!("Downloaded {file_name}.");
 	Ok(path)
-}
-
-fn current_version(paths: &Paths) -> Result<RobloxVersion> {
-	read_versions(&paths.versions())
-		.map_err(|error| error.to_string())?
-		.pop()
-		.ok_or_else(|| {
-			"roblox-versions.json has no versions. Run `bun vp run dump:update` first.".to_owned()
-		})
 }
 
 fn runtime() -> Result<tokio::runtime::Runtime> {
@@ -182,11 +149,11 @@ fn runtime() -> Result<tokio::runtime::Runtime> {
 }
 
 pub fn download(paths: &Paths) -> Result<()> {
-	let version = current_version(paths)?;
+	let version = paths.current_version()?;
 	let data_dir = paths.data();
 	runtime()?.block_on(async {
 		let client = client()?;
-		let downloads = DataFile::ALL.map(|file| ensure_file(&client, &data_dir, file, &version));
+		let downloads = DataFile::ALL.map(|file| ensure_file(&client, paths, file, &version));
 		for result in futures_util::future::join_all(downloads).await {
 			result?;
 		}
@@ -257,12 +224,12 @@ async fn release(client: &Client, build: &StudioBuild) -> Option<RobloxVersion> 
 
 async fn read_documented(
 	client: &Client,
-	data_dir: &Path,
+	paths: &Paths,
 	version: &RobloxVersion,
 ) -> Result<(Value, ApiDocs)> {
 	let (dump, docs) = tokio::join!(
-		ensure_file(client, data_dir, DataFile::ApiDump, version),
-		ensure_file(client, data_dir, DataFile::ApiDocs, version)
+		ensure_file(client, paths, DataFile::ApiDump, version),
+		ensure_file(client, paths, DataFile::ApiDocs, version)
 	);
 	let read = |path: PathBuf| {
 		std::fs::read(&path).map_err(|error| format!("{}: {error}", path.display()))
@@ -279,14 +246,8 @@ pub fn build_diff(
 	after: (&Value, &ApiDocs),
 ) -> DumpDiff {
 	DumpDiff {
-		from: DiffVersion {
-			version: from.version.clone(),
-			hash: from.hash.clone(),
-		},
-		to: DiffVersion {
-			version: to.version.clone(),
-			hash: to.hash.clone(),
-		},
+		from: from.into(),
+		to: to.into(),
 		changes: diff::diff_dump(before.0, after.0),
 		descriptions: Some(diff::diff_descriptions(before, after)),
 		unrecorded: Vec::new(),
@@ -299,10 +260,9 @@ async fn save_diff(
 	from: &RobloxVersion,
 	to: &RobloxVersion,
 ) -> Result<()> {
-	let data_dir = paths.data();
 	let (before, after) = tokio::join!(
-		read_documented(client, &data_dir, from),
-		read_documented(client, &data_dir, to)
+		read_documented(client, paths, from),
+		read_documented(client, paths, to)
 	);
 	let ((before_dump, before_docs), (after_dump, after_docs)) = (before?, after?);
 	let diff = build_diff(

@@ -1,6 +1,7 @@
 use indexmap::{IndexMap, IndexSet};
 use rapi_core::dump::{
-	ApiDocs, ChangeElement, ChangeType, DescriptionChange, DumpChange, FieldChange,
+	ApiDocs, ApiDocsEntry, ChangeElement, ChangeType, DescriptionChange, DumpChange, FieldChange,
+	class_docs_key, documentation, enum_docs_key, enum_item_docs_key, member_docs_key,
 };
 use rapi_core::model::DescriptionPart;
 use serde_json::{Map, Value};
@@ -271,12 +272,6 @@ struct Description {
 	html: Option<String>,
 }
 
-fn documentation(docs: &ApiDocs, key: Option<&str>) -> Option<String> {
-	key.and_then(|key| docs.get(key))
-		.and_then(|entry| entry.documentation.clone())
-		.filter(|text| !text.is_empty())
-}
-
 #[derive(Default)]
 struct Descriptions(IndexMap<String, Description>);
 
@@ -285,7 +280,7 @@ impl Descriptions {
 		&mut self,
 		target: &Target,
 		part: DescriptionPart,
-		html: Option<String>,
+		html: Option<&str>,
 		parameter: Option<&str>,
 	) {
 		let kind = match target.element {
@@ -314,7 +309,7 @@ impl Descriptions {
 				target: target.clone(),
 				part,
 				parameter: parameter.map(str::to_owned),
-				html,
+				html: html.map(str::to_owned),
 			},
 		);
 	}
@@ -332,11 +327,11 @@ impl Descriptions {
 			descriptions.add(
 				&target,
 				DescriptionPart::Description,
-				documentation(docs, Some(&format!("@roblox/globaltype/{class_name}"))),
+				documentation(docs, Some(&class_docs_key(class_name))),
 				None,
 			);
 			for member in list(class, "Members") {
-				let key = format!("@roblox/globaltype/{class_name}.{}", name(member));
+				let key = member_docs_key(class_name, name(member));
 				let target = Target {
 					element: ChangeElement::Member,
 					owner: class_name.to_owned(),
@@ -353,15 +348,12 @@ impl Descriptions {
 					continue;
 				}
 				let entry = docs.get(&key);
-				let parameter_keys: IndexMap<&str, &str> = entry
-					.and_then(|entry| entry.params.as_ref())
-					.into_iter()
-					.flatten()
-					.map(|parameter| (parameter.name.as_str(), parameter.documentation.as_str()))
-					.collect();
 				for parameter in list(member, "Parameters") {
 					let parameter_name = name(parameter);
-					let html = documentation(docs, parameter_keys.get(parameter_name).copied());
+					let html = documentation(
+						docs,
+						entry.and_then(|entry| entry.parameter(parameter_name)),
+					);
 					descriptions.add(
 						&target,
 						DescriptionPart::Parameter,
@@ -369,13 +361,10 @@ impl Descriptions {
 						Some(parameter_name),
 					);
 				}
-				let returns = entry
-					.and_then(|entry| entry.returns.as_ref())
-					.and_then(|returns| returns.first());
 				descriptions.add(
 					&target,
 					DescriptionPart::Return,
-					documentation(docs, returns.map(String::as_str)),
+					documentation(docs, entry.and_then(ApiDocsEntry::first_return)),
 					None,
 				);
 			}
@@ -391,7 +380,7 @@ impl Descriptions {
 			descriptions.add(
 				&target,
 				DescriptionPart::Description,
-				documentation(docs, Some(&format!("@roblox/global/Enum.{enum_name}"))),
+				documentation(docs, Some(&enum_docs_key(enum_name))),
 				None,
 			);
 			for item in list(enumeration, "Items") {
@@ -401,7 +390,7 @@ impl Descriptions {
 					child: Some(name(item).to_owned()),
 					value: Some(item.clone()),
 				};
-				let key = format!("@roblox/enum/{enum_name}.{}", name(item));
+				let key = enum_item_docs_key(enum_name, name(item));
 				descriptions.add(
 					&target,
 					DescriptionPart::Description,
