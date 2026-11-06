@@ -6,12 +6,13 @@ use crate::api::access::access_tier;
 use crate::api::members::{is_hidden, is_internal};
 use crate::js::{compare_names, format_date};
 use crate::model::{
-	Api, ApiType, Class, HistoryEvent, Member, MemberDetail, RemovedOwner, TypeCategory, Update,
+	Api, ApiType, Class, DEPRECATED_TAG, HistoryEvent, Member, MemberDetail, RemovedOwner,
+	TypeCategory, Update,
 };
 
 fn tag_flag(tag: &str) -> u16 {
 	match tag {
-		"Deprecated" => flags::DEPRECATED,
+		DEPRECATED_TAG => flags::DEPRECATED,
 		"Hidden" | "NotBrowsable" => flags::HIDDEN,
 		"NotScriptable" => flags::NOT_SCRIPTABLE,
 		"Service" => flags::SERVICE,

@@ -12,10 +12,8 @@ use crate::generate::history::{entry_deprecation, item_key, owner_deprecation, o
 use crate::js::{days_between, js_round};
 use crate::model::{
 	AccessTier, Api, ChangeStatus, CountKind, Deprecation, EntryValues, HistoryEvent, ItemHistory,
-	KindRow, KindTable, RecordGroup, StatRef, Update,
+	KindRow, KindTable, RecordGroup, StatRef, Update, is_deprecated,
 };
-
-const DEPRECATED: &str = "Deprecated";
 
 struct Removal {
 	item: StatRef,
@@ -65,7 +63,7 @@ impl Tracker {
 }
 
 fn has_deprecated(tags: &[String]) -> bool {
-	tags.iter().any(|tag| tag == DEPRECATED)
+	is_deprecated(tags)
 }
 
 fn removals(api: &Api, updates: &[Update]) -> Vec<Removal> {

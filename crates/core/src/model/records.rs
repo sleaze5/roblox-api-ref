@@ -44,20 +44,6 @@ pub enum StatRef {
 }
 
 impl StatRef {
-	pub const fn kind_name(&self) -> &'static str {
-		match self {
-			Self::Class { .. } => "Class",
-			Self::Enum { .. } => "Enum",
-			Self::DataType { .. } => "DataType",
-			Self::Member { kind, .. } => kind.name(),
-			Self::EnumItem { .. } => "EnumItem",
-			Self::Parameter { .. } => "Parameter",
-			Self::Name { .. } => "Name",
-			Self::Update { .. } => "Update",
-			Self::Removed { .. } => "Removed",
-		}
-	}
-
 	pub const fn count_kind(&self) -> Option<CountKind> {
 		match self {
 			Self::Class { .. } => Some(CountKind::Class),
@@ -89,7 +75,7 @@ pub const fn has_items(record: &StatRecord) -> bool {
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub struct Ties {
 	pub count: u32,
-	pub kind: String,
+	pub sample: StatRef,
 }
 
 #[derive(Clone, Debug, PartialEq)]

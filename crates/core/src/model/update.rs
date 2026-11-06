@@ -44,14 +44,72 @@ pub struct DetailValue {
 }
 
 #[derive(Clone, Debug, PartialEq, Eq)]
+pub enum DetailField {
+	Security,
+	ReadSecurity,
+	WriteSecurity,
+	Capabilities,
+	ReadCapabilities,
+	WriteCapabilities,
+	ThreadSafety,
+	PropertyCategory,
+	Serialization,
+	UseInstead,
+	Superclass,
+	MemoryCategory,
+	LegacyNames,
+	SimulationAccess,
+	Other(String),
+}
+
+impl DetailField {
+	pub fn label(&self) -> &str {
+		match self {
+			Self::Security => "Security",
+			Self::ReadSecurity => "Read security",
+			Self::WriteSecurity => "Write security",
+			Self::Capabilities => "Capabilities",
+			Self::ReadCapabilities => "Read capabilities",
+			Self::WriteCapabilities => "Write capabilities",
+			Self::ThreadSafety => "Thread safety",
+			Self::PropertyCategory => "Property category",
+			Self::Serialization => "Serialization",
+			Self::UseInstead => "Use instead",
+			Self::Superclass => "Superclass",
+			Self::MemoryCategory => "Memory category",
+			Self::LegacyNames => "Legacy names",
+			Self::SimulationAccess => "Simulation access",
+			Self::Other(field) => field,
+		}
+	}
+}
+
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum TagChange {
+	Initial,
+	Added,
+	Removed,
+}
+
+impl TagChange {
+	pub const fn label(self) -> &'static str {
+		match self {
+			Self::Initial => "Tags",
+			Self::Added => "Added tags",
+			Self::Removed => "Removed tags",
+		}
+	}
+}
+
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub enum ChangeDetail {
 	Value {
-		label: String,
+		field: DetailField,
 		before: Option<DetailValue>,
 		after: Option<DetailValue>,
 	},
 	Tags {
-		label: String,
+		change: TagChange,
 		tags: Vec<String>,
 	},
 }
@@ -59,7 +117,15 @@ pub enum ChangeDetail {
 impl ChangeDetail {
 	pub fn label(&self) -> &str {
 		match self {
-			Self::Value { label, .. } | Self::Tags { label, .. } => label,
+			Self::Value { field, .. } => field.label(),
+			Self::Tags { change, .. } => change.label(),
+		}
+	}
+
+	pub fn tags(&self, changes: &[TagChange]) -> &[String] {
+		match self {
+			Self::Tags { change, tags } if changes.contains(change) => tags,
+			_ => &[],
 		}
 	}
 }

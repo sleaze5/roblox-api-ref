@@ -3,7 +3,7 @@ use rapi_routes::MemberKind;
 
 use super::tags::is_internal_security;
 use crate::js::compare_names;
-use crate::model::{Member, MemberDetail};
+use crate::model::{Member, MemberDetail, is_deprecated};
 
 pub const fn member_kind_title(kind: MemberKind) -> &'static str {
 	match kind {
@@ -12,10 +12,6 @@ pub const fn member_kind_title(kind: MemberKind) -> &'static str {
 		MemberKind::Event => "Events",
 		MemberKind::Callback => "Callbacks",
 	}
-}
-
-pub fn is_deprecated(tags: &[String]) -> bool {
-	tags.iter().any(|tag| tag == "Deprecated")
 }
 
 pub fn is_hidden(member: &Member) -> bool {

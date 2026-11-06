@@ -51,13 +51,13 @@ pub fn record_table(records: &[StatRecord]) -> Markup {
 							}
 							@if listed { td role="cell" data-wrap="" {
 								@if let Some(ties) = &record.ties {
-									span class="text-fg-muted" { (ties.count) " " (ref_noun(&ties.kind)) }
+									span class="text-fg-muted" { (ties.count) " " (ref_noun(&ties.sample)) }
 								} @else if let Some(first) = record.items.first() {
 									@if record.items.len() <= SHOWN_ITEMS {
 										(item_list(&record.items))
 									} @else {
 										details class="change-previous" {
-											summary { (record.items.len()) " " (ref_noun(first.kind_name())) }
+											summary { (record.items.len()) " " (ref_noun(first)) }
 											(item_list(&record.items))
 										}
 									}

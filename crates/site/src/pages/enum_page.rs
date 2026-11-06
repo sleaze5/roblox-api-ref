@@ -5,7 +5,7 @@ use rapi_core::api::history_text::HistoryNoun;
 use rapi_core::api::tags::plain_tags;
 use rapi_core::icons::Icon;
 use rapi_core::js::compare_names;
-use rapi_core::model::{Enum, EnumItem};
+use rapi_core::model::{Enum, EnumItem, is_deprecated};
 use rapi_routes::{OwnerKind, change_anchor, enum_href, enum_item_anchor, owner_anchor};
 
 use crate::components::changes::{ChangedValue, RemovedList, removed_items};
@@ -64,7 +64,7 @@ pub fn enum_sidebar(cx: &Context, current: Option<&str>) -> Markup {
 		.map(|item| FlatTreeItem {
 			name: item.name.clone(),
 			href: enum_href(&item.name),
-			deprecated: item.tags.iter().any(|tag| tag == "Deprecated"),
+			deprecated: is_deprecated(&item.tags),
 			label: None,
 		})
 		.collect();

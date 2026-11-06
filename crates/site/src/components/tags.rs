@@ -1,7 +1,7 @@
 use maud::{Markup, html};
-use rapi_core::api::tags::{DisplayTag, TagTone};
+use rapi_core::api::tags::{DisplayTag, TagTone, tag_label};
 use rapi_core::js::format_date;
-use rapi_core::model::ItemHistory;
+use rapi_core::model::{DEPRECATED_TAG, ItemHistory};
 
 use crate::html::classes;
 
@@ -34,7 +34,7 @@ pub fn dated_tags(tags: Vec<DisplayTag>, history: Option<&ItemHistory>) -> Vec<D
 	let deprecated = history.and_then(|history| history.deprecated.as_ref());
 	tags.into_iter()
 		.map(|tag| {
-			if tag.label != "Deprecated" {
+			if tag.label != tag_label(DEPRECATED_TAG) {
 				return tag;
 			}
 			match deprecated {

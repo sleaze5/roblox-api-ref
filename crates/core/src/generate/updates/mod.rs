@@ -283,7 +283,8 @@ mod tests {
 	use super::*;
 	use crate::model::{
 		ChangeCounts, ChangeDetail, ChangeEntry, ChangeStatus, DescriptionDetail, DescriptionPart,
-		DetailTone, DetailValue, DocNode, EntryValues, Member, Release, Security, doc_text,
+		DetailField, DetailTone, DetailValue, DocNode, EntryValues, Member, Release, Security,
+		TagChange, doc_text,
 	};
 
 	fn update(changes: &Value, descriptions: &Value) -> Update {
@@ -407,16 +408,16 @@ mod tests {
 			entry.details,
 			[
 				ChangeDetail::Value {
-					label: "Security".to_owned(),
+					field: DetailField::Security,
 					before: text("No security"),
 					after: text("Plugin security"),
 				},
 				ChangeDetail::Tags {
-					label: "Added tags".to_owned(),
+					change: TagChange::Added,
 					tags: vec!["Deprecated".to_owned()],
 				},
 				ChangeDetail::Tags {
-					label: "Removed tags".to_owned(),
+					change: TagChange::Removed,
 					tags: vec!["Hidden".to_owned()],
 				},
 			]

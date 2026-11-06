@@ -18,12 +18,10 @@ fn ties_of(items: &mut Vec<StatRef>) -> Option<Ties> {
 	if items.len() <= LISTED_TIES {
 		return None;
 	}
-	let ties = Ties {
-		count: u32::try_from(items.len()).unwrap_or(u32::MAX),
-		kind: items[0].kind_name().to_owned(),
-	};
+	let count = u32::try_from(items.len()).unwrap_or(u32::MAX);
+	let sample = items.swap_remove(0);
 	items.clear();
-	Some(ties)
+	Some(Ties { count, sample })
 }
 
 fn extreme(
@@ -223,13 +221,9 @@ mod tests {
 			class_measures(&measures),
 		);
 		assert!(record.items.is_empty());
-		assert_eq!(
-			record.ties,
-			Some(Ties {
-				count: 50,
-				kind: "Class".to_owned()
-			})
-		);
+		let ties = record.ties.expect("the tied classes are counted");
+		assert_eq!(ties.count, 50);
+		assert!(matches!(ties.sample, StatRef::Class { .. }));
 	}
 
 	#[test]

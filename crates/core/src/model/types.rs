@@ -5,6 +5,12 @@ use serde::Deserialize;
 
 use super::{CodeSample, Doc, ItemHistory, Removed, RemovedOwner};
 
+pub const DEPRECATED_TAG: &str = "Deprecated";
+
+pub fn is_deprecated(tags: &[String]) -> bool {
+	tags.iter().any(|tag| tag == DEPRECATED_TAG)
+}
+
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Deserialize)]
 pub enum Security {
 	None,

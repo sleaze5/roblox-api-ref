@@ -2,7 +2,9 @@ use indexmap::IndexMap;
 
 use super::refs::{event_of, oldest_first};
 use crate::js::compare_names;
-use crate::model::{Api, Capabilities, ChangeDetail, EntryValues, TagTrend, Update, UpdateEvent};
+use crate::model::{
+	Api, Capabilities, ChangeDetail, EntryValues, TagChange, TagTrend, Update, UpdateEvent,
+};
 
 #[derive(Default)]
 struct TagTable {
@@ -59,13 +61,11 @@ fn difference(a: &[String], b: &[String]) -> Vec<String> {
 	a.iter().filter(|name| !b.contains(name)).cloned().collect()
 }
 
-fn detail_tags(details: &[ChangeDetail], labels: &[&str]) -> Vec<String> {
+fn detail_tags(details: &[ChangeDetail], changes: &[TagChange]) -> Vec<String> {
 	details
 		.iter()
-		.flat_map(|detail| match detail {
-			ChangeDetail::Tags { label, tags } if labels.contains(&label.as_str()) => tags.clone(),
-			_ => Vec::new(),
-		})
+		.flat_map(|detail| detail.tags(changes))
+		.cloned()
 		.collect()
 }
 
@@ -134,10 +134,10 @@ fn build(api: &Api, updates: &[Update], values: &Values) -> Vec<TagTrend> {
 		for owner in &update.owners {
 			if owners {
 				table.gain(
-					&detail_tags(&owner.details, &["Tags", "Added tags"]),
+					&detail_tags(&owner.details, &[TagChange::Initial, TagChange::Added]),
 					&event,
 				);
-				table.lose(&detail_tags(&owner.details, &["Removed tags"]));
+				table.lose(&detail_tags(&owner.details, &[TagChange::Removed]));
 			}
 			for entry in &owner.entries {
 				let before = values.of_entry(&entry.values, true);

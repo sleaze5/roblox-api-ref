@@ -4,7 +4,7 @@ use crate::api::tags::security_label;
 use crate::dump::{DumpCapabilities, DumpTag, FieldChange};
 use crate::generate::normalize::{normalize_capabilities, normalize_security};
 use crate::js::compare_code_units;
-use crate::model::{Capabilities, ChangeDetail, DetailTone, DetailValue};
+use crate::model::{Capabilities, ChangeDetail, DetailField, DetailTone, DetailValue, TagChange};
 
 const SIGNATURE_FIELDS: [&str; 6] = [
 	"Default",
@@ -30,7 +30,7 @@ pub fn raw_text(raw: &Value) -> String {
 }
 
 fn value_detail(
-	label: &str,
+	field: DetailField,
 	before: Option<DetailValue>,
 	after: Option<DetailValue>,
 ) -> Vec<ChangeDetail> {
@@ -38,7 +38,7 @@ fn value_detail(
 		return Vec::new();
 	}
 	vec![ChangeDetail::Value {
-		label: label.to_owned(),
+		field,
 		before,
 		after,
 	}]
@@ -60,19 +60,19 @@ fn security_details(change: &FieldChange) -> Vec<ChangeDetail> {
 	if is_object_like(&change.before) && is_object_like(&change.after) {
 		let side = |raw: &Value, key: &str| raw.get(key).cloned();
 		let mut details = value_detail(
-			"Read security",
+			DetailField::ReadSecurity,
 			Some(security_value(side(&change.before, "Read").as_ref())),
 			Some(security_value(side(&change.after, "Read").as_ref())),
 		);
 		details.extend(value_detail(
-			"Write security",
+			DetailField::WriteSecurity,
 			Some(security_value(side(&change.before, "Write").as_ref())),
 			Some(security_value(side(&change.after, "Write").as_ref())),
 		));
 		return details;
 	}
 	value_detail(
-		"Security",
+		DetailField::Security,
 		Some(security_value(Some(&change.before))),
 		Some(security_value(Some(&change.after))),
 	)
@@ -111,18 +111,18 @@ fn capability_details(change: &FieldChange) -> Vec<ChangeDetail> {
 		|capabilities: &Capabilities| capabilities.read.join(",") == capabilities.write.join(",");
 	if shared(&before) && shared(&after) {
 		return value_detail(
-			"Capabilities",
+			DetailField::Capabilities,
 			Some(capability_value(&before.read)),
 			Some(capability_value(&after.read)),
 		);
 	}
 	let mut details = value_detail(
-		"Read capabilities",
+		DetailField::ReadCapabilities,
 		Some(capability_value(&before.read)),
 		Some(capability_value(&after.read)),
 	);
 	details.extend(value_detail(
-		"Write capabilities",
+		DetailField::WriteCapabilities,
 		Some(capability_value(&before.write)),
 		Some(capability_value(&after.write)),
 	));
@@ -167,18 +167,18 @@ fn tag_details(before: &Value, after: &Value) -> Vec<ChangeDetail> {
 	let mut details = Vec::new();
 	if !added.is_empty() {
 		details.push(ChangeDetail::Tags {
-			label: "Added tags".to_owned(),
+			change: TagChange::Added,
 			tags: added,
 		});
 	}
 	if !removed.is_empty() {
 		details.push(ChangeDetail::Tags {
-			label: "Removed tags".to_owned(),
+			change: TagChange::Removed,
 			tags: removed,
 		});
 	}
 	details.extend(value_detail(
-		"Use instead",
+		DetailField::UseInstead,
 		preferred_value(before),
 		preferred_value(after),
 	));
@@ -216,12 +216,12 @@ fn field_details(change: &FieldChange) -> Vec<ChangeDetail> {
 		"Security" => security_details(change),
 		"Capabilities" => capability_details(change),
 		"Serialization" => value_detail(
-			"Serialization",
+			DetailField::Serialization,
 			Some(value(serialization_text(before), DetailTone::Text)),
 			Some(value(serialization_text(after), DetailTone::Text)),
 		),
 		"ThreadSafety" => value_detail(
-			"Thread safety",
+			DetailField::ThreadSafety,
 			Some(value(text_or(before, "Unknown"), DetailTone::Code)),
 			Some(value(text_or(after, "Unknown"), DetailTone::Code)),
 		),
@@ -234,33 +234,33 @@ fn field_details(change: &FieldChange) -> Vec<ChangeDetail> {
 				}
 			};
 			value_detail(
-				"Simulation access",
+				DetailField::SimulationAccess,
 				Some(value(yes(before), DetailTone::Text)),
 				Some(value(yes(after), DetailTone::Text)),
 			)
 		}
 		"Category" => value_detail(
-			"Property category",
+			DetailField::PropertyCategory,
 			optional_value(before, DetailTone::Code),
 			optional_value(after, DetailTone::Code),
 		),
 		"Superclass" => value_detail(
-			"Superclass",
+			DetailField::Superclass,
 			optional_value(before, DetailTone::Type),
 			optional_value(after, DetailTone::Type),
 		),
 		"MemoryCategory" => value_detail(
-			"Memory category",
+			DetailField::MemoryCategory,
 			optional_value(before, DetailTone::Code),
 			optional_value(after, DetailTone::Code),
 		),
 		"LegacyNames" => value_detail(
-			"Legacy names",
+			DetailField::LegacyNames,
 			Some(list_value(before)),
 			Some(list_value(after)),
 		),
 		field => value_detail(
-			field,
+			DetailField::Other(field.to_owned()),
 			optional_value(before, DetailTone::Code),
 			optional_value(after, DetailTone::Code),
 		),
