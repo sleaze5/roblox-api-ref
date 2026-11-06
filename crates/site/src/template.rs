@@ -29,9 +29,7 @@ pub fn minify_script(source: &str) -> Result<String, String> {
 	let allocator = oxc_allocator::Allocator::default();
 	let parsed = oxc_parser::Parser::new(&allocator, source, oxc_span::SourceType::cjs()).parse();
 	if let Some(error) = parsed.errors.first() {
-		return Err(format!(
-			"A script in index.html does not parse: {error}"
-		));
+		return Err(format!("A script in index.html does not parse: {error}"));
 	}
 	let mut program = parsed.program;
 	let minified = Minifier::new(MinifierOptions {

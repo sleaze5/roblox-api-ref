@@ -99,7 +99,6 @@ const render = run(["cargo", "rapi", "render", "--dist", benchDist])
 console.log(
 	`- Prerender (cargo rapi render, with generation): ${render.ms.toFixed(0)} ms, peak ${render.peakMb.toFixed(0)} MB`,
 )
-const dist = benchDist
 
 console.log("\n## Search\n")
 await init({ module_or_path: readFileSync(join(generatedDir, "search_bg.wasm")) })
@@ -129,9 +128,9 @@ console.log(
 )
 {
 	console.log(
-		`- dist HTML: ${(treeSize(dist, ".html") / 1024 / 1024).toFixed(1)} MB, Markdown: ${(treeSize(dist, ".md") / 1024 / 1024).toFixed(1)} MB`,
+		`- dist HTML: ${(treeSize(benchDist, ".html") / 1024 / 1024).toFixed(1)} MB, Markdown: ${(treeSize(benchDist, ".md") / 1024 / 1024).toFixed(1)} MB`,
 	)
-	const assets = join(dist, "assets")
+	const assets = join(benchDist, "assets")
 	for (const name of readdirSync(assets).filter((file) => /\.(js|css)$/.test(file))) {
 		console.log(
 			`- ${name.replace(/-[\w-]{8}\./, ".")}: ${sizes(new Uint8Array(readFileSync(join(assets, name))))}`,

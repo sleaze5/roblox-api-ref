@@ -222,7 +222,7 @@ fn member_group(
 		.first()
 		.is_some_and(|member| member.kind() == MemberKind::Property);
 	html! {
-		div data-group="" data-owner=(owner) data-inherited-group=[(!own).then_some("")] data-collapsed=[(!own).then_some("")] class="flex flex-col gap-2" {
+		div data-group="" data-inherited-group=[(!own).then_some("")] data-collapsed=[(!own).then_some("")] class="flex flex-col gap-2" {
 			(group_header(cx, owner, own, members.len(), &id))
 			div id=(id) data-group-body="" class="flex flex-col gap-4" {
 				@if categorized {
