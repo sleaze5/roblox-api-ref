@@ -1,11 +1,11 @@
-export type Version = {
+type Version = {
 	major: number
 	minor: number
 	patch: number
 	prerelease: string | undefined
 }
 
-export function parseVersion(text: string): Version | undefined {
+function parseVersion(text: string): Version | undefined {
 	const match =
 		/^(\d+)\.(\d+)\.(\d+)(?:-([0-9A-Za-z.-]+))?(?:\+[0-9A-Za-z.-]+)?$/.exec(text)
 	if (match === null) {
