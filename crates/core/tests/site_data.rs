@@ -2,12 +2,11 @@ use std::path::Path;
 use std::sync::LazyLock;
 
 use rapi_core::api::access::access_tier;
-use rapi_core::dump::Paths;
 use rapi_core::generate::pipeline::{Site, generate_site};
-use rapi_core::model::{
-	AccessTier, ApiType, CountKind, CoverageKind, MemberDetail, StatRecord, StatRef,
-};
+use rapi_core::model::{ApiType, CountKind, CoverageKind, MemberDetail, StatRecord, StatRef};
+use rapi_core::paths::Paths;
 use rapi_routes::{FacetKind, MemberKind};
+use rapi_search::AccessTier;
 
 static SITE: LazyLock<Site> = LazyLock::new(|| {
 	let root = Path::new(env!("CARGO_MANIFEST_DIR")).join("../..");
@@ -309,6 +308,15 @@ fn records_the_history_of_classes_members_and_enums() {
 			);
 		}
 	}
+}
+
+#[test]
+fn builds_a_search_index_that_decodes_to_the_same_data() {
+	let bytes = SITE.search.encode();
+	assert_eq!(
+		rapi_search::IndexData::decode(&bytes).expect("the index decodes"),
+		SITE.search
+	);
 }
 
 #[test]

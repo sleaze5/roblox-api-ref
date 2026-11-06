@@ -1,6 +1,6 @@
 use std::path::{Path, PathBuf};
 
-use super::{RobloxVersion, read_versions};
+use crate::dump::{RobloxVersion, read_versions};
 
 const VERSIONS_FILE: &str = "roblox-versions.json";
 

@@ -11,9 +11,10 @@ use crate::api::stats_text::{kind_plural, kind_singular, kind_slug};
 use crate::generate::history::{entry_deprecation, item_key, owner_deprecation, owner_key};
 use crate::js::{days_between, js_round};
 use crate::model::{
-	AccessTier, Api, ChangeStatus, CountKind, Deprecation, EntryValues, HistoryEvent, ItemHistory,
-	KindRow, KindTable, RecordGroup, StatRef, Update, is_deprecated,
+	Api, ChangeStatus, CountKind, Deprecation, EntryValues, HistoryEvent, ItemHistory, KindRow,
+	KindTable, RecordGroup, StatRef, Update, is_deprecated,
 };
+use rapi_search::AccessTier;
 
 struct Removal {
 	item: StatRef,

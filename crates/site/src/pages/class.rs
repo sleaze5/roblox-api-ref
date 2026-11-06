@@ -8,8 +8,9 @@ use rapi_core::api::history_text::HistoryNoun;
 use rapi_core::api::members::{member_kind_title, members_in_page_order};
 use rapi_core::api::tags::plain_tags;
 use rapi_core::icons::Icon;
-use rapi_core::model::{AccessTier, Class, Member};
+use rapi_core::model::{Class, Member};
 use rapi_routes::{FacetKind, MemberKind, OwnerKind, member_anchor, owner_anchor};
+use rapi_search::AccessTier;
 
 use crate::components::changes::{ChangedValue, RemovedList, removed_items};
 use crate::components::doc::doc_text;

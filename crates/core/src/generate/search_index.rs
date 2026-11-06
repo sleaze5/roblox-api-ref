@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-use rapi_search::{EntryKind, IndexData, RemovedData, UpdateData, flags};
+use rapi_search::{AccessTier, EntryKind, IndexData, RemovedData, UpdateData, flags};
 
 use crate::api::access::access_tier;
 use crate::api::members::{is_hidden, is_internal};
@@ -102,13 +102,13 @@ impl Builder {
 		name: &str,
 		parent: Option<u32>,
 		tags: &[String],
-		security: u8,
+		access: AccessTier,
 	) -> u32 {
 		self.data.names.push(name.to_owned());
 		self.data.kinds.push(kind);
 		self.data.parents.push(parent);
 		self.data.flags.push(flags_of(tags));
-		self.data.security.push(security);
+		self.data.access.push(access.code());
 		self.data.value_types.push(Vec::new());
 		self.data.parameter_types.push(Vec::new());
 		u32::try_from(self.data.names.len() - 1).expect("entries fit in 32 bits")
@@ -228,7 +228,13 @@ pub fn build_search_index(api: &Api, updates: &[Update]) -> IndexData {
 	classes.sort_by(|a, b| compare_names(&a.name, &b.name));
 	let mut class_entries: HashMap<&str, u32> = HashMap::new();
 	for item in &classes {
-		let entry = builder.add(EntryKind::Class, &item.name, None, &item.tags, 0);
+		let entry = builder.add(
+			EntryKind::Class,
+			&item.name,
+			None,
+			&item.tags,
+			AccessTier::Game,
+		);
 		builder.data.class_icons.push(item.icon);
 		builder
 			.primary_entries
@@ -245,7 +251,7 @@ pub fn build_search_index(api: &Api, updates: &[Update]) -> IndexData {
 	for item in &classes {
 		let parent = class_entries[item.name.as_str()];
 		for member in &item.members {
-			let access = access_tier(member).code();
+			let access = access_tier(member);
 			let entry = builder.add(
 				EntryKind::of_member(member.kind()),
 				&member.name,
@@ -268,7 +274,13 @@ pub fn build_search_index(api: &Api, updates: &[Update]) -> IndexData {
 	let mut enums: Vec<_> = api.enums.values().collect();
 	enums.sort_by(|a, b| compare_names(&a.name, &b.name));
 	for item in enums {
-		let parent = builder.add(EntryKind::Enum, &item.name, None, &item.tags, 0);
+		let parent = builder.add(
+			EntryKind::Enum,
+			&item.name,
+			None,
+			&item.tags,
+			AccessTier::Game,
+		);
 		builder
 			.primary_entries
 			.insert(format!("Enum:{}", item.name), parent);
@@ -278,14 +290,14 @@ pub fn build_search_index(api: &Api, updates: &[Update]) -> IndexData {
 				&entry.name,
 				Some(parent),
 				&entry.tags,
-				0,
+				AccessTier::Game,
 			);
 		}
 	}
 	let mut data_types: Vec<_> = api.data_types.values().collect();
 	data_types.sort_by(|a, b| compare_names(&a.name, &b.name));
 	for item in data_types {
-		let entry = builder.add(EntryKind::DataType, &item.name, None, &[], 0);
+		let entry = builder.add(EntryKind::DataType, &item.name, None, &[], AccessTier::Game);
 		builder
 			.primary_entries
 			.insert(format!("{}:{}", item.category.name(), item.name), entry);

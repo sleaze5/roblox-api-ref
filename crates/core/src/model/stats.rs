@@ -1,5 +1,5 @@
 use rapi_routes::MemberKind;
-pub use rapi_search::AccessTier;
+use rapi_search::AccessTier;
 
 use super::RecordGroup;
 

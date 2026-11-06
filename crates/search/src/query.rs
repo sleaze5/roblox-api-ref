@@ -68,6 +68,8 @@ impl ParsedQuery {
 	}
 }
 
+pub const JS_SPACE: &str = r"\t\n\x0B\x0C\r \u{a0}\u{1680}\u{2000}-\u{200a}\u{2028}\u{2029}\u{202f}\u{205f}\u{3000}\u{feff}";
+
 pub const fn is_js_space(character: char) -> bool {
 	matches!(
 		character,

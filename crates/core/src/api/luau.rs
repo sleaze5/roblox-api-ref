@@ -3,7 +3,7 @@ use rapi_routes::{class_href, enum_href, type_href};
 use super::code::{CodeToken, CodeTone, linked, linked_token, token};
 use crate::model::{ApiType, TypeCategory};
 
-pub use rapi_search::luau_name;
+use rapi_search::luau_name;
 
 pub fn is_number_type(ty: &ApiType) -> bool {
 	matches!(

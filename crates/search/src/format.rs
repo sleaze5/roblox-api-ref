@@ -160,7 +160,7 @@ pub struct IndexData {
 	pub kinds: Vec<EntryKind>,
 	pub parents: Vec<Option<u32>>,
 	pub flags: Vec<u16>,
-	pub security: Vec<u8>,
+	pub access: Vec<u8>,
 	pub users: Vec<Vec<(u32, Role)>>,
 	pub value_types: Vec<Vec<u32>>,
 	pub parameter_types: Vec<Vec<u32>>,
@@ -297,7 +297,7 @@ impl IndexData {
 		);
 		writer.u16s(self.parents.iter().map(|parent| id16(*parent)));
 		writer.u16s(self.flags.iter().copied());
-		writer.u8s(&self.security);
+		writer.u8s(&self.access);
 		writer.lists(&self.value_types);
 		writer.lists(&self.parameter_types);
 		writer.strings(self.type_names.iter().map(String::as_str));
@@ -359,7 +359,7 @@ impl IndexData {
 			kinds: (0..count).map(|entry| index.kind(entry)).collect(),
 			parents: (0..count).map(|entry| index.parent(entry)).collect(),
 			flags: (0..count).map(|entry| index.flags(entry)).collect(),
-			security: (0..count).map(|entry| index.access(entry)).collect(),
+			access: (0..count).map(|entry| index.access(entry)).collect(),
 			value_types: (0..count)
 				.map(|entry| index.value_types(entry).collect())
 				.collect(),
@@ -505,7 +505,7 @@ pub struct Index {
 	kinds: Vec<u8>,
 	parents: Vec<u16>,
 	flags: Vec<u16>,
-	security: Vec<u8>,
+	access: Vec<u8>,
 	value_types: Lists,
 	parameter_types: Lists,
 	type_names: Strings,
@@ -537,7 +537,7 @@ impl Index {
 			kinds: reader.u8s()?,
 			parents: reader.u16s()?,
 			flags: reader.u16s()?,
-			security: reader.u8s()?,
+			access: reader.u8s()?,
 			value_types: reader.lists()?,
 			parameter_types: reader.lists()?,
 			type_names: reader.strings()?,
@@ -568,7 +568,7 @@ impl Index {
 			self.kinds.len(),
 			self.parents.len(),
 			self.flags.len(),
-			self.security.len(),
+			self.access.len(),
 			self.value_types.offsets.len() - 1,
 			self.parameter_types.offsets.len() - 1,
 		]
@@ -644,7 +644,7 @@ impl Index {
 	}
 
 	pub fn access(&self, entry: usize) -> u8 {
-		self.security[entry]
+		self.access[entry]
 	}
 
 	pub fn users(&self, id: usize) -> impl Iterator<Item = (u32, Role)> + '_ {
@@ -745,7 +745,7 @@ mod tests {
 			],
 			parents: vec![None, Some(0), None, Some(2)],
 			flags: vec![0, flags::DEPRECATED, 0, 0],
-			security: vec![0, 1, 0, 0],
+			access: vec![0, 1, 0, 0],
 			users: vec![vec![(1, Role::Value)]],
 			value_types: vec![vec![], vec![0], vec![], vec![]],
 			parameter_types: vec![vec![], vec![], vec![], vec![]],

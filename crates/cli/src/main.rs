@@ -2,9 +2,9 @@ use std::path::{Path, PathBuf};
 use std::process::ExitCode;
 use std::time::Instant;
 
-use rapi_core::dump::Paths;
 use rapi_core::generate::pipeline::generate_site;
 use rapi_core::icons::{Icon, build_favicon, build_icon_sprite, read_icon};
+use rapi_core::paths::Paths;
 
 mod wasm;
 
@@ -152,7 +152,7 @@ Commands:
   dump                 Download the API files of the current build
   diff <from> <to>     Rewrite the diff between two tracked versions
   gen                  Write src/generated: the search index and engine, icons, and build data
-  render [--dist dir]   Prerender every page into Vite's output directory
+  render [--dist dir]  Prerender every page into Vite's output directory
   dev                  Serve pages to the Vite dev server over stdin and stdout";
 
 fn project_paths() -> Result<Paths, String> {

@@ -3,9 +3,9 @@ use std::path::{Path, PathBuf};
 use futures_util::{StreamExt, TryStreamExt, stream};
 use indexmap::IndexMap;
 use rapi_core::dump::{
-	ChangeType, DumpChange, DumpDiff, Paths, RobloxVersion, compare_versions, to_tab_json,
-	write_versions,
+	ChangeType, DumpChange, DumpDiff, RobloxVersion, compare_versions, to_tab_json, write_versions,
 };
+use rapi_core::paths::Paths;
 use reqwest::Client;
 use serde_json::Value;
 

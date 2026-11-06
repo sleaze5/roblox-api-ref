@@ -18,7 +18,7 @@ pub use format::{
 };
 pub use lookup::{match_removed, match_updates};
 pub use matcher::Matcher;
-pub use query::{ParsedQuery, is_js_space, parse_query};
+pub use query::{JS_SPACE, ParsedQuery, is_js_space, parse_query};
 pub use score::{is_boundary, match_positions, score_name};
 pub use view::{
 	Group, GroupKey, SearchView, group_results, removed_href, render_view, result_href,

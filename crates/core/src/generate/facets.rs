@@ -162,21 +162,11 @@ pub fn collect_facets<'a>(
 }
 
 #[derive(Clone, Debug, Default, PartialEq, Eq)]
-pub struct FacetSlugs([(IndexMap<String, String>, IndexMap<String, String>); 6]);
+pub struct FacetSlugs([IndexMap<String, String>; 6]);
 
 impl FacetSlugs {
 	pub fn slug<'a>(&'a self, kind: FacetKind, name: &'a str) -> &'a str {
-		self.0[kind.index()]
-			.0
-			.get(name)
-			.map_or(name, String::as_str)
-	}
-
-	pub fn name<'a>(&'a self, kind: FacetKind, slug: &'a str) -> &'a str {
-		self.0[kind.index()]
-			.1
-			.get(slug)
-			.map_or(slug, String::as_str)
+		self.0[kind.index()].get(name).map_or(name, String::as_str)
 	}
 }
 
@@ -187,7 +177,7 @@ pub fn build_facet_slugs(facets: &Facets) -> FacetSlugs {
 		names.sort_by(|a, b| compare_code_units(a, b));
 		let mut reserved: Vec<String> = names.iter().map(|name| name.to_lowercase()).collect();
 		let mut seen: Vec<String> = Vec::new();
-		let (to_slug, to_name) = &mut slugs.0[kind.index()];
+		let to_slug = &mut slugs.0[kind.index()];
 		for name in names {
 			let folded = name.to_lowercase();
 			if seen.contains(&folded) {
@@ -197,8 +187,7 @@ pub fn build_facet_slugs(facets: &Facets) -> FacetSlugs {
 				}
 				let slug = format!("{name}-{suffix}");
 				reserved.push(slug.to_lowercase());
-				to_slug.insert(name.clone(), slug.clone());
-				to_name.insert(slug, name.clone());
+				to_slug.insert(name.clone(), slug);
 			}
 			seen.push(folded);
 		}
@@ -298,10 +287,6 @@ mod tests {
 		assert_eq!(
 			slugs.slug(FacetKind::PropertyCategory, "animation"),
 			"animation-2"
-		);
-		assert_eq!(
-			slugs.name(FacetKind::PropertyCategory, "animation-2"),
-			"animation"
 		);
 		assert_eq!(
 			slugs.slug(FacetKind::PropertyCategory, "Animation"),

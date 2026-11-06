@@ -107,9 +107,15 @@ fn canonical_path(path: &str) -> String {
 }
 
 pub fn match_route<'a>(cx: &'a Context, path: &str) -> Route<'a> {
-	let path = canonical_path(path);
-	all_routes(cx)
-		.into_iter()
-		.find(|route| !matches!(route, Route::NotFound) && route.href(cx) == path)
-		.unwrap_or(Route::NotFound)
+	let index = cx.route_index.get_or_init(|| {
+		all_routes(cx)
+			.iter()
+			.enumerate()
+			.filter(|(_, route)| !matches!(route, Route::NotFound))
+			.map(|(index, route)| (route.href(cx), index))
+			.collect()
+	});
+	index
+		.get(&canonical_path(path))
+		.map_or(Route::NotFound, |&found| all_routes(cx)[found])
 }

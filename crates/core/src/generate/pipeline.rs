@@ -11,8 +11,9 @@ use super::normalize::normalize_api;
 use super::search_index::build_search_index;
 use super::stats::build_stats;
 use super::updates::{DatedDiff, build_updates, check_diff};
-use crate::dump::{ApiDocs, DataFile, Dump, DumpDiff, Paths, RobloxVersion};
+use crate::dump::{ApiDocs, Dump, DumpDiff, RobloxVersion};
 use crate::model::{Api, Stats, Update};
+use crate::paths::{DataFile, Paths};
 
 pub struct Site {
 	pub api: Api,

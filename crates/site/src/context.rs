@@ -1,4 +1,4 @@
-use std::collections::HashSet;
+use std::collections::{HashMap, HashSet};
 use std::fmt::Write as _;
 use std::sync::OnceLock;
 
@@ -19,6 +19,7 @@ pub struct Context {
 	pub origin: String,
 	links: OnceLock<HashSet<String>>,
 	filter_tags: OnceLock<Vec<FilterTagGroup>>,
+	pub(crate) route_index: OnceLock<HashMap<String, usize>>,
 }
 
 impl Context {
@@ -39,6 +40,7 @@ impl Context {
 			origin,
 			links: OnceLock::new(),
 			filter_tags: OnceLock::new(),
+			route_index: OnceLock::new(),
 		}
 	}
 

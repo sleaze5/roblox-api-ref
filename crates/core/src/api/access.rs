@@ -1,4 +1,5 @@
-use crate::model::{AccessTier, KindCounts, Member, Security};
+use crate::model::{KindCounts, Member, Security};
+use rapi_search::AccessTier;
 
 pub const fn access_tier_label(tier: AccessTier) -> &'static str {
 	match tier {

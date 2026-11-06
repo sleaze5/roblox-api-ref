@@ -7,9 +7,9 @@ use std::path::{Path, PathBuf};
 
 use base64::Engine as _;
 use rapi_core::dump::{
-	ApiDocs, DataFile, DumpDiff, Paths, RobloxVersion, compare_versions, read_versions,
-	to_tab_json, write_versions,
+	ApiDocs, DumpDiff, RobloxVersion, compare_versions, read_versions, to_tab_json, write_versions,
 };
+use rapi_core::paths::{DataFile, Paths};
 use reqwest::Client;
 use serde_json::Value;
 
