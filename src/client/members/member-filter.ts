@@ -1,3 +1,4 @@
+import { createEmptyMembers } from "./empty-members.ts"
 import { NameMatcher, type NameMatch } from "../filters/name-match.ts"
 import {
 	activeTagFilters,
@@ -139,6 +140,16 @@ export function initMemberFilter(form: HTMLFormElement): void {
 	const state = readFilterState()
 	const matcher = new NameMatcher(rows.map((row) => row.dataset["name"] ?? ""))
 	let latest = 0
+	const clearFilters = () => {
+		state.text = ""
+		state.hide.clear()
+		state.require.clear()
+		state.exclude.clear()
+		state.match = "any"
+		syncControls(form, state)
+		void refresh()
+	}
+	const emptyMembers = createEmptyMembers(form, clearFilters)
 
 	const refresh = async () => {
 		applyFilterState(state)
@@ -154,6 +165,12 @@ export function initMemberFilter(form: HTMLFormElement): void {
 			(sum, section) => sum + refreshSection(section, state),
 			0,
 		)
+		if (shown === 0) {
+			for (const empty of article.querySelectorAll<HTMLElement>("[data-empty]")) {
+				empty.hidden = true
+			}
+		}
+		emptyMembers.update(state.text, shown)
 		if (summary !== null) {
 			summary.textContent = summaryText(shown, rows.length)
 		}

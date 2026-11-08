@@ -41,6 +41,22 @@ describe("member filters", () => {
 		expect(page.problems).toEqual([])
 	})
 
+	test("explains an empty result once and clears every filter", async () => {
+		const page = await openPage("/classes/Part/?q=zzzzqq&hide=method")
+		const message = page.locator("form[data-member-filter] + div")
+		await message.waitFor({ state: "visible" })
+		expect(await message.innerText()).toContain("Nothing matches zzzzqq")
+		expect(await page.locator("[data-empty]:visible").count()).toBe(0)
+		await message.getByRole("button", { name: "Clear filters" }).click()
+		await page.waitForFunction(() => !location.search.includes("q="))
+		expect(await message.isHidden()).toBe(true)
+		expect(await page.locator(`${form} input[name=text]`).inputValue()).toBe("")
+		expect(await page.locator("section[data-section=Method]").isVisible()).toBe(
+			true,
+		)
+		expect(page.problems).toEqual([])
+	})
+
 	test("hides a member kind and inherited members", async () => {
 		const page = await openPage("/classes/Part/")
 		await page.locator(`${form} label.chip`, { hasText: "Methods" }).click()

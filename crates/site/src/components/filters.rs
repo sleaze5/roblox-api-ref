@@ -86,8 +86,12 @@ pub fn list_filter_with(
 	noun: Option<&str>,
 	trailing: Option<&Markup>,
 ) -> Markup {
+	let landmark = match placement {
+		ListFilterPlacement::Page => label.to_owned(),
+		ListFilterPlacement::Sidebar => format!("{label} in navigation"),
+	};
 	html! {
-		form data-list-filter=(target) data-param=(param) data-noun=[noun] role="search" aria-label=(label) class=(placement.class()) {
+		form data-list-filter=(target) data-param=(param) data-noun=[noun] role="search" aria-label=(landmark) class=(placement.class()) {
 			(filter_field(cx, label, label, list_count(placement, noun), "flex-1"))
 			@if let Some(trailing) = trailing { (trailing) }
 		}

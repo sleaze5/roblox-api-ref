@@ -203,7 +203,7 @@ fn group_header(cx: &Context, owner: &str, own: bool, count: usize, id: &str) ->
 			@if own {
 				span class="font-mono text-fg" { (owner) }
 			} @else {
-				a href=(class_href(owner)) class="relative font-mono text-code-type hover:underline" { (owner) }
+				a href=(class_href(owner)) class="relative font-mono text-code-type hover:underline pointer-coarse:py-2.5" { (owner) }
 			}
 			span data-count="" class="text-fg-faint" { (count) }
 		}

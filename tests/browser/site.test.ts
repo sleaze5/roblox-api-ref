@@ -20,6 +20,47 @@ describe("pages", () => {
 		expect(page.problems.filter((problem) => !notFound.test(problem))).toEqual([])
 	})
 
+	test.each(["/classes/", "/enums/", "/updates/", "/index/"])(
+		"%s names every landmark once",
+		async (path) => {
+			const page = await openPage(path)
+			const names = await page
+				.locator(
+					"[role=search], nav, aside, section[aria-labelledby], section[aria-label]",
+				)
+				.evaluateAll((landmarks) =>
+					landmarks.map(
+						(landmark) =>
+							landmark.getAttribute("aria-label") ??
+							document.getElementById(
+								landmark.getAttribute("aria-labelledby") ?? "",
+							)?.textContent ??
+							"",
+					),
+				)
+			expect(new Set(names).size).toBe(names.length)
+		},
+	)
+
+	test("makes sideways scrolling code reachable from the keyboard", async () => {
+		const page = await openPage("/stats/")
+		await page.setViewportSize({ width: 360, height: 740 })
+		await page.waitForFunction(() =>
+			document.querySelector(".stat-table[tabindex]"),
+		)
+		const flagged = await page
+			.locator(".stat-table")
+			.evaluateAll(
+				(tables) =>
+					tables.filter(
+						(table) =>
+							table.scrollWidth > table.clientWidth !==
+							table.hasAttribute("tabindex"),
+					).length,
+			)
+		expect(flagged).toBe(0)
+	})
+
 	test("serves the search engine as WebAssembly", async () => {
 		const page = await openPage("/")
 		const wasm = page.waitForResponse((response) =>
