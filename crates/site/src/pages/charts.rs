@@ -529,7 +529,7 @@ pub struct Share {
 
 pub fn share_chart(title: &str, summary: &str, rows: &[Share]) -> Markup {
 	let content = html! {
-		ul role="img" aria-label={ (title) ". " (summary) } class="flex flex-col gap-2" {
+		ul aria-label={ (title) ". " (summary) } class="flex flex-col gap-2" {
 			@for row in rows {
 				@let ratio = if row.total > 0.0 { row.part / row.total } else { 0.0 };
 				li data-tooltip={ (row.label) ": " (num(row.part)) " of " (num(row.total)) } class="grid grid-cols-[8rem_1fr_3.5rem] items-center gap-3" {

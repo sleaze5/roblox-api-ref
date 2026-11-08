@@ -444,6 +444,7 @@ The `gen` task reads every update, oldest first, and records each update that to
 - Disabled: use 45% opacity and `cursor: not-allowed`. Do not also change the color.
 - Not found: on a missing page or an empty search, say what was not found and how to continue. For example: No results for `Humanoid.Jumpp`. Check the spelling or search for a class name.
 - Empty filter: when a list, tree, or Updates filter matches nothing, a message below the filter says "Nothing matches `query`. Check the spelling, or clear the filter." and offers a "Clear filter" button that empties the field and returns focus to it.
+- Empty member filter: when the filters match no member of a class, one message below the filter bar replaces the per-section "No properties match the filters." lines. It reads "Nothing matches `query`. Check the spelling, or clear the filters." when the name field has text, and "No members match the filters. Adjust them, or clear the filters." otherwise. Its "Clear filters" button empties the name field, the tags, and the hidden kinds, and returns focus to the name field.
 - Press: every button, chip, toggle, and icon action scales to `--motion-scale` while pressed. Links and rows do not.
 - Hover styles apply only on devices that can hover, so a tap never leaves a hover fill behind. Taps show a `--color-hover` tap highlight.
 
@@ -488,7 +489,10 @@ Under `prefers-reduced-motion: reduce`, nothing moves or scales. Fades may remai
 - Do not rely on color alone. A deprecated member also has the Deprecated tag, and a code color always comes with a text name.
 - Use landmarks: `header`, `nav` for the sidebar, `main` for the content, `aside` for the right rail, and `footer` for the footer. Add a "Skip to content" link as the first focusable element.
 - Use one `h1` per page, for the page name, `h2` for member sections, and `h3` for property category headings. Do not skip levels.
-- Give each landmark a unique name. Do not use `<footer>` or `<header>` inside a dialog, because browsers expose them as page landmarks.
+- Give each landmark a unique name. A sidebar filter is named "<filter> in navigation", so it differs from the page filter beside it. Give a `<section>` an `aria-labelledby` only when its heading text is unique on the page: the Updates listing repeats "Class additions" under every update, so those sections stay unnamed and are not landmarks. Do not use `<footer>` or `<header>` inside a dialog, because browsers expose them as page landmarks.
+- A scroll area that can scroll sideways, such as a code sample or a statistics table, must be reachable from the keyboard. `src/client/scroll-focus.ts` gives it `tabindex="0"` while its content overflows and removes it when it fits.
+- Do not give a list `role="img"`. A share chart is a named list.
+- On touch screens, give an inline link that is its own line of text, such as a breadcrumb, enough padding to reach a 36px hit area.
 - Give `role="listbox"` only to an element that holds options. When a combobox has no options to show, set `aria-expanded="false"`.
 - Make every action available from the keyboard, and keep the focus order the same as the visual order. The one exception is the right rail, which comes before the content so that it renders early; the skip link takes keyboard readers past the sidebar and the rail.
 

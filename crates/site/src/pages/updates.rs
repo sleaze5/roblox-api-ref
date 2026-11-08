@@ -184,8 +184,8 @@ fn owner_note(owner: &OwnerChanges) -> Markup {
 fn group_summary(cx: &Context, update: &Update, group: &OwnerSubsection) -> Markup {
 	let id = format!("{}-{}", update.version, group.id);
 	html! {
-		section id=(id) data-list-section="" aria-labelledby={ (id) "-title" } class="flex flex-col gap-2" {
-			h3 id={ (id) "-title" } class="flex items-center gap-2 border-b border-line-subtle pb-2 text-base font-semibold" {
+		section id=(id) data-list-section="" class="flex flex-col gap-2" {
+			h3 class="flex items-center gap-2 border-b border-line-subtle pb-2 text-base font-semibold" {
 				(change_mark(Some(group.group.status()), None))
 				(group.rail_label)
 				span class="text-sm font-normal text-fg-faint" { (group.owners.len()) }

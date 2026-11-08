@@ -67,7 +67,7 @@ pub fn breadcrumbs(crumbs: &[Crumb]) -> Markup {
 						@if index > 0 {
 							span aria-hidden="true" class="text-fg-faint" { "›" }
 						}
-						a href=(crumb.href) class=(classes(&["hover:underline", if crumb.code { "font-mono text-code-type" } else { "motion-colors hover:text-fg" }])) {
+						a href=(crumb.href) class=(classes(&["hover:underline pointer-coarse:py-2", if crumb.code { "font-mono text-code-type" } else { "motion-colors hover:text-fg" }])) {
 							(crumb.label)
 						}
 					}
