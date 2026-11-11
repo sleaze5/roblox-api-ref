@@ -65,6 +65,7 @@ jobs:
               uses: ./.github/actions/land
               with:
                   branch: release/update
+                  deploy-key: ${{ secrets.LAND_DEPLOY_KEY }}
 
             - if: inputs.force
               run: gh workflow run ci.yml --ref "$BRANCH"
