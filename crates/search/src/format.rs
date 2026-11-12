@@ -427,8 +427,10 @@ impl<'a> Reader<'a> {
 		let count = self.count()?;
 		Ok(self
 			.take(count.checked_mul(2).ok_or_else(invalid)?)?
-			.chunks_exact(2)
-			.map(|pair| u16::from_le_bytes([pair[0], pair[1]]))
+			.as_chunks::<2>()
+			.0
+			.iter()
+			.map(|pair| u16::from_le_bytes(*pair))
 			.collect())
 	}
 
